@@ -8,7 +8,7 @@
 If you are new to Neu.ro, here are two simple steps to get started:
 
 * [Sign up](https://neu.ro) and get 100h of GPU compute for free.
-* Follow our [Getting Started](getting-started-1/) guide.
+* Follow our [Getting Started](getting-started/) guide.
 
 If you want to dig deeper, take a look at various ML development guides we carefully craft for you, for example:
 
