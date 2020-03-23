@@ -11,3 +11,5 @@ In this guide, we show the following operations:
 * [Meeting Neu.ro](meeting-neu.ro.md): get to know Neu.ro Core components: jobs, environments, and storage.
 * [Developing on GPU](developing-on-gpu.md): start developing on GPU in Jupyter Notebooks with the help of Neu.ro Toolbox project template.
 
+
+

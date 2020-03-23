@@ -5,7 +5,7 @@ To start working with CLI, you have two options:
 * Use [Web Terminal](https://apps.neu.ro/shell)
 * Install Neu.ro CLI on your machine and run `neuro login`
 
-The first option is recommended for the [Meeting Neu.ro](docs/getting_started/meeting_neuro) section. The second option is better when working with projects \(see [Developing on GPU](docs/getting_started/developing_on_gpu) section\).
+The first option is recommended for the [Meeting Neu.ro](meeting-neu.ro.md) section. The second option is better when working with projects \(see [Developing on GPU](developing-on-gpu.md) section\).
 
 ### Linux and Mac OS instructions
 
