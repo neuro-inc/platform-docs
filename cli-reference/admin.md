@@ -21,7 +21,7 @@ Cluster administration commands.
 - [neuro admin set-user-quota](admin.md#set-user-quota): Set user quota to given values
 - [neuro admin add-user-quota](admin.md#add-user-quota): Add given values to user quota
 
-### get-clusters
+## get-clusters
 Print the list of available clusters
 
 #### Usage
@@ -38,7 +38,7 @@ Print the list of available clusters.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### generate-cluster-config
+## generate-cluster-config
 Create a cluster configuration file
 
 #### Usage
@@ -56,7 +56,7 @@ Create a cluster configuration file.
 | `--type [aws|gcp]` |                             |
 | `--help`           | Show this message and exit. |
 
-### add-cluster
+## add-cluster
 Create a new cluster and start its...
 
 #### Usage
@@ -73,7 +73,7 @@ Create a new cluster and start its provisioning.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### get-cluster-users
+## get-cluster-users
 Print the list of all users in the cluster...
 
 #### Usage
@@ -90,7 +90,7 @@ Print the list of all users in the cluster with their assigned role.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### add-cluster-user
+## add-cluster-user
 Add user access to specified cluster
 
 #### Usage
@@ -110,7 +110,7 @@ roles: admin, manager or user.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### remove-cluster-user
+## remove-cluster-user
 Remove user access from the cluster
 
 #### Usage
@@ -127,7 +127,7 @@ Remove user access from the cluster.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### set-user-quota
+## set-user-quota
 Set user quota to given values
 
 #### Usage
@@ -146,7 +146,7 @@ Set user quota to given values
 | `-n`, `--non-gpu AMOUNT` | Non-GPU quota value in hours (h) or minutes (m). |
 | `--help`                 | Show this message and exit.                      |
 
-### add-user-quota
+## add-user-quota
 Add given values to user quota
 
 #### Usage

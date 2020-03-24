@@ -15,7 +15,7 @@ Output shell completion code.
 - [neuro completion generate](completion.md#generate): Provide an instruction for shell completion...
 - [neuro completion patch](completion.md#patch): Automatically patch shell configuration...
 
-### generate
+## generate
 Provide an instruction for shell completion...
 
 #### Usage
@@ -32,7 +32,7 @@ Provide an instruction for shell completion generation.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### patch
+## patch
 Automatically patch shell configuration...
 
 #### Usage

@@ -17,7 +17,7 @@ Container image operations.
 - [neuro image pull](image.md#pull): Pull an image from platform registry
 - [neuro image tags](image.md#tags): List tags for image in platform registry
 
-### ls
+## ls
 List images
 
 #### Usage
@@ -35,7 +35,7 @@ List images.
 | `-l`     | List in long format.        |
 | `--help` | Show this message and exit. |
 
-### push
+## push
 Push an image to platform registry
 
 #### Usage
@@ -68,7 +68,7 @@ $ neuro push alpine image://myfriend/alpine:shared
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-### pull
+## pull
 Pull an image from platform registry
 
 #### Usage
@@ -99,7 +99,7 @@ $ neuro pull image://username/my-alpine:production alpine:from-registry
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-### tags
+## tags
 List tags for image in platform registry
 
 #### Usage

@@ -14,7 +14,7 @@ Project operations.
 
 - [neuro project init](project.md#init): Initialize an empty project
 
-### init
+## init
 Initialize an empty project
 
 #### Usage

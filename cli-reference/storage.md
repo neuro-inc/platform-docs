@@ -20,7 +20,7 @@ Storage operations.
 - [neuro storage mv](storage.md#mv): Move or rename files and directories
 - [neuro storage load](storage.md#load): Copy files and directories using MinIO...
 
-### cp
+## cp
 Copy files and directories
 
 #### Usage
@@ -83,7 +83,7 @@ $ neuro cp storage:results/*.out .
 | `-p`, `--progress` / `-P`, `--no-progress` | Show progress, on by default.                                                                                                                                                               |
 | `--help`                                   | Show this message and exit.                                                                                                                                                                 |
 
-### ls
+## ls
 List directory contents
 
 #### Usage
@@ -108,7 +108,7 @@ By default `PATH` is equal user's home dir
 | `-a`, `--all`             | do not ignore entries starting with .                |
 | `--help`                  | Show this message and exit.                          |
 
-### glob
+## glob
 List resources that match PATTERNS
 
 #### Usage
@@ -125,7 +125,7 @@ List resources that match `PATTERNS`.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### rm
+## rm
 Remove files or directories
 
 #### Usage
@@ -154,7 +154,7 @@ $ neuro rm storage:foo/**/*.tmp
 | `--glob` / `--no-glob` | Expand glob patterns in PATHS  _[default: True]_  |
 | `--help`               | Show this message and exit.                       |
 
-### mkdir
+## mkdir
 Make directories
 
 #### Usage
@@ -172,7 +172,7 @@ Make directories.
 | `-p`, `--parents` | No error if existing, make parent directories as needed |
 | `--help`          | Show this message and exit.                             |
 
-### mv
+## mv
 Move or rename files and directories
 
 #### Usage
@@ -221,7 +221,7 @@ $ neuro mv storage://{username}/foo.txt storage:bar.dat
 | `-T`, `--no-target-directory`        | Treat DESTINATION as a normal file                 |
 | `--help`                             | Show this message and exit.                        |
 
-### load
+## load
 Copy files and directories using MinIO...
 
 ~~DEPRECATED~~
