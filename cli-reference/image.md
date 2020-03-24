@@ -17,10 +17,10 @@ Container image operations.
 - [neuro image pull](image.md#pull): Pull an image from platform registry
 - [neuro image tags](image.md#tags): List tags for image in platform registry
 
-## ls
+### ls
 List images
 
-### Usage
+#### Usage
 
 ```bash
 neuro image ls [OPTIONS]
@@ -28,17 +28,17 @@ neuro image ls [OPTIONS]
 
 List images.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `-l`     | List in long format.        |
 | `--help` | Show this message and exit. |
 
-## push
+### push
 Push an image to platform registry
 
-### Usage
+#### Usage
 
 ```bash
 neuro image push [OPTIONS] LOCAL_IMAGE [REMOTE_IMAGE]
@@ -52,7 +52,7 @@ Image names can contain tag. If tags not specified 'latest' will
 be
 used as value.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -61,17 +61,17 @@ $ neuro push alpine:latest image:my-alpine:production
 $ neuro push alpine image://myfriend/alpine:shared
 ```
 
-### Options
+#### Options
 
 | Name            | Description                            |
 | --------------- | -------------------------------------- |
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-## pull
+### pull
 Pull an image from platform registry
 
-### Usage
+#### Usage
 
 ```bash
 neuro image pull [OPTIONS] REMOTE_IMAGE [LOCAL_IMAGE]
@@ -83,7 +83,7 @@ Remote image name must be `URL` with
 image:// scheme.
 Image names can contain tag.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -92,17 +92,17 @@ $ neuro pull image://myfriend/alpine:shared
 $ neuro pull image://username/my-alpine:production alpine:from-registry
 ```
 
-### Options
+#### Options
 
 | Name            | Description                            |
 | --------------- | -------------------------------------- |
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-## tags
+### tags
 List tags for image in platform registry
 
-### Usage
+#### Usage
 
 ```bash
 neuro image tags [OPTIONS] IMAGE
@@ -113,7 +113,7 @@ List tags for image in platform registry.
 Image name must be `URL` with
 image:// scheme.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -121,7 +121,7 @@ $ neuro image tags image://myfriend/alpine
 $ neuro image tags image:myimage
 ```
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |

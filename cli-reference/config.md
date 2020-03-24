@@ -24,10 +24,10 @@ Client configuration.
 - [neuro config docker](config.md#docker): Configure docker client to fit the Neuro...
 - [neuro config logout](config.md#logout): Log out
 
-## login
+### login
 Log into Neuro Platform
 
-### Usage
+#### Usage
 
 ```bash
 neuro config login [OPTIONS] [URL]
@@ -37,16 +37,16 @@ Log into Neuro Platform.
 
 `URL` is a platform entrypoint `URL`.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## login-with-token
+### login-with-token
 Log into Neuro Platform with token
 
-### Usage
+#### Usage
 
 ```bash
 neuro config login-with-token [OPTIONS] TOKEN [URL]
@@ -58,16 +58,16 @@ Log into Neuro Platform with token.
 by administration team.
 `URL` is a platform entrypoint `URL`.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## login-headless
+### login-headless
 Log into Neuro Platform from non-GUI server...
 
-### Usage
+#### Usage
 
 ```bash
 neuro config login-headless [OPTIONS] [URL]
@@ -89,16 +89,16 @@ browser after successful login
 back in neuro command to finish the login
 process.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show
+### show
 Print current settings
 
-### Usage
+#### Usage
 
 ```bash
 neuro config show [OPTIONS]
@@ -106,16 +106,16 @@ neuro config show [OPTIONS]
 
 Print current settings.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show-token
+### show-token
 Print current authorization token
 
-### Usage
+#### Usage
 
 ```bash
 neuro config show-token [OPTIONS]
@@ -123,16 +123,16 @@ neuro config show-token [OPTIONS]
 
 Print current authorization token.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show-quota
+### show-quota
 Print quota and remaining computation time...
 
-### Usage
+#### Usage
 
 ```bash
 neuro config show-quota [OPTIONS] [USER]
@@ -140,16 +140,16 @@ neuro config show-quota [OPTIONS] [USER]
 
 Print quota and remaining computation time for active cluster.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## aliases
+### aliases
 List available command aliases
 
-### Usage
+#### Usage
 
 ```bash
 neuro config aliases [OPTIONS]
@@ -157,16 +157,16 @@ neuro config aliases [OPTIONS]
 
 List available command aliases.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## get-clusters
+### get-clusters
 Fetch and display the list of available...
 
-### Usage
+#### Usage
 
 ```bash
 neuro config get-clusters [OPTIONS]
@@ -174,16 +174,16 @@ neuro config get-clusters [OPTIONS]
 
 Fetch and display the list of available clusters.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## switch-cluster
+### switch-cluster
 Switch the active cluster
 
-### Usage
+#### Usage
 
 ```bash
 neuro config switch-cluster [OPTIONS] [CLUSTER_NAME]
@@ -195,16 +195,16 @@ Switch the active cluster.
 The interactive prompt is used if the
 name is omitted (default).
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## docker
+### docker
 Configure docker client to fit the Neuro...
 
-### Usage
+#### Usage
 
 ```bash
 neuro config docker [OPTIONS]
@@ -212,17 +212,17 @@ neuro config docker [OPTIONS]
 
 Configure docker client to fit the Neuro Platform.
 
-### Options
+#### Options
 
 | Name                   | Description                                                     |
 | ---------------------- | --------------------------------------------------------------- |
 | `--docker-config PATH` | Specifies the location of the Docker client configuration files |
 | `--help`               | Show this message and exit.                                     |
 
-## logout
+### logout
 Log out
 
-### Usage
+#### Usage
 
 ```bash
 neuro config logout [OPTIONS]
@@ -230,7 +230,7 @@ neuro config logout [OPTIONS]
 
 Log out.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |

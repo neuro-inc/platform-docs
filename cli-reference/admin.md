@@ -21,10 +21,10 @@ Cluster administration commands.
 - [neuro admin set-user-quota](admin.md#set-user-quota): Set user quota to given values
 - [neuro admin add-user-quota](admin.md#add-user-quota): Add given values to user quota
 
-## get-clusters
+### get-clusters
 Print the list of available clusters
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin get-clusters [OPTIONS]
@@ -32,16 +32,16 @@ neuro admin get-clusters [OPTIONS]
 
 Print the list of available clusters.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## generate-cluster-config
+### generate-cluster-config
 Create a cluster configuration file
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin generate-cluster-config [OPTIONS] [CONFIG]
@@ -49,17 +49,17 @@ neuro admin generate-cluster-config [OPTIONS] [CONFIG]
 
 Create a cluster configuration file.
 
-### Options
+#### Options
 
 | Name               | Description                 |
 | ------------------ | --------------------------- |
 | `--type [aws|gcp]` |                             |
 | `--help`           | Show this message and exit. |
 
-## add-cluster
+### add-cluster
 Create a new cluster and start its...
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin add-cluster [OPTIONS] CLUSTER_NAME CONFIG
@@ -67,16 +67,16 @@ neuro admin add-cluster [OPTIONS] CLUSTER_NAME CONFIG
 
 Create a new cluster and start its provisioning.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## get-cluster-users
+### get-cluster-users
 Print the list of all users in the cluster...
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin get-cluster-users [OPTIONS] [CLUSTER_NAME]
@@ -84,16 +84,16 @@ neuro admin get-cluster-users [OPTIONS] [CLUSTER_NAME]
 
 Print the list of all users in the cluster with their assigned role.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## add-cluster-user
+### add-cluster-user
 Add user access to specified cluster
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin add-cluster-user [OPTIONS] CLUSTER_NAME USER_NAME [ROLE]
@@ -104,16 +104,16 @@ Add user access to specified cluster.
 The command supports one of 3 user
 roles: admin, manager or user.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## remove-cluster-user
+### remove-cluster-user
 Remove user access from the cluster
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin remove-cluster-user [OPTIONS] CLUSTER_NAME USER_NAME
@@ -121,16 +121,16 @@ neuro admin remove-cluster-user [OPTIONS] CLUSTER_NAME USER_NAME
 
 Remove user access from the cluster.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## set-user-quota
+### set-user-quota
 Set user quota to given values
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin set-user-quota [OPTIONS] CLUSTER_NAME USER_NAME
@@ -138,7 +138,7 @@ neuro admin set-user-quota [OPTIONS] CLUSTER_NAME USER_NAME
 
 Set user quota to given values
 
-### Options
+#### Options
 
 | Name                     | Description                                      |
 | ------------------------ | ------------------------------------------------ |
@@ -146,10 +146,10 @@ Set user quota to given values
 | `-n`, `--non-gpu AMOUNT` | Non-GPU quota value in hours (h) or minutes (m). |
 | `--help`                 | Show this message and exit.                      |
 
-## add-user-quota
+### add-user-quota
 Add given values to user quota
 
-### Usage
+#### Usage
 
 ```bash
 neuro admin add-user-quota [OPTIONS] CLUSTER_NAME USER_NAME
@@ -157,7 +157,7 @@ neuro admin add-user-quota [OPTIONS] CLUSTER_NAME USER_NAME
 
 Add given values to user quota
 
-### Options
+#### Options
 
 | Name                     | Description                                                 |
 | ------------------------ | ----------------------------------------------------------- |

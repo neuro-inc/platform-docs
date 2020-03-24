@@ -25,10 +25,10 @@ Job operations.
 - [neuro job save](job.md#save): Save job's state to an image
 - [neuro job browse](job.md#browse): Opens a job's URL in a web browser
 
-## run
+### run
 Run a job with predefined resources...
 
-### Usage
+#### Usage
 
 ```bash
 neuro job run [OPTIONS] IMAGE [CMD]...
@@ -41,7 +41,7 @@ name.
 
 `CMD` list will be passed as commands to model container.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -56,7 +56,7 @@ $ neuro run --preset=gpu-small --volume=HOME pytorch:latest
 $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2
 ```
 
-### Options
+#### Options
 
 | Name                                   | Description                                                                                                                                                                                                              |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -80,10 +80,10 @@ $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg
 | `-t`, `--tty`                          | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                               | Show this message and exit.                                                                                                                                                                                              |
 
-## submit
+### submit
 Submit an image to run on the cluster
 
-### Usage
+#### Usage
 
 ```bash
 neuro job submit [OPTIONS] IMAGE [CMD]...
@@ -96,7 +96,7 @@ Submit an image to run on the cluster.
 `CMD`
 list will be passed as commands to model container.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -110,7 +110,7 @@ $ neuro submit --volume storage:/q1:/qm:ro --volume storage:/mod:/mod:rw pytorch
 $ neuro submit image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2 arg3
 ```
 
-### Options
+#### Options
 
 | Name                                              | Description                                                                                                                                                                                                              |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -140,10 +140,10 @@ $ neuro submit image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2 arg3
 | `-t`, `--tty`                                     | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                                          | Show this message and exit.                                                                                                                                                                                              |
 
-## ls
+### ls
 List all jobs
 
-### Usage
+#### Usage
 
 ```bash
 neuro job ls [OPTIONS]
@@ -151,7 +151,7 @@ neuro job ls [OPTIONS]
 
 List all jobs.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -163,7 +163,7 @@ $ neuro ps -s failed -s succeeded -q
 $ neuro ps -t tag1 -t tag2
 ```
 
-### Options
+#### Options
 
 | Name                                                    | Description                                                                                                                                                                                                    |
 | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -178,10 +178,10 @@ $ neuro ps -t tag1 -t tag2
 | `--format COLUMNS`                                      | Output table format, see "neuro help ps-format" for more info about the format specification. The default can be changed using the job.ps-format configuration variable documented in "neuro help user-config" |
 | `--help`                                                | Show this message and exit.                                                                                                                                                                                    |
 
-## status
+### status
 Display status of a job
 
-### Usage
+#### Usage
 
 ```bash
 neuro job status [OPTIONS] JOB
@@ -189,16 +189,16 @@ neuro job status [OPTIONS] JOB
 
 Display status of a job.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## tags
+### tags
 List all tags submitted by the user
 
-### Usage
+#### Usage
 
 ```bash
 neuro job tags [OPTIONS]
@@ -206,16 +206,16 @@ neuro job tags [OPTIONS]
 
 List all tags submitted by the user.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## exec
+### exec
 Execute command in a running job
 
-### Usage
+#### Usage
 
 ```bash
 neuro job exec [OPTIONS] JOB CMD...
@@ -223,7 +223,7 @@ neuro job exec [OPTIONS] JOB CMD...
 
 Execute command in a running job.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -234,7 +234,7 @@ $ neuro exec my-job /bin/bash
 $ neuro exec --no-tty my-job ls -l
 ```
 
-### Options
+#### Options
 
 | Name                             | Description                                                                      |
 | -------------------------------- | -------------------------------------------------------------------------------- |
@@ -243,10 +243,10 @@ $ neuro exec --no-tty my-job ls -l
 | `--timeout FLOAT`                | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`                         | Show this message and exit.                                                      |
 
-## port-forward
+### port-forward
 Forward port(s) of a running job to local...
 
-### Usage
+#### Usage
 
 ```bash
 neuro job port-forward [OPTIONS] JOB LOCAL_REMOTE_PORT...
@@ -254,7 +254,7 @@ neuro job port-forward [OPTIONS] JOB LOCAL_REMOTE_PORT...
 
 Forward port(s) of a running job to local port(s).
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -272,17 +272,17 @@ $ rsync -avxzhe ssh -p 2222 root@localhost:/data .
 $ neuro job port-forward my-job- 2080:80 2222:22 2000:100
 ```
 
-### Options
+#### Options
 
 | Name             | Description                                           |
 | ---------------- | ----------------------------------------------------- |
 | `--no-key-check` | Disable host key checks. Should be used with caution. |
 | `--help`         | Show this message and exit.                           |
 
-## logs
+### logs
 Print the logs for a container
 
-### Usage
+#### Usage
 
 ```bash
 neuro job logs [OPTIONS] JOB
@@ -290,16 +290,16 @@ neuro job logs [OPTIONS] JOB
 
 Print the logs for a container.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## kill
+### kill
 Kill job(s)
 
-### Usage
+#### Usage
 
 ```bash
 neuro job kill [OPTIONS] JOBS...
@@ -307,16 +307,16 @@ neuro job kill [OPTIONS] JOBS...
 
 Kill job(s).
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## top
+### top
 Display GPU/CPU/Memory usage
 
-### Usage
+#### Usage
 
 ```bash
 neuro job top [OPTIONS] JOB
@@ -324,17 +324,17 @@ neuro job top [OPTIONS] JOB
 
 Display `GPU`/`CPU`/Memory usage.
 
-### Options
+#### Options
 
 | Name              | Description                                                                      |
 | ----------------- | -------------------------------------------------------------------------------- |
 | `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`          | Show this message and exit.                                                      |
 
-## save
+### save
 Save job's state to an image
 
-### Usage
+#### Usage
 
 ```bash
 neuro job save [OPTIONS] JOB IMAGE
@@ -342,7 +342,7 @@ neuro job save [OPTIONS] JOB IMAGE
 
 Save job's state to an image.
 
-### Examples
+#### Examples
 
 ```bash
 $ neuro job save job-id image:ubuntu-patched
@@ -350,16 +350,16 @@ $ neuro job save my-favourite-job image:ubuntu-patched:v1
 $ neuro job save my-favourite-job image://bob/ubuntu-patched
 ```
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## browse
+### browse
 Opens a job's URL in a web browser
 
-### Usage
+#### Usage
 
 ```bash
 neuro job browse [OPTIONS] JOB
@@ -367,7 +367,7 @@ neuro job browse [OPTIONS] JOB
 
 Opens a job's `URL` in a web browser.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |

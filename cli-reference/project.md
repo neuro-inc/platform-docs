@@ -14,10 +14,10 @@ Project operations.
 
 - [neuro project init](project.md#init): Initialize an empty project
 
-## init
+### init
 Initialize an empty project
 
-### Usage
+#### Usage
 
 ```bash
 neuro project init [OPTIONS] [SLUG]
@@ -25,7 +25,7 @@ neuro project init [OPTIONS] [SLUG]
 
 Initialize an empty project.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -38,7 +38,7 @@ $ neuro project init
 $ neuro project init my-project-id
 ```
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |

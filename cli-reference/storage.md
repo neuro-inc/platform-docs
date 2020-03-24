@@ -20,10 +20,10 @@ Storage operations.
 - [neuro storage mv](storage.md#mv): Move or rename files and directories
 - [neuro storage load](storage.md#load): Copy files and directories using MinIO...
 
-## cp
+### cp
 Copy files and directories
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage cp [OPTIONS] [SOURCES]... [DESTINATION]
@@ -40,7 +40,7 @@ Use
 and print
 the content of file on the storage to console.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -69,7 +69,7 @@ $ neuro cp storage://{username}/foo.txt .
 $ neuro cp storage:results/*.out .
 ```
 
-### Options
+#### Options
 
 | Name                                       | Description                                                                                                                                                                                 |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,10 +83,10 @@ $ neuro cp storage:results/*.out .
 | `-p`, `--progress` / `-P`, `--no-progress` | Show progress, on by default.                                                                                                                                                               |
 | `--help`                                   | Show this message and exit.                                                                                                                                                                 |
 
-## ls
+### ls
 List directory contents
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage ls [OPTIONS] [PATHS]...
@@ -97,7 +97,7 @@ List directory contents.
 By default `PATH` is equal user's home dir
 (storage:)
 
-### Options
+#### Options
 
 | Name                      | Description                                          |
 | ------------------------- | ---------------------------------------------------- |
@@ -108,10 +108,10 @@ By default `PATH` is equal user's home dir
 | `-a`, `--all`             | do not ignore entries starting with .                |
 | `--help`                  | Show this message and exit.                          |
 
-## glob
+### glob
 List resources that match PATTERNS
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage glob [OPTIONS] [PATTERNS]...
@@ -119,16 +119,16 @@ neuro storage glob [OPTIONS] [PATTERNS]...
 
 List resources that match `PATTERNS`.
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## rm
+### rm
 Remove files or directories
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage rm [OPTIONS] PATHS...
@@ -136,7 +136,7 @@ neuro storage rm [OPTIONS] PATHS...
 
 Remove files or directories.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -146,7 +146,7 @@ $ neuro rm --recursive storage://{username}/foo/
 $ neuro rm storage:foo/**/*.tmp
 ```
 
-### Options
+#### Options
 
 | Name                   | Description                                       |
 | ---------------------- | ------------------------------------------------- |
@@ -154,10 +154,10 @@ $ neuro rm storage:foo/**/*.tmp
 | `--glob` / `--no-glob` | Expand glob patterns in PATHS  _[default: True]_  |
 | `--help`               | Show this message and exit.                       |
 
-## mkdir
+### mkdir
 Make directories
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage mkdir [OPTIONS] PATHS...
@@ -165,17 +165,17 @@ neuro storage mkdir [OPTIONS] PATHS...
 
 Make directories.
 
-### Options
+#### Options
 
 | Name              | Description                                             |
 | ----------------- | ------------------------------------------------------- |
 | `-p`, `--parents` | No error if existing, make parent directories as needed |
 | `--help`          | Show this message and exit.                             |
 
-## mv
+### mv
 Move or rename files and directories
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage mv [OPTIONS] [SOURCES]... [DESTINATION]
@@ -189,7 +189,7 @@ or directory existing on the storage, and `DESTINATION` must contain
 the full
 path to the target file or directory.
 
-### Examples
+#### Examples
 
 ```bash
 
@@ -212,7 +212,7 @@ $ neuro mv storage:foo.txt storage://{username}/bar.dat
 $ neuro mv storage://{username}/foo.txt storage:bar.dat
 ```
 
-### Options
+#### Options
 
 | Name                                 | Description                                        |
 | ------------------------------------ | -------------------------------------------------- |
@@ -221,12 +221,12 @@ $ neuro mv storage://{username}/foo.txt storage:bar.dat
 | `-T`, `--no-target-directory`        | Treat DESTINATION as a normal file                 |
 | `--help`                             | Show this message and exit.                        |
 
-## load
+### load
 Copy files and directories using MinIO...
 
 ~~DEPRECATED~~
 
-### Usage
+#### Usage
 
 ```bash
 neuro storage load [OPTIONS] [SOURCES]... [DESTINATION]
@@ -237,7 +237,7 @@ Copy files and directories using MinIO (`EXPERIMENTAL`).
 Same as "cp", but
 uses MinIO and the Amazon S3 protocol.
 
-### Options
+#### Options
 
 | Name                                 | Description                                                                                               |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------- |

@@ -16,10 +16,10 @@ Access Control List management.
 - [neuro acl revoke](acl.md#revoke): Revoke user access from another user
 - [neuro acl list](acl.md#list): List shared resources
 
-## grant
+### grant
 Shares resource with another user
 
-### Usage
+#### Usage
 
 ```bash
 neuro acl grant [OPTIONS] URI USER [read|write|manage]
@@ -35,7 +35,7 @@ share resource with.
 `PERMISSION` sharing access right: read, write, or
 manage.
 
-### Examples
+#### Examples
 
 ```bash
 $ neuro acl grant storage:///sample_data/ alice manage
@@ -43,16 +43,16 @@ $ neuro acl grant image:resnet50 bob read
 $ neuro acl grant job:///my_job_id alice write
 ```
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## revoke
+### revoke
 Revoke user access from another user
 
-### Usage
+#### Usage
 
 ```bash
 neuro acl revoke [OPTIONS] URI USER
@@ -65,7 +65,7 @@ revoke.
 
 `USER` to revoke `URI` resource from.
 
-### Examples
+#### Examples
 
 ```bash
 $ neuro acl revoke storage:///sample_data/ alice
@@ -73,16 +73,16 @@ $ neuro acl revoke image:resnet50 bob
 $ neuro acl revoke job:///my_job_id alice
 ```
 
-### Options
+#### Options
 
 | Name     | Description                 |
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## list
+### list
 List shared resources
 
-### Usage
+#### Usage
 
 ```bash
 neuro acl list [OPTIONS]
@@ -96,7 +96,7 @@ current user (default).
 To display a list of resources shared `WITH` current
 user apply --shared option.
 
-### Examples
+#### Examples
 
 ```bash
 $ neuro acl list
@@ -105,7 +105,7 @@ $ neuro acl list --shared
 $ neuro acl list --shared --scheme image
 ```
 
-### Options
+#### Options
 
 | Name                  | Description                                                   |
 | --------------------- | ------------------------------------------------------------- |
