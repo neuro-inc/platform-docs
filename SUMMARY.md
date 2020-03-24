@@ -26,4 +26,7 @@
 * [Hierarchical Attention for Sentiment Classification](neu.ro-cookbook/hierarchical-attention-for-sentiment-classification.md)
 * [MIDI Generator](neu.ro-cookbook/midi-generator.md)
 * [Deep Q-Learning \(DQN\)](neu.ro-cookbook/deep-q-learning-dqn.md)
+* [CLI Reference](cli-reference/README.md)
+  * [Shortcuts](cli-reference/shortcuts.md)
+  * [Job](cli-reference/job.md)
 
