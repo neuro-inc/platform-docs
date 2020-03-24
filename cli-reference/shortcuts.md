@@ -1,5 +1,7 @@
 # Shortcuts
 
+## Commands
+
 - [neuro run](shortcuts.md#run): Run a job with predefined resources...
 - [neuro submit](shortcuts.md#submit): Submit an image to run on the cluster
 - [neuro ps](shortcuts.md#ps): List all jobs
@@ -22,7 +24,8 @@
 - [neuro pull](shortcuts.md#pull): Pull an image from platform registry
 - [neuro share](shortcuts.md#share): Shares resource with another user
 
-## run
+### run
+
 Run a job with predefined resources...
 
 #### Usage
@@ -77,7 +80,8 @@ $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg
 | `-t`, `--tty`                          | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                               | Show this message and exit.                                                                                                                                                                                              |
 
-## submit
+### submit
+
 Submit an image to run on the cluster
 
 #### Usage
@@ -137,7 +141,8 @@ $ neuro submit image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2 arg3
 | `-t`, `--tty`                                     | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                                          | Show this message and exit.                                                                                                                                                                                              |
 
-## ps
+### ps
+
 List all jobs
 
 #### Usage
@@ -175,7 +180,8 @@ $ neuro ps -t tag1 -t tag2
 | `--format COLUMNS`                                      | Output table format, see "neuro help ps-format" for more info about the format specification. The default can be changed using the job.ps-format configuration variable documented in "neuro help user-config" |
 | `--help`                                                | Show this message and exit.                                                                                                                                                                                    |
 
-## status
+### status
+
 Display status of a job
 
 #### Usage
@@ -192,7 +198,8 @@ Display status of a job.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## exec
+### exec
+
 Execute command in a running job
 
 #### Usage
@@ -223,7 +230,8 @@ $ neuro exec --no-tty my-job ls -l
 | `--timeout FLOAT`                | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`                         | Show this message and exit.                                                      |
 
-## port-forward
+### port-forward
+
 Forward port(s) of a running job to local...
 
 #### Usage
@@ -259,7 +267,8 @@ $ neuro job port-forward my-job- 2080:80 2222:22 2000:100
 | `--no-key-check` | Disable host key checks. Should be used with caution. |
 | `--help`         | Show this message and exit.                           |
 
-## logs
+### logs
+
 Print the logs for a container
 
 #### Usage
@@ -276,7 +285,8 @@ Print the logs for a container.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## kill
+### kill
+
 Kill job(s)
 
 #### Usage
@@ -293,7 +303,8 @@ Kill job(s).
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## top
+### top
+
 Display GPU/CPU/Memory usage
 
 #### Usage
@@ -311,7 +322,8 @@ Display `GPU`/`CPU`/Memory usage.
 | `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`          | Show this message and exit.                                                      |
 
-## save
+### save
+
 Save job's state to an image
 
 #### Usage
@@ -336,7 +348,8 @@ $ neuro job save my-favourite-job image://bob/ubuntu-patched
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## login
+### login
+
 Log into Neuro Platform
 
 #### Usage
@@ -355,7 +368,8 @@ Log into Neuro Platform.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## logout
+### logout
+
 Log out
 
 #### Usage
@@ -372,7 +386,8 @@ Log out.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## cp
+### cp
+
 Copy files and directories
 
 #### Usage
@@ -435,7 +450,8 @@ $ neuro cp storage:results/*.out .
 | `-p`, `--progress` / `-P`, `--no-progress` | Show progress, on by default.                                                                                                                                                               |
 | `--help`                                   | Show this message and exit.                                                                                                                                                                 |
 
-## ls
+### ls
+
 List directory contents
 
 #### Usage
@@ -460,7 +476,8 @@ By default `PATH` is equal user's home dir
 | `-a`, `--all`             | do not ignore entries starting with .                |
 | `--help`                  | Show this message and exit.                          |
 
-## rm
+### rm
+
 Remove files or directories
 
 #### Usage
@@ -489,7 +506,8 @@ $ neuro rm storage:foo/**/*.tmp
 | `--glob` / `--no-glob` | Expand glob patterns in PATHS  _[default: True]_  |
 | `--help`               | Show this message and exit.                       |
 
-## mkdir
+### mkdir
+
 Make directories
 
 #### Usage
@@ -507,7 +525,8 @@ Make directories.
 | `-p`, `--parents` | No error if existing, make parent directories as needed |
 | `--help`          | Show this message and exit.                             |
 
-## mv
+### mv
+
 Move or rename files and directories
 
 #### Usage
@@ -556,7 +575,8 @@ $ neuro mv storage://{username}/foo.txt storage:bar.dat
 | `-T`, `--no-target-directory`        | Treat DESTINATION as a normal file                 |
 | `--help`                             | Show this message and exit.                        |
 
-## images
+### images
+
 List images
 
 #### Usage
@@ -574,7 +594,8 @@ List images.
 | `-l`     | List in long format.        |
 | `--help` | Show this message and exit. |
 
-## push
+### push
+
 Push an image to platform registry
 
 #### Usage
@@ -607,7 +628,8 @@ $ neuro push alpine image://myfriend/alpine:shared
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-## pull
+### pull
+
 Pull an image from platform registry
 
 #### Usage
@@ -638,7 +660,8 @@ $ neuro pull image://username/my-alpine:production alpine:from-registry
 | `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 | `--help`        | Show this message and exit.            |
 
-## share
+### share
+
 Shares resource with another user
 
 #### Usage

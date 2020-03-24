@@ -24,7 +24,8 @@ Client configuration.
 - [neuro config docker](config.md#docker): Configure docker client to fit the Neuro...
 - [neuro config logout](config.md#logout): Log out
 
-## login
+### login
+
 Log into Neuro Platform
 
 #### Usage
@@ -43,7 +44,8 @@ Log into Neuro Platform.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## login-with-token
+### login-with-token
+
 Log into Neuro Platform with token
 
 #### Usage
@@ -64,7 +66,8 @@ by administration team.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## login-headless
+### login-headless
+
 Log into Neuro Platform from non-GUI server...
 
 #### Usage
@@ -95,7 +98,8 @@ process.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show
+### show
+
 Print current settings
 
 #### Usage
@@ -112,7 +116,8 @@ Print current settings.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show-token
+### show-token
+
 Print current authorization token
 
 #### Usage
@@ -129,7 +134,8 @@ Print current authorization token.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## show-quota
+### show-quota
+
 Print quota and remaining computation time...
 
 #### Usage
@@ -146,7 +152,8 @@ Print quota and remaining computation time for active cluster.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## aliases
+### aliases
+
 List available command aliases
 
 #### Usage
@@ -163,7 +170,8 @@ List available command aliases.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## get-clusters
+### get-clusters
+
 Fetch and display the list of available...
 
 #### Usage
@@ -180,7 +188,8 @@ Fetch and display the list of available clusters.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## switch-cluster
+### switch-cluster
+
 Switch the active cluster
 
 #### Usage
@@ -201,7 +210,8 @@ name is omitted (default).
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## docker
+### docker
+
 Configure docker client to fit the Neuro...
 
 #### Usage
@@ -219,7 +229,8 @@ Configure docker client to fit the Neuro Platform.
 | `--docker-config PATH` | Specifies the location of the Docker client configuration files |
 | `--help`               | Show this message and exit.                                     |
 
-## logout
+### logout
+
 Log out
 
 #### Usage

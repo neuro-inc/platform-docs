@@ -16,7 +16,8 @@ Access Control List management.
 - [neuro acl revoke](acl.md#revoke): Revoke user access from another user
 - [neuro acl list](acl.md#list): List shared resources
 
-## grant
+### grant
+
 Shares resource with another user
 
 #### Usage
@@ -49,7 +50,8 @@ $ neuro acl grant job:///my_job_id alice write
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## revoke
+### revoke
+
 Revoke user access from another user
 
 #### Usage
@@ -79,7 +81,8 @@ $ neuro acl revoke job:///my_job_id alice
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## list
+### list
+
 List shared resources
 
 #### Usage

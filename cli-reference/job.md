@@ -25,7 +25,8 @@ Job operations.
 - [neuro job save](job.md#save): Save job's state to an image
 - [neuro job browse](job.md#browse): Opens a job's URL in a web browser
 
-## run
+### run
+
 Run a job with predefined resources...
 
 #### Usage
@@ -80,7 +81,8 @@ $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg
 | `-t`, `--tty`                          | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                               | Show this message and exit.                                                                                                                                                                                              |
 
-## submit
+### submit
+
 Submit an image to run on the cluster
 
 #### Usage
@@ -140,7 +142,8 @@ $ neuro submit image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2 arg3
 | `-t`, `--tty`                                     | Allocate a TTY                                                                                                                                                                                                           |
 | `--help`                                          | Show this message and exit.                                                                                                                                                                                              |
 
-## ls
+### ls
+
 List all jobs
 
 #### Usage
@@ -178,7 +181,8 @@ $ neuro ps -t tag1 -t tag2
 | `--format COLUMNS`                                      | Output table format, see "neuro help ps-format" for more info about the format specification. The default can be changed using the job.ps-format configuration variable documented in "neuro help user-config" |
 | `--help`                                                | Show this message and exit.                                                                                                                                                                                    |
 
-## status
+### status
+
 Display status of a job
 
 #### Usage
@@ -195,7 +199,8 @@ Display status of a job.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## tags
+### tags
+
 List all tags submitted by the user
 
 #### Usage
@@ -212,7 +217,8 @@ List all tags submitted by the user.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## exec
+### exec
+
 Execute command in a running job
 
 #### Usage
@@ -243,7 +249,8 @@ $ neuro exec --no-tty my-job ls -l
 | `--timeout FLOAT`                | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`                         | Show this message and exit.                                                      |
 
-## port-forward
+### port-forward
+
 Forward port(s) of a running job to local...
 
 #### Usage
@@ -279,7 +286,8 @@ $ neuro job port-forward my-job- 2080:80 2222:22 2000:100
 | `--no-key-check` | Disable host key checks. Should be used with caution. |
 | `--help`         | Show this message and exit.                           |
 
-## logs
+### logs
+
 Print the logs for a container
 
 #### Usage
@@ -296,7 +304,8 @@ Print the logs for a container.
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## kill
+### kill
+
 Kill job(s)
 
 #### Usage
@@ -313,7 +322,8 @@ Kill job(s).
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## top
+### top
+
 Display GPU/CPU/Memory usage
 
 #### Usage
@@ -331,7 +341,8 @@ Display `GPU`/`CPU`/Memory usage.
 | `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
 | `--help`          | Show this message and exit.                                                      |
 
-## save
+### save
+
 Save job's state to an image
 
 #### Usage
@@ -356,7 +367,8 @@ $ neuro job save my-favourite-job image://bob/ubuntu-patched
 | -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-## browse
+### browse
+
 Opens a job's URL in a web browser
 
 #### Usage
