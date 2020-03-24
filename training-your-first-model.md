@@ -4,7 +4,7 @@
 
 In this tutorial, we describe the recommended way to train a simple machine learning model on Neuro Platform. As our ML engineers prefer PyTorch over other ML frameworks, we show the training and evaluation of one of the basic PyTorch examples.
 
-We assume that you have already signed up to the platform, installed the Neuro CLI, and logged into the platform \(see [Getting Started](getting-started/)\).
+We assume that you have already signed up to the platform, installed the Neuro CLI, and logged into the platform \(see [Getting Started](getting-started.md)\).
 
 We base our example on the [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
 
