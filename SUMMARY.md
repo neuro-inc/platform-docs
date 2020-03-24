@@ -29,4 +29,6 @@
 * [CLI Reference](cli-reference/README.md)
   * [Shortcuts](cli-reference/shortcuts.md)
   * [Job](cli-reference/job.md)
+* [Python API Reference](https://neuromation-sdk.readthedocs.io/en/latest/)
+* [FAQ](faq.md)
 
