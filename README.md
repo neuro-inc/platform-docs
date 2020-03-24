@@ -15,7 +15,7 @@ If you want to dig deeper, take a look at various ML development guides we caref
 * [Experiment tracking with Weights and Biases](neu.ro-toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Remote debugging with PyCharm Professional](neu.ro-toolbox/remote-debugging-with-pycharm-professional.md)
 
-Also, take a look at our [CLI reference](cli-reference/) and [Python API reference](https://neuromation-sdk.readthedocs.io/en/latest/).
+Also, take a look at our [CLI reference](references/cli-reference/) and [Python API reference](https://neuromation-sdk.readthedocs.io/en/latest/).
 
-To get help, refer [FAQ](faq.md) or contact us at [team@neu.ro](mailto:team@neu.ro).
+To get help, refer [FAQ](references/faq.md) or contact us at [team@neu.ro](mailto:team@neu.ro).
 
