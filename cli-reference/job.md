@@ -1,10 +1,8 @@
-# Job
-
-
+# job
 
 Job operations
 
-#### Usage
+## Usage
 
 ```bash
 neuro job [OPTIONS] COMMAND [ARGS]...
@@ -12,26 +10,25 @@ neuro job [OPTIONS] COMMAND [ARGS]...
 
 Job operations.
 
-#### Commands
+## Commands
 
-* [neuro job run](job.md#run): Run a job with predefined resources...
-* [neuro job submit](docs/cli/job#submit): Submit an image to run on the cluster
-* [neuro job ls](docs/cli/job#ls): List all jobs
-* [neuro job status](docs/cli/job#status): Display status of a job
-* [neuro job tags](docs/cli/job#tags): List all tags submitted by the user
-* [neuro job exec](docs/cli/job#exec): Execute command in a running job
-* [neuro job port-forward](docs/cli/job#port-forward): Forward port\(s\) of a running job to local...
-* [neuro job logs](docs/cli/job#logs): Print the logs for a container
-* [neuro job kill](docs/cli/job#kill): Kill job\(s\)
-* [neuro job top](docs/cli/job#top): Display GPU/CPU/Memory usage
-* [neuro job save](docs/cli/job#save): Save job's state to an image
-* [neuro job browse](docs/cli/job#browse): Opens a job's URL in a web browser
+- [neuro job run](job.md#run): Run a job with predefined resources...
+- [neuro job submit](job.md#submit): Submit an image to run on the cluster
+- [neuro job ls](job.md#ls): List all jobs
+- [neuro job status](job.md#status): Display status of a job
+- [neuro job tags](job.md#tags): List all tags submitted by the user
+- [neuro job exec](job.md#exec): Execute command in a running job
+- [neuro job port-forward](job.md#port-forward): Forward port(s) of a running job to local...
+- [neuro job logs](job.md#logs): Print the logs for a container
+- [neuro job kill](job.md#kill): Kill job(s)
+- [neuro job top](job.md#top): Display GPU/CPU/Memory usage
+- [neuro job save](job.md#save): Save job's state to an image
+- [neuro job browse](job.md#browse): Opens a job's URL in a web browser
 
-### run
-
+## run
 Run a job with predefined resources...
 
-#### Usage
+### Usage
 
 ```bash
 neuro job run [OPTIONS] IMAGE [CMD]...
@@ -39,13 +36,15 @@ neuro job run [OPTIONS] IMAGE [CMD]...
 
 Run a job with predefined resources configuration.
 
-`IMAGE` container image name.
+`IMAGE` container image
+name.
 
 `CMD` list will be passed as commands to model container.
 
-#### Examples
+### Examples
 
 ```bash
+
 # Starts a container pytorch:latest on a machine with smaller GPU resources
 # (see exact values in `neuro config show`) and with two volumes mounted:
 #   storage://<home-directory>   --> /var/storage/home (in read-write mode),
@@ -57,35 +56,34 @@ $ neuro run --preset=gpu-small --volume=HOME pytorch:latest
 $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2
 ```
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-s`, `--preset PRESET` | Predefined resource configuration \(to see available values, run `neuro config show`\) |
-| `-x`, `--extshm` / `-X`, `--no-extshm` | Request extended '/dev/shm' space  _\[default: True\]_ |
-| `--http PORT` | Enable HTTP port forwarding to container  _\[default: 80\]_ |
-| `--http-auth` / `--no-http-auth` | Enable HTTP authentication for forwarded HTTP port  _\[default: True\]_ |
-| `-n`, `--name NAME` | Optional job name |
-| `--tag TAG` | Optional job tag, multiple values allowed |
-| `-d`, `--description DESC` | Optional job description in free format |
-| `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |
-| `-v`, `--volume MOUNT` | Mounts directory from vault into container. Use multiple options to mount more than one volume. --volume=HOME is an alias for storage::/var/storage/home:rw and storage://neuromation/public:/var/storage/neuromation:ro |
-| `--entrypoint TEXT` | Executable entrypoint in the container \(note that it overwrites `ENTRYPOINT` and `CMD` instructions of the docker image\) |
-| `-e`, `--env VAR=VAL` | Set environment variable in container Use multiple options to define more than one variable |
-| `--env-file PATH` | File with environment variables to pass |
-| `--life-span TIMEDELTA` | Optional job run-time limit in the format '1d2h3m4s' \(some parts may be missing\). Set '0' to disable. Default value '1d' can be changed in the user config. |
-| `--wait-start` / `--no-wait-start` | Wait for a job start or failure  _\[default: True\]_ |
-| `--pass-config` / `--no-pass-config` | Upload neuro config to the job  _\[default: False\]_ |
-| `--browse` | Open a job's URL in a web browser |
-| `--detach` | Don't attach to job logs and don't wait for exit code |
-| `-t`, `--tty` | Allocate a TTY |
-| `--help` | Show this message and exit. |
+| Name                                   | Description                                                                                                                                                                                                              |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `-s`, `--preset PRESET`                | Predefined resource configuration (to see available values, run `neuro config show`)                                                                                                                                     |
+| `-x`, `--extshm` / `-X`, `--no-extshm` | Request extended '/dev/shm' space  _[default: True]_                                                                                                                                                                     |
+| `--http PORT`                          | Enable HTTP port forwarding to container  _[default: 80]_                                                                                                                                                                |
+| `--http-auth` / `--no-http-auth`       | Enable HTTP authentication for forwarded HTTP port  _[default: True]_                                                                                                                                                    |
+| `-n`, `--name NAME`                    | Optional job name                                                                                                                                                                                                        |
+| `--tag TAG`                            | Optional job tag, multiple values allowed                                                                                                                                                                                |
+| `-d`, `--description DESC`             | Optional job description in free format                                                                                                                                                                                  |
+| `-q`, `--quiet`                        | Run command in quiet mode (DEPRECATED)                                                                                                                                                                                   |
+| `-v`, `--volume MOUNT`                 | Mounts directory from vault into container. Use multiple options to mount more than one volume. --volume=HOME is an alias for storage::/var/storage/home:rw and storage://neuromation/public:/var/storage/neuromation:ro |
+| `--entrypoint TEXT`                    | Executable entrypoint in the container (note that it overwrites `ENTRYPOINT` and `CMD` instructions of the docker image)                                                                                                 |
+| `-e`, `--env VAR=VAL`                  | Set environment variable in container Use multiple options to define more than one variable                                                                                                                              |
+| `--env-file PATH`                      | File with environment variables to pass                                                                                                                                                                                  |
+| `--life-span TIMEDELTA`                | Optional job run-time limit in the format '1d2h3m4s' (some parts may be missing). Set '0' to disable. Default value '1d' can be changed in the user config.                                                              |
+| `--wait-start` / `--no-wait-start`     | Wait for a job start or failure  _[default: True]_                                                                                                                                                                       |
+| `--pass-config` / `--no-pass-config`   | Upload neuro config to the job  _[default: False]_                                                                                                                                                                       |
+| `--browse`                             | Open a job's URL in a web browser                                                                                                                                                                                        |
+| `--detach`                             | Don't attach to job logs and don't wait for exit code                                                                                                                                                                    |
+| `-t`, `--tty`                          | Allocate a TTY                                                                                                                                                                                                           |
+| `--help`                               | Show this message and exit.                                                                                                                                                                                              |
 
-### submit
-
+## submit
 Submit an image to run on the cluster
 
-#### Usage
+### Usage
 
 ```bash
 neuro job submit [OPTIONS] IMAGE [CMD]...
@@ -95,11 +93,13 @@ Submit an image to run on the cluster.
 
 `IMAGE` container image name.
 
-`CMD` list will be passed as commands to model container.
+`CMD`
+list will be passed as commands to model container.
 
-#### Examples
+### Examples
 
 ```bash
+
 # Starts a container pytorch:latest with two paths mounted. Directory /q1/
 # is mounted in read only mode to /qm directory within container.
 # Directory /mod mounted to /mod directory in read-write mode.
@@ -110,41 +110,40 @@ $ neuro submit --volume storage:/q1:/qm:ro --volume storage:/mod:/mod:rw pytorch
 $ neuro submit image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg2 arg3
 ```
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-g`, `--gpu NUMBER` | Number of GPUs to request  _\[default: 0\]_ |
-| `--gpu-model MODEL` | GPU to use  _\[default: nvidia-tesla-k80\]_ |
-| `--tpu-type TYPE` | TPU type to use |
-| `--tpu-sw-version VERSION` | Requested TPU software version |
-| `-c`, `--cpu NUMBER` | Number of CPUs to request  _\[default: 0.1\]_ |
-| `-m`, `--memory AMOUNT` | Memory amount to request  _\[default: 1G\]_ |
-| `-x`, `--extshm` / `-X`, `--no-extshm` | Request extended '/dev/shm' space  _\[default: True\]_ |
-| `--http PORT` | Enable HTTP port forwarding to container |
-| `--http-auth` / `--no-http-auth` | Enable HTTP authentication for forwarded HTTP port  _\[default: True\]_ |
-| `-p`, `--preemptible` / `-P`, `--non-preemptible` | Run job on a lower-cost preemptible instance  _\[default: False\]_ |
-| `-n`, `--name NAME` | Optional job name |
-| `--tag TAG` | Optional job tag, multiple values allowed |
-| `-d`, `--description DESC` | Optional job description in free format |
-| `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |
-| `-v`, `--volume MOUNT` | Mounts directory from vault into container. Use multiple options to mount more than one volume. --volume=HOME is an alias for storage::/var/storage/home:rw and storage://neuromation/public:/var/storage/neuromation:ro |
-| `--entrypoint TEXT` | Executable entrypoint in the container \(note that it overwrites `ENTRYPOINT` and `CMD` instructions of the docker image\) |
-| `-e`, `--env VAR=VAL` | Set environment variable in container Use multiple options to define more than one variable |
-| `--env-file PATH` | File with environment variables to pass |
-| `--life-span TIMEDELTA` | Optional job run-time limit in the format '1d2h3m4s' \(some parts may be missing\). Set '0' to disable. Default value '1d' can be changed in the user config. |
-| `--wait-start` / `--no-wait-start` | Wait for a job start or failure  _\[default: True\]_ |
-| `--pass-config` / `--no-pass-config` | Upload neuro config to the job  _\[default: False\]_ |
-| `--browse` | Open a job's URL in a web browser |
-| `--detach` | Don't attach to job logs and don't wait for exit code |
-| `-t`, `--tty` | Allocate a TTY |
-| `--help` | Show this message and exit. |
+| Name                                              | Description                                                                                                                                                                                                              |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `-g`, `--gpu NUMBER`                              | Number of GPUs to request  _[default: 0]_                                                                                                                                                                                |
+| `--gpu-model MODEL`                               | GPU to use  _[default: nvidia-tesla-k80]_                                                                                                                                                                                |
+| `--tpu-type TYPE`                                 | TPU type to use                                                                                                                                                                                                          |
+| `--tpu-sw-version VERSION`                        | Requested TPU software version                                                                                                                                                                                           |
+| `-c`, `--cpu NUMBER`                              | Number of CPUs to request  _[default: 0.1]_                                                                                                                                                                              |
+| `-m`, `--memory AMOUNT`                           | Memory amount to request  _[default: 1G]_                                                                                                                                                                                |
+| `-x`, `--extshm` / `-X`, `--no-extshm`            | Request extended '/dev/shm' space  _[default: True]_                                                                                                                                                                     |
+| `--http PORT`                                     | Enable HTTP port forwarding to container                                                                                                                                                                                 |
+| `--http-auth` / `--no-http-auth`                  | Enable HTTP authentication for forwarded HTTP port  _[default: True]_                                                                                                                                                    |
+| `-p`, `--preemptible` / `-P`, `--non-preemptible` | Run job on a lower-cost preemptible instance  _[default: False]_                                                                                                                                                         |
+| `-n`, `--name NAME`                               | Optional job name                                                                                                                                                                                                        |
+| `--tag TAG`                                       | Optional job tag, multiple values allowed                                                                                                                                                                                |
+| `-d`, `--description DESC`                        | Optional job description in free format                                                                                                                                                                                  |
+| `-q`, `--quiet`                                   | Run command in quiet mode (DEPRECATED)                                                                                                                                                                                   |
+| `-v`, `--volume MOUNT`                            | Mounts directory from vault into container. Use multiple options to mount more than one volume. --volume=HOME is an alias for storage::/var/storage/home:rw and storage://neuromation/public:/var/storage/neuromation:ro |
+| `--entrypoint TEXT`                               | Executable entrypoint in the container (note that it overwrites `ENTRYPOINT` and `CMD` instructions of the docker image)                                                                                                 |
+| `-e`, `--env VAR=VAL`                             | Set environment variable in container Use multiple options to define more than one variable                                                                                                                              |
+| `--env-file PATH`                                 | File with environment variables to pass                                                                                                                                                                                  |
+| `--life-span TIMEDELTA`                           | Optional job run-time limit in the format '1d2h3m4s' (some parts may be missing). Set '0' to disable. Default value '1d' can be changed in the user config.                                                              |
+| `--wait-start` / `--no-wait-start`                | Wait for a job start or failure  _[default: True]_                                                                                                                                                                       |
+| `--pass-config` / `--no-pass-config`              | Upload neuro config to the job  _[default: False]_                                                                                                                                                                       |
+| `--browse`                                        | Open a job's URL in a web browser                                                                                                                                                                                        |
+| `--detach`                                        | Don't attach to job logs and don't wait for exit code                                                                                                                                                                    |
+| `-t`, `--tty`                                     | Allocate a TTY                                                                                                                                                                                                           |
+| `--help`                                          | Show this message and exit.                                                                                                                                                                                              |
 
-### ls
-
+## ls
 List all jobs
 
-#### Usage
+### Usage
 
 ```bash
 neuro job ls [OPTIONS]
@@ -152,9 +151,10 @@ neuro job ls [OPTIONS]
 
 List all jobs.
 
-#### Examples
+### Examples
 
 ```bash
+
 $ neuro ps -a
 $ neuro ps -a --owner=user-1 --owner=user-2
 $ neuro ps --name my-experiments-v1 -s failed -s succeeded
@@ -163,26 +163,25 @@ $ neuro ps -s failed -s succeeded -q
 $ neuro ps -t tag1 -t tag2
 ```
 
-#### Options
+### Options
 
-| Name | Description |  |  |  |  |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `-s`, \`--status \[pending | running | succeeded | failed | all\]\` | Filter out jobs by status \(multiple option\). Note: option `all` is deprecated, use `neuro ps -a` instead. |
-| `-o`, `--owner TEXT` | Filter out jobs by owner \(multiple option\). |  |  |  |  |
-| `-a`, `--all` | Show all jobs regardless the status \(equivalent to `-s pending -s running -s succeeded -s failed`\). |  |  |  |  |
-| `-n`, `--name NAME` | Filter out jobs by name. |  |  |  |  |
-| `-t`, `--tag TAG` | Filter out jobs by tag \(multiple option\) |  |  |  |  |
-| `-d`, `--description DESCRIPTION` | Filter out jobs by description \(exact match\). |  |  |  |  |
-| `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |  |  |  |  |
-| `-w`, `--wide` | Do not cut long lines for terminal width. |  |  |  |  |
-| `--format COLUMNS` | Output table format, see "neuro help ps-format" for more info about the format specification. The default can be changed using the job.ps-format configuration variable documented in "neuro help user-config" |  |  |  |  |
-| `--help` | Show this message and exit. |  |  |  |  |
+| Name                                                    | Description                                                                                                                                                                                                    |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-s`, `--status [pending|running|succeeded|failed|all]` | Filter out jobs by status (multiple option). Note: option `all` is deprecated, use `neuro ps -a` instead.                                                                                                      |
+| `-o`, `--owner TEXT`                                    | Filter out jobs by owner (multiple option).                                                                                                                                                                    |
+| `-a`, `--all`                                           | Show all jobs regardless the status (equivalent to `-s pending -s running -s succeeded -s failed`).                                                                                                            |
+| `-n`, `--name NAME`                                     | Filter out jobs by name.                                                                                                                                                                                       |
+| `-t`, `--tag TAG`                                       | Filter out jobs by tag (multiple option)                                                                                                                                                                       |
+| `-d`, `--description DESCRIPTION`                       | Filter out jobs by description (exact match).                                                                                                                                                                  |
+| `-q`, `--quiet`                                         | Run command in quiet mode (DEPRECATED)                                                                                                                                                                         |
+| `-w`, `--wide`                                          | Do not cut long lines for terminal width.                                                                                                                                                                      |
+| `--format COLUMNS`                                      | Output table format, see "neuro help ps-format" for more info about the format specification. The default can be changed using the job.ps-format configuration variable documented in "neuro help user-config" |
+| `--help`                                                | Show this message and exit.                                                                                                                                                                                    |
 
-### status
-
+## status
 Display status of a job
 
-#### Usage
+### Usage
 
 ```bash
 neuro job status [OPTIONS] JOB
@@ -190,17 +189,16 @@ neuro job status [OPTIONS] JOB
 
 Display status of a job.
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### tags
-
+## tags
 List all tags submitted by the user
 
-#### Usage
+### Usage
 
 ```bash
 neuro job tags [OPTIONS]
@@ -208,17 +206,16 @@ neuro job tags [OPTIONS]
 
 List all tags submitted by the user.
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### exec
-
+## exec
 Execute command in a running job
 
-#### Usage
+### Usage
 
 ```bash
 neuro job exec [OPTIONS] JOB CMD...
@@ -226,9 +223,10 @@ neuro job exec [OPTIONS] JOB CMD...
 
 Execute command in a running job.
 
-#### Examples
+### Examples
 
 ```bash
+
 # Provides a shell to the container:
 $ neuro exec my-job /bin/bash
 
@@ -236,30 +234,30 @@ $ neuro exec my-job /bin/bash
 $ neuro exec --no-tty my-job ls -l
 ```
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-t`, `--tty` / `-T`, `--no-tty` | Allocate virtual tty. Useful for interactive jobs. |
-| `--no-key-check` | Disable host key checks. Should be used with caution. |
-| `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _\[default: 0\]_ |
-| `--help` | Show this message and exit. |
+| Name                             | Description                                                                      |
+| -------------------------------- | -------------------------------------------------------------------------------- |
+| `-t`, `--tty` / `-T`, `--no-tty` | Allocate virtual tty. Useful for interactive jobs.                               |
+| `--no-key-check`                 | Disable host key checks. Should be used with caution.                            |
+| `--timeout FLOAT`                | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
+| `--help`                         | Show this message and exit.                                                      |
 
-### port-forward
+## port-forward
+Forward port(s) of a running job to local...
 
-Forward port\(s\) of a running job to local...
-
-#### Usage
+### Usage
 
 ```bash
 neuro job port-forward [OPTIONS] JOB LOCAL_REMOTE_PORT...
 ```
 
-Forward port\(s\) of a running job to local port\(s\).
+Forward port(s) of a running job to local port(s).
 
-#### Examples
+### Examples
 
 ```bash
+
 # Forward local port 2080 to port 80 of job's container.
 # You can use http://localhost:2080 in browser to access job's served http
 $ neuro job port-forward my-fastai-job 2080:80
@@ -274,18 +272,17 @@ $ rsync -avxzhe ssh -p 2222 root@localhost:/data .
 $ neuro job port-forward my-job- 2080:80 2222:22 2000:100
 ```
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name             | Description                                           |
+| ---------------- | ----------------------------------------------------- |
 | `--no-key-check` | Disable host key checks. Should be used with caution. |
-| `--help` | Show this message and exit. |
+| `--help`         | Show this message and exit.                           |
 
-### logs
-
+## logs
 Print the logs for a container
 
-#### Usage
+### Usage
 
 ```bash
 neuro job logs [OPTIONS] JOB
@@ -293,35 +290,33 @@ neuro job logs [OPTIONS] JOB
 
 Print the logs for a container.
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### kill
+## kill
+Kill job(s)
 
-Kill job\(s\)
-
-#### Usage
+### Usage
 
 ```bash
 neuro job kill [OPTIONS] JOBS...
 ```
 
-Kill job\(s\).
+Kill job(s).
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### top
-
+## top
 Display GPU/CPU/Memory usage
 
-#### Usage
+### Usage
 
 ```bash
 neuro job top [OPTIONS] JOB
@@ -329,18 +324,17 @@ neuro job top [OPTIONS] JOB
 
 Display `GPU`/`CPU`/Memory usage.
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
-| `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _\[default: 0\]_ |
-| `--help` | Show this message and exit. |
+| Name              | Description                                                                      |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `--timeout FLOAT` | Maximum allowed time for executing the command, 0 for no timeout  _[default: 0]_ |
+| `--help`          | Show this message and exit.                                                      |
 
-### save
-
+## save
 Save job's state to an image
 
-#### Usage
+### Usage
 
 ```bash
 neuro job save [OPTIONS] JOB IMAGE
@@ -348,7 +342,7 @@ neuro job save [OPTIONS] JOB IMAGE
 
 Save job's state to an image.
 
-#### Examples
+### Examples
 
 ```bash
 $ neuro job save job-id image:ubuntu-patched
@@ -356,17 +350,16 @@ $ neuro job save my-favourite-job image:ubuntu-patched:v1
 $ neuro job save my-favourite-job image://bob/ubuntu-patched
 ```
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
-### browse
-
+## browse
 Opens a job's URL in a web browser
 
-#### Usage
+### Usage
 
 ```bash
 neuro job browse [OPTIONS] JOB
@@ -374,9 +367,8 @@ neuro job browse [OPTIONS] JOB
 
 Opens a job's `URL` in a web browser.
 
-#### Options
+### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
-

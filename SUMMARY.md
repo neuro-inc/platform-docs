@@ -23,9 +23,20 @@
 * [Hierarchical Attention for Sentiment Classification](neu.ro-cookbook/hierarchical-attention-for-sentiment-classification.md)
 * [MIDI Generator](neu.ro-cookbook/midi-generator.md)
 * [Deep Q-Learning \(DQN\)](neu.ro-cookbook/deep-q-learning-dqn.md)
+
+## References
+
 * [CLI Reference](cli-reference/README.md)
-  * [Shortcuts](cli-reference/shortcuts.md)
-  * [Job](cli-reference/job.md)
+  * [Shortcuts](cli-reference/shortcuts.md)  
+  * [job](cli-reference/job.md)
+  * [storage](cli-reference/storage.md)
+  * [image](cli-reference/image.md)
+  * [project](cli-reference/project.md)
+  * [config](cli-reference/config.md)
+  * [acl](cli-reference/acl.md)
+  * [admin](cli-reference/admin.md)
+  * [completion](cli-reference/completion.md)
+  * [Topics](cli-reference/topics.md)
 * [Python API Reference](https://neuromation-sdk.readthedocs.io/en/latest/)
 * [FAQ](faq.md)
 
