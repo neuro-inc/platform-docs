@@ -87,7 +87,7 @@ neuro config show
 Create a directory `demo` in your platform storage root:
 
 ```text
-neuro storage mkdir storage:demo
+neuro mkdir -p storage:demo
 ```
 
 Run a job which mounts `demo` directory on storage to `/demo` directory in the job container and creates a file in it:

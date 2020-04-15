@@ -4,25 +4,25 @@
 * [Getting Started](getting-started.md)
 * [Training Your First Model](training-your-first-model.md)
 
-## Neu.ro Core
+## Neu.ro Core <a id="core"></a>
 
-* [Platform Overview](neu.ro-core/platform-overview.md)
+* [Platform Overview](core/platform-overview.md)
 
-## Neu.ro Toolbox
+## Neu.ro Toolbox <a id="toolbox"></a>
 
-* [Accessing Object Storage in GCP](neu.ro-toolbox/accessing-object-storage-in-gcp.md)
-* [Accessing Object Storage in AWS](neu.ro-toolbox/accessing-object-storage-in-aws.md)
-* [Remote Debugging with PyCharm Professional](neu.ro-toolbox/remote-debugging-with-pycharm-professional.md)
-* [Experiment Tracking with Weights and Biases](neu.ro-toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Accessing Object Storage in GCP](toolbox/accessing-object-storage-in-gcp.md)
+* [Accessing Object Storage in AWS](toolbox/accessing-object-storage-in-aws.md)
+* [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Experiment Tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 
-## Neu.ro Cookbook
+## Neu.ro Cookbook <a id="cookbook"></a>
 
-* [Cookbook](neu.ro-cookbook/cookbook.md)
-* [Object Detection](neu.ro-cookbook/object-detection.md)
-* [Pediatric Bone Age Assessment](neu.ro-cookbook/pediatric-bone-age-assessment.md)
-* [Hierarchical Attention for Sentiment Classification](neu.ro-cookbook/hierarchical-attention-for-sentiment-classification.md)
-* [MIDI Generator](neu.ro-cookbook/midi-generator.md)
-* [Deep Q-Learning \(DQN\)](neu.ro-cookbook/deep-q-learning-dqn.md)
+* [Cookbook](cookbook/cookbook.md)
+* [Object Detection](cookbook/object-detection.md)
+* [Pediatric Bone Age Assessment](cookbook/pediatric-bone-age-assessment.md)
+* [Hierarchical Attention for Sentiment Classification](cookbook/hierarchical-attention-for-sentiment-classification.md)
+* [MIDI Generator](cookbook/midi-generator.md)
+* [Deep Q-Learning \(DQN\)](cookbook/deep-q-learning-dqn.md)
 
 ## References
 
