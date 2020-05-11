@@ -14,6 +14,7 @@
 * [Accessing Object Storage in AWS](toolbox/accessing-object-storage-in-aws.md)
 * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
 * [Experiment Tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Hyperparameter Tuning with Weights and Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 
 ## Neu.ro Cookbook <a id="cookbook"></a>
 
