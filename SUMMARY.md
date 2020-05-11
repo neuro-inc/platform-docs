@@ -15,6 +15,7 @@
 * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
 * [Experiment Tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Hyperparameter Tuning with Weights and Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
+* [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 
 ## Neu.ro Cookbook <a id="cookbook"></a>
 
