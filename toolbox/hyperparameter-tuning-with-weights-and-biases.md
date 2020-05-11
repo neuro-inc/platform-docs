@@ -86,7 +86,7 @@ wandb.log({'accuracy': 0.9})
 
 1. `wandb-sweep.yaml` has the following structure:
 
-![wandb-sweep.yaml example](https://blog.neu.ro/assets/wandb-yaml.png)
+![wandb-sweep.yaml example](../.gitbook/assets/wandb-yaml.png)
 
 * Line 1: `/../train.py` is a default path to a file with model training code.
 * Line 2: a method that is used for the hyperparameters tuning. For more information, see W&B docs.
