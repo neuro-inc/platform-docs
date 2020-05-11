@@ -10,7 +10,7 @@ In this tutorial, we show how to start working with Neu.ro:
 
 To start working with CLI, you have two options:
 
-* Use [Web Terminal](https://apps.neu.ro/shell)
+* Use [Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-public)
 * Install Neu.ro CLI on your machine and run `neuro login`
 
 The first option is recommended for exporing the platform. The second option, though, is better when working on your projects.
