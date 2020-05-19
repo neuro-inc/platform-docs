@@ -13,9 +13,9 @@
 * [Accessing Object Storage in GCP](toolbox/accessing-object-storage-in-gcp.md)
 * [Accessing Object Storage in AWS](toolbox/accessing-object-storage-in-aws.md)
 * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Experiment Tracking with Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Hyperparameter Tuning with NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
-* [Experiment Tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Hyperparameter Tuning with Weights and Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 
 ## Neu.ro Cookbook <a id="cookbook"></a>
