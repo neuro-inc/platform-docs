@@ -9,6 +9,7 @@
 
 * [Platform Overview](core/platform-overview.md)
 * [Environments \(Docker images\)](core/environments-docker-images.md)
+* [Storage](core/storage.md)
 * [Clusters \(Resources\)](core/clusters-resources.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
