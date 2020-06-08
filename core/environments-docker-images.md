@@ -50,13 +50,13 @@ When a job is created, it is added to the queue and its status is set to Pending
 
 For more information, see the [CLI Reference for Run](../references/cli-reference/).
 
-You can view the list of jobs currently running using the command: `neuro ps`. This also lists the job-id of the jobs. You can terminate a job using the command: `neuro kill <job-id>`. 
+You can view the list of jobs currently running using the command: `neuro ps`. This also lists the job-id of the jobs. You can terminate a job using the command: `neuro kill <job-id>`.
 
 ### **How can I view all images that I have access to?**
 
 Neu.ro lets you create multiple images, and you view information about the images that you own or have access to from the command prompt. To view all images, you must run the command:
 
-`neuro image ls [OPTIONS]` 
+`neuro image ls [OPTIONS]`
 
 **Sample Output**
 
@@ -77,24 +77,23 @@ You can view the tags for an image by running the command:
 image://neuro-public/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
 
-Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](https://docs.google.com/document/d/1m8UXbxcjruOuBnlTTuRe7GsvjPSudjMcMp4nQaYV020/edit#heading=h.1i45ap465lyc).  
-
+Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](https://docs.google.com/document/d/1m8UXbxcjruOuBnlTTuRe7GsvjPSudjMcMp4nQaYV020/edit#heading=h.1i45ap465lyc).
 
 ### **How can I upload a custom image to the platform registry?**
 
-Neu.ro provides a base public Docker image based on deepo. You can customize the base image by installing or configuring packages, or updating settings by providing the docker engine instructions. You can pass instructions for image customization using Dockerfiles.   
+Neu.ro provides a base public Docker image based on deepo. You can customize the base image by installing or configuring packages, or updating settings by providing the docker engine instructions. You can pass instructions for image customization using Dockerfiles.
 
-Neu.ro lets you upload your custom image to the platform that can be then used to run jobs. You can also share this custom image with your co-workers. It is a best practice to add tags to your image for better tracking.  
+Neu.ro lets you upload your custom image to the platform that can be then used to run jobs. You can also share this custom image with your co-workers. It is a best practice to add tags to your image for better tracking.
 
 To upload a custom image, run this command:
 
-`neuro image push [OPTIONS] LOCAL_IMAGE [REMOTE_IMAGE]`  
+`neuro image push [OPTIONS] LOCAL_IMAGE [REMOTE_IMAGE]`
 
 **Parameters**
 
 | Name | Description |
 | :--- | :--- |
-| LOCAL\_IMAGE | The local custom image that you want to upload. The image name should not contain “image://”.  |
+| LOCAL\_IMAGE | The local custom image that you want to upload. The image name should not contain “image://”. |
 | REMOTE\_IMAGE | The remote image to which you want to upload. |
 
 **Sample Output**
@@ -107,7 +106,7 @@ Pushing image neuromation-nero-assistant => image://neuro-public/mrsmariyadavydo
 > 9dfa40a0da3b: Pushing [===============> ] 1.219MB/3.966MB
 ```
 
-After pushing the image, run the neuro image ls command to check if the push has worked. If the push was successful, then you should see the local image as well as the platform image.  
+After pushing the image, run the neuro image ls command to check if the push has worked. If the push was successful, then you should see the local image as well as the platform image.
 
 ```text
 > neuro images
@@ -118,12 +117,12 @@ image:neuromation-nero-assistant
 
 ### **How can I save a running job as a custom image?**
 
-There are several ways in which you can create custom images. You can create a custom image out of a running job. Before you save a job, you must know the id or name of the job you want to save.  
+There are several ways in which you can create custom images. You can create a custom image out of a running job. Before you save a job, you must know the id or name of the job you want to save.
 
 You can use the neuro job save command to save a job as a custom image:
 
 `neuro job save [JOB] [IMAGE]`
-  
+
 **Parameters**
 
 | Name | Description |
@@ -146,11 +145,11 @@ Pushing image clarytyllc/ubuntu-custom:latest => image://neuro-public/clarytyllc
 image://neuro-public/clarytyllc/ubuntu-custom:latest
 ```
 
-We have saved the job **job363** as a custom image **ubuntu-custom**.   
+We have saved the job **job363** as a custom image **ubuntu-custom**.
 
 ### **How can I use an image from a platform registry?**
 
-Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments \(or containers\) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and memory to be used by the job.  
+Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments \(or containers\) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and memory to be used by the job.
 
 You can use the neuro run command to run a job:
 
@@ -185,23 +184,22 @@ job with `--detach` option.
 Hello World
 ```
 
-We have run a named job **job363** using a small CPU resource preset on the patched ubuntu image.   
-
+We have run a named job **job363** using a small CPU resource preset on the patched ubuntu image.
 
 ### **How do I download an image from the platform registry?**
 
-Neu.ro lets you pull images from the platform registry. You can specify tags of the images to pull a certain tag; else, the image with the latest tag is pulled.  
+Neu.ro lets you pull images from the platform registry. You can specify tags of the images to pull a certain tag; else, the image with the latest tag is pulled.
 
 To pull an image from the platform, run this command:
 
-`neuro image pull [OPTIONS] REMOTE_IMAGE [LOCAL_IMAGE]`  
+`neuro image pull [OPTIONS] REMOTE_IMAGE [LOCAL_IMAGE]`
 
 **Parameters**
 
 | Name | Description |
 | :--- | :--- |
 | REMOTE\_IMAGE | The remote image that you want to pull. |
-| \[LOCAL\_IMAGE\] | The local custom image that you want to pull to. The image name should not contain “image://”.  |
+| \[LOCAL\_IMAGE\] | The local custom image that you want to pull to. The image name should not contain “image://”. |
 
 **Sample Output**
 
@@ -215,15 +213,15 @@ To pull an image from the platform, run this command:
 > 8d6a6e6d0908: Download complete
 ```
 
-## How do I share custom images with my teammates?
+### How do I share custom images with my teammates?
 
-Neu.ro lets you share your custom image with your team without having to upload the image to a platform. You could opt to push your custom image to the public registry if you want to share your custom image with a large audience.  
+Neu.ro lets you share your custom image with your team without having to upload the image to a platform. You could opt to push your custom image to the public registry if you want to share your custom image with a large audience.
 
 To share your image, run the command:
 
-`neuro share [OPTIONS] URI USER [read|write|manage]`  
+`neuro share [OPTIONS] URI USER [read|write|manage]`
 
-The access you want to give the USER to the shared image:
+The permissions you may give the USER to the shared image:
 
 * Read: User can only view the image and not make any changes.
 * Write: Provided user can make changes to the image.
@@ -231,4 +229,5 @@ The access you want to give the USER to the shared image:
 
 **Sample command**
 
-`neuro share image://neuro-public/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`  
+`neuro share image://neuro-public/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
+
