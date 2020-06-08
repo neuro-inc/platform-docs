@@ -77,7 +77,7 @@ You can view the tags for an image by running the command:
 image://neuro-public/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
 
-Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](https://docs.google.com/document/d/1m8UXbxcjruOuBnlTTuRe7GsvjPSudjMcMp4nQaYV020/edit#heading=h.1i45ap465lyc).
+Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](environments-docker-images.md#how-can-i-upload-a-custom-image-to-the-platform-registry).
 
 ### **How can I upload a custom image to the platform registry?**
 
