@@ -8,6 +8,7 @@
 ## Neu.ro Core <a id="core"></a>
 
 * [Platform Overview](core/platform-overview.md)
+* [Environments \(Docker images\)](core/environments-docker-images.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
 
