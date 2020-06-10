@@ -41,6 +41,7 @@
   * [project](references/cli-reference/project.md)
   * [config](references/cli-reference/config.md)
   * [acl](references/cli-reference/acl.md)
+  * [blob](references/cli-reference/blob.md)
   * [admin](references/cli-reference/admin.md)
   * [completion](references/cli-reference/completion.md)
   * [Topics](references/cli-reference/topics.md)

@@ -30,9 +30,11 @@ Shares resource with another user.
 
 `URI` shared resource.
 
-`USER` username to share resource with.
+`USER` username to
+share resource with.
 
-`PERMISSION` sharing access right: read, write, or manage.
+`PERMISSION` sharing access right: read, write, or
+manage.
 
 #### Examples
 
@@ -44,8 +46,8 @@ $ neuro acl grant job:///my_job_id alice write
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### revoke
@@ -60,7 +62,8 @@ neuro acl revoke [OPTIONS] URI USER
 
 Revoke user access from another user.
 
-`URI` previously shared resource to revoke.
+`URI` previously shared resource to
+revoke.
 
 `USER` to revoke `URI` resource from.
 
@@ -74,8 +77,8 @@ $ neuro acl revoke job:///my_job_id alice
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### list
@@ -90,9 +93,11 @@ neuro acl list [OPTIONS]
 
 List shared resources.
 
-The command displays a list of resources shared BY current user \(default\).
+The command displays a list of resources shared BY
+current user (default).
 
-To display a list of resources shared `WITH` current user apply --shared option.
+To display a list of resources shared `WITH` current
+user apply --shared option.
 
 #### Examples
 
@@ -105,10 +110,10 @@ $ neuro acl list --shared --scheme image
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-u TEXT` | Use specified user or role. |
+| Name                  | Description                                                   |
+| --------------------- | ------------------------------------------------------------- |
+| `-u TEXT`             | Use specified user or role.                                   |
 | `-s`, `--scheme TEXT` | Filter resources by scheme, e.g. job, storage, image or user. |
-| `--shared` | Output the resources shared by the user. |
-| `--help` | Show this message and exit. |
-
+| `--shared`            | Output the resources shared by the user.                      |
+| `--full-uri`          | Output full URI.                                              |
+| `--help`              | Show this message and exit.                                   |
