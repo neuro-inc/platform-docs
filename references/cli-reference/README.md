@@ -15,3 +15,4 @@ Installation process is decribed in [Getting Started](../../getting-started.md#i
 * [neuro admin](admin.md): cluster administration
 * [neuro completion](completion.md): shell completion code generation
 * [Topics](topics.md): additional information \(e.g. user config location and format\)
+

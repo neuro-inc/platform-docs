@@ -29,7 +29,6 @@ Initialize an empty project.
 #### Examples
 
 ```bash
-
 # Initializes a scaffolding for the new project with the recommended project
 # structure (see http://github.com/neuromation/cookiecutter-neuro-project)
 $ neuro project init
@@ -41,6 +40,7 @@ $ neuro project init my-project-id
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
+
