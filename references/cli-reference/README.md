@@ -11,9 +11,7 @@ Installation process is decribed in [Getting Started](../../getting-started.md#i
 * [neuro project](project.md): project operations
 * [neuro config](config.md): client configuration
 * [neuro acl](acl.md): permissions and access management
+* [neuro blob](blob.md): blob storage operations
 * [neuro admin](admin.md): cluster administration
 * [neuro completion](completion.md): shell completion code generation
 * [Topics](topics.md): additional information \(e.g. user config location and format\)
-
-
-
