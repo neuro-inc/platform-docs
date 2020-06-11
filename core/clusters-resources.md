@@ -1,12 +1,12 @@
-# Clusters \(Resources\)
+# Кластеры \(Ресурсы\)
 
-Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster neuro-public. You have the option of creating new clusters; however, you would need additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).
+Кластер является набором ресурсов - вычислительных, дисковых, репозиториев. Когда вы регистрируетесь на Neu.ro, мы предоставляем Вам доступ к нашему общедоступному кластеру neuro-public. Вы можете создавать новые кластеры, однако для этого потребуется дополнительный доступ. Для получения дополнительной информации обращайтесь [team@neu.ro](mailto:team@neu.ro).
 
-You can use one cluster at a time and have the option of switching clusters at any time. This tutorial helps you understand how you can manage resources.
+Вы можете использовать один кластер, а затем переключиться на другой. Данное руководство поможет вам понять, как Вы можете управлять ресурсами.
 
-### **How do I view my current cluster and its details?**
+### **Как посмотреть информацию о моем текущем кластере?**
 
-Each cluster comes with its own set of presets, storage, and registry. You can use the `neuro config show` command to view your current cluster and its details.
+Каждый кластер имеет свой собственный набор настроек, дисковое пространство и репозиторий. Вы можете использовать команду `neuro config show` для просмотра Вашего текущего кластера и детальной информации о нем.
 
 ```text
 > neuro config show
@@ -25,11 +25,11 @@ User Configuration:
     gpu-large-p   7.0   57.0G      Yes      1 x nvidia-tesla-v100
 ```
 
-The command displays the configuration of the current cluster, such as the cluster name, API URL, docker registry URL, and the list of presets available for the cluster.
+Команда отображает конфигурацию текущего кластера, такую как имя кластера, API URL, URL-адрес репозитория Docker и список настроек, доступных для кластера.
 
-### **How do I view all my clusters and switch my current cluster?**
+### **Как просмотреть все мои кластеры и переключиться с текущего кластера?**
 
-You can view the clusters that you have access to and their details. You can use the ****`neuro config get-clusters` command to view the list of clusters that you have access to.
+Вы можете просмотреть информацию о кластерах, к которым у Вас есть доступ. Для этого надо использовать команду `neuro config get-clusters`.
 
 ```text
 > neuro config get-clusters
@@ -53,7 +53,7 @@ Available clusters:
     gpu-large    46  120.0G       No      2 x nvidia-geforce-rtx-2080ti
 ```
 
-You can switch between clusters by using the `neuro config switch-cluster` command. When you run the command, you are prompted to enter the name cluster that you want to switch to. The current cluster is switched after you provide the name.
+Чтобы перейти с одного кластера на другой необходимо использовать команду `neuro config switch-cluster`. После ввода команды Вам будет предложено ввести имя кластера, на который Вы хотите перейти. Переключение происходит после ввода имени.
 
 ```text
 > neuro config switch-cluster
@@ -80,15 +80,15 @@ Select cluster to switch [neuro-public]: onprem
 The current cluster is onprem
 ```
 
-### **How do I view my computation quota?**
+### **Как посмотреть мои квоты вычислительных ресурсов?**
 
-You are assigned a computation quota of 100 GPU hours when you sign-up with neu.ro. This quota is used whenever you run a job. Neu.ro provides unlimited hours of CPU that you can use for your jobs.
+При регистрации на neu.ro Вам дается квота вычислений в 100 часов работы GPU. Эта квота используется всякий раз, когда вы запускаете задания. Neu.ro предоставляет неограниченные часы работы CPU, которые вы можете использовать для своей работы.
 
-You can view the remaining computation quota on your dashboard.
+Вы можете просмотреть оставшуюся квоту вычислительных ресурсов на панели инструментов.
 
 ![Neu.ro Dashboard](../.gitbook/assets/cluster_dashboard.jpg)
 
-You can also use the neuro config show-quota command to view the amount of computation quota left.
+Оставшуюся квоту также можно посмотреть при помощи команды neuro config show-quota.
 
 ```text
 > neuro config show-quota
@@ -96,15 +96,15 @@ GPU: spent: 35h 54m (quota: 100h 00m, left: 64h 06m)
 CPU: spent: 168h 49m (quota: infinity)
 ```
 
-### How do I request for more computation quota?
+### Как запросить дополнительную квоту вычислений?
 
-You can top up your computation quota by clicking on the **Top Up** button on the dashboard.
+Вы можете пополнить квоту вычислений, нажав кнопку **Top Up** в панели инструментов.
 
 ![Top Up button](../.gitbook/assets/cluster_topup.jpg)
 
-You can also write to [team@neu.ro](mailto:team@neu.ro) to know about latest discounts and promotions, and then request the top up.
+Вы можете написать на [team@neu.ro](mailto:team@neu.ro), чтобы узнать о последних скидках и акциях, а так же запросить пополнение.
 
-### How can I create a new cluster? 
+### Как я могу создать новый кластер?
 
-Neu.ro lets you create new clusters for better management and orchestration of resources. However, you must remember that the new cluster would require more computation quota. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for the cluster. You can create a cluster by writing to us at  [team@neu.ro](mailto:team@neu.ro).
+Neu.ro позволяет создавать новые кластеры для лучшего управления и координации ресурсов. Однако Вы должны помнить, что для нового кластера возможно потребуется большая квота вычислительных ресурсов. Прежде чем создавать кластер, Вы должны выбрать настройки, дисковое пространство и репозиторий, которые Вы хотите назначить для нового кластера. Вы можете создать кластер, написав нам по адресу  [team@neu.ro](mailto:team@neu.ro).
 

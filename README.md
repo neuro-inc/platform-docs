@@ -1,21 +1,21 @@
-# Introduction
+# Введение
 
-[Neu.ro](https://neu.ro) is a flexible and robust machine learning platform. It consists of two parts:
+[Neu.ro](https://neu.ro) является гибкой и надежной платформой машинного обучения. Платформа состоит из двух частей:
 
-* **Neu.ro Core** is a resource orchestrator. It can be installed in a cloud or on-premise and combines compute, storage, and environments \(Docker images\) in one system with single sign-on authentication \(SSO\) and advanced permission management system. This part frees teams from DevOps.
-* **Neu.ro Toolbox** is a toolset integrator. It contains integrations with various open-source and commercial tools required for modern ML/AI development. This part addresses the majority of MLOps issues a team may have.
+* **Neu.ro Core** - координатор ресурсов. Данная часть может быть установлена как в облаке, так и локально, и объеденяет вычисления, пространство для хранения данных и рабочее окружение \(Docker images\), совместно с системой аутентификации \(SSO\) и системой управления правами. Эта часть Neu.ro освобождает Вас от DevOps.
+* **Neu.ro Toolbox** - интегратор инструментов. Он содержит различные open-source и коммерческие инструменты, необходимые для современной разработки в области ML/Al. Данная часть позволяет решить большинство вопросов, относящихся к MLOps.
 
-If you are new to Neu.ro, here are two simple steps to get started:
+Если Вы впервые с Neu.ro, то можно начать с нескольких простых шагов:
 
-* [Sign up](https://neu.ro) and get 100h of GPU compute for free.
-* Follow our [Getting Started](getting-started.md) guide.
+* [Зарегистрируйтесь](https://neu.ro) и получите 100 часов работы GPU бесплатно.
+* Следуйте нашему руководству по [началу работы](getting-started.md).
 
-If you want to dig deeper, take a look at various ML development guides we carefully craft for you, for example:
+Если Вы хотите узнать больше, то ознакомьтесь с различными руководствами по ML, которые мы разработали специально для Вас:
 
-* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Remote debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Отслеживание эксперимента через Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Удаленная отладка с помощью PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
 
-Also, take a look at our [CLI reference](references/cli-reference/) and [Python API reference](https://neuromation-sdk.readthedocs.io/en/latest/).
+Также ознакомьтесь с нашими [руководством по CLI](references/cli-reference/) и [руководством по Python API](https://neuromation-sdk.readthedocs.io/en/latest/).
 
-To get help, refer [FAQ](references/faq.md) or contact us at [team@neu.ro](mailto:team@neu.ro).
+Для помощи смотрите [FAQ](references/faq.md) или пишите нам [team@neu.ro](mailto:team@neu.ro).
 

@@ -1,34 +1,34 @@
-# Getting Started
+# Начало работы
 
-In this tutorial, we show how to start working with Neu.ro:
+В данном руководстве мы покажем Вам, как начать работу с Neu.ro:
 
-* Install CLI client;
-* Understand core concepts; and
-* Start developing on GPU in Jupyter Notebooks.
+* Установка клиента CLI;
+* Основные понятия; и
+* Начало работы на GPU в среде Jupyter Notebooks.
 
-## Installing CLI
+## Установка CLI
 
-To start working with CLI, you have two options:
+Для начала работы с CLI имеются две возможности:
 
-* Use [Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-public)
-* Install Neu.ro CLI on your machine and run `neuro login`
+* При помощи [Веб терминала](https://apps.neu.ro/shell?cluster_name=neuro-public)
+* Установив Neu.ro CLI на Ваш компьютер и выполнив команду `neuro login`
 
-The first option is recommended for exporing the platform. The second option, though, is better when working on your projects.
+Первый вариант рекомендуется для изучения платформы. Второй вариант лучше подходит для работы над Вашими проектами.
 
-### Linux and Mac OS instructions
+### Установка в Linux и Mac OS
 
-Neu.ro CLI requires Python 3 installed \(recommended: 3.7, required: &gt;=3.6\). We suggest using [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/).
+Neu.ro CLI требует установленный Python 3 \(рекомендуется: 3.7, требуется: &gt;=3.6\). Мы советуем использовать [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/).
 
 ```text
 pip install -U neuromation
 neuro login
 ```
 
-### Windows instructions
+### Установка в Windows
 
-While there are several options to make Neu.ro CLI work on Windows, we highly recommend using [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/) with default installation settings.
+Несмотря на то, что есть несколько вариантов запустить Neu.ro CLI в Windows, мы настоятельно рекомендуем использовать [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/) с настройками по умолчанию.
 
-When you have it up and running, run the following commands in Conda Prompt:
+После установки Anaconda Python 3.7 Distribution выполните следующие команды в Conda Prompt:
 
 ```text
 conda install -c conda-forge make
@@ -38,19 +38,19 @@ pip install -U certifi
 neuro login
 ```
 
-## Understanding core concepts
+## Основные концепции
 
-On **Neu.ro Core** level, one works with jobs, environments, and storage. To be more specific, one runs a job \(an execution unit\) in a given environment \(Docker container\) on a given preset \(a combination of CPU, GPU, and memory resources allocated for this job\) with several parts of storage \(block or object storage\) available \(attached\).
+На уровне **Neu.ro Core**, происходит работа с заданиями, рабочим окружением и системой хранения (дисковым пространством). Проще говоря, возможно запустить задание \(исполнительный блок\) в заданном рабочем окружении \(Docker контейнер\), с заданными характеристиками \(комбинация ресурсов CPU, GPU и памяти\) и с несколькими подключенными блоками для хранения данных \(блоки или объекты хранения\).
 
-Let us show several examples.
+Продемонстрируем это на нескольких примерах.
 
-Run a job on CPU which prints “Hello, World!” and shuts down:
+Запустим на CPU задание, которое выводит “Hello, World!” и останавливается:
 
 ```text
 neuro run --preset cpu-small --name test ubuntu echo Hello, World!
 ```
 
-Upon execution of this command you’ll see an output like this:
+После запуска данной команды в терминале Вы увидите следующее:
 
 ```text
 Job ID: job-2b743322-f53a-4211-be4e-5d493e6cc770 Status: pending
@@ -72,49 +72,49 @@ job with `--detach` option.
 Hello, World!
 ```
 
-Run a job in Neu.ro default environment \(`neuromation/base`\) on GPU which prints checks if CUDA is available in this environment:
+Запустим задание на GPU в рабочем окружении Neu.ro по умолчанию \(`neuromation/base`\), которое показывает, доступно ли CUDA в данном рабочем окружении:
 
 ```text
 neuro run -preset gpu-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
 ```
 
-Check the presets you can use:
+Проверим настройки, которые Вы можете использовать:
 
 ```text
 neuro config show
 ```
 
-Create a directory `demo` in your platform storage root:
+Создадим каталог `demo` в корне дискового пространства Вашей платформы:
 
 ```text
 neuro mkdir -p storage:demo
 ```
 
-Run a job which mounts `demo` directory on storage to `/demo` directory in the job container and creates a file in it:
+Запустим команду, которая монтирует каталог `demo` на диске к `/demo` в контейнере и создает в нем файл:
 
 ```text
 neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu "echo Hello >> /demo/hello.txt"
 ```
 
-Check that the file is on storage:
+Убедитесь, что файл находится на диске:
 
 ```text
 neuro ls storage:demo
 ```
 
-## Developing on GPU
+## Разработка на GPU
 
-While one can run a Jupyter Notebooks session with one command in a command line or with one click in web UI, we recommend project-based development. To simplify the process, we provide the project template, which is a part of **Neu.ro Toolbox**, and provides the folder structure and integrations with several recommended tools.
+Хотя сеанс Jupyter Notebooks можно запустить с помощью одной команды в командной строке или одним щелчком мыши в веб-интерфейсе, мы рекомендуем вести разработку на основе проектов. Чтобы упростить процесс мы предоставляем шаблон проекта, который является частью **Neu.ro Toolbox** и предоставляет структуру папок и интеграцию с несколькими рекомендуемыми инструментами.
 
-### Initializing a project
+### Создание проекта
 
-To initialize a new project from the template, run:
+Чтобы создать новый проект из шаблона выполните команду:
 
 ```text
 neuro project init
 ```
 
-This command asks several questions about your project:
+Данная команда задает несколько вопросов относительно Вашего проекта:
 
 ```text
 project_name [Name of the project]: Neuro Tutorial
@@ -122,17 +122,17 @@ project_slug [neuro-tutorial]:
 code_directory [modules]:
 ```
 
-You can press Enter if you agree with the suggested choice.
+Вы можете нажать Enter, если вы согласны с предложенным выбором.
 
-To navigate to the project directory, run:
+Чтобы перейти к каталогу проекта, введите команду:
 
 ```text
 cd neuro-tutorial
 ```
 
-### Project structure
+### Структура проекта
 
-After you execute the command mentioned above, you get the following structure:
+После ввода указанной выше команды Вы можете увидеть следующую структуру:
 
 ```text
 neuro-tutorial
@@ -150,39 +150,39 @@ neuro-tutorial
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-The template contains Makefile, which guarantees the contract between the above-shown structure, the base environment which we provide, and manipulations with storage and jobs. For example, through `upload-*` and `download-*` commands, sub-folders on your local machine are synced with sub-folders on persistent platform storage, and those sub-folders are synced with the corresponding sub-folders in job containers.
+Шаблон содержит Makefile, который обеспечивает связь между указанной выше структурой файлов и каталогов, базовым рабочим окружением, которое мы предоставляем и манипуляциями с дисковым пространством и заданиями. Например, с помощью команд `upload-*` and `download-*` подпапки на Вашем локальном компьютере синхронизируются с подпапками на дисковом пространстве платформы, соответственно подпапки на дисковом пространстве синхронизируются с соответствующими подпапками в контейнерах заданий.
 
-### Setting up the environment and running Jupyter
+### Настройка рабочей среды и запуск Jupyter
 
-To set up the project environment, run:
+Чтобы настроить рабочее окружение, выполните:
 
 ```text
 make setup
 ```
 
-Upon execution of this command, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed in the base environment, which already contains CUDA support and the most popular ML/AI frameworks, like Tensorflow and Pytorch.
+После выполнения данной команды в базовую среду, которая уже содержит поддержку CUDA и наиболее популярные пакеты ML/AL, такие как Tensorflow и Pytorch, будут установлены системные пакеты из `apt.txt` и pip зависимости из файла `requirements.txt`.
 
-To start a Jupyter Notebooks session on GPU, run:
+Чтобы запустить Jupyter Notebooks на GPU, выполните команду:
 
 ```text
 make jupyter
 ```
 
-This command open Jupyter Notebooks interface in your default browser.
+Данная команда открывает интерфейс Jupyter Notebooks в вашем браузере, который указан по умолчанию.
 
-Now, when you edit notebooks, they update on your platform storage. To download them locally \(for example, to put them under version control\), run:
+Теперь, когда Вы пишите программу в Jupyter Notebooks она сохраняется на дисковом пространстве платформы. Чтобы скачать ее на Ваш компьютер \(например, чтобы поставить под контроль системы контроля версий\), введите команду:
 
 ```text
 make download-notebooks
 ```
 
-Don’t forget to terminate your job when you no longer need it \(the files won’t disappear after that\):
+Не забудьте закончить работу задания, когда оно Вам больше не нужно \(файлы после этого не пропадут\):
 
 ```text
 make kill-jupyter
 ```
 
-To check how much GPU and CPU hours you have left, run:
+Чтобы проверить, сколько часов GPU и CPU у вас осталось, запустите команду:
 
 ```text
 neuro config show-quota

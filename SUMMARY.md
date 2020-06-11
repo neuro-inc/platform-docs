@@ -1,16 +1,16 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [Getting Started](getting-started.md)
-* [Training Your First Model](training-your-first-model.md)
-* [Collaborative Development](collaborative-development.md)
+* [Введение](README.md)
+* [Начало работы](getting-started.md)
+* [Обучение Вашей первой модели](training-your-first-model.md)
+* [Совместная разработка](collaborative-development.md)
 
 ## Neu.ro Core <a id="core"></a>
 
-* [Platform Overview](core/platform-overview.md)
-* [Environments \(Docker images\)](core/environments-docker-images.md)
-* [Storage](core/storage.md)
-* [Clusters \(Resources\)](core/clusters-resources.md)
+* [Описание платформы](core/platform-overview.md)
+* [Рабочее окружение \(образы Docker\)](core/environments-docker-images.md)
+* [Дисковое пространство](core/storage.md)
+* [Кластеры \(Ресурсы\)](core/clusters-resources.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
 

@@ -1,47 +1,47 @@
-# Storage
+# Дисковое пространство
 
-Neu.ro provides storage to host files that are required to run your jobs. All users on a platform can access the platform storage to manage data, code, and artifacts. Each storage is specific to that cluster, and you cannot reuse files between clusters. You can manage your storage either from the Web UI or the CLI. 
+Neu.ro предоставляет дисковое пространство для размещения файлов, необходимых для выполнения Ваших задач. Все пользователи имеют доступ к дисковому пространству для размещения данных, программного кода и артефактов. Каждый объем дискового пространства относится к своему кластеру и Вы не можете использовать файлы между кластерами. Управлять дисковым пространством можно из веб-интерфейса пользователя или из командной строки CLI. 
 
-The following image shows an overview of data flows between your local machine, the storage, and the job file system: 
+На нижепреведенном рисунке показан поток данных между Вашим локальным компьютером, дисковом пространством платформы и файловой системой заданий: 
 
 ![](../.gitbook/assets/storage-2.png)
 
-### How do I manage files in the web UI? 
+### Как я могу управлять файлами через веб-интерфейс? 
 
-You can use the intuitive FileBrowser tool available in Neu.ro to manage files in storage. The FileBrowser is based on the popular file browsing interface available on git.
+Для управления файлами служит интуитивно понятный FileBrowser. FileBrowser основан на популярном интерфейсе просмотра файлов, доступном в git.
 
-To manage files: 
+Для управления файлами: 
 
-* Login into Neu.ro. 
-* Click on Start FileBrowser.
+* Залогиньтесь в Neu.ro. 
+* Нажмите Start FileBrowser.
 
 ![Start FileBrowser](../.gitbook/assets/stor_start_filebrowser.jpg)
 
-This opens the file browser for the cluster, where you can host and manage files.
+Откроется менеджер файлов для кластера, посредством которого Вы можете управлять файлами.
 
 ![FileBrowser interface](../.gitbook/assets/stor_browser.jpg)
 
-The file browser has the following areas: 
+Менеджер файлов имеет следующие области: 
 
-* Toolbar: Lets you search for files, download, and upload files. It also provides various other context-based options that are available depending on the file or folder you select. 
-* Options: Lets you create a new folder or file. It also lets you manage the storage settings. 
-* Folders and Files: Lists the folders and files you have access to. You can select files to view context-based options in the toolbar.
+* Toolbar: Позволяет искать файлы, загружать и выгружать файлы. Возможны также различные другие контекстные опции, доступные в зависимости от выбранного файла или папки. 
+* Options: В этой области можно создать новую папку или файл. Здесь также возможно управлять настройками дискового пространства. 
+* Folders and Files: Список папок и файлов, к которым у Вас есть доступ. Вы можете выбрать файл для просмотра контекстных опций на панели инструментов.
 
-The rest of this tutorial will describe managing your files using the CLI. For more information about FileBrowser, see the [FileBrowser](https://github.com/filebrowser/filebrowser) documentation.
+В оставшейся части руководства будет описано управление  файлами с помощью CLI. Для получения дополнительной информации о FileBrowser см. документацию [FileBrowser](https://github.com/filebrowser/filebrowser).
 
-### How do I manage files in the CLI? 
+### Как я могу управлять файлами посредством командной строки CLI? 
 
-You can manage your files and folders using the neuro storage command. The neu.ro CLI lets you perform all operations with your files and folders that are available from the FileBrowser.
+Вы можете управлять своими файлами и папками с помощью команды neuro storage. Neu.ro CLI позволяет вам выполнять все операции с файлами и папками, доступными в FileBrowser.
 
-#### Viewing folders and files 
+#### Просмотр папок и файлов 
 
-To view the folders and files in an image, use the command: 
+Чтобы увидеть папки и файлы в образе выполните команду: 
 
 `neuro ls [OPTIONS] PATHS` 
 
-For more information, see [List directory contents](https://docs.neu.ro/references/cli-reference/storage#ls).
+Для дополнительной информации см. [Список содержимого каталога](https://docs.neu.ro/references/cli-reference/storage#ls).
 
-**Sample command:**
+**Пример команды:**
 
 ```text
 > neuro storage ls storage:nero-assistant
@@ -49,9 +49,9 @@ ModelCode  apt.txt  config  data  modules
 notebooks  requirements.txt  results  setup.cfg
 ```
 
-You could use `neuro storage tree` to view the contents in a tree format. This is recommended when you have multiple sub-folders.
+Вы можете использовать команду `neuro storage tree` для просмотра содержимого в древовидном формате. Это может быть полезно, если у Вас имеются подпапки.
 
-**Sample command:**
+**Пример команды:**
 
 ```text
 > neuro storage tree storage:nero-assistant
@@ -70,126 +70,126 @@ You could use `neuro storage tree` to view the contents in a tree format. This i
 7 directories, 3 files
 ```
 
-#### Creating folders from the CLI 
+#### Создание папки из CLI 
 
-You can create folders in the storage from the CLI by using the command: 
+Чтобы создать папку на диске из CLI используйте команду: 
 
 `neuro storage mkdir [OPTIONS] PATHS`
 
-This works the same way as the web UI, but, in CLI, you can create folders in any path without having to navigate to that path.
+Это работает так же, как и в веб-интерфейсе, но в CLI Вы можете создавать папки по любому пути, не переходя по нему.
 
-**Sample command:**
+**Пример команды:**
 
 ```text
 neuro storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
 ```
 
-The folder is created and you can verify by running the `neuro storage ls` command or in the Web UI.
+Папка создана, и Вы можете проверить, выполнив команду `neuro storage ls` или через веб-интерфейс.
 
-#### Moving files between the storage and my local file system 
+#### Копирование файлов между дисковым пространством платформы и Вашей локальной файловой системой
 
-You can use the `neuro cp SOURCE DESTINATION` command to move files between the storage and the host machine. 
+Для копирования файлов между платформой и хостом используйте команду `neuro cp SOURCE DESTINATION`. 
 
-For moving folders, you must use the recursive copy command so that the folder contents are also moved: `neuro cp -r SOURCE DESTINATION`.
+При копировании папок, чтобы содержимое папки также перемещалось, необходимо использовать команду рекурсивного копирования: `neuro cp -r SOURCE DESTINATION`.
 
-Remember the following key points before moving files or folders to and from storage: 
+Запомните следующие ключевые моменты перед копированием файлов или папок на дисковое пространство платформы и из него: 
 
-* The command assumes that the path provided is relative. 
-* File and folder names are case-sensitive.
+* Команда предполагает, что указанный путь является относительным. 
+* Имена файлов и папок чувствительны к регистру.
 
-Examples: 
+Пример: 
 
-* To move files from local machine to storage, use the command `neuro cp parameters.txt storage:nero-assistant` This command copies the file `parameters.txt` from the local host machine to the storage folder `nero-assistant`.
+* Для копирования файлов с локального компьютера на дисковое пространство платформы используйте следующую команду: `neuro cp parameters.txt storage:nero-assistant`. Эта команда копирует файл `parameters.txt` с локального хоста в папку `nero-assistant` на диске платформы.
 
 ```text
 > neuro cp parameters.txt storage:nero-assistant
 Copy 'file:///C:/Projects/parameters.txt' => 'storage://neuro-public/.../parameters.txt' 'parameters.txt' 952B
 ```
 
-* To move files from storage to the local machine, use the command `neuro cp storage:nero-assistant/TestResults.txt file:///Projects` This command copies the `TestResults.txt` file from the storage folder `nero-assistant` to the local host machine.
+* Чтобы скопировать файлы с платформы на локальный компьютер, используйте команду: `neuro cp storage:nero-assistant/TestResults.txt file:///Projects` Данная команда копирует файл `TestResults.txt` в папке `nero-assistant`, находящейся на диске платформы, на локальный компьютер.
 
 ```text
 > neuro cp storage:nero-assistant/TestResults.txt file:///Projects 
 Copy 'storage://neuro-public/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
 ```
 
-* To move folder from local host system to storage, use the command `neuro cp -r samplecode storage:nero-assistant` This command copies the folder `samplecode` and all its files to the storage folder `nero-assistant`.
+* Чтобы скопировать папку из локальной хост-системы на дисковое пространство платформы, используйте команду: `neuro cp -r samplecode storage:nero-assistant`. Данная команда копирует папку `samplecode` и все ее содержимое в папку `nero-assistant` на дисковом пространстве платформы.
 
 ```text
 > neuro cp -r samplecode storage:nero-assistant 
 Copy 'file:///C:/Projects/samplecode' => 'storage://neuro-public/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
 ```
 
-* To move folders from storage to the local host, use the command `neuro cp -r storage:nero-assistant/testlogs file:///Projects` This command copies the storage folder `testlogs` and all its files to the local host machine.
+* Чтобы скопировать папку с платформы на локальный хост используйте команду: `neuro cp -r storage:nero-assistant/testlogs file:///Projects`. Данная команда копирует папку `testlogs` на дисковом пространстве платформы, со всем ее содержимым, на локальный компьютер.
 
 ```text
 > neuro cp -r storage:nero-assistant/testlogs file:///Projects 
 Copy 'storage://neuro-public/.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://neuro-public/clarytyllc/nero-assistant/testlogs' ...
 ```
 
-#### Removing files from storage 
+#### Удаление файлов
 
-You can remove files or folders from storage using the command `neuro rm [Files/Folder]`
+Для удаления файлов с дискового пространства платформы используйте команду `neuro rm [Files/Folder]`
 
-For removing folders, you must use the recursive remove command so that the folder contents are also removed: `neuro rm -r [Files/Folder]`
+При удалении папки, чтобы также удалить содержимое, необходимо использовать команду рекурсивного удаления: `neuro rm -r [Files/Folder]`
 
-Examples: 
+Примеры: 
 
-* To remove files from a storage, use the command `neuro rm storage:nero-assistant/parameters.txt`
-* To remove folders from storage, use the command `neuro rm -r storage:nero-assistant/samplecode`
-* To remove files with a certain pattern, such as `.log`, use the command `neuro rm -r storage:nero-assistant/*.log`
+* Для удаления файла с дискового пространства платформы используйте команду `neuro rm storage:nero-assistant/parameters.txt`
+* Для удаления папки с дискового пространства платформы используйте команду `neuro rm -r storage:nero-assistant/samplecode`
+* Для удаления файлов с определенным шаблоном, например `.log`, используйте команду `neuro rm -r storage:nero-assistant/*.log`
 
-#### Moving files and folders within storage 
+#### Перемещение файлов и папок внутри дискового пространства платформы 
 
-The moving of files or folders is different from copying files or folders. When you move files or folders, the files and folders are copied to the destination and then removed from the source. To move files or folders, use the command: `neuro storage mv`. Optionally, you can also rename a file after it is moved to the destination directory.
+Перемещение файлов или папок отличается от копирования. При перемещении файлы или папки копируются в место назначения, а затем удаляются из места первоначального расположения. Чтобы переместить файлы или папки, используйте команду: `neuro storage mv`. При желании Вы также можете переименовать файл после его перемещения в каталог назначения.
 
-Examples: 
+Примеры: 
 
-* To move a file from storage folder to another storage folder and rename the file, use the command `neuro mv storage:nero-assistant\code.txt storage:neuro-tutorial\samplecode.txt` This command moves the file `code.txt` from the `nero-assistant` storage folder to the `neuro-tutorial` storage folder and renames the file to `samplecode.txt`.
-* To move a folder and its contents from storage folder to another, use the command: `neuro mv -T storage:nero-assistant/ModelCode storage:neuro-tutorial/SampleCode` This command copies the folder `ModelCode` and all its contents from the `nero-assistant` storage folder to the `neuro-tutorial` storage folder and renames the folder to `SampleCode`.
+* Чтобы переместить файл на диске платформы в другую папку на диске платформы и переименовать его, используйте команду `neuro mv storage:nero-assistant\code.txt storage:neuro-tutorial\samplecode.txt`. Эта команда перемещает файл `code.txt` из папки `nero-assistant` в папку `neuro-tutorial` и переименовывает файл в `samplecode.txt`.
+* Чтобы переместить папку и ее содержимое на диске платформы в другую папку, используйте команду: `neuro mv -T storage:nero-assistant/ModelCode storage:neuro-tutorial/SampleCode`. Данная команда копирует папку `ModelCode` и все ее содержимое из папки `nero-assistant` в папку `neuro-tutorial` и переименовывает папку в `SampleCode`.
 
-### How do I use storage folders in jobs? 
+### Как я могу использовать папки на дисковом пространстве в заданиях? 
 
-You can use storage folders in jobs. You can mount a storage directory to the container running the job in order to use the storage folder. 
+Папки на дисковом пространстве можно использовать в заданиях. Для этого надо подключить каталог на диске к контейнеру, на котором выполняется задание. 
 
-**Notes**: 
+**Замечания**: 
 
-* Jobs can be slower while using storage folders when compared to using a job container file system. Our experiments show that training CV models takes 10-20% longer when the dataset is read from a mounted storage folder. If such a difference is critical for you, we recommend downloading the datasets for jobs into a non-mounted directory before running the jobs.
-* It is highly unrecommended to unpack datasets \(ZIP, TAR, etc\) in a storage folder, as it takes a lot of time.
+* Задания могут выполняться медленнее при использовании папок на дисковом пространстве, по сравнению с файловой системой контейнера. Наши эксперементы показывают, что обучение моделей CV занимает на 10-20% больше времени, когда набор данных считывается с примонтированного каталога, расположенного на дисковом пространстве платформы. Если такая разница для Вас критична, мы рекомендуем перед выполнением задания загрузить наборы данных в не примонтированный каталог.
+* Настоятельно не рекомендуется распаковывать наборы данных \(ZIP, TAR и т.д.\) в каталог на дисковом пространстве платформы, поскольку это занимает много времени.
 
-Before working with storage, you must understand the following: 
+Прежде чем работать с дисковым пространством, Вы должны понимать следующее: 
 
-* When you run a job, you can modify files inside its local file system. However, when you terminate a job, all changes are lost. To avoid this, you must use volumes. 
-* A volume’s data persists even after the job container is deleted. 
-* Volumes are a great way to push data to a container, pull data from a container, and share data between containers.
+* Когда Вы запускаете задание, Вы можете изменять файлы внутри его локальной файловой системы. Однако, когда Вы прекращаете работу, все изменения теряются. Чтобы избежать этого, вы должны использовать тома. 
+* Данные тома сохраняются даже после удаления контейнера задания. 
+* Тома - это отличный способ отправить данные в контейнер, извлечь данные из контейнера и обмениваться данными между контейнерами.
 
-To use a volume when running a job, you must mount the data from the storage to the container. Optionally, you can mount multiple volumes into the container.
+Чтобы использовать том при выполнении задания, Вы должны примонтировать данные к контейнеру. При желании вы можете примонтировать несколько томов к контейнеру.
 
-To mount a container, use the `--mount` parameter in the run command. For example: 
+Чтобы примонтировать даные к контейнеру, используйте параметр `--mount` в команде run. Например: 
 
 ```text
 neuro run --name job303 --volume storage:nero-assistant/ModelCode:/code:rw --preset cpu-small ubuntu cat /code/train.py
 ```
 
-This command mounts the datasets from the `ModelCode` folder to the container, for use during the job execution. The folder `/data` is used to access the data from within the job.
+Данная команда монтирует наборы данных из папки `ModelCode` к контейнеру для использования во время выполнения задания. Папка `/data` используются для доступа к данным из задания.
 
-When in the container, you can update the data in the volume. For example, you can use the following command to update a file from within a container: 
+Находясь в контейнере, Вы можете обновить данные в томе. Например, Вы можете использовать следующую команду для обновления файла из контейнера: 
 
 ```text
 ubuntu:/ # echo “New info” >/code/info.txt
 ```
 
-### How do I share files with others? 
+### Как я могу делиться файлами с другими пользователями? 
 
-You can share files and folders on your storage with others, similar to sharing images. You can specify the access the users can have on files: read, write or manage.
+Вы можете открыть доступ к Вашим папкам и файлам для других пользователей аналогично как открывается доступ к образу. Вы можете указать права доступа пользователей к файлам: read, write или manage.
 
-To share a file or folder, use the `neuro share` command.
+Чтобы открыть доступ к файлу или папке используйте команду `neuro share`.
 
-Sample command: `neuro share storage:nero-assistant/ModelCode alice manage`
+Пример команды: `neuro share storage:nero-assistant/ModelCode alice manage`
 
-This shares the folder `storage:nero-assistant/ModelCode` with the user `alice`.
+Данная команда открывает доступ к `storage:nero-assistant/ModelCode` для пользователя `alice`.
 
-You can view the resources that are shared with you using the `neuro acl list` command:
+Вы можете просмотреть ресурсы, которые открыты для Вас другими пользователями, используя команду `neuro acl list`:
 
 ```text
 > neuro acl list

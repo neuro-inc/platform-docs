@@ -1,22 +1,22 @@
-# Platform Overview
+# Описание платформы
 
-### Understanding the Basics
+### Основные понятия
 
-Neu.ro puts data, models, training, and tuning at your fingertips. The platform allows you to focus on model development tasks at hand by managing critical aspects of underlying infrastructure and system integration, including resource allocation, storage and image management, sharing, secure web and terminal access to running jobs.
+Neu.ro предоставляет Вам возможность оперировать данными, настраивать модели и обучение в соответствии с Вашими потребностями. Платформа позволяет сосредоточиться на разработке модели, при этом управляя критическими участками инфраструктуры и системной интеграции, как то распределение ресурсами, хранение данных или совместный доступ. Платформа предоставляет защищенный доступ через веб-панель или терминал для работы с заданиями.
 
-The key components of Neu.ro are:
+Ключевыми элементами платформы Neo.ro являются:
 
-* \*\*\*\*[**Environment**](environments-docker-images.md). A Docker image that can be launched on the platform. For your convenience, we provide a base image which is based on `deepo` Docker image and contains the most popular ML tools \(Tensorflow, Keras, PyTorch, TensorBoard, Jupyter Notebooks, and JupyterLab\).
-* \*\*\*\*[**Storage**](storage.md). One or more volumes that can be mounted to containers running on the platform. These volumes may contain datasets or be used to store output.
-* **Job**. A running container with a certain amount of GPU/CPU/RAM resources allocated, and with certain storage volumes mounted to its filesystem.
+* \*\*\*\*[**Рабочее окружение**](environments-docker-images.md). Docker образ, который запускается на платформе. Для Вашего удобства мы предоставляем контейнер, который основан на базе образа `deepo` и который содержит популярные приложения ML \(Tensorflow, Keras, PyTorch, TensorBoard, Jupyter Notebooks и JupyterLab\).
+* \*\*\*\*[**Дисковое пространство**](storage.md). Возможно примонтировать к контейнеру один или несколько томов для хранения данных. Эти тома могут содержать наборы данных или служить для сохранения результатов работы.
+* **Задание**. Работающий контейнер с выделенными ресурсами GPU/CPU/RAM и дисковое пространство, примонтированное к файловой системе.
 
-Environments, storage volumes, and jobs can be published and shared among users.
+Рабочее окружение, дисковое пространство и задания можно открывать для совместного пользования другим пользователям.
 
-Each time you start a job, Neu.ro will:
+Каждый раз, когда Вы запускаете задание, Neu.ro выполняет следующие действия:
 
-* Wait for requested resources to become available.
-* Pull an environment Docker image and launch it.
-* Attach storage volumes to the container's local mount points.
+* Ожидает получения запрошенных ресурсов.
+* Загружает Docker контейнер и запускает его.
+* Подключает дисковое пространство к точке монтирования.
 
-All your interactions with the platform are happening using neuro, the command-line interface \(CLI\) tool, in conjunction with web interface.
+Все работы на платформе можно проводить через инструмент командной строки \(CLI\) или посредством веб-интерфейса.
 

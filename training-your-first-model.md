@@ -1,24 +1,24 @@
-# Training Your First Model
+# Обучение Вашей первой модели
 
-### Introduction
+### Введение
 
-In this tutorial, we describe the recommended way to train a simple machine learning model on Neuro Platform. As our ML engineers prefer PyTorch over other ML frameworks, we show the training and evaluation of one of the basic PyTorch examples.
+В данном руководстве описывается рекомендуемый способ обучения простой модели машинного обучения на платформе Neuro. Так как наши инженеры предпочитают PyTorch другим инструментам ML, мы показываем обучение и оценку на примере PyTorch.
 
-We assume that you have already signed up to the platform, installed the Neuro CLI, and logged into the platform \(see [Getting Started](getting-started.md)\).
+Мы предполагаем, что вы уже зарегистрировались на платформе, установили Neuro CLI и залогинились \(смотри [Начало работы](getting-started.md)\).
 
-We base our example on the [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
+Наш пример основывается на [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html).
 
-### Initializing a new project
+### Создание нового проекта
 
-To simplify working with Neuro Platform and to help to establish the best practices in the ML environment, we provide a project template. This template consists of the recommended directories and files. It is designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
+Чтобы упростить работу с Neuro Platform и помочь внедрить лучшие практики ML, мы предоставляем шаблон проекта. Этот шаблон состоит из рекомендуемых каталогов и файлов. Он предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
 
-Let’s initialize a new project from this template:
+Создайте новый проект на основе шаблона:
 
 ```text
 neuro project init
 ```
 
-This command asks several questions about your project:
+Данная команда запрашивает несколько вопросов относительно Вашего проекта:
 
 ```text
 project_name [Name of the project]: Neuro Tutorial
@@ -26,9 +26,9 @@ project_slug [neuro-tutorial]:
 code_directory [modules]: rnn
 ```
 
-### Project structure
+### Структура проекта
 
-After you execute the command mentioned above, you get the following structure:
+После выполнения вышеприведенной команды Вы получите следующую структуру:
 
 ```text
 neuro-tutorial
@@ -43,85 +43,85 @@ neuro-tutorial
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-When you run a job \(for example, via `make jupyter`\), the directories are mounted to the job as follows:
+Когда Вы запустите задание \(например, при помощи команды `make jupyter`\), каталоги примонтируются к заданию следующим образом:
 
-| Mount Point | Description | Storage URI |
+| Точка монтирования | Описание | URI хранения данных |
 | :--- | :--- | :--- |
-| `/project/data/` | Training / testing data | `storage:neuro-tutorial/data/` |
-| `/project/rnn/` | User's Python code | `storage:neuro-tutorial/rnn/` |
-| `/project/notebooks/` | User's Jupyter notebooks | `storage:neuro-tutorial/notebooks/` |
-| `/project/results/` | Logs and results | `storage:neuro-tutorial/results/` |
+| `/project/data/` | Данные обучения / тестирования | `storage:neuro-tutorial/data/` |
+| `/project/rnn/` | Пользовательский код Python | `storage:neuro-tutorial/rnn/` |
+| `/project/notebooks/` | Пользовательский Jupyter notebook | `storage:neuro-tutorial/notebooks/` |
+| `/project/results/` | Файлы логирования и результат | `storage:neuro-tutorial/results/` |
 
-This mapping is defined as variables in the top of `Makefile` and can be adjusted if needed.
+Данное сопоставление определено в переменных в верхней части файла Makefile и при необходимости может быть изменено.
 
-### Filling the project
+### Заполнение проекта
 
-Now we need to fill newly created project with the content:
+Теперь необходимо наполнить вновь созданный проект контентом:
 
-* Change working directory:
+* Меняем рабочую директорию:
 
 ```text
 cd neuro-tutorial
 ```
 
-* Copy the [model source](https://github.com/pytorch/tutorials/blob/master/intermediate_source/char_rnn_classification_tutorial.py) to your `rnn` folder:
+* Копируем [модель](https://github.com/pytorch/tutorials/blob/master/intermediate_source/char_rnn_classification_tutorial.py) в папку `rnn`:
 
 ```text
 curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
-* Add  `requirements.txt` in your project root folder with [this file](https://github.com/pytorch/tutorials/blob/master/requirements.txt):
+* Добавим  `requirements.txt` в корневую папку проекта [образец файла](https://github.com/pytorch/tutorials/blob/master/requirements.txt):
 
 ```text
 curl https://raw.githubusercontent.com/pytorch/tutorials/master/requirements.txt -o requirements.txt
 ```
 
-* Download data from [here](https://download.pytorch.org/tutorial/data.zip), extract ZIP’s content and put it in your `data` folder:
+* Загрузим [отсюда](https://download.pytorch.org/tutorial/data.zip) данные, распакуем ZIP содержимое и поместим его в папку `data`:
 
 ```text
 curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
-### Training and evaluating the model
+### Обучение и оценка модели
 
-When you start working with a project on Neuro Platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
+Когда вы начинаете работать с проектом на Neuro Platform, основной процесс выглядит следующим образом: настраиваете удаленное рабочее окружение, загружаете данные и код на дисковое пространство, проводите обучение и оцениваете результат.
 
-To set up the remote environment, run
+Чтобы настроить удаленное рабочее окружение, запустите команду
 
 ```text
 make setup
 ```
 
-This command will run a lightweight job \(via `neuro run`\), upload the files containing your dependencies `apt.txt` and `requirements.txt` \(via `neuro cp`\), install the dependencies \(using `neuro exec`\), do other preparatory steps, and then create the base image from this job and push it to the platform \(via `neuro save`, which works similarly to `docker commit`\).
+Данная команда запускает задание \(через команду `neuro run`\), загружает файлы зависимостей `apt.txt` и `requirements.txt` \(через команду `neuro cp`\), устанавливает зависимости \(используя `neuro exec`\), выполняет другие подготовительные действия, а затем создает базовый образ из данного задания и загружает его на платформу \(с помощью функции `neuro save`, которая работает аналогично `docker commit`\).
 
-To upload data and code to your storage, run
+Чтобы загрузить данные и код на Ваш диск, запустите команду
 
 ```text
 make upload-all
 ```
 
-To run training, you need to run specify the training command in Makefile, and then run `make train`:
+Чтобы запустить обучение, необходимо указать команду для запуска в файле Makefile, а затем выполнить `make train`:
 
-* open `Makefile` in editor,
-* find the following line:
+* откройте в редакторе файл `Makefile`,
+* найдите следующую запись:
 
 ```text
 TRAINING_COMMAND?='echo "Replace this placeholder with a training script execution"'
 ```
 
-* and replace it with the following line: 
+* и замените ее на нижеприведенную запись: 
 
 ```text
 TRAINING_COMMAND?="bash -c 'cd $(PROJECT_PATH_ENV) && python -u $(CODE_DIR)/char_rnn_classification_tutorial.py'"
 ```
 
-Now, you can run
+Теперь можно запустить команду
 
 ```text
 make train
 ```
 
-and observe the output. You will see how some checks are made at the beginning of the script, and then the model is being trained and evaluated:
+и наблюдать за выводом. Вы увидите, как выполняются некоторые проверки в начале скрипта, а затем происходит обучение модели и оценка:
 
 ```text
 ['data/names/German.txt', 'data/names/Polish.txt', 'data/names/Irish.txt', 'data/names/Vietnamese.txt', 

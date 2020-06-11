@@ -1,75 +1,75 @@
-# Collaborative Development
+# Совместная разработка
 
-As you already [know](getting-started.md#understanding-core-concepts), the core concepts in Neu.ro are jobs, storage, and environments. You can share a job, a path on storage, or an image on the platform registry with your teammates, granting them permission to read, update, or even remove this entity.
+Как Вы уже [знаете](getting-started.md#understanding-core-concepts), основными понятиями в Neu.ro являются задания, дисковое пространство и рабочее окружение. Вы можете поделиться заданием, дисковым пространством или образом на платформе со своими коллегами по команде, предоставив им права на чтение, изменение или даже удаление данных сущностей.
 
-We recommend keeping the project code in the Git repository. In this case, each teammate has a local copy of the repository and may run jobs independently. To set up your project, please follow these steps.
+Мы рекомендуем хранить код проекта в репозитории Git. В этом случае каждый член команды имеет локальную копию репозитория и может выполнять работы независимо. Чтобы настроить свой проект, выполните следующие действия.
 
-### Initiate the Neu.ro project
+### Создать новый Neu.ro проект
 
-First, you need to create a new project from the Neu.ro project template. Run `neuro project init` and answer several simple questions.
+Сначала необходимо создать новый проект Neu.ro из шаблона. Запустите команду `neuro project init` и ответьте на несколько простых вопросов.
 
-### Initiate a git repository and push this project to Git
+### Создание git репозитория и сохранение этого репозитория на хостинге
 
-Then, you need to put this new project into the git repository. Follow the instructions for the Git hosting of your choice \(for example, here are the [instructions for GitHub](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)\).
+Теперь необходимо поместить наш новый проект в репозиторий git. Следуйте инструкциям для Git-хостинга, который Вы выбрали \(например, здесь приведены [инструкции для GitHub](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)\).
 
-### Organize your data
+### Обращение с данными
 
-You have several options for storing your project data in a shared place.
+Существует несколько вариантов для хранения данных Вашего проекта в открытом для других пространстве.
 
-#### Platform storage
+#### Дисковое пространство платформы
 
-You can upload data to your platform storage using `neuro cp` command in CLI or FileBrowser in Web UI. In this case, you need to share the data with your teammates explicitly.
+Вы можете загрузить данные на дисковое пространство платформы, используя команду `neuro cp` в CLI или FileBrowser в веб-интерфейсе. В этом случае Вам необходимо явно предоставить доступ своим коллегам по команде.
 
-For example, this is how you can upload the data at the `cifar-10` folder in your storage and share it with Alice:
+Например, вот как Вы можете загрузить данные в папку `cifar-10` на диске и поделиться ими с Алисой:
 
 ```text
 neuro cp -r local-folder-with-data storage:cifar-10
 neuro share storage:cifar-10 alice manage
 ```
 
-After that, you need to update the `DATA_DIR_STORAGE` variable in the project `Makefile` to keep the full URI of your data. This step allows your teammates to use this data folder in their project copies as well \(here `neuro-public` is the name of our default cluster, and `bob` is your platform user name\):
+После этого, чтобы сохранить полный URI ваших данных, необходимо обновить переменную `DATA_DIR_STORAGE` в `Makefile` проекта. Этот шаг позволит Вашим коллегам по команде также использовать данную папку с данными в своих копиях проекта \(здесь `neuro-public` имя нашего кластера по умолчанию, а `bob` Ваше имя пользователя на платформе\):
 
 ```text
 DATA_DIR_STORAGE?=storage://neuro-public/bob/cifar-10
 ```
 
-After that, your data becomes available in the `/data` folder in the local file system of the jobs you and your teammates run.
+После этого Ваши данные станут доступны в папке `/data` в локальной файловой системе заданий, над которыми работаете Вы и Ваши коллеги по команде.
 
-#### Buckets
+#### Области памяти (Buckets)
 
-You can use AWS or GCP buckets to keep the data outside the Neu.ro platform. In this case, you need to add your access tokens in the project `config` folder according to [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) and [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp) guides. Note that Git does not track these tokens, so your teammates also have to put their tokens in their local project copies .
+Вы можете использовать AWS или GCP buckets для сохранения Ваших данных за пределами платформы Neu.ro. В этом случае необходимо добавить токен доступа в папку `config` проекта,  в соответствии с рекомендациями [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) или [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp). Обратите внимание, что Git не отслеживает эти токены, поэтому Ваши коллеги по команде также должны поместить свои токены в свои локальные копии проекта.
 
-#### Public resources
+#### Публичные ресурсы
 
-Your data may also be available at some public resource that doesn’t require any authentication. In this case, you may either put a copy of data on the platform storage \(see above\) or download the data to the job container’s local file system on every run \(if the data size is relatively small\).
+Ваши данные также могут быть доступны на каком-либо общедоступном ресурсе, который не требует аутентификации. В этом случае Вы можете либо поместить копию данных на дисковое пространство платформы \(см. выше\), либо загружать данные в локальную файловую систему контейнера при каждом запуске \(если размер данных относительно невелик\).
 
-### Set up the project and run jobs
+### Насройка проекта и запуск задания
 
-Now all your teammates can clone the project and start working on it through their local copies. Here are some steps every teammate should make independently.
+Теперь все Ваши коллеги по команде могут клонировать проект и начать работу над ним через свои локальные копии. Вот некоторые шаги, которые каждый член команды должен выполнить самостоятельно.
 
-* To set up the working environment, run `make setup` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
-* To run a Jupyter Notebooks session, run `make jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them in the local copy of the project, run `make download-notebooks`.
-* To run training from source code, run `make train` with a corresponding Python command, for example:
+* Чтобы настроить рабочую среду, запустите `make setup` \(это необходимый шаг, который нужно выполнять каждый раз, когда вы обновляете зависимости pip из файла `requirements.txt` или системные зависимости из `apt.txt`\). 
+* Чтобы запустить сеанс Jupyter Notebook, выполните `make jupyter`. Файлы Notebook сохраняются в папке `<project>/notebooks` на дисковом пространстве платформы. Чтобы скачать файл Jupyter Notebook в локальную копию проекта, выполните `make download-notebooks`.
+* Чтобы запустить обучение из исходного кода, выполните команду `make train` с соответствующей командой Python, например:
 
 ```text
 make train TRAIN_CMD="python ./train.py"
 ```
 
-You may get more information about the Neu.ro project functionality in the `HELP.md` file in your project folder.
+Вы можете получить больше информации о функциональности проекта Neu.ro в файле `HELP.md` в папке Вашего проекта.
 
-### Share running jobs 
+### Открытие доступа к работающему заданию
 
-Any job you run on the platform you can share with your teammates. To get a list of running jobs that are available to you \(i.e., yours and the ones shared with you\), run `neuro ps`. 
+Вы можете открыть доступ к любым заданиям, которые вы выполняете на платформе. Чтобы получить список выполняющихся заданий, которые доступны для Вас \(т.е. Ваших и тех, к которым Вам предоставлен доступ\), выполните команду `neuro ps`. 
 
-There are two properties of each job, which are essential for sharing: ID and name. The ID is a unique identifier, while the name may repeat for different job runs. To get the job ID, you may take a look at the job list \(`neuro ps`\) or check out a particular job status \(`neuro status my-cool-job`\).
+Каждое задание имеет два свойства, которые необходимо знать для предоставления доступа: ID и имя. ID является уникальным идентификатором, в то время как имя может повторяться у разных заданий. Чтобы получить ID задания, необходимо посмотреть список заданий \(`neuro ps`\) или проверить статус конкретного задания \(`neuro status my-cool-job`\).
 
-For example, to share a `jupyter-awesome-project` job with ID `job-fb835ab1-5285-4360-8ee1-880a8ebf824c` with Alice \(where `awesome-project` is a short name of your project\), run:
+Например, чтобы предоставить доступ к заданию `jupyter-awesome-project` с ID `job-fb835ab1-5285-4360-8ee1-880a8ebf824c` для Алисы \(где `awesome-project` краткое имя Вашего проекта\), выполните команду:
 
 ```text
 neuro share job:job-fb835ab1-5285-4360-8ee1-880a8ebf824c alice read
 ```
 
-This command allows Alice to access this job via its ID or its full URI, which consists of a cluster name, an owner user name, and the job name or ID: `job://neuro-public/bob/jupyter-awesome-project`:
+Данная команда позволит Алисе получить доступ к заданию через его ID или полный URI, который состоит из имени кластера, имени владельца и имени или ID задания: `job://neuro-public/bob/jupyter-awesome-project`:
 
 ```text
 # read the logs
@@ -85,27 +85,27 @@ neuro browse job://neuro-public/bob/jupyter-awesome-project
 neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 ```
 
-Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can monitor the logs or open the web interface right there.
+Кроме того, Алиса получит доступ к этому заданию в своем [Веб-интерфейсе](https://app.neu.ro/) и сможет отслеживать логи или работать прямо там.
 
-Please note that if someone gets the `write` access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the git repository, you have to download them, commit, and push.
+Обратите внимание, что если кто-то получит доступ на запись (`write`) к Вашему заданию Jupyter Notebook, то он может изменять файлы Jupyter Notebook на диске Вашей платформы. Поэтому, чтобы обновить эти файлы в репозитории git, следует сначала загрузить их, затем сделать commit и push.
 
-There is also a shortcut for sharing all your jobs \(past, current, and future ones alike\) with your teammates:
+Существует также краткая команда для предоставления доступа для членов Вашей команды ко всем Вашим заданиям \(прошлым, текущим и будущим\):
 
 ```text
 neuro share job: alice read
 ```
 
-### Share Docker images 
+### Предоставление доступа к образу Docker 
 
-Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries \(including Tensorflow 2.0 and PyTorch 1.4\). When you run `make setup`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved in your platform Docker registry. In this case, there is no need to share the images between the teammates, as they build similar images from the same code base.
+Наш проект содержит [базовое рабочее окружение](https://hub.docker.com/r/neuromation/base), которое мы рекомендуем использовать для большинства проектов. Данная среда основана на [deepo](https://github.com/ufoym/deepo). Она содержит последние версии популярных библиотек ML/DL \(включая Tensorflow 2.0 и PyTorch 1.4\). Когда Вы запускаете `make setup`, в этой среде устанавливаются дополнительные зависимости, которые указаны в файлах `requirements.txt` и `apt.txt`, которые затем сохраняются в реестре Docker платформы. В этом случае нет необходимости открывать доступ к образу коллегам по команде, так как они в свою очередь могут создать такой же образ из одной и той же кодовой базы.
 
-In rare cases, though, you may want to use a specific image as a base one. If that image is public, all you need to do is to update the `BASE_ENV` variable in the project `Makefile`:
+Однако, в отдельных случаях, Вы можете использовать другой образ Docker в качестве базового. Если этот образ общедоступен, все, что вам нужно сделать, это обновить переменную `BASE_ENV` в `Makefile` проекта:
 
 ```text
 BASE_ENV=ufoym/deepo
 ```
 
-If the image is not public, you need to make available to your teammates:
+Если образ не является общедоступным, Вам нужно открыть доступ для Ваших коллег по команде:
 
 ```text
 # upload to your registry:
@@ -118,5 +118,5 @@ neuro share image:project-specific-docker-image alice read
 BASE_ENV=image://neuro-public/bob/project-specific-docker-image
 ```
 
-Please note that some functionality may be missing in the custom base images. In particular, you may need to log into AWS and GCP manually from within your jobs. 
+Обратите внимание, что некоторые функции могут отсутствовать в пользовательских Docker образах. В частности, вам может потребоваться залогиниться в AWS или GCP вручную из Вашего рабочего процесса. 
 

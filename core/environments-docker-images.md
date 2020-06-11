@@ -1,29 +1,29 @@
-# Environments \(Docker images\)
+# Рабочее окружение \(образы Docker\)
 
-Neu.ro uses Docker containers to run jobs in isolated environments. To run a container, you need to use Docker images that are templates containing an application and all the dependencies to run that application. Thus, a Docker container is a running instance of a Docker image.
+Neu.ro использует Docker-контейнеры для выполнения заданий в изолированной среде. Чтобы запустить контейнер, необходимо использовать образ Docker, представляющий собой шаблон, содержащий приложение и все зависимости для запуска данного приложения. Таким образом, Docker-контейнер это запущенный экземпляр образа Docker.
 
-Neu.ro lets you use Docker images either from the public Docker registry \(such as Docker Hub\) or from a platform cluster registry \(also called private repository\). Every cluster has one platform registry, so you cannot reuse images from one cluster in another cluster.
+Neu.ro позволяет использовать образы Docker либо из публичного репозитория \(например, Docker Hub\) либо из репозитория кластера платформы \(называемого также приватным репозиторием\). Каждый кластер имеет один репозиторий, поэтому вы не можете использовать образы из одного кластера в другом кластере.
 
-There are several ways to add custom images to the platform registries. These images can be shared with your teammates.
+Есть несколько способов добавить пользовательские образы в репозиторий платформы. Эти образы могут быть открыты для общего пользования Вашим коллегами по команде.
 
-![Managing environments](../.gitbook/assets/environments-2.png)
+![Управление рабочим окружением](../.gitbook/assets/environments-2.png)
 
-In these tutorials, we will use the example of a sample project - Nero-Assistant - to understand the available options. Before you can work in an environment, ensure that you have initiated a new project \(see Getting Started guide for details\).
+В данном руководстве для лучшего понимания доступных функций мы будем использовать тестовый проект - Nero-Assistant. Перед тем, как приступить к работе в рабочем окружении, убедитесь, что Вы создали новый проект \(см. руководство по началу работы\).
 
-### **How do I run a job in a container from a public registry image?**
+### **Как выполнить задание в контейнере из образа публичного репозитория?**
 
-You can run jobs from images both on the public Docker registry or a platform registry. You can use the neuro run command to run a job:
+Вы можете запустить задание как из образа публичного репозитория, так и из образа репозитория платформы. Чтобы запустить задание необходимо выполнить команду neuro run:
 
 `neuro run [OPTIONS] IMAGE [CMD]`
 
-**Parameters**
+**Параметры**
 
-| Name | Description |
+| Наименование | Описание |
 | :--- | :--- |
-| IMAGE | The full URI of the image where you want to run the command. |
-| \[CMD\] | The commands that you want to pass to the container. |
+| IMAGE | Полный URI образа, где вы хотите выполнить команду. |
+| \[CMD\] | Команды, которые вы хотите передать в контейнер. |
 
-**Sample output**
+**Образец вывода**
 
 ```text
 > neuro run -n job369 -s cpu-small ubuntu
@@ -44,21 +44,21 @@ Use 'Ctrl-C' to detach (it will NOT terminate the job), or restart the
 job with `--detach` option.
 ```
 
-Note: The job name that you provide must contain only lowercase letters, number, or hyphens; and must begin with a letter.
+Замечание. Имя задания должно содержать только строчные буквы, цифры или дефисы и должно начинаться с буквы.
 
-When a job is created, it is added to the queue and its status is set to Pending. Once the job starts running it is assigned a job ID, and the status is set to Running. All current jobs are also listed on the Neu.ro web interface.
+Когда задание создано, оно добавляется в очередь и его статус устанавливается как Pending. Как только задание запускается, ему присваивается ID и статус меняется на Running. Все текущие задания приведены в веб-интерфейсе Neu.ro.
 
-For more information, see the [CLI Reference for Run](../references/cli-reference/).
+Для более подробной информации смотри [справка по CLI для запуска](../references/cli-reference/).
 
-You can view the list of jobs currently running using the command: `neuro ps`. This also lists the job-id of the jobs. You can terminate a job using the command: `neuro kill <job-id>`.
+Чтобы посмотреть список заданий, выполняющихся в данный момент, необходимо выполнить команду: `neuro ps`. Будет показан список заданий и их ID. Можно также завершить выполнение задания, выполнив команду: `neuro kill <ID задания>`.
 
-### **How can I view all images that I have access to?**
+### **Как можно посмотреть список всех доступных для меня образов?**
 
-Neu.ro lets you create multiple images, and you view information about the images that you own or have access to from the command prompt. To view all images, you must run the command:
+Neu.ro позволяет создавать много образов и просматривать информацию о Ваших образах или к которым у Вас имеется доступ. Для просмотра списка всех образов необходимо выполнить команду:
 
 `neuro image ls [OPTIONS]`
 
-**Sample Output**
+**Образец вывода**
 
 ```text
 > neuro image ls
@@ -66,37 +66,37 @@ image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
 ```
 
-You can view the tags for an image by running the command:
+Чтобы просмотреть теги образов, необходимо выполнить команду:
 
 `neuro image tags [OPTIONS] IMAGE`
 
-**Sample output**
+**Образец вывода**
 
 ```text
 > neuro image tags image://neuro-public/clarytyllc/neuromation-nero-assistant
 image://neuro-public/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
 
-Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](environments-docker-images.md#how-can-i-upload-a-custom-image-to-the-platform-registry).
+Обратите внимание, что для просмотра тегов образов необходимо указать полный URI. Вы можете добавлять теги, когда загружаете образ или сохраняете его. Для получения дополнительной информации см. [Загрузка пользовательского образа в репозиторий платформы](environments-docker-images.md#how-can-i-upload-a-custom-image-to-the-platform-registry).
 
-### **How can I upload a custom image to the platform registry?**
+### **Как я могу загрузить пользовательский образ в репозиторий платформы?**
 
-Neu.ro provides a base public Docker image based on deepo. You can customize the base image by installing or configuring packages, or updating settings by providing the docker engine instructions. You can pass instructions for image customization using Dockerfiles.
+Neu.ro предоставляет базовый публичный образ Docker на основе deepo. Вы можете изменить базовый образ, установив новые пакеты или изменив настройки с помощью механизмов докера. Произвести настройку образа можно при помощи файла Dockerfiles.
 
-Neu.ro lets you upload your custom image to the platform that can be then used to run jobs. You can also share this custom image with your co-workers. It is a best practice to add tags to your image for better tracking.
+Neu.ro позволяет загружать пользовательские образы на платформу, которые затем можно использовать для запуска заданий. Вы также можете предоставить доступ к Вашим образам своим коллегам. Рекомендуется добавлять теги к образу для лучшего отслеживания.
 
-To upload a custom image, run this command:
+Чтобы загрузить пользовательский образ, выполните команду:
 
 `neuro image push [OPTIONS] LOCAL_IMAGE [REMOTE_IMAGE]`
 
-**Parameters**
+**Параметры**
 
-| Name | Description |
+| Наименование | Описание |
 | :--- | :--- |
-| LOCAL\_IMAGE | The local custom image that you want to upload. The image name should not contain “image://”. |
-| REMOTE\_IMAGE | The remote image to which you want to upload. |
+| LOCAL\_IMAGE | Пользовательский образ, который Вы хотите загрузить. Название образа не должно содержать “image://”. |
+| REMOTE\_IMAGE | Удаленный образ, который Вы хотите загрузить. |
 
-**Sample Output**
+**Образец вывода**
 
 ```text
 > neuro push neuromation-nero-assistant image:nero-assistant:v2
@@ -106,7 +106,7 @@ Pushing image neuromation-nero-assistant => image://neuro-public/mrsmariyadavydo
 > 9dfa40a0da3b: Pushing [===============> ] 1.219MB/3.966MB
 ```
 
-After pushing the image, run the neuro image ls command to check if the push has worked. If the push was successful, then you should see the local image as well as the platform image.
+После загрузки образа, чтобы проверить, сработала ли успешно передача, выполните команду neuro image ls. Если загрузка прошла успешно, то Вы увидите Ваш образ, а также образ платформы.
 
 ```text
 > neuro images
@@ -115,22 +115,22 @@ image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
 ```
 
-### **How can I save a running job as a custom image?**
+### **Как я могу сохранить текущее задание как пользовательский образ?**
 
-There are several ways in which you can create custom images. You can create a custom image out of a running job. Before you save a job, you must know the id or name of the job you want to save.
+Существует несколько способов создания пользовательских образов. Вы можете создать пользовательский образ из работающего задания. Прежде чем сохранить задание, необходимо узнать id или имя задания, которое Вы хотите сохранить.
 
-You can use the neuro job save command to save a job as a custom image:
+Для сохранения задания в качестве образа надо использовать команду neuro job save:
 
 `neuro job save [JOB] [IMAGE]`
 
-**Parameters**
+**Параметры**
 
-| Name | Description |
+| Наименование | Описание |
 | :--- | :--- |
-| JOB | The id or name of the job that you want to save as a custom image. |
-| IMAGE | The commands that you want to pass to the container. |
+| JOB | ID или имя задания, которое Вы хотите сохранить как пользовательский образ. |
+| IMAGE | Команды, которые вы хотите передать в контейнер. |
 
-**Sample output**
+**Образец вывода**
 
 ```text
 > neuro job save job363 image:ubuntu-custom
@@ -145,24 +145,24 @@ Pushing image clarytyllc/ubuntu-custom:latest => image://neuro-public/clarytyllc
 image://neuro-public/clarytyllc/ubuntu-custom:latest
 ```
 
-We have saved the job **job363** as a custom image **ubuntu-custom**.
+Мы сохранили задание **job363** как пользовательский образ **ubuntu-custom**.
 
-### **How can I use an image from a platform registry?**
+### **Как мне использовать образ из репозитория платформы?**
 
-Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments \(or containers\) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and memory to be used by the job.
+Neu.ro позволяет работать с заданиями, рабочим окружением и дисковым пространством. Задания выполняются в рабочем окружении \(или контейнерах\), которые изолированы вместе с собственным дисковым пространством, CPU и памятью. Вы можете запускать задания как в публичном образе Docker, так и в образе из репозитория платформы. Чтобы лучше управлять ресурсами, Вы можете указать CPU и объем памяти, которые будут использоваться заданием.
 
-You can use the neuro run command to run a job:
+Для запуска задания используется команда neuro run:
 
 `neuro run [OPTIONS] IMAGE [CMD]`
 
-**Parameters**
+**Параметры**
 
-| Name | Description |
+| Наименование | Описание |
 | :--- | :--- |
-| IMAGE | The full URI of the image where you want to run the command. |
-| \[CMD\] | The commands that you want to pass to the container. |
+| IMAGE | Полный URI образа, где вы хотите выполнить команду. |
+| \[CMD\] | Команды, которые вы хотите передать в контейнер. |
 
-**Sample output**
+**Образец вывода**
 
 ```text
 > neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
@@ -184,24 +184,24 @@ job with `--detach` option.
 Hello World
 ```
 
-We have run a named job **job363** using a small CPU resource preset on the patched ubuntu image.
+Мы запустили задание с именем **job363** , используя ресурсы cpu-small на пропатченом образе ubuntu.
 
-### **How do I download an image from the platform registry?**
+### **Как я могу загрузить образ из репозитория платформы?**
 
-Neu.ro lets you pull images from the platform registry. You can specify tags of the images to pull a certain tag; else, the image with the latest tag is pulled.
+Neu.ro позволяет вам загрузить образ из репозитория платформы. Вы можете указать тег образа, чтобы загрузить определенный тег, в противном случае будет загружен образ с последним тегом.
 
-To pull an image from the platform, run this command:
+Для загрузки образа с платформы выполните команду:
 
 `neuro image pull [OPTIONS] REMOTE_IMAGE [LOCAL_IMAGE]`
 
 **Parameters**
 
-| Name | Description |
+| Наименование | Описание |
 | :--- | :--- |
-| REMOTE\_IMAGE | The remote image that you want to pull. |
-| \[LOCAL\_IMAGE\] | The local custom image that you want to pull to. The image name should not contain “image://”. |
+| REMOTE\_IMAGE | Образ, который Вы хотите загрузить. |
+| \[LOCAL\_IMAGE\] | Локальный пользовательский образ, который Вы хотите загрузить. Название образа не должно содержать “image://”. |
 
-**Sample Output**
+**Образец вывода**
 
 ```text
 > neuro pull image:ubuntu-patched:v1
@@ -213,21 +213,21 @@ To pull an image from the platform, run this command:
 > 8d6a6e6d0908: Download complete
 ```
 
-### How do I share custom images with my teammates?
+### Как я могу предоставить доступ к моему пользовательскому образу другим членам команды?
 
-Neu.ro lets you share your custom image with your team without having to upload the image to a platform. You could opt to push your custom image to the public registry if you want to share your custom image with a large audience.
+Чтобы поделиться образом с Вашей командой нет необходимости загружать образ на платформу. Если Вы хотите поделиться Вашим образом с большой аудиторией, Вы можете загрузить образ в какой-либо публичный репозиторий.
 
-To share your image, run the command:
+Для предоставления доступа к Вашему образу выполните команду:
 
 `neuro share [OPTIONS] URI USER [read|write|manage]`
 
-The permissions you may give the USER to the shared image:
+Разрешения для образа, которые вы можете предоставить пользователю USER:
 
-* Read: User can only view the image and not make any changes.
-* Write: Provided user can make changes to the image.
-* Manage: User can share the image.
+* Read: пользователь может только просматривать образ и не может вносить никаких изменений.
+* Write: пользователь может вносить изменения в образ.
+* Manage: пользователь может предоставить доступ к образу.
 
-**Sample command**
+**Пример команды**
 
 `neuro share image://neuro-public/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
 
