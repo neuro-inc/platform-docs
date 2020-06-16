@@ -1,18 +1,18 @@
-# MIDI Generator
+# Генератор MIDI файлов
 
-[Run on Neu.ro](https://apps.neu.ro/ml-recipes/midi-generator)
+[Запуск на Neu.ro](https://apps.neu.ro/ml-recipes/midi-generator)
 
-[Explore on GitHub](https://github.com/neuromation/ml-recipe-midi-generator)
+[Репозиторий на GitHub](https://github.com/neuromation/ml-recipe-midi-generator)
 
-A typical MIDI file can be viewed as a sequence of notes and chords with specified offsets that show their place in a melody. From this point of view, a chord is a group of notes that are played simultaneously. For melody generation, the next note or chord must be predicted based on an already-existing part. It's an example of a `seq2seq` problem and the `GRU` model could be used to solve it. For simplicity’s sake, note offsets in the code do not show the specific place of a note or chord in a piece, they show the time delay that required before the predicted element is played.
+Типичный MIDI-файл можно рассматривать как последовательность нот и аккордов с указанными смещениями, которые показывают их место в мелодии. С этой точки зрения аккорд - это группа нот, которые звучат одновременно. Для генерации мелодии следующая нота или аккорд должны быть предсказаны на основе уже существующей музыкальной партии. Это пример задачи `seq2seq` и для ее решения может быть использована `GRU` модель. Проще говоря, смещения нот в коде не показывают конкретное место ноты или аккорда, они показывают временную задержку, которая требуется прежде того, как предсказанный элемент будет сыгран.
 
-This project shows a simple example of `.mid` files generation. A small model based on `GRU` architecture is used in order to learn patterns \(orders of notes and chords\) from existing melodies \(see data directory\).
+Данный проект демонстрирует простой пример генерации файлов `.mid`. Небольшая модель, основанная на архитектуре `GRU` используется для изучения шаблонов \(порядков нот и аккордов\) из существующих мелодий \(см. каталог данных\).
 
-The project is created from the [Neuro Platform Project Template](https://github.com/neuromation/cookiecutter-neuro-project) and designed to run on [Neuro Platform](https://neu.ro), so you can jump into problem-solving right away using the instruction from `Quick Start` section.
+Проект создан [на основе шаблона платформы Neuro](https://github.com/neuromation/cookiecutter-neuro-project) и предназначен для работы на [Neuro Platform](https://neu.ro), вы можете сразу же приступить к решению проблем, используя инструкции из раздела `Начало работы`.
 
-## Quick Start
+## Начало работы
 
-First, to run this project on [Neuro Platform](https://neu.ro) install the `neuro` client and clone the project repository:
+Чтобы запустить данный проект на [Neuro Platform](https://neu.ro), необходимо установить клиент `neuro` и клонировать репозиторий проекта:
 
 ```text
 pip install -U neuromation
@@ -21,11 +21,11 @@ git clone git@github.com:neuromation/ml-recipe-midi-generator.git
 cd ml-recipe-midi-generator
 ```
 
-This repository already contains pre-trained models, so that you can run Jupyter Notebook with inference code and play with these models. To do so, just copy the following command:
+Репозиторий уже содержит предварительно обученные модели, так что вы можете запустить Jupyter Notebook и посмотреть как работают модели. Для этого просто выполните следующую команду:
 
 ```text
 make setup && make upload && make jupyter
 ```
 
-It will ask you to log in on Neuro Platform when the command is run for the first time. A Github account can be used for this purpose. You also can log in with the `neuro login` command. For a deeper understanding of what this command does and of the project’s structure read the explanation below.
+Вас попросят войти в Neuro Platform при первом запуске команды. Для этой цели можно использовать учетную запись Github. Вы также можете войти с помощью команды `neuro login`. Для более глубокого понимания того, что делает эта команда и структуру проекта, читайте дальнейшие объяснения.
 

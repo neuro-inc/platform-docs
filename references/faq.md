@@ -1,28 +1,28 @@
 # FAQ
 
-### How to Upload and Download Data
+### Как загрузить и выгрузить данные
 
-You can upload your datasets to the Platform using Neuro CLI. Neuro CLI supports basic file system operations for copying and moving files to and from the Platform storage.
+Вы можете загрузить свои наборы данных на платформу, используя Neuro CLI. Neuro CLI поддерживает базовые операции с файловой системой для копирования и перемещения файлов на дисковое пространство платформы и из нее.
 
-From your terminal or command prompt, change to the directory containing your dataset, and run:
+Перейдите в терминале в каталог, содержащий набор данных и выполните команду:
 
 ```text
 neuro cp -r data/ storage:data/
 ```
 
-The URI `storage:data/` indicates that the destination is the Platform. In a similar fashion,
+URI `storage:data/` указывает, что местом назначения является платформа. Таким же образом,
 
 ```text
 neuro cp -r storage:data/ data/
 ```
 
-downloads dataset to your current directory locally.
+происходит загрузка данных в Ваш локальный каталог.
 
-You can access your dataset from within a container by giving `--volume storage:data/:/var/storage/data/:rw` to `neuro run` when starting a new job.
+Вы можете получить доступ к своему набору данных из контейнера, указав `--volume storage:data/:/var/storage/data/:rw` в `neuro run`, когда запускаете задание.
 
-### How to Browse Data with File Browser
+### Как просматривать данные в File Browser
 
-[File Browser](https://github.com/filebrowser/filebrowser) is a web-based file management interface. You can use it to view and manage your storage on Neuro Platform. To start the job and open the tool in your default browser, run the following command:
+[File Browser](https://github.com/filebrowser/filebrowser) это веб-интерфейс управления файлами. Вы можете использовать его для просмотра и управления Вашим данными на Neuro Platform. Чтобы запустить задание и открыть инструмент в браузере, выполните следующую команду:
 
 ```text
 neuro run \
@@ -35,70 +35,70 @@ neuro run \
     filebrowser/filebrowser
 ```
 
-File Browser requires logging in; the default credentials are `admin`/`admin`. For more complex user setup, please refer to [File Browser documentation](https://filebrowser.xyz).
+File Browser требует аутентификации; учетные данные по умолчанию `admin`/`admin`.Для более сложной настройки пользователя, пожалуйста, обратитесь к [File Browser documentation](https://filebrowser.xyz).
 
-### How to Connect to a Running Job
+### Как подключиться к работающему заданию
 
-To work with your dataset from within a container, or to troubleshoot a model, or to get shell access to a GPU instance, you can execute a command shell within a running job in interactive mode.
+Чтобы работать с вашим набором данных из контейнера, для устранения неполадок модели или для получения доступа shell к экземпляру GPU, Вы можете выполнить команду внутри запущенного задания в интерактивном режиме.
 
-To do so, copy the job id of a running job \(you can run neuro ps to see the list\), and run:
+Для этого необходимо узнать id запущенного задания \(можно сделать neuro ps, чтобы увидеть список\) и выполнить команду:
 
 ```text
 neuro exec <job-id or job-name> bash
 ```
 
-For example,
+например:
 
 ```text
 neuro exec training bash
 ```
 
-This command starts bash within the running job and connects your terminal to it.
+эта команда запускает bash внутри запущенного задания и подключает к нему Ваш терминал.
 
-### How to Run a Job in a Custom Environment
+### Как запустить задание в пользовательском рабочем окружении
 
-Assuming you have a local Docker image named `helloworld` built on your local machine, you can push it into Neuro Platform by running:
+Предполагается, что у вас есть локальный образ Docker, созданный на вашем локальном компьютере, с именем `helloworld`. Вы можете отправить его в Neuro Platform, выполнив:
 
 ```text
 neuro push helloworld
 ```
 
-After that, you can start the job by running:
+После этого вы можете запустить задание:
 
 ```text
 neuro run image:helloworld
 ```
 
-### How to Kill All Running Jobs
+### Как завершить все работающие задания
 
-To kill all jobs that are currently running on your behalf, run the following command:
+Чтобы завершить все задания, которые в данный момент выполняются от Вашего имени, выполните следующую команду:
 
 ```text
  neuro kill `neuro -q ps -o <user>`
 ```
 
-For example,
+например:
 
 ```text
  neuro kill `neuro -q ps -o mariyadavydova`
 ```
 
-### How to Run Two or More Commands In a Job
+### Как выполнить две или более команд в задании
 
-Sometimes you want to execute two or three commands in a job without having to connect to it. For example, you may want to change the working directory and to run training. To achieve this, you need to wrap your commands in `”bash -c ‘<commands>’”` call, like this:
+Иногда необходимо выполнить две или три команды в задании, не подключаясь к нему. Например, чтобы изменить рабочий каталог и запустить обучение. Чтобы это сделать, Вам нужно обернуть Ваши команды в вызов `”bash -c ‘<commands>’”`, например:
 
 ```text
 "bash -c 'cd /project && python mnist/train.py'"
 ```
 
-### How to Get Output from a Running Job
+### Как получить результат с работающего задания
 
-There are two ways to get the output of your running job:
+Есть два способа получить результат Вашего текущего задания:
 
-* Run it without `--detach` option.
-* Connect to a running job output with `neuro log <JOB>`, where JOB is either an id or a name of your job.
+* Запустите его без опции `--detach`.
+* Подключиться к выходу работающего задания с помощью `neuro log <JOB>`, где JOB это либо id, либо имя Вашего задания.
 
-In some cases Python cashes the output of the scripts, so that you won’t get any output until the job finishes. To overcome this problem provide `-u` option to `python`, like this:
+В некоторых случаях Python кеширует выходные данные, так что Вы не получите вывода, пока работа не будет завершена. Чтобы преодолеть эту проблему, используйте опцию `-u` для `python`, например:
 
 ```text
 "bash -c 'cd /project && python -u mnist/train.py'"

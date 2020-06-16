@@ -1,14 +1,14 @@
-# Accessing Object Storage in AWS
+# Доступ к Object Storage на AWS
 
-### Introduction
+### Введение
 
-This tutorial demonstrates how to access your AWS S3 from Neuro Platform. You will set up a new Neuro project, create an S3 bucket, and make it is accessible from Neuro Platform jobs.
+В данном руководстве показано, как получить доступ к AWS S3 из платформы Neuro. Вы создадите новый проект Neuro, создадите S3 bucket и сделаете его доступным из заданий платформы Neuro.
 
-Make sure you have [Neu.ro CLI](../references/cli-reference/) installed.
+Убедитесь, что у Вас установлен [Neu.ro CLI](../references/cli-reference/).
 
-### Creating Neuro Project
+### Создание проекта Neuro
 
-To create a new Neuro project, run:
+Для создания проекта Neuro выполните команду:
 
 ```bash
 neuro project init
@@ -16,21 +16,21 @@ cd <project-slug>
 make setup
 ```
 
-### Creating an AWS IAM User
+### Создание пользователя AWS IAM
 
-Follow [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
+Следуйте инструкциям [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
 
-Briefly, in AWS Console, go to "Services" drop-down list, "IAM" \(Identity and Access Management\). On the left-hand panel choose "Access management" -&gt; "Users", click the blue button "Add user", go through the wizard, and as a result you'll have a new user added:
+В Консоли AWS перейдите в раскрывающийся список "Services", "IAM" \(Identity and Access Management\). На левой панели выберите "Access management" -&gt; "Users", нажмите синюю кнопку "Add user", пройдите мастер и в результате у Вас будет создан новый пользователь:
 
 ![](../.gitbook/assets/1_add_user.png)
 
-Ensure that this user has "AmazonS3FullAccess" in the list of permissions.
+Убедитесь, что данный пользователь имеется в списке разрешений "AmazonS3FullAccess".
 
-Then, you'll need to create an access key for the newly created user. For that, go the user description, tab "Security credentials", press button "Create access key":
+Затем, Вам нужно создать ключ доступа для вновь созданного пользователя. Для этого перейдите в описание пользователя, вкладка "Security credentials", нажмите кнопку "Create access key":
 
 ![](../.gitbook/assets/2_create_key.png)
 
-Put these credentials to the local file in your project directory `./config/aws-credentials.txt`, for example:
+Поместите эти учетные данные в локальный файл в каталоге вашего проекта `./config/aws-credentials.txt`, например:
 
 ```text
 [default]
@@ -38,39 +38,39 @@ aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-Set appropriate permissions to the secret file:
+Установите соответствующие разрешения для файла с доступом:
 
 ```bash
 chmod 600 ./config/aws-credentials.txt
 ```
 
-Set up Neuro Platform to use this file and check that Neuro project detects the file:
+Настройте Neuro Platform для использования этого файла и убедитесь, что проект Neuro обнаружил этот файл:
 
 ```bash
 export AWS_SECRET_FILE=aws-credentials.txt
 make aws-check-auth
 ```
 
-This command should print something like: \`AWS will be authenticated via user account credentials file: '/project-path/config/aws-credentials.txt".
+Вывод данной команды: \`AWS will be authenticated via user account credentials file: '/project-path/config/aws-credentials.txt".
 
-### Creating a Bucket and Granting Access
+### Создание Bucket предоставление доступа
 
-Now, create a new S3 bucket. Remember: bucket names are globally unique.
+Теперь создайте новый S3 bucket. Помните: имена bucket глобально уникальны.
 
 ```bash
 BUCKET_NAME="my-neuro-bucket-42"
 aws s3 mb s3://$BUCKET_NAME/
 ```
 
-### Testing
+### Проверка
 
-Create a file and upload it into S3 Bucket:
+Создайте файл и загрузите его в S3 Bucket:
 
 ```bash
 echo "Hello World" | aws s3 cp - s3://$BUCKET_NAME/hello.txt
 ```
 
-Run a development job and connect to the job's shell:
+Запустите задание и подключитесь к оболочке shell:
 
 ```bash
 export PRESET=cpu-small  # to avoid consuming GPU for this test
@@ -78,15 +78,15 @@ make develop
 make connect-develop
 ```
 
-In your job's shell, try to use's 3\` to access your bucket:
+В оболочке shell Вашего задания попробуйте использовать s3 для доступа к Вашему bucket:
 
 ```bash
 aws s3 cp s3://my-neuro-bucket-42/hello.txt -
 ```
 
-To close the remote terminal session, press `^D` or type `exit`.
+Чтобы закрыть сеанс удаленного терминала, нажмите `^D` или введите `exit`.
 
-Please don't forget to terminate your job when you don't need it anymore:
+Пожалуйста, не забудьте прекратить работу задания, если оно Вам больше не нужно:
 
 ```bash
 make kill-develop

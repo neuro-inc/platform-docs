@@ -1,25 +1,25 @@
-# Remote Debugging with PyCharm Professional
+# Удаленная отладка с помощью PyCharm Professional
 
-### Introduction
+### Введение
 
-In this tutorial, we show how to set up remote debugging with PyCharm Professional on Neuro Platform using the Neuro project template.
+В данном руководстве мы покажем, как настроить удаленную отладку с помощью PyCharm Professional на платформе Neuro, используя шаблон проекта Neuro.
 
-### Initializing a new project
+### Создание нового проекта
 
-First, ensure that you have `neuro` client installed and configured:
+Во-первых, убедитесь, что у вас установлен и настроен клиент `neuro`:
 
 ```bash
 pip install -U neuromation
 neuro login
 ```
 
-Then, initialize an empty project:
+Затем создайте пустой проект::
 
 ```bash
 neuro project init
 ```
 
-This command asks several questions about your project:
+Эта команда задаст несколько вопросов о Вашем проекте:
 
 ```text
 project_name [Name of the project]: Neuro PyCharm
@@ -27,37 +27,37 @@ project_slug [neuro-pycharm]:
 code_directory [modules]:
 ```
 
-Next, configure the project's environment on Neuro Platform:
+Далее настройте на платформе Neuro рабочее окружение проекта:
 
 ```bash
 make setup
 ```
 
-### Setting up PyCharm
+### Настройки PyCharm
 
-Open the project created on the previous step in Pycharm Professional and add sample code to debug \(in this example, we use code snipped taken from [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
+Откройте проект, созданный на предыдущем шаге в Pycharm Professional и добавьте пример кода для отладки \(в этом примере мы используем фрагмент кода, взятый из документации [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
 
-Then, _exclude all directories that don't contain Python code_ \(in an empty Neuro project, only `modules/` is supposed to contain code\). PyCharm does not synchronize excluded directories. For that, select all directories to exclude, mouse right-click, "Mark Directory as" -&gt; "Excluded". As a result, you will see a configured project:
+Затем, _исключите все каталоги, которые не содержат код Python_ \(в пустом проекте Neuro только в `modules/` может быть код\). PyCharm не синхронизирует исключенные каталоги. Для этого выберите все каталоги, которые нужно исключить, щелкните правой кнопкой мыши "Mark Directory as" -&gt; "Excluded". В результате вы увидите сконфигурированный проект:
 
 ![](../.gitbook/assets/0_empty.png)
 
-Now, we are ready to start a development GPU-powered job on Neuro Platform. In the shell, run:
+Теперь все готово, чтобы приступить к разработке на GPU в платформе Neuro. Выполните команду в shell:
 
 ```bash
 make develop
 ```
 
-This command starts a `develop` job on Neuro Platform, which uses `gpu-small` preset. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed \(for that, you can run `make kill-all`\).
+Данная команда запускает `develop` задание на платформе Neuro, используя настройки `gpu-small`. Все запущенные задания потребляют Вашу квоту, поэтому, пожалуйста, _не забудьте прекратить работу_ когда она больше не нужна \(для этого вы можете выполнить `make kill-all`\).
 
-Now, forward the job's SSH port to the localhost:
+Теперь перенаправьте SSH-порт задания на localhost::
 
 ```bash
 make port-forward-develop
 ```
 
-Note, if default port `2211` is not available, you can specify another port via `make port-forward-develop LOCAL_PORT=2212`.
+Обратите внимание, если порт по умолчанию `2211` недоступен, Вы можете указать другой порт через `make port-forward-develop LOCAL_PORT=2212`.
 
-Then go back to PyCharm project, go to "File" -&gt; "Settings", "Project" -&gt; "Project interpreter" \(you can use search by the word "interpreter"\). Press on the gear sign to see project interpreter options, select "Add...". In the new window, select "SSH Interpreter", and set up the following configuration:
+Теперь вернитесь в проект, перейдите "File" -&gt; "Settings", "Project" -&gt; "Project interpreter" \(можно использовать поиск по слову "interpreter"\). Чтобы увидеть опции интерпретатора проекта, нажмите на значок шестеренки, выберите "Add...". В новом окне выберите "SSH Interpreter" и настройте следующую конфигурацию:
 
 ```bash
 Host: localhost
@@ -67,30 +67,30 @@ Username: root
 
 ![](../.gitbook/assets/1_add_py_interpreter.png)
 
-Press the Next button.
+Нажимте кнопку Next.
 
-In the new window, specify paths:
+В новом окне укажите пути:
 
 ```bash
 Interpreter: /usr/local/bin/python
 Sync folders: <Project root> -> /neuro-pycharm
 ```
 
-Note, within the job, your project root is available at the root of the filesystem: `/{project_name}`
+Обратите внимание, что в рамках задания, корень вашего проекта доступен в корне файловой системы: `/{project_name}`
 
-Press the Finish button, and your configuration is ready:
+Нажмите кнопку Finish и Ваша конфигурация готова:
 
 ![](../.gitbook/assets/2_mapping.png)
 
-Press the OK button.
+Нажмите кнопку OK.
 
-Once you applied remote interpreter configuration, PyCharm starts files synchronization.
+Как только вы примените конфигурацию удаленного интерпритатора, PyCharm начнет синхронизацию файлов.
 
-Congratulations! Your PyCharm project is now configured to work with remote Python interpreter running on Neuro job:
+Поздравляем! Ваш PyCharm проект теперь настроен для работы с удаленным интерпретатором Python, работающим с заданием Neuro:
 
 ![](../.gitbook/assets/3_debugging.png)
 
-Note: if your project mapping was not configured and the remote interpreter attempts to execute a file with a local path on the remote environment, you might need to specify mapping again: "Run" -&gt; "Edit Configurations..." -&gt; "Path mappings":
+Примечание: если mapping проекта не был настроен, и удаленный интерпретатор пытается выполнить файл с локальным путем в удаленной среде, Вам может потребоваться указать mapping опять: "Run" -&gt; "Edit Configurations..." -&gt; "Path mappings":
 
 ![](../.gitbook/assets/4_after_mapping.png)
 

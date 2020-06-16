@@ -1,45 +1,45 @@
-# Hierarchical Attention for Sentiment Classification
+# Hierarchical Attention для классификации тональности текста
 
-[Run on Neu.ro](https://apps.neu.ro/ml-recipes/hier-attention)
+[Запуск на Neu.ro](https://apps.neu.ro/ml-recipes/hier-attention)
 
-[Explore on GitHub](https://github.com/neuromation/ml-recipe-hier-attention)
+[Репозиторий на GitHub](https://github.com/neuromation/ml-recipe-hier-attention)
 
-Our recipe is based on a frequently cited paper, [Hierarchical Attention Networks for Document Classification](https://arxiv.org/abs/1608.07775) \(Z. Yang et al.\), published in 2017. We will classify the IMDB's reviews as positive and negative \(25k reviews for training and the same number for testing\). The proposed neural network’s architecture makes two steps:
+Рецепт основан на известной статье, [Hierarchical Attention Networks for Document Classification](https://arxiv.org/abs/1608.07775) \(Z. Yang et al.\), опубликованной в 2017 году. Мы будем классифицировать отзывы IMDB как положительные и отрицательные \(25 тысяч отзывов для обучения и столько же для тестирования\). Предлагаемая архитектура нейронной сети делает два шага:
 
-1. It encodes **sentences**. The attention mechanism predicts the importance of each **word** in the final embedding of a **sentence**.
-2. It encodes **texts**. The attention mechanism predicts the importance of each **sentence** in the final embedding of a **text**.
+1. Кодировка **предложений**. Механизм классификации предсказывает важность каждого **слова** при окончательном встраивании в **предложение**.
+2. Кодировка **текста**. Механизм классификации предсказывает важность каждого **предложения** при окончательном встраивании в **текст**.
 
-This architecture is interesting because it allows us to create an illustration to better understand which words and sentences were important for prediction. More information can be found in the original article.
+Данная архитектура интересна тем, что позволяет нам для лучшего понимания, создать иллюстрацию, какие слова и предложения были важны для прогноза. Более подробную информацию можно найти в оригинальной статье.
 
-The architecture of the Hierarchical Attention Network \(HAN\):
+Архитектура Hierarchical Attention Network \(HAN\):
 
 ![](../.gitbook/assets/scheme.png)
 
-This recipe includes two scenarios:
+Этот рецепт включает в себя два сценария:
 
-* You can **train the model** yourself from scratch with the ability to make changes in data processing or architecture, it isn't tricky. 
-* You can **play with a trained model** in the Jupyter notebook; write your review or pick a random one from the test set, then visualize the model’s predictions.
+* Вы можете **обучить модель** самостоятельно с нуля, с возможностью вносить изменения в обработку данных или архитектуру, это не сложно. 
+* Вы можете **исследовать обученную модель** в Jupyter notebook. Сделайте свой обзор или выберите случайный из набора тестов, а затем визуализируйте прогнозы.
 
 ![](../.gitbook/assets/visualization.png)
 
-### Technologies
+### Технологии
 
-* `Catalyst` as pipeline runner for deep learning tasks. This new and rapidly developing [library](https://github.com/catalyst-team/catalyst) can significantly reduce the amount of boilerplate code. If you are familiar with the TensorFlow ecosystem, you can think of Catalyst as Keras for PyTorch. This framework is integrated with logging systems such as the well-known [TensorBoard](https://www.tensorflow.org/tensorboard) and the new [Weights & biases](https://www.wandb.com/).
-* `Pytorch` and `Torchtext` as main frameworks for deep learning. 
-* `NLTK` for data preprocessing.
+* `Catalyst` как конвейер для задач глубокого обучения. Эта новая и быстро развивающаяся [библиотека](https://github.com/catalyst-team/catalyst) может значительно сократить объем стандартного кода. Если вы знакомы с экосистемой TensorFlow, вы можете думать о Catalyst как о Keras для PyTorch. Этот фреймворк интегрирован с системами логирования, такими как хорошо известный [TensorBoard](https://www.tensorflow.org/tensorboard) и новый [Weights & biases](https://www.wandb.com/).
+* `Pytorch` и `Torchtext` как основные фреймворки для глубокого обучения. 
+* `NLTK` для предварительной обработки данных.
 
-## Quick Start
+## Начало работы
 
-#### 0. Sign up
+#### 0. Зарегистрироваться
 
-#### 1. Install CLI and log in
+#### 1. Установить CLI и зайти
 
 ```text
 pip install -U neuromation
 neuro login
 ```
 
-#### 2. Run the recipe
+#### 2. Запустить рецепт
 
 ```text
 git clone git@github.com:neuromation/ml-recipe-hier-attention.git

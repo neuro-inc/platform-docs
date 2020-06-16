@@ -1,56 +1,56 @@
 # Cookbook
 
-What you will find here is a curated collection of ML Recipes: ready-to-use examples, best practices, and learning materials available to you in the form of interactive environments that run on Neuro Platform.
+Здесь вы найдете коллекцию рецептов по ML: готовые к использованию примеры, лучшие практики и учебные материалы, доступные Вам в форме интерактивных сред, которые можно запустить на платформе Neuro.
 
-Using ML Recipes, you can:
+Используя рецепты по ML, Вы можете:
 
-* Run state of the art \(SOTA\) deep learning models for a variety of applied tasks.
-* Interact with the results and extend the solution.
-* Upload data and download the results using a desktop or mobile device.
-* Make your experiments reproducible.
+* Запустить современные модели глубокого обучения \(SOTA\) для различных прикладных задач.
+* Взаимодействовать с результатами и расширять решение.
+* Загружать данные и выгружать результаты с помощью настольного или мобильного устройств.
+* Сделать эксперименты воспроизводимыми.
 
-You have two options of how you might wish to use our recipes. You can sign up as [free tier user](https://neu.ro/) and experiment with the recipes within our managed installation of the platform. You can also install Neuro into your AWS, GCP, or Azure cloud account or on-perm GPU rack and use the recipes there.
+У вас есть два варианта использования наших рецептов. Вы можете зарегистрироваться как пользователь с [бесплатным аккаунтом](https://neu.ro/) и экспериментировать с рецептами в рамках нашей устанавливаемой платформы. Вы также можете установить Neuro в Ваш сервис AWS, GCP или Azure или встроенную стойку GPU и использовать там наши рецепты.
 
-## What's Inside?
+## Что внутри?
 
-### Vision
+### Компьютерное зрение
 
-[Object detection](object-detection.md). An end to end object detection pipeline for objects represented in the [Common Objects in Context \(COCO\)](http://cocodataset.org) dataset that allows you to evaluate performance on real life images and to add new object classes.
+[Обнаружение объктов](object-detection.md). Сквозной конвейер обнаружения объектов для репрезентации объектов в наборе данных [Common Objects in Context \(COCO\)](http://cocodataset.org), который позволяет оценивать производительность на реальных изображениях и добавлять новые классы.
 
-[Pediatric Bone Age Assessment](pediatric-bone-age-assessment.md). This recipe demonstrates the estimation of the age of the child from the X-ray image of the left hand from the wrist to the fingertips. It is based on an approach described in _"Paediatric Bone Age Assessment Using Deep Convolutional Neural Networks" by V. Iglovikov, A. Rakhlin, A. Kalinin and A. Shvets_, [1](https://link.springer.com/chapter/10.1007%2F978-3-030-00889-5_34), [2](https://www.biorxiv.org/content/biorxiv/early/2018/06/20/234120.full.pdf).
+[Оценка костного возраста детей](pediatric-bone-age-assessment.md). Этот рецепт демонстрирует оценку возраста ребенка по рентгеновскому изображению левой руки от запястья до кончиков пальцев. Он основан на подходе, описанному в _"Paediatric Bone Age Assessment Using Deep Convolutional Neural Networks" by V. Iglovikov, A. Rakhlin, A. Kalinin and A. Shvets_, [1](https://link.springer.com/chapter/10.1007%2F978-3-030-00889-5_34), [2](https://www.biorxiv.org/content/biorxiv/early/2018/06/20/234120.full.pdf).
 
-### Language
+### Языки
 
-[Hierarchical Attention](hierarchical-attention-for-sentiment-classification.md). Based on highly cited paper [Hierarchical Attention Networks for Document Classification](https://arxiv.org/abs/1608.07775) \(Z. Yang et al.\), published in 2017, this recipe demonstrates how to apply this two-step architecture to sentiment classification.
+[Hierarchical Attention](hierarchical-attention-for-sentiment-classification.md). Оновано на известной публикации [Hierarchical Attention Networks for Document Classification](https://arxiv.org/abs/1608.07775) \(Z. Yang et al.\), опубликованной в 2017. Данный рецепт демонстрирует, как применять двухэтапную архитектуру к классификации тональности текста.
 
-[MIDI Generator](midi-generator.md). This recipe demonstrates how to generate MIDI files from scratch and continue existing MIDI files. Warning: the recipe contains a very catchy notebook. Don't forget to watch your surroundings!
+[Генератор MIDI файлов](midi-generator.md). Данный рецепт демонстрирует, как с нуля генерировать MIDI-файлы и расширять существующие MIDI-файлы. Замечание: рецепт содержит довольно хитроумный код в notebook. Не забудьте изучить его!
 
-### Reinforcement Learning
+### Обучение с подкреплением
 
-[Deep Q-Learning](deep-q-learning-dqn.md). This recipe shows a rather simplistic approach to reinforcement learning \(DQN\) in one of the traditional environment: [Mountain Car](https://gym.openai.com/envs/MountainCar-v0/). It is an excellent starting point to dive into Deep Reinforcement Learning.
+[Глубокое Q-обучение](deep-q-learning-dqn.md). Данный рецепт демонстрирует довольно простой подход к обучению с подкреплением \(DQN\) в одной из традиционных областей: [Mountain Car](https://gym.openai.com/envs/MountainCar-v0/). Это отличная отправная точка для углубленного изучения обучения с подкреплением.
 
-## Prerequisites
+## Необходимые условия
 
-* Familiarity with working with data in Python.
-* Familiarity with machine learning concepts \(such as training and test sets\).
-* Some experience with PyTorch and neural networks is helpful.
+* Умение работать с данными в Python.
+* Знание принципов Machine Learning \(таких, как учебные и тестовые наборы данных\).
+* Некоторые познания PyTorch и нейронных сетей.
 
-## Getting Started
+## Приступая к работе
 
-### Install the Neuro CLI
+### Установка Neuro CLI
 
-To work with ML Recipes, you need to install the Neuro Platform CLI.
+Для работы с рецептами по ML, надо установить Neuro Platform CLI.
 
 ```text
 pip install -U neuromation
 neuro login
 ```
 
-Paste the above in a macOS, Windows, or Linux terminal prompt. This command automatically installs the Neuro CLI and brings you to the login screen of Neuro Platform.
+Вставьте вышеприведенную команду в окно терминала MacOS, Windows или Linux. Эта команда автоматически устанавливает Neuro CLI и открывает экран входа в Neuro Platform.
 
-The Neuro Platform CLI requires Python 3.7 to be installed. We suggest installing Anaconda Python 3.7 Distribution. On some distributions, you might have to run `pip3 install -U neuromation`.
+Для CLI Neuro Platform требуется Python 3.7. Мы предлагаем установить через Anaconda Python 3.7 Distribution. В некоторых дистрибутивах вам может понадобиться выполнить `pip3 install -U neuromation`.
 
-### Run ML Recipe
+### Выполнение рецептов по ML
 
-Choose an ML Recipe from the list above, clone the corresponding repository and follow the instructions from that recipe's README.
+Выберите ML рецепт из вышеприведенного списка, клонируйте соответствующий репозиторий и следуйте инструкциям README этого рецепта.
 

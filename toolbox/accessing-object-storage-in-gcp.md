@@ -1,14 +1,14 @@
-# Accessing Object Storage in GCP
+# Доступ к Object Storage в GCP
 
-### Introduction
+### Введение
 
-This tutorial demonstrates how to access your Google Cloud Storage from Neuro Platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket and make that bucket is accessible from Neuro Platform job.
+В данном руководстве показано, как получить доступ к облачному хранилищу Google Cloud Storage с платформы Neuro. Мы создадим новый проект Neuro на GCP, учетную запись и bucket, а затем сделаем этот bucket доступным для задания на платформе Neuro.
 
-Make sure you have [Neu.ro CLI](../references/cli-reference/) installed.
+Убедитесь, что у Вас установлен [Neu.ro CLI](../references/cli-reference/).
 
-### Creating Neuro and GCP Projects
+### Создание проектов Neuro и GCP
 
-To create a new Neuro project, run:
+Для создания проекта Neuro выполните команду:
 
 ```bash
 neuro project init
@@ -16,7 +16,7 @@ cd <project-slug>
 make setup
 ```
 
-It's a good practice to limit the scope of access to a specific GCP project. To create a new GCP Project, run:
+Хорошей практикой является ограничение доступа к конкретному проекту GCP. Чтобы создать новый проект GCP выполните команду:
 
 ```bash
 PROJECT_ID=${PWD##*/}  # name of the current directory
@@ -24,11 +24,11 @@ gcloud projects create $PROJECT_ID
 gcloud config set project $PROJECT_ID
 ```
 
-Make sure to [set billing account](https://cloud.google.com/billing/docs/how-to/modify-project) for your GCP project. See [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) for details.
+Убедитесь, что Вы настроили платежную учетную запись для Вашего GCP проекта [set billing account](https://cloud.google.com/billing/docs/how-to/modify-project). Для подробной информации см. [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 
-### Creating a Service Account and Uploading an Account Key
+### Создание учетной записи и загрузка ключа
 
-First, create a service account the job will impersonate into:
+Сначала создайте учетную запись для задания:
 
 ```bash
 SA_NAME="neuro-job"
@@ -37,45 +37,45 @@ gcloud iam service-accounts create $SA_NAME  \
     --display-name "Neuro Platform Job"
 ```
 
-See [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts#iam-service-accounts-create-gcloud) for details.
+Для подробной информации см. [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts#iam-service-accounts-create-gcloud).
 
-Then download account key:
+Затем загрузите ключ аккаунта:
 
 ```bash
 gcloud iam service-accounts keys create ./config/$SA_NAME-key.json \
   --iam-account $SA_NAME@$PROJECT_ID.iam.gserviceaccount.com
 ```
 
-Check that the newly created key is located at `$PROJECT_ID/config/`.
+Убедитесь, что вновь созданный ключ находится `$PROJECT_ID/config/`.
 
-Set up a required environment variable to point to this file:
+Установите переменную среды, указывающую на этот файл:
 
 ```bash
 export GCP_SECRET_FILE=$SA_NAME-key.json
 ```
 
-Please note that in this case we `export` environment variable so that it becomes visible in `Makefile` \(alternatively, you can manually edit `Makefile` and change the value in the line `GCP_SECRET_FILE?=neuro-job-key.json`\).
+Обратите внимание, что в этом случае мы делаем `export` в переменную среды,  чтобы наша переменная стала видимой в `Makefile` \(в качестве альтернативы вы можете вручную отредактировать `Makefile` и изменить значение в строке `GCP_SECRET_FILE?=neuro-job-key.json`\).
 
-Check that Neuro project detects the file:
+Убедитесь, что проект Neuro обнаружил файл:
 
 ```bash
 make gcloud-check-auth
 ```
 
-This command should print something like: `Google Cloud will be authenticated via service account key file: '/project-path/config/$SA_NAME-key.json'`.
+Пример вывода данной команды: `Google Cloud will be authenticated via service account key file: '/project-path/config/$SA_NAME-key.json'`.
 
-Your key is now available as `/$PROJECT_ID/config/$SA_NAME-key.json` from within your jobs.
+Ваш ключ теперь доступен из заданий как `/$PROJECT_ID/config/$SA_NAME-key.json`.
 
-### Creating a Bucket and Granting Access
+### Создание Bucket и предоставление доступа
 
-Now, create a new bucket. Remember: bucket names are globally unique \(see more information on [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
+Теперь создайте новый bucket. Помните: имена bucket глобально уникальны \(см. дополнительную информацию [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
 
 ```bash
 BUCKET_NAME="my-neuro-bucket-42"
 gsutil mb gs://$BUCKET_NAME/
 ```
 
-Grant access to the bucket:
+Предоставьте доступ к bucket:
 
 ```bash
 # Permissions for gsutil:
@@ -87,15 +87,15 @@ PERM="storage.legacyBucketOwner"
 gsutil iam ch serviceAccount:$SA_NAME@$PROJECT_ID.iam.gserviceaccount.com:roles/$PERM gs://$BUCKET_NAME
 ```
 
-### Testing
+### Тестирование
 
-Create a file and upload it into Google Cloud Storage Bucket:
+Создайте файл и загрузите его в Google Cloud Storage Bucket:
 
 ```bash
 echo "Hello World" | gsutil cp - gs://$BUCKET_NAME/hello.txt
 ```
 
-Run a development job and connect to the job's shell:
+Запустите задание и подключитесь к нему через оболочку shell:
 
 ```bash
 export PRESET=cpu-small  # to avoid consuming GPU for this test
@@ -103,15 +103,15 @@ make develop
 make connect-develop
 ```
 
-In your job's shell, try to use `gsutil` to access your bucket:
+Для доступа к Вашему bucket в оболочке shell попробуйте использовать `gsutil`:
 
 ```bash
 gsutil cat gs://my-neuro-bucket-42/hello.txt
 ```
 
-Please note that in `develop`, `train`, and `jupyter` jobs the environment variable `GOOGLE_APPLICATION_CREDENTIALS` points to your key file. So you can use it to [authenticate other libraries](https://cloud.google.com/storage/docs/reference/libraries).
+Обратите внимание, что при `develop`, `train`, работе с `jupyter` переменная окружения `GOOGLE_APPLICATION_CREDENTIALS` указывает на ваш файл ключа. Таким образом, вы можете использовать его для [аутентификации других библиотек](https://cloud.google.com/storage/docs/reference/libraries).
 
-For instance, you can access your bucket via Python API provided by package `google-cloud-storage`:
+Например, вы можете получить доступ к своему bucket через Python API, предоставляемый пакетом `google-cloud-storage`:
 
 ```text
 >>> from google.cloud import storage
@@ -121,9 +121,9 @@ For instance, you can access your bucket via Python API provided by package `goo
 b'Hello World\n'
 ```
 
-To close remote terminal session, press `^D` or type `exit`.
+Чтобы закрыть сеанс удаленного терминала, нажмите `^D` или введите `exit`.
 
-Please don't forget to terminate your job when you don't need it anymore:
+Пожалуйста, не забудьте прекратить работу задания, если оно Вам больше не нужно:
 
 ```bash
 make kill-develop

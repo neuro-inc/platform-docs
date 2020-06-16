@@ -1,12 +1,12 @@
-# Experiment Tracking with Weights & Biases
+# Отслеживание экспериментов с Weights & Biases
 
-### Introduction
+### Введение
 
-In this tutorial, we show how to set up experiment tracking via Weights & Biases on Neuro Platform using Neuro Project Template.
+В данном руководстве мы покажем, как настроить отслеживание эксперимента через Weights & Biases на платформе Neuro, используя шаблон проекта Neuro.
 
-### Creating Neuro Project
+### Создание проекта Neuro
 
-To create a new Neuro project, run:
+Для создания нового проекта Neuro выполните команду:
 
 ```bash
 neuro project init
@@ -14,21 +14,21 @@ cd <project-slug>
 make setup
 ```
 
-### Authenticating W&B
+### Аутентификация на W&B
 
-Register a [W&B account](https://app.wandb.ai/login) \(note: W&B offers _free limited accounts_ for individual researchers, see [W&B pricing policy](https://www.wandb.com/pricing)\). Then, download your API key on [W&B settings page](https://app.wandb.ai/settings) and save it to a local file `./config/wandb-token.txt` \(you can also use a different file name, but in this case you'd need to put the file name to the env var: `export WANDB_SECRET_FILE=<file-name>`\).
+Зарегистрируйте учетную запись на [W&B](https://app.wandb.ai/login) \(примечание: W&B предлагает _бесплатный ограниченный аккаунт_ для индивидуальных исследователей, см. [W&B pricing policy](https://www.wandb.com/pricing)\). Затем загрузите API key на странице [W&B settings page](https://app.wandb.ai/settings) и сохраните его в локальный файл `./config/wandb-token.txt` \(Вы можете использовать другое имя файла, но в этом случае Вам нужно будет экспортировать имя файла в переменную окружения: `export WANDB_SECRET_FILE=<file-name>`\).
 
-Check that Neuro project detects the key file:
+Убедитесь, что проект Neuro обнаружил файл ключа:
 
 ```bash
 make wandb-check-auth
 ```
 
-In case of success, this command should print something like: `Weights & Biases will be authenticated via key file: '/project-path/config/wandb-token.txt'`. Now, if you run a `develop`, `train`, or `jupyter` job, Neuro will authenticate W&B via your API key by running `wandb login` at job's startup.
+В случае успеха вывод команды должен быть таким: `Weights & Biases will be authenticated via key file: '/project-path/config/wandb-token.txt'`. Теперь Вы можете выполнять задания `develop`, `train` или `jupyter`, Neuro будет аутентифицировать W&B через Ваш API key, запуская при старте задания `wandb login`.
 
-### Testing
+### Тестирование
 
-Run a development job and connect to the job's shell:
+Запустите задание и подключитесь к заданию через оболочку shell:
 
 ```bash
 export PRESET=cpu-small  # to avoid consuming GPU for this test
@@ -36,13 +36,13 @@ make develop
 make connect-develop
 ```
 
-In your job's shell, try to use `wandb`:
+Попробуйте использовать команду `wandb`:
 
 ```bash
 wandb status
 ```
 
-You should see something like:
+Вы должны увидеть такой вывод:
 
 ```bash
 Logged in? True
@@ -59,11 +59,11 @@ Current Settings
 }
 ```
 
-Please find a real-world example of W&B usage on Neuro Platform in our ML Recipe for Hierarchical Attention. You can also find other examples on how to use experiment tracking and other features of W&B [in official W&B's examples repo](https://github.com/wandb/examples).
+Вы можете найти реальный пример использования W&B на платформе Neuro в наших рецептах по ML для Hierarchical Attention. Вы также можете найти другие примеры использования отслеживания экспериментов и других функций W&B [в официальном репозитории примеров W&B](https://github.com/wandb/examples).
 
-To close remote terminal session, press `^D` or type `exit`.
+Чтобы закрыть сеанс удаленного терминала, нажмите `^D` или введите`exit`.
 
-Please don't forget to terminate your job when you don't need it anymore:
+Пожалуйста, не забудьте прекратить работу задания, если оно Вам больше не нужно:
 
 ```bash
 make kill-develop

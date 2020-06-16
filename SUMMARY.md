@@ -14,22 +14,22 @@
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
 
-* [Accessing Object Storage in GCP](toolbox/accessing-object-storage-in-gcp.md)
-* [Accessing Object Storage in AWS](toolbox/accessing-object-storage-in-aws.md)
-* [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
-* [Experiment Tracking with Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
-* [Hyperparameter Tuning with NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
-* [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
+* [Доступ к Object Storage в GCP](toolbox/accessing-object-storage-in-gcp.md)
+* [Доступ к Object Storage на AWS](toolbox/accessing-object-storage-in-aws.md)
+* [Удаленная отладка с помощью PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Отслеживание экспериментов с Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
+* [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
+* [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 
 ## Neu.ro Cookbook <a id="cookbook"></a>
 
 * [Cookbook](cookbook/cookbook.md)
-* [Object Detection](cookbook/object-detection.md)
-* [Pediatric Bone Age Assessment](cookbook/pediatric-bone-age-assessment.md)
-* [Hierarchical Attention for Sentiment Classification](cookbook/hierarchical-attention-for-sentiment-classification.md)
-* [MIDI Generator](cookbook/midi-generator.md)
-* [Deep Q-Learning \(DQN\)](cookbook/deep-q-learning-dqn.md)
+* [Распознование объектов](cookbook/object-detection.md)
+* [Оценка костного возраста детей](cookbook/pediatric-bone-age-assessment.md)
+* [Hierarchical Attention для классификации тональности текста](cookbook/hierarchical-attention-for-sentiment-classification.md)
+* [Генератор MIDI файлов](cookbook/midi-generator.md)
+* [Глубокое Q-обучение \(DQN\)](cookbook/deep-q-learning-dqn.md)
 
 ## References
 

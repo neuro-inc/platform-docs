@@ -1,22 +1,22 @@
-# Hyperparameter Tuning with Weights & Biases
+# Настройка гиперпараметров с Weights & Biases
 
-Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for the model training, set up the hyperparameters space, and start the search with just one command. Neu.ro is in charge of the rest.
+Neu.ro позволяет проводить обучение модели параллельно с различными комбинациями гиперпараметров через интеграцию с [Weights & Biases](https://www.wandb.com/). W&B - это инструмент отслеживания экспериментов для глубокого обучения. Инженеру ML нужно только инициировать процесс: подготовить код для обучения модели, настроить пространство гиперпараметров и начать поиск только одной командой. Все остальное сделает Neu.ro.
 
-To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb), where we apply hyperparemeter tuning with W&B to image classification task.
+Чтобы увидеть данное руководство в действии, ознакомьтесь с нашим [рецептом](https://github.com/neuromation/ml-recipe-hyperparam-wandb), в котором мы применяем настройку гиперпараметров W&B к задаче классификации изображений.
 
-### Creating a Neu.ro project
+### Создание проекта Neu.ro
 
-The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps. 
+Шаблон проекта Neu.ro содержит интеграцию с Weights and Biases. Чтобы создать новый проект из шаблона, необходимо выполнить несколько шагов. 
 
-First, [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
+Сначала [зарегистрируйтесь](https://neu.ro/) и [установите клиент CLI](https://docs.neu.ro/getting-started#installing-cli)
 
-Then, create a project:
+Затем создайте проект:
 
 ```text
 neuro project init
 ```
 
-This command will then ask you several simple questions:
+Эта команда задаст Вам несколько простых вопросов:
 
 ```text
 project_name \[Neuro Project]: Hyperparameter tuning test
@@ -24,21 +24,21 @@ project_slug \[hyperparameter-tuning-test]:
 code_directory \[modules]:
 ```
 
-Press `Enter` if you do not want to change a suggested value.
+Нажмите `Enter` если вы не хотите менять предложенное значение.
 
-Then, change the working directory:
+Затем поменяйте рабочую директорию:
 
 ```text
 cd hyperparameter-tuning-test
 ```
 
-### Connecting Weights & Biases
+### Подключение Weights & Biases
 
-Now, connect your project with [Weights & Biases](https://www.wandb.com/):
+Теперь подключите Ваш проект к [Weights & Biases](https://www.wandb.com/):
 
-1. [Register your W&B account](https://app.wandb.ai/login?signup=true)
-2. Find your API key \(it is also called a token\) on [W&B’s settings page](https://app.wandb.ai/settings)\(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-3. Save your API key \(token\) to a file in a local directory `./config/` and protect it by setting appropriate permissions to make W&B available on Neu.ro platform:
+1. [Зарегистрируйтесь на W&B](https://app.wandb.ai/login?signup=true)
+2. На странице  [W&B’s settings page](https://app.wandb.ai/settings) \(раздел “API keys”\) найдите Ваш API key \(он также называется токеном\). Он должен выглядеть таким образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+3. Сохраните ваш API key \(токен\) в файле в локальном каталоге `./config/` и, чтобы сделать W&B доступным на платформе Neu.ro, установите соответствующие разрешения:
 
 ```text
 export WANDB_SECRET_FILE=wandb-token.txt
@@ -46,76 +46,76 @@ echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > config/$WANDB_SECRET_FILE
 chmod 600 config/$WANDB_SECRET_FILE
 ```
 
-After that, check that Neu.ro can access and use this file for authentication:
+Убедитесь, что Neu.ro может получить доступ и использовать этот файл для аутентификации:
 
 ```text
 make wandb-check-auth
 ```
 
-In case of success, this command should return something like:
+В случае успеха вывод команды должен быть таким:
 
 ```text
 Weights & Biases will be authenticated via key file:
 '/project-path/config/wandb-token.txt'.
 ```
 
-Now, if you run a `develop`, `train`, `jupyter`, or other jobs \(see `Makefile` for the full list of commands\), Neu.ro authenticates W&B via your API key by running `wandb login` at job’s startup.
+Теперь Вы можете выполнять задания `develop`, `train`, `jupyter` или другие задания \(для полного списка команд см. `Makefile`\). Neuro будет аутентифицировать W&B через Ваш API key, запуская при старте задания `wandb login`.
 
-Technically, authentication in W&B is being done as follows: when you start any job in an environment derived from the base one, Neu.ro checks if the environment variable `NM_WANDB_TOKEN_PATH` is set and then stores the path to the existing file. Then \(before the job starts\), it runs the command `wandb login $(cat $NM_WANDB_TOKEN_PATH)` to create a connection between W&B and Neu.ro.
+Технически, аутентификация в W&B выполняется следующим образом: при запуске любого задания в среде, производной от базовой, Neu.ro проверяет, установлена ли переменная среды `NM_WANDB_TOKEN_PATH` и затем сохраняет путь к существующему файлу. Затем \(до запуска задания\), чтобы создать соединение между W&B и Neu.ro, запускается команда `wandb login $(cat $NM_WANDB_TOKEN_PATH)`.
 
-Please find instructions on using Weights & Biases in your code in [W&B documentation](https://docs.wandb.com/library/api/examples) and [W&B example projects](https://github.com/wandb/examples).
+Инструкции по использованию Weights & Biases в Вашем коде Вы найдете в документации [W&B documentation](https://docs.wandb.com/library/api/examples) и в примерах [W&B example projects](https://github.com/wandb/examples).
 
-### Using Weights & Biases for hyperparameter tuning
+### Использование Weights & Biases для настройки гиперпараметра
 
-If you have completed the previous parts of the instruction, W&B is ready to use. To run hyperparameter tuning for the model, you need to:
+Если Вы выполнили предыдущие части данного руководства, W&B готово к использованию. Чтобы запустить настройку гиперпараметра для модели, Вам необходимо:
 
-* define the list of hyperparameters \(in a `wandb-sweep.yaml` file\), and
-* send the metrics to W&B after each run \(by using `Makefile` and `make hypertrain` command\).
+* определить список гиперпараметров \(в файле `wandb-sweep.yaml`\), и
+* отправлять метрики в W&B после каждого запуска \(используя `Makefile` и команду `make hypertrain`\).
 
-`Makefile` and `wandb-sweep.yaml` have links to `train.py`. If you want to run `hypertrain` for another script, you can change the `program` property in `wandb-sweep.yaml` \(see below\). The script must contain the description of the model and the training loop.
+`Makefile` и `wandb-sweep.yaml` ссылаются на `train.py`. Если Вы хотите запустить `hypertrain` для другого скрипта, вы можете изменить характеристику `program` в `wandb-sweep.yaml` \(см. ниже\). Скрипт должен содержать описание модели и цикл обучения.
 
-The Python script must also receive parameters with the same names, as specified in `wandb-sweep.yaml` as arguments of the command line and use them for model training/evaluation. For example, you can use command line parameters such as the [argparse](https://docs.python.org/3/library/argparse.html) Python module.
+Скрипт Python также должен получать параметры в качестве аргументов командной строки с такими же именами, как указано в `wandb-sweep.yaml` и использовать их для обучения/оценки модели. Например, Вы можете использовать параметры командной строки, как в модуле Python [argparse](https://docs.python.org/3/library/argparse.html).
 
-There are more details below:
+Более подробная информация:
 
-1. `train.py` is a file that contains the model training code. It should log the metrics with W&B, for example, in our case:
+1. `train.py` - это файл, содержащий код для обучения модели. В нем должны логироваться метрики из W&B, например, в нашем случае:
 
 ```text
 wandb.log({'accuracy': 0.9})
 ```
 
-1. `wandb-sweep.yaml` has the following structure:
+1. `wandb-sweep.yaml` имеет следующую структуру:
 
 ![wandb-sweep.yaml example](../.gitbook/assets/wandb-yaml.png)
 
-* Line 1: `/../train.py` is a default path to a file with model training code.
-* Line 2: a method that is used for the hyperparameters tuning. For more information, see W&B docs.
-* Lines 4, 5: the name of the metric that is supposed to be optimized. The ML engineer can change this metric according to the task.
-* Lines 6 -12: hyperparameter settings. The ML engineer should use them in the `train.py` file. Names, values, and ranges are changeable as well.
+* Line 1: `/../train.py` путь по умолчанию к файлу с обучающим кодом модели.
+* Line 2: метод, который используется для настройки гиперпараметров. Для получения дополнительной информации см. документы W&B.
+* Lines 4, 5: имя метрики, которая должна быть оптимизирована. Инженер ML может изменить метрику в соответствии с заданием.
+* Lines 6 -12: настройки гиперпараметров. Их необходимо использовать в файле `train.py`. Имена, значения и диапазоны могут быть изменены.
 
-The name of the file `wandb-sweep.yaml` and the path to it may also be modified in Makefile in the root directory of your project.
+Имя файла `wandb-sweep.yaml` и путь к нему можно изменить в Makefile в корневом каталоге Вашего проекта.
 
-### Hyperparameter tuning
+### Настройка гиперпараметра
 
-Now that you have set up both Neu.ro and W&B and prepared your training script, it’s time to try hyperparameter tuning. For that, you should run the following command:
+Теперь, когда Вы настроили Neu.ro и W&B и подготовили скрипт для обучения модели, можно попробовать сделать настройку гиперпараметров. Для этого необходимо выполнить следующую команду:
 
 ```text
 make hypertrain
 ```
 
-This starts jobs that run `train.py` script \(or whatever name you have chosen\) on the platform with different sets of hyperparameters in parallel. By default, just 3 jobs run at the same time. You can change this number by modifying `N_JOBS` variable in `Makefile` or adding it at the end of `make` command:
+Данная команда выполняет параллельно задания, которые приводят в действие скрипт `train.py` \(или с любым другим, выбранным Вами именем\), с различными наборами гиперпараметров. По умолчанию одновременно выполняется только 3 задания. Вы можете изменить это число, изменив переменную `N_JOBS` в файле `Makefile` или добавив ее в конце команды `make`:
 
 ```text
 make hypertrain N_JOBS=10
 ```
 
-To monitor the hyperparameter tuning process, follow the link which W&B provides at the beginning of the process.
+Чтобы отслеживать процесс настройки гиперпараметров, перейдите по ссылке, которую W&B предоставляет в начале работы.
 
-If you want to stop the hyperparameter tuning, terminate all related jobs:
+Если вы хотите остановить настройку гиперпараметров, прекратите все связанные задания:
 
 ```text
 make kill-hypertrain-all
 ```
 
-After that, verify that the jobs stopped \(`make ps`\), and then delete unused sweeps from the local file `.wandb_sweeps`.
+Убедитесь, что задания остановлены \(`make ps`\), а затем удалите неиспользуемые развертки из локального файла `.wandb_sweeps`.
 

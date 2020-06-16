@@ -1,16 +1,16 @@
-# Hyperparameter Tuning with NNI
+# Настройка гиперпараметров с NNI
 
-## Introduction
+## Введение
 
-This tutorial demonstrates how to use [NNI](https://github.com/microsoft/nni) \(an open-source tool from Microsoft\) for Hyperparameter Tuning on Neu.ro. You will create a new Neu.ro project, integrate it with NNI and run multiple tuning workers to speed up search process.
+В данном руководстве Вы узнаете, как использовать [NNI](https://github.com/microsoft/nni) \(open-source инструмент от Microsoft\) для настройки гиперпараметров на Neu.ro. Вы создадите новый проект Neu.ro, интегрируете его с NNI и, чтобы ускорить поиск, запустите несколько процессов по настройке.
 
 {% embed url="https://vimeo.com/417956858" caption="Hyperparameter Tuning with NNI" %}
 
-Make sure you have [Neu.ro CLI](../getting-started.md#installing-cli) installed.
+Убедитесь, что у Вас установлен [Neu.ro CLI](../getting-started.md#installing-cli).
 
-### Creating Neu.ro project
+### Создание проекта Neu.ro
 
-To create a new Neu.ro project, run:
+Для создания проекта, выполните команду:
 
 ```bash
 neuro project init
@@ -18,14 +18,14 @@ cd <project-slug>
 ```
 
 {% hint style="info" %}
-Make sure you do not run `make setup` just yet. We're going to modify several files before building an image for the experiment.
+Убедитесь, что Вы еще не выполняли команду `make setup`. Мы собираемся изменить несколько файлов перед созданием образа для эксперимента.
 {% endhint %}
 
-### Populating experiment code and integrating with Neu.ro
+### Подготовка кода для эксперимента и интеграция с Neu.ro
 
-We're going to use [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) with a MNIST dataset. Put [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) file to the `modules` folder and [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) to the `config` folder.
+Мы собираемся использовать пример кода [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) с набором данных MNIST. Поместите файл [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) в папку `modules`, а файл [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) в папку `config`.
 
-Then, add the following lines to `requirements.txt`:
+Затем добавьте следующие записи в файл `requirements.txt`:
 
 ```bash
 # Required for Hyper-parameter search
@@ -35,46 +35,46 @@ Jinja2>=2.11.2
 aiodns>=2.0.0
 ```
 
-We are now ready to build our image:
+Теперь мы готовы собрать наш образ:
 
 ```bash
 make setup
 ```
 
-While Docker builds our image we can continue setting up NNI integration:
+Пока Docker создает наш образ, мы можем продолжить настройку интеграции NNI:
 
-Put [nni.mk](https://github.com/neuromation/ml-recipe-nni/blob/master/nni.mk) to the root of your project and add the following line _at the end_ of`Makefile`:
+Поместите [nni.mk](https://github.com/neuromation/ml-recipe-nni/blob/master/nni.mk) в корень Вашего проекта и добавьте следующую строку _в конец_ `Makefile`:
 
 ```bash
 include nni.mk
 ```
 
-This will add some new make targets and overwrite existing ones to work with NNI.
+Это добавит несколько новых целей make и перезапишет существующие для работы с NNI.
 
-Finally, put [`nni-config-template.yml`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/nni-config-template.yml) and [`prepare-nni-config.py`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/prepare-nni-config.py) to the `config` folder.
+Наконец, поместите [`nni-config-template.yml`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/nni-config-template.yml) и [`prepare-nni-config.py`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/prepare-nni-config.py) в папку `config`.
 
-Once `make setup` completes, your project is ready for running on Neu.ro.
+После завершения работы команды `make setup` проект готов к запуску на Neu.ro.
 
-### Running the tuning jobs
+### Запуск заданий по настройке
 
-The only thing left is to run
+Осталось выполнить команду
 
 ```bash
 make hypertrain
 ```
 
-This command will:
+Данная команда делает:
 
-* Run 3 worker nodes with `gpu-small` preset. Both parameters can be configured via `N_JOBS` and `PRESET` parameters respectfully.
-* Run master node with `cpu-small` preset.
-* Auto-generate NNI configuration file for the master node pointing at the workers.
-* Run the training process and open NNI web interface in your browser automatically.
+* Запускает 3 ноды с предустановкой `gpu-small`. Оба параметра могут быть настроены через переменные `N_JOBS` и `PRESET` соответственно.
+* Запускает мастер ноду с предустановкой `cpu-small`.
+* Автоматически генерирует файл конфигурации NNI для мастер ноды, указывающий на процессы.
+* Запускает процесс обучения и автоматически открывает веб-интерфейс NNI в Вашем браузере.
 
-From the web UI you can track experiment progress and intermediate results. When the workers are done, you can get final hyperparameter values and download the logs if needed.
+С помощью веб-интерфейса вы можете отслеживать ход эксперимента и промежуточные результаты. Когда процессы завершатся, Вы можете получить окончательные значения гиперпараметра и загрузить файлы логирования, если это необходимо.
 
 ![NNI Hyperparameter Tuning GUI](../.gitbook/assets/screen-shot-2020-05-12-at-12.43.02-pm.png)
 
-Once you're done you can shutdown both the workers and the master node via:
+Когда Вы закончите работу, Вы можете завершить оба процесса и мастер ноду с помощью команды:
 
 ```bash
 make kill-hypertrain

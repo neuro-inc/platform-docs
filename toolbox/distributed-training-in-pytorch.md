@@ -1,43 +1,43 @@
-# Distributed Training in PyTorch
+# Распределенное обучение c PyTorch
 
-In this guide we show how to run distributed training process in PyTorch on Neu.ro. You can find the details about the described [recipe](https://github.com/neuromation/ml-recipe-distributed-pytorch) in our blog post: [Distributed training in PyTorch - using an example from the TensorFlow 2.0 Question Answering Competition](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
+В данном руководстве мы покажем, как запустить распределенное обучение в PyTorch на Neu.ro. Вы можете найти подробную информацию в наших [рецептах](https://github.com/neuromation/ml-recipe-distributed-pytorch) в нашем блоге: [Распределенное обучение с PyTorch - на примере конкурса ответов на вопросы о TensorFlow 2.0](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
 
-### Types of parallelism
+### Типы параллелизма
 
-#### Model Parallelism
+#### Параллелизм модели
 
-For this type of parallelism, we divide the model into logical parts. These parts can be network layers or model components, such as decoder and encoder. The decomposition method is not essential for understanding this parallelism approach.
+Для этого типа параллелизма мы делим модель на логические части. Этими частями могут быть слои сети или компоненты модели, такие как кодировщик и декодеровщик. Метод декомпозиции не является необходимым для понимания этого подхода параллелизма.
 
-Each component is located on a different device and the calculations are performed sequentially.
+Каждый компонент расположен на отдельном устройстве и вычисления выполняются последовательно.
 
-With this approach, it is difficult to get any significant boost in training time, since all computations occur sequentially. We also have to take into account the overhead due to the massive transfer of data between devices.
+При таком подходе трудно добиться значительного ускорения времени обучения, поскольку все вычисления выполняются последовательно. Необходимо также учитывать накладные расходы из-за значительной передачи данных между устройствами.
 
-It makes sense to use Model Parallelism in the case of training huge models that do not fit on one device even with a small batch size.
+Параллелизм модели имеет смысл использовать в случае обучения огромных моделей, которые не помещаются на одном устройстве, даже при небольшом размере блоков.
 
 ![Model Parallelism](../.gitbook/assets/mp.png)
 
-#### Data Parallelism
+#### Параллелизм данных
 
-Unlike Model Parallelism, in this approach, small pieces of data are distributed between several devices, i.e., the batch is broken down into small pieces and processed independently by multiple copies of the same model.
+В отличии от параллелизма модели при данном подходе небольшие фрагменты данных распределяются между несколькими устройствами, т.е. пакет разбивается на маленькие фрагменты и обрабатывается независимо несколькими копиями одной и той же модели.
 
-The learning process organization is as follows. One of the devices is assigned to serve as a master device, the main task of which is to collect gradients for gradient descent from other devices and update the weights across all the copies of the model.
+Организация обучения заключается в следующем. Одно из устройств предназначено для использования в качестве главного устройства, основной задачей которого является сбор градиентов для градиентного спуска с других устройств и обновление весовых коэффициентов для всех копий модели.
 
 ![Data Parallelism](../.gitbook/assets/dp.png)
 
-Data Parallelism is a universal method and is provided by most popular DL libraries for training \(DistributedDataParallel in PyTorch\), freeing users from the need to synchronize data between devices themselves.
+Параллелизм данных является универсальным методом и предоставляется большинством популярных библиотек DL для обучения \(DistributedDataParallel в PyTorch\), освобождая пользователей от необходимости синхронизировать данные между устройствами.
 
-### Try it for yourself
+### Попробуйте сами
 
-In our [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch), we used the Data Parallelism approach. This repository contains a solution for the [TensorFlow 2.0 Question Answering competition](https://www.kaggle.com/c/tensorflow2-question-answering) held on Kaggle.
+В нашем [репозитории](https://github.com/neuromation/ml-recipe-distributed-pytorch), мы использовали подход параллелизма данных. Репозиторий содержит решение для [конкурса ответов на вопросы о TensorFlow 2.0](https://www.kaggle.com/c/tensorflow2-question-answering), проводимого Kaggle.
 
-To download [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) dataset and run our competition solution, you must accept the user agreement on Kaggle. In case you want to reuse our recipe as a template for doing distributed training on Neu.ro, we are also providing the `DummyDataset`, which does not require downloading any data.
+Чтобы загрузить набор данных [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) и запустить наше решение, Вы должны принять пользовательское соглашение Kaggle. Если вы хотите повторно использовать наш рецепт в качестве шаблона для проведения распределенного обучения на Neu.ro, мы также предоставляем `DummyDataset`, который не требует загрузки каких-либо данных.
 
-To run the recipe on the `DummyDataset`, follow these simple steps:
+Для запуска рецепта из `DummyDataset`, необходимо выполнить следующие шаги:
 
-1. [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
-2. Clone the [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch)
-3. Run `make setup`
-4. Run `scripts/run_distributed_on_platform.sh`
+1. [Зарегистрируйтесь](https://neu.ro/) и [установите клиент CLI](https://docs.neu.ro/getting-started#installing-cli)
+2. Клонируйте [репозиторий](https://github.com/neuromation/ml-recipe-distributed-pytorch)
+3. Выполните `make setup`
+4. Выполните `scripts/run_distributed_on_platform.sh`
 
-This approach is generic, so you can use our solution as a template for training your PyTorch models distributedly.
+Данный подход является общим, поэтому Вы можете использовать наше решение в качестве шаблона для распределенного обучения Ваших моделей в PyTorch.
 
