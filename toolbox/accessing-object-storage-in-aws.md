@@ -1,12 +1,12 @@
 # Доступ к Object Storage на AWS
 
-### Введение
+## Введение
 
 В данном руководстве показано, как получить доступ к AWS S3 из платформы Neuro. Вы создадите новый проект Neuro, создадите S3 bucket и сделаете его доступным из заданий платформы Neuro.
 
 Убедитесь, что у Вас установлен [Neu.ro CLI](../references/cli-reference/).
 
-### Создание проекта Neuro
+## Создание проекта Neuro
 
 Для создания проекта Neuro выполните команду:
 
@@ -16,7 +16,7 @@ cd <project-slug>
 make setup
 ```
 
-### Создание пользователя AWS IAM
+## Создание пользователя AWS IAM
 
 Следуйте инструкциям [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
 
@@ -53,7 +53,7 @@ make aws-check-auth
 
 Вывод данной команды: \`AWS will be authenticated via user account credentials file: '/project-path/config/aws-credentials.txt".
 
-### Создание Bucket предоставление доступа
+## Создание Bucket предоставление доступа
 
 Теперь создайте новый S3 bucket. Помните: имена bucket глобально уникальны.
 
@@ -62,7 +62,7 @@ BUCKET_NAME="my-neuro-bucket-42"
 aws s3 mb s3://$BUCKET_NAME/
 ```
 
-### Проверка
+## Проверка
 
 Создайте файл и загрузите его в S3 Bucket:
 

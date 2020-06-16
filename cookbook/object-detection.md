@@ -1,4 +1,4 @@
-# Распознование объектов
+# Распознавание объектов
 
 [Запуск на Neu.ro](https://apps.neu.ro/ml-recipes/object-detection)
 
@@ -8,16 +8,16 @@
 
 ## Начало работы
 
-#### 0. Зарегистрироваться
+### 0. Зарегистрироваться
 
-#### 1. Установить CLI и зайти
+### 1. Установить CLI и зайти
 
 ```text
 pip install -U neuromation
 neuro login
 ```
 
-#### 2. Запустить рецепт
+### 2. Запустить рецепт
 
 ```text
 git clone git@github.com:neuromation/ml-recipe-object-detection.git

@@ -1,12 +1,12 @@
 # Доступ к Object Storage в GCP
 
-### Введение
+## Введение
 
 В данном руководстве показано, как получить доступ к облачному хранилищу Google Cloud Storage с платформы Neuro. Мы создадим новый проект Neuro на GCP, учетную запись и bucket, а затем сделаем этот bucket доступным для задания на платформе Neuro.
 
 Убедитесь, что у Вас установлен [Neu.ro CLI](../references/cli-reference/).
 
-### Создание проектов Neuro и GCP
+## Создание проектов Neuro и GCP
 
 Для создания проекта Neuro выполните команду:
 
@@ -26,7 +26,7 @@ gcloud config set project $PROJECT_ID
 
 Убедитесь, что Вы настроили платежную учетную запись для Вашего GCP проекта [set billing account](https://cloud.google.com/billing/docs/how-to/modify-project). Для подробной информации см. [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 
-### Создание учетной записи и загрузка ключа
+## Создание учетной записи и загрузка ключа
 
 Сначала создайте учетную запись для задания:
 
@@ -54,7 +54,7 @@ gcloud iam service-accounts keys create ./config/$SA_NAME-key.json \
 export GCP_SECRET_FILE=$SA_NAME-key.json
 ```
 
-Обратите внимание, что в этом случае мы делаем `export` в переменную среды,  чтобы наша переменная стала видимой в `Makefile` \(в качестве альтернативы вы можете вручную отредактировать `Makefile` и изменить значение в строке `GCP_SECRET_FILE?=neuro-job-key.json`\).
+Обратите внимание, что в этом случае мы делаем `export` в переменную среды, чтобы наша переменная стала видимой в `Makefile` \(в качестве альтернативы вы можете вручную отредактировать `Makefile` и изменить значение в строке `GCP_SECRET_FILE?=neuro-job-key.json`\).
 
 Убедитесь, что проект Neuro обнаружил файл:
 
@@ -66,7 +66,7 @@ make gcloud-check-auth
 
 Ваш ключ теперь доступен из заданий как `/$PROJECT_ID/config/$SA_NAME-key.json`.
 
-### Создание Bucket и предоставление доступа
+## Создание Bucket и предоставление доступа
 
 Теперь создайте новый bucket. Помните: имена bucket глобально уникальны \(см. дополнительную информацию [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
 
@@ -87,7 +87,7 @@ PERM="storage.legacyBucketOwner"
 gsutil iam ch serviceAccount:$SA_NAME@$PROJECT_ID.iam.gserviceaccount.com:roles/$PERM gs://$BUCKET_NAME
 ```
 
-### Тестирование
+## Тестирование
 
 Создайте файл и загрузите его в Google Cloud Storage Bucket:
 

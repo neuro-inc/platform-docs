@@ -1,10 +1,10 @@
 # Удаленная отладка с помощью PyCharm Professional
 
-### Введение
+## Введение
 
 В данном руководстве мы покажем, как настроить удаленную отладку с помощью PyCharm Professional на платформе Neuro, используя шаблон проекта Neuro.
 
-### Создание нового проекта
+## Создание нового проекта
 
 Во-первых, убедитесь, что у вас установлен и настроен клиент `neuro`:
 
@@ -33,7 +33,7 @@ code_directory [modules]:
 make setup
 ```
 
-### Настройки PyCharm
+## Настройки PyCharm
 
 Откройте проект, созданный на предыдущем шаге в Pycharm Professional и добавьте пример кода для отладки \(в этом примере мы используем фрагмент кода, взятый из документации [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
 

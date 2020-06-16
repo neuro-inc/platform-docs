@@ -5,14 +5,14 @@
 * [Обучение Вашей первой модели](training-your-first-model.md)
 * [Совместная разработка](collaborative-development.md)
 
-## Neu.ro Core <a id="core"></a>
+## Ядро <a id="core"></a>
 
 * [Описание платформы](core/platform-overview.md)
 * [Рабочее окружение \(образы Docker\)](core/environments-docker-images.md)
 * [Дисковое пространство](core/storage.md)
 * [Кластеры \(Ресурсы\)](core/clusters-resources.md)
 
-## Neu.ro Toolbox <a id="toolbox"></a>
+## Инструменты <a id="toolbox"></a>
 
 * [Доступ к Object Storage в GCP](toolbox/accessing-object-storage-in-gcp.md)
 * [Доступ к Object Storage на AWS](toolbox/accessing-object-storage-in-aws.md)
@@ -22,10 +22,10 @@
 * [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 
-## Neu.ro Cookbook <a id="cookbook"></a>
+## Рецепты <a id="cookbook"></a>
 
-* [Cookbook](cookbook/cookbook.md)
-* [Распознование объектов](cookbook/object-detection.md)
+* [Рецепты](cookbook/cookbook.md)
+* [Распознавание объектов](cookbook/object-detection.md)
 * [Оценка костного возраста детей](cookbook/pediatric-bone-age-assessment.md)
 * [Hierarchical Attention для классификации тональности текста](cookbook/hierarchical-attention-for-sentiment-classification.md)
 * [Генератор MIDI файлов](cookbook/midi-generator.md)
