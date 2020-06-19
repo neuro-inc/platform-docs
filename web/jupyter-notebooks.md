@@ -27,23 +27,23 @@ The new instance is a powerful event-driven Jupyter notebook that saves every ch
 
 The notebook has three tabs:
 
-- **Files:** Lets you manage the files in the Jupyter instance. The entire Neu.ro platform storage is available for you to host and manage files on the notebook.
+* **Files:** Lets you manage the files in the Jupyter instance. The entire Neu.ro platform storage is available for you to host and manage files on the notebook.
 
 ![](../.gitbook/assets/Jupyter_Files.JPG)
 
 You can select a file to do context-based actions on the file, such as Shutdown or Duplicate for code and Rename or Download for text files.
 
-- **Running:** Lists the list of terminals and Python notebooks updated with the latest status. You can also shut down a terminal or notebook from the tab.
+* **Running:** Lists the list of terminals and Python notebooks updated with the latest status. You can also shut down a terminal or notebook from the tab.
 
 ![](../.gitbook/assets/Jupyter_Running_Tab.JPG)
 
-- **Clusters:** Lets you manage the notebook clusters that you have access to. Currently, clusters are provided by [IPython parallel](https://github.com/ipython/ipyparallel).
+* **Clusters:** Lets you manage the notebook clusters that you have access to. Currently, clusters are provided by [IPython parallel](https://github.com/ipython/ipyparallel).
 
 ![](../.gitbook/assets/Jupyter_Clusters.jpg)
 
 ## Manage your Jupyter Notebook Instances
 
-You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their URLs start with _http://jupyter-_. You can click on the URL to open the instance.
+You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their URLs start with [http://jupyter-](http://jupyter-). You can click on the URL to open the instance.
 
 You can view the details of your Jupyter Notebook instances by clicking on the job ID.
 
@@ -51,11 +51,11 @@ You can view the details of your Jupyter Notebook instances by clicking on the j
 
 You can open an instance by:
 
-- Clicking the Open button from the Jupyter Notebooks section.
+* Clicking the Open button from the Jupyter Notebooks section.
 
 ![](../.gitbook/assets/Jupyter_Open.jpg)
 
-- Clicking on the URL for the instance.
+* Clicking on the URL for the instance.
 
 ![](../.gitbook/assets/Jupyter_Running_Jobs_IDs.jpg)
 
@@ -68,3 +68,4 @@ Alternatively, you can kill the instance by clicking on the Quit button from wit
 ![](../.gitbook/assets/Jupyter_Quit.jpg)
 
 An instance is automatically terminated 24 hours after initiation.
+

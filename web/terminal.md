@@ -8,11 +8,11 @@ Terminals let you work with Neu.ro without setting up the local environment. Ter
 
 You can start a new terminal by clicking the Start button in the Terminal area. You can use the terminal to manage jobs and your docker environments. You should kill the terminal session whenever you are done. All terminal sessions are automatically killed after 24 hours.
 
-When you start a terminal, the platform storage is attached as /var/storage. Your terminal session starts in that folder. All data created during a terminal session persists and can be used later. Also, terminal sessions do not provide version control unless you use basic authorization (through username and password), or out your access token on storage.
+When you start a terminal, the platform storage is attached as /var/storage. Your terminal session starts in that folder. All data created during a terminal session persists and can be used later. Also, terminal sessions do not provide version control unless you use basic authorization \(through username and password\), or out your access token on storage.
 
 ## Download data from a terminal
 
-You do not have access to the local machine file system from a terminal session. Also, you cannot download data from the terminal to your local machine. However, you can upload data to your storage from any external resource using a terminal. See [Storage](link to Storage docs) for details.
+You do not have access to the local machine file system from a terminal session. Also, you cannot download data from the terminal to your local machine. However, you can upload data to your storage from any external resource using a terminal. See [Storage](https://github.com/neuromation/platform-docs/tree/8c2237b1dbb6b440fcdeb85fbe5156280f490138/web/link%20to%20Storage%20docs/README.md) for details.
 
 ## Connect to a running job
 
@@ -22,7 +22,7 @@ You can connect to a running job from the terminal and execute a command by usin
 
 1. **Running a simple list command in the container hosting the job**
 
-```
+```text
 root@job-a8cd05fe-57bd-4359-a388-e6ee1f92a269:/var/storage/neuro-tutorial/SampleCode/VoiceExperiment# neuro job exec job363 ls
 The authenticity of host 'ssh-auth.neuro-public.org.neu.ro (34.194.131.79)' can`t be established.
 ECDSA key fingerprint is SHA256:p0rIvIDzdWvwqNtslE2agZDai7NFYz5VdrKrZI+7O2Y.Are you sure you want to continue connecting (yes/no)?yes
@@ -32,7 +32,7 @@ Connection to ssh-auth.neuro-public.org.neu.ro closed.
 
 1. **Providing a bash terminal to the container hosting the job**
 
-```
+```text
 root@job-a8cd05fe-57bd-4359-a388-e6ee1f92a269:/var/storage/neuro-tutorial/SampleCode/VoiceExperiment# neuro job exec job363 /bin/bashroot@job-36d59977-84d2-40e5-9475-e4af25a06b6c:/# echo 'Hello, World!'
 Hello, World!
 root@job-36d59977-84d2-40e5-9475-e4af25a06b6c:/# exit
@@ -51,3 +51,4 @@ For example, you can train your first machine learning model on the Neu.ro platf
 In this below example, we will create a sample project.
 
 ![](../.gitbook/assets/ProjectIniti.gif)
+

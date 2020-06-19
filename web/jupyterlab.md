@@ -16,37 +16,36 @@ All JupyterLab instances are jobs that run on GPU-small preset. You must kill th
 
 The Jupyter UI has the following areas:
 
-- Tools area: The tools area lists the most commonly used commands.
-
-- Work area: The work area hosts the launcher and the tabs that you are currently working on.
-- Menu: The menu bar includes all available options for the JupyterLabs.
+* Tools area: The tools area lists the most commonly used commands.
+* Work area: The work area hosts the launcher and the tabs that you are currently working on.
+* Menu: The menu bar includes all available options for the JupyterLabs.
 
 The tools area lists a host of options available for JupyterLabs, such as:
 
-- File Browser for managing files in the storage.
-- Sessions for managing a list of active sessions.
-- Commands for viewing the commands available for the current state.
-- Properties for managing the properties for the current selection.
-- Tabs to view the list of tabs open.
-- Extension Manager to enable and manage customizations.
+* File Browser for managing files in the storage.
+* Sessions for managing a list of active sessions.
+* Commands for viewing the commands available for the current state.
+* Properties for managing the properties for the current selection.
+* Tabs to view the list of tabs open.
+* Extension Manager to enable and manage customizations.
 
 For more information about JuputerLab, see [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) documentation.
 
 ## Manage your JupyterLab Instances
 
-You can manage your JupyterLab instances from the Neu.ro dashboard. The JupyterLab instances are listed in the Running Jobs section, and their URLs start with _http://jupyter-lab-_. You can click on the URL to open the instance.
+You can manage your JupyterLab instances from the Neu.ro dashboard. The JupyterLab instances are listed in the Running Jobs section, and their URLs start with [http://jupyter-lab-](http://jupyter-lab-). You can click on the URL to open the instance.
 
 You can view the details of your JupyterLab instance by clicking on the job ID.
 
-![](../.gitbook/assets/JL_Jobs.JPG)
+![](../.gitbook/assets/JL_Jobs%20%281%29.JPG)
 
 You can open an instance by:
 
-- Clicking the Open button from the Jupyter Notebooks section.
+* Clicking the Open button from the Jupyter Notebooks section.
 
 ![](../.gitbook/assets/JL_open.JPG)
 
-- Clicking on the URL for the instance.
+* Clicking on the URL for the instance.
 
 ![](../.gitbook/assets/JL_URLs.jpg)
 
@@ -59,3 +58,4 @@ Alternatively, you can kill the instance from the JupyterLab instance using the 
 ![](../.gitbook/assets/JL_shutdown.gif)
 
 An instance is automatically terminated 24 hours after initiation.
+

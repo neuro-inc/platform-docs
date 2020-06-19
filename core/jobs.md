@@ -4,8 +4,8 @@ Job is a minimal execution unit. You can run it in a given runtime environment o
 
 Before you start a job, you must decide:
 
-- The Docker image to use to run the job. Note that the job terminates if the Docker container fails unless a specific restart policy is used for the job.
-- The preset - a combination of CPU, GPU, and memory resources - to use.
+* The Docker image to use to run the job. Note that the job terminates if the Docker container fails unless a specific restart policy is used for the job.
+* The preset - a combination of CPU, GPU, and memory resources - to use.
 
 In complex projects, you have multiple jobs running with different preset resources that are best suitable for the job.
 
@@ -19,7 +19,7 @@ For example, in this command we are using the preset cpu-small as the job does n
 
 **Sample command:**
 
-```
+```text
 (base) C:\Projects>neuro run --preset cpu-small --name test ubuntu echo Hello, World! 
 Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14 Status: pending
 Name: test
@@ -40,7 +40,7 @@ Hello, World!
 
 Neu.ro comes with a set of presets that are suitable for running different kinds of workloads. Some of the jobs may also require GPU resources. You can view the list of available presets for you using the command neuro config show.
 
-```
+```text
 (base) C:\Projects>neuro config show
 User Configuration:
   User Name: clarytyllc
@@ -65,15 +65,15 @@ To run a job in CLI, you can use the `neuro run` command. This command accepts a
 
 Each job has a unique ID. For your convenience, you can give a job a name. There can be only a single PENDING or RUNNING job with a given name.
 
-Each job has access to its ephemeral storage (which is essentially a piece of SSD on the physical machine this job runs on). This type of storage is fast but not persistent: as soon as you kill the job, the data is lost.
+Each job has access to its ephemeral storage \(which is essentially a piece of SSD on the physical machine this job runs on\). This type of storage is fast but not persistent: as soon as you kill the job, the data is lost.
 
-To persist the data you can mount the volumes of the platform storage to the job. This type of storage is slightly slower and has some limitations. For example, running a model training on the data from the mounted folder is generally 10-20% slower. Also, random write operations (e.g. unzipping an archive) are very slow and highly unrecommended.
+To persist the data you can mount the volumes of the platform storage to the job. This type of storage is slightly slower and has some limitations. For example, running a model training on the data from the mounted folder is generally 10-20% slower. Also, random write operations \(e.g. unzipping an archive\) are very slow and highly unrecommended.
 
 **Sample commands:**
 
 1. **Run a fast job without mounting storage:**
 
-```
+```text
 (base) C:\Projects>neuro run --preset cpu-small --name job230 ubuntu echo Hello, World!
 Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14
 Status: pending
@@ -94,7 +94,7 @@ Hello, World!
 
 1. **Running a long training job with mounting storage**
 
-```
+```text
 (base) C:\Projects>neuro run --name job303 --volume storage:nero-assistant/ModelCode/:/code:rw --preset cpu-small neuromation/base python /code/train.py
 Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14
 Status: pending
@@ -120,7 +120,7 @@ You can use the neuro ps command to list the jobs that are currently running. Yo
 
 1. **See the list of all currently running jobs**
 
-```
+```text
 (base) C:\Projects>neuro ps
 ID                                       NAME   STATUS  WHEN           IMAGE          OWNER  CLUSTER      DESCRIPTION
 job-3erw4f2e-cc57-4e4b-af04-c795b76d9ca8 job363 running 6 seconds ago  ubuntu:latest  <you>  neuro-public
@@ -129,7 +129,7 @@ job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:la
 
 1. **See the list of job in the status pending**
 
-```
+```text
 (base) C:\Projects>neuro ps -s pending
 ID                                        NAME   STATUS   WHEN          IMAGE         OWNER   CLUSTER      DESCRIPTION
 job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8  job390 running  3 minutes ago ubuntu:latest <you>   neuro-public
@@ -143,7 +143,7 @@ When running a job, you might sometimes want to connect to the job and execute a
 
 1. **Running a simple list command in the container hosting the job**
 
-```
+```text
 (base) C:\Projects>neuro job exec job363 ls
 bin dev home lib32 libx32 mnt proc run srv tmp varboot etc lib lib64 media opt root sbin sys usr
 Connection to ssh-auth.neuro-public.org.neu.ro closed.
@@ -151,7 +151,7 @@ Connection to ssh-auth.neuro-public.org.neu.ro closed.
 
 1. **Providing a bash terminal to the container hosting the job**
 
-```
+```text
 (base) C:\Projects>neuro job exec job363 /bin/bash
 root@job-36d59977-84d2-40e5-9475-e4af25a06b6c:/# echo "Hello, World!"
 Hello, World!
@@ -168,7 +168,7 @@ A job is the smallest execution unit that is run until completion or until it is
 
 **Sample command:**
 
-```
+```text
 (base) C:\Projects>neuro job status job363
 Job: job-b0c7cb42-b47b-42dc-bbfb-a3f7a5a11733
 Name: job363
@@ -192,26 +192,26 @@ Started: 2020-05-24T14:50:04.680265+00:00
 
 A job can have one of the following states:
 
-- Pending: When the job is created and the resources for the job are allocated.
-- Running: When a job is executing.
-- Complete: When a job is complete.
-- Failed: When a job fails and exits with an error code.
+* Pending: When the job is created and the resources for the job are allocated.
+* Running: When a job is executing.
+* Complete: When a job is complete.
+* Failed: When a job fails and exits with an error code.
 
 ## How do I expose the HTTP server running in a job?
 
-A lot of applications you run on a platform have some web interface, such as Jupyter Notebooks, TensorBoard, and others. When you run a job containing such an application you may access this web interface in your browser. For that, you need to pass a port that should be exposed via the `--port` option (which is 80 by default).
+A lot of applications you run on a platform have some web interface, such as Jupyter Notebooks, TensorBoard, and others. When you run a job containing such an application you may access this web interface in your browser. For that, you need to pass a port that should be exposed via the `--port` option \(which is 80 by default\).
 
 To open the exposed interface in the browser, there are several options:
 
-- Pass `--browse` as a `neuro run` parameter: in this case, an OS default web browser will open up as soon as the job is runnings;
-- Run `neuro job browse <NAME or ID>` when the job is already running;
-- Click on the HTTP URL for this job at the Neu.ro dashboard.
+* Pass `--browse` as a `neuro run` parameter: in this case, an OS default web browser will open up as soon as the job is runnings;
+* Run `neuro job browse <NAME or ID>` when the job is already running;
+* Click on the HTTP URL for this job at the Neu.ro dashboard.
 
-All jobs you run are hidden behind SSO by default. This means that if you share a link to the job web interface with someone, they will have to log into the platform and have granted permission to access the job (see the section below). To expose a job to everyone you need to pass `--no-http-auth` to `neuro run`. We strongly recommend avoiding this option unless you are completely sure that you want to omit the SSO security check.
+All jobs you run are hidden behind SSO by default. This means that if you share a link to the job web interface with someone, they will have to log into the platform and have granted permission to access the job \(see the section below\). To expose a job to everyone you need to pass `--no-http-auth` to `neuro run`. We strongly recommend avoiding this option unless you are completely sure that you want to omit the SSO security check.
 
 Example:
 
-```
+```text
 neuro run --name filebrowser-demo --preset cpu-small --http 8085 --no-http-auth --browse --volume storage::/srv:rw filebrowser/filebrowser --noauth --port 8085
 ```
 
@@ -219,7 +219,7 @@ This command runs a FileBrowser instance on 8085 port, exposes this port, remove
 
 ## How do I control the job duration?
 
-You can control the duration of time for which jobs run using the life-span configuration parameter. You can update the life-span parameter in the [job] section of the global configuration file. The global configuration file is located in the standard neuro config path. The Neu.ro CLI uses ~/.neuro folder by default, and the path for global config file is ~/.neuro/user.toml.
+You can control the duration of time for which jobs run using the life-span configuration parameter. You can update the life-span parameter in the \[job\] section of the global configuration file. The global configuration file is located in the standard neuro config path. The Neu.ro CLI uses ~/.neuro folder by default, and the path for global config file is ~/.neuro/user.toml.
 
 The parameter limits the default job run time, and is in string format. For example, a value of 2d3h20min would limit the job run time to 2 days, 3 hours, and 20 minutes.
 
@@ -227,7 +227,7 @@ You can also set this parameter on each job run using the corresponding option: 
 
 **Example:**
 
-```
+```text
 # jobs section
 [job]
 life-span = "2d3h20min"
@@ -239,7 +239,7 @@ You can terminate any job using the neuro job kill command. You must know the jo
 
 **Sample command:**
 
-```
+```text
 (base) C:\Projects>neuro job kill
 job363job-36d59977-84d2-40e5-9475-e4af25a06b6c
 ```
@@ -250,7 +250,7 @@ Yes, neu.ro lets you share any running jobs with you teammates. You can get all 
 
 **Sample command to view all running jobs:**
 
-```
+```text
 (base) C:\Projects>neuro ps
 ID                                       NAME   STATUS   WHEN           IMAGE            OWNER   CLUSTER      DESCRIPTION
 job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  <you>   neuro-public
@@ -267,13 +267,13 @@ This shares the job363 job with mrsmariyadavydova and provides the teammate mana
 
 ## Where can I find the logs from a job?
 
-You can view the complete log for a job using the neuro job logs [job name or id] command. The command displays logs for the job specified.
+You can view the complete log for a job using the neuro job logs \[job name or id\] command. The command displays logs for the job specified.
 
 The log is also displayed if you do not pass the --detach option when the job is run. The --detach option ensures that the job is not attached to logs and does not wait for exit code.
 
-**Sample Command:**  **neuro job logs job363**
+**Sample Command:** **neuro job logs job363**
 
-```
+```text
 (base) C:\Projects>neuro job logs job-757f5cd0-7323-476a-ba0e-ebe746f24618
 $Using ubuntu image
 $
@@ -313,3 +313,4 @@ You can also filter jobs by searching for them by entering the search criteria i
 The UI also lets you kill or rerun a job by clicking on **Kill** or **Rerun** buttons.
 
 ![](../.gitbook/assets/Job_Kill_ReRun.jpg)
+
