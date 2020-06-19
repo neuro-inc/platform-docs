@@ -10,7 +10,16 @@
 * [Platform Overview](core/platform-overview.md)
 * [Environments \(Docker images\)](core/environments-docker-images.md)
 * [Storage](core/storage.md)
+* [Jobs](core/jobs.md)
 * [Clusters \(Resources\)](core/clusters-resources.md)
+
+## Neu.ro Web UI <a id="web"></a>
+
+* [Terminal](web/terminal.md)
+* [Jupyter Notebooks](web/jupyter-notebooks.md)
+* [JupyterLab](web/jupyterlab.md)
+* [FileBrowser](web/filebrowser.md)
+* [ML Recipes](web/ml-recipes.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
 
