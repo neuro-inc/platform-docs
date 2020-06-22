@@ -8,7 +8,7 @@ The key components of Neu.ro are:
 
 * \*\*\*\*[**Environment**](environments-docker-images.md). A Docker image that can be launched on the platform. For your convenience, we provide a base image which is based on `deepo` Docker image and contains the most popular ML tools \(Tensorflow, Keras, PyTorch, TensorBoard, Jupyter Notebooks, and JupyterLab\).
 * \*\*\*\*[**Storage**](storage.md). One or more volumes that can be mounted to containers running on the platform. These volumes may contain datasets or be used to store output.
-* **Job**. A running container with a certain amount of GPU/CPU/RAM resources allocated, and with certain storage volumes mounted to its filesystem.
+* \*\*\*\*[**Job**](jobs.md). A running container with a certain amount of GPU/CPU/RAM resources allocated, and with certain storage volumes mounted to its filesystem.
 
 Environments, storage volumes, and jobs can be published and shared among users.
 
