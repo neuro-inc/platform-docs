@@ -93,7 +93,7 @@ neuro mkdir -p storage:demo
 Запустим команду, которая монтирует каталог `demo` на диске к `/demo` в контейнере и создает в нем файл:
 
 ```text
-neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu "echo Hello >> /demo/hello.txt"
+neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu bash -c "echo Hello >> /demo/hello.txt"
 ```
 
 Убедитесь, что файл находится на диске:
