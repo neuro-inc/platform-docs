@@ -75,7 +75,7 @@ Hello, World!
 Run a job in Neu.ro default environment \(`neuromation/base`\) on GPU which prints checks if CUDA is available in this environment:
 
 ```text
-neuro run -preset gpu-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
+neuro run --preset gpu-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
 ```
 
 Check the presets you can use:
