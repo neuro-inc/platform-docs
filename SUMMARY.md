@@ -10,7 +10,16 @@
 * [Описание платформы](core/platform-overview.md)
 * [Рабочее окружение \(образы Docker\)](core/environments-docker-images.md)
 * [Дисковое пространство](core/storage.md)
+* [Задания](core/jobs.md)
 * [Кластеры \(Ресурсы\)](core/clusters-resources.md)
+
+## Веб-интерфейс <a id="web"></a>
+
+* [Терминал](web/terminal.md)
+* [Jupyter Notebooks](web/jupyter-notebooks.md)
+* [JupyterLab](web/jupyterlab.md)
+* [FileBrowser](web/filebrowser.md)
+* [Рецепты машинного обучения](web/ml-recipes.md)
 
 ## Инструменты <a id="toolbox"></a>
 
