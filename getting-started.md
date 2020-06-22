@@ -93,7 +93,7 @@ neuro mkdir -p storage:demo
 Run a job which mounts `demo` directory on storage to `/demo` directory in the job container and creates a file in it:
 
 ```text
-neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu "echo Hello >> /demo/hello.txt"
+neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu bash -c "echo Hello >> /demo/hello.txt"
 ```
 
 Check that the file is on storage:
