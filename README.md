@@ -12,7 +12,7 @@ If you are new to Neu.ro, here are two simple steps to get started:
 
 If you want to dig deeper, take a look at various ML development guides we carefully craft for you, for example:
 
-* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases/)
+* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Remote debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
 
 Also, take a look at our [CLI reference](references/cli-reference/) and [Python API reference](https://neuromation-sdk.readthedocs.io/en/latest/).
