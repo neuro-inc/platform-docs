@@ -1,5 +1,7 @@
 # Experiment Tracking with Weights & Biases
 
+### 
+
 ### Introduction
 
 In this tutorial, we show how to set up experiment tracking via Weights & Biases on Neuro Platform using Neuro Project Template.
@@ -14,17 +16,39 @@ cd <project-slug>
 make setup
 ```
 
-### Authenticating W&B
+### Connecting Weights & Biases
 
-Register a [W&B account](https://app.wandb.ai/login) \(note: W&B offers _free limited accounts_ for individual researchers, see [W&B pricing policy](https://www.wandb.com/pricing)\). Then, download your API key on [W&B settings page](https://app.wandb.ai/settings) and save it to a local file `./config/wandb-token.txt` \(you can also use a different file name, but in this case you'd need to put the file name to the env var: `export WANDB_SECRET_FILE=<file-name>`\).
+Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
-Check that Neuro project detects the key file:
+1. [Register your W&B account](https://app.wandb.ai/login?signup=true)
+2. Find your API key \(it is also called a token\) on [W&B’s settings page](https://app.wandb.ai/settings)\(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+3. Save your API key \(token\) to a file in your local home directory `~` and protect it by setting appropriate permissions to make W&B available on Neu.ro platform:
 
-```bash
-make wandb-check-auth
+```text
+export WANDB_SECRET_FILE=wandb-token.txt
+echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
+chmod 600 ~/$WANDB_SECRET_FILE
 ```
 
-In case of success, this command should print something like: `Weights & Biases will be authenticated via key file: '/project-path/config/wandb-token.txt'`. Now, if you run a `develop`, `train`, or `jupyter` job, Neuro will authenticate W&B via your API key by running `wandb login` at job's startup.
+After that, create a Neu.ro secret:
+
+```text
+neuro secrets add wandb-token @~/$WANDB_SECRET_FILE
+```
+
+Next, replace this line in your `Makefile`:
+
+```bash
+SECRETS?=
+```
+
+With that one:
+
+```bash
+SECRETS?="-e WANDB_API_KEY=secret:wandb-token"
+```
+
+Now, you can start using W&B API in your code.
 
 ### Testing
 

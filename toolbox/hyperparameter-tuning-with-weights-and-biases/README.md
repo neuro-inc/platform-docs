@@ -38,30 +38,36 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 1. [Register your W&B account](https://app.wandb.ai/login?signup=true)
 2. Find your API key \(it is also called a token\) on [W&B’s settings page](https://app.wandb.ai/settings)\(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-3. Save your API key \(token\) to a file in a local directory `./config/` and protect it by setting appropriate permissions to make W&B available on Neu.ro platform:
+3. Save your API key \(token\) to a file in your local home directory `~` and protect it by setting appropriate permissions to make W&B available on Neu.ro platform:
 
 ```text
 export WANDB_SECRET_FILE=wandb-token.txt
-echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > config/$WANDB_SECRET_FILE
-chmod 600 config/$WANDB_SECRET_FILE
+echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
+chmod 600 ~/$WANDB_SECRET_FILE
 ```
 
-After that, check that Neu.ro can access and use this file for authentication:
+After that, create a Neu.ro secret:
 
 ```text
-make wandb-check-auth
+neuro secrets add wandb-token @~/$WANDB_SECRET_FILE
 ```
 
-In case of success, this command should return something like:
+Next, add several changes to `Makefile` in order to enable experiment tracking:
 
 ```text
-Weights & Biases will be authenticated via key file:
-'/project-path/config/wandb-token.txt'.
+# 1. Replace this line:
+SECRETS?=
+# With the following:
+SECRETS?="-e WANDB_API_KEY=secrets:wandb-token"
+
+# 2. Add this line after "N_JOBS?=3"
+WANDB_SWEEP_CONFIG_FILE?=wandb-sweep.yaml
+
+# 3. Add this line after ##### CONSTANTS #####
+WANDB_SWEEPS_FILE=.wandb_sweeps
 ```
 
-Now, if you run a `develop`, `train`, `jupyter`, or other jobs \(see `Makefile` for the full list of commands\), Neu.ro authenticates W&B via your API key by running `wandb login` at job’s startup.
-
-Technically, authentication in W&B is being done as follows: when you start any job in an environment derived from the base one, Neu.ro checks if the environment variable `NM_WANDB_TOKEN_PATH` is set and then stores the path to the existing file. Then \(before the job starts\), it runs the command `wandb login $(cat $NM_WANDB_TOKEN_PATH)` to create a connection between W&B and Neu.ro.
+Also, add `hypertrain` , `kill-hypertrain` and `kill-hypertrain-all` Make targets from [this file](https://github.com/neuromation/ml-recipe-hyperparam-wandb/blob/66545469755b5b2bf74f461f5f6d91ed4d133d26/Makefile#L405-L458).
 
 Please find instructions on using Weights & Biases in your code in [W&B documentation](https://docs.wandb.com/library/api/examples) and [W&B example projects](https://github.com/wandb/examples).
 
@@ -72,7 +78,7 @@ If you have completed the previous parts of the instruction, W&B is ready to use
 * define the list of hyperparameters \(in a `wandb-sweep.yaml` file\), and
 * send the metrics to W&B after each run \(by using `Makefile` and `make hypertrain` command\).
 
-`Makefile` and `wandb-sweep.yaml` have links to `train.py`. If you want to run `hypertrain` for another script, you can change the `program` property in `wandb-sweep.yaml` \(see below\). The script must contain the description of the model and the training loop.
+`Makefile` and `wandb-sweep.yaml` have links to `train.py` \(you can look at an example [here](https://github.com/neuromation/ml-recipe-hyperparam-wandb/blob/66545469755b5b2bf74f461f5f6d91ed4d133d26/src/train.py)\) If you want to run `hypertrain` for another script, you can change the `program` property in `wandb-sweep.yaml` \(see below\). The script must contain the description of the model and the training loop.
 
 The Python script must also receive parameters with the same names, as specified in `wandb-sweep.yaml` as arguments of the command line and use them for model training/evaluation. For example, you can use command line parameters such as the [argparse](https://docs.python.org/3/library/argparse.html) Python module.
 
