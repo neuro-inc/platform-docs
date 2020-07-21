@@ -30,7 +30,7 @@ Then, you'll need to create an access key for the newly created user. For that, 
 
 ![](../.gitbook/assets/2_create_key.png)
 
-Put these credentials to the local file in your project directory `./config/aws-credentials.txt`, for example:
+Put these credentials to the local file in home directory `~/aws-credentials.txt`, for example:
 
 ```text
 [default]
@@ -41,17 +41,26 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 Set appropriate permissions to the secret file:
 
 ```bash
-chmod 600 ./config/aws-credentials.txt
+chmod 600 ~/aws-credentials.txt
 ```
 
 Set up Neuro Platform to use this file and check that Neuro project detects the file:
 
 ```bash
-export AWS_SECRET_FILE=aws-credentials.txt
-make aws-check-auth
+neuro secret add aws-key @~/aws-credentials.txt
 ```
 
-This command should print something like: \`AWS will be authenticated via user account credentials file: '/project-path/config/aws-credentials.txt".
+Next, open `Makefile` and find the following line in it:
+
+```bash
+SECRETS?=
+```
+
+And replace the line with that one:
+
+```bash
+SECRETS?="-v secrets:aws-key:/var/secrets/aws.txt -e AWS_CONFIG_FILE=/var/secrets/aws.txt"
+```
 
 ### Creating a Bucket and Granting Access
 
@@ -86,9 +95,5 @@ aws s3 cp s3://my-neuro-bucket-42/hello.txt -
 
 To close the remote terminal session, press `^D` or type `exit`.
 
-Please don't forget to terminate your job when you don't need it anymore:
-
-```bash
-make kill-develop
-```
+Please don't forget to termin
 

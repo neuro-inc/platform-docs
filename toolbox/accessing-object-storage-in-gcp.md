@@ -1,5 +1,7 @@
 # Accessing Object Storage in GCP
 
+### 
+
 ### Introduction
 
 This tutorial demonstrates how to access your Google Cloud Storage from Neuro Platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket and make that bucket is accessible from Neuro Platform job.
@@ -42,29 +44,29 @@ See [Creating and managing service accounts](https://cloud.google.com/iam/docs/c
 Then download account key:
 
 ```bash
-gcloud iam service-accounts keys create ./config/$SA_NAME-key.json \
+gcloud iam service-accounts keys create ~/$SA_NAME-key.json \
   --iam-account $SA_NAME@$PROJECT_ID.iam.gserviceaccount.com
 ```
 
-Check that the newly created key is located at `$PROJECT_ID/config/`.
+Check that the newly created key is located at `~/`.
 
-Set up a required environment variable to point to this file:
-
-```bash
-export GCP_SECRET_FILE=$SA_NAME-key.json
-```
-
-Please note that in this case we `export` environment variable so that it becomes visible in `Makefile` \(alternatively, you can manually edit `Makefile` and change the value in the line `GCP_SECRET_FILE?=neuro-job-key.json`\).
-
-Check that Neuro project detects the file:
+Create a new secret for the file:
 
 ```bash
-make gcloud-check-auth
+neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
-This command should print something like: `Google Cloud will be authenticated via service account key file: '/project-path/config/$SA_NAME-key.json'`.
+Open `Makefile` and find the following line in it:
 
-Your key is now available as `/$PROJECT_ID/config/$SA_NAME-key.json` from within your jobs.
+```bash
+SECRETS?=
+```
+
+Replace the line with that one:
+
+```bash
+SECRETS?="-v secrets:gcp-key:/var/secrets/gcp.json -e GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/gcp.json"
+```
 
 ### Creating a Bucket and Granting Access
 
