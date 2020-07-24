@@ -65,7 +65,7 @@ SECRETS?=
 Replace the line with that one:
 
 ```bash
-SECRETS?="-v secrets:gcp-key:/var/secrets/gcp.json -e GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/gcp.json"
+SECRETS?="-v secret:gcp-key:/var/secrets/gcp.json -e GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/gcp.json"
 ```
 
 ### Creating a Bucket and Granting Access
