@@ -49,6 +49,7 @@
   * [image](references/cli-reference/image.md)
   * [project](references/cli-reference/project.md)
   * [config](references/cli-reference/config.md)
+  * [secret](references/cli-reference/secret.md)
   * [acl](references/cli-reference/acl.md)
   * [blob](references/cli-reference/blob.md)
   * [admin](references/cli-reference/admin.md)
