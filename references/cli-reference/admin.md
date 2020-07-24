@@ -35,8 +35,8 @@ Print the list of available clusters.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### generate-cluster-config
@@ -53,10 +53,10 @@ Create a cluster configuration file.
 
 #### Options
 
-| Name | Description |  |
-| :--- | :--- | :--- |
-| \`--type \[aws | gcp\]\` |  |
-| `--help` | Show this message and exit. |  |
+| Name                     | Description                 |
+| ------------------------ | --------------------------- |
+| `--help`                 | Show this message and exit. |
+| `--type [aws|gcp|azure]` |                             |
 
 ### add-cluster
 
@@ -72,8 +72,8 @@ Create a new cluster and start its provisioning.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### get-cluster-users
@@ -90,8 +90,8 @@ Print the list of all users in the cluster with their assigned role.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### add-cluster-user
@@ -106,12 +106,13 @@ neuro admin add-cluster-user [OPTIONS] CLUSTER_NAME USER_NAME [ROLE]
 
 Add user access to specified cluster.
 
-The command supports one of 3 user roles: admin, manager or user.
+The command supports one of 3 user
+roles: admin, manager or user.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### remove-cluster-user
@@ -128,8 +129,8 @@ Remove user access from the cluster.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
 
 ### set-user-quota
@@ -146,11 +147,11 @@ Set user quota to given values
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-g`, `--gpu AMOUNT` | GPU quota value in hours \(h\) or minutes \(m\). |
-| `-n`, `--non-gpu AMOUNT` | Non-GPU quota value in hours \(h\) or minutes \(m\). |
-| `--help` | Show this message and exit. |
+| Name                     | Description                                      |
+| ------------------------ | ------------------------------------------------ |
+| `-g`, `--gpu AMOUNT`     | GPU quota value in hours (h) or minutes (m).     |
+| `--help`                 | Show this message and exit.                      |
+| `-n`, `--non-gpu AMOUNT` | Non-GPU quota value in hours (h) or minutes (m). |
 
 ### add-user-quota
 
@@ -166,9 +167,8 @@ Add given values to user quota
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-g`, `--gpu AMOUNT` | Additional GPU quota value in hours \(h\) or minutes \(m\). |
-| `-n`, `--non-gpu AMOUNT` | Additional non-GPU quota value in hours \(h\) or minutes \(m\). |
-| `--help` | Show this message and exit. |
-
+| Name                     | Description                                                 |
+| ------------------------ | ----------------------------------------------------------- |
+| `-g`, `--gpu AMOUNT`     | Additional GPU quota value in hours (h) or minutes (m).     |
+| `--help`                 | Show this message and exit.                                 |
+| `-n`, `--non-gpu AMOUNT` | Additional non-GPU quota value in hours (h) or minutes (m). |

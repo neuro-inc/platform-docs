@@ -31,11 +31,11 @@ List images.
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-l` | List in long format. |
-| `--full-uri` | Output full image URI. |
-| `--help` | Show this message and exit. |
+| Name         | Description                 |
+| ------------ | --------------------------- |
+| `-l`         | List in long format.        |
+| `--full-uri` | Output full image URI.      |
+| `--help`     | Show this message and exit. |
 
 ### push
 
@@ -49,11 +49,16 @@ neuro image push [OPTIONS] LOCAL_IMAGE [REMOTE_IMAGE]
 
 Push an image to platform registry.
 
-Remote image must be `URL` with image:// scheme. Image names can contain tag. If tags not specified 'latest' will be used as value.
+Remote image must be `URL` with image://
+scheme.
+Image names can contain tag. If tags not specified 'latest' will
+be
+used as value.
 
 #### Examples
 
 ```bash
+
 $ neuro push myimage
 $ neuro push alpine:latest image:my-alpine:production
 $ neuro push alpine image://myfriend/alpine:shared
@@ -61,10 +66,10 @@ $ neuro push alpine image://myfriend/alpine:shared
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |
-| `--help` | Show this message and exit. |
+| Name            | Description                            |
+| --------------- | -------------------------------------- |
+| `--help`        | Show this message and exit.            |
+| `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 
 ### pull
 
@@ -78,11 +83,14 @@ neuro image pull [OPTIONS] REMOTE_IMAGE [LOCAL_IMAGE]
 
 Pull an image from platform registry.
 
-Remote image name must be `URL` with image:// scheme. Image names can contain tag.
+Remote image name must be `URL` with
+image:// scheme.
+Image names can contain tag.
 
 #### Examples
 
 ```bash
+
 $ neuro pull image:myimage
 $ neuro pull image://myfriend/alpine:shared
 $ neuro pull image://username/my-alpine:production alpine:from-registry
@@ -90,10 +98,10 @@ $ neuro pull image://username/my-alpine:production alpine:from-registry
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
-| `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |
-| `--help` | Show this message and exit. |
+| Name            | Description                            |
+| --------------- | -------------------------------------- |
+| `--help`        | Show this message and exit.            |
+| `-q`, `--quiet` | Run command in quiet mode (DEPRECATED) |
 
 ### tags
 
@@ -107,18 +115,19 @@ neuro image tags [OPTIONS] IMAGE
 
 List tags for image in platform registry.
 
-Image name must be `URL` with image:// scheme.
+Image name must be `URL` with
+image:// scheme.
 
 #### Examples
 
 ```bash
+
 $ neuro image tags image://myfriend/alpine
 $ neuro image tags image:myimage
 ```
 
 #### Options
 
-| Name | Description |
-| :--- | :--- |
+| Name     | Description                 |
+| -------- | --------------------------- |
 | `--help` | Show this message and exit. |
-
