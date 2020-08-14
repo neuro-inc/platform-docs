@@ -30,8 +30,8 @@ List secrets.
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
 
 ### add
@@ -46,21 +46,19 @@ neuro secret add [OPTIONS] KEY VALUE
 
 Add secret `KEY` with data `VALUE`.
 
-If `VALUE` starts with @ it points to a
-file with secrets content.
+If `VALUE` starts with @ it points to a file with secrets content.
 
 #### Examples
 
 ```bash
-
 $ neuro secret add KEY_NAME VALUE
 $ neuro secret add KEY_NAME @path/to/file.txt
 ```
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
 
 ### rm
@@ -77,6 +75,7 @@ Add secret `KEY`.
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
+

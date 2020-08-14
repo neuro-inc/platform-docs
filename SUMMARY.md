@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Getting Started](getting-started.md)
 * [Training Your First Model](training-your-first-model.md)
+* [Running Your Code](running-your-code.md)
 * [Collaborative Development](collaborative-development.md)
 
 ## Neu.ro Core <a id="core"></a>
