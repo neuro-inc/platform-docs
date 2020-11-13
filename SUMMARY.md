@@ -59,3 +59,7 @@
 * [Python API Reference](https://neuromation-sdk.readthedocs.io/en/latest/)
 * [FAQ](references/faq.md)
 
+## ADMINISTRATION
+
+* [Creating a Cluster](administration/creating-a-cluster.md)
+
