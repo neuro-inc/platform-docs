@@ -62,4 +62,5 @@
 ## ADMINISTRATION
 
 * [Creating a Cluster](administration/creating-a-cluster.md)
+* [Managing Users and Quotas](administration/managing-users-and-quotas.md)
 
