@@ -11,7 +11,7 @@ To set up a Neu.ro cluster, you have to do the following:
    * AWS: [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html#getting-started-create-vpc) and a [service account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
    * Azure: [Create a resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups) and a [service account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
 2. Prepare a cluster configuration YAML file.
-3. Share the configuration YAML file with us. Once we receive the YAML file, we will set up and run the cluster \(usually completed within one business day\). You can start adding your users to the cluster while it is being set up.
+3. Share the configuration YAML file with us. Once we receive the YAML file, we will set up and run the cluster \(usually completed within one business day\). You can start [adding your users to the cluster](managing-users-and-quotas.md) while it is being set up.
 
 Apart from the process mentioned above, there are other methods of setup:
 
