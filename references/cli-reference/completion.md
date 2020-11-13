@@ -29,8 +29,8 @@ Provide an instruction for shell completion generation.
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
 
 ### patch
@@ -47,6 +47,7 @@ Automatically patch shell configuration profile to enable completion
 
 #### Options
 
-| Name     | Description                 |
-| -------- | --------------------------- |
+| Name | Description |
+| :--- | :--- |
 | `--help` | Show this message and exit. |
+
