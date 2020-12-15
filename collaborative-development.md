@@ -27,10 +27,13 @@ neuro cp -r local-folder-with-data storage:cifar-10
 neuro share storage:cifar-10 alice manage
 ```
 
-After that, you need to update the `DATA_DIR_STORAGE` variable in the project `Makefile` to keep the full URI of your data. This step allows your teammates to use this data folder in their project copies as well \(here `neuro-public` is the name of our default cluster, and `bob` is your platform user name\):
+After that, you need to update the `data/remote:` value in the project's `.neuro/live.yaml` file to keep the full URI of your data. This step allows your teammates to use this data folder in their project copies as well \(here `neuro-public` is the name of our default cluster, and `bob` is your platform user name\):
 
 ```text
-DATA_DIR_STORAGE?=storage://neuro-public/bob/cifar-10
+  data:
+    remote: storage://neuro-public/bob/cifar-10
+    mount: /project/data
+    local: data
 ```
 
 After that, your data becomes available in the `/data` folder in the local file system of the jobs you and your teammates run.
@@ -47,12 +50,16 @@ Your data may also be available at some public resource that doesn’t require a
 
 Now all your teammates can clone the project and start working on it through their local copies. Here are some steps every teammate should make independently.
 
-* To set up the working environment, run `make setup` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
-* To run a Jupyter Notebooks session, run `make jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them in the local copy of the project, run `make download-notebooks`.
-* To run training from source code, run `make train` with a corresponding Python command, for example:
+* To set up the working environment, run `neuro-flow build myimage` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
+* To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them in the local copy of the project, run `neuro-flow download notebooks`.
+* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train` for example:
 
 ```text
-make train TRAIN_CMD="python ./train.py"
+jobs:
+    train:
+    ...
+    bash: |
+        python $[[ volumes.code.mount ]]/train.py
 ```
 
 You may get more information about the Neu.ro project functionality in the `HELP.md` file in your project folder.
@@ -97,12 +104,14 @@ neuro share job: alice read
 
 ### Share Docker images 
 
-Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries \(including Tensorflow 2.0 and PyTorch 1.4\). When you run `make setup`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved in your platform Docker registry. In this case, there is no need to share the images between the teammates, as they build similar images from the same code base.
+Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries \(including Tensorflow 2.0 and PyTorch 1.4\). When you run `neuro-flow build myimage`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved in your platform Docker registry. In this case, there is no need to share the images between the teammates, as they build similar images from the same code base.
 
-In rare cases, though, you may want to use a specific image as a base one. If that image is public, all you need to do is to update the `BASE_ENV` variable in the project `Makefile`:
+In rare cases, though, you may want to use a specific image as a base one. If that image is public, all you need to do is to update the `images/myimage/ref` variable in the project `.neuro/live.yaml`file:
 
 ```text
-BASE_ENV=ufoym/deepo
+images:
+  myimage:
+    ref: ufoym/deepo
 ```
 
 If the image is not public, you need to make available to your teammates:
@@ -114,8 +123,10 @@ neuro image push project-specific-docker-image
 # share with your teammates:
 neuro share image:project-specific-docker-image alice read
 
-# update the Makefile with the full URI of your image:
-BASE_ENV=image://neuro-public/bob/project-specific-docker-image
+# update the .neuro/live.yaml file with the full URI of your image:
+images:
+  myimage:
+    ref: image://neuro-public/bob/project-specific-docker-image
 ```
 
 Please note that some functionality may be missing in the custom base images. In particular, you may need to log into AWS and GCP manually from within your jobs. 

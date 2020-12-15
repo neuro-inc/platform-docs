@@ -15,7 +15,7 @@ To create a new Neuro project, run:
 ```bash
 neuro project init
 cd <project-slug>
-make setup
+neuro-flow build myimage
 ```
 
 It's a good practice to limit the scope of access to a specific GCP project. To create a new GCP Project, run:
@@ -56,16 +56,23 @@ Create a new secret for the file:
 neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
-Open `Makefile` and find the following line in it:
+Open `.neuro/live.yaml` and modify the jobs' descriptions:
+
+* Add this line to the `volumes` section of `train` and `remote_debug`:
 
 ```bash
-SECRETS?=
+volumes:
+  ...
+  - secret:gcp-key:/var/secrets/gcp.json
 ```
 
-Replace the line with that one:
+* And add these lines to the `defaults` section of the file \(this will make the environment variable available to all your jobs\):
 
 ```bash
-SECRETS?="-v secret:gcp-key:/var/secrets/gcp.json -e GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/gcp.json"
+defaults:
+  ...
+  env:
+    GOOGLE_APPLICATION_CREDENTIALS: /var/secrets/gcp.jso
 ```
 
 ### Creating a Bucket and Granting Access
@@ -100,9 +107,7 @@ echo "Hello World" | gsutil cp - gs://$BUCKET_NAME/hello.txt
 Run a development job and connect to the job's shell:
 
 ```bash
-export PRESET=cpu-small  # to avoid consuming GPU for this test
-make develop
-make connect-develop
+neuro-flow run remote_debug
 ```
 
 In your job's shell, try to use `gsutil` to access your bucket:
@@ -111,7 +116,7 @@ In your job's shell, try to use `gsutil` to access your bucket:
 gsutil cat gs://my-neuro-bucket-42/hello.txt
 ```
 
-Please note that in `develop`, `train`, and `jupyter` jobs the environment variable `GOOGLE_APPLICATION_CREDENTIALS` points to your key file. So you can use it to [authenticate other libraries](https://cloud.google.com/storage/docs/reference/libraries).
+Please note that in `remote_debug`, `train`, and `jupyter` jobs the environment variable `GOOGLE_APPLICATION_CREDENTIALS` points to your key file. So you can use it to [authenticate other libraries](https://cloud.google.com/storage/docs/reference/libraries).
 
 For instance, you can access your bucket via Python API provided by package `google-cloud-storage`:
 
@@ -128,6 +133,6 @@ To close remote terminal session, press `^D` or type `exit`.
 Please don't forget to terminate your job when you don't need it anymore:
 
 ```bash
-make kill-develop
+neuro-flow kill remote_debug
 ```
 

@@ -32,18 +32,18 @@ After you execute the command mentioned above, you get the following structure:
 
 ```text
 neuro-tutorial
+├── .neuro/             <- live.yaml file with commands for manipulating training environment
 ├── data/               <- training and testing datasets (we do not keep it under source control)
 ├── notebooks/          <- Jupyter notebooks
 ├── rnn/                <- source code of models
 ├── .gitignore          <- default .gitignore for a Python project
-├── Makefile            <- commands for manipulating training environment (see `make help`)
 ├── README.md           <- auto-generated informational file
 ├── apt.txt             <- list of system packages to be installed in the training environment 
 ├── requirements.txt    <- list Python dependencies to be installed in the training environment     
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-When you run a job \(for example, via `make jupyter`\), the directories are mounted to the job as follows:
+When you run a job \(for example, via `neuro-flow run jupyter`\), the directories are mounted to the job as follows:
 
 | Mount Point | Description | Storage URI |
 | :--- | :--- | :--- |
@@ -89,7 +89,7 @@ When you start working with a project on Neuro Platform, the basic flow looks as
 To set up the remote environment, run
 
 ```text
-make setup
+neuro-flow build myimage
 ```
 
 This command will run a lightweight job \(via `neuro run`\), upload the files containing your dependencies `apt.txt` and `requirements.txt` \(via `neuro cp`\), install the dependencies \(using `neuro exec`\), do other preparatory steps, and then create the base image from this job and push it to the platform \(via `neuro save`, which works similarly to `docker commit`\).
@@ -97,28 +97,32 @@ This command will run a lightweight job \(via `neuro run`\), upload the files co
 To upload data and code to your storage, run
 
 ```text
-make upload-all
+neuro-flow upload ALL
 ```
 
-To run training, you need to run specify the training command in Makefile, and then run `make train`:
+To run training, you need to run specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
 
-* open `Makefile` in editor,
-* find the following line:
+* open `.neuro/live.yaml` in editor,
+* find the following lines \(make sure you're looking at the `train` job, not `multitrain` which has very similar section:
 
 ```text
-TRAINING_COMMAND?='echo "Replace this placeholder with a training script execution"'
+    bash: |
+        cd $[[ flow.workspace ]]
+        python -u $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]]
 ```
 
-* and replace it with the following line: 
+* and replace it with the following lines: 
 
 ```text
-TRAINING_COMMAND?="bash -c 'cd $(PROJECT_PATH_ENV) && python -u $(CODE_DIR)/char_rnn_classification_tutorial.py'"
+    bash: |
+        cd $[[ flow.workspace ]]
+        python -u $[[ volumes.code.mount ]]/char_rnn_classification_tutorial.py
 ```
 
 Now, you can run
 
 ```text
-make train
+neuro-flow run train
 ```
 
 and observe the output. You will see how some checks are made at the beginning of the script, and then the model is being trained and evaluated:
