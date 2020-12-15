@@ -13,7 +13,7 @@ To create a new Neuro project, run:
 ```bash
 neuro project init
 cd <project-slug>
-make setup
+neuro-flow build myimage
 ```
 
 ### Creating an AWS IAM User
@@ -50,16 +50,14 @@ Set up Neuro Platform to use this file and check that Neuro project detects the 
 neuro secret add aws-key @~/aws-credentials.txt
 ```
 
-Next, open `Makefile` and find the following line in it:
+Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
 
 ```bash
-SECRETS?=
-```
-
-And replace the line with that one:
-
-```bash
-SECRETS?="-v secrets:aws-key:/var/secrets/aws.txt -e AWS_CONFIG_FILE=/var/secrets/aws.txt"
+jobs:
+  remote_debug:
+     ...
+     secret_files: '["secret:aws-key:/var/secrets/aws.txt"]'
+     additional_env_vars: '{"AWS_CONFIG_FILE": "/var/secrets/aws.txt"}'
 ```
 
 ### Creating a Bucket and Granting Access
@@ -79,12 +77,17 @@ Create a file and upload it into S3 Bucket:
 echo "Hello World" | aws s3 cp - s3://$BUCKET_NAME/hello.txt
 ```
 
+Change default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
+
+```bash
+defaults:
+  preset: cpu-small
+```
+
 Run a development job and connect to the job's shell:
 
 ```bash
-export PRESET=cpu-small  # to avoid consuming GPU for this test
-make develop
-make connect-develop
+neuro-flow run remote_debug
 ```
 
 In your job's shell, try to use's 3\` to access your bucket:

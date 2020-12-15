@@ -56,23 +56,16 @@ Create a new secret for the file:
 neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
-Open `.neuro/live.yaml` and modify the jobs' descriptions:
+Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
 
 * Add this line to the `volumes` section of `train` and `remote_debug`:
 
 ```bash
-volumes:
-  ...
-  - secret:gcp-key:/var/secrets/gcp.json
-```
-
-* And add these lines to the `defaults` section of the file \(this will make the environment variable available to all your jobs\):
-
-```bash
-defaults:
-  ...
-  env:
-    GOOGLE_APPLICATION_CREDENTIALS: /var/secrets/gcp.jso
+jobs:
+  remote_debug:
+     ...
+     secret_files: '["secret:gcp-key:/var/secrets/gcp.json"]'
+     additional_env_vars: '{"GOOGLE_APPLICATION_CREDENTIALS": "/var/secrets/gcp.json"}'
 ```
 
 ### Creating a Bucket and Granting Access
@@ -104,13 +97,26 @@ Create a file and upload it into Google Cloud Storage Bucket:
 echo "Hello World" | gsutil cp - gs://$BUCKET_NAME/hello.txt
 ```
 
+Change default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
+
+```bash
+defaults:
+  preset: cpu-small
+```
+
 Run a development job and connect to the job's shell:
 
 ```bash
 neuro-flow run remote_debug
 ```
 
-In your job's shell, try to use `gsutil` to access your bucket:
+In your job's shell, activate service account for CLI:
+
+```bash
+gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+```
+
+And try to use `gsutil` to access your bucket:
 
 ```bash
 gsutil cat gs://my-neuro-bucket-42/hello.txt

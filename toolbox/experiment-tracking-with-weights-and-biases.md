@@ -13,7 +13,7 @@ To create a new Neuro project, run:
 ```bash
 neuro project init
 cd <project-slug>
-make setup
+neuro-flow build myimage
 ```
 
 ### Connecting Weights & Biases
@@ -36,28 +36,30 @@ After that, create a Neu.ro secret:
 neuro secrets add wandb-token @~/$WANDB_SECRET_FILE
 ```
 
-Next, replace this line in your `Makefile`:
+Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
 
 ```bash
-SECRETS?=
-```
-
-With that one:
-
-```bash
-SECRETS?="-e WANDB_API_KEY=secret:wandb-token"
+jobs:
+  remote_debug:
+     ...
+     additional_env_vars: '{"WANDB_API_KEY": "secret:wandb-token"}'
 ```
 
 Now, you can start using W&B API in your code.
 
 ### Testing
 
+Change default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
+
+```bash
+defaults:
+  preset: cpu-small
+```
+
 Run a development job and connect to the job's shell:
 
 ```bash
-export PRESET=cpu-small  # to avoid consuming GPU for this test
-make develop
-make connect-develop
+neuro-flow run remote_debug
 ```
 
 In your job's shell, try to use `wandb`:
@@ -90,6 +92,6 @@ To close remote terminal session, press `^D` or type `exit`.
 Please don't forget to terminate your job when you don't need it anymore:
 
 ```bash
-make kill-develop
+neuro-flow kill remote_debug
 ```
 

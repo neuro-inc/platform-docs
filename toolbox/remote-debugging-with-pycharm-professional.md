@@ -30,7 +30,7 @@ code_directory [modules]:
 Next, configure the project's environment on Neuro Platform:
 
 ```bash
-make setup
+neuro-flow build myimage
 ```
 
 ### Setting up PyCharm
@@ -41,21 +41,19 @@ Then, _exclude all directories that don't contain Python code_ \(in an empty Neu
 
 ![](../.gitbook/assets/0_empty.png)
 
+Run this command to upload your code to the Neuro Platform storage:
+
+```bash
+neuro-flow upload ALL
+```
+
 Now, we are ready to start a development GPU-powered job on Neuro Platform. In the shell, run:
 
 ```bash
-make develop
+neuro-flow run remote_debug
 ```
 
-This command starts a `develop` job on Neuro Platform, which uses `gpu-small` preset. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed \(for that, you can run `make kill-all`\).
-
-Now, forward the job's SSH port to the localhost:
-
-```bash
-make port-forward-develop
-```
-
-Note, if default port `2211` is not available, you can specify another port via `make port-forward-develop LOCAL_PORT=2212`.
+This command starts a `remote_debug` job on Neuro Platform, which uses `gpu-small` preset and forwards local post 2211 to the job's SSH port. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed \(for that, you can run `neuro-flow kill ALL`\).
 
 Then go back to PyCharm project, go to "File" -&gt; "Settings", "Project" -&gt; "Project interpreter" \(you can use search by the word "interpreter"\). Press on the gear sign to see project interpreter options, select "Add...". In the new window, select "SSH Interpreter", and set up the following configuration:
 
@@ -72,7 +70,7 @@ Press the Next button.
 In the new window, specify paths:
 
 ```bash
-Interpreter: /usr/local/bin/python
+Interpreter: /opt/conda/bin/python
 Sync folders: <Project root> -> /neuro-pycharm
 ```
 
