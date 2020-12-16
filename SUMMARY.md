@@ -56,7 +56,8 @@
   * [admin](references/cli-reference/admin.md)
   * [completion](references/cli-reference/completion.md)
   * [Topics](references/cli-reference/topics.md)
-* [Python API Reference](https://neuromation-sdk.readthedocs.io/en/latest/)
+* [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
+* [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 * [FAQ](references/faq.md)
 
 ## ADMINISTRATION
