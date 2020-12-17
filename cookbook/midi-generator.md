@@ -15,7 +15,7 @@
 Чтобы запустить данный проект на [Neuro Platform](https://neu.ro), необходимо установить клиент `neuro` и клонировать репозиторий проекта:
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 git clone git@github.com:neuromation/ml-recipe-midi-generator.git
 cd ml-recipe-midi-generator

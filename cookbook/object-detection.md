@@ -13,7 +13,7 @@
 ### 1. Установить CLI и зайти
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 

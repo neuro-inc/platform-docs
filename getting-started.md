@@ -20,7 +20,7 @@
 Neu.ro CLI требует установленный Python 3 \(рекомендуется: 3.7, требуется: &gt;=3.6\). Мы советуем использовать [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/).
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 
@@ -33,7 +33,7 @@ neuro login
 ```text
 conda install -c conda-forge make
 conda install -c conda-forge git    
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 pip install -U certifi
 neuro login
 ```

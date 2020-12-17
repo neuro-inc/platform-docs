@@ -42,7 +42,7 @@
 Для работы с рецептами по ML, надо установить Neuro Platform CLI.
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 
