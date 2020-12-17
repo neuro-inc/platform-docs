@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Cookbook
 
 What you will find here is a curated collection of ML Recipes: ready-to-use examples, best practices, and learning materials available to you in the form of interactive environments that run on Neuro Platform.

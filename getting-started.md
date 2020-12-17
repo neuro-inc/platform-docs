@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Getting Started
 
 In this tutorial, we show how to start working with Neu.ro:

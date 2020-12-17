@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Pediatric Bone Age Assessment
 
 [Run on Neu.ro](https://apps.neu.ro/ml-recipes/bone-age)

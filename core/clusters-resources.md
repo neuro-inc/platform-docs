@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Clusters \(Resources\)
 
 Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster neuro-public. You have the option of creating new clusters; however, you would need additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).

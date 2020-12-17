@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # ML Recipes
 
 Neu.ro provides you with curated demonstrations of different machine learning solutions. You can use these ML solutions as a starting point for your own projects.

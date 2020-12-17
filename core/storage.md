@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Storage
 
 Neu.ro provides storage to host files that are required to run your jobs. All users on a platform can access the platform storage to manage data, code, and artifacts. Each storage is specific to that cluster, and you cannot reuse files between clusters. You can manage your storage either from the Web UI or the CLI. 

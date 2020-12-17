@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Introduction
 
 [Neu.ro](https://neu.ro) is a flexible and robust machine learning platform. It consists of two parts:

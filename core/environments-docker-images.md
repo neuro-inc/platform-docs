@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Environments \(Docker images\)
 
 Neu.ro uses Docker containers to run jobs in isolated environments. To run a container, you need to use Docker images that are templates containing an application and all the dependencies to run that application. Thus, a Docker container is a running instance of a Docker image.

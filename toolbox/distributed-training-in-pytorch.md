@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Distributed Training in PyTorch
 
 In this guide we show how to run distributed training process in PyTorch on Neu.ro. You can find the details about the described [recipe](https://github.com/neuromation/ml-recipe-distributed-pytorch) in our blog post: [Distributed training in PyTorch - using an example from the TensorFlow 2.0 Question Answering Competition](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).

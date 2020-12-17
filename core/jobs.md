@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Jobs
 
 Job is a minimal execution unit. You can run it in a given runtime environment on a given resource preset with given storage volumes attached. Jobs are the building blocks of your project and should be planned carefully for optimum use of the resources.

@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Jupyter Notebooks
 
 Jupyter Notebooks is a powerful computational notebook tool that lets you create and share your code. Neu.ro lets you manage all aspects of your Jupyter Notebooks from an intuitive web-based dashboard.

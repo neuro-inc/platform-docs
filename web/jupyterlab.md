@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # JupyterLab
 
 Jupyter Notebooks is a powerful computational notebook tool that lets you create and share your code. JupyterLab uses Jupyter Notebook and takes it much further. JupyterLab is an interactive web-based development environment for working with Jupyter Notebooks, text editors, terminals, and custom components.

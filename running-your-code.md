@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Running Your Code
 
 Oftentimes you don't start a project from scratch. Instead of that you use someones or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into Neu.ro project, and start developing on the platform.

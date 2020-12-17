@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Collaborative Development
 
 As you already [know](getting-started.md#understanding-core-concepts), the core concepts in Neu.ro are jobs, storage, and environments. You can share a job, a path on storage, or an image on the platform registry with your teammates, granting them permission to read, update, or even remove this entity.

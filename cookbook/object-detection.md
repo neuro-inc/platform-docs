@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Object Detection
 
 [Run on Neu.ro](https://apps.neu.ro/ml-recipes/object-detection)
