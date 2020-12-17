@@ -27,7 +27,7 @@ Classic DQN represents a rather simplistic approach, but at the same time, the r
 #### 1. Install CLI and log in
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 

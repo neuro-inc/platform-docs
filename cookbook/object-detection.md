@@ -19,7 +19,7 @@ This recipe contains the code and procedures that are required in order to add n
 #### 1. Install CLI and log in
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 

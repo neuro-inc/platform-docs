@@ -48,7 +48,7 @@ You have two options of how you might wish to use our recipes. You can sign up a
 To work with ML Recipes, you need to install the Neuro Platform CLI.
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 

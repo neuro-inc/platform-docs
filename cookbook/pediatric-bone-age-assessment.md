@@ -31,7 +31,7 @@ We validate the performance of the method by using data from the 2017 Pediatric 
 #### 1. Install CLI and log in
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 

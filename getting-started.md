@@ -26,7 +26,7 @@ The first option is recommended for exporing the platform. The second option, th
 Neu.ro CLI requires Python 3 installed \(recommended: 3.7, required: &gt;=3.6\). We suggest using [Anaconda Python 3.7 Distribution](https://www.anaconda.com/distribution/).
 
 ```text
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
 ```
 
@@ -39,7 +39,7 @@ When you have it up and running, run the following commands in Conda Prompt:
 ```text
 conda install -c conda-forge make
 conda install -c conda-forge git    
-pip install -U neuromation
+pip install -U neuro-cli neuro-extras neuro-flow
 pip install -U certifi
 neuro login
 ```
