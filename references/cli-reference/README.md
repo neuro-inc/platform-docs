@@ -9,7 +9,7 @@ Installation process is decribed in [Getting Started](../../getting-started.md#i
 * [neuro storage](storage.md): managing storage
 * [neuro image](image.md): Docker images \(environments\) manipulations
 * [neuro project](project.md): project operations
-* neuro config: client configuration
+* [neuro config](config.md): client configuration
 * [neuro secret](secret.md): operations with secrets
 * [neuro acl](acl.md): permissions and access management
 * [neuro blob](blob.md): blob storage operations
