@@ -1,9 +1,3 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Accessing Object Storage in GCP
 
 ### 
@@ -27,7 +21,7 @@ neuro-flow build myimage
 It's a good practice to limit the scope of access to a specific GCP project. To create a new GCP Project, run:
 
 ```bash
-PROJECT_ID=${PWD##*/}  # name of the current directory
+PROJECT_ID=$(basename "$PWD")  # name of the current directory
 gcloud projects create $PROJECT_ID
 gcloud config set project $PROJECT_ID
 ```
@@ -62,7 +56,7 @@ Create a new secret for the file:
 neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
-Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
+Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` and add the following lines at the end:
 
 * Add this line to the `volumes` section of `train` and `remote_debug`:
 

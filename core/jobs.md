@@ -27,40 +27,38 @@ For example, in this command we are using the preset cpu-small as the job does n
 
 ```text
 (base) C:\Projects>neuro run --preset cpu-small --name test ubuntu echo Hello, World! 
-Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14 Status: pending
-Name: test
-Http URL: https://test--clarytyllc.jobs.neuro-public.org.neu.ro
-Shortcuts:
-  neuro status test # check job status
-  neuro logs test # monitor job stdout
-  neuro top test # display real-time job telemetry
-  neuro exec test bash # execute bash shell to the job
-  neuro kill test # kill job
-Status: pending Creating
-Status: pending Scheduling
-Status: running
-Terminal is attached to the remote job, so you receive the job`s output.
-Use Ctrl-C to detach (it will NOT terminate the job), or restart thejob with `--detach` option.
+√ Job ID: job-36b67c86-85d8-4ccb-aab4-8a1dc67f94cc
+√ Name: test
+- Status: pending Creating
+- Status: pending Scheduling
+√ Http URL: https://test--jane-doe.jobs.neuro-compute.org.neu.ro
+√ The job will die in a day. See --life-span option documentation for details.
+√ Status: succeeded
+√ =========== Job is running in terminal mode ===========
+√ (If you don't see a command prompt, try pressing enter)
+√ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
 Hello, World!
 ```
 
-Neu.ro comes with a set of presets that are suitable for running different kinds of workloads. Some of the jobs may also require GPU resources. You can view the list of available presets for you using the command neuro config show.
+Neu.ro comes with a set of presets that are suitable for running different kinds of workloads. Some of the jobs may also require GPU resources. You can view the list of available presets for you using the **neuro config show** command:
 
 ```text
 (base) C:\Projects>neuro config show
 User Configuration:
-  User Name: clarytyllc
-  Current Cluster: neuro-public
-  API URL: https://staging.neu.ro/api/v1
-  Docker Registry URL: https://registry.neuro-public.org.neu.ro
-  Resource Presets:
-    Name         CPU    Memory    Preemptible    GPU
-    cpu-small    1.0    2.0G          No
-    cpu-large    7.0    28.0G         No
-    gpu-small    3.0    57.0G         No         1 x nvidia-tesla-k80
-    gpu-small-p  3.0    57.0G         Yes        1 x nvidia-tesla-k80
-    gpu-large    7.0    57.0G         No         1 x nvidia-tesla-v100
-    gpu-large-p  7.0    57.0G         Yes        1 x nvidia-tesla-v100
+ User Name            jane-doe
+ Current Cluster      neuro-compute
+ API URL              https://staging.neu.ro/api/v1
+ Docker Registry URL  https://registry.neuro-compute.org.neu.ro
+Resource Presets:
+ Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
+────────────────────────────────────────────────────────────────────────────────────────────────────────
+ cpu-small             1     4.0G        ×               ×                                           45
+ cpu-medium            3    11.0G        ×               ×                                           12
+ cpu-large             7    26.0G        ×               ×                                            5
+ gpu-k80-small         5    48.0G        ×               ×           1 x nvidia-tesla-k80            26
+ gpu-k80-small-p     5.0    48.0G        √               √           1 x nvidia-tesla-k80            30
+ gpu-v100-small        5    95.0G        ×               ×           1 x nvidia-tesla-v100           10
+ gpu-v100-small-p    5.0    95.0G        √               √           1 x nvidia-tesla-v100           10
 ```
 
 The command lists the available presets and their configurations. For example, the cpu-small preset includes 1 CPU, 2GB memory, and no GPU. Whereas, the gpu-large includes 7 CPU, 57GB memory, and an nvidia-tesla-v100 GPU.
@@ -81,20 +79,16 @@ To persist the data you can mount the volumes of the platform storage to the job
 
 ```text
 (base) C:\Projects>neuro run --preset cpu-small --name job230 ubuntu echo Hello, World!
-Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14
-Status: pending
-Name: job230
-Http URL: https://job230--clarytyllc.jobs.neuro-public.org.neu.ro
-Shortcuts:
-  neuro status job230 # check job status
-  neuro logs job230 # monitor job stdout
-  neuro top job230 # display real-time job telemetry
-  neuro exec job230 bash # execute bash shell to the job
-  neuro kill job230 # kill job
-Status: pending Creating
-Status: pending Scheduling
-Status: running
-Terminal is attached to the remote job, so you receive the job`s output.Use Ctrl-C to detach (it will NOT terminate the job), or restart thejob with `--detach` option.
+√ Job ID: job-0dc7a5b3-3534-4bd7-a02f-b73390d54b4e
+√ Name: job230
+- Status: pending Creating
+- Status: pending Scheduling
+√ Http URL: https://job230--jane-doe.jobs.neuro-compute.org.neu.ro
+√ The job will die in a day. See --life-span option documentation for details.
+√ Status: succeeded
+√ =========== Job is running in terminal mode ===========
+√ (If you don't see a command prompt, try pressing enter)
+√ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
 Hello, World!
 ```
 
@@ -176,24 +170,25 @@ A job is the smallest execution unit that is run until completion or until it is
 
 ```text
 (base) C:\Projects>neuro job status job363
-Job: job-b0c7cb42-b47b-42dc-bbfb-a3f7a5a11733
-Name: job363
-Owner: clarytyllc
-Cluster: neuro-public
-Status: running
-Image: ubuntu:latest
-Command: sleep infinity
-Resources:
-  Memory: 2.0
-  GCPU: 1.0
-  Additional: Extended SHM space
-Preemptible: False
-Life span: 1d
-Internal Hostname: job-b0c7cb42-b47b-42dc-bbfb-a3f7a5a11733.platform-jobs
-Http URL: https://job363--clarytyllc.jobs.neuro-public.org.neu.ro
-Http authentication: True
-Created: 2020-05-24T14:50:00.540688+00:00
-Started: 2020-05-24T14:50:04.680265+00:00
+ Job                      job-091ab6bb-3358-45a4-8012-f5abf376a77b
+ Name                     job363
+ Owner                    jane-doe
+ Cluster                  neuro-compute
+ Status                   running
+ Image                    ubuntu:latest
+ Preset                   cpu-small
+ Resources                 Memory              4.0G
+                           CPU                  1.0
+                           Extended SHM space  True
+ Life span                1d
+ TTY                      True
+ Internal Hostname        job-091ab6bb-3358-45a4-8012-f5abf376a77b.platform-jobs
+ Internal Hostname Named  job363--jane-doe.platform-jobs
+ Http URL                 https://job363--jane-doe.jobs.neuro-compute.org.neu.ro
+ Http port                80
+ Http authentication      True
+ Created                  2020-12-24T16:04:38.412948+00:00
+ Started                  2020-12-24T16:04:50.844440+00:00
 ```
 
 A job can have one of the following states:
@@ -259,15 +254,20 @@ Yes, neu.ro lets you share any running jobs with you teammates. You can get all 
 ```text
 (base) C:\Projects>neuro ps
 ID                                       NAME   STATUS   WHEN           IMAGE            OWNER   CLUSTER      DESCRIPTION
-job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  <you>   neuro-public
-job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   <you>   neuro-public
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  YOU   neuro-compute
+job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   YOU   neuro-compute
 ```
 
 Before sharing a job, you must know the ID of the job. After identifying the job you want to share, you must use the neuro share job command to share the job.
 
 **Sample command to share a job:**
 
-**neuro share job:job363 mrsmariyadavydova manage**
+\*\*\*\*
+
+```text
+(base) C:\Projects>neuro share job:job363 mrsmariyadavydova manage
+```
 
 This shares the job363 job with mrsmariyadavydova and provides the teammate manage access. You can provide the teammate the access to read, write, or manage. Now, your teammate can use the neuro ps command to view this job in their list of accessible jobs.
 
