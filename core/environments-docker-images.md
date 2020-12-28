@@ -33,16 +33,21 @@ You can run jobs from images both on the public Docker registry or a platform re
 
 ```text
 > neuro run -n job369 -s cpu-small ubuntu
-√ Job ID: job-c7ba2f0c-0469-493f-aca0-6ea861b41284
-√ Name: job369
-- Status: pending Creating
-- Status: pending Scheduling
-√ Http URL: https://job369--john-doe.jobs.neuro-compute.org.neu.ro
-√ The job will die in a day. See --life-span option documentation for details.
-√ Status: running
-√ =========== Job is running in terminal mode ===========
-√ (If you don't see a command prompt, try pressing enter)
-√ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
+Job ID: job-1712b7de-0072-48f5-bcc1-f64d3256730e Status: pending
+Name: job369
+Http URL: https://job369--clarytyllc.jobs.neuro-public.org.neu.ro
+Shortcuts:
+  neuro status job369     # check job status
+  neuro logs job369       # monitor job stdout
+  neuro top job369        # display real-time job telemetry
+  neuro exec job369 bash  # execute bash shell to the job
+  neuro kill job369       # kill job
+Status: pending Creating
+Status: pending Scheduling
+Status: succeeded
+Terminal is attached to the remote job, so you receive the job's output.
+Use 'Ctrl-C' to detach (it will NOT terminate the job), or restart the
+job with `--detach` option.
 ```
 
 Note: The job name that you provide must contain only lowercase letters, number, or hyphens; and must begin with a letter.
@@ -135,14 +140,15 @@ You can use the neuro job save command to save a job as a custom image:
 
 ```text
 > neuro job save job363 image:ubuntu-custom
-Saving job-83ff45cd-d148-4213-ba8e-56035270f7d0 => image://neuro-compute/john-doe/ubuntu-custom:latest
-Creating image image://neuro-compute/john-doe/ubuntu-custom:latest image from the job container
+Saving job-16339fe4-9559-4c4c-9437-e6e7d5d0721e -> image://neuro-public/clarytyllc/ubuntu-custom:latest
+Creating image image://neuro-public/clarytyllc/ubuntu-custom:latest image from the job container
 Image created
-Pushing image john-doe/ubuntu-custom:latest => image://neuro-compute/john-doe/ubuntu-custom:latest
-f6253634dc78 Pushed ---------------------------------------- 100% 3,072/7 bytes
-9069f84dbbe9 Pushed ---------------------------------------- 100% 15,360/811 bytes
-bacd3af13903 Pushed ---------------------------------------- 100% 75.3/72.9 MB
-image://neuro-compute/john-doe/ubuntu-custom:latest
+Pushing image clarytyllc/ubuntu-custom:latest => image://neuro-public/clarytyllc/ubuntu-custom:latest
+8891751e0a17: Pushed
+2a19bd70fcd4: Pushed
+9e53fd489559: Pushed
+7789f1a3d4e9: Pushed
+image://neuro-public/clarytyllc/ubuntu-custom:latest
 ```
 
 We have saved the job **job363** as a custom image **ubuntu-custom**.
@@ -166,16 +172,21 @@ You can use the neuro run command to run a job:
 
 ```text
 > neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
-√ Job ID: job-4d613016-b7db-47a1-bb2d-22649556761c
-√ Name: job363
-- Status: pending Creating
-- Status: pending Scheduling
-√ Http URL: https://job363--john-doe.jobs.neuro-compute.org.neu.ro
-√ The job will die in a day. See --life-span option documentation for details.
-√ Status: succeeded
-√ =========== Job is running in terminal mode ===========
-√ (If you don't see a command prompt, try pressing enter)
-√ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
+Job ID: job-21beb932-1cdb-4b55-b286-10a99752a9f1 Status: pending
+Name: job363
+Http URL: https://job363--clarytyllc.jobs.neuro-public.org.neu.ro
+Shortcuts:
+  neuro status job363     # check job status
+  neuro logs job363       # monitor job stdout
+  neuro top job363        # display real-time job telemetry
+  neuro exec job363 bash  # execute bash shell to the job
+  neuro kill job363       # kill job
+Status: pending Creating
+Status: pending Scheduling
+Status: succeeded
+Terminal is attached to the remote job, so you receive the job's output.
+Use 'Ctrl-C' to detach (it will NOT terminate the job), or restart the
+job with `--detach` option.                
 Hello World
 ```
 

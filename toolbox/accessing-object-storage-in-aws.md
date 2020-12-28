@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Accessing Object Storage in AWS
 
 ### Introduction
@@ -98,5 +104,5 @@ aws s3 cp s3://my-neuro-bucket-42/hello.txt -
 
 To close the remote terminal session, press `^D` or type `exit`.
 
-Please don't forget to terminate the job after you've finished working with it.
+Please don't forget to termin
 

@@ -28,9 +28,9 @@ git clone git@github.com:songyouwei/ABSA-PyTorch.git
 cd ABSA-PyTorch
 ```
 
-Now, we need to add a couple of files to the repository folder:
+Now, we need to add a couple of files:
 
-* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo's requirements \(which are gracefully listed by the repo maintainer in `requirements.txt`\). The contents of the dockerfile should be as follows:
+* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements \(which are gracefully listed by the repo mainteiner in `requirements.txt`\):
 
 {% code title="Dockerfile" %}
 ```bash
@@ -63,7 +63,7 @@ images:
 jobs:
   train:
     image: ${{ images.pytorch.ref }}
-    preset: gpu-k80-small
+    preset: gpu-small
     volumes:
       - ${{ volumes.project.ref_rw }}
     bash: |
@@ -80,7 +80,7 @@ Here is a brief explanation of this config:
 
 ### Running code
 
-Now it's time to run several commands that set up the project environment and run training.
+Now it's time to run several command that set up the project environment and run training.
 
 * Fisrt, create volumes and upload project to platform storage:
 

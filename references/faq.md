@@ -83,11 +83,9 @@ For example,
  neuro kill `neuro -q ps -o mariyadavydova`
 ```
 
-When you run this command for a user that has no active jobs, it will result in a _**Missing argument 'JOBS...'**_ error.
-
 ### How to Run Two or More Commands In a Job
 
-Sometimes you want to execute two or three commands in a job without having to connect to it. For example, you may want to change the working directory and to run training. To achieve this, you need to wrap your commands in `”bash -c ‘<commands>’”` call before providing them as an argument for _**neuro run**_, like this:
+Sometimes you want to execute two or three commands in a job without having to connect to it. For example, you may want to change the working directory and to run training. To achieve this, you need to wrap your commands in `”bash -c ‘<commands>’”` call, like this:
 
 ```text
 "bash -c 'cd /project && python mnist/train.py'"

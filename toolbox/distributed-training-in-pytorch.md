@@ -45,7 +45,5 @@ To run the recipe on the `DummyDataset`, follow these simple steps:
 3. Run `make setup`
 4. Run `scripts/run_distributed_on_platform.sh`
 
-When you've finished working, don't forget to run _**make kill-setup**_ to terminate the running job.
-
 This approach is generic, so you can use our solution as a template for training your PyTorch models distributedly.
 

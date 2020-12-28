@@ -1,3 +1,9 @@
+---
+description: >-
+  This page is slightly outdated. Our technical writers are updating it right
+  now.
+---
+
 # Collaborative Development
 
 As you already [know](getting-started.md#understanding-core-concepts), the core concepts in Neu.ro are jobs, storage, and environments. You can share a job, a path on storage, or an image on the platform registry with your teammates, granting them permission to read, update, or even remove this entity.
@@ -27,11 +33,11 @@ neuro cp -r local-folder-with-data storage:cifar-10
 neuro share storage:cifar-10 alice manage
 ```
 
-After that, you need to update the `data/remote:` value in the project's `.neuro/live.yaml` file to keep the full URI of your data. This step allows your teammates to use this data folder in their project copies as well \(here `neuro-compute` is the name of our default cluster, and `bob` is your platform user name\):
+After that, you need to update the `data/remote:` value in the project's `.neuro/live.yaml` file to keep the full URI of your data. This step allows your teammates to use this data folder in their project copies as well \(here `neuro-public` is the name of our default cluster, and `bob` is your platform user name\):
 
 ```text
   data:
-    remote: storage://neuro-compute/bob/cifar-10
+    remote: storage://neuro-public/bob/cifar-10
     mount: /project/data
     local: data
 ```
@@ -52,7 +58,7 @@ Now all your teammates can clone the project and start working on it through the
 
 * To set up the working environment, run `neuro-flow build myimage` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
 * To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them in the local copy of the project, run `neuro-flow download notebooks`.
-* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train`. For example:
+* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train` for example:
 
 ```text
 jobs:
@@ -114,7 +120,7 @@ images:
     ref: ufoym/deepo
 ```
 
-If the image is not public, you need to make it available to your teammates:
+If the image is not public, you need to make available to your teammates:
 
 ```text
 # upload to your registry:
