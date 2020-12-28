@@ -19,7 +19,6 @@
 * [Jupyter Notebooks](web/jupyter-notebooks.md)
 * [JupyterLab](web/jupyterlab.md)
 * [FileBrowser](web/filebrowser.md)
-* [Рецепты машинного обучения](web/ml-recipes.md)
 
 ## Инструменты <a id="toolbox"></a>
 
@@ -30,15 +29,6 @@
 * [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
-
-## Рецепты <a id="cookbook"></a>
-
-* [Рецепты](cookbook/cookbook.md)
-* [Распознавание объектов](cookbook/object-detection.md)
-* [Оценка костного возраста детей](cookbook/pediatric-bone-age-assessment.md)
-* [Hierarchical Attention для классификации тональности текста](cookbook/hierarchical-attention-for-sentiment-classification.md)
-* [Генератор MIDI файлов](cookbook/midi-generator.md)
-* [Глубокое Q-обучение \(DQN\)](cookbook/deep-q-learning-dqn.md)
 
 ## References
 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Данная страница немного устарела. Наша команда технических писателей работает
+  над ней.
+---
+
 # Распределенное обучение c PyTorch
 
 В данном руководстве мы покажем, как запустить распределенное обучение в PyTorch на Neu.ro. Вы можете найти подробную информацию в наших [рецептах](https://github.com/neuromation/ml-recipe-distributed-pytorch) в нашем блоге: [Распределенное обучение с PyTorch - на примере конкурса ответов на вопросы о TensorFlow 2.0](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
