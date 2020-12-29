@@ -16,11 +16,6 @@ If you are new to Neu.ro, here are two simple steps to get started:
 * [Sign up](https://neu.ro) and get 100h of GPU compute for free.
 * Follow our [Getting Started](getting-started.md) guide.
 
-If you want to dig deeper, take a look at various ML development guides we carefully craft for you, for example:
-
-* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Remote debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
-
 Also, take a look at our [CLI reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [Python API reference](https://neuro-sdk.readthedocs.io/en/latest/).
 
 To get help, refer [FAQ](references/faq.md) or contact us at [team@neu.ro](mailto:team@neu.ro).
