@@ -45,6 +45,7 @@
 
 * [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
 * [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
+* [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
 * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 * [FAQ](references/faq.md)
 
