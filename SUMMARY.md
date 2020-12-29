@@ -43,19 +43,7 @@
 
 ## References
 
-* [CLI Reference](references/cli-reference/README.md)
-  * [Shortcuts](references/cli-reference/shortcuts.md)
-  * [job](references/cli-reference/job.md)
-  * [storage](references/cli-reference/storage.md)
-  * [image](references/cli-reference/image.md)
-  * [project](references/cli-reference/project.md)
-  * [config](references/cli-reference/config.md)
-  * [secret](references/cli-reference/secret.md)
-  * [acl](references/cli-reference/acl.md)
-  * [blob](references/cli-reference/blob.md)
-  * [admin](references/cli-reference/admin.md)
-  * [completion](references/cli-reference/completion.md)
-  * [Topics](references/cli-reference/topics.md)
+* [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
 * [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
 * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 * [FAQ](references/faq.md)

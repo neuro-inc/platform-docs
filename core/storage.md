@@ -45,7 +45,7 @@ To view the folders and files in an image, use the command:
 
 `neuro ls [OPTIONS] PATHS` 
 
-For more information, see [List directory contents](https://docs.neu.ro/references/cli-reference/storage#ls).
+For more information, see [List directory contents](https://neu-ro.gitbook.io/neu-ro-cli-reference/commands/storage#ls).
 
 **Sample command:**
 

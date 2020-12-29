@@ -54,7 +54,7 @@ Note: The job name that you provide must contain only lowercase letters, number,
 
 When a job is created, it is added to the queue and its status is set to Pending. Once the job starts running it is assigned a job ID, and the status is set to Running. All current jobs are also listed on the Neu.ro web interface.
 
-For more information, see the [CLI Reference for Run](../references/cli-reference/).
+For more information, see the [CLI Reference for Run](https://neu-ro.gitbook.io/neu-ro-cli-reference/).
 
 You can view the list of jobs currently running using the command: `neuro ps`. This also lists the job-id of the jobs. You can terminate a job using the command: `neuro kill <job-id>`.
 

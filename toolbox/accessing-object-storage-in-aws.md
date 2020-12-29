@@ -10,7 +10,7 @@ description: >-
 
 This tutorial demonstrates how to access your AWS S3 from Neuro Platform. You will set up a new Neuro project, create an S3 bucket, and make it is accessible from Neuro Platform jobs.
 
-Make sure you have [Neu.ro CLI](../references/cli-reference/) installed.
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
 
 ### Creating Neuro Project
 
