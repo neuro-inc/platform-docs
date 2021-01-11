@@ -1,9 +1,3 @@
----
-description: >-
-  Данная страница немного устарела. Наша команда технических писателей работает
-  над ней.
----
-
 # Введение
 
 [Neu.ro](https://neu.ro) является гибкой и надежной платформой машинного обучения. Платформа состоит из двух частей:
@@ -16,10 +10,10 @@ description: >-
 * [Зарегистрируйтесь](https://neu.ro) и получите 100 часов работы GPU бесплатно.
 * Следуйте нашему руководству по [началу работы](getting-started.md).
 
-Если Вы хотите узнать больше, то ознакомьтесь с различными руководствами по ML, которые мы разработали специально для Вас:
+Если вы хотите разобраться с темой на более глубоком уровне, наши руководства по разработке в области ML могут помочь: 
 
-* [Отслеживание эксперимента через Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Удаленная отладка с помощью PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Отслеживание экспериментов с Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
+* [Удаленная отладка с PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
 
 Также ознакомьтесь с нашими [руководством по CLI](references/cli-reference/) и [руководством по Python API](https://neuromation-sdk.readthedocs.io/en/latest/).
 
