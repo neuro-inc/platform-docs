@@ -20,7 +20,6 @@
 * [Jupyter Notebooks](web/jupyter-notebooks.md)
 * [JupyterLab](web/jupyterlab.md)
 * [FileBrowser](web/filebrowser.md)
-* [ML Recipes](web/ml-recipes.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
 
@@ -31,15 +30,6 @@
 * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Hyperparameter Tuning with NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
-
-## Neu.ro Cookbook <a id="cookbook"></a>
-
-* [Cookbook](cookbook/cookbook.md)
-* [Object Detection](cookbook/object-detection.md)
-* [Pediatric Bone Age Assessment](cookbook/pediatric-bone-age-assessment.md)
-* [Hierarchical Attention for Sentiment Classification](cookbook/hierarchical-attention-for-sentiment-classification.md)
-* [MIDI Generator](cookbook/midi-generator.md)
-* [Deep Q-Learning \(DQN\)](cookbook/deep-q-learning-dqn.md)
 
 ## References
 

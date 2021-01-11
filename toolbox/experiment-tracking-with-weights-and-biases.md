@@ -1,9 +1,3 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Experiment Tracking with Weights & Biases
 
 ### 
@@ -74,7 +68,7 @@ In your job's shell, try to use `wandb`:
 wandb status
 ```
 
-You should see something like:
+You should see something like the following:
 
 ```bash
 Logged in? True
@@ -91,9 +85,9 @@ Current Settings
 }
 ```
 
-Please find a real-world example of W&B usage on Neuro Platform in our ML Recipe for Hierarchical Attention. You can also find other examples on how to use experiment tracking and other features of W&B [in official W&B's examples repo](https://github.com/wandb/examples).
+You can also find more examples on how to use experiment tracking and other features of W&B in the [official W&B's examples repo](https://github.com/wandb/examples).
 
-To close remote terminal session, press `^D` or type `exit`.
+To close the remote terminal session, press `^D` or type `exit`.
 
 Please don't forget to terminate your job when you don't need it anymore:
 

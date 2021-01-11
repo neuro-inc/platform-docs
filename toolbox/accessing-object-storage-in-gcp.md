@@ -1,16 +1,10 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Accessing Object Storage in GCP
 
 ### 
 
 ### Introduction
 
-This tutorial demonstrates how to access your Google Cloud Storage from Neuro Platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket and make that bucket is accessible from Neuro Platform job.
+This tutorial demonstrates how to access your Google Cloud Storage from the Neuro platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket that's accessible from a job on the Neuro platform.
 
 Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
 
@@ -32,11 +26,11 @@ gcloud projects create $PROJECT_ID
 gcloud config set project $PROJECT_ID
 ```
 
-Make sure to [set billing account](https://cloud.google.com/billing/docs/how-to/modify-project) for your GCP project. See [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) for details.
+Make sure to [set a billing account](https://cloud.google.com/billing/docs/how-to/modify-project) for your GCP project. See [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) for details.
 
 ### Creating a Service Account and Uploading an Account Key
 
-First, create a service account the job will impersonate into:
+First, create a service account for the job:
 
 ```bash
 SA_NAME="neuro-job"
@@ -45,16 +39,16 @@ gcloud iam service-accounts create $SA_NAME  \
     --display-name "Neuro Platform Job"
 ```
 
-See [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts#iam-service-accounts-create-gcloud) for details.
+See [Creating and managing service accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts#iam-service-accounts-create-gcloud) for more details.
 
-Then download account key:
+Then, download the account key:
 
 ```bash
 gcloud iam service-accounts keys create ~/$SA_NAME-key.json \
   --iam-account $SA_NAME@$PROJECT_ID.iam.gserviceaccount.com
 ```
 
-Check that the newly created key is located at `~/`.
+Make sure that the newly created key is located at `~/`.
 
 Create a new secret for the file:
 
@@ -62,9 +56,7 @@ Create a new secret for the file:
 neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
-Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
-
-* Add this line to the `volumes` section of `train` and `remote_debug`:
+Open `.neuro/live.yaml`, find the `remote_debug` section within `jobs`, and add the following lines at the end of `remote_debug`:
 
 ```bash
 jobs:
@@ -103,7 +95,7 @@ Create a file and upload it into Google Cloud Storage Bucket:
 echo "Hello World" | gsutil cp - gs://$BUCKET_NAME/hello.txt
 ```
 
-Change default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
+Change the default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
 
 ```bash
 defaults:
@@ -116,7 +108,7 @@ Run a development job and connect to the job's shell:
 neuro-flow run remote_debug
 ```
 
-In your job's shell, activate service account for CLI:
+In your job's shell, activate the service account for CLI:
 
 ```bash
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS

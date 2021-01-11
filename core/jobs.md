@@ -1,9 +1,3 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Jobs
 
 Job is a minimal execution unit. You can run it in a given runtime environment on a given resource preset with given storage volumes attached. Jobs are the building blocks of your project and should be planned carefully for optimum use of the resources.
@@ -101,7 +95,7 @@ Hello, World!
 1. **Running a long training job with mounting storage**
 
 ```text
-(base) C:\Projects>neuro run --name job303 --volume storage:nero-assistant/ModelCode/:/code:rw --preset cpu-small neuromation/base python /code/train.py
+(base) C:\Projects>neuro run --name job303 --volume storage:nero-assistant/ModelCode/:/code:rw --preset cpu-small neuromation/base python code/train.py
 Job ID: job-43ca33a4-5a4c-4eee-9ac1-67deb7c66e14
 Status: pending
 Name: job303
@@ -292,31 +286,27 @@ $Job completed
 
 ## Can I manage jobs from the web UI?
 
-Neuro provides an intuitive interface that lets you manage jobs. The jobs page of the Neu.ro web interface lists all the jobs.
+Neuro provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Neu.ro web interface lists all the jobs.
 
-![](../.gitbook/assets/Job_UI.JPG)
+![Jobs page](../.gitbook/assets/zobrazhennya%20%2819%29.png)
 
-You can view the web interface of the job by clicking on the HTTP URL.
+You can view the web interface of the job by clicking the 'three dots' icon near the job and then clicking **HTTP URL**.
 
-![](../.gitbook/assets/Job_HTTP.JPG)
+![Navigating to the HTTP URL option](../.gitbook/assets/zobrazhennya%20%2818%29.png)
 
 To view the log and and other details about a job, click on the job ID.
 
-![](../.gitbook/assets/Job_Log.JPG)
+![Job details section](../.gitbook/assets/zobrazhennya%20%2816%29.png)
 
-You can view only the running job by clicking on the **Running only** check box.
+You can view only the currently running jobs by enabling the **Running only** checkbox.
 
-![](../.gitbook/assets/Job_Running.JPG)
+![Enabling the &apos;Running only&apos; checkbox](../.gitbook/assets/zobrazhennya%20%2822%29.png)
 
-You can filter the available jobs based on the tags associated with them such as kind:project or target:setup.
+You can search for specific jobs by using the **Search** box.
 
-![](../.gitbook/assets/Job_Tags.jpg)
+![Searching for a specific job](../.gitbook/assets/zobrazhennya%20%2825%29.png)
 
-You can also filter jobs by searching for them by entering the search criteria in the search box.
+The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in the drop-down menu accessible through the 'three dots' icon near the job.
 
-![](../.gitbook/assets/Job_Search.jpg)
-
-The UI also lets you kill or rerun a job by clicking on **Kill** or **Rerun** buttons.
-
-![](../.gitbook/assets/Job_Kill_ReRun.jpg)
+![](../.gitbook/assets/zobrazhennya%20%289%29.png)
 

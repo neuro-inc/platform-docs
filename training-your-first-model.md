@@ -128,7 +128,7 @@ To upload data and code to your storage, run
 neuro-flow upload ALL
 ```
 
-To run training, you need to run specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
+To run training, you need to specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
 
 * open `.neuro/live.yaml` in editor,
 * find the following lines \(make sure you're looking at the `train` job, not `multitrain` which has very similar section:

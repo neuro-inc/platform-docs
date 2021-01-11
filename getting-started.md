@@ -1,25 +1,19 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Getting Started
 
 In this tutorial, we show how to start working with Neu.ro:
 
-* Install CLI client;
-* Understand core concepts; and
+* Install the CLI client;
+* Understand core concepts;
 * Start developing on GPU in Jupyter Notebooks.
 
 ## Installing CLI
 
 To start working with CLI, you have two options:
 
-* Use [Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-public)
+* Use the [Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-public)
 * Install Neu.ro CLI on your machine and run `neuro login`
 
-The first option is recommended for exporing the platform. The second option, though, is better when working on your projects.
+The first option is recommended for exploring the platform. The second option, though, is better when working on your projects.
 
 ### Linux and Mac OS instructions
 
@@ -44,11 +38,13 @@ pip install -U certifi
 neuro login
 ```
 
+To make sure that all commands you can find in our documentation work properly, don't forget to run `bash` every time you open Conda Prompt.
+
 ## Understanding core concepts
 
-On **Neu.ro Core** level, one works with jobs, environments, and storage. To be more specific, one runs a job \(an execution unit\) in a given environment \(Docker container\) on a given preset \(a combination of CPU, GPU, and memory resources allocated for this job\) with several parts of storage \(block or object storage\) available \(attached\).
+On the **Neu.ro Core** level, you will work with jobs, environments, and storage. To be more specific, a job \(an execution unit\) runs in a given environment \(Docker container\) on a given preset \(a combination of CPU, GPU, and memory resources allocated for this job\) with several storage instances \(block or object storage\) available \(attached\).
 
-Let us show several examples.
+Let us show a few examples.
 
 Run a job on CPU which prints “Hello, World!” and shuts down:
 
@@ -56,32 +52,26 @@ Run a job on CPU which prints “Hello, World!” and shuts down:
 neuro run --preset cpu-small --name test ubuntu echo Hello, World!
 ```
 
-Upon execution of this command you’ll see an output like this:
+Executing this command will result in an output like this:
 
 ```text
-Job ID: job-2b743322-f53a-4211-be4e-5d493e6cc770 Status: pending
-Name: test
-Http URL: https://test--johndoe.jobs.neuro-ai-public.org.neu.ro
-Shortcuts:
-  neuro status test     # check job status
-  neuro logs test       # monitor job stdout
-  neuro top test        # display real-time job telemetry
-  neuro exec test bash  # execute bash shell to the job
-  neuro kill test       # kill job
-Status: pending Creating
-Status: pending Scheduling
-StatStatus: pending ContainerCreating
-Status: succeeded
-Terminal is attached to the remote job, so you receive the job's output.
-Use 'Ctrl-C' to detach (it will NOT terminate the job), or restart the
-job with `--detach` option.                
+√ Job ID: job-7dd12c3c-ae8d-4492-bdb9-99509fda4f8c
+√ Name: test
+- Status: pending Creating
+- Status: pending Scheduling
+√ Http URL: https://test--jane-doe.jobs.neuro-compute.org.neu.ro
+√ The job will die in a day. See --life-span option documentation for details.
+√ Status: succeeded
+√ =========== Job is running in terminal mode ===========
+√ (If you don't see a command prompt, try pressing enter)
+√ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
 Hello, World!
 ```
 
 Run a job in Neu.ro default environment \(`neuromation/base`\) on GPU which prints checks if CUDA is available in this environment:
 
 ```text
-neuro run --preset gpu-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
+neuro run --preset gpu-k80-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
 ```
 
 Check the presets you can use:
@@ -96,7 +86,7 @@ Create a directory `demo` in your platform storage root:
 neuro mkdir -p storage:demo
 ```
 
-Run a job which mounts `demo` directory on storage to `/demo` directory in the job container and creates a file in it:
+Run a job which mounts the `demo` directory on storage to the `/demo` directory in the job container and creates a file in it:
 
 ```text
 neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu bash -c "echo Hello >> /demo/hello.txt"
@@ -110,7 +100,7 @@ neuro ls storage:demo
 
 ## Developing on GPU
 
-While one can run a Jupyter Notebooks session with one command in a command line or with one click in web UI, we recommend project-based development. To simplify the process, we provide the project template, which is a part of **Neu.ro Toolbox**, and provides the folder structure and integrations with several recommended tools.
+While you can run a Jupyter Notebooks session with one command in the command line or in one click in the web UI, we recommend project-based development. To simplify the process, we provide a project template which is a part of **Neu.ro Toolbox**. This template provides the folder structure and integrations with several recommended tools.
 
 ### Initializing a project
 
@@ -138,7 +128,7 @@ cd neuro-tutorial
 
 ### Project structure
 
-After you execute the command mentioned above, you get the following structure:
+The structure of the project's folder will look like this:
 
 ```text
 neuro-tutorial
@@ -149,6 +139,7 @@ neuro-tutorial
 ├── modules/            <- source code of models
 ├── results/            <- training artifacts
 ├── .gitignore          <- default .gitignore for a Python ML project
+├── .neuro.toml         <- autogenerated config file
 ├── HELP.md             <- autogenerated template reference
 ├── README.md           <- autogenerated informational file
 ├── Dockerfile          <- description of base image used for your project
@@ -157,7 +148,7 @@ neuro-tutorial
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-The template contains `neuro/live.yaml` configuration file for `neuro-flow`, which guarantees the contract between the above-shown structure, the base environment which we provide, and manipulations with storage and jobs. For example, through `upload` command, sub-folders on your local machine are uploaded with sub-folders on persistent platform storage, and those sub-folders are synced with the corresponding sub-folders in job containers.
+The template contains `neuro/live.yaml` configuration file for `neuro-flow`, which guarantees the contract between the above-shown structure, the base environment which we provide, and manipulations with storage and jobs. For example, the `upload` command synchronizes sub-folders on your local machine with sub-folders on the persistent platform storage, and those sub-folders are synchronized with the corresponding sub-folders in job containers.
 
 ### Setting up the environment and running Jupyter
 
@@ -167,7 +158,7 @@ To set up the project environment, run:
 neuro-flow build myimage
 ```
 
-Upon execution of this command, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed in the base environment, which already contains CUDA support and the most popular ML/AI frameworks, like Tensorflow and Pytorch.
+When this command is executed, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed to the base environment which already contains CUDA support and the most popular ML/AI frameworks, like Tensorflow and Pytorch.
 
 To start a Jupyter Notebooks session on GPU, run:
 
@@ -177,7 +168,7 @@ neuro-flow run jupyter
 
 This command open Jupyter Notebooks interface in your default browser.
 
-Now, when you edit notebooks, they update on your platform storage. To download them locally \(for example, to put them under version control\), run:
+Now, when you edit notebooks, they are updated on your platform storage. To download them locally \(for example, to connect them to a version control system\), run:
 
 ```text
 neuro-flow download notebooks

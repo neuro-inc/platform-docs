@@ -40,7 +40,7 @@ RUN pip install --progress-bar=off -U --no-cache-dir -r /cfg/requirements.txt
 ```
 {% endcode %}
 
-* `.neuro/live.yml` contains minimal configuration allowing us to run this repo scripts right on the platform through handy short commands:
+* `.neuro/live.yml` contains minimal configuration allowing us to run this repo's scripts right on the platform through handy short commands:
 
 {% code title=".neuro/live.yml" %}
 ```yaml
