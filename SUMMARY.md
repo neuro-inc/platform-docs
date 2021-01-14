@@ -3,7 +3,9 @@
 * [Введение](README.md)
 * [Начало работы](getting-started.md)
 * [Обучение Вашей первой модели](training-your-first-model.md)
+* [Запуск Вашего кода](running-your-code.md)
 * [Совместная разработка](collaborative-development.md)
+* [FAQ](faq.md)
 
 ## Ядро <a id="core"></a>
 
@@ -30,21 +32,15 @@
 * [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 
-## References
+## Администрирование <a id="administration"></a>
 
-* [CLI Reference](references/cli-reference/README.md)
-  * [Shortcuts](references/cli-reference/shortcuts.md)
-  * [job](references/cli-reference/job.md)
-  * [storage](references/cli-reference/storage.md)
-  * [image](references/cli-reference/image.md)
-  * [project](references/cli-reference/project.md)
-  * [config](references/cli-reference/config.md)
-  * [secret](references/cli-reference/secret.md)
-  * [acl](references/cli-reference/acl.md)
-  * [blob](references/cli-reference/blob.md)
-  * [admin](references/cli-reference/admin.md)
-  * [completion](references/cli-reference/completion.md)
-  * [Topics](references/cli-reference/topics.md)
-* [Python API Reference](https://neuromation-sdk.readthedocs.io/en/latest/)
-* [FAQ](references/faq.md)
+* [Создание кластеров](administration/creating-a-cluster.md)
+* [Управление пользователями и квотами](administration/managing-users-and-quotas.md)
+
+## Справка <a id="references"></a>
+
+* [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
+* [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
+* [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
+* [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 

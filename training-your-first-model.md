@@ -1,9 +1,3 @@
----
-description: >-
-  Данная страница немного устарела. Наша команда технических писателей работает
-  над ней.
----
-
 # Обучение Вашей первой модели
 
 ## Введение
@@ -14,7 +8,7 @@ description: >-
 
 Наш пример основывается на [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html).
 
-## Создание нового проекта
+### Создание нового проекта
 
 Чтобы упростить работу с Neuro Platform и помочь внедрить лучшие практики ML, мы предоставляем шаблон проекта. Этот шаблон состоит из рекомендуемых каталогов и файлов. Он предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
 
@@ -32,24 +26,24 @@ project_slug [neuro-tutorial]:
 code_directory [modules]: rnn
 ```
 
-## Структура проекта
+### Структура проекта
 
 После выполнения вышеприведенной команды Вы получите следующую структуру:
 
 ```text
 neuro-tutorial
+├── .neuro/             <- live.yaml file with commands for manipulating training environment
 ├── data/               <- training and testing datasets (we do not keep it under source control)
 ├── notebooks/          <- Jupyter notebooks
 ├── rnn/                <- source code of models
 ├── .gitignore          <- default .gitignore for a Python project
-├── Makefile            <- commands for manipulating training environment (see `make help`)
 ├── README.md           <- auto-generated informational file
 ├── apt.txt             <- list of system packages to be installed in the training environment 
 ├── requirements.txt    <- list Python dependencies to be installed in the training environment     
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-Когда Вы запустите задание \(например, при помощи команды `make jupyter`\), каталоги примонтируются к заданию следующим образом:
+Когда Вы запустите задание \(например, при помощи команды `neuro-flow run jupyter`\), каталоги примонтируются к заданию следующим образом:
 
 | Точка монтирования | Описание | URI хранения данных |
 | :--- | :--- | :--- |
@@ -58,9 +52,9 @@ neuro-tutorial
 | `/project/notebooks/` | Пользовательский Jupyter notebook | `storage:neuro-tutorial/notebooks/` |
 | `/project/results/` | Файлы логирования и результат | `storage:neuro-tutorial/results/` |
 
-Данное сопоставление определено в переменных в верхней части файла Makefile и при необходимости может быть изменено.
+Данное сопоставление определено в переменных в верхней части файла `Makefile` и при необходимости может быть изменено.
 
-## Заполнение проекта
+### Заполнение проекта
 
 Теперь необходимо наполнить вновь созданный проект контентом:
 
@@ -76,10 +70,32 @@ cd neuro-tutorial
 curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
-* Добавим  `requirements.txt` в корневую папку проекта [образец файла](https://github.com/pytorch/tutorials/blob/master/requirements.txt):
+* Добавим следующие строки в файл `requirements.txt` в корневой папке проекта:
 
 ```text
-curl https://raw.githubusercontent.com/pytorch/tutorials/master/requirements.txt -o requirements.txt
+sphinx==1.8.2
+sphinx-gallery==0.3.1
+sphinx-copybutton
+tqdm
+numpy
+matplotlib
+torch
+torchtext
+PyHamcrest
+bs4
+
+# PyTorch Theme
+-e git+git://github.com/pytorch/pytorch_sphinx_theme.git#egg=pytorch_sphinx_theme
+
+ipython
+
+# to run examples
+pandas
+# pillow >= 4.2 will throw error when trying to write mode RGBA as JPEG,
+# this is a workaround to the issue.
+pillow
+wget
+
 ```
 
 * Загрузим [отсюда](https://download.pytorch.org/tutorial/data.zip) данные, распакуем ZIP содержимое и поместим его в папку `data`:
@@ -88,14 +104,14 @@ curl https://raw.githubusercontent.com/pytorch/tutorials/master/requirements.txt
 curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
-## Обучение и оценка модели
+### Обучение и оценка модели
 
-Когда вы начинаете работать с проектом на Neuro Platform, основной процесс выглядит следующим образом: настраиваете удаленное рабочее окружение, загружаете данные и код на дисковое пространство, проводите обучение и оцениваете результат.
+Когда вы начинаете работать с проектом на платформе Neuro, основной процесс выглядит следующим образом: настраиваете удаленное рабочее окружение, загружаете данные и код на дисковое пространство, проводите обучение и оцениваете результат.
 
 Чтобы настроить удаленное рабочее окружение, запустите команду
 
 ```text
-make setup
+neuro-flow build myimage
 ```
 
 Данная команда запускает задание \(через команду `neuro run`\), загружает файлы зависимостей `apt.txt` и `requirements.txt` \(через команду `neuro cp`\), устанавливает зависимости \(используя `neuro exec`\), выполняет другие подготовительные действия, а затем создает базовый образ из данного задания и загружает его на платформу \(с помощью функции `neuro save`, которая работает аналогично `docker commit`\).
@@ -103,28 +119,32 @@ make setup
 Чтобы загрузить данные и код на Ваш диск, запустите команду
 
 ```text
-make upload-all
+neuro-flow upload ALL
 ```
 
-Чтобы запустить обучение, необходимо указать команду для запуска в файле Makefile, а затем выполнить `make train`:
+Чтобы запустить обучение, необходимо указать команду для запуска в файле `.neuro/live.yaml`, а затем выполнить `neuro-flow run train`:
 
-* откройте в редакторе файл `Makefile`,
-* найдите следующую запись:
+* откройте в редакторе файл `.neuro/live.yaml`,
+* найдите следующую запись в секции `train`:
 
 ```text
-TRAINING_COMMAND?='echo "Replace this placeholder with a training script execution"'
+    bash: |
+        cd $[[ flow.workspace ]]
+        python -u $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]]
 ```
 
 * и замените ее на нижеприведенную запись: 
 
 ```text
-TRAINING_COMMAND?="bash -c 'cd $(PROJECT_PATH_ENV) && python -u $(CODE_DIR)/char_rnn_classification_tutorial.py'"
+    bash: |
+        cd $[[ flow.workspace ]]
+        python -u $[[ volumes.code.mount ]]/char_rnn_classification_tutorial.py
 ```
 
 Теперь можно запустить команду
 
 ```text
-make train
+neuro-flow run train
 ```
 
 и наблюдать за выводом. Вы увидите, как выполняются некоторые проверки в начале скрипта, а затем происходит обучение модели и оценка:
