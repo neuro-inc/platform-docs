@@ -1,12 +1,6 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Running Your Code
 
-Oftentimes you don't start a project from scratch. Instead of that you use someones or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into Neu.ro project, and start developing on the platform.
+Oftentimes you don't start a project from scratch. Instead of that you use someone's or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into a Neu.ro project, and start developing on the platform.
 
 ### Prerequisites
 
@@ -30,7 +24,7 @@ cd ABSA-PyTorch
 
 Now, we need to add a couple of files:
 
-* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements \(which are gracefully listed by the repo mainteiner in `requirements.txt`\):
+* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements \(which are gracefully listed by the repo maintainer in `requirements.txt`\):
 
 {% code title="Dockerfile" %}
 ```bash
@@ -80,9 +74,9 @@ Here is a brief explanation of this config:
 
 ### Running code
 
-Now it's time to run several command that set up the project environment and run training.
+Now it's time to run several commands that set up the project environment and run training.
 
-* Fisrt, create volumes and upload project to platform storage:
+* First, create volumes and upload project to platform storage:
 
 ```text
 neuro-flow mkvolumes

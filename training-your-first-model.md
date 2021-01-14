@@ -1,22 +1,16 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Training Your First Model
 
 ### Introduction
 
-In this tutorial, we describe the recommended way to train a simple machine learning model on Neuro Platform. As our ML engineers prefer PyTorch over other ML frameworks, we show the training and evaluation of one of the basic PyTorch examples.
+In this tutorial, we describe the recommended way to train a simple machine learning model on the Neuro platform. As our ML engineers prefer PyTorch over other ML frameworks, we show the training and evaluation of one of the basic PyTorch examples.
 
-We assume that you have already signed up to the platform, installed the Neuro CLI, and logged into the platform \(see [Getting Started](getting-started.md)\).
+We assume that you have already signed up to the platform, installed the Neuro CLI, and logged in to the platform \(see [Getting Started](getting-started.md)\).
 
 We base our example on the [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
 
 ### Initializing a new project
 
-To simplify working with Neuro Platform and to help to establish the best practices in the ML environment, we provide a project template. This template consists of the recommended directories and files. It is designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
+To simplify working with Neuro Platform and to help establish the best practices in the ML environment, we provide a project template. This template consists of the recommended directories and files. It is designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
 
 Let’s initialize a new project from this template:
 
@@ -58,7 +52,7 @@ When you run a job \(for example, via `neuro-flow run jupyter`\), the directorie
 | `/project/notebooks/` | User's Jupyter notebooks | `storage:neuro-tutorial/notebooks/` |
 | `/project/results/` | Logs and results | `storage:neuro-tutorial/results/` |
 
-This mapping is defined as variables in the top of `Makefile` and can be adjusted if needed.
+This mapping is defined as variables in the top section of `Makefile` and can be adjusted if needed.
 
 ### Filling the project
 
@@ -104,7 +98,7 @@ wget
 
 ```
 
-* Download data from [here](https://download.pytorch.org/tutorial/data.zip), extract ZIP’s content and put it in your `data` folder:
+* Download data from [here](https://download.pytorch.org/tutorial/data.zip), extract the ZIP’s content and put it in your `data` folder:
 
 ```text
 curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
@@ -112,7 +106,7 @@ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip da
 
 ### Training and evaluating the model
 
-When you start working with a project on Neuro Platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
+When you start working with a project on the Neuro platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
 
 To set up the remote environment, run
 
@@ -130,8 +124,8 @@ neuro-flow upload ALL
 
 To run training, you need to specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
 
-* open `.neuro/live.yaml` in editor,
-* find the following lines \(make sure you're looking at the `train` job, not `multitrain` which has very similar section:
+* open `.neuro/live.yaml` in an editor,
+* find the following lines \(make sure you're looking at the `train` job, not `multitrain` which has a very similar section\):
 
 ```text
     bash: |

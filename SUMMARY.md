@@ -5,6 +5,7 @@
 * [Training Your First Model](training-your-first-model.md)
 * [Running Your Code](running-your-code.md)
 * [Collaborative Development](collaborative-development.md)
+* [FAQ](faq.md)
 
 ## Neu.ro Core <a id="core"></a>
 
@@ -31,16 +32,15 @@
 * [Hyperparameter Tuning with NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 
+## ADMINISTRATION
+
+* [Creating a Cluster](administration/creating-a-cluster.md)
+* [Managing Users and Quotas](administration/managing-users-and-quotas.md)
+
 ## References
 
 * [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
 * [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
 * [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
 * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
-* [FAQ](references/faq.md)
-
-## ADMINISTRATION
-
-* [Creating a Cluster](administration/creating-a-cluster.md)
-* [Managing Users and Quotas](administration/managing-users-and-quotas.md)
 

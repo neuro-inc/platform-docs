@@ -26,7 +26,7 @@ You can know the list of clusters that you can access by running the `neuro conf
 
 You can manage users and user quotas from the CLI. The next sections discuss how you can manage users and user quotas.
 
-## What are the different roles available?
+### What are the different roles available?
 
 Neu.ro provides three predefined roles that you can assign to a user - `user`, `manager`, `admin`. The default role is User. The following table describes what each of the roles can do. Please note that any registered platform user may create new clusters; upon creation, a user automatically gets an Admin role in it.
 
@@ -84,7 +84,7 @@ Neu.ro provides three predefined roles that you can assign to a user - `user`, `
   </tbody>
 </table>
 
-## How to add a user to a cluster?
+### How to add a user to a cluster?
 
 You can add any number of users to a cluster. However, before adding a user you must decide on the role and the quota that you want to set for the user.
 
@@ -95,20 +95,20 @@ The role determines the access rights a user will have on the Neu.ro platform. T
 Added john to cluster default as user
 ```
 
-## How to remove a user from the cluster?
+### How to remove a user from the cluster?
 
-You can remove a user from the cluster if you are an Admin or Manager. You must use the neuro admin remove-cluster-user command to remove the user. By doing this, you revoke the user’s access to the cluster. All the entities belonging to the user are left \(storage, jobs, images, etc\), and you can add this user back later.
+You can remove a user from the cluster if you are an Admin or Manager. You must use the `neuro admin remove-cluster-user` command to remove the user. By doing this, you revoke the user’s access to the cluster. All the entities belonging to the user are left \(storage, jobs, images, etc\), and you can add this user back later.
 
 ```text
 > neuro admin remove-cluster-user default john
 Removed john from cluster default
 ```
 
-## How to promote/demote a user?
+### How to promote/demote a user?
 
 You need to remove a user from a given cluster and to add them again with the desired role. All the entities belonging to the user \(storage, jobs, images, etc\) are not affected during removal.
 
-## How to manage a user’s quota?
+### How to manage a user’s quota?
 
 The quota determines the number of GPU or CPU hours a user can use. By default, a user has 100 GPU hours and unlimited CPU hours.
 
@@ -123,7 +123,7 @@ GPU: 3000m
 CPU: infinity
 ```
 
-* `neuro admin add-user-quota`: User this to add a certain number of hours to the existing user quota.
+* `neuro admin add-user-quota`: Use this to add a certain number of hours to the existing user quota.
 
 ```text
 > neuro admin add-user-quota -g 50h default john
@@ -141,7 +141,7 @@ GPU: 30m
 CPU: infinity
 ```
 
-You can also set the unlimited quota for a user:
+You can also set an unlimited quota for a user:
 
 ```text
 > neuro admin set-user-quota default john
