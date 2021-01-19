@@ -36,6 +36,7 @@
 
 * [Создание кластеров](administration/creating-a-cluster.md)
 * [Управление пользователями и квотами](administration/managing-users-and-quotas.md)
+* [Обзор архитектуры](administration/architecture-overview.md)
 
 ## Справка <a id="references"></a>
 
