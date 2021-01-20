@@ -37,6 +37,7 @@
 * [Creating a Cluster](administration/creating-a-cluster.md)
 * [Managing Users and Quotas](administration/managing-users-and-quotas.md)
 * [Architecture Overview](administration/architecture-overview.md)
+* [On-premise Installation Guide](administration/on-premise-installation-guide.md)
 
 ## References
 
