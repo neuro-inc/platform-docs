@@ -27,7 +27,7 @@ cd <project-slug>
 Убедитесь, что Вы еще не выполняли команду `make setup`. Мы собираемся изменить несколько файлов перед созданием образа для эксперимента.
 {% endhint %}
 
-### Подготовка кода для эксперимента и интеграция с Neu.ro
+### Подготовка кода для эксперимента и интеграция с платформой
 
 Мы собираемся использовать пример кода [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) с набором данных MNIST. Поместите файл [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) в папку `modules`, а файл [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) в папку `config`.
 
@@ -59,7 +59,7 @@ include nni.mk
 
 Наконец, поместите [`nni-config-template.yml`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/nni-config-template.yml) и [`prepare-nni-config.py`](https://github.com/neuromation/ml-recipe-nni/blob/master/config/prepare-nni-config.py) в папку `config`.
 
-После завершения работы команды `make setup` проект готов к запуску на Neu.ro.
+После завершения работы команды `make setup` проект готов к запуску на платформе.
 
 ### Запуск заданий по настройке
 

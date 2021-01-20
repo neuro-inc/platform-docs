@@ -44,7 +44,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 chmod 600 ~/aws-credentials.txt
 ```
 
-Настройте платформу для использования этого файла и убедитесь, что проект Neuro обнаружил этот файл:
+Настройте платформу для использования этого файла и убедитесь, что проект на платформе обнаружил этот файл:
 
 ```bash
 neuro secret add aws-key @~/aws-credentials.txt
@@ -60,7 +60,7 @@ jobs:
      additional_env_vars: '{"AWS_CONFIG_FILE": "/var/secrets/aws.txt"}'
 ```
 
-### Создание Bucket предоставление доступа
+### Создание bucket и предоставление доступа
 
 Теперь создайте новый S3 bucket. Помните: имена bucket глобально уникальны.
 
