@@ -37,6 +37,7 @@
 * [Создание кластеров](administration/creating-a-cluster.md)
 * [Управление пользователями и квотами](administration/managing-users-and-quotas.md)
 * [Обзор архитектуры](administration/architecture-overview.md)
+* [Инструкция по локальной установке](administration/on-premise-installation-guide.md)
 
 ## Справка <a id="references"></a>
 
