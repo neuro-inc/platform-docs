@@ -36,7 +36,7 @@ cd <project-slug>
 ```bash
 # Required for Hyper-parameter search
 nni==1.5
-# Required by Neu.ro NNI integration scripts
+# Required by NNI integration scripts
 Jinja2>=2.11.2
 aiodns>=2.0.0
 ```

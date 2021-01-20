@@ -44,7 +44,7 @@ cd hyperparameter-tuning-test
 
 1. [Зарегистрируйтесь на W&B](https://app.wandb.ai/login?signup=true)
 2. На странице  [W&B’s settings page](https://app.wandb.ai/settings) \(раздел “API keys”\) найдите Ваш API key \(он также называется токеном\). Он должен выглядеть таким образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-3. Сохраните ваш API key \(токен\) в файле в локальном каталоге `./config/` и, чтобы сделать W&B доступным на платформе Neu.ro, установите соответствующие разрешения:
+3. Сохраните ваш API key \(токен\) в файле в локальном каталоге `./config/` и, чтобы сделать W&B доступным на платформе, установите соответствующие разрешения:
 
 ```text
 export WANDB_SECRET_FILE=wandb-token.txt
