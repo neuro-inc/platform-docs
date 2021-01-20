@@ -1,6 +1,6 @@
 # Распределенное обучение c PyTorch
 
-В данном руководстве мы покажем, как запустить распределенное обучение в PyTorch на Neu.ro. Вы можете найти подробную информацию в наших [рецептах](https://github.com/neuromation/ml-recipe-distributed-pytorch) в нашем блоге: [Распределенное обучение с PyTorch - на примере конкурса ответов на вопросы о TensorFlow 2.0](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
+В данном руководстве мы покажем, как запустить распределенное обучение в PyTorch на платформе. Вы можете найти подробную информацию в наших [рецептах](https://github.com/neuromation/ml-recipe-distributed-pytorch) в нашем блоге: [Распределенное обучение с PyTorch - на примере конкурса ответов на вопросы о TensorFlow 2.0](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
 
 ### Типы параллелизма
 
@@ -30,7 +30,7 @@
 
 В нашем [репозитории](https://github.com/neuromation/ml-recipe-distributed-pytorch), мы использовали подход параллелизма данных. Репозиторий содержит решение для [конкурса ответов на вопросы о TensorFlow 2.0](https://www.kaggle.com/c/tensorflow2-question-answering), проводимого Kaggle.
 
-Чтобы загрузить набор данных [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) и запустить наше решение, Вы должны принять пользовательское соглашение Kaggle. Если вы хотите повторно использовать наш рецепт в качестве шаблона для проведения распределенного обучения на Neu.ro, мы также предоставляем `DummyDataset`, который не требует загрузки каких-либо данных.
+Чтобы загрузить набор данных [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) и запустить наше решение, Вы должны принять пользовательское соглашение Kaggle. Если вы хотите повторно использовать наш рецепт в качестве шаблона для проведения распределенного обучения на платформе, мы также предоставляем `DummyDataset`, который не требует загрузки каких-либо данных.
 
 Для запуска рецепта из `DummyDataset`, необходимо выполнить следующие шаги:
 

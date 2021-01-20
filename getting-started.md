@@ -1,6 +1,6 @@
 # Начало работы
 
-В данном руководстве мы покажем Вам, как начать работу с Neu.ro:
+В данном руководстве мы покажем Вам, как начать работу с платформой:
 
 * Установка клиента CLI;
 * Основные понятия; 
@@ -68,7 +68,7 @@ neuro run --preset cpu-small --name test ubuntu echo Hello, World!
 Hello, World!
 ```
 
-Запустим задание на GPU в рабочем окружении Neu.ro по умолчанию \(`neuromation/base`\), которое показывает, доступно ли CUDA в данном рабочем окружении:
+Запустим задание на GPU в рабочем окружении по умолчанию \(`neuromation/base`\), которое показывает, доступно ли CUDA в данном рабочем окружении:
 
 ```text
 neuro run --preset gpu-k80-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
