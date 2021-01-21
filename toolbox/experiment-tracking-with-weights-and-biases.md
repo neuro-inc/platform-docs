@@ -33,7 +33,7 @@ chmod 600 ~/$WANDB_SECRET_FILE
 After that, create a Neu.ro secret:
 
 ```text
-neuro secrets add wandb-token @~/$WANDB_SECRET_FILE
+neuro secret add wandb-token @~/$WANDB_SECRET_FILE
 ```
 
 Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
