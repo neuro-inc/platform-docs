@@ -36,6 +36,8 @@
 
 * [Создание кластеров](administration/creating-a-cluster.md)
 * [Управление пользователями и квотами](administration/managing-users-and-quotas.md)
+* [Создание пулов узлов](administration/creating-node-pools.md)
+* [Управление пресетами](administration/managing-presets.md)
 * [Обзор архитектуры](administration/architecture-overview.md)
 * [Инструкция по локальной установке](administration/on-premise-installation-guide.md)
 
