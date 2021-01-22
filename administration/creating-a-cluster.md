@@ -93,7 +93,7 @@ Service Account Key File (.json): GCP_User.json
 Cluster config cluster.yml is generated.
 ```
 
-The command creates the `cluster.yml` file that includes the information required by the Neu.ro team to set up your cluster. Here is a sample cluster.yml that is generated for GCP:
+The command creates the `cluster.yml` file that includes the information required by the Neu.ro team to set up your cluster. Here is a sample `cluster.yml` generated for a new GCP cluster:
 
 ```text
 type: gcp

@@ -36,6 +36,8 @@
 
 * [Creating a Cluster](administration/creating-a-cluster.md)
 * [Managing Users and Quotas](administration/managing-users-and-quotas.md)
+* [Creating Node Pools](administration/creating-node-pools.md)
+* [Managing Presets](administration/managing-presets.md)
 * [Architecture Overview](administration/architecture-overview.md)
 * [On-premise Installation Guide](administration/on-premise-installation-guide.md)
 
