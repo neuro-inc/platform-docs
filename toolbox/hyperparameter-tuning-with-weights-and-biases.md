@@ -43,12 +43,13 @@ cd hyperparameter-tuning-test
 Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 * [Register your W&B account](https://app.wandb.ai/login?signup=true)
-* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings)\(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-* Save your API key \(token\) to a file in your local home directory `~`:
+* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+* Save your API key \(token\) to a file in your local home directory `~` and add it as a secret to the platform:
 
 ```text
 export WANDB_SECRET_FILE=wandb-token.txt
 echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
+neuro secret add wandb-token @~/$WANDB_SECRET_FILE
 ```
 
 * Download `hypertrain.yml` from [here](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) to `.neuro/hypertrain.yml` in your project's directory.
@@ -103,7 +104,7 @@ The name of the file `wandb-sweep.yaml` and the path to it can also be modified 
 Now that you have set up both Neu.ro and W&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
 
 ```text
-neuro-flow bake hypertrain --param token "$(cat ~/$WANDB_SECRET_FILE)"
+neuro-flow bake hypertrain --param token_secret_name wandb-token
 ```
 
 This starts jobs that run the `train.py` script \(or whatever name you have chosen for it\) on the platform with different sets of hyperparameters in parallel. By default, just 2 jobs run at the same time. You can change this number by modifying the `id` list within the `worker_...` task definition in `.neuro/hypertrain.yml`:
