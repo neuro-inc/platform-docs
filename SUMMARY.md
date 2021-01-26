@@ -27,6 +27,7 @@
 * [Доступ к Object Storage в GCP](toolbox/accessing-object-storage-in-gcp.md)
 * [Доступ к Object Storage на AWS](toolbox/accessing-object-storage-in-aws.md)
 * [Удаленная отладка с помощью PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Отслеживание экспериментов с TensorBoard](toolbox/experiment-tracking-with-tensorboard.md)
 * [Отслеживание экспериментов с Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)

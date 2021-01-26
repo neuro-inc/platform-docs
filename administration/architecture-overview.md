@@ -64,7 +64,7 @@ API для отправления нотификаций через Email/Slack 
 API для запуска курированного набора приложений из Web UI.  
 
 
-![](https://docs.google.com/drawings/u/0/d/sQRbH5l4pOqzkQ1_xh5Yf_w/image?w=624&h=448&rev=35&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview.png)
 
 **Web UI**
 
@@ -88,7 +88,7 @@ API для запуска курированного набора приложе
 Актуальная пользовательская документация для Web UI и CLI с примерами использования и другой полезной информацией.  
 
 
-![](https://docs.google.com/drawings/u/0/d/szLRCQnXfehlcufuf93Zq5Q/image?w=624&h=359&rev=281&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview-2.png)
 
 ### Кластер вычислений
 
@@ -131,5 +131,5 @@ API для управления постоянным блочным хранил
 Сервис для получения архивной телеметрии вычислительных нагрузок с учётом уровня доступа пользователей.  
 
 
-![](https://docs.google.com/drawings/u/0/d/s47zQl0QXlpD1m4RHtVoDYA/image?w=624&h=448&rev=620&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview-3.png)
 
