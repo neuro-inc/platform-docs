@@ -33,7 +33,7 @@ We are now ready to build our image:
 neuro-flow build myimage
 ```
 
-While Docker builds our image, we can continue setting up the NNI integration:
+While Docker builds our image, we can continue setting up the NNI integration.
 
 Add the following lines _at the end_ of `.neuro/live.yml`:
 
