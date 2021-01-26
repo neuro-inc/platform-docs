@@ -11,7 +11,7 @@ TensorBoard, в свою очередь, позволяет измерять и 
 
 ### Подготовка и запуск обучения в CLI
 
-Это обучение позволяет логировать тензоры и произвольные изображения и просматривать их в TensorBoard. Мы используем данные из публичного датасета Fashion MNIST, преобразим их в изображение, и визуализируем их в TensorBoard.
+Это обучение позволяет логировать тензоры и произвольные изображения и просматривать их в TensorBoard. Мы используем данные из публичного набора данных Fashion MNIST, преобразим их в изображение, и визуализируем их в TensorBoard.
 
 Чтобы создать обучение:
 
@@ -42,7 +42,7 @@ import numpy as np
 import sklearn.metrics
 ```
 
-* Далее, мы загрузим данные из датасета [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/):
+* Далее, мы загрузим данные из набора данных [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/):
 
 ```text
 # Download the data. The data is already divided into train and test.
@@ -75,7 +75,7 @@ image = tf.expand_dims(image, 0)
 return image
 ```
 
-Далее, мы используем имеющиеся данные для наглядного примера. Мы создадим классификатор изображений, который поможет классифицировать датасет [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/), который мы ранее преобразовали в тензоры.
+Далее, мы используем имеющиеся данные для наглядного примера. Мы создадим классификатор изображений, который поможет классифицировать набор данных [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/), который мы ранее преобразовали в тензоры.
 
 * Чтобы создать классификатор, используйте следующий код:
 
