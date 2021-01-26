@@ -88,7 +88,7 @@ API для запуска курированного набора приложе
 Актуальная пользовательская документация для Web UI и CLI с примерами использования и другой полезной информацией.  
 
 
-![](../.gitbook/assets/neu.ro-architecture-overview-2.png)
+![](../.gitbook/assets/neu.ro-architecture-overview-2%20%281%29.png)
 
 ### Кластер вычислений
 
@@ -131,5 +131,5 @@ API для управления постоянным блочным хранил
 Сервис для получения архивной телеметрии вычислительных нагрузок с учётом уровня доступа пользователей.  
 
 
-![](../.gitbook/assets/neu.ro-architecture-overview-3.png)
+![](../.gitbook/assets/neu.ro-architecture-overview-3%20%281%29.png)
 
