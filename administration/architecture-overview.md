@@ -64,7 +64,7 @@ An API for sending email/Slack notifications for events such as job status trans
 An API for running a curated set of applications from within the Web UI.  
 
 
-![](https://docs.google.com/drawings/u/0/d/sQRbH5l4pOqzkQ1_xh5Yf_w/image?w=624&h=448&rev=35&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview%20%281%29.png)
 
 **Web UI**
 
@@ -88,7 +88,7 @@ A collection of useful tools based on Neuro CLI, e.g., transfer of storage and c
 An up-to-date user documentation for the Web UI and CLIs with usage examples and other useful information.  
 
 
-![](https://docs.google.com/drawings/u/0/d/szLRCQnXfehlcufuf93Zq5Q/image?w=624&h=359&rev=281&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview-2.png)
 
 ### Compute Cluster
 
@@ -131,5 +131,5 @@ An API for managing persistent block storage.
 A service for retrieving historical telemetry of compute workloads with respect to user permissions.  
 
 
-![](https://docs.google.com/drawings/u/0/d/s47zQl0QXlpD1m4RHtVoDYA/image?w=624&h=448&rev=620&ac=1&parent=1gfaR1TpHsjk2U6aIkxgnMJM66LVs4NHuh2Qox6VgEsw)
+![](../.gitbook/assets/neu.ro-architecture-overview-3.png)
 
