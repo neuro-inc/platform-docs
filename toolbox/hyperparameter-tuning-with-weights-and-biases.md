@@ -1,9 +1,3 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Hyperparameter Tuning with Weights & Biases
 
 Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
@@ -42,8 +36,8 @@ cd hyperparameter-tuning-test
 
 Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
-* [Register your W&B account](https://app.wandb.ai/login?signup=true)
-* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(section “API keys”\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+* [Register your W&B account](https://app.wandb.ai/login?signup=true).
+* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(“API keys” section\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
 * Save your API key \(token\) to a file in your local home directory `~` and add it as a secret to the platform:
 
 ```text
@@ -93,7 +87,7 @@ parameters:
 ```
 
 * Line 1: `/../train.py` is a default path to a file with the model training code.
-* Line 2: a method that is used for hyperparameters tuning. For more information, refer to the W&B docs.
+* Line 2: a method that is used for hyperparameter tuning. For more information, refer to the W&B docs.
 * Lines 4, 5: the name of the metric that is supposed to be optimized. The ML engineer can change this metric according to the task.
 * Lines 6 -12: hyperparameter settings. The ML engineer should use them in the `train.py` file. Names, values, and ranges are changeable as well.
 

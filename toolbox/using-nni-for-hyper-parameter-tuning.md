@@ -1,12 +1,6 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Hyperparameter Tuning with NNI
 
-## Introduction
+### Introduction
 
 This tutorial demonstrates how to use [NNI](https://github.com/microsoft/nni) \(an open-source tool from Microsoft\) for Hyperparameter Tuning on Neu.ro. You will create a new Neu.ro project, integrate it with NNI and run multiple tuning workers to speed up the search process.
 
