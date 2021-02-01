@@ -12,6 +12,7 @@
 * [Описание платформы](core/platform-overview.md)
 * [Рабочее окружение \(образы Docker\)](core/environments-docker-images.md)
 * [Дисковое пространство](core/storage.md)
+* [Диски](core/disks.md)
 * [Задания](core/jobs.md)
 * [Кластеры \(Ресурсы\)](core/clusters-resources.md)
 
