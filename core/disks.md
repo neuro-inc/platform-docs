@@ -20,6 +20,13 @@ Disks have a limited lifetime. This lifespan is calculated from the point in tim
 
 ```text
 > neuro disk create --life-span 2d4h 40G
+ Id          disk-eff8095a-7f26-404d-92de-5837cc8ed444
+ Storage     40.0G
+ Uri         disk://neuro-compute/jane-doe/disk-eff8095a-7f26-404d-92de-5837cc8ed444
+ Status      Pending
+ Created at  now
+ Last used
+ Life span   2d4h
 ```
 
 This will set the disk's lifespan to 2 days and 4 hours after last usage.
@@ -30,9 +37,11 @@ You can find more information about using the `neuro disk create` command [here]
 
 You can use disks when running jobs. The process is very similar to [mounting storage](storage.md#how-do-i-use-storage-folders-in-jobs). 
 
-To mount a disk to a job's container, use the `--volume` parameter in the `run` command:
+To mount a disk to a job's container, use the `--volume` parameter in the `run` command. The syntax for this is `--volume disk:disk-id:/mnt/disk`. You need to replace `disk-id` with the disk's actual ID. You also need to replace /mnt/disk/ with the actual path to the disk. Both the disk ID and it's path are shown when the disk is created. 
+
+Here's an example:
 
 ```text
-neuro run --name job303 --volume disk:disk-id:/mnt/disk --preset cpu-small ubuntu cat code/train.py
+> C:\Users\Jane>neuro run --name job303 --volume disk:disk-eff8095a-7f26-404d-92de-5837cc8ed444:/neuro-compute/jenia-gorlova/disk-eff8095a-7f26-404d-92de-5837cc8ed444 --preset cpu-small ubuntu cat code/train.py
 ```
 
