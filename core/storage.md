@@ -35,7 +35,7 @@ The rest of this tutorial will describe managing your files using the CLI. For m
 
 ### How do I manage files in the CLI? 
 
-You can manage your files and folders using the `neuro storage` command. The neu.ro CLI lets you perform all operations with your files and folders that are available from the FileBrowser.
+You can manage your files and folders using the `neuro storage` command. The Neu.ro CLI lets you perform all operations with your files and folders that are available from the FileBrowser.
 
 #### Viewing folders and files 
 

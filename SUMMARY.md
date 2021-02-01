@@ -12,6 +12,7 @@
 * [Platform Overview](core/platform-overview.md)
 * [Environments \(Docker images\)](core/environments-docker-images.md)
 * [Storage](core/storage.md)
+* [Disks](core/disks.md)
 * [Jobs](core/jobs.md)
 * [Clusters \(Resources\)](core/clusters-resources.md)
 
