@@ -33,6 +33,6 @@
 Чтобы примонтировать диск к контейнеру задания, используйте параметр `--volume` дял команды `run`:
 
 ```text
-neuro run --name job303 --volume disk:disk-id:/mnt/disk --preset cpu-small ubuntu cat code/train.py
+> C:\Users\Jane>neuro run --name job303 --volume disk:disk-eff8095a-7f26-404d-92de-5837cc8ed444:/neuro-compute/jenia-gorlova/disk-eff8095a-7f26-404d-92de-5837cc8ed444 --preset cpu-small ubuntu cat code/train.py
 ```
 
