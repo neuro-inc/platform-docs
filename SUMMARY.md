@@ -15,6 +15,7 @@
 * [Диски](core/disks.md)
 * [Задания](core/jobs.md)
 * [Кластеры \(Ресурсы\)](core/clusters-resources.md)
+* [Секреты](core/secrets.md)
 
 ## Веб-интерфейс <a id="web"></a>
 
