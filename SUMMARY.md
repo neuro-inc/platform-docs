@@ -15,6 +15,8 @@
 * [Disks](core/disks.md)
 * [Jobs](core/jobs.md)
 * [Clusters \(Resources\)](core/clusters-resources.md)
+* [Secrets](core/secrets.md)
+* [Roles](core/roles.md)
 
 ## Neu.ro Web UI <a id="web"></a>
 
