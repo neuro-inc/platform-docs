@@ -2,96 +2,146 @@
 
 ### Requirements:
 
-* A Linux VM :
-  * OS: Ubuntu \(version:  at least 18\);
-  * This VM can be accessed by the Kubernetes cluster \(the **neuro** docker registry will be installed on this VM – it contains all docker images needed for the neu.ro platform\);
-  * This VM has to be able to access the Kubernetes cluster \(_**setup\_k8s.sh**_ script needs a connection to cluster\);
-  * It must have these utilities installed: _**docker, helm2, kubectl, htpasswd, openssl**._
-* Storage:
-  * Must be able to use **OpenEBS Cstor** – the disks have to be attached to the Kubernetes nodes. These disks have to be unmounted and unformatted, and be visible as block devices in the Kubernetes cluster in order to be used by **OpenEBS Cstor**.
 * Kubernetes cluster:
-  * The **busybox:1.32.0** docker image should be pre-pulled on each node.
-* SSL certificate for **Traefik** \(optional\).
+  * It must be able to use **OpenEBS Cstor**. Disks have to be attached to Kubernetes nodes and must not be mounted or formatted.
+  * If there is no internet access, each node should have a **busybox:latest** image preloaded.
+* A linux VM:
+  * Must be accessible by the Kubernetes cluster \(this VM will host the docker registry along with the **chartmuseum** and **devpi** services, which are needed to run the Neu.ro platform\).
+  * Must have access to the Kubernetes cluster.
+  * The following utilities have to be installed: **docker, kubectl, jq.**
 
-### Neuro.tar archive and its structure
+### Archive Structure
 
-To get the latest version of the archive containing all files necessary for the installation of the platform, contact our team at [team@neu.ro](mailto:team@neu.ro)
+**/chartmuseum**
 
-The structure of this archive is as follows:
+* A directory with all required helm charts. It will be mounted as a volume to the **chartmuseum** container.
 
-#### _**/chartmuseum**_
+**/registry**
 
-A directory with all needed helm charts. It has to be mounted as a volume for the **chartmuseum** helm repository.
+* A directory with all required docker images. It will be mounted as a volume to the **registry** container.
 
-#### _**/registry**_
+**/devpi**
 
-A directory with all needed docker images. It has to be mounted as a volume for the **registry** docker repository.    
+* A directory with the **neuro-cli** python package and all its dependencies. It will be mounted as a volume to the **devpi** container.
 
-#### _**registry.tar**_
+**registry.tar**
 
-**registry:2** docker image in **.tar** format.
+* Saved **registry:2** image.
 
-#### _**chartmuseum.tar**_
+**chartmuseum.tar**
 
-**chartmuseum/chartmuseum:latest** docker image in **.tar** format.
+* Saved **chartmuseum/chartmuseum:latest** image.
 
-#### _**neuro\_config.sh**_
+**devpi.tar**
 
-A config file with all needed data for the install script. It has to be adjusted with regards to required values in each case.
+* Saved **devpi** image.
 
-#### _**install.sh**_
+**jq.tar**
 
-A bash script that will be executed on the dedicated registry machine. It does the following:
+* Saved **imega/jq:latest** image, command-line JSON processor.
 
-* Creates a self-signed SSL certificate;
-* Starts the docker registry;
-* Starts the **chartmuseum** helm repository;
+**yq.tar**
 
-#### _**setup\_k8s.sh**_
+* Saved **mikefarah/yq:latest** image, command-line YAML processor.
 
-A bash script that will be executed on the dedicated registry machine. It does the following:
+**k8s/\*.yaml**
 
-* Prepares the Kubernetes cluster for the **neu.ro** platform:
-  * Creates necessary additional namespaces;
-  * Creates secrets with self-signed SSL certificates and credentials to access the **neuro** docker registry VM;
-  * Patches Kubernetes service accounts;
-* Installs **PostgreSQL**, **redis**, and the storage solution in Kubernetes;
-* Installs the **neu.ro** platform.
+* Kubernetes resources that will be created in the cluster.
 
-### How to Install
+**\*.sh**
 
-1. Connect to the VM;
+* Installation scripts.
 
-2. Mount the USB or the external storage device;
+### Platform Setup
 
-3. Make a directory to which **neuro.tar** will be extracted and extract the archive:
+Connect to the Linux VM and ensure that **kubectl** can connect to the Kubernetes cluster:
 
 ```text
-INSTALL_DIR=”/var/neuro”
-mkdir –p $INSTALL_DIR
-tar -xvf neuro.tar --directory $INSTALL_DIR
+kubectl get nodes
 ```
 
-4. Adjust the values in _**neuro.config.sh**._
-
-* Mandatory values: 
-  * `DOCKER_REGISTRY_VM_LOCAL_IP` \(the private IP of the VM on which the **neuro** registry will be installed\).
-
-5. Run _**install.sh**:_
+Mount the USB \(or external storage\) device and extract the **neuro.tar** archive:
 
 ```text
-cd $INSTALL_DIR
-chmod +x neuro_config.sh
-chmod +x install.sh
-./install.sh
+mkdir –p $HOME/neuro
+tar -xvf neuro.tar -C $HOME/neuro
 ```
 
-6. Connect to the Kubernetes cluster;
-
-7. Run the script that prepares the Kubernetes cluster for the **neu.ro** platform:
+Prepare the config file \(see [example below](on-premise-installation-guide.md#config-file-example)\), run the installation script, and wait until all pods are in the Running state:
 
 ```text
-chmod +x setup_k8s.sh
-./setup_k8s.sh
+$HOME/neuro/install.sh $CONFIG_FILE_PATH
+```
+
+By default, if there is no Ingress certificate specified in the config file, the installation script will generate a self-signed certificate. This self-signed certificate has to be added to the certificate trust store in the platform user's development environment.
+
+#### Configure the DNS Server
+
+Set up A records to the platform domains **\*.neu.ro**, **default.org.neu.ro**, **\*.default.org.neu.ro**, **\*.jobs.default.org.neu.ro** in such a way that they point to all Kubernetes cluster IPv4 addresses.
+
+### Config File Example
+
+```text
+ server:
+  ip: "10.240.0.8"
+ui:
+  type: minzdrav
+ingress_ssl:
+  cert_path: "/path/to/ingress.crt" # optional
+  cert_key_path: "/path/to/ingress.key" # optional
+postgres:
+  password: changeme
+  size: 10Gi
+redis:
+  password: changeme
+  size: 10Gi
+keycloak:
+  username: admin
+  password: changeme
+auth:
+  jwt_secret: changeme
+registry:
+  size: 10Gi
+storage:
+  size: 10Gi
+blob_storage:
+  size: 10Gi
+metrics:
+  size: 10Gi
+node_pools:
+- name: cpu
+  cpu: 8
+  memory_gb: 6
+  disk_size_gb: 6
+  nodes:
+  - aks-agentpool-36699122-vmss000002
+- name: gpu
+  cpu: 8
+  memory_gb: 6
+  disk_size_gb: 6
+  gpu: 1
+  gpu_model: nvidia-tesla-k80
+  nodes:
+  - aks-agentpool-36699122-vmss000002
+```
+
+### Development Environment Setup
+
+#### Add the certificate to the trust store \(in case a self-signed certificate was generated during setup\)
+
+* Download the Ingress certificate:
+
+```text
+openssl s_client -connect app.neu.ro:443 -showcerts </dev/null > ingress.crt
+```
+
+* Add it to your machine's trust store.
+
+#### Install Neuro CLI
+
+Run the following command to install Neuro CLI:
+
+```text
+pip install -i http://$SERVER_IP/root/pypi neuro-cli
 ```
 
