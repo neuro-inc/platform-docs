@@ -50,7 +50,7 @@
 Для использования секрета как файла, пропишите его положение в параметре`--volume` при запуске задания. Например:
 
 ```text
---volume secret:secret-password:/var/secrets/secret-password.txt"
+--volume secret:secret-password:/var/secrets/secret-password.txt
 ```
 
 Для использования секрета как переменной окружения, объявите переменную в параметре `--env` при запуске задания:
