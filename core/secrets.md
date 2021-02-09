@@ -56,7 +56,7 @@ To use a secret as a file in your job, provide its location in a `--volume` para
 To use a secret as an environment variable, declare it through the `--env` parameter when running a job:
 
 ```text
---env mypass:secret:secret-password
+--env mypass=secret:secret-password
 ```
 
 Now, depending on which method you chose, you can access the secret from within your job by either referring to its location `/var/secrets/secret-password.txt` or reading the value of the `mypass` environment variable.
