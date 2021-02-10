@@ -12,7 +12,7 @@ In this tutorial, we show how to set up remote debugging with PyCharm Profession
 
 ### Initializing a new project
 
-First, ensure that you have `neuro` client installed and configured:
+First, ensure that you have the `neuro` client installed and configured:
 
 ```bash
 pip install -U neuromation

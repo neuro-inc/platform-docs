@@ -30,6 +30,7 @@
 * [Accessing Object Storage in GCP](toolbox/accessing-object-storage-in-gcp.md)
 * [Accessing Object Storage in AWS](toolbox/accessing-object-storage-in-aws.md)
 * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Remote Debugging with VS Code](toolbox/remote-debugging-with-vs-code.md)
 * [Experiment Tracking with TensorBoard](toolbox/experiment-tracking-with-tensorboard.md)
 * [Experiment Tracking with Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
