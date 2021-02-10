@@ -19,7 +19,7 @@ pip install -U neuromation
 neuro login
 ```
 
-Затем создайте пустой проект::
+Затем создайте пустой проект:
 
 ```bash
 neuro project init
