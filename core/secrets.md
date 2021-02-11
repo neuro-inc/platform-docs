@@ -82,13 +82,19 @@ To use a secret through the Web UI:
 
 ### Sharing secrets
 
-You can share secrets through the CLI by using the `neuro share` command. The syntax is `neuro share secret:key <username>`. For example:
+You can share secrets through the CLI by using the `neuro acl grant` command. The syntax is `neuro acl grant secret:<key> <username> <access-level>`. For example:
+
+```text
+> neuro acl grant secret:secret-password bob read
+```
+
+This will give Bob the access to use the `secret-password` secret in their jobs.
+
+You can also use the `neuro share` command as an alias for `neuro acl grant`:
 
 ```text
 > neuro share secret:secret-password bob
 ```
-
-This will give Bob the access to use the `secret-password` secret in their jobs.
 
 Keep in mind that, at this point in time, secret sharing is implemented in such a way that Bob won't be able to see this secret in their list of secrets when running `neuro secret ls`. To check if they have access rights to use this secret, Bob will need to run `neuro acl list` and search the output for the corresponding secret's URI. For example, if the secret was created by Alice, the URI will look like this:
 
