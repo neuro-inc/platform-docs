@@ -35,6 +35,7 @@
 * [Отслеживание экспериментов с Weights & Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
 * [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Настройка гиперпараметров с NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
+* [Развертывание моделей с TorchServe](toolbox/serving-models-with-torch-serve.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 
 ## Администрирование <a id="administration"></a>
