@@ -299,7 +299,7 @@ You can view only the currently running jobs by enabling the **Running only** ch
 
 ![Enabling the &apos;Running only&apos; checkbox](../.gitbook/assets/zobrazhennya%20%2822%29.png)
 
-You can search for specific jobs by using the **Search** box.
+You can search for specific jobs by using the **Search** box. The search functionality works with job names, IDs, and tags.
 
 ![Searching for a specific job](../.gitbook/assets/zobrazhennya%20%2825%29.png)
 
