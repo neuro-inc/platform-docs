@@ -46,6 +46,7 @@
 * [Managing Presets](administration/managing-presets.md)
 * [Architecture Overview](administration/architecture-overview.md)
 * [On-premise Installation Guide](administration/on-premise-installation-guide.md)
+* [Marketplace](administration/marketplace.md)
 
 ## References
 
