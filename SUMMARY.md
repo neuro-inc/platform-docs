@@ -46,6 +46,7 @@
 * [Управление пресетами](administration/managing-presets.md)
 * [Обзор архитектуры](administration/architecture-overview.md)
 * [Инструкция по локальной установке](administration/on-premise-installation-guide.md)
+* [Витрина](administration/marketplace.md)
 
 ## Справка <a id="references"></a>
 
