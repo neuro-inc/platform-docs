@@ -1,31 +1,25 @@
----
-description: >-
-  This page is slightly outdated. Our technical writers are updating it right
-  now.
----
-
 # Remote Debugging with PyCharm Professional
 
-### Introduction
+## Introduction
 
-In this tutorial, we show how to set up remote debugging with PyCharm Professional on Neuro Platform using the Neuro project template.
+In this tutorial, you can learn how to set up remote debugging with PyCharm Professional on the Neuro Platform using the Neu.ro project template.
 
-### Initializing a new project
+## Initializing a new project
 
-First, ensure that you have the `neuro` client installed and configured:
+First, make sure that you have the Neu.ro CLI client installed and configured:
 
 ```bash
-pip install -U neuromation
-neuro login
+> pip install -U neuro-cli neuro-flow
+> neuro login
 ```
 
 Then, initialize an empty project:
 
 ```bash
-neuro project init
+> neuro project init
 ```
 
-This command asks several questions about your project:
+This command will prompt you to enter some info about your project:
 
 ```text
 project_name [Name of the project]: Neuro PyCharm
@@ -33,68 +27,80 @@ project_slug [neuro-pycharm]:
 code_directory [modules]:
 ```
 
-Next, configure the project's environment on Neuro Platform:
+Next, switch to the new project's folder and configure the project's environment on the Neuro Platform:
 
 ```bash
-neuro-flow build myimage
+> cd neuro-pycharm 
+> neuro-flow build myimage
 ```
 
-### Setting up PyCharm
+## Setting up PyCharm
 
-Open the project created on the previous step in Pycharm Professional and add sample code to debug \(in this example, we use code snipped taken from [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
+Open the project you have just created in PyCharm Professional and add the code you want to debug as a new `main.py` file \(in this example, we use a code snippet from the [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
 
-Then, _exclude all directories that don't contain Python code_ \(in an empty Neuro project, only `modules/` is supposed to contain code\). PyCharm does not synchronize excluded directories. For that, select all directories to exclude, mouse right-click, "Mark Directory as" -&gt; "Excluded". As a result, you will see a configured project:
+Then, you will need to exclude all directories that don't contain Python code \(in an empty Neu.ro project, only the `modules` folder will contain code\). PyCharm doesn't synchronize excluded directories. Select all directories to exclude, right-click, and select **Mark Directory as** -&gt; **Excluded**. As a result, you will see a configured project:
 
-![](../.gitbook/assets/0_empty.png)
+![](../.gitbook/assets/1.png)
 
-Run this command to upload your code to the Neuro Platform storage:
+Run these commands to upload your code to the Neuro Platform storage:
 
 ```bash
-neuro-flow upload ALL
+> neuro-flow mkvolumes
+> neuro-flow upload ALL
 ```
 
-Now, we are ready to start a development GPU-powered job on Neuro Platform. In the shell, run:
+Now, we are ready to start a GPU-powered development job on the Neuro Platform. Run the following command:
 
 ```bash
-neuro-flow run remote_debug
+> neuro-flow run remote_debug
 ```
 
-This command starts a `remote_debug` job on Neuro Platform, which uses `gpu-small` preset and forwards local post 2211 to the job's SSH port. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed \(for that, you can run `neuro-flow kill ALL`\).
+![](../.gitbook/assets/1.1.png)
 
-Then go back to PyCharm project, go to "File" -&gt; "Settings", "Project" -&gt; "Project interpreter" \(you can use search by the word "interpreter"\). Press on the gear sign to see project interpreter options, select "Add...". In the new window, select "SSH Interpreter", and set up the following configuration:
+This command starts a `remote_debug` job on the Neuro Platform. This job uses the cluster's default preset and forwards the local port 2211 to the job's SSH port. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed. You can use `neuro-flow kill remote_debug` to kill the job you created in the previous step or `neuro-flow kill ALL` to kill all your running jobs.
 
-```bash
-Host: localhost
-Port: 2211
-Username: root
-```
+Then go back to the PyCharm project and navigate to **Preferences** -&gt; **Project** -&gt; **Project interpreter** \(you can also search for "interpreter"\). Click the **gear icon** to view the project interpreter options and select **Add...** In the new window, select **SSH Interpreter** and set up the following configuration:
 
-![](../.gitbook/assets/1_add_py_interpreter.png)
+* Host: _localhost_
+* Port: _2211_
+* Username: _root_
 
-Press the Next button.
+![](../.gitbook/assets/2.png)
 
-In the new window, specify paths:
+When this is done, click **Next**.
+
+In the new window, specify the paths for the interpreter and synced folders:
 
 ```bash
 Interpreter: /opt/conda/bin/python
 Sync folders: <Project root> -> /neuro-pycharm
 ```
 
-Note, within the job, your project root is available at the root of the filesystem: `/{project_name}`
+Note that, within the job, your project's root folder is available at the root of the filesystem: `/{project_name}` . 
 
-Press the Finish button, and your configuration is ready:
+Click **Finish,** and your configuration is ready:
 
-![](../.gitbook/assets/2_mapping.png)
+![](../.gitbook/assets/3.png)
 
-Press the OK button.
+Click **OK**.
 
-Once you applied remote interpreter configuration, PyCharm starts files synchronization.
+Once you apply the remote interpreter configuration, PyCharm will start file synchronization.
 
-Congratulations! Your PyCharm project is now configured to work with remote Python interpreter running on Neuro job:
+Your PyCharm project is now configured to work with a remote Python interpreter running in a Neu.ro job. 
 
-![](../.gitbook/assets/3_debugging.png)
+## Debugging
 
-Note: if your project mapping was not configured and the remote interpreter attempts to execute a file with a local path on the remote environment, you might need to specify mapping again: "Run" -&gt; "Edit Configurations..." -&gt; "Path mappings":
+In this example, we're working with the `main.py` file. To enter debug mode, right-click the file and click **Debug 'main'**:
 
-![](../.gitbook/assets/4_after_mapping.png)
+![](../.gitbook/assets/3.2.png)
+
+Now, you can interact with the file in debug mode:
+
+![](../.gitbook/assets/4.png)
+
+{% hint style="info" %}
+If your project's mapping was not configured and the remote interpreter attempts to execute a file with a local path on the remote environment, you might need to specify the path mappings. You can do that at **Run** -&gt; **Edit Configurations...** -&gt; **Path mappings**:
+{% endhint %}
+
+![](../.gitbook/assets/5.png)
 
