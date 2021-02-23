@@ -6,6 +6,10 @@
 * [Запуск Вашего кода](running-your-code.md)
 * [Совместная разработка](collaborative-development.md)
 * [FAQ](faq.md)
+* [Справка Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
+* [Справка Neu.ro Flow](https://neu-ro.gitbook.io/neuro-flow/)
+* [Справка Neu.ro Extras](https://neu-ro.gitbook.io/neuro-extras-reference/)
+* [Справка Python API](https://neuro-sdk.readthedocs.io/en/latest/)
 
 ## Ядро <a id="core"></a>
 
@@ -47,11 +51,4 @@
 * [Обзор архитектуры](administration/architecture-overview.md)
 * [Инструкция по локальной установке](administration/on-premise-installation-guide.md)
 * [Витрина](administration/marketplace.md)
-
-## Справка <a id="references"></a>
-
-* [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
-* [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
-* [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
-* [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 
