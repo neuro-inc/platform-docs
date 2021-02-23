@@ -37,7 +37,7 @@ Then, change the working directory:
 Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 * [Register your W&B account](https://app.wandb.ai/login?signup=true).
-* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(“API keys” section\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(“API keys” section\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b63d13`.
 * Add this API key as a secret to the platform:
 
 ```bash

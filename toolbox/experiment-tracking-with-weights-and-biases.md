@@ -11,9 +11,9 @@ In this tutorial, we show how to set up experiment tracking via Weights & Biases
 To create a new Neuro project, run:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+> neuro project init
+> cd <project-slug>
+> neuro-flow build myimage
 ```
 
 ### Connecting Weights & Biases
