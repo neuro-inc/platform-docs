@@ -13,7 +13,7 @@
 Затем создайте проект:
 
 ```text
-neuro project init
+> neuro project init
 ```
 
 Эта команда задаст Вам несколько простых вопросов:
@@ -29,7 +29,7 @@ code_directory \[modules]:
 Затем поменяйте рабочую директорию:
 
 ```text
-cd hyperparameter-tuning-test
+> cd hyperparameter-tuning-test
 ```
 
 ### Подключение Weights & Biases
@@ -38,12 +38,10 @@ cd hyperparameter-tuning-test
 
 * [Зарегистрируйтесь на W&B](https://app.wandb.ai/login?signup=true).
 * На странице [W&B’s settings page](https://app.wandb.ai/settings) \(раздел “API keys”\) найдите Ваш API key \(он также называется _токеном_\). Он должен выглядеть таким образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-* Сохраните ваш API key \(токен\) в файле в локальном каталоге `~` и добавьте его как секрет на платформу:
+* Сохраните ваш API-ключ как секрет на платформе:
 
 ```text
-export WANDB_SECRET_FILE=wandb-token.txt
-echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
-neuro secret add wandb-token @~/$WANDB_SECRET_FILE
+> neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 * Загрузите `hypertrain.yml` [отсюда](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) в `.neuro/hypertrain.yml` в папке Вашего проекта.
@@ -98,7 +96,7 @@ parameters:
 Теперь, когда Вы настроили платформу и W&B и подготовили скрипт для обучения модели, можно попробовать сделать настройку гиперпараметров. Для этого необходимо выполнить следующую команду:
 
 ```text
-neuro-flow bake hypertrain --param token_secret_name wandb-token
+> neuro-flow bake hypertrain --param token_secret_name wandb-token
 ```
 
 Данная команда параллельно выполняет задания, которые приводят в действие скрипт `train.py` \(или скрипт с любым другим выбранным Вами именем\), с различными наборами гиперпараметров. По умолчанию одновременно выполняется только 2 задания. Вы можете изменить это число, изменив список `id` внутри определения задания `worker_...` в файле `.neuro/hypertrain.yml`
@@ -120,7 +118,7 @@ tasks:
 Если вы хотите остановить настройку гиперпараметров, прекратите все связанные задания:
 
 ```text
-neuro-flow kill hypertrain
+> neuro-flow kill hypertrain
 ```
 
 Убедитесь, что задания остановлены, выполнив команду `neuro-flow ps`.

@@ -9,9 +9,9 @@
 Для создания нового проекта выполните команду:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+> neuro project init
+> cd <project-slug>
+> neuro-flow build myimage
 ```
 
 ### Аутентификация на W&B
@@ -20,18 +20,10 @@ neuro-flow build myimage
 
 1. [Зарегистрируйтесь на W&B](https://app.wandb.ai/login?signup=true)
 2. Найдите ваш API-ключ \(также называемый _токен доступа_\) на[ странице настроек W&B](https://app.wandb.ai/settings) \(секция “API keys”\). Он дожен выглядеть подобным образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
-3. Сохраните API-ключ \(токен\) как файл в локальной домашней директории `~` и защитите его, выставляя соответствующий уровень доступа, чтобы W&B был доступен на платформе Neu.ro:
+3. Сохраните API-ключ как секрет на платформе:
 
 ```text
-export WANDB_SECRET_FILE=wandb-token.txt
-echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
-chmod 600 ~/$WANDB_SECRET_FILE
-```
-
-После этого создайте секрет:
-
-```text
-neuro secrets add wandb-token @~/$WANDB_SECRET_FILE
+> neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 Откройте `.neuro/live.yaml`, найдите в нём секцию `remote_debug` внутри `jobs` и добавьте следующие строки в её конце:
@@ -57,13 +49,13 @@ defaults:
 Запустите задание и подключитесь к нему через оболочку shell:
 
 ```bash
-neuro-flow run remote_debug
+> neuro-flow run remote_debug
 ```
 
 Попробуйте использовать команду `wandb`:
 
 ```bash
-wandb status
+> wandb status
 ```
 
 Вы должны увидеть такой вывод:
@@ -90,6 +82,6 @@ Current Settings
 Пожалуйста, не забудьте прекратить работу задания, если оно Вам больше не нужно:
 
 ```bash
-neuro-flow kill remote_debug
+> neuro-flow kill remote_debug
 ```
 
