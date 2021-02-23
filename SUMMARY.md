@@ -6,6 +6,10 @@
 * [Running Your Code](running-your-code.md)
 * [Collaborative Development](collaborative-development.md)
 * [FAQ](faq.md)
+* [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
+* [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
+* [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
+* [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 
 ## Neu.ro Core <a id="core"></a>
 
@@ -47,11 +51,4 @@
 * [Architecture Overview](administration/architecture-overview.md)
 * [On-premise Installation Guide](administration/on-premise-installation-guide.md)
 * [Marketplace](administration/marketplace.md)
-
-## References
-
-* [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
-* [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
-* [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
-* [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 
