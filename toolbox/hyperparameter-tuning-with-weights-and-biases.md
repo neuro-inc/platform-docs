@@ -12,11 +12,11 @@ First, [Sign up](https://neu.ro/) and [install the CLI client](https://docs.neu.
 
 Then, create a project:
 
-```text
-neuro project init
+```bash
+> neuro project init
 ```
 
-This command will then ask you a few simple questions:
+This command will then promt you to enter some information about the project:
 
 ```text
 project_name \[Neuro Project]: Hyperparameter tuning test
@@ -28,8 +28,8 @@ Press `Enter` if you don't want to change the suggested value.
 
 Then, change the working directory:
 
-```text
-cd hyperparameter-tuning-test
+```bash
+> cd hyperparameter-tuning-test
 ```
 
 ### Connecting Weights & Biases
@@ -40,10 +40,8 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 * Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(“API keys” section\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.
 * Save your API key \(token\) to a file in your local home directory `~` and add it as a secret to the platform:
 
-```text
-export WANDB_SECRET_FILE=wandb-token.txt
-echo "cf23df2207d99a74fbe169e3eba035e633b65d94" > ~/$WANDB_SECRET_FILE
-neuro secret add wandb-token @~/$WANDB_SECRET_FILE
+```bash
+> neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 * Download `hypertrain.yml` from [here](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) to `.neuro/hypertrain.yml` in your project's directory.
@@ -98,7 +96,7 @@ The name of the file `wandb-sweep.yaml` and the path to it can also be modified 
 Now that you have set up both Neu.ro and W&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
 
 ```text
-neuro-flow bake hypertrain --param token_secret_name wandb-token
+> neuro-flow bake hypertrain --param token_secret_name wandb-token
 ```
 
 This starts jobs that run the `train.py` script \(or whatever name you have chosen for it\) on the platform with different sets of hyperparameters in parallel. By default, just 2 jobs run at the same time. You can change this number by modifying the `id` list within the `worker_...` task definition in `.neuro/hypertrain.yml`:
@@ -120,7 +118,7 @@ To monitor the hyperparameter tuning process, follow the link provided by W&B at
 If you want to stop the hyperparameter tuning, terminate all related jobs:
 
 ```text
-neuro-flow kill hypertrain
+> neuro-flow kill hypertrain
 ```
 
 After that, verify that the jobs stopped by running `neuro-flow ps`.
