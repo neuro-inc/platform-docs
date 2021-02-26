@@ -293,7 +293,7 @@ You can view the web interface of the job by clicking the 'three dots' icon near
 
 To view the log and and other details about a job, click on the job ID.
 
-![Job details section](../.gitbook/assets/zobrazhennya%20%2816%29.png)
+![Job Details section](../.gitbook/assets/image%20%2896%29.png)
 
 You can view only the currently running jobs by enabling the **Running only** checkbox.
 
