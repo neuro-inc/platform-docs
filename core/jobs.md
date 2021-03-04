@@ -113,17 +113,17 @@ Your training script here. Data directory: /data
 
 ```text
 (base) C:\Projects>neuro ps
-ID                                       NAME   STATUS  WHEN           IMAGE          OWNER  CLUSTER      DESCRIPTION
-job-3erw4f2e-cc57-4e4b-af04-c795b76d9ca8 job363 running 6 seconds ago  ubuntu:latest  <you>  neuro-public
-job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:latest  <you>  neuro-public
+ID                                       NAME   STATUS  WHEN           IMAGE          OWNER  
+job-3erw4f2e-cc57-4e4b-af04-c795b76d9ca8 job363 running 6 seconds ago  ubuntu:latest  <you>  
+job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:latest  <you>  
 ```
 
 1. **Посмотреть список заданий в статусе pending**
 
 ```text
 (base) C:\Projects>neuro ps -s pending
-ID                                        NAME   STATUS   WHEN          IMAGE         OWNER   CLUSTER      DESCRIPTION
-job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8  job390 running  3 minutes ago ubuntu:latest <you>   neuro-public
+ID                                        NAME   STATUS   WHEN          IMAGE         OWNER   
+job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8  job390 running  3 minutes ago ubuntu:latest <you>
 ```
 
 ### Могу ли я подключиться к заданию, когда оно работает?
@@ -249,9 +249,9 @@ job-d31c2ce9-f27b-4de0-9b60-b619ff6ff2af
 
 ```text
 (base) C:\Projects>neuro ps
-ID                                       NAME   STATUS   WHEN           IMAGE            OWNER   CLUSTER      DESCRIPTION
-job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  <you>   neuro-public
-job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   <you>   neuro-public
+ID                                       NAME   STATUS   WHEN           IMAGE            OWNER
+job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  <you>   
+job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   <you>   
 ```
 
 Прежде чем открыть доступ к заданию, Вы должны знать ID данного задания. После определения ID, чтобы предоставить доступ, необходимо использовать команду `neuro share job`.
