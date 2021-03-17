@@ -129,7 +129,7 @@ To run training, you need to specify the training command in `.neuro/live.yaml`,
 
 ```text
     bash: |
-        cd $[[ flow.workspace ]]
+        cd $[[ volumes.project.mount ]]
         python -u $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]]
 ```
 
@@ -137,7 +137,7 @@ To run training, you need to specify the training command in `.neuro/live.yaml`,
 
 ```text
     bash: |
-        cd $[[ flow.workspace ]]
+        cd $[[ volumes.project.mount ]]
         python -u $[[ volumes.code.mount ]]/char_rnn_classification_tutorial.py
 ```
 

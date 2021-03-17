@@ -168,9 +168,10 @@ To set up the project environment, run:
 
 ```text
 > neuro-flow build myimage
+> neuro-flow mkvolumes
 ```
 
-When this command is executed, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed to the base environment. It supports CUDA by default and contains the most popular ML/AI frameworks such as Tensorflow and Pytorch.
+When these commands are executed, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed to the base environment. It supports CUDA by default and contains the most popular ML/AI frameworks such as Tensorflow and Pytorch.
 
 To start a Jupyter Notebooks session on GPU, run:
 
