@@ -155,10 +155,11 @@ neuro-tutorial
 Чтобы настроить рабочее окружение, выполните:
 
 ```text
-neuro-flow build myimage
+> neuro-flow build myimage
+> neuro-flow mkvolumes
 ```
 
-После выполнения данной команды в базовую среду, которая уже содержит поддержку CUDA и наиболее популярные пакеты ML/AL, такие как Tensorflow и Pytorch, будут установлены системные пакеты из `apt.txt` и pip-зависимости из файла `requirements.txt`.
+После выполнения данных команд в базовую среду, которая уже содержит поддержку CUDA и наиболее популярные пакеты ML/AL, такие как Tensorflow и Pytorch, будут установлены системные пакеты из `apt.txt` и pip-зависимости из файла `requirements.txt`.
 
 Чтобы запустить Jupyter Notebooks на GPU, выполните команду:
 
