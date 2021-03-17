@@ -36,7 +36,7 @@ To run the recipe on the `DummyDataset`, follow these simple steps:
 
 1. [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
 2. Clone the [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch)
-3. Run `make setup`
+3. Run  `neuro-flow build myimage neuro-flow mkvolumes neuro-flow upload ALL`
 4. Run `scripts/run_distributed_on_platform.sh`
 
 This approach is generic, so you can use our solution as a template for training your PyTorch models distributedly.
