@@ -36,7 +36,13 @@
 
 1. [Зарегистрируйтесь](https://neu.ro/) и [установите клиент CLI](https://docs.neu.ro/getting-started#installing-cli)
 2. Клонируйте [репозиторий](https://github.com/neuromation/ml-recipe-distributed-pytorch)
-3. Выполните `make setup`
+3. Выполните   
+   `neuro-flow build myimage`
+
+   `neuro-flow mkvolumes`
+
+   `neuro-flow upload ALL`
+
 4. Выполните `scripts/run_distributed_on_platform.sh`
 
 Данный подход является общим, поэтому Вы можете использовать наше решение в качестве шаблона для распределенного обучения Ваших моделей в PyTorch.
