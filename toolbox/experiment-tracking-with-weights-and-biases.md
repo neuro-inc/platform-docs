@@ -39,6 +39,8 @@ Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add
 ```bash
 jobs:
   remote_debug:
+    ...
+    args:
      ...
      additional_env_vars: '{"WANDB_API_KEY": "secret:wandb-token"}'
 ```
