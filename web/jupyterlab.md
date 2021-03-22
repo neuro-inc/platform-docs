@@ -9,7 +9,7 @@ You can arrange multiple Notebooks, documents, and activities in a single interf
 * Log in to your Neu.ro dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/zobrazhennya%20%2826%29%20%281%29.png)
 
 * Select Jupyterlab in the top drop-down menu, a preset in the bottom drop-down menu, and click **RUN**.
 
@@ -44,17 +44,17 @@ You can manage your JupyterLab instances from the Neu.ro dashboard. The JupyterL
 
 You can view the details of your JupyterLab instance by clicking on its job ID.
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 You can open an instance by clicking **HTTP ULR**:
 
 * In the Running Jobs section on your Dashboard.
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2836%29.png)
 
 * In the drop-down menu for the corresponding job in the job list.
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 You can kill the JupyterLab instance using the same drop-down menu. Note that closing the tab does not kill the instance.
 

@@ -97,7 +97,7 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Log in to `neu.ro`, and start a FileBrowser.
 
-![](../.gitbook/assets/mobile-dashboard.png) ![](../.gitbook/assets/FBM_FileBrowser%20%281%29.jpg)
+![](../.gitbook/assets/mobile-dashboard.png) ![](../.gitbook/assets/FBM_FileBrowser%20%282%29.jpg)
 
 * Navigate to the folder to download files from, and select the file or folder that you want to download.
 
@@ -105,11 +105,11 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Select **Download** from the options menu.
 
-![](../.gitbook/assets/FBM_Down_Select.jpg) ![](../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
+![](../.gitbook/assets/FBM_Down_Select.jpg) ![](../.gitbook/assets/FBM_DownloadDone%20%281%29%20%281%29.jpg)
 
 The file is downloaded to your mobile device.
 
-![](../.gitbook/assets/FBM_DownloadDone.jpg)
+![](../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
 
 **To upload files from your mobile device:**
 

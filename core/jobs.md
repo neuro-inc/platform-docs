@@ -285,25 +285,25 @@ The log is also displayed if you don't pass the `--detach` option when the job i
 
 Neuro provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Neu.ro web interface lists all the jobs.
 
-![Jobs page](../.gitbook/assets/zobrazhennya%20%2819%29.png)
+![Jobs page](../.gitbook/assets/image%20%2883%29.png)
 
 You can view the web interface of the job by clicking the 'three dots' icon near the job and then clicking **HTTP URL**.
 
-![Navigating to the HTTP URL option](../.gitbook/assets/zobrazhennya%20%2818%29.png)
+![Navigating to the HTTP URL option](../.gitbook/assets/image%20%28108%29.png)
 
 To view the log and and other details about a job, click on the job ID.
 
-![Job Details section](../.gitbook/assets/image%20%2896%29.png)
+![Job Details section](../.gitbook/assets/image%20%2896%29%20%281%29.png)
 
 You can view only the currently running jobs by enabling the **Running only** checkbox.
 
-![Enabling the &apos;Running only&apos; checkbox](../.gitbook/assets/zobrazhennya%20%2822%29.png)
+![Enabling the &apos;Running only&apos; checkbox](../.gitbook/assets/image%20%28103%29.png)
 
 You can search for specific jobs by using the **Search** box. The search functionality works with job names, IDs, and tags.
 
-![Searching for a specific job](../.gitbook/assets/zobrazhennya%20%2825%29.png)
+![Searching for specific jobs](../.gitbook/assets/image%20%2827%29.png)
 
 The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in the drop-down menu accessible through the 'three dots' icon near the job.
 
-![KILL and RERUN options](../.gitbook/assets/zobrazhennya%20%289%29.png)
+![KILL and RERUN options](../.gitbook/assets/image%20%28101%29.png)
 

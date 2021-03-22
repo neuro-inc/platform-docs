@@ -1,7 +1,5 @@
 # Experiment Tracking with Weights & Biases
 
-### 
-
 ### Introduction
 
 In this tutorial, we show how to set up experiment tracking via Weights & Biases on Neuro Platform using Neuro Project Template.

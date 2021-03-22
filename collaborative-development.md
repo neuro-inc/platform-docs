@@ -150,7 +150,7 @@ You can also check a particular job's status `neuro status my-cool-job`.
 {% tab title="Web UI" %}
 You can view the IDs and names of all currently running jobs in the left part of the **Jobs** section. Make sure the the **Running only** checkbox is enabled.
 
-![](.gitbook/assets/zobrazhennya%20%2835%29.png)
+![](.gitbook/assets/image%20%2833%29.png)
 
 Clicking the job ID will open the **Job Details** window.
 {% endtab %}
@@ -178,7 +178,7 @@ However, keep in mind that different runs of the same job can have the same name
 {% tab title="Web UI" %}
 To share a job, click **Share** in the drop-down list to its right:
 
-![](.gitbook/assets/zobrazhennya%20%2836%29.png)
+![](.gitbook/assets/image%20%2886%29.png)
 
 Next, enter the name of the user you want to share the job with and the access level. when this is done, click **SHARE**:
 

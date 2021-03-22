@@ -233,7 +233,7 @@ The **Images** tab displays the confusion matrix for the current training. For o
 The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues.   
 
 
-![](../.gitbook/assets/graph_tab%20%281%29.gif)
+![](../.gitbook/assets/graph_tab%20%281%29%20%281%29.gif)
 
 You can double-click on a code unit to open its visualization.
 

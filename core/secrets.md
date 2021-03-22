@@ -72,7 +72,7 @@ To use a secret through the Web UI:
 
 * In the newly-opened window, click **ADD NEW SECRET**:
 
-![](../.gitbook/assets/image%20%2879%29.png)
+![](../.gitbook/assets/image%20%2879%29%20%281%29.png)
 
 * Select the type of secret you want to use and the secret's key from the drop-down list. Then, depending on the type of secret you selected, enter the name of the environment variable or the path to the secret's file:
 
