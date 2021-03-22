@@ -108,13 +108,13 @@ neuro job port-forward <job-id> 5678:5678
 
 Выберите **Remote Attach**:
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2888%29%20%281%29.png)
 
 Введите **localhost** в качестве имени хоста и номер порта задания \(в данном примере - **5678**\):
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2891%29%20%281%29.png)
 
 После этого Вы можете выбрать точку прерывания и начать отладку.
 
