@@ -89,7 +89,7 @@ The current cluster is onprem-poc
 
 ### **How can I view my computation quota?**
 
-You are assigned a computation quota of 100 GPU hours when you sign up to neu.ro. This quota is used whenever you run a job. The amount of hours of CPU you can use is unlimited.
+You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job. 
 
 You can view the remaining computation quota on your dashboard.
 
