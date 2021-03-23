@@ -91,9 +91,7 @@ The current cluster is onprem-poc
 
 You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job. 
 
-You can view the remaining computation quota on your dashboard.
-
-![Computation quota](../.gitbook/assets/zobrazhennya%20%2821%29.png)
+You can view the remaining computation quota on your Web UI dashboard.
 
 You can also use the `neuro config show-quota` command to view the amount of computation quota left.
 
@@ -105,9 +103,7 @@ CPU: spent: 168h 49m (quota: infinity)
 
 ### How can I request for more computation quota?
 
-You can top up your computation quota by clicking the **TOP UP NOW** button on the dashboard.
-
-![TOP UP NOW button](../.gitbook/assets/zobrazhennya%20%287%29.png)
+You can top up your computation quota by clicking the **TOP UP NOW** button on the Web UI dashboard.
 
 You can also write to [team@neu.ro](mailto:team@neu.ro) to learn about latest discounts and promotions, and then request the top up.
 
