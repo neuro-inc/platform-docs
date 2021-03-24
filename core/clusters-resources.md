@@ -95,12 +95,6 @@ You can view the remaining computation quota on your Web UI dashboard.
 
 You can also use the `neuro config show-quota` command to view the amount of computation quota left.
 
-```text
-> neuro config show-quota
-GPU: spent: 35h 54m (quota: 100h 00m, left: 64h 06m)
-CPU: spent: 168h 49m (quota: infinity)
-```
-
 ### How can I request for more computation quota?
 
 You can top up your computation quota by clicking the **TOP UP NOW** button on the Web UI dashboard.
