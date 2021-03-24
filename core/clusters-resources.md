@@ -95,12 +95,6 @@ The current cluster is onprem-poc
 
 Оставшуюся квоту также можно посмотреть при помощи команды `neuro config show-quota`.
 
-```text
-> neuro config show-quota
-GPU: spent: 35h 54m (quota: 100h 00m, left: 64h 06m)
-CPU: spent: 168h 49m (quota: infinity)
-```
-
 ### Как запросить дополнительную квоту вычислений?
 
 Вы можете пополнить квоту вычислений, нажав **ПОПОЛНИТЬ СЕЙЧАС** в панели инструментов веб-интерфейса.
