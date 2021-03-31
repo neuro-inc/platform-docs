@@ -2,24 +2,24 @@
 
 Часто вы не начинаете проект с нуля. Вместо этого вы используете свой или сторонний старый код и разрабатываете свое решение на его основе. В этом руководстве показано, как взять существующую базу кода, преобразовать ее в проект и начать разработку на платформе.
 
-### Предусловия
+## Предусловия
 
 1. Удостоверьтесь, что вы установили Neuro CLI вошли в веб-интерфейс платформы.
 2. Установите пакет `neuro-flow`:
 
 ```bash
-pip install -U neuro-flow
+$ pip install -U neuro-flow
 ```
 
-### Настройка
+## Настройка
 
 В качестве примера мы будем использовать [репозиторий](https://github.com/songyouwei/ABSA-PyTorch) GitHub, который содержит PyTorch-реализации для моделей аспектно-ориентированного анализа эмоциональной окраски \(подробнее см. [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted)\). 
 
 Сначала клонируем репозиторий и перейдем в созданную папку.:
 
 ```bash
-git clone git@github.com:songyouwei/ABSA-PyTorch.git
-cd ABSA-PyTorch
+$ git clone git@github.com:songyouwei/ABSA-PyTorch.git
+$ cd ABSA-PyTorch
 ```
 
 Теперь добавим несколько файлов:
@@ -72,27 +72,27 @@ jobs:
 * секция `images` содержит объявления образов Docker, созданных внутри проекта; здесь мы объявляем наш образ, описанный в файле `Dockerfile`;
 * в секции `jobs` происходит большая часть работы; здесь мы объявляем задание `train`, запускающее наш скрипт по обучению с несколькими параметрами.
 
-### Запуск кода
+## Запуск кода
 
 Теперь можно запустить несколько команд, производящих настройку среды проекта и начинающих обучение.
 
 * Сначала создайте тома и загрузите проект на хранилище платформы:
 
 ```text
-neuro-flow mkvolumes
-neuro-flow upload ALL
+$ neuro-flow mkvolumes
+$ neuro-flow upload ALL
 ```
 
 * Затем соберите образ:
 
 ```text
-neuro-flow build pytorch
+$ neuro-flow build pytorch
 ```
 
 * Запустите обучение:
 
 ```text
-neuro-flow run train
+$ neuro-flow run train
 ```
 
 Вы можете запустить `neuro-flow --help`, чтобы получить сведения о доступных командах. 
