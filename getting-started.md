@@ -11,9 +11,9 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 ## Installing the CLI
 
-You can use the [Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-compute) as a quick way to explore the platform that doesn't require any installation.
+[Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-compute) doesn't require installation and can quickly get you familiar with Neu.ro, allowing you to work with the platform in a browser.
 
-However, installing the Neu.ro CLI provides the full scope of functionality, so we highly recommend this method for long-term use.
+However, installing Neu.ro CLI locally may prove more effective for long-term use.
 
 ### Installation instructions
 
