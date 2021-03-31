@@ -115,7 +115,7 @@ Now all your teammates can clone the project and start working on it in their lo
 
 * To set up the working environment, run `neuro-flow build myimage` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
 * To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `neuro-flow download notebooks`.
-* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train` for example:
+* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train`. For example:
 
 ```text
 jobs:
