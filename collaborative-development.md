@@ -142,7 +142,7 @@ You can view the IDs and names of currently running jobs available to you both i
 {% tab title="CLI" %}
 To view the list of currently running jobs, run `neuro ps`. 
 
-You can also check a particular job's status `neuro status my-cool-job`.
+You can also check a particular job's status `neuro status <my-cool-job>`.
 {% endtab %}
 
 {% tab title="Web UI" %}
@@ -178,13 +178,13 @@ To share a job, click **Share** in the drop-down list to its right:
 
 ![](.gitbook/assets/image%20%2886%29.png)
 
-Next, enter the name of the user you want to share the job with and the access level. when this is done, click **SHARE**:
+Next, enter the name of the user you want to share the job with and the access level. When this is done, click **SHARE**:
 
 ![](.gitbook/assets/zobrazhennya%20%2830%29.png)
 {% endtab %}
 {% endtabs %}
 
-This allows Alice to access this job either via its ID or its full URI. The URI consists of a cluster name, the owner's user name, and the job's name or ID: `job://neuro-compute/bob/jupyter-awesome-project`:
+This allows Alice to access this job either via its ID or its full URI. The URI consists of a cluster name, the owner's user name, and the job's name or ID: `job://neuro-compute/bob/jupyter-awesome-project`.
 
 ```text
 # read the logs
@@ -202,7 +202,7 @@ neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 
 Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can monitor the job's logs or work with it there.
 
-Please note that, if someone gets `write`-level access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the git repository, you have to download them, commit, and push.
+Please note that, if someone gets `write`-level access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the Git repository, you have to download them, commit, and push.
 
 There is also a shortcut for sharing all your jobs \(past, current, and future ones alike\) with your teammates in the CLI:
 
@@ -222,14 +222,14 @@ images:
     ref: ufoym/deepo
 ```
 
-If the image is not public, you need to make available to your teammates:
+If the image is not public, you need to make it available to your teammates:
 
 ```text
 # upload to your registry:
-neuro image push project-specific-docker-image
+$ neuro image push project-specific-docker-image
 
 # share with your teammates:
-neuro share image:project-specific-docker-image alice read
+$ neuro share image:project-specific-docker-image alice read
 
 # update the .neuro/live.yaml file with the full URI of your image:
 images:
