@@ -2,24 +2,24 @@
 
 Oftentimes you don't start a project from scratch. Instead of that you use someone's or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into a Neu.ro project, and start developing on the platform.
 
-### Prerequisites
+## Prerequisites
 
 1. Make sure that you have the Neuro CLI [installed](getting-started.md#installing-cli) and logged in.
 2. Install the `neuro-flow` package:
 
 ```bash
-pip install -U neuro-flow
+$ pip install -U neuro-flow
 ```
 
-### Configuration
+## Configuration
 
 As an example we'll use the GitHub [repo](https://github.com/songyouwei/ABSA-PyTorch) that contains PyTorch implementations for Aspect-Based Sentiment Analysis models \(see [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted) for more details\). 
 
 First, let's clone the repo and navigate to the created folder:
 
 ```bash
-git clone git@github.com:songyouwei/ABSA-PyTorch.git
-cd ABSA-PyTorch
+$ git clone git@github.com:songyouwei/ABSA-PyTorch.git
+$ cd ABSA-PyTorch
 ```
 
 Now, we need to add a couple of files:
@@ -72,27 +72,27 @@ Here is a brief explanation of this config:
 * `images` section contains declarations of Docker images created in this project; here we declare our image which is decribed in `Dockerfile` above;
 * `jobs` section is the one where action happens; here we declare a `train` job which runs our training script with a couple of parameters.
 
-### Running code
+## Running code
 
 Now it's time to run several commands that set up the project environment and run training.
 
 * First, create volumes and upload project to platform storage:
 
 ```text
-neuro-flow mkvolumes
-neuro-flow upload ALL
+$ neuro-flow mkvolumes
+$ neuro-flow upload ALL
 ```
 
 * Then, build an image:
 
 ```text
-neuro-flow build pytorch
+$ neuro-flow build pytorch
 ```
 
 * Finally, run training:
 
 ```text
-neuro-flow run train
+$ neuro-flow run train
 ```
 
 Please run `neuro-flow --help` to get more information about available commands. 
