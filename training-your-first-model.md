@@ -1,6 +1,6 @@
 # Training Your First Model
 
-### Introduction
+## Introduction
 
 In this tutorial, we describe the recommended way to train a simple machine learning model on the Neuro platform. As our ML engineers prefer PyTorch over other ML frameworks, we show the training and evaluation of one of the basic PyTorch examples.
 
@@ -8,7 +8,7 @@ We assume that you have already signed up to the platform, installed the Neuro C
 
 We base our example on the [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html) tutorial.
 
-### Initializing a new project
+## Initializing a new project
 
 To simplify working with Neuro Platform and to help establish the best practices in the ML environment, we provide a project template. This template consists of the recommended directories and files. It is designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
 
@@ -26,7 +26,7 @@ project_slug [neuro-tutorial]:
 code_directory [modules]: rnn
 ```
 
-### Project structure
+## Project structure
 
 After you execute the command mentioned above, you get the following structure:
 
@@ -54,7 +54,7 @@ When you run a job \(for example, via `neuro-flow run jupyter`\), the directorie
 
 This mapping is defined as variables in the top section of `Makefile` and can be adjusted if needed.
 
-### Filling the project
+## Filling the project
 
 Now we need to fill newly created project with the content:
 
@@ -104,7 +104,7 @@ wget
 $ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
-### Training and evaluating the model
+## Training and evaluating the model
 
 When you start working with a project on the Neuro platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
 
