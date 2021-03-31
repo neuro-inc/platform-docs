@@ -8,14 +8,14 @@
 
 Наш пример основывается на [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html).
 
-### Создание нового проекта
+## Создание нового проекта
 
 Чтобы упростить работу с платформой и помочь внедрить лучшие практики ML, мы предоставляем шаблон проекта. Этот шаблон состоит из рекомендуемых каталогов и файлов. Он предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
 
 Создайте новый проект на основе шаблона:
 
 ```text
-neuro project init
+$ neuro project init
 ```
 
 Данная команда запрашивает несколько вопросов относительно Вашего проекта:
@@ -26,7 +26,7 @@ project_slug [neuro-tutorial]:
 code_directory [modules]: rnn
 ```
 
-### Структура проекта
+## Структура проекта
 
 После выполнения вышеприведенной команды Вы получите следующую структуру:
 
@@ -54,20 +54,20 @@ neuro-tutorial
 
 Данное сопоставление определено в переменных в верхней части файла `Makefile` и при необходимости может быть изменено.
 
-### Заполнение проекта
+## Заполнение проекта
 
 Теперь необходимо наполнить вновь созданный проект контентом:
 
 * Меняем рабочую директорию:
 
 ```text
-cd neuro-tutorial
+$ cd neuro-tutorial
 ```
 
 * Копируем [модель](https://github.com/pytorch/tutorials/blob/master/intermediate_source/char_rnn_classification_tutorial.py) в папку `rnn`:
 
 ```text
-curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
+$ curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
 * Добавим следующие строки в файл `requirements.txt` в корневой папке проекта:
@@ -101,17 +101,17 @@ wget
 * Загрузим [отсюда](https://download.pytorch.org/tutorial/data.zip) данные, распакуем ZIP содержимое и поместим его в папку `data`:
 
 ```text
-curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
+$ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
-### Обучение и оценка модели
+## Обучение и оценка модели
 
 Когда вы начинаете работать с проектом на платформе, основной процесс выглядит следующим образом: настраиваете удаленное рабочее окружение, загружаете данные и код на дисковое пространство, проводите обучение и оцениваете результат.
 
 Чтобы настроить удаленное рабочее окружение, запустите команду
 
 ```text
-neuro-flow build myimage
+$ neuro-flow build myimage
 ```
 
 Данная команда запускает задание \(через команду `neuro run`\), загружает файлы зависимостей `apt.txt` и `requirements.txt` \(через команду `neuro cp`\), устанавливает зависимости \(используя `neuro exec`\), выполняет другие подготовительные действия, а затем создает базовый образ из данного задания и загружает его на платформу \(с помощью функции `neuro save`, которая работает аналогично `docker commit`\).
@@ -119,7 +119,7 @@ neuro-flow build myimage
 Чтобы загрузить данные и код на Ваш диск, запустите команду
 
 ```text
-neuro-flow upload ALL
+$ neuro-flow upload ALL
 ```
 
 Чтобы запустить обучение, необходимо указать команду для запуска в файле `.neuro/live.yaml`, а затем выполнить `neuro-flow run train`:
@@ -144,7 +144,7 @@ neuro-flow upload ALL
 Теперь можно запустить команду
 
 ```text
-neuro-flow run train
+$ neuro-flow run train
 ```
 
 и наблюдать за выводом. Вы увидите, как выполняются некоторые проверки в начале скрипта, а затем происходит обучение модели и оценка:
