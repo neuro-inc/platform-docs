@@ -93,8 +93,6 @@ Select the files and/or folders you want to share in the FileBrowser and click t
 
 You can then create permanent and temporary access links for the selected items. To create a permanent link, click **Get Permanent Link**:
 
- 
-
 ![](.gitbook/assets/image%20%2897%29.png)
 
 To create a temporary link, specify the required time period and click the **Create** icon:
