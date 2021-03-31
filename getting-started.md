@@ -10,7 +10,7 @@
 
 Для начала работы с CLI имеются две возможности:
 
-* При помощи [Веб терминала](https://apps.neu.ro/shell?cluster_name=neuro-public)
+* При помощи [Веб-терминала](https://apps.neu.ro/shell?cluster_name=neuro-compute)
 * Установив Neu.ro CLI на Ваш компьютер и выполнив команду `neuro login`
 
 Первый вариант рекомендуется для изучения платформы. Второй вариант лучше подходит для работы над Вашими проектами.
@@ -22,6 +22,12 @@ Neu.ro CLI требует установленный Python 3 \(рекоменд
 ```text
 pip install -U neuro-cli neuro-extras neuro-flow
 neuro login
+```
+
+Если ваш рабочий компьютер не обладает GUI, используйте следующую команду вместо `neuro login`:
+
+```text
+neuro config login-headless
 ```
 
 ### Установка в Windows
