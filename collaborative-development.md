@@ -111,7 +111,7 @@ Your data may also be available at some public resource that doesn’t require a
 
 ## Setting up the project and running jobs
 
-Now all your teammates can clone the project and start working on it through their local copies. Here are some steps every teammate should follow independently.
+Now all your teammates can clone the project and start working on it in their local copies. Here are some steps every teammate should follow independently.
 
 * To set up the working environment, run `neuro-flow build myimage` \(this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`\). 
 * To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `neuro-flow download notebooks`.
