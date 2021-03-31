@@ -205,7 +205,7 @@ Donâ€™t forget to terminate your job when you no longer need it \(the files wonâ
 $ neuro-flow kill jupyter
 ```
 
-To check how much GPU and CPU hours you have left, run:
+To check how many credits you have left, run:
 
 ```text
 $ neuro config show-quota
