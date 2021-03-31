@@ -96,7 +96,7 @@ $ neuro config show
 
 ### Working with platform storage
 
-Create a new directory `demo` in the root directory of your platform storage:
+Create a new `demo` directory in the root directory of your platform storage:
 
 ```text
 $ neuro mkdir -p storage:demo
