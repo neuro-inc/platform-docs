@@ -15,7 +15,7 @@ To simplify working with Neuro Platform and to help establish the best practices
 Let’s initialize a new project from this template:
 
 ```text
-neuro project init
+$ neuro project init
 ```
 
 This command asks several questions about your project:
@@ -61,13 +61,13 @@ Now we need to fill newly created project with the content:
 * Change working directory:
 
 ```text
-cd neuro-tutorial
+$ cd neuro-tutorial
 ```
 
 * Copy the [model source](https://github.com/pytorch/tutorials/blob/master/intermediate_source/char_rnn_classification_tutorial.py) to your `rnn` folder:
 
 ```text
-curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
+$ curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
 * Put the following lines to  `requirements.txt` in your project root folder:
@@ -101,7 +101,7 @@ wget
 * Download data from [here](https://download.pytorch.org/tutorial/data.zip), extract the ZIP’s content and put it in your `data` folder:
 
 ```text
-curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
+$ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
 ### Training and evaluating the model
@@ -111,7 +111,7 @@ When you start working with a project on the Neuro platform, the basic flow look
 To set up the remote environment, run
 
 ```text
-neuro-flow build myimage
+$ neuro-flow build myimage
 ```
 
 This command will run a lightweight job \(via `neuro run`\), upload the files containing your dependencies `apt.txt` and `requirements.txt` \(via `neuro cp`\), install the dependencies \(using `neuro exec`\), do other preparatory steps, and then create the base image from this job and push it to the platform \(via `neuro save`, which works similarly to `docker commit`\).
@@ -119,7 +119,7 @@ This command will run a lightweight job \(via `neuro run`\), upload the files co
 To upload data and code to your storage, run
 
 ```text
-neuro-flow upload ALL
+$ neuro-flow upload ALL
 ```
 
 To run training, you need to specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
@@ -144,7 +144,7 @@ To run training, you need to specify the training command in `.neuro/live.yaml`,
 Now, you can run
 
 ```text
-neuro-flow run train
+$ neuro-flow run train
 ```
 
 and observe the output. You will see how some checks are made at the beginning of the script, and then the model is being trained and evaluated:
