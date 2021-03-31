@@ -42,7 +42,7 @@ This will upload data from your local folder to the `cifar-10` folder on your pl
 {% endtab %}
 
 {% tab title="Web UI" %}
-To upload data through the Web UI, you will first need to open the FileBrowser. To do this, click **RUN A JOB** in the **Storage** widget:
+To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage** widget:
 
 ![](.gitbook/assets/zobrazhennya%20%2831%29.png)
 
@@ -50,7 +50,7 @@ After that, click **RUN** in the new window:
 
 ![](.gitbook/assets/image%20%2898%29.png)
 
-Once the FileBrowser is opened, navigate to the folder you want to upload your data to and click the **Upload** icon:
+Once the Filebrowser is opened, navigate to the folder you want to upload your data to and click the **Upload** icon:
 
 ![](.gitbook/assets/zobrazhennya%20%2829%29.png)
 
@@ -85,9 +85,9 @@ After that, your data becomes available in the `/data` folder in the local file 
 {% endtab %}
 
 {% tab title="Web UI" %}
-Sharing folders and files through the FileBrowser gives temporary access to them through the Web UI to any user with a link to them.
+Sharing folders and files through the Filebrowser gives temporary access to them through the Web UI to any user with a link to them.
 
-Select the files and/or folders you want to share in the FileBrowser and click the **Share** icon:
+Select the files and/or folders you want to share in the Filebrowser and click the **Share** icon:
 
 ![](.gitbook/assets/image%20%2899%29.png)
 
