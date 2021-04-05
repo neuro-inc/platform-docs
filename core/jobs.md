@@ -216,11 +216,9 @@ This command runs a FileBrowser instance on 8085 port, exposes this port, remove
 
 ### How do I control the job duration?
 
-You can control the duration of time for which jobs run using the `life-span` configuration parameter. You can update the `life-span` parameter in the \[job\] section of the global configuration file. The global configuration file is located in the standard neuro config path. The Neu.ro CLI uses ~/.neuro folder by default, and the path for global config file is ~/.neuro/user.toml.
+You can control the duration of time for which jobs run using the `life-span` configuration parameter. You can update the `life-span` parameter in the \[job\] section of the global configuration file. The global configuration file is located in the standard neuro config path. The Neu.ro CLI uses the `~/.neuro` folder by default, and the path for global config file is `~/.neuro/user.toml`.
 
 The parameter limits the default job run time, and is in string format. For example, a value of 2d3h20min would limit the job run time to 2 days, 3 hours, and 20 minutes.
-
-You can also set this parameter on each job run using the corresponding option: `neuro run --life-span 2h …`
 
 **Example:**
 
@@ -229,6 +227,20 @@ You can also set this parameter on each job run using the corresponding option: 
 [job]
 life-span = "2d3h20min"
 ```
+
+You can also set this parameter for specific jobs by using the corresponding option: 
+
+```text
+$ neuro run --life-span 2h <job-name>
+```
+
+It's also possible to increase a job's lifespan through `bump-life-span`:
+
+```text
+$ neuro job bump-life-span <job-name> 2d
+```
+
+This will add 2 days to the current lifespan of the `<job-name>` job.
 
 ### How do I terminate a job?
 
