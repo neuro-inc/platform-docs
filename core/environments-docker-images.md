@@ -226,3 +226,13 @@ The permissions you may give the user for the shared image:
 
 `neuro share image://neuro-compute/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
 
+### Operations with images from other clusters
+
+All operations that were described earlier can be performed with images from other clusters. 
+
+For example, to push a local `neuromation-nero-assistant` image to the platform registry on the `<cluster-name>` cluster, run:
+
+```text
+$ neuro push neuromation-nero-assistant image:/<cluster-name>/<user-name>/nero-assistant:v2
+```
+
