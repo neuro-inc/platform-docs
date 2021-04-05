@@ -226,3 +226,13 @@ Hello World
 
 `neuro share image://neuro-compute/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
 
+### Операции с образами на других кластерах
+
+Все операции, описанные выше, можно выполнять с образами из других кластеров. 
+
+Например, чтобы загрузить локальный образ `neuromation-nero-assistant` в реестр платформы на кластере `<имя-кластера>`, запустите:
+
+```text
+$ neuro push neuromation-nero-assistant image:/<имя-кластера>/<имя-пользователя>/nero-assistant:v2
+```
+

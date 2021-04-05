@@ -6,7 +6,7 @@
 
 ![](../.gitbook/assets/storage-2.png)
 
-### Как я могу управлять файлами через веб-интерфейс?
+## Как я могу управлять файлами через веб-интерфейс?
 
 Для управления файлами служит интуитивно понятный FileBrowser. FileBrowser основан на популярном интерфейсе просмотра файлов, доступном в git.
 
@@ -33,11 +33,11 @@
 
 В оставшейся части руководства будет описано управление файлами с помощью CLI. Для получения дополнительной информации о FileBrowser см. документацию [FileBrowser](https://github.com/filebrowser/filebrowser).
 
-### Как я могу управлять файлами посредством командной строки CLI?
+## Как я могу управлять файлами посредством командной строки CLI?
 
 Вы можете управлять своими файлами и папками с помощью команды `neuro storage`. Neu.ro CLI позволяет вам выполнять все операции с файлами и папками, доступными в FileBrowser.
 
-#### Просмотр папок и файлов
+### Просмотр папок и файлов
 
 Чтобы увидеть папки и файлы в образе, выполните команду:
 
@@ -45,20 +45,20 @@
 
 Для дополнительной информации см. [Список содержимого каталога](https://docs.neu.ro/references/cli-reference/storage#ls).
 
-**Пример команды:**
+#### **Пример команды:**
 
 ```text
-> neuro storage ls storage:nero-assistant
+$ neuro storage ls storage:nero-assistant
 ModelCode  apt.txt  config  data  modules  
 notebooks  requirements.txt  results  setup.cfg
 ```
 
 Вы можете использовать команду `neuro storage tree` для просмотра содержимого в древовидном формате. Это может быть полезно, если у Вас имеются подпапки.
 
-**Пример команды:**
+#### **Пример команды:**
 
 ```text
-> neuro storage tree storage:nero-assistant
+$ neuro storage tree storage:nero-assistant
 'storage:nero-assistant'
 +-- 'ModelCode'
 |   +-- 'VoiceExperiment'
@@ -74,7 +74,7 @@ notebooks  requirements.txt  results  setup.cfg
 7 directories, 3 files
 ```
 
-#### Создание папки из CLI
+### Создание папки из CLI
 
 Чтобы создать папку на диске из CLI, используйте команду:
 
@@ -85,12 +85,12 @@ notebooks  requirements.txt  results  setup.cfg
 **Пример команды:**
 
 ```text
-neuro storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
+$ neuro storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
 ```
 
 Вы можете проверить, что папка была создана, выполнив команду `neuro storage ls` или через веб-интерфейс.
 
-#### Копирование файлов между дисковым пространством платформы и Вашей локальной файловой системой
+### Копирование файлов между дисковым пространством платформы и Вашей локальной файловой системой
 
 Для копирования файлов между платформой и хостом используйте команду `neuro cp SOURCE DESTINATION`.
 
@@ -106,32 +106,32 @@ neuro storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
 * Для копирования файлов с локального компьютера на дисковое пространство платформы используйте следующую команду: `neuro cp parameters.txt storage:nero-assistant`. Эта команда копирует файл `parameters.txt` с локального хоста в папку `nero-assistant` на диске платформы.
 
 ```text
-> neuro cp parameters.txt storage:nero-assistant
+$ neuro cp parameters.txt storage:nero-assistant
 Copy 'file:///C:/Projects/parameters.txt' => 'storage://neuro-compute/.../parameters.txt' 'parameters.txt' 952B
 ```
 
 * Чтобы скопировать файлы с платформы на локальный компьютер, используйте команду: `neuro cp storage:nero-assistant/TestResults.txt file:///Projects` Данная команда копирует файл `TestResults.txt` в папке `nero-assistant`, находящейся на диске платформы, на локальный компьютер.
 
 ```text
-> neuro cp storage:nero-assistant/TestResults.txt file:///Projects 
+$ neuro cp storage:nero-assistant/TestResults.txt file:///Projects 
 Copy 'storage://neuro-compute/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
 ```
 
 * Чтобы скопировать папку из локальной хост-системы на дисковое пространство платформы, используйте команду: `neuro cp -r samplecode storage:nero-assistant`. Данная команда копирует папку `samplecode` и все ее содержимое в папку `nero-assistant` на дисковом пространстве платформы.
 
 ```text
-> neuro cp -r samplecode storage:nero-assistant 
+$ neuro cp -r samplecode storage:nero-assistant 
 Copy 'file:///C:/Projects/samplecode' => 'storage://neuro-compute/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
 ```
 
 * Чтобы скопировать папку с платформы на локальный хост используйте команду: `neuro cp -r storage:nero-assistant/testlogs file:///Projects`. Данная команда копирует папку `testlogs` на дисковом пространстве платформы, со всем ее содержимым, на локальный компьютер.
 
 ```text
-> neuro cp -r storage:nero-assistant/testlogs file:///Projects 
+$ neuro cp -r storage:nero-assistant/testlogs file:///Projects 
 Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://neuro-compute/clarytyllc/nero-assistant/testlogs' ...
 ```
 
-#### Удаление файлов
+### Удаление файлов
 
 Для удаления файлов с дискового пространства платформы используйте команду `neuro rm [Files/Folder]`
 
@@ -143,7 +143,7 @@ Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projec
 * Для удаления папки с дискового пространства платформы используйте команду `neuro rm -r storage:nero-assistant/samplecode`
 * Для удаления файлов с определенным шаблоном, например все файлы формата `.log`, используйте команду `neuro rm -r storage:nero-assistant/*.log`
 
-#### Перемещение файлов и папок внутри дискового пространства платформы
+### Перемещение файлов и папок внутри дискового пространства платформы
 
 Перемещение файлов или папок отличается от копирования. При перемещении файлы или папки копируются в место назначения, а затем удаляются из места первоначального расположения. Чтобы переместить файлы или папки, используйте команду: `neuro storage mv`. При желании Вы также можете переименовать файл после его перемещения в каталог назначения.
 
@@ -152,11 +152,11 @@ Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projec
 * Чтобы переместить файл на диске платформы в другую папку на диске платформы и переименовать его, используйте команду `neuro mv storage:nero-assistant\code.txt storage:neuro-tutorial\samplecode.txt`. Эта команда перемещает файл `code.txt` из папки `nero-assistant` в папку `neuro-tutorial` и переименовывает файл в `samplecode.txt`.
 * Чтобы переместить папку и ее содержимое на диске платформы на новое местоположение, используйте команду: `neuro mv -T storage:nero-assistant/ModelCode storage:neuro-tutorial/SampleCode`. Данная команда копирует папку `ModelCode` и все ее содержимое из папки `nero-assistant` в папку `neuro-tutorial` и переименовывает её в `SampleCode`.
 
-### Как я могу использовать папки на дисковом пространстве в заданиях?
+## Как я могу использовать папки на дисковом пространстве в заданиях?
 
 Папки на дисковом пространстве можно использовать в заданиях. Для этого надо подключить каталог на диске к контейнеру, на котором выполняется задание.
 
-**Замечания**:
+### **Замечания**:
 
 * Задания могут выполняться медленнее при использовании папок на дисковом пространстве по сравнению с использованием файловой системы контейнера. Наши эксперементы показывают, что обучение моделей CV занимает на 10-20% больше времени, когда набор данных считывается с примонтированного каталога, расположенного на дисковом пространстве платформы. Если такая разница для Вас критична, мы рекомендуем перед выполнением задания загрузить наборы данных в не примонтированный каталог.
 * Настоятельно не рекомендуется распаковывать наборы данных \(ZIP, TAR и т.д.\) в каталог на дисковом пространстве платформы, поскольку это занимает много времени.
@@ -172,7 +172,7 @@ Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projec
 Чтобы примонтировать даные к контейнеру, используйте параметр `--volume` в команде `run`. Например:
 
 ```text
-neuro run --name job303 --volume storage:nero-assistant/ModelCode:/code:rw --preset cpu-small ubuntu cat code/train.py
+$ neuro run --name job303 --volume storage:nero-assistant/ModelCode:/code:rw --preset cpu-small ubuntu cat code/train.py
 ```
 
 Данная команда монтирует наборы данных из папки `ModelCode` к контейнеру для использования во время выполнения задания. Папка `/data` используются для доступа к данным из задания.
@@ -183,7 +183,7 @@ neuro run --name job303 --volume storage:nero-assistant/ModelCode:/code:rw --pre
 echo “New info” >/code/info.txt
 ```
 
-### Как я могу делиться файлами с другими пользователями?
+## Как я могу делиться файлами с другими пользователями?
 
 Вы можете открыть доступ к Вашим папкам и файлам для других пользователей, аналогично с открытием доступа к образу. Вы можете указать права доступа пользователей к файлам: read, write или manage.
 
@@ -192,7 +192,7 @@ echo “New info” >/code/info.txt
 **Пример команды:**
 
 ```text
-neuro share storage:nero-assistant/ModelCode alice manage
+$ neuro share storage:nero-assistant/ModelCode alice manage
 ```
 
 Данная команда открывает доступ к `storage:nero-assistant/ModelCode` для пользователя `alice`.
@@ -200,10 +200,20 @@ neuro share storage:nero-assistant/ModelCode alice manage
 Вы можете просмотреть ресурсы, которые открыты для Вас другими пользователями, используя команду `neuro acl list`:
 
 ```text
-> neuro acl list
+$ neuro acl list
 ...
 storage://neuro-compute/johndoe/bone-age manage
 storage://neuro-compute/neuromation/midi-generator read
 storage://neuro-compute/neuromation/public read
+```
+
+## Операции с дисковым пространством на других кластерах
+
+Все операции, описанные выше, можно выполнять с дисковым пространством на других кластерах. 
+
+Например, чтобы скопировать локальный файл `parameters.txt` на дисковое пространство кластера `<имя-кластера>`, запустите:
+
+```text
+$ neuro cp parameters.txt storage:/<имя-кластера>/<имя-пользователя>/nero-assistant
 ```
 
