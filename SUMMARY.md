@@ -27,6 +27,7 @@
 * [Терминал](web/terminal.md)
 * [Jupyter Notebooks](web/jupyter-notebooks.md)
 * [JupyterLab](web/jupyterlab.md)
+* [Реестр Docker](web/docker-registry.md)
 * [FileBrowser](web/filebrowser.md)
 
 ## Инструменты <a id="toolbox"></a>
