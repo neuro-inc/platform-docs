@@ -18,13 +18,11 @@ To navigate to the list of available images, click the name of the registry on t
 
 ![](../.gitbook/assets/image%20%28131%29.png)
 
-### Checking the current versions of images
+### Checking the versions of available images
 
 In the list of available images, you can click the name of a specific image to view the list of its current versions:
 
 ![](../.gitbook/assets/image%20%28129%29.png)
-
-![](../.gitbook/assets/image%20%28124%29.png)
 
 ### Viewing detailed information about images
 
