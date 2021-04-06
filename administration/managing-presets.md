@@ -51,7 +51,7 @@ You can view your current cluster's resource presets in the **Information** and 
 
 ### Adding presets
 
-To add a new preset, click the Add icon in the Cluster management tab:
+To add a new preset, click the **Add** icon in the Cluster management tab:
 
 ![](../.gitbook/assets/image%20%28121%29.png)
 
