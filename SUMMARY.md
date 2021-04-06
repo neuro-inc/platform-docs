@@ -27,6 +27,7 @@
 * [Terminal](web/terminal.md)
 * [Jupyter Notebooks](web/jupyter-notebooks.md)
 * [JupyterLab](web/jupyterlab.md)
+* [Docker Registry](web/docker-registry.md)
 * [FileBrowser](web/filebrowser.md)
 
 ## Neu.ro Toolbox <a id="toolbox"></a>
