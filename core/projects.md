@@ -104,7 +104,7 @@ $ neuro-flow show <bake-id> <task-id>
 {% tab title="Web UI" %}
 You can view the list of your projects in the **Projects** tab:
 
-![](../.gitbook/assets/image%20%28140%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 Click on a project's name to view the list of its live jobs and batch bakes:
 
