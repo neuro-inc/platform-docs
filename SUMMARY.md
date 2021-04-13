@@ -21,6 +21,7 @@
 * [Кластеры \(Ресурсы\)](core/clusters-resources.md)
 * [Секреты](core/secrets.md)
 * [Роли](core/roles.md)
+* [Проекты](core/projects.md)
 
 ## Веб-интерфейс <a id="web"></a>
 
