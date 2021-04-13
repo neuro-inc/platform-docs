@@ -21,6 +21,7 @@
 * [Clusters \(Resources\)](core/clusters-resources.md)
 * [Secrets](core/secrets.md)
 * [Roles](core/roles.md)
+* [Projects](core/projects.md)
 
 ## Neu.ro Web UI <a id="web"></a>
 
