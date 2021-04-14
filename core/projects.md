@@ -76,6 +76,26 @@ You can monitor your projects both via the CLI and in the Web UI.
 
 {% tabs %}
 {% tab title="CLI" %}
+### Monitoring live jobs
+
+To see a list of live jobs on the current project, their IDs, statuses, and starting times, run the following command:
+
+```text
+$ neuro-flow ps
+
+  JOB          │ STATUS    │ RAW ID                                   │ WHEN
+╶──────────────┼───────────┼──────────────────────────────────────────┼────────╴
+  filebrowser  │ unknown   │ N/A                                      │ N/A
+  jupyter      │ unknown   │ N/A                                      │ N/A
+  multitrain   │ unknown   │ N/A                                      │ N/A
+  remote_debug │ cancelled │ job-5938269e-4a57-408c-af39-109970ac5c59 │ Dec 22
+  tensorboard  │ unknown   │ N/A                                      │ N/A
+  train        │ unknown   │ N/A                                      │ N/A
+               ╵           ╵                                       
+```
+
+### Monitoring bakes
+
 Use the following command to monitor your project's bakes:
 
 ```text
@@ -93,12 +113,6 @@ $ neuro-flow inspect <bake-id>
 This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format \(DOT or PDF\).  
   
 You can learn more about bake inspection [here](https://neu-ro.gitbook.io/neuro-flow/reference/cli#neuro-flow-inspect).
-
-The following command will show outputs and other details about a specific task:
-
-```text
-$ neuro-flow show <bake-id> <task-id>
-```
 {% endtab %}
 
 {% tab title="Web UI" %}
