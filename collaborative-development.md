@@ -204,6 +204,8 @@ Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can
 
 Please note that, if someone gets `write`-level access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the Git repository, you have to download them, commit, and push.
 
+You can instantly share a new job by adding `--share <username>` when running it.
+
 There is also a shortcut for sharing all your jobs \(past, current, and future ones alike\) with your teammates in the CLI:
 
 ```text
