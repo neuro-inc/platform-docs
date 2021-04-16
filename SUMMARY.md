@@ -42,6 +42,7 @@
 * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning-with-weights-and-biases.md)
 * [Hyperparameter Tuning with NNI](toolbox/using-nni-for-hyper-parameter-tuning.md)
 * [Serving Models with TorchServe](toolbox/serving-models-with-torch-serve.md)
+* [Deploying with Seldon](toolbox/deploying-with-seldon.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 
 ## ADMINISTRATION
