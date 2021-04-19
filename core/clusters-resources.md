@@ -6,10 +6,16 @@ You can use one cluster at a time and switch between clusters. This tutorial wil
 
 ### **How can I view information about my current cluster?**
 
-Each cluster comes with its own storage, registry, and resource presets. You can use the `neuro config show` command to view information about your current cluster.
+Each cluster comes with its own storage, registry, and resource presets. 
+
+You can view information about your current cluster both in the CLI and in the Web UI: 
+
+{% tabs %}
+{% tab title="CLI" %}
+You can use the `neuro config show` command to view the current cluster's name, API URL, docker registry URL, and the list of presets available for this cluster.
 
 ```text
-> neuro config show
+$ neuro config show
 User Configuration:
  User Name            john-doe
  Current Cluster      neuro-compute
@@ -26,15 +32,25 @@ Resource Presets:
  gpu-v100-small        5    95.0G        ×               ×           1 x nvidia-tesla-v100           10
  gpu-v100-small-p    5.0    95.0G        √               √           1 x nvidia-tesla-v100           10
 ```
+{% endtab %}
 
-This displays the configuration of the current cluster, such as the cluster's name, API URL, docker registry URL, and the list of presets available for the cluster.
+{% tab title="Web UI" %}
+You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
+
+![](../.gitbook/assets/image%20%28144%29.png)
+{% endtab %}
+{% endtabs %}
 
 ### **How can I view all my clusters and switch my current cluster?**
 
+You can view the list of available clusters and switch between them both in the CLI and in the Web UI:
+
+{% tabs %}
+{% tab title="CLI" %}
 You can use the ****`neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
 
 ```text
-> neuro config get-clusters
+$ neuro config get-clusters
 Fetch the list of available clusters...
 Available clusters:
 * Name: neuro-public
@@ -58,7 +74,7 @@ Available clusters:
 You can switch between clusters by using the `neuro config switch-cluster` command. When you run the command, you are prompted to enter the name of the cluster you want to switch to. The current cluster is switched after you provide the name.
 
 ```text
-> neuro config switch-cluster
+$ neuro config switch-cluster
 Fetch the list of available clusters...
 Available clusters:
 * Name: neuro-compute
@@ -86,6 +102,14 @@ Available clusters:
 Select cluster to switch [neuro-compute]: onprem-poc
 The current cluster is onprem-poc
 ```
+{% endtab %}
+
+{% tab title="Web UI" %}
+Use the **Cluster** drop-down list to view available clusters and switch between them:
+
+![](../.gitbook/assets/image%20%28145%29.png)
+{% endtab %}
+{% endtabs %}
 
 ### **How can I view my computation quota?**
 
