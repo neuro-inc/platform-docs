@@ -51,6 +51,7 @@
 * [Managing Users and Quotas](administration/managing-users-and-quotas.md)
 * [Creating Node Pools](administration/creating-node-pools.md)
 * [Managing Presets](administration/managing-presets.md)
+* [Reports](administration/reports.md)
 * [Architecture Overview](administration/architecture-overview.md)
 * [On-premise Installation Guide](administration/on-premise-installation-guide.md)
 * [Marketplace](administration/marketplace.md)
