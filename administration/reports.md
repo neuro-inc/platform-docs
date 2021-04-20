@@ -28,11 +28,11 @@ The **Nodes** section provides a quick overview of the cluster's nodes:
 
 Clicking a node's name in the **Nodes** section will make it active, allowing you to see detailed information about it in the sections below:
 
-![](../.gitbook/assets/image%20%28148%29.png)
+![](../.gitbook/assets/image%20%28163%29.png)
 
 You can expand any specific section by clicking it's name:
 
-![](../.gitbook/assets/image%20%28159%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
 ### Cluster jobs monitor
 
@@ -44,7 +44,7 @@ You can access it by clicking **CLUSTER JOBS MONITOR** in the **Information** ta
 
 The **Running Jobs** widget gives an overview of all currently running jobs, including the information about resource consumption:
 
-![](../.gitbook/assets/image%20%28149%29.png)
+![](../.gitbook/assets/image%20%28164%29.png)
 
 You can view the amount of jobs per user in the **Number of Jobs** and **Total Number of Jobs** widgets:
 
