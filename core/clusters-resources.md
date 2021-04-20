@@ -37,7 +37,7 @@ Resource Presets:
 {% tab title="Веб-интерфейс" %}
 Секция **Информация** содержит имя текущего кластера, список доступных пресетов, а также вашу роль на нём:
 
-![](../.gitbook/assets/image%20%28150%29.png)
+![](../.gitbook/assets/image%20%28145%29%20%281%29.png)
 {% endtab %}
 {% endtabs %}
 
@@ -105,7 +105,7 @@ The current cluster is onprem-poc
 {% tab title="Веб-интерфейс" %}
 Используйте выпадающий список **Кластер** для просмотра доступных кластеров и переключения между ними:
 
-![](../.gitbook/assets/image%20%28154%29.png)
+![](../.gitbook/assets/image%20%28146%29%20%281%29.png)
 {% endtab %}
 {% endtabs %}
 

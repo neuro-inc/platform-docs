@@ -51,6 +51,7 @@
 * [Управление пользователями и квотами](administration/managing-users-and-quotas.md)
 * [Создание пулов узлов](administration/creating-node-pools.md)
 * [Управление пресетами](administration/managing-presets.md)
+* [Отчёты](administration/reports.md)
 * [Обзор архитектуры](administration/architecture-overview.md)
 * [Инструкция по локальной установке](administration/on-premise-installation-guide.md)
 * [Витрина](administration/marketplace.md)
