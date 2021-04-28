@@ -2,8 +2,8 @@
 
 * [Введение](README.md)
 * [Начало работы](getting-started.md)
-* [Обучение Вашей первой модели](training-your-first-model.md)
-* [Запуск Вашего кода](running-your-code.md)
+* [Обучение вашей первой модели](training-your-first-model.md)
+* [Запуск вашего кода](running-your-code.md)
 * [Совместная разработка](collaborative-development.md)
 * [FAQ](faq.md)
 * [Справка Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
@@ -29,7 +29,7 @@
 * [Jupyter Notebooks](web/jupyter-notebooks.md)
 * [JupyterLab](web/jupyterlab.md)
 * [Реестр Docker](web/docker-registry.md)
-* [FileBrowser](web/filebrowser.md)
+* [Filebrowser](web/filebrowser.md)
 
 ## Инструменты <a id="toolbox"></a>
 
