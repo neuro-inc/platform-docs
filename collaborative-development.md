@@ -42,9 +42,9 @@ This will upload data from your local folder to the `cifar-10` folder on your pl
 {% endtab %}
 
 {% tab title="Web UI" %}
-To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage** widget:
+To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage browser** widget:
 
-![](.gitbook/assets/zobrazhennya%20%2831%29.png)
+![](.gitbook/assets/image%20%28216%29.png)
 
 After that, click **RUN** in the new window:
 
@@ -146,11 +146,11 @@ You can also check a particular job's status `neuro status <my-cool-job>`.
 {% endtab %}
 
 {% tab title="Web UI" %}
-You can view the IDs and names of all currently running jobs in the left part of the **Jobs** section. Make sure the the **Running only** checkbox is enabled.
-
-![](.gitbook/assets/image%20%2833%29.png)
+You can view the IDs and names of all currently running jobs in the left part of the **Jobs** section. Make sure the job filter is set to **Running**.
 
 Clicking the job ID will open the **Job Details** window.
+
+![](.gitbook/assets/image%20%28214%29.png)
 {% endtab %}
 {% endtabs %}
 
@@ -176,7 +176,7 @@ However, keep in mind that different runs of the same job can have the same name
 {% tab title="Web UI" %}
 To share a job, click **Share** in the drop-down list to its right:
 
-![](.gitbook/assets/image%20%2886%29.png)
+![](.gitbook/assets/image%20%28210%29.png)
 
 Next, enter the name of the user you want to share the job with and the access level. When this is done, click **SHARE**:
 

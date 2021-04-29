@@ -9,7 +9,7 @@
 
 If you're new to Neu.ro, here are two simple steps to get started:
 
-* [Sign up](https://neu.ro) and get 100 credits for free.
+* [Sign up](https://app.neu.ro/) and get 100 credits for free.
 * Follow our [Getting Started](getting-started.md) guide.
 
 ## Digging deeper

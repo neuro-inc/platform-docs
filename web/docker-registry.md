@@ -4,13 +4,13 @@ The Web UI allows you to view the platform's Docker image registry on the curren
 
 ### Opening the Docker registry browser
 
-To open the registry browser, first click **RUN A JOB** in the **Docker registry** widget on your dashboard:
+To open the registry browser, first click **RUN A JOB** in the **Container images browser** widget on your dashboard:
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28209%29.png)
 
 Next, click **RUN** in the **Docker registry** pop-up window:
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 ### Viewing available images
 

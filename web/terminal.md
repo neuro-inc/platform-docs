@@ -4,9 +4,11 @@
 
 Terminals let you work with Neu.ro without setting up the local environment. Terminals are jobs, and active terminals are listed on the Neu.ro dashboard.
 
-![Terminal widget](../.gitbook/assets/image%20%287%29.png)
+You can start a new terminal by clicking **RUN A JOB** in the **Terminal** widget:
 
-You can start a new terminal by clicking **RUN A JOB** in the Terminal widget. You can use the terminal to manage jobs and your docker environments. You should kill the terminal session whenever you're done working with it. All terminal sessions are automatically killed after 24 hours.
+![](../.gitbook/assets/image%20%28198%29.png)
+
+You can use the terminal to manage jobs and your docker environments. You should kill the terminal session whenever you're done working with it. All terminal sessions are automatically killed after 24 hours.
 
 When you start a terminal, the platform storage is attached as /var/storage. Your terminal session starts in that folder. All data created during a terminal session persists and can be used later. Also, terminal sessions do not provide version control unless you use basic authorization \(through username and password\), or out your access token on storage.
 

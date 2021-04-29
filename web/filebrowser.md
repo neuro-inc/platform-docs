@@ -1,21 +1,25 @@
-# FileBrowser
+# Filebrowser
 
 ## Introduction
 
-FileBrowser is an intuitive web interface used to manage files and folders. The FileBrowser is based on the popular file browsing interface available on [git](https://github.com/filebrowser/filebrowser). FileBrowser lets you:
+Filebrowser is an intuitive web interface used to manage files and folders. It's based on the popular file browsing interface available on [git](https://github.com/filebrowser/filebrowser). Filebrowser lets you:
 
 * [Create files and folders](filebrowser.md#creating-files-and-folders)
 * [Download files and folders](filebrowser.md#downloading-files-and-folders)
 
-To start the FileBrowser: 
+## Working with Filebrowser
 
-* Click **RUN A JOB** in the Storage widget on your `Neu.ro` dashboard.
+{% tabs %}
+{% tab title="Computers" %}
+To start Filebrowser: 
 
-![](../.gitbook/assets/image%20%2841%29.png)
+* Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
+
+![](../.gitbook/assets/image%20%28213%29.png)
 
 * Select a preset from the drop-down list and click **RUN**.
 
-![](../.gitbook/assets/image%20%2846%29.png)
+![](../.gitbook/assets/image%20%28208%29.png)
 
 FileBrowser instances are jobs that are listed in the Jobs tab with the tag `kind:web_widget target:filebrowser`. The platform storage is mounted at /var/storage which is also the root directory to let all files persist.
 
@@ -37,7 +41,7 @@ After you are done working with FileBrowser, ensure that you kill the job associ
 
 All FileBrowser jobs are automatically killed after 24 hours.
 
-## Creating Files and Folders
+### Creating Files and Folders
 
 You can create files and folders from the FileBrowser. While creating files, FileBrowser has a basic text editor that lets you add content to the file. However, it is recommended that you upload instead of creating them.
 
@@ -75,7 +79,7 @@ You can create files and folders from the FileBrowser. While creating files, Fil
 
 ![](../.gitbook/assets/FB_UpFile.JPG)
 
-## Downloading Files and Folders
+### Downloading Files and Folders
 
 You can download files, folders, or the entire storage on FileBrowser using the download button.
 
@@ -85,15 +89,15 @@ You can download files, folders, or the entire storage on FileBrowser using the 
 
 ![](../.gitbook/assets/FB_Download.jpg) 
 
-* If you're downloading a folder, select the format in which you want to download it. 
+* If you're downloading a folder, select the format in which you want to download it.
 
 ![](../.gitbook/assets/FB_DownFormat.jpg)
+{% endtab %}
 
-## Managing Files and Folders from Mobile Devices
-
+{% tab title="Mobile devices" %}
 Neu.ro provides seamless support to mobile devices. You can access neu.ro and the FileBrowser from any mobile device to view, upload, download, and manage files on your mobile device. For example, you may want to upload sample images for the [**Object Detection**](https://docs.neu.ro/cookbook/object-detection) ML recipe from your mobile device.
 
-**To download files to your mobile device:**
+### **Downloading files to your mobile device:**
 
 * Log in to `neu.ro`, and start a FileBrowser.
 
@@ -111,7 +115,7 @@ The file is downloaded to your mobile device.
 
 ![](../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
 
-**To upload files from your mobile device:**
+### **Uploading files from your mobile device:**
 
 * Log in to neu.ro, and start a FileBrowser.
 
@@ -128,4 +132,6 @@ The file is downloaded to your mobile device.
 The file is uploaded to your mobile device.
 
 ![](../.gitbook/assets/FBM_FileUploaded.jpg)
+{% endtab %}
+{% endtabs %}
 

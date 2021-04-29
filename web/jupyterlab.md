@@ -9,13 +9,13 @@ You can arrange multiple Notebooks, documents, and activities in a single interf
 * Log in to your Neu.ro dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
-![](../.gitbook/assets/zobrazhennya%20%2826%29%20%281%29.png)
+![](../.gitbook/assets/image%20%28204%29.png)
 
 * Select Jupyterlab in the top drop-down menu, a preset in the bottom drop-down menu, and click **RUN**.
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%28215%29.png)
 
-When you start a JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later. 
+When you start JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later. 
 
 All JupyterLab instances are jobs that run on GPU-small preset. You must kill the JupyterLab session whenever you are done; else, it consumes GPU hours. 
 
@@ -44,17 +44,21 @@ You can manage your JupyterLab instances from the Neu.ro dashboard. The JupyterL
 
 You can view the details of your JupyterLab instance by clicking on its job ID.
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image%20%28199%29.png)
 
-You can open an instance by clicking **HTTP ULR**:
+There are a few ways you can open an instance of JupyterLab:
 
-* In the Running Jobs section on your Dashboard.
+* Click **HTTP URL** in the **Running Jobs** section on your Dashboard.
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%28211%29.png)
 
-* In the drop-down menu for the corresponding job in the job list.
+* Clicking **OPEN RUNNING** in the **IDEs** widget on your Dashboard.
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%28197%29.png)
+
+* Clicking **HTTP URL** in the drop-down menu for the corresponding job in the job list.
+
+![](../.gitbook/assets/image%20%28195%29.png)
 
 You can kill the JupyterLab instance using the same drop-down menu. Note that closing the tab does not kill the instance.
 

@@ -15,13 +15,13 @@ Neu.ro lets you create multiple instances of Jupyter Notebooks.
 * Log in to your Neu.ro dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
-![The IDEs widget](../.gitbook/assets/zobrazhennya%20%2826%29.png)
+![](../.gitbook/assets/image%20%28194%29.png)
 
 * Select Jupyter Notebooks in the top drop-down menu, a preset in the bottom drop-down menu, and click **RUN**.
 
-![](../.gitbook/assets/zobrazhennya%20%283%29.png)
+![](../.gitbook/assets/image%20%28196%29.png)
 
-A new Jupyter Notebook instance is launched in a new tab.
+A new Jupyter Notebook instance will be launched in a new tab.
 
 ![](../.gitbook/assets/zobrazhennya%20%2828%29%20%281%29.png)
 
@@ -47,23 +47,27 @@ You can perform context-based actions on selected files, such as Shutdown or Dup
 
 ![Clusters tab](../.gitbook/assets/Jupyter_Clusters.jpg)
 
-## Manage your Jupyter Notebook Instances
+## Managing your Jupyter Notebook Instances
 
 You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their names start with _**jupyter-**_. 
 
-You can view the details of your Jupyter Notebook instances by clicking on the corresponding job ID.
+You can view the details of your Jupyter Notebook instances by clicking the corresponding job ID.
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%28203%29.png)
 
-You can open an instance by clicking **HTTP URL**:
+There are a few ways to open the running instance of Jupyter Notebooks:
 
-* In the Running Jobs section on your Dashboard.
+* Click **HTTP URL** in the **Running Jobs** section on your Dashboard.
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](../.gitbook/assets/image%20%28205%29.png)
 
-* In the drop-down menu for the corresponding job in the job list.
+* Click **OPEN RUNNING** in the **IDEs** widget on your Dashboard.
 
-![](../.gitbook/assets/image%20%28107%29.png)
+![](../.gitbook/assets/image%20%28201%29.png)
+
+* Click **HTTP URL** in the drop-down menu for the corresponding job in the job list.
+
+![](../.gitbook/assets/image%20%28202%29.png)
 
 You can kill the Jupyter Notebooks instance using the same drop-down menu. Note that closing the tab with the instance does not kill it.
 
