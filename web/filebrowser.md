@@ -15,11 +15,11 @@ To start Filebrowser:
 
 * Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28215%29.png)
 
 * Select a preset from the drop-down list and click **RUN**.
 
-![](../.gitbook/assets/image%20%28208%29.png)
+![](../.gitbook/assets/image%20%28210%29.png)
 
 FileBrowser instances are jobs that are listed in the Jobs tab with the tag `kind:web_widget target:filebrowser`. The platform storage is mounted at /var/storage which is also the root directory to let all files persist.
 

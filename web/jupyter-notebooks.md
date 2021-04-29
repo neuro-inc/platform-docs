@@ -15,11 +15,11 @@ Neu.ro lets you create multiple instances of Jupyter Notebooks.
 * Log in to your Neu.ro dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
-![](../.gitbook/assets/image%20%28194%29.png)
+![](../.gitbook/assets/image%20%28195%29.png)
 
 * Select Jupyter Notebooks in the top drop-down menu, a preset in the bottom drop-down menu, and click **RUN**.
 
-![](../.gitbook/assets/image%20%28196%29.png)
+![](../.gitbook/assets/image%20%28197%29.png)
 
 A new Jupyter Notebook instance will be launched in a new tab.
 
@@ -53,21 +53,21 @@ You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Ju
 
 You can view the details of your Jupyter Notebook instances by clicking the corresponding job ID.
 
-![](../.gitbook/assets/image%20%28203%29.png)
+![](../.gitbook/assets/image%20%28205%29.png)
 
 There are a few ways to open the running instance of Jupyter Notebooks:
 
 * Click **HTTP URL** in the **Running Jobs** section on your Dashboard.
 
-![](../.gitbook/assets/image%20%28205%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 * Click **OPEN RUNNING** in the **IDEs** widget on your Dashboard.
 
-![](../.gitbook/assets/image%20%28201%29.png)
+![](../.gitbook/assets/image%20%28203%29.png)
 
 * Click **HTTP URL** in the drop-down menu for the corresponding job in the job list.
 
-![](../.gitbook/assets/image%20%28202%29.png)
+![](../.gitbook/assets/image%20%28204%29.png)
 
 You can kill the Jupyter Notebooks instance using the same drop-down menu. Note that closing the tab with the instance does not kill it.
 

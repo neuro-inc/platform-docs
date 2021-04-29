@@ -44,7 +44,7 @@ This will upload data from your local folder to the `cifar-10` folder on your pl
 {% tab title="Web UI" %}
 To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage browser** widget:
 
-![](.gitbook/assets/image%20%28216%29.png)
+![](.gitbook/assets/image%20%28218%29.png)
 
 After that, click **RUN** in the new window:
 
@@ -150,7 +150,7 @@ You can view the IDs and names of all currently running jobs in the left part of
 
 Clicking the job ID will open the **Job Details** window.
 
-![](.gitbook/assets/image%20%28214%29.png)
+![](.gitbook/assets/image%20%28216%29.png)
 {% endtab %}
 {% endtabs %}
 
@@ -176,7 +176,7 @@ However, keep in mind that different runs of the same job can have the same name
 {% tab title="Web UI" %}
 To share a job, click **Share** in the drop-down list to its right:
 
-![](.gitbook/assets/image%20%28210%29.png)
+![](.gitbook/assets/image%20%28212%29.png)
 
 Next, enter the name of the user you want to share the job with and the access level. When this is done, click **SHARE**:
 
