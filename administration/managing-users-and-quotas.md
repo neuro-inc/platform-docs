@@ -110,51 +110,31 @@ You need to remove a user from a given cluster and to add them again with the de
 
 ### How to manage a user’s quota?
 
-The quota determines the number of GPU or CPU hours a user can use. By default, a user has 100 GPU hours and unlimited CPU hours.
+The quota determines the amount of GPU or CPU computation accessible to a user. By default, a user is given a quota of 100 credits.
 
 You can set a user’s quota by using one of these commands:
 
-* `neuro admin set-user-quota`: Use this to set the quota to a certain number of hours. You provide the quota in the number of hours such as 3.5h, 20h, 50h, and so on.
+* `neuro admin set-user-quota -c` : Use this to set the quota to a certain number of credits.
 
 ```text
-> neuro admin set-user-quota -g 50h default john
-New quotas for john on cluster default:
-GPU: 3000m
-CPU: infinity
+> neuro admin set-user-quota -c 200 default john
 ```
 
-* `neuro admin add-user-quota`: Use this to add a certain number of hours to the existing user quota.
+* `neuro admin add-user-quota`: Use this to add a certain number of credits to the existing user quota.
 
 ```text
-> neuro admin add-user-quota -g 50h default john
-New quotas for john on cluster default:
-GPU: 6000m
-CPU: infinity
-```
-
-Note, to enter the quota in minutes you must convert the quota to minutes. For example, to limit the quota hours to 30 minutes, you must enter the quota as `30m`:
-
-```text
-> neuro admin set-user-quota -g 30m default john
-New quotas for john on cluster default:
-GPU: 30m
-CPU: infinity
+> neuro admin add-user-quota -c 50 default john
 ```
 
 You can also set an unlimited quota for a user:
 
 ```text
 > neuro admin set-user-quota default john
-New quotas for john on cluster default:
-GPU: infinity
-CPU: infinity
 ```
 
 You can check the quota of any user of a cluster if you are a manager or an admin of the cluster.
 
 ```text
 > neuro config show-quota john
-GPU: spent: 91h 37m (quota: 200h 00m, left: 108h 23m)
-CPU: spent: 1036h 00m (quota: infinity)
 ```
 
