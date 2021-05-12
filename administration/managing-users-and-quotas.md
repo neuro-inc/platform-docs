@@ -160,51 +160,31 @@ Removed john from cluster default
 
 ### Как управлять квотой пользователя?
 
-Квота определяет количество часов GPU и CPU, доступные пользователю. По умолчанию пользователю доступно 100 часов GPU и неограниченное количество часов CPU.
+Квота определяет количество вычислений GPU и CPU, доступное пользователю. По умолчанию пользователю даётся квота в 100 кредитов.
 
 Вы можете изменить квоту пользователя, используя одну из следующих команд:
 
-* `neuro admin set-user-quota`: Эта команда устанавливает квоту в определённое количество часов. Вам требуется указать желаемое количество часов - например, 3.5h, 20h, 50h, и т.д.
+* `neuro admin set-user-quota`: Эта команда устанавливает квоту в определённое количество кредитов.
 
 ```text
-> neuro admin set-user-quota -g 50h default john
-New quotas for john on cluster default:
-GPU: 3000m
-CPU: infinity
+> neuro admin set-user-quota -c 200 default john
 ```
 
-* `neuro admin add-user-quota`: Эта команда добавляет указанное количество часов к текущему значению квоты пользователя.
+* `neuro admin add-user-quota`: Эта команда добавляет указанное количество кредитов к текущему значению квоты пользователя.
 
 ```text
-> neuro admin add-user-quota -g 50h default john
-New quotas for john on cluster default:
-GPU: 6000m
-CPU: infinity
-```
-
-Квоту также можно указывать в минутах. Например, для установки квоты в 30 минут, используйте `30m`:
-
-```text
-> neuro admin set-user-quota -g 30m default john
-New quotas for john on cluster default:
-GPU: 30m
-CPU: infinity
+> neuro admin add-user-quota -c 50 default john
 ```
 
 Вы также можете установить неограниченную квоту для пользователя:
 
 ```text
 > neuro admin set-user-quota default john
-New quotas for john on cluster default:
-GPU: infinity
-CPU: infinity
 ```
 
 Вы можете проверить квоту любого пользователя на кластере, если ваша роль на этом кластере - `manager` или `admin`.
 
 ```text
 > neuro config show-quota john
-GPU: spent: 91h 37m (quota: 200h 00m, left: 108h 23m)
-CPU: spent: 1036h 00m (quota: infinity)
 ```
 
