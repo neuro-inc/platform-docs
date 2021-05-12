@@ -138,3 +138,9 @@ You can check the quota of any user of a cluster if you are a manager or an admi
 > neuro config show-quota john
 ```
 
+To view your own quota, run:
+
+```text
+> neuro config show-quota
+```
+
