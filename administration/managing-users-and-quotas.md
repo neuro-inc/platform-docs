@@ -188,3 +188,9 @@ Removed john from cluster default
 > neuro config show-quota john
 ```
 
+Чтобы посмотреть свою квоту, выполните:
+
+```text
+> neuro config show-quota
+```
+
