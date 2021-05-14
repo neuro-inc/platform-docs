@@ -44,6 +44,7 @@
 * [Serving Models with TorchServe](toolbox/serving-models-with-torch-serve.md)
 * [Deploying with Seldon](toolbox/deploying-with-seldon.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
+* [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
 ## ADMINISTRATION
 
