@@ -44,6 +44,7 @@
 * [Развертывание моделей с TorchServe](toolbox/serving-models-with-torch-serve.md)
 * [Выкладка моделей с Seldon](toolbox/deploying-with-seldon.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
+* [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
 ## Администрирование <a id="administration"></a>
 
