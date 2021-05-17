@@ -19,7 +19,7 @@
 
 {% tabs %}
 {% tab title="Linux и Mac OS" %}
-Neu.ro CLI требует установленный Python 3 \(рекомендуется: 3.7, требуется: &gt;=3.6\). Мы советуем использовать [дистрибутив Anaconda Python 3.7](https://www.anaconda.com/distribution/).
+Neu.ro CLI требует установленный Python 3 \(рекомендуется: 3.8, требуется: &gt;=3.6\). Мы советуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/).
 
 ```text
 $ pip install -U neuro-cli neuro-extras neuro-flow
@@ -34,7 +34,7 @@ $ neuro config login-headless
 {% endtab %}
 
 {% tab title="Windows" %}
-Несмотря на то, что есть несколько вариантов запустить Neu.ro CLI в Windows, мы настоятельно рекомендуем использовать [дистрибутив Anaconda Python 3.7](https://www.anaconda.com/distribution/) с настройками по умолчанию.
+Несмотря на то, что есть несколько вариантов запустить Neu.ro CLI в Windows, мы настоятельно рекомендуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/) с настройками по умолчанию.
 
 После установки Anaconda дистрибутива Python 3.7 выполните следующие команды в Conda Prompt:
 
