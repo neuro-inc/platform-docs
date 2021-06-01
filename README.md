@@ -10,14 +10,14 @@
 If you're new to Neu.ro, here are two simple steps to get started:
 
 * [Sign up](https://app.neu.ro/) and get 100 credits for free.
-* Follow our [Getting Started](getting-started.md) guide.
+* Follow our [Getting Started](first-steps/getting-started.md) guide.
 
 ## Digging deeper
 
 For detailed information on specific use cases, feel free to refer to our ML development guides. For example:
 
-* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking-with-weights-and-biases.md)
-* [Remote debugging with PyCharm Professional](toolbox/remote-debugging-with-pycharm-professional.md)
+* [Experiment tracking with Weights and Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
+* [Remote debugging with PyCharm Professional](toolbox/remote-debugging/remote-debugging-with-pycharm-professional.md)
 
 Also, take a look at our [CLI reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [Python API reference](https://neuro-sdk.readthedocs.io/en/latest/).
 
