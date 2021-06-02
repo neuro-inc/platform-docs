@@ -167,9 +167,29 @@ There are a few key moments you should keep in mind while working with storage:
 * A volume’s data persists even after the job container is deleted. 
 * Volumes are a great way to push data to a container, pull data from a container, and share data between containers.
 
+### Mounting volumes
+
 To use a volume when running a job, you must mount the data from the storage to the container. It's also possible to mount multiple volumes to the container.
 
-To mount a container, use the `--volume` parameter in the `run` command. For example: 
+The general syntax for mounting a volume is this:
+
+```text
+--volume storage:/path/on/storage:/mount/path:[ro|rw]
+```
+
+The `storage:/path/on/storage` part specifies a path relative to the root folder on the platform storage. You can also specify a full URI including a cluster like this: `storage://cluster-name/path/on/storage`. 
+
+The `storage:/mount/path` specifies a path in the job container to which the volume should be mounted.
+
+The last part specifies the mode in which to mount the volume - either `:ro` \(read-only\) or `:rw` \(read-write\). If this parameter is not specified, read-write mode is used by default.
+
+{% hint style="info" %}
+You can only mount volumes into volumes if the target root volumes is in read-write mode.
+{% endhint %}
+
+### Example
+
+To mount a volume, use the `--volume` parameter in the `run` command. For example: 
 
 ```text
 $ neuro run --name job303 --volume storage:nero-assistant/ModelCode:/code:rw --preset cpu-small ubuntu cat code/train.py
