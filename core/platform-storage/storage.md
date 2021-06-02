@@ -179,7 +179,7 @@ The general syntax for mounting a volume is this:
 
 The `storage:/path/on/storage` part specifies a path relative to the root folder on the platform storage. You can also specify a full URI including a cluster like this: `storage://cluster-name/path/on/storage`. 
 
-The `storage:/mount/path` specifies a path in the job container to which the volume should be mounted.
+`storage:/mount/path` specifies a path in the job container to which the volume should be mounted.
 
 The last part specifies the mode in which to mount the volume - either `:ro` \(read-only\) or `:rw` \(read-write\). If this parameter is not specified, read-write mode is used by default.
 
