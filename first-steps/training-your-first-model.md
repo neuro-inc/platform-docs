@@ -70,34 +70,6 @@ $ cd neuro-tutorial
 $ curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
-* Добавим следующие строки в файл `requirements.txt` в корневой папке проекта:
-
-```text
-sphinx==1.8.2
-sphinx-gallery==0.3.1
-sphinx-copybutton
-tqdm
-numpy
-matplotlib
-torch
-torchtext
-PyHamcrest
-bs4
-
-# PyTorch Theme
--e git+git://github.com/pytorch/pytorch_sphinx_theme.git#egg=pytorch_sphinx_theme
-
-ipython
-
-# to run examples
-pandas
-# pillow >= 4.2 will throw error when trying to write mode RGBA as JPEG,
-# this is a workaround to the issue.
-pillow
-wget
-
-```
-
 * Загрузим [отсюда](https://download.pytorch.org/tutorial/data.zip) данные, распакуем ZIP содержимое и поместим его в папку `data`:
 
 ```text
