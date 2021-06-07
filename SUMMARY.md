@@ -11,6 +11,7 @@
   * [Справка Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
   * [Справка Neu.ro Flow](https://neu-ro.gitbook.io/neuro-flow/)
   * [Справка Neu.ro Extras](https://neu-ro.gitbook.io/neuro-extras-reference/)
+  * [Справка Neu.ro Actions](https://neu-ro.gitbook.io/neuro-actions-reference/)
   * [Справка Python API](https://neuro-sdk.readthedocs.io/en/latest/)
 
 ## Ядро <a id="core"></a>
