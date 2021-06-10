@@ -56,10 +56,10 @@
 * [Serving and Deploying](toolbox/serving-and-deploying/README.md)
   * [Deploying with Seldon](toolbox/serving-and-deploying/deploying-with-seldon.md)
   * [Serving Models with TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
-* [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
-* [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 * [Working With the Sandbox](toolbox/working-with-the-sandbox/README.md)
   * [Training Pipeline with Label Studio and Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
+* [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
+* [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
 ## ADMINISTRATION
 
