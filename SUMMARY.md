@@ -58,6 +58,7 @@
   * [Развертывание моделей с TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
+* [Обучение и обработка с помощью Label Studio и Pachyderm](toolbox/training-pipeline-with-label-studio-and-pachyderm.md)
 
 ## Администрирование <a id="administration"></a>
 
