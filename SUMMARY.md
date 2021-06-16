@@ -58,6 +58,7 @@
   * [Serving Models with TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
 * [Working With the Sandbox](toolbox/working-with-the-sandbox/README.md)
   * [Training Pipeline with Label Studio and Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
+  * [Testing Models with Locust](toolbox/working-with-the-sandbox/testing-models-with-locust.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
