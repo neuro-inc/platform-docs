@@ -24,7 +24,7 @@ Once the job is running, it will also generate a predictable URI which you can l
 
 You can specify how the Neu.ro platform will use Locust via the `.neuro/live.yml` file in the project's root folder.
 
-In the `jobs` section of the `live.yml` file, you will need to create a `locust` job description that will look like this:
+In the `jobs` section of the `live.yml` file, you will find a default `locust` job description that looks like this:
 
 ```text
 locust:
@@ -53,6 +53,8 @@ locust:
     cmd: |
       -f $[[ volumes.src.mount ]]/locust.py --web-port 8080 -H $[[ params.endpoint_url ]]
 ```
+
+You can always fine-tune the job depending on your needs by changing the various parameters such as `http_port` or `life_span` in the description.
 
 To run a `locust` job, execute the following:
 
