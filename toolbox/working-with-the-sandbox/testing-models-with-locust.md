@@ -54,7 +54,7 @@ locust:
       -f $[[ volumes.src.mount ]]/locust.py --web-port 8080 -H $[[ params.endpoint_url ]]
 ```
 
-You can always fine-tune the job depending on your needs by changing the various parameters such as `http_port` or `life_span` in the description.
+You can always fine-tune the job depending on your needs by changing the values of various parameters such as `http_port` or `life_span` in the description.
 
 To run a `locust` job, execute the following:
 
