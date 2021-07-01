@@ -6,13 +6,13 @@ description: >-
 
 # Настройка гиперпараметров с NNI
 
-### Введение
+## Введение
 
 В данном руководстве Вы узнаете, как использовать [NNI](https://github.com/microsoft/nni) \(open-source инструмент от Microsoft\) для настройки гиперпараметров на платформе. Вы создадите новый проект, интегрируете его с NNI и, чтобы ускорить поиск, запустите несколько процессов по настройке.
 
 Перед тем, как приступать к следующим шагам, убедитесь, что у Вас установлен [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli).
 
-### Создание проекта
+## Создание проекта
 
 Для создания проекта, выполните команду:
 
@@ -21,7 +21,7 @@ neuro project init
 cd <project-slug>
 ```
 
-### Подготовка кода для эксперимента и интеграция с платформой
+## Подготовка кода для эксперимента и интеграция с платформой
 
 Мы собираемся использовать пример кода [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) с набором данных MNIST. Поместите файл [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) в папку `modules`, а файл [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) в папку `config`.
 
@@ -81,7 +81,7 @@ neuro-flow build myimage
 
 После завершения работы команды `neuro-flow build myimage` проект готов к запуску на платформе.
 
-### Запуск заданий по настройке
+## Запуск заданий по настройке
 
 Осталось выполнить команду
 

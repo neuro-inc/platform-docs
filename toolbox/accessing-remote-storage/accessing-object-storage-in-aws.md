@@ -1,12 +1,12 @@
 # Доступ к Object Storage на AWS
 
-### Введение
+## Введение
 
 В данном руководстве показано, как получить доступ к AWS S3 из платформы. Вы создадите новый проект, создадите S3 bucket и сделаете его доступным из заданий платформы.
 
-Убедитесь, что у Вас установлен [Neu.ro CLI]().
+Убедитесь, что у Вас установлен [Neu.ro CLI](accessing-object-storage-in-aws.md).
 
-### Создание проекта
+## Создание проекта
 
 Для создания проекта выполните команду:
 
@@ -16,7 +16,7 @@ cd <project-slug>
 neuro-flow build myimage
 ```
 
-### Создание пользователя AWS IAM
+## Создание пользователя AWS IAM
 
 Следуйте инструкциям [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
 
@@ -60,7 +60,7 @@ jobs:
      additional_env_vars: '{"AWS_CONFIG_FILE": "/var/secrets/aws.txt"}'
 ```
 
-### Создание bucket и предоставление доступа
+## Создание bucket и предоставление доступа
 
 Теперь создайте новый S3 bucket. Помните: имена bucket глобально уникальны.
 
@@ -69,7 +69,7 @@ BUCKET_NAME="my-neuro-bucket-42"
 aws s3 mb s3://$BUCKET_NAME/
 ```
 
-### Тестирование
+## Тестирование
 
 Создайте файл и загрузите его в S3 Bucket:
 

@@ -2,7 +2,7 @@
 
 ## Введение
 
-В этом руководстве показано, как обучить и выложить [MNIST](http://yann.lecun.com/exdb/mnist/)-модель с помощью [Seldon](https://www.seldon.io/) - здесь мы основываемся на [базовом примере PyTorch](https://github.com/pytorch/examples/tree/master/mnist). 
+В этом руководстве показано, как обучить и выложить [MNIST](http://yann.lecun.com/exdb/mnist/)-модель с помощью [Seldon](https://www.seldon.io/) - здесь мы основываемся на [базовом примере PyTorch](https://github.com/pytorch/examples/tree/master/mnist).
 
 Мы выполним следующие шаги:
 
@@ -58,7 +58,7 @@ COPY main.py .
 CMD bash -c "python main.py --save-model; mv mnist_cnn.pt $MODEL_PATH"
 ```
 
-Как можно увидеть, CMD выполняет две операции: 
+Как можно увидеть, CMD выполняет две операции:
 
 1. Обучает модель и сохраняет ее по стандартному пути
 2. Копирует сохранённую модель в примонтированный том дискового пространства
