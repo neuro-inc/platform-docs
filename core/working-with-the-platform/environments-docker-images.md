@@ -10,7 +10,7 @@ There are several ways to add custom images to the platform registries. These im
 
 In these tutorials, we will use a sample project - Nero-Assistant - to understand the available options. Before you can work in an environment, make sure that you have initiated a new project \(see the [Getting Started](../../first-steps/getting-started.md) guide for details\).
 
-### **How do I run a job in a container from a public registry image?**
+## **How do I run a job in a container from a public registry image?**
 
 You can run jobs from images both on the public Docker registry and on the platform registry. You can use the `neuro run` command to run a job:
 
@@ -47,7 +47,7 @@ For more information, see the [CLI Reference for Run](https://neu-ro.gitbook.io/
 
 You can view the list of jobs currently running using the command: `neuro ps`. This also lists the ID of the jobs. You can terminate a job using the command: `neuro kill <job ID>`.
 
-### **How can I view all images that I have access to?**
+## **How can I view all images that I have access to?**
 
 Neu.ro lets you create multiple images, and you can view information about the images that you own or have access to from the command prompt. To view all images, you must run the following command:
 
@@ -74,7 +74,7 @@ image://neuro-compute/clarytyllc/neuromation-nero-assistant:v1.5.1
 
 Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](environments-docker-images.md#how-can-i-upload-a-custom-image-to-the-platform-registry).
 
-### **How can I upload a custom image to the platform registry?**
+## **How can I upload a custom image to the platform registry?**
 
 Neu.ro provides a base public Docker image based on deepo. You can customize the base image by installing or configuring packages, or updating settings by providing the docker engine instructions. You can pass instructions for image customization using Dockerfile.
 
@@ -110,7 +110,7 @@ image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
 ```
 
-### **How can I save a running job as a custom image?**
+## **How can I save a running job as a custom image?**
 
 There are several ways in which you can create custom images. One of them is creating a custom image from a running job. Before you save a job, you must know its ID or name.
 
@@ -142,7 +142,7 @@ image://neuro-compute/clarytyllc/ubuntu-custom:latest
 
 We have saved the job **job363** as a custom image **ubuntu-custom**.
 
-### **How can I use an image from a platform registry?**
+## **How can I use an image from a platform registry?**
 
 Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments \(or containers\) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and the amount of memory the job will use.
 
@@ -181,7 +181,7 @@ Hello World
 
 We have run a named job **job363** using a small CPU resource preset on the patched ubuntu image.
 
-### **How can I download an image from the platform registry?**
+## **How can I download an image from the platform registry?**
 
 Neu.ro lets you pull images from the platform registry. You can specify tags of the images to pull a certain tag; else, the image with the latest tag is pulled.
 
@@ -208,7 +208,7 @@ To pull an image from the platform, run this command:
 > 8d6a6e6d0908: Download complete
 ```
 
-### How can I share custom images with my teammates?
+## How can I share custom images with my teammates?
 
 Neu.ro lets you share your custom image with your team without having to upload the image to a platform. You could opt to push your custom image to the public registry if you want to share your custom image with a large audience.
 
@@ -226,9 +226,9 @@ The permissions you may give the user for the shared image:
 
 `neuro share image://neuro-compute/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
 
-### Operations with images from other clusters
+## Operations with images from other clusters
 
-All operations that were described earlier can be performed with images from other clusters. 
+All operations that were described earlier can be performed with images from other clusters.
 
 For example, to push a local `neuromation-nero-assistant` image to the platform registry on the `<cluster-name>` cluster, run:
 

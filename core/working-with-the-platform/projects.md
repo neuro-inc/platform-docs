@@ -2,7 +2,7 @@
 
 ## What are projects?
 
-Projects provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment. 
+Projects provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment.
 
 So, once you start working with the Neu.ro platform, we highly recommend that you create a new project to ensure that the most important functionality will be accessible right away.
 
@@ -52,11 +52,11 @@ The internal ID of a project used by Neu.ro Flow is generated automatically base
 
 ## Project modes
 
-Neu.ro Flow provides two modes of automating and simplifying your work process while working in a project - **live** mode and **batch** mode. 
+Neu.ro Flow provides two modes of automating and simplifying your work process while working in a project - **live** mode and **batch** mode.
 
 ### Live mode
 
-Live mode allows to execute sets of job definitions that create independent jobs in the Neu.ro cloud. 
+Live mode allows to execute sets of job definitions that create independent jobs in the Neu.ro cloud.
 
 A job or set of jobs executed in live mode is called a **live job**.
 
@@ -64,7 +64,7 @@ You can learn more about live jobs in the [Neu.ro Flow reference](https://neu-ro
 
 ### Batch mode
 
-Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied. 
+Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied.
 
 A single execution of a set of jobs in batch mode is called a **bake**.
 
@@ -91,7 +91,7 @@ $ neuro-flow ps
   remote_debug │ cancelled │ job-5938269e-4a57-408c-af39-109970ac5c59 │ Dec 22
   tensorboard  │ unknown   │ N/A                                      │ N/A
   train        │ unknown   │ N/A                                      │ N/A
-               ╵           ╵                                       
+               ╵           ╵
 ```
 
 ### Monitoring bakes
@@ -110,8 +110,8 @@ To see detailed info about a specific bake, use:
 $ neuro-flow inspect <bake-id>
 ```
 
-This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format \(DOT or PDF\).  
-  
+This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format \(DOT or PDF\).
+
 You can learn more about bake inspection [here](https://neu-ro.gitbook.io/neuro-flow/reference/cli#neuro-flow-inspect).
 {% endtab %}
 

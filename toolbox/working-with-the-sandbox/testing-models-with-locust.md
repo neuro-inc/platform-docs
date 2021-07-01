@@ -14,7 +14,7 @@ $ neuro-flow run deploy_inference_platform --param run_id <run-id>
 
 You can check the required run ID in MLflow:
 
-![](../../.gitbook/assets/image%20%28221%29.png)
+![](../../.gitbook/assets/image%20%28224%29.png)
 
 By running the `deploy_inference_platform` job, you gain access to the target model's binary and deploy it to the Neu.ro cluster.
 
@@ -64,13 +64,13 @@ $ neuro-flow run locust
 
 This job will use a `locust.py` file specified in the `cmd` section of the job definition. This file will tell Locust what specific tests to run and how to run them. You can [learn more about writing Locust files here](https://docs.locust.io/en/stable/writing-a-locustfile.html).
 
-Once the Locust job is up and running, you will need to open Locust in your browser by using the predictable URI generated in the previous steps. 
+Once the Locust job is up and running, you will need to open Locust in your browser by using the predictable URI generated in the previous steps.
 
 Next, enter the locust URL of the job on the platform in the **Host** field and click **Start swarming**:
 
-![](../../.gitbook/assets/image%20%28220%29.png)
+![](../../.gitbook/assets/image%20%28223%29.png)
 
 When this is done, you can modify the amount of simulated users and the spawn rate and monitor the testing process through various charts:
 
-![](../../.gitbook/assets/image%20%28222%29.png)
+![](../../.gitbook/assets/image%20%28225%29.png)
 

@@ -1,12 +1,12 @@
 # Accessing Object Storage in AWS
 
-### Introduction
+## Introduction
 
 This tutorial demonstrates how to access your AWS S3 from Neuro Platform. You will set up a new Neuro project, create an S3 bucket, and make it is accessible from Neuro Platform jobs.
 
 Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
 
-### Creating Neuro Project
+## Creating Neuro Project
 
 To create a new Neuro project, run:
 
@@ -16,7 +16,7 @@ cd <project-slug>
 neuro-flow build myimage
 ```
 
-### Creating an AWS IAM User
+## Creating an AWS IAM User
 
 Follow [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
 
@@ -60,7 +60,7 @@ jobs:
      additional_env_vars: '{"AWS_CONFIG_FILE": "/var/secrets/aws.txt"}'
 ```
 
-### Creating a Bucket and Granting Access
+## Creating a Bucket and Granting Access
 
 Now, create a new S3 bucket. Remember: bucket names are globally unique.
 
@@ -69,7 +69,7 @@ BUCKET_NAME="my-neuro-bucket-42"
 aws s3 mb s3://$BUCKET_NAME/
 ```
 
-### Testing
+## Testing
 
 Create a file and upload it into S3 Bucket:
 

@@ -4,11 +4,11 @@ Clusters are collections of resources - compute, storage, and the registry. When
 
 You can use one cluster at a time and switch between clusters. This tutorial will helps you understand how you can manage resources.
 
-### **How can I view information about my current cluster?**
+## **How can I view information about my current cluster?**
 
-Each cluster comes with its own storage, registry, and resource presets. 
+Each cluster comes with its own storage, registry, and resource presets.
 
-You can view information about your current cluster both in the CLI and in the Web UI: 
+You can view information about your current cluster both in the CLI and in the Web UI:
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -41,13 +41,13 @@ You can view the current cluster's name, the list of available presets, as well 
 {% endtab %}
 {% endtabs %}
 
-### **How can I view all my clusters and switch my current cluster?**
+## **How can I view all my clusters and switch my current cluster?**
 
 You can view the list of available clusters and switch between them both in the CLI and in the Web UI:
 
 {% tabs %}
 {% tab title="CLI" %}
-You can use the ****`neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
+You can use the _\*\*_`neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
 
 ```text
 $ neuro config get-clusters
@@ -111,21 +111,21 @@ Use the **Cluster** drop-down list to view available clusters and switch between
 {% endtab %}
 {% endtabs %}
 
-### **How can I view my computation quota?**
+## **How can I view my computation quota?**
 
-You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job. 
+You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job.
 
 You can view the remaining computation quota on your Web UI dashboard.
 
 You can also use the `neuro config show-quota` command to view the amount of computation quota left.
 
-### How can I request for more computation quota?
+## How can I request for more computation quota?
 
 You can top up your computation quota by clicking the **TOP UP NOW** button on the Web UI dashboard.
 
 You can also write to [team@neu.ro](mailto:team@neu.ro) to learn about latest discounts and promotions, and then request the top up.
 
-### How can I create a new cluster? 
+## How can I create a new cluster?
 
-Neu.ro lets you create new clusters for better management and orchestration of resources. However, you must remember that the new cluster would require more computation quota. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at  [team@neu.ro](mailto:team@neu.ro).
+Neu.ro lets you create new clusters for better management and orchestration of resources. However, you must remember that the new cluster would require more computation quota. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at [team@neu.ro](mailto:team@neu.ro).
 

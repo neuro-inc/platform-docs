@@ -1,10 +1,10 @@
 # Experiment Tracking with Weights & Biases
 
-### Introduction
+## Introduction
 
 In this tutorial, we show how to set up experiment tracking via Weights & Biases on Neuro Platform using Neuro Project Template.
 
-### Creating Neuro Project
+## Creating Neuro Project
 
 To create a new Neuro project, run:
 
@@ -14,7 +14,7 @@ To create a new Neuro project, run:
 > neuro-flow build myimage
 ```
 
-### Connecting Weights & Biases
+## Connecting Weights & Biases
 
 Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
@@ -47,7 +47,7 @@ jobs:
 
 Now, you can start using W&B API in your code.
 
-### Testing
+## Testing
 
 Change default preset to `cpu-small` in `.neuro/live.yaml`to avoid consuming GPU for this test:
 

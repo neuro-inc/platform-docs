@@ -23,7 +23,7 @@ Neu.ro lets you create multiple instances of Jupyter Notebooks.
 
 A new Jupyter Notebook instance will be launched in a new tab.
 
-![](../../.gitbook/assets/zobrazhennya%20%2828%29%20%281%29.png)
+![](../../.gitbook/assets/zobrazhennya%20%2828%29.png)
 
 The new instance is a default Readme notebook that provides some information on how to start working with Jupyter Notebooks. Every new instance, including this one, will be a powerful event-driven Jupyter notebook that saves every change you make. All new instances run on [NVIDIA](https://www.nvidia.com/en-gb/data-center/tesla-k80/)[Tesla K80](https://www.nvidia.com/en-gb/data-center/tesla-k80/) video card that guarantees great performance. The notebook kernel includes a list of installed pip packages such as [TensorFlow](https://www.tensorflow.org/) 2.0 and [PyTorch](https://pytorch.org/) 1.2. You can view the complete list of installed packages by running the `pip list` command in the terminal.
 
@@ -41,7 +41,7 @@ You can perform context-based actions on selected files, such as Shutdown or Dup
 
 * **Running:** Lists terminals and Python notebooks updated with the latest status. You can also shut down terminals and notebooks from this tab.
 
-![Running tab](../../.gitbook/assets/image%20%2847%29.png)
+![Running tab](../../.gitbook/assets/image%20%2847%29%20%281%29.png)
 
 * **Clusters:** Lets you manage the notebook clusters that you have access to. Currently, clusters are provided by [IPython parallel](https://github.com/ipython/ipyparallel).
 
@@ -49,7 +49,7 @@ You can perform context-based actions on selected files, such as Shutdown or Dup
 
 ## Managing your Jupyter Notebook Instances
 
-You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their names start with _**jupyter-**_. 
+You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their names start with _**jupyter-**_.
 
 You can view the details of your Jupyter Notebook instances by clicking the corresponding job ID.
 
@@ -73,7 +73,7 @@ You can kill the Jupyter Notebooks instance using the same drop-down menu. Note 
 
 Alternatively, you can kill the instance by clicking the Quit button within the instance.
 
-![](../../.gitbook/assets/image%20%2820%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 An instance is automatically terminated 24 hours after initiation.
 

@@ -2,7 +2,7 @@
 
 Neu.ro is an MLOps PaaS that facilitates and supports the full cycle of ML operations such as data processing, model development, training, and deployment.
 
-### High-level Architecture
+## High-level Architecture
 
 Neu.ro consists of multiple logical parts:
 
@@ -11,7 +11,7 @@ Neu.ro consists of multiple logical parts:
   * **The Web Application**;
 * A **Compute Cluster**, a first-class citizen within the Control Plane, dedicated to running ML workloads;
 
-### Control Plane
+## Control Plane
 
 The Control Plane is the brains of the platform. Its responsibilities include, but are not limited to:
 
@@ -33,7 +33,7 @@ The Control Plane requires:
 * PostgreSQL for storing job metadata, user metadata, and roles;
 * Redis for storing the ACLs of roles and queueing user notifications;
 
-#### Components
+### Components
 
 **Auth API**
 
@@ -41,7 +41,7 @@ A typical extensible API for managing and enforcing hierarchical access control 
 
 **Admin API**
 
-A high-level semantic API on top of the Auth API for managing users, clusters they have access to, roles they take in these clusters, their quotas within the clusters, etc. 
+A high-level semantic API on top of the Auth API for managing users, clusters they have access to, roles they take in these clusters, their quotas within the clusters, etc.
 
 **Config API**
 
@@ -61,10 +61,9 @@ An API for sending email/Slack notifications for events such as job status trans
 
 **Apps API**
 
-An API for running a curated set of applications from within the Web UI.  
+An API for running a curated set of applications from within the Web UI.
 
-
-![](../../.gitbook/assets/neu.ro-architecture-overview%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/neu.ro-architecture-overview%20%281%29.png)
 
 **Web UI**
 
@@ -80,17 +79,15 @@ An engine for running computational workflows based on Neuro CLI.
 
 **Neuro-Extras CLI**
 
-A collection of useful tools based on Neuro CLI, e.g., transfer of storage and container images between clusters.  
-
+A collection of useful tools based on Neuro CLI, e.g., transfer of storage and container images between clusters.
 
 **Web Documentation**
 
-An up-to-date user documentation for the Web UI and CLIs with usage examples and other useful information.  
+An up-to-date user documentation for the Web UI and CLIs with usage examples and other useful information.
 
+![](../../.gitbook/assets/neu.ro-architecture-overview-2%20%281%29%20%281%29.png)
 
-![](../../.gitbook/assets/neu.ro-architecture-overview-2%20%281%29.png)
-
-### Compute Cluster
+## Compute Cluster
 
 A typical compute cluster requires:
 
@@ -100,7 +97,7 @@ A typical compute cluster requires:
 * A low-latency high-throughput network file storage accessible via NFS/SMB;
 * A cost-efficient object storage for archival purposes;
 
-#### Components
+### Components
 
 **Storage API**
 
@@ -128,8 +125,7 @@ An API for managing persistent block storage.
 
 **Reports**
 
-A service for retrieving historical telemetry of compute workloads with respect to user permissions.  
+A service for retrieving historical telemetry of compute workloads with respect to user permissions.
 
-
-![](../../.gitbook/assets/neu.ro-architecture-overview-3%20%281%29.png)
+![](../../.gitbook/assets/neu.ro-architecture-overview-3%20%281%29%20%281%29.png)
 

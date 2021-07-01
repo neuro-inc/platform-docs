@@ -4,9 +4,9 @@ Neu.ro allows you to run model training in parallel with different hyperparamete
 
 To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb) in which we apply hyperparemeter tuning with W&B to an image classification task.
 
-### Creating a Neu.ro Project
+## Creating a Neu.ro Project
 
-The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps. 
+The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps.
 
 First, [Sign up](https://neu.ro/) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
 
@@ -32,7 +32,7 @@ Then, change the working directory:
 > cd hyperparameter-tuning-test
 ```
 
-### Connecting Weights & Biases
+## Connecting Weights & Biases
 
 Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
@@ -48,7 +48,7 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 Feel free to refer to the [W&B documentation](https://docs.wandb.com/library/api/examples) and [W&B example projects](https://github.com/wandb/examples) for instructions on how to use Weights & Biases in your code.
 
-### Using Weights & Biases for Hyperparameter Tuning
+## Using Weights & Biases for Hyperparameter Tuning
 
 If you have completed the previous steps, W&B is ready to use. To run hyperparameter tuning for the model, you need to:
 
@@ -91,7 +91,7 @@ parameters:
 
 The name of the file `wandb-sweep.yaml` and the path to it can also be modified in `.neuro/hypertrain.yml` \(look for `WANDB_SWEEPS_FILE=...`within the `start_sweep` task definition\).
 
-### Hyperparameter Tuning
+## Hyperparameter Tuning
 
 Now that you have set up both Neu.ro and W&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
 

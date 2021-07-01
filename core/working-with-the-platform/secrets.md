@@ -2,9 +2,9 @@
 
 Secrets provide a way to store confidential data on Neu.ro, be it passwords, access keys, tokens, etc. You can use secrets in jobs to securely access some external services. Neu.ro secrets are based [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/). You can manage secrets both through Neu.ro CLI and the Web UI.
 
-### Creating secrets
+## Creating secrets
 
-#### Creating secrets through the CLI
+### Creating secrets through the CLI
 
 To create a secret from the Neu.ro CLI, use the `neuro secret add` command:
 
@@ -20,7 +20,7 @@ You can also point to an existing file with the required value when creating a s
 > neuro secret add secret-password @path/to/secret/file.txt
 ```
 
-#### Creating secrets through the Web UI
+### Creating secrets through the Web UI
 
 To create a secret from the Neu.ro Web UI:
 
@@ -41,11 +41,11 @@ The new secret will be added to the list of your secrets:
 
 ![](../../.gitbook/assets/image%20%2875%29.png)
 
-### Using secrets
+## Using secrets
 
 There are two ways to use secrets in jobs - as a file and as an environment variable. Let's look how to do this in the CLI and in the Web UI.
 
-#### Using secrets through the CLI
+### Using secrets through the CLI
 
 To use a secret as a file in your job, provide its location in a `--volume` parameter when running a job. For example:
 
@@ -61,7 +61,7 @@ To use a secret as an environment variable, declare it through the `--env` param
 
 Now, depending on which method you chose, you can access the secret from within your job by either referring to its location `/var/secrets/secret-password.txt` or reading the value of the `mypass` environment variable.
 
-#### Using secrets through the Web UI
+### Using secrets through the Web UI
 
 To use a secret through the Web UI:
 
@@ -72,7 +72,7 @@ To use a secret through the Web UI:
 
 * In the newly-opened window, click **ADD NEW SECRET**:
 
-![](../../.gitbook/assets/image%20%2879%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
 * Select the type of secret you want to use and the secret's key from the drop-down list. Then, depending on the type of secret you selected, enter the name of the environment variable or the path to the secret's file:
 
@@ -80,7 +80,7 @@ To use a secret through the Web UI:
 
 * When ready, click **RUN.** You will be able to use the secret within a job run in this way.
 
-### Sharing secrets
+## Sharing secrets
 
 You can share secrets through the CLI by using the `neuro acl grant` command. The syntax is `neuro acl grant secret:<key> <username> <access-level>`. For example:
 
@@ -102,9 +102,9 @@ Keep in mind that, at this point in time, secret sharing is implemented in such 
 secret://neuro-compute/alice/secret-password
 ```
 
-### Deleting secrets
+## Deleting secrets
 
-#### Deleting secrets through the CLI
+### Deleting secrets through the CLI
 
 To delete a secret, run the `neuro secret rm` command:
 
@@ -124,7 +124,7 @@ To check that the secret was removed, run the `neuro secret ls` command to list 
   wandb-token
 ```
 
-#### Deleting secrets through the Web UI
+### Deleting secrets through the Web UI
 
 * Go to the **Secrets** tab.
 * Click the **trash bin** icon to the right of the secret you want to delete:

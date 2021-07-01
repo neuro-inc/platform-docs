@@ -13,7 +13,7 @@ $ pip install -U neuro-flow
 
 ## Configuration
 
-As an example we'll use the GitHub [repo](https://github.com/songyouwei/ABSA-PyTorch) that contains PyTorch implementations for Aspect-Based Sentiment Analysis models \(see [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted) for more details\). 
+As an example we'll use the GitHub [repo](https://github.com/songyouwei/ABSA-PyTorch) that contains PyTorch implementations for Aspect-Based Sentiment Analysis models \(see [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted) for more details\).
 
 First, let's clone the repo and navigate to the created folder:
 
@@ -95,5 +95,5 @@ $ neuro-flow build pytorch
 $ neuro-flow run train
 ```
 
-Please run `neuro-flow --help` to get more information about available commands. 
+Please run `neuro-flow --help` to get more information about available commands.
 

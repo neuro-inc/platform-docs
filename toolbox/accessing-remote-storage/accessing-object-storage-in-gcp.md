@@ -1,14 +1,12 @@
 # Accessing Object Storage in GCP
 
-### 
-
-### Introduction
+## Introduction
 
 This tutorial demonstrates how to access your Google Cloud Storage from the Neuro platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket that's accessible from a job on the Neuro platform.
 
 Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
 
-### Creating Neuro and GCP Projects
+## Creating Neuro and GCP Projects
 
 To create a new Neuro project, run:
 
@@ -28,7 +26,7 @@ gcloud config set project $PROJECT_ID
 
 Make sure to [set a billing account](https://cloud.google.com/billing/docs/how-to/modify-project) for your GCP project. See [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects) for details.
 
-### Creating a Service Account and Uploading an Account Key
+## Creating a Service Account and Uploading an Account Key
 
 First, create a service account for the job:
 
@@ -66,7 +64,7 @@ jobs:
      additional_env_vars: '{"GOOGLE_APPLICATION_CREDENTIALS": "/var/secrets/gcp.json"}'
 ```
 
-### Creating a Bucket and Granting Access
+## Creating a Bucket and Granting Access
 
 Now, create a new bucket. Remember: bucket names are globally unique \(see more information on [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
 
@@ -87,7 +85,7 @@ PERM="storage.legacyBucketOwner"
 gsutil iam ch serviceAccount:$SA_NAME@$PROJECT_ID.iam.gserviceaccount.com:roles/$PERM gs://$BUCKET_NAME
 ```
 
-### Testing
+## Testing
 
 Create a file and upload it into Google Cloud Storage Bucket:
 

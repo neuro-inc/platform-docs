@@ -10,15 +10,15 @@ In GitHub, this is done via [GitHub Actions](https://github.com/features/actions
 
 ## Why is CI/CD difficult for ML projects
 
-Machine learning projects can suffer when it comes to the CI/CD area. 
+Machine learning projects can suffer when it comes to the CI/CD area.
 
-Even though GitHub Actions allow you to execute data workflows on various git events such as push or issue creation, the internal machines that GitHub provides for running these workflows have too little storage capacity for a standard ML project and the objects it operates. 
+Even though GitHub Actions allow you to execute data workflows on various git events such as push or issue creation, the internal machines that GitHub provides for running these workflows have too little storage capacity for a standard ML project and the objects it operates.
 
 So it can be difficult and time-consuming to run CI tests and deploy ML projects using pure GitHub actions.
 
 ## How Neu.ro helps with CI/CD for ML
 
-This can be fixed with Neu.ro Flow. 
+This can be fixed with Neu.ro Flow.
 
 You can write GitHub Actions scripts that will install Neu.ro on the GitHub's internal machines and run all the necessary tests and deployment processes on the remote Neu.ro machines using Neu.ro Flow.
 
@@ -32,7 +32,7 @@ run: |
     pip install -U neuro-cli neuro-extras neuro-flow
     neuro config login-with-token ${{ secrets.NEURO-TOKEN}}
     neuro config switch-cluster neuro-compute
-    
+
 name: test
 run: |
     neuro-flow run test

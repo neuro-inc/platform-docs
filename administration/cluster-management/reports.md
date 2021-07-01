@@ -22,21 +22,21 @@ You can access it by clicking **CLUSTER NODES MONITOR** on the **Information** t
 
 ![](../../.gitbook/assets/image%20%28147%29.png)
 
-The **Nodes** section provides a quick overview of the cluster's nodes: 
+The **Nodes** section provides a quick overview of the cluster's nodes:
 
-![](../../.gitbook/assets/image%20%28160%29.png)
+![](../../.gitbook/assets/image%20%28148%29.png)
 
 Clicking a node's name in the **Nodes** section will make it active, allowing you to see detailed information about it in the sections below:
 
-![](../../.gitbook/assets/image%20%28163%29.png)
+![](../../.gitbook/assets/image%20%28169%29.png)
 
 You can expand any specific section by clicking it's name:
 
-![](../../.gitbook/assets/image%20%28170%29.png)
+![](../../.gitbook/assets/image%20%28154%29.png)
 
 ### Cluster jobs monitor
 
-This report provides a thorough look at the cluster's jobs and their activity, including the jobs' owners, IDs, start times, CPU and memory usage, and more. 
+This report provides a thorough look at the cluster's jobs and their activity, including the jobs' owners, IDs, start times, CPU and memory usage, and more.
 
 You can access it by clicking **CLUSTER JOBS MONITOR** in the **Information** tab:
 
@@ -44,7 +44,7 @@ You can access it by clicking **CLUSTER JOBS MONITOR** in the **Information** ta
 
 The **Running Jobs** widget gives an overview of all currently running jobs, including the information about resource consumption:
 
-![](../../.gitbook/assets/image%20%28164%29.png)
+![](../../.gitbook/assets/image%20%28157%29.png)
 
 You can view the amount of jobs per user in the **Number of Jobs** and **Total Number of Jobs** widgets:
 
@@ -56,7 +56,7 @@ Additional sections with information can be expanded by clicking their names:
 
 Clicking a job's name will bring you to a page with detailed information about this specific job:
 
-![](../../.gitbook/assets/image%20%28146%29.png)
+![](../../.gitbook/assets/image%20%28159%29.png)
 
 ### Cluster prices monitor
 
@@ -68,11 +68,11 @@ You can access this report by clicking **CLUSTER PRICES MONITOR** in the **Infor
 
 The uppermost section displays total job credits used in the selected time range, job duration, total cost of available nodes, and the uptime of these nodes. The **Jobs** widget shows a rundown of the jobs - their IDs, owners, presets, start times, and credit costs:
 
-![](../../.gitbook/assets/image%20%28151%29.png)
+![](../../.gitbook/assets/image%20%28149%29.png)
 
 The lowermost widgets show more information about users and nodes:
 
-![](../../.gitbook/assets/image%20%28161%29.png)
+![](../../.gitbook/assets/image%20%28166%29.png)
 
 ## Report time ranges and refresh time
 
