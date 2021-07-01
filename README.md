@@ -15,7 +15,7 @@
 * [Отслеживание экспериментов с Weights and Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
 * [Удаленная отладка с PyCharm Professional](toolbox/remote-debugging/remote-debugging-with-pycharm-professional.md)
 
-Также ознакомьтесь с нашими [руководством по CLI](./) и [руководством по Python API](https://neuromation-sdk.readthedocs.io/en/latest/).
+Также ознакомьтесь с нашими [руководством по CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) и [руководством по Python API](https://neuro-sdk.readthedocs.io/en/latest/).
 
 {% hint style="info" %}
 Для помощи смотрите [FAQ](faq.md) или пишите нам [team@neu.ro](mailto:team@neu.ro).
