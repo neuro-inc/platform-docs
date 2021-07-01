@@ -56,7 +56,7 @@
 * [Развёртывание и выкладка моделей](toolbox/serving-and-deploying/README.md)
   * [Выкладка моделей с Seldon](toolbox/serving-and-deploying/deploying-with-seldon.md)
   * [Развертывание моделей с TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
-* [Работа с sandbox-средой](toolbox/working-with-the-sandbox/README.md)
+* [Работа с Sandbox](toolbox/working-with-the-sandbox/README.md)
   * [Обучение и обработка с помощью Label Studio и Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
   * [Тестирование моделей с помощью Locust](toolbox/working-with-the-sandbox/testing-with-locust.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
