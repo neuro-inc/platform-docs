@@ -17,5 +17,7 @@
 
 Также ознакомьтесь с нашими [руководством по CLI]() и [руководством по Python API](https://neuromation-sdk.readthedocs.io/en/latest/).
 
+{% hint style="info" %}
 Для помощи смотрите [FAQ](faq.md) или пишите нам [team@neu.ro](mailto:team@neu.ro).
+{% endhint %}
 
