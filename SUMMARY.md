@@ -7,6 +7,7 @@
   * [Running Your Code](first-steps/running-your-code.md)
   * [Collaborative Development](first-steps/collaborative-development.md)
 * [FAQ](faq.md)
+* [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
   * [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
   * [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
