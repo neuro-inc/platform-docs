@@ -48,7 +48,7 @@ There are a few main reasons your job may fail. Here are some of the most common
 
 #### Incorrect image name
 
-This can happen if you have a typo in the image name or if the specified image was not built before running a job. List of all images can be accessed by running `neuro image ls`. You can also list tags for a particular image via `neuro image tags IMAGE_URI`.
+This can happen if you have a typo in the image name or if the specified image was not built before running a job. List of all images can be accessed by running `neuro image ls`. You can also list tags for a particular image via `neuro image tags <IMAGE_URI>`.
 
 #### Incorrect volume mounted
 
