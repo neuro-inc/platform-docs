@@ -7,6 +7,7 @@
   * [Запуск вашего кода](first-steps/running-your-code.md)
   * [Совместная разработка](first-steps/collaborative-development.md)
 * [FAQ](faq.md)
+* [Устранение ошибок](troubleshooting.md)
 * [Справка](references/README.md)
   * [Справка Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
   * [Справка Neu.ro Flow](https://neu-ro.gitbook.io/neuro-flow/)
