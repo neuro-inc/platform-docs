@@ -1,6 +1,6 @@
 # On-premise Installation Guide
 
-## Requirements:
+### Requirements:
 
 * Kubernetes cluster:
   * It must be able to use **OpenEBS Cstor**. Disks have to be attached to Kubernetes nodes and must not be mounted or formatted.
@@ -10,7 +10,7 @@
   * Must have access to the Kubernetes cluster.
   * The following utilities have to be installed: **docker, kubectl, jq.**
 
-## Archive Structure
+### Archive Structure
 
 **/chartmuseum**
 
@@ -52,7 +52,7 @@
 
 * Installation scripts.
 
-## Platform Setup
+### Platform Setup
 
 Connect to the Linux VM and ensure that **kubectl** can connect to the Kubernetes cluster:
 
@@ -75,11 +75,11 @@ $HOME/neuro/install.sh $CONFIG_FILE_PATH
 
 By default, if there is no Ingress certificate specified in the config file, the installation script will generate a self-signed certificate. This self-signed certificate has to be added to the certificate trust store in the platform user's development environment.
 
-### Configure the DNS Server
+#### Configure the DNS Server
 
 Set up A records to the platform domains **\*.neu.ro**, **default.org.neu.ro**, **\*.default.org.neu.ro**, **\*.jobs.default.org.neu.ro** in such a way that they point to all Kubernetes cluster IPv4 addresses.
 
-## Config File Example
+### Config File Example
 
 ```text
  server:
@@ -125,9 +125,9 @@ node_pools:
   - aks-agentpool-36699122-vmss000002
 ```
 
-## Development Environment Setup
+### Development Environment Setup
 
-### Add the certificate to the trust store \(in case a self-signed certificate was generated during setup\)
+#### Add the certificate to the trust store \(in case a self-signed certificate was generated during setup\)
 
 * Download the Ingress certificate:
 
@@ -137,7 +137,7 @@ openssl s_client -connect app.neu.ro:443 -showcerts </dev/null > ingress.crt
 
 * Add it to your machine's trust store.
 
-### Install Neuro CLI
+#### Install Neuro CLI
 
 Run the following command to install Neuro CLI:
 

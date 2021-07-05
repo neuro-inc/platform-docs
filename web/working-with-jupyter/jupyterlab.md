@@ -15,9 +15,9 @@ You can arrange multiple Notebooks, documents, and activities in a single interf
 
 ![](../../.gitbook/assets/image%20%28217%29.png)
 
-When you start JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later.
+When you start JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later. 
 
-All JupyterLab instances are jobs that run on GPU-small preset. You must kill the JupyterLab session whenever you are done; else, it consumes GPU hours.
+All JupyterLab instances are jobs that run on GPU-small preset. You must kill the JupyterLab session whenever you are done; else, it consumes GPU hours. 
 
 ![JupyterLab instance](../../.gitbook/assets/JL_Overview.jpg)
 

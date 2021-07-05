@@ -28,12 +28,12 @@ You can now test the pipeline by opening Label Studio in a browser:
 $ neuro-flow run label_studio
 ```
 
-Once the images are processed, Label Studio will automatically close and commit a new dataset version.
+Once the images are processed, Label Studio will automatically close and commit a new dataset version. 
 
 This, in turn, will trigger the Pachyderm pipeline and start model training. You can follow this process in the Pachyderm pipeline logs:
 
 ```text
 pachctl config update context default --pachd-address <Pachyderm server address>
-pachctl logs -f -p train
+pachctl logs -f -p train 
 ```
 

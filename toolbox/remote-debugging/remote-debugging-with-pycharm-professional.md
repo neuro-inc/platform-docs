@@ -76,7 +76,7 @@ Interpreter: /opt/conda/bin/python
 Sync folders: <Project root> -> /neuro-pycharm
 ```
 
-Note that, within the job, your project's root folder is available at the root of the filesystem: `/{project_name}` .
+Note that, within the job, your project's root folder is available at the root of the filesystem: `/{project_name}` . 
 
 Click **Finish,** and your configuration is ready:
 
@@ -86,7 +86,7 @@ Click **OK**.
 
 Once you apply the remote interpreter configuration, PyCharm will start file synchronization.
 
-Your PyCharm project is now configured to work with a remote Python interpreter running in a Neu.ro job.
+Your PyCharm project is now configured to work with a remote Python interpreter running in a Neu.ro job. 
 
 ## Debugging
 

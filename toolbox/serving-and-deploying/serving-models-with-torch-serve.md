@@ -1,12 +1,12 @@
 # Serving Models with TorchServe
 
-## Introduction
+### Introduction
 
-This tutorial demonstrates how to use [TorchServe](https://pytorch.org/serve/) \(a flexible tool for serving PyTorch models\) for serving models on Neu.ro.
+This tutorial demonstrates how to use [TorchServe](https://pytorch.org/serve/) \(a flexible tool for serving PyTorch models\) for serving models on Neu.ro. 
 
 Before moving forward with the tutorial, make sure you have [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli) installed.
 
-## Preparing Local Files
+### Preparing Local Files
 
 First, clone the [TorchServe repository](https://github.com/pytorch/serve):
 
@@ -32,7 +32,7 @@ You can now copy the files from your local repository to the platform storage:
 > neuro cp -r serve storage:
 ```
 
-## Serving the Model
+### Serving the Model
 
 As you have all necessary files on the platform storage, you can mount them as a volume to your jobs. Run the following command:
 
@@ -72,7 +72,7 @@ Now, you can serve your model. Here are the commands you can use for `densenet16
  curl -v https://serve--your-user-name.jobs.neuro-compute.org.neu.ro/predictions/densenet161 -T kitten_small.jpg
 ```
 
-## Accessing the Management API
+### Accessing the Management API
 
 To access the serving job's management API, you would first need to port-forward the serving job:
 
@@ -85,4 +85,6 @@ After that, you can copy the `densenet161` folder to your local machine:
 ```text
 > curl http://localhost:8081/models/densenet161
 ```
+
+
 

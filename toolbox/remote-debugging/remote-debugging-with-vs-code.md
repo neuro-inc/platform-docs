@@ -1,10 +1,10 @@
 # Remote Debugging with VS Code
 
-## Introduction
+### Introduction
 
 In this tutorial, we will show how to set up remote debugging with VS Code on the Neuro Platform using the Neu.ro project template.
 
-## Initializing a new project
+### Initializing a new project
 
 First, make sure that you have the `neuro` client installed and configured:
 
@@ -29,9 +29,9 @@ project_slug [neuro-vscode]:
 code_directory [modules]:
 ```
 
-## Configuring the project
+### Configuring the project
 
-Add `debugpy` to your project's `requirements.txt` file \(located in the project's root folder\):
+Add `debugpy` to your project's `requirements.txt` file \(located in the project's root folder\): 
 
 ```bash
 neuro-flow
@@ -84,7 +84,7 @@ volumes:
 
 Here, you can specify your local code folder and the storage folder you want to upload this code to.
 
-## Running your code
+### Running your code
 
 In this example, we will be running a training job based on the code contained in the `train.py` file we just uploaded to the platform storage. To do this, run:
 
@@ -100,11 +100,11 @@ neuro job port-forward <job-id> 5678:5678
 
 This will allow you to access the job by the `5678` port.
 
-## Debugging
+### Debugging 
 
 Open your code file in VS Code and navigate to **Run &gt; Start Debugging** or press **F5**:
 
-![](../../.gitbook/assets/image%20%2889%29.png)
+![](../../.gitbook/assets/image%20%2889%29%20%281%29.png)
 
 Select **Remote Attach**:
 

@@ -1,6 +1,6 @@
 # Creating a Cluster
 
-## Introduction
+### Introduction
 
 Neu.ro lets you create a cluster in any of the three major cloud providers - [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/), and [Azure](https://azure.microsoft.com/en-in/). After you sign up with a cloud provider, you have to share your service account information and the configuration you need with our team. We will then set up a cluster on your behalf, and install Neu.ro on your cloud for you.
 
@@ -21,7 +21,7 @@ Apart from the process mentioned above, there are other methods of setup:
 
 For any of these other methods of setup, please [contact our team](mailto:team@neu.ro).
 
-## Cluster configuration YAML
+### Cluster configuration YAML 
 
 You must create a project/VPC/resource group and a service account with all required permissions before you can start preparing a cluster configuration YAML file. The YAML file is used by the Neu.ro team to set up and run the cluster. You should use the `neuro admin generate-cluster-config` command to generate the YAML file. It is an interactive tool that generates a valid configuration file with the default node configuration based on your responses.
 

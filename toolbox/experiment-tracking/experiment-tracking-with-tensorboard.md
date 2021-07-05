@@ -1,15 +1,15 @@
 # Experiment Tracking with TensorBoard
 
-## Introduction
+### Introduction
 
-[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org/) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results.  
+[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org/) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results.   
 TensorBoard, in turn, lets you measure, visualize, and share your experiment results. It also provides functionality for creating dataflow graphs that describe how data moves through a graph or series of nodes. All of this is provided through [python](https://www.python.org/), Java, Go, and JavaScript.
 
 Neu.ro includes TensorBoard that lets you train ML models. If you're a beginner, then you can also use TensorBoard via Jupyter Notebooks without installing any additional components. You can run TensorFlow training processes using either CLI or JupyterLab. This guide will take you through a sample ML training task using TensorFlow and viewing the experiment in TensorBoard.
 
 In this example, we will create a training model, deploy the model, and review the results. You must note that the logs of the project are saved on the platform storage. This lets you run or stop TensorBoard whenever required. Whenever you're done with the experiment, you should terminate the job to limit the amount of consumed GPU hours. Our example is based on the [Displaying image data in TensorBoard](https://www.tensorflow.org/tensorboard/image_summaries) guide.
 
-## Creating Training Using CLI
+### Creating Training Using CLI
 
 This training lets you log tensors and arbitrary images and view them in TensorBoard. We will use a sample image from the public Fashion MNIST dataset, convert it into an image, and visualize it in TensorBoard.
 
@@ -54,7 +54,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```
 
-After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org/). These have to be converted to tensors before you can start visualizing them.
+After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org/). These have to be converted to tensors before you can start visualizing them. 
 
 * To convert [matplotlib plots](https://matplotlib.org/) to images, add the following code:
 
@@ -206,7 +206,7 @@ job with `--detach` option.
 TensorBoard 2.2.1 at http://0.0.0.0:6006/ (Press CTRL+C to quit)
 ```
 
-TensorBoard automatically updates every 30 seconds, or you can manually refresh the page to view the latest results. The `results` subfolder of a project is saved on the platform storage. This lets you run and stop TensonBoard as often as you want.
+TensorBoard automatically updates every 30 seconds, or you can manually refresh the page to view the latest results. The `results` subfolder of a project is saved on the platform storage. This lets you run and stop TensonBoard as often as you want. 
 
 The TensorBoard interface includes the following tabs:
 
@@ -214,7 +214,7 @@ The TensorBoard interface includes the following tabs:
 * Images
 * Graphs
 
-### Scalars
+#### Scalars 
 
 The **Scalars** dashboard shows how the accuracy and loss change with each epoch. You can use it to track training speed, learning rate, and other metrics. You can move your mouse over the graph to view more details.
 
@@ -222,17 +222,18 @@ The **Scalars** dashboard shows how the accuracy and loss change with each epoch
 
 You can download the scalar information as a CSV or JSON file. To download, select **Show data download links** and then select the required file format.
 
-### Images
+#### Images
 
-The **Images** tab displays the confusion matrix for the current training. For our current training \(in which we are classifying images into categories of clothing\), the **Images** tab shows the confusion matrix for various clothing types.
+The **Images** tab displays the confusion matrix for the current training. For our current training \(in which we are classifying images into categories of clothing\), the **Images** tab shows the confusion matrix for various clothing types. 
 
 ![](../../.gitbook/assets/images_tab.gif)
 
-### Graphs
+#### Graphs
 
-The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues.
+The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues.   
 
-![](../../.gitbook/assets/graph_tab%20%281%29.gif)
+
+![](../../.gitbook/assets/graph_tab%20%281%29%20%281%29.gif)
 
 You can double-click on a code unit to open its visualization.
 

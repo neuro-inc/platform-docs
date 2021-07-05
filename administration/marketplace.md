@@ -50,5 +50,5 @@ After this, the object will be accessible for all users through the Marketplace.
 
 ## Removing objects from the Marketplace
 
-If a user wants to remove an object from the Marketplace, they will need to remove the corresponding JSON file and the object's thumbnail file from the platform storage.
+If a user wants to remove an object from the Marketplace, they will need to remove the corresponding JSON file and  the object's thumbnail file from the platform storage. 
 

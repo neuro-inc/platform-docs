@@ -10,7 +10,7 @@ We recommend keeping the project code in a Git repository. In this case, each te
 
 ## Initiating a new Neu.ro project
 
-First, you need to create a new project from the Neu.ro project template. To do this, run:
+First, you need to create a new project from the Neu.ro project template. To do this, run: 
 
 ```text
 $ neuro project init
@@ -28,7 +28,7 @@ You have a few options for storing your project data in a shared space.
 
 ### Platform storage
 
-You can upload data to your platform storage both through the CLI and through the Web UI.
+You can upload data to your platform storage both through the CLI and through the Web UI. 
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -64,7 +64,7 @@ After you have your files uploaded to the platform storage, you can share them w
 
 {% tabs %}
 {% tab title="CLI" %}
-You can give permanent access to folders and files through the CLI with the help of the `neuro share` command.
+You can give permanent access to folders and files through the CLI with the help of the `neuro share` command. 
 
 ```text
 $ neuro share storage:cifar-10 alice manage
@@ -127,11 +127,11 @@ jobs:
 
 You can get more information about the Neu.ro project's functionality in the `HELP.md` file in your project folder.
 
-## Sharing running jobs
+## Sharing running jobs 
 
-You can share any job you run on the platform with your teammates.
+You can share any job you run on the platform with your teammates. 
 
-To do that, you will need to know the ID or the name of the job you want to share.  
+To do that, you will need to know the ID or the name of the job you want to share.   
 The ID is a job's unique identifier, while the name may repeat for different job runs.
 
 ### Viewing job IDs and names
@@ -140,7 +140,7 @@ You can view the IDs and names of currently running jobs available to you both i
 
 {% tabs %}
 {% tab title="CLI" %}
-To view the list of currently running jobs, run `neuro ps`.
+To view the list of currently running jobs, run `neuro ps`. 
 
 You can also check a particular job's status `neuro status <my-cool-job>`.
 {% endtab %}
@@ -194,7 +194,7 @@ neuro logs job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 # run the interactive bash session:
 neuro exec job://neuro-compute/bob/jupyter-awesome-project bash  
 neuro exec job-fb835ab1-5285-4360-8ee1-880a8ebf824c bash   
-
+    
 # open web interface in the default web browser:
 neuro browse job://neuro-compute/bob/jupyter-awesome-project 
 neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
@@ -212,7 +212,7 @@ There is also a shortcut for sharing all your jobs \(past, current, and future o
 $ neuro share job: alice read
 ```
 
-## Sharing Docker images
+## Sharing Docker images 
 
 Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries \(including Tensorflow 2.0 and PyTorch 1.4\). When you run `neuro-flow build myimage`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved on the platform's Docker registry. In this case, there is no need to share the images with teammates, as they build similar images from the same code base.
 
@@ -239,5 +239,5 @@ images:
     ref: image://neuro-compute/bob/project-specific-docker-image
 ```
 
-Please note that some functionality may be missing in custom Docker images. In particular, you may need to log into AWS and GCP manually from within your jobs.
+Please note that some functionality may be missing in custom Docker images. In particular, you may need to log into AWS and GCP manually from within your jobs. 
 

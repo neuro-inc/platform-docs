@@ -4,7 +4,7 @@
 
 The sandbox is a custom space on Neu.ro that was set up by our team to provide an out-of the box platform experience for a specific ML project or goal.
 
-For example, our [OSS dogs sandbox](https://github.com/neuro-inc/mlops-demo-oss-dogs) was created to showcase a model that's able to classify two specific dog breeds from images.
+For example, our [OSS dogs sandbox](https://github.com/neuro-inc/mlops-demo-oss-dogs) was created to showcase a model that's able to classify two specific dog breeds from images. 
 
 If you have followed the [Getting Started guide](../../first-steps/getting-started.md) and already have a deployed Pachyderm cluster that's ready to create and run pipelines, you can receive access to the sandbox and start working with it according to its `readme` file without the need to set up integrations with various third-party tools.
 

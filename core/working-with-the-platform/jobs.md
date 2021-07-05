@@ -9,13 +9,13 @@ Before you start a job, you must decide:
 
 In complex projects, you have multiple jobs running with different preset resources that are best suitable for these specific jobs.
 
-## What are presets?
+### What are presets?
 
 Neu.ro lets you run a job in an environment on a given preset with several parts of the storage attached. A preset here is a combination of CPU, GPU, and memory resources allocated.
 
 You must decide and set the amount of CPU, GPU, or memory resources you want to use for a job. By default, the **cpu-small** preset is used. These limits ensure that you can get better resource utilization within a compute cluster.
 
-For example, we are using the **cpu-small** preset _\*\*_in the following command as the job doesn't need a lot of processing capacity.
+For example, we are using the **cpu-small** preset ****in the following command as the job doesn't need a lot of processing capacity.
 
 **Sample command:**
 
@@ -57,7 +57,7 @@ Resource Presets:
 
 The command lists the available presets and their configurations. For example, the **cpu-small** preset includes 1 CPU, 4GB of memory, and no GPU. Whereas, the **gpu-k80-small** includes 5 CPU, 48GB memory, and an nvidia-tesla-k80 GPU.
 
-## How do I run a job?
+### How do I run a job?
 
 To run a job in CLI, you can use the `neuro run` command. This command accepts a lot of different arguments, most of which are explained in this and the following sections.
 
@@ -103,7 +103,7 @@ Hello, World!
 Your training script here. Data directory: /data
 ```
 
-## How can I see the list of currently running jobs?
+### How can I see the list of currently running jobs?
 
 You can use the `neuro ps` command to list the jobs that are currently running. You can use various options to filter the list of jobs based on status, owner, or by name. To know information about a particular job, you can use the `neuro job status` command.
 
@@ -115,7 +115,7 @@ You can use the `neuro ps` command to list the jobs that are currently running. 
 (base) C:\Projects>neuro ps
 ID                                       NAME   STATUS  WHEN           IMAGE          OWNER  
 job-3erw4f2e-cc57-4e4b-af04-c795b76d9ca8 job363 running 6 seconds ago  ubuntu:latest  <you>  
-job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:latest  <you>
+job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:latest  <you>  
 ```
 
 1. **See the list of jobs in the pending status**
@@ -123,10 +123,10 @@ job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8 job390 pending 26 seconds ago ubuntu:la
 ```text
 (base) C:\Projects>neuro ps -s pending
 ID                                        NAME   STATUS   WHEN          IMAGE         OWNER   
-job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8  job390 running  3 minutes ago ubuntu:latest <you>
+job-d2c04f2e-cc57-4e4b-af04-c795b76d9ca8  job390 running  3 minutes ago ubuntu:latest <you>   
 ```
 
-## Can I connect to a job when it is running?
+### Can I connect to a job when it is running?
 
 When running a job, you may sometimes want to connect to it and execute a command. You can use the `neuro job exec` command to connect to a running job.
 
@@ -153,7 +153,7 @@ Connection to ssh-auth.neuro-public.org.neu.ro closed.
 
 A bash terminal lets you work on the container while the job is running.
 
-## What are job states?
+### What are job states?
 
 A job is the smallest execution unit that is run until completion or until it is killed. A job goes through many states until it completes or fails. You can view a job's current state by using the `neuro job status` command.
 
@@ -194,7 +194,7 @@ A job can have one of the following states:
 * Complete: When a job is complete.
 * Failed: When a job fails and exits with an error code.
 
-## How do I expose the HTTP server running in a job?
+### How do I expose the HTTP server running in a job?
 
 A lot of applications you run on the platform have some web interface, such as Jupyter Notebooks, TensorBoard, and others. When you run a job containing such an application, you may access this web interface in your browser. For that, you need to pass a port that should be exposed via the `--port` option \(which is 80 by default\).
 
@@ -214,7 +214,7 @@ neuro run --name filebrowser-demo --preset cpu-small --http 8085 --no-http-auth 
 
 This command runs a FileBrowser instance on 8085 port, exposes this port, removes SSO check, and opens the web interface in your default browser when the job is running.
 
-## How do I control the job duration?
+### How do I control the job duration?
 
 You can control the duration of time for which jobs run using the `life-span` configuration parameter. You can update the `life-span` parameter in the \[job\] section of the global configuration file. The global configuration file is located in the standard neuro config path. The Neu.ro CLI uses the `~/.neuro` folder by default, and the path for global config file is `~/.neuro/user.toml`.
 
@@ -228,7 +228,7 @@ The parameter limits the default job run time, and is in string format. For exam
 life-span = "2d3h20min"
 ```
 
-You can also set this parameter for specific jobs by using the corresponding option:
+You can also set this parameter for specific jobs by using the corresponding option: 
 
 ```text
 $ neuro run --life-span 2h <job-name>
@@ -242,7 +242,7 @@ $ neuro job bump-life-span <job-name> 2d
 
 This will add 2 days to the current lifespan of the `<job-name>` job.
 
-## How do I terminate a job?
+### How do I terminate a job?
 
 You can terminate any job using the `neuro job kill` command. You must know the job name or job id to terminate a job.
 
@@ -253,7 +253,7 @@ You can terminate any job using the `neuro job kill` command. You must know the 
 job-d31c2ce9-f27b-4de0-9b60-b619ff6ff2af
 ```
 
-## Can I share a job with others?
+### Can I share a job with others?
 
 Yes, neu.ro lets you share any running jobs with you teammates. You can get all details of currently running jobs using the `neuro ps` command. This command lists all the jobs that you own and that are shared with you.
 
@@ -263,7 +263,7 @@ Yes, neu.ro lets you share any running jobs with you teammates. You can get all 
 (base) C:\Projects>neuro ps
 ID                                       NAME   STATUS   WHEN           IMAGE            OWNER 
 job-7c384fe1-af22-4514-9b06-e9445df46143 job390 pending  11 seconds ago pytorch:latest  <you>  
-job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   <you>
+job-0b8dc223-8d18-498b-a511-a1d643262e95 job363 pending  5 seconds ago  ubuntu:latest   <you>   
 ```
 
 Before sharing a job, you must know its ID. After identifying the job you want to share, you must use the `neuro share job` command to share the job.
@@ -276,7 +276,7 @@ Before sharing a job, you must know its ID. After identifying the job you want t
 
 This shares the job363 job with mrsmariyadavydova and provides them access to manage it. You can provide the teammate the access to read, write, or manage a job. Now, your teammate can use the `neuro ps` command to view this job in their list of accessible jobs.
 
-## Where can I find a job's logs?
+### Where can I find a job's logs?
 
 You can view the complete log for a job using the `neuro job logs [job name or id]` command. This command displays logs for the specified job.
 
@@ -293,7 +293,7 @@ The log is also displayed if you don't pass the `--detach` option when the job i
 2021/01/12 21:11:23 accept tcp [::]:80: use of closed network connection
 ```
 
-## Can I manage jobs from the web UI?
+### Can I manage jobs from the web UI?
 
 Neuro provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Neu.ro web interface lists all the jobs.
 

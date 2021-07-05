@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Neu.ro and [Seldon](https://www.seldon.io/) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist).
+This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Neu.ro and [Seldon](https://www.seldon.io/) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist). 
 
 Here are the steps we'll perform:
 
@@ -58,7 +58,7 @@ COPY main.py .
 CMD bash -c "python main.py --save-model; mv mnist_cnn.pt $MODEL_PATH"
 ```
 
-As you can see, the CMD is meant to perform two operations:
+As you can see, the CMD is meant to perform two operations: 
 
 1. Train a model and save it in the default location
 2. Copy the saved model into the location in which we mounted our storage volume

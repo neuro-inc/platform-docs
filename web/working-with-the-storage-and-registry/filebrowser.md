@@ -11,7 +11,7 @@ Filebrowser is an intuitive web interface used to manage files and folders. It's
 
 {% tabs %}
 {% tab title="Computers" %}
-To start Filebrowser:
+To start Filebrowser: 
 
 * Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
 
@@ -87,7 +87,7 @@ You can download files, folders, or the entire storage on FileBrowser using the 
 
 * Browse to the necessary folder or file and click the **Download** button. If you don't select any files, the current folder is downloaded in its entirety.
 
-![](../../.gitbook/assets/FB_Download.jpg)
+![](../../.gitbook/assets/FB_Download.jpg) 
 
 * If you're downloading a folder, select the format in which you want to download it.
 
@@ -101,7 +101,7 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Log in to `neu.ro`, and start a FileBrowser.
 
-![](../../.gitbook/assets/mobile-dashboard.png) ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29.jpg)
+![](../../.gitbook/assets/mobile-dashboard.png) ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29%20%281%29.jpg)
 
 * Navigate to the folder to download files from, and select the file or folder that you want to download.
 
@@ -109,17 +109,17 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Select **Download** from the options menu.
 
-![](../../.gitbook/assets/FBM_Down_Select.jpg) ![](../../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
+![](../../.gitbook/assets/FBM_Down_Select.jpg) ![](../../.gitbook/assets/FBM_DownloadDone%20%281%29%20%281%29.jpg)
 
 The file is downloaded to your mobile device.
 
-![](../../.gitbook/assets/FBM_DownloadDone%20%281%29%20%282%29.jpg)
+![](../../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
 
 ### **Uploading files from your mobile device:**
 
 * Log in to neu.ro, and start a FileBrowser.
 
-![](../../.gitbook/assets/mobile-dashboard%20%281%29.png) ![](../../.gitbook/assets/FBM_FileBrowser.jpg)
+![](../../.gitbook/assets/mobile-dashboard.png) ![](../../.gitbook/assets/FBM_FileBrowser.jpg)
 
 * Navigate to the folder you want to upload files to from your mobile, and select **Upload** from the Options menu.
 

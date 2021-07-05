@@ -1,6 +1,6 @@
 # Platform Overview
 
-## Understanding the Basics
+### Understanding the Basics
 
 Neu.ro puts data manipulation, model management, and training at your fingertips. The platform allows you to focus on model development tasks at hand by managing critical aspects of infrastructure and system integration, including resource allocation and storage, image management and sharing, secure web and terminal access to running jobs.
 

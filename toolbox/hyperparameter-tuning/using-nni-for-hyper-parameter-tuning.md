@@ -1,12 +1,12 @@
 # Hyperparameter Tuning with NNI
 
-## Introduction
+### Introduction
 
 This tutorial demonstrates how to use [NNI](https://github.com/microsoft/nni) \(an open-source tool from Microsoft\) for Hyperparameter Tuning on Neu.ro. You will create a new Neu.ro project, integrate it with NNI and run multiple tuning workers to speed up the search process.
 
 Before moving forward with the tutorial, make sure you have [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli) installed.
 
-## Creating a Neu.ro project
+### Creating a Neu.ro project
 
 To create a new Neu.ro project, run:
 
@@ -15,7 +15,7 @@ neuro project init
 cd <project-slug>
 ```
 
-## Populating the Experiment Code and Integrating With Neu.ro
+### Populating the Experiment Code and Integrating With Neu.ro
 
 We're going to use this [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) with a MNIST dataset. Put the [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) file to the `modules` folder and [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) to the `config` folder.
 
@@ -75,7 +75,7 @@ Finally, put [`nni-config-template.yml`](https://github.com/neuromation/ml-recip
 
 Once `neuro-flow build myimage` completes, your project is ready for running on Neu.ro.
 
-## Running the Tuning Jobs
+### Running the Tuning Jobs
 
 The only thing left is to run
 
