@@ -143,7 +143,7 @@ Start the job you want to access later.
 $ neuro run --http 8080 --name mytestjob python python -m http.server --cgi 8080
 ```
 
-### Share access to the jab with the service account
+### Share access to the job with the service account
 
 Share access to the job with the service account role from step 1 by using the   
 `neuro acl grant job:<job-id-or-name> <role-name> read` command.
