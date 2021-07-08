@@ -2,7 +2,7 @@
 
 ## What is the sandbox?
 
-The sandbox is a custom space on Neu.ro that was set up by our team to provide an out-of the box platform experience for a specific ML project or goal.
+The sandbox is a custom space on Neu.ro that was set up by our team to provide an out-of the box experience to test the platform's capabilities.
 
 For example, our [OSS dogs sandbox](https://github.com/neuro-inc/mlops-demo-oss-dogs) was created to showcase a model that's able to classify two specific dog breeds from images. 
 
