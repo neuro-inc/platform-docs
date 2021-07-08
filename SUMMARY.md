@@ -29,6 +29,8 @@
   * [Environments \(Docker images\)](core/working-with-the-platform/environments-docker-images.md)
   * [Jobs](core/working-with-the-platform/jobs.md)
   * [Secrets](core/working-with-the-platform/secrets.md)
+* [Specific Tasks](core/specific-tasks/README.md)
+  * [Accessing a job hidden behind the platform's Auth](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
 ## Neu.ro Web UI <a id="web"></a>
 
