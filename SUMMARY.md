@@ -18,6 +18,8 @@
 ## Ядро <a id="core"></a>
 
 * [Описание платформы](core/platform-overview.md)
+* [Конкретные задачи](core/specific-tasks/README.md)
+  * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/kak-poluchit-dostup-k-zadaniyu-za-auth-platformy.md)
 * [Кластеры и роли](core/clusters-and-roles/README.md)
   * [Кластеры \(Ресурсы\)](core/clusters-and-roles/clusters-resources.md)
   * [Роли](core/clusters-and-roles/roles.md)
