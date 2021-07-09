@@ -4,7 +4,7 @@
 
 В данном руководстве показано, как получить доступ к облачному хранилищу Google Cloud Storage с платформы. Мы создадим новый проект на GCP, учетную запись и bucket, а затем сделаем этот bucket доступным для задания на платформе.
 
-Убедитесь, что у Вас установлен [Neu.ro CLI]().
+Убедитесь, что у вас установлен CLI.
 
 ### Создание проектов на платформе и GCP
 
@@ -24,7 +24,7 @@ gcloud projects create $PROJECT_ID
 gcloud config set project $PROJECT_ID
 ```
 
-Убедитесь, что Вы настроили платежную учетную запись для Вашего GCP проекта [set billing account](https://cloud.google.com/billing/docs/how-to/modify-project). Для подробной информации см. [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
+Убедитесь, что Вы настроили [платежную учетную запись для Вашего GCP-проекта](https://cloud.google.com/billing/docs/how-to/modify-project). Для подробной информации см. [Creating and Managing Projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 
 ### Создание учетной записи и загрузка ключа
 
