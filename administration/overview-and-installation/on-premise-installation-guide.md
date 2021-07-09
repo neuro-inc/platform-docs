@@ -137,9 +137,9 @@ openssl s_client -connect app.neu.ro:443 -showcerts </dev/null > ingress.crt
 
 * Добавьте его в Ваш trust store.
 
-#### Установка Neuro CLI
+#### Установка CLI
 
-Запустите следующую команду для установки Neuro CLI:
+Запустите следующую команду для установки CLI:
 
 ```text
 pip install -i http://$SERVER_IP/root/pypi neuro-cli
