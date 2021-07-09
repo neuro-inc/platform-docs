@@ -112,7 +112,9 @@ Neu.ro обеспечивает полную поддержку мобильны
 
 * Войдите в `neu.ro` и запустите FileBrowser.
 
-![](../../.gitbook/assets/dashboard-mobile%20%281%29.png) ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29%20%281%29.jpg)
+![](../../.gitbook/assets/image%20%28226%29.png)
+
+ ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29%20%281%29.jpg)
 
 * Перейдите в какую-либо папку и выберите файл или папку, которую Вы хотите загрузить.
 
@@ -130,7 +132,9 @@ Neu.ro обеспечивает полную поддержку мобильны
 
 * Войдите в веб-интерфейс платформы и запустите FileBrowser.
 
-![](../../.gitbook/assets/dashboard-mobile.png) ![](../../.gitbook/assets/FBM_FileBrowser.jpg)
+![](../../.gitbook/assets/image%20%28227%29.png)
+
+ ![](../../.gitbook/assets/FBM_FileBrowser.jpg)
 
 * Перейдите в папку, в которую Вы хотите загрузить файлы со своего мобильного устройства, и выберите **Upload** из меню Options.
 
