@@ -18,8 +18,6 @@
 ## Ядро <a id="core"></a>
 
 * [Описание платформы](core/platform-overview.md)
-* [Конкретные задачи](core/specific-tasks/README.md)
-  * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 * [Кластеры и роли](core/clusters-and-roles/README.md)
   * [Кластеры \(Ресурсы\)](core/clusters-and-roles/clusters-resources.md)
   * [Роли](core/clusters-and-roles/roles.md)
@@ -31,6 +29,8 @@
   * [Рабочее окружение \(образы Docker\)](core/working-with-the-platform/environments-docker-images.md)
   * [Задания](core/working-with-the-platform/jobs.md)
   * [Секреты](core/working-with-the-platform/secrets.md)
+* [Конкретные задачи](core/specific-tasks/README.md)
+  * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
 ## Веб-интерфейс <a id="web"></a>
 
