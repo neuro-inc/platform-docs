@@ -34,7 +34,7 @@
 
 Для запуска рецепта из `DummyDataset`, необходимо выполнить следующие шаги:
 
-1. [Зарегистрируйтесь](https://neu.ro/) и [установите клиент CLI](https://docs.neu.ro/getting-started#installing-cli)
+1. [Зарегистрируйтесь](https://app.ml.cloud.mts.ru) и [установите клиент CLI](../first-steps/getting-started.md)
 2. Клонируйте [репозиторий](https://github.com/neuromation/ml-recipe-distributed-pytorch)
 3. Выполните  
    `neuro-flow build myimage`

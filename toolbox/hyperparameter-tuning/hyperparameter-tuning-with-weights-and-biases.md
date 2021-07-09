@@ -8,7 +8,7 @@
 
 Шаблон проекта содержит интеграцию с Weights and Biases. Чтобы создать новый проект из шаблона, необходимо выполнить несколько шагов.
 
-Сначала [зарегистрируйтесь](https://neu.ro/) и [установите клиент CLI](https://docs.neu.ro/getting-started#installing-cli)
+Сначала [зарегистрируйтесь](https://app.ml.cloud.mts.ru) и [установите клиент CLI](../../first-steps/getting-started.md)
 
 Затем создайте проект:
 
