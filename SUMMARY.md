@@ -15,7 +15,7 @@
   * [Справка Neu.ro Actions](https://neu-ro.gitbook.io/neuro-actions-reference/)
   * [Справка Python API](https://neuro-sdk.readthedocs.io/en/latest/)
 
-## Ядро <a id="core"></a>
+## Core
 
 * [Описание платформы](core/platform-overview.md)
 * [Кластеры и роли](core/clusters-and-roles/README.md)
@@ -42,7 +42,7 @@
   * [Filebrowser](web/working-with-the-storage-and-registry/filebrowser.md)
   * [Реестр Docker](web/working-with-the-storage-and-registry/docker-registry.md)
 
-## Инструменты <a id="toolbox"></a>
+## Toolbox
 
 * [Доступ к удалённым данным](toolbox/accessing-remote-storage/README.md)
   * [Доступ к Object Storage в GCP](toolbox/accessing-remote-storage/accessing-object-storage-in-gcp.md)
