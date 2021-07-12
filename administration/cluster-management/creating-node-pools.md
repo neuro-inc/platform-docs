@@ -2,7 +2,7 @@
 
 ## Пулы узлов в AWS, GCP, and Azure
 
-Как упоминалось в теме [Создание кластеров](creating-a-cluster.md), когда вы создаёте новый кластер с платформой в [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/) или [Azure](https://azure.microsoft.com/en-in/), изначальный набор пулов узлов определяется файлом конфигурации кластера, который формируется с помощью запуска команды `neuro admin generate-cluster-config`
+Как упоминалось в теме [Создание кластеров](), когда вы создаёте новый кластер с платформой в [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/) или [Azure](https://azure.microsoft.com/en-in/), изначальный набор пулов узлов определяется файлом конфигурации кластера, который формируется с помощью запуска команды `neuro admin generate-cluster-config`
 
 Вы можете проверить изначальную конфигурацию пулов узлов в секции **node\_pools** файла `cluster.yml`:
 
