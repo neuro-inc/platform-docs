@@ -6,6 +6,30 @@
 
 ![](../../.gitbook/assets/storage-2.png)
 
+## Структура дискового пространства платформы
+
+Дисковое пространство платформы представляет собой древоподобную файловую систему, и у каждового кластера есть своё дисковое пространство.
+
+Корневые папки всех пользователей кластера находятся в корне дискового пространства этого кластера. Таким образом, если на кластере есть три пользователя `usera`, `userb` и `userc`, в корневом каталоге будут находиться три папки `/usera`, `/userb` и `/userc` :
+
+![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-21?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMXx2eVd2c0FsSm1aMWsyU2VRZDZxaldxSndKbGVRelFNbk4w%0D%0AMURtTlh2dTMwDQo%0D%0A&updated=1625833857219)
+
+Если у пользователя `usera` есть некоторые папки и файлы, то общая структура будет выглядеть так:
+
+![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-22?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMnxGeXRoaldfczVZcWg5WVA2SG9GMWR1TDFLSUx2bW1Db0Rz%0D%0ARGpocWNqZE40DQo%0D%0A&updated=1625833922333)
+
+## Проверка использования дискового пространства
+
+Вы можете получить информацию об использовании дискового пространства на текущем кластере, запуская команду `neuro storage df`:
+
+```text
+$ neuro storage df
+Disk usage for cluster neuro-compute:
+Total: 3.0T
+Used:  2.0T
+Free:  975.2G
+```
+
 ## Как я могу управлять файлами через веб-интерфейс?
 
 Для управления файлами служит интуитивно понятный FileBrowser. FileBrowser основан на популярном интерфейсе просмотра файлов, доступном в git.
