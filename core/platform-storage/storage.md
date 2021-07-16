@@ -18,6 +18,12 @@ If `usera` has some files and folders in their storage, it will look like this:
 
 ![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-22?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMnxGeXRoaldfczVZcWg5WVA2SG9GMWR1TDFLSUx2bW1Db0Rz%0D%0ARGpocWNqZE40DQo%0D%0A&updated=1625833922333)
 
+Here's the general syntax for addressing files and folders on the storage through commands in CLI:
+
+* `storage://<some>/<path>` is used for accessing files and folders from a different cluster. This path includes both the cluster name and username.
+* `storage:/<some>/<path>` is used for accessing files and folders of a specific user on the same cluster.
+* `storage:<some>/<path>` is used for accessing your own files and folders.
+
 ## Checking a cluster's storage usage
 
 You can get information about used storage space on the current cluster by running `neuro storage df`:
