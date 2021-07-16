@@ -62,6 +62,7 @@
 * [Работа с Sandbox](toolbox/working-with-the-sandbox/README.md)
   * [Обучение и обработка с помощью Label Studio и Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
   * [Тестирование моделей с помощью Locust](toolbox/working-with-the-sandbox/testing-with-locust.md)
+  * [Запуск эластичного обучения с Horovod](toolbox/working-with-the-sandbox/running-elastic-horovod-training.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
