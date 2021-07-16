@@ -12,7 +12,7 @@ Here's how you can use it with Neu.ro.
 
 ### Preparation
 
-Can clone the [repository containing this script](https://github.com/neuro-inc/mlops-horovod-example) by running:
+You can clone the [repository containing this script](https://github.com/neuro-inc/mlops-horovod-example) by running:
 
 ```text
 $ git clone https://github.com/neuro-inc/mlops-horovod-example.git
