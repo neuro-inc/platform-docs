@@ -50,7 +50,7 @@ To run the main training node, execute the following command:
 $ neuro-flow run main
 ```
 
- this job will additionally wait for 600 seconds for the secondary nodes to appear \(see "--start-timeout 600" in the `main` job's `bash` section\).
+This job will additionally wait for 600 seconds for the secondary nodes to appear \(see "--start-timeout 600" in the `main` job's `bash` section\).
 
 ### Launching secondary nodes
 
