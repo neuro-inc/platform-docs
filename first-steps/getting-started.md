@@ -19,7 +19,7 @@
 
 {% tabs %}
 {% tab title="Linux и Mac OS" %}
-CLI требует установленный Python 3 \(рекомендуется: 3.8, требуется: &gt;=3.6\). Мы советуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/).
+CLI требует установленный Python 3 \(рекомендуется: 3.8; требуется: 3.6.6 или более, 3.7.9 или более\). Мы советуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/).
 
 ```text
 $ pip install -U neuro-cli neuro-extras neuro-flow
