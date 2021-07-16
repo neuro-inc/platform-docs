@@ -10,7 +10,7 @@ The following image shows an overview of data flows between your local machine, 
 
 Platform storage is a tree-like filesystem, and each cluster has its own storage space.
 
-Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb` and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
+Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb`, and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
 
 ![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-21?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMXx2eVd2c0FsSm1aMWsyU2VRZDZxaldxSndKbGVRelFNbk4w%0D%0AMURtTlh2dTMwDQo%0D%0A&updated=1625833857219)
 
@@ -23,7 +23,7 @@ If `usera` has some files and folders in their storage, it will look like this:
 You can get information about used storage space on the current cluster by running `neuro storage df`:
 
 ```text
-$neuro storage df
+$ neuro storage df
 Disk usage for cluster neuro-compute:
 Total: 3.0T
 Used:  2.0T
