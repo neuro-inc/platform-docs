@@ -6,6 +6,30 @@ The following image shows an overview of data flows between your local machine, 
 
 ![](../../.gitbook/assets/storage-2.png)
 
+## The structure of platform storage
+
+Platform storage is a tree-like filesystem, and each cluster has its own storage space.
+
+Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb` and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
+
+![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-21?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMXx2eVd2c0FsSm1aMWsyU2VRZDZxaldxSndKbGVRelFNbk4w%0D%0AMURtTlh2dTMwDQo%0D%0A&updated=1625833857219)
+
+If `usera` has some files and folders in their storage, it will look like this:
+
+![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-22?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMnxGeXRoaldfczVZcWg5WVA2SG9GMWR1TDFLSUx2bW1Db0Rz%0D%0ARGpocWNqZE40DQo%0D%0A&updated=1625833922333)
+
+## Checking a cluster's storage usage
+
+You can get information about used storage space on the current cluster by running `neuro storage df`:
+
+```text
+$neuro storage df
+Disk usage for cluster neuro-compute:
+Total: 3.0T
+Used:  2.0T
+Free:  975.2G
+```
+
 ## How do I manage files in the web UI? 
 
 You can use the intuitive FileBrowser tool available in Neu.ro to manage files in storage. The FileBrowser is based on the popular file browsing interface available on git.
