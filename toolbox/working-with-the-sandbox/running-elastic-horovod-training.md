@@ -44,7 +44,7 @@ $ neuro secret add horovod-id-rsa-pub @ssh-keys/id_rsa.pub
 
 ### Launching the main training node
 
-To run the main trining node, execute the following command:
+To run the main training node, execute the following command:
 
 ```text
 $ neuro-flow run main
