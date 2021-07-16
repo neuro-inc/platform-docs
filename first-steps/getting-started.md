@@ -19,7 +19,7 @@ However, installing Neu.ro CLI locally may prove more effective for long-term us
 
 {% tabs %}
 {% tab title="Linux and Mac OS" %}
-Neu.ro CLI requires Python 3 installed \(recommended: 3.8, required: &gt;= 3.6\). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
+Neu.ro CLI requires Python 3 installed \(recommended: 3.8; required: 3.6.6 or newer, 3.7.9 or newer\). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
 
 ```text
 $ pip install -U neuro-cli neuro-extras neuro-flow
