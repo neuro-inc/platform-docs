@@ -69,7 +69,7 @@
 ```text
 >torchserve --start --ncs --model-store /home/serve/model-store --models densenet161.mar
  curl -O https://raw.githubusercontent.com/pytorch/serve/master/docs/images/kitten_small.jpg
- curl -v https://serve--your-user-name.jobs.neuro-compute.org.neu.ro/predictions/densenet161 -T kitten_small.jpg
+ curl -v https://serve--your-user-name.jobs.default.org.neu.ro/predictions/densenet161 -T kitten_small.jpg
 ```
 
 ## Доступ к API управления
