@@ -11,7 +11,7 @@
 
 ### Что такое пресет?
 
-Платформа позволяет запускать задание в рабочем окружении с заданным пресет с несколькими томами для хранения данных. Здесь под пресет понимается комбинация ресурсов CPU, GPU и памяти.
+Платформа позволяет запускать задание в рабочем окружении с заданным пресетом с несколькими томами для хранения данных. Здесь под пресет понимается комбинация ресурсов CPU, GPU и памяти.
 
 Вы должны определить и установить количество ресурсов CPU, GPU и памяти, которые Вы хотите использовать для работы. По умолчанию используется пресет cpu-small. Данные ограничения гарантируют лучшее использование ресурсов в вычислительном кластере.
 
@@ -25,7 +25,7 @@
 √ Name: test
 - Status: pending Creating
 - Status: pending Scheduling
-√ Http URL: https://test--jane-doe.jobs.neuro-compute.org.neu.ro
+√ Http URL: https://test--jane-doe.jobs.default.org.neu.ro
 √ The job will die in a day. See --life-span option documentation for details.
 √ Status: succeeded
 √ =========== Job is running in terminal mode ===========
@@ -40,9 +40,9 @@ Hello, World!
 (base) C:\Projects>neuro config show
 User Configuration:
  User Name            jane-doe
- Current Cluster      neuro-compute
+ Current Cluster      default
  API URL              https://staging.neu.ro/api/v1
- Docker Registry URL  https://registry.neuro-compute.org.neu.ro
+ Docker Registry URL  https://registry.default.org.neu.ro
 Resource Presets:
  Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
 ────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -77,7 +77,7 @@ Resource Presets:
 √ Name: job230
 - Status: pending Creating
 - Status: pending Scheduling
-√ Http URL: https://job230--jane-doe.jobs.neuro-compute.org.neu.ro
+√ Http URL: https://job230--jane-doe.jobs.default.org.neu.ro
 √ The job will die in a day. See --life-span option documentation for details.
 √ Status: succeeded
 √ =========== Job is running in terminal mode ===========
@@ -94,7 +94,7 @@ Hello, World!
 √ Name: job303
 - Status: pending Creating
 - Status: pending Scheduling
-√ Http URL: https://job303--jane-doe.jobs.neuro-compute.org.neu.ro
+√ Http URL: https://job303--jane-doe.jobs.default.org.neu.ro
 √ The job will die in a day. See --life-span option documentation for details.
 √ Status: succeeded
 √ =========== Job is running in terminal mode ===========
@@ -165,7 +165,7 @@ Job                      job-d31c2ce9-f27b-4de0-9b60-b619ff6ff2af
 Name                     filebrowser-49249
 Tags                     kind:web-widget, target:filebrowser
 Owner                    jane-doe
-Cluster                  neuro-compute
+Cluster                  default
 Status                   running
 Image                    filebrowser/filebrowser:v2-alpine
 Command                  --noauth --root /var/storage
@@ -178,7 +178,7 @@ Volumes                   /var/storage         storage:
                           /var/storage/.neuro  storage:.neuro/
 Internal Hostname        job-d31c2ce9-f27b-4de0-9b60-b619ff6ff2af.platform-jobs
 Internal Hostname Named  filebrowser-49249--jane-doe.platform-jobs
-Http URL                 https://filebrowser-49249--jane-doe.jobs.neuro-compute.org.neu.ro
+Http URL                 https://filebrowser-49249--jane-doe.jobs.default.org.neu.ro
 Http port                80
 Http authentication      True
 Environment               NEURO_STEAL_CONFIG   /var/storage/.neuro/85f68be9-6230-40ca-9c07-80d43275ee94-cfg

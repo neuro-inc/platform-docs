@@ -72,11 +72,11 @@ $ neuro share storage:cifar-10 alice manage
 
 Это даст пользователю Alice доступ уровня `manage` к папке  `cifar-10` на дисковом пространстве \(то есть, этот пользователь сможет просматривать, изменять и удалять файлы в этой папке\).
 
-После этого, вам нужно будет обновить значение `data/remote:` в файле `.neuro/live.yaml` вашего проекта, чтобы сохранить полный URI данных. Это позволит вашим коллегам использовать эту папку с данными в их копиях проекта \(здесь, `neuro-compute` - название кластера, использующегося по умолчанию, а `bob` - ваше имя на платформе\):
+После этого, вам нужно будет обновить значение `data/remote:` в файле `.neuro/live.yaml` вашего проекта, чтобы сохранить полный URI данных. Это позволит вашим коллегам использовать эту папку с данными в их копиях проекта \(здесь, `default` - название кластера, использующегося по умолчанию, а `bob` - ваше имя на платформе\):
 
 ```text
   data:
-    remote: storage://neuro-compute/bob/cifar-10
+    remote: storage://default/bob/cifar-10
     mount: /project/data
     local: data
 ```
@@ -183,19 +183,19 @@ $ neuro share job:jupyter-awesome-project alice read
 {% endtab %}
 {% endtabs %}
 
-Данная команда позволит пользователю Alice получить доступ к заданию через его ID или полный URI, который состоит из имени кластера, имени владельца и имени или ID задания: `job://neuro-compute/bob/jupyter-awesome-project`.
+Данная команда позволит пользователю Alice получить доступ к заданию через его ID или полный URI, который состоит из имени кластера, имени владельца и имени или ID задания: `job://default/bob/jupyter-awesome-project`.
 
 ```text
 # read the logs
-neuro logs job://neuro-compute/bob/jupyter-awesome-project
+neuro logs job://default/bob/jupyter-awesome-project
 neuro logs job-fb835ab1-5285-4360-8ee1-880a8ebf824c   
 
 # run the interactive bash session:
-neuro exec job://neuro-compute/bob/jupyter-awesome-project bash  
+neuro exec job://default/bob/jupyter-awesome-project bash  
 neuro exec job-fb835ab1-5285-4360-8ee1-880a8ebf824c bash   
 
 # open web interface in the default web browser:
-neuro browse job://neuro-compute/bob/jupyter-awesome-project 
+neuro browse job://default/bob/jupyter-awesome-project 
 neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 ```
 
@@ -235,7 +235,7 @@ $ neuro share image:project-specific-docker-image alice read
 # update the .neuro/live.yaml file with the full URI of your image:
 images:
   myimage:
-    ref: image://neuro-compute/bob/project-specific-docker-image
+    ref: image://default/bob/project-specific-docker-image
 ```
 
 Обратите внимание, что некоторые функции могут отсутствовать в пользовательских Docker-образах. В частности, вам может потребоваться залогиниться в AWS или GCP вручную из вашего рабочего задания.

@@ -30,7 +30,7 @@
 
 ```text
 $ neuro storage df
-Disk usage for cluster neuro-compute:
+Disk usage for cluster default:
 Total: 3.0T
 Used:  2.0T
 Free:  975.2G
@@ -137,28 +137,28 @@ $ neuro storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
 
 ```text
 $ neuro cp parameters.txt storage:nero-assistant
-Copy 'file:///C:/Projects/parameters.txt' => 'storage://neuro-compute/.../parameters.txt' 'parameters.txt' 952B
+Copy 'file:///C:/Projects/parameters.txt' => 'storage://default/.../parameters.txt' 'parameters.txt' 952B
 ```
 
 * Чтобы скопировать файлы с платформы на локальный компьютер, используйте команду: `neuro cp storage:nero-assistant/TestResults.txt file:///Projects` Данная команда копирует файл `TestResults.txt` в папке `nero-assistant`, находящейся на диске платформы, на локальный компьютер.
 
 ```text
 $ neuro cp storage:nero-assistant/TestResults.txt file:///Projects 
-Copy 'storage://neuro-compute/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
+Copy 'storage://default/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
 ```
 
 * Чтобы скопировать папку из локальной хост-системы на дисковое пространство платформы, используйте команду: `neuro cp -r samplecode storage:nero-assistant`. Данная команда копирует папку `samplecode` и все ее содержимое в папку `nero-assistant` на дисковом пространстве платформы.
 
 ```text
 $ neuro cp -r samplecode storage:nero-assistant 
-Copy 'file:///C:/Projects/samplecode' => 'storage://neuro-compute/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
+Copy 'file:///C:/Projects/samplecode' => 'storage://default/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
 ```
 
 * Чтобы скопировать папку с платформы на локальный хост используйте команду: `neuro cp -r storage:nero-assistant/testlogs file:///Projects`. Данная команда копирует папку `testlogs` на дисковом пространстве платформы, со всем ее содержимым, на локальный компьютер.
 
 ```text
 $ neuro cp -r storage:nero-assistant/testlogs file:///Projects 
-Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://neuro-compute/clarytyllc/nero-assistant/testlogs' ...
+Copy 'storage://default/.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://default/clarytyllc/nero-assistant/testlogs' ...
 ```
 
 ### Удаление файлов
@@ -252,9 +252,9 @@ $ neuro share storage:nero-assistant/ModelCode alice manage
 ```text
 $ neuro acl list
 ...
-storage://neuro-compute/johndoe/bone-age manage
-storage://neuro-compute/neuromation/midi-generator read
-storage://neuro-compute/neuromation/public read
+storage://default/johndoe/bone-age manage
+storage://default/neuromation/midi-generator read
+storage://default/neuromation/public read
 ```
 
 ## Операции с дисковым пространством на других кластерах

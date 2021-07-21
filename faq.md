@@ -118,7 +118,7 @@ neuro run image:helloworld
      Name             test
      Role             janedoe/service-accounts/test
      Owner            janedoe
-     Default cluster  neuro-compute
+     Default cluster  default
      Created at       now
      
     Full token with cluster and API url embedded (this value can be used as NEURO_PASSED_CONFIG environment variable):
@@ -161,7 +161,7 @@ $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
 #### Пример:
 
 ```text
-    $ curl https://mytestjob--janedoe.jobs.neuro-compute.org.neu.ro -H "cookie: sat=eyJhbGciOi<hidden>Np0"
+    $ curl https://mytestjob--janedoe.jobs.default.org.neu.ro -H "cookie: sat=eyJhbGciOi<hidden>Np0"
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <html>
     <head>
