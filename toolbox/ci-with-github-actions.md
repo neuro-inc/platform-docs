@@ -31,7 +31,7 @@ name: init
 run: |
     pip install -U neuro-cli neuro-extras neuro-flow
     neuro config login-with-token ${{ secrets.NEURO-TOKEN}}
-    neuro config switch-cluster neuro-compute
+    neuro config switch-cluster default
     
 name: test
 run: |
