@@ -31,7 +31,7 @@ You can run jobs from images both on the public Docker registry and on the platf
 √ Name: job369
 - Status: pending Creating
 - Status: pending Scheduling
-√ Http URL: https://job369--jane-doe.jobs.neuro-compute.org.neu.ro
+√ Http URL: https://job369--jane-doe.jobs.default.org.neu.ro
 √ The job will die in a day. See --life-span option documentation for details.
 √ Status: running
 √ =========== Job is running in terminal mode ===========
@@ -68,8 +68,8 @@ You can view the tags for an image by running the command:
 **Sample output**
 
 ```text
-> neuro image tags image://neuro-compute/clarytyllc/neuromation-nero-assistant
-image://neuro-compute/clarytyllc/neuromation-nero-assistant:v1.5.1
+> neuro image tags image://default/clarytyllc/neuromation-nero-assistant
+image://default/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
 
 Note that you must provide the full URI to view tags for an image. You may want to add tags when you push an image or save an image. For more information, see [Upload a custom image to the platform registry](environments-docker-images.md#how-can-i-upload-a-custom-image-to-the-platform-registry).
@@ -95,7 +95,7 @@ To upload a custom image, run the following command:
 
 ```text
 > neuro push neuromation-nero-assistant image:nero-assistant:v2
-Pushing image neuromation-nero-assistant => image://neuro-compute/mrsmariyadavydova/nero-assistant:v2
+Pushing image neuromation-nero-assistant => image://default/mrsmariyadavydova/nero-assistant:v2
 > b7f3b88ae387: Pushed
 > e6a8e7191cdf: Pushing [=> ]               2.736MB/93.82MB
 > 9dfa40a0da3b: Pushing [===============> ] 1.219MB/3.966MB
@@ -105,7 +105,7 @@ After pushing the image, run the `neuro image ls` command to check if the push h
 
 ```text
 > neuro images
-image:neuro-compute/mrsmariyadavydova/nero-assistant:latest
+image:default/mrsmariyadavydova/nero-assistant:latest
 image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
 ```
@@ -129,15 +129,15 @@ You can use the `neuro job save` command to save a job as a custom image:
 
 ```text
 > neuro job save job363 image:ubuntu-custom
-Saving job-16339fe4-9559-4c4c-9437-e6e7d5d0721e -> image://neuro-compute/clarytyllc/ubuntu-custom:latest
-Creating image image://neuro-compute/clarytyllc/ubuntu-custom:latest image from the job container
+Saving job-16339fe4-9559-4c4c-9437-e6e7d5d0721e -> image://default/clarytyllc/ubuntu-custom:latest
+Creating image image://default/clarytyllc/ubuntu-custom:latest image from the job container
 Image created
-Pushing image clarytyllc/ubuntu-custom:latest => image://neuro-compute/clarytyllc/ubuntu-custom:latest
+Pushing image clarytyllc/ubuntu-custom:latest => image://default/clarytyllc/ubuntu-custom:latest
 8891751e0a17: Pushed
 2a19bd70fcd4: Pushed
 9e53fd489559: Pushed
 7789f1a3d4e9: Pushed
-image://neuro-compute/clarytyllc/ubuntu-custom:latest
+image://default/clarytyllc/ubuntu-custom:latest
 ```
 
 We have saved the job **job363** as a custom image **ubuntu-custom**.
@@ -163,7 +163,7 @@ You can use the `neuro run` command to run a job:
 > neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
 Job ID: job-21beb932-1cdb-4b55-b286-10a99752a9f1 Status: pending
 Name: job363
-Http URL: https://job363--clarytyllc.jobs.neuro-compute.org.neu.ro
+Http URL: https://job363--clarytyllc.jobs.default.org.neu.ro
 Shortcuts:
   neuro status job363     # check job status
   neuro logs job363       # monitor job stdout
@@ -200,7 +200,7 @@ To pull an image from the platform, run this command:
 
 ```text
 > neuro pull image:ubuntu-patched:v1
-> Pulling image image://neuro-compute/mrsmariyadavydova/ubuntu-patched:v1 => ubuntu-patched:v1
+> Pulling image image://default/mrsmariyadavydova/ubuntu-patched:v1 => ubuntu-patched:v1
 > d51af753c3d3: Downloading [========>                   ]  4.972MB/28.56MB
 > fc878cd0a91c: Download complete
 > 6154df8ff988: Download complete
@@ -224,7 +224,9 @@ The permissions you may give the user for the shared image:
 
 **Sample command**
 
-`neuro share image://neuro-compute/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage`
+```text
+$ neuro share image://default/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage
+```
 
 ### Operations with images from other clusters
 

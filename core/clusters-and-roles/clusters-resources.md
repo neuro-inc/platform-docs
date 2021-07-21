@@ -1,6 +1,6 @@
 # Clusters \(Resources\)
 
-Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster neuro-compute. You can create new clusters, but this requires additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).
+Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster _**default**_. You can create new clusters, but this requires additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).
 
 You can use one cluster at a time and switch between clusters. This tutorial will helps you understand how you can manage resources.
 
@@ -18,9 +18,9 @@ You can use the `neuro config show` command to view the current cluster's name, 
 $ neuro config show
 User Configuration:
  User Name            john-doe
- Current Cluster      neuro-compute
+ Current Cluster      default
  API URL              https://staging.neu.ro/api/v1
- Docker Registry URL  https://registry.neuro-compute.org.neu.ro
+ Docker Registry URL  https://registry.default.org.neu.ro
 Resource Presets:
  Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
 ────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -77,7 +77,7 @@ You can switch between clusters by using the `neuro config switch-cluster` comma
 $ neuro config switch-cluster
 Fetch the list of available clusters...
 Available clusters:
-* Name: neuro-compute
+* Name: default
   Resource Presets:
    Name               #CPU   Memory   Preemptible   Preemptible Node   GPU
   ───────────────────────────────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ Available clusters:
    gpu-large      47   120.0G        ×               ×           2 x nvidia-geforce-rtx-2080ti
    gpu-1x3090   23.0    60.0G        ×               ×           1 x nvidia-geforce-rtx-3090
    gpu-2x3090   47.0   120.0G        ×               ×           2 x nvidia-geforce-rtx-3090
-Select cluster to switch [neuro-compute]: onprem-poc
+Select cluster to switch [default]: onprem-poc
 The current cluster is onprem-poc
 ```
 {% endtab %}

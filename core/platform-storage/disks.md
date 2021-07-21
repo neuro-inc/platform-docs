@@ -23,7 +23,7 @@ Disks have a limited lifetime. This lifespan is calculated from the point in tim
   Id              disk-6d1c44dc-d759-4bc8-8eb2-feafea463898
   Storage         2.0G
   Used
-  Uri             disk://neuro-compute/jane-doe/disk-6d1c44dc-d759-4bc8-8eb2-feafea463898
+  Uri             disk://default/jane-doe/disk-6d1c44dc-d759-4bc8-8eb2-feafea463898
   Name            test-disk
   Status          Pending
   Created at      a second from now
@@ -44,6 +44,6 @@ To mount a disk to a job's container, use the `--volume` parameter in the `run` 
 Here's an example:
 
 ```text
-> C:\Users\Jane>neuro run --name job303 --volume disk:test-disk:/neuro-compute/jane-doe/disk-eff8095a-7f26-404d-92de-5837cc8ed444 --preset cpu-small ubuntu cat code/train.py
+> C:\Users\Jane>neuro run --name job303 --volume disk:test-disk:/default/jane-doe/disk-eff8095a-7f26-404d-92de-5837cc8ed444 --preset cpu-small ubuntu cat code/train.py
 ```
 

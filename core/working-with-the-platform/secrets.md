@@ -99,7 +99,7 @@ You can also use the `neuro share` command as an alias for `neuro acl grant`:
 Keep in mind that, at this point in time, secret sharing is implemented in such a way that Bob won't be able to see this secret in their list of secrets when running `neuro secret ls`. To check if they have access rights to use this secret, Bob will need to run `neuro acl list` and search the output for the corresponding secret's URI. For example, if the secret was created by Alice, the URI will look like this:
 
 ```text
-secret://neuro-compute/alice/secret-password
+secret://default/alice/secret-password
 ```
 
 ### Deleting secrets

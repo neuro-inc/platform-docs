@@ -71,7 +71,7 @@ Executing this command will result in an output like this:
 √ Name: test
 - Status: pending Creating
 - Status: pending Scheduling
-√ Http URL: https://test--jane-doe.jobs.neuro-compute.org.neu.ro
+√ Http URL: https://test--jane-doe.jobs.default.org.neu.ro
 √ The job will die in a day. See --life-span option documentation for details.
 √ Status: succeeded
 √ =========== Job is running in terminal mode ===========

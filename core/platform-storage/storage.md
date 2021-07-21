@@ -30,7 +30,7 @@ You can get information about used storage space on the current cluster by runni
 
 ```text
 $ neuro storage df
-Disk usage for cluster neuro-compute:
+Disk usage for cluster default:
 Total: 3.0T
 Used:  2.0T
 Free:  975.2G
@@ -137,28 +137,28 @@ Examples:
 
 ```text
 $ neuro cp parameters.txt storage:nero-assistant
-Copy 'file:///C:/Projects/parameters.txt' => 'storage://neuro-compute/.../parameters.txt' 'parameters.txt' 952B
+Copy 'file:///C:/Projects/parameters.txt' => 'storage://default/.../parameters.txt' 'parameters.txt' 952B
 ```
 
 * To move files from storage to the local machine, use the command `neuro cp storage:nero-assistant/TestResults.txt file:///Projects` This command copies the `TestResults.txt` file from the storage folder `nero-assistant` to the local host machine.
 
 ```text
 $ neuro cp storage:nero-assistant/TestResults.txt file:///Projects 
-Copy 'storage://neuro-compute/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
+Copy 'storage://default/.../TestResults.txt' => 'file:///C:/Projects/TestResults.txt' 'TestResults.txt' 1.5K
 ```
 
 * To move a folder from the local host system to storage, use the command `neuro cp -r samplecode storage:nero-assistant` This command copies the folder `samplecode` and all its files to the storage folder `nero-assistant`.
 
 ```text
 $ neuro cp -r samplecode storage:nero-assistant 
-Copy 'file:///C:/Projects/samplecode' => 'storage://neuro-compute/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
+Copy 'file:///C:/Projects/samplecode' => 'storage://default/.../nero-assistant/samplecode' 'file:///C:/Projects/samplecode
 ```
 
 * To move folders from storage to the local host, use the command `neuro cp -r storage:nero-assistant/testlogs file:///Projects` This command copies the storage folder `testlogs` and all its files to the local host machine.
 
 ```text
 $ neuro cp -r storage:nero-assistant/testlogs file:///Projects 
-Copy 'storage://neuro-compute/.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://neuro-compute/clarytyllc/nero-assistant/testlogs' ...
+Copy 'storage://default.../nero-assistant/testlogs' => 'file:///C:/Projects/testlogs' 'storage://default/clarytyllc/nero-assistant/testlogs' ...
 ```
 
 ### Removing files from storage 
@@ -252,9 +252,9 @@ You can view the resources that are shared with you using the `neuro acl list` c
 ```text
 $ neuro acl list
 ...
-storage://neuro-compute/johndoe/bone-age manage
-storage://neuro-compute/neuromation/midi-generator read
-storage://neuro-compute/neuromation/public read
+storage://default/johndoe/bone-age manage
+storage://default/neuromation/midi-generator read
+storage://default/neuromation/public read
 ```
 
 ## Storage operations with other clusters
