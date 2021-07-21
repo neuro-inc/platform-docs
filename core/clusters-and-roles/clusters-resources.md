@@ -16,9 +16,9 @@
 > neuro config show
 User Configuration:
  User Name            john-doe
- Current Cluster      neuro-compute
+ Current Cluster      default
  API URL              https://staging.neu.ro/api/v1
- Docker Registry URL  https://registry.neuro-compute.org.neu.ro
+ Docker Registry URL  https://registry.default.org.neu.ro
 Resource Presets:
  Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
 ────────────────────────────────────────────────────────────────────────────────────────────────────────
