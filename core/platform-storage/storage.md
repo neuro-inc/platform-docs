@@ -12,11 +12,11 @@ Platform storage is a tree-like filesystem, and each cluster has its own storage
 
 Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb`, and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
 
-![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-21?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMXx2eVd2c0FsSm1aMWsyU2VRZDZxaldxSndKbGVRelFNbk4w%0D%0AMURtTlh2dTMwDQo%0D%0A&updated=1625833857219)
+![](../../.gitbook/assets/image%20%28229%29.png)
 
 If `usera` has some files and folders in their storage, it will look like this:
 
-![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-22?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMnxGeXRoaldfczVZcWg5WVA2SG9GMWR1TDFLSUx2bW1Db0Rz%0D%0ARGpocWNqZE40DQo%0D%0A&updated=1625833922333)
+![](../../.gitbook/assets/image%20%28228%29.png)
 
 Here's the general syntax for addressing files and folders on the storage through commands in CLI:
 
