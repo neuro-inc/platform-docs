@@ -63,6 +63,7 @@
   * [Training Pipeline with Label Studio and Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
   * [Testing Models with Locust](toolbox/working-with-the-sandbox/testing-models-with-locust.md)
   * [Running Elastic Horovod Training](toolbox/working-with-the-sandbox/running-elastic-horovod-training.md)
+  * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
