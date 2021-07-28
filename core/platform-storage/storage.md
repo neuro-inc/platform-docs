@@ -12,11 +12,11 @@ Platform storage is a tree-like filesystem, and each cluster has its own storage
 
 Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb`, and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
 
-![](../../.gitbook/assets/image%20%28229%29.png)
+![](../../.gitbook/assets/image%20%28231%29.png)
 
 If `usera` has some files and folders in their storage, it will look like this:
 
-![](../../.gitbook/assets/image%20%28228%29.png)
+![](../../.gitbook/assets/image%20%28230%29.png)
 
 Here's the general syntax for addressing files and folders on the storage through commands in CLI:
 
