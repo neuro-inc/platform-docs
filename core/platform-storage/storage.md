@@ -12,11 +12,11 @@
 
 Корневые папки всех пользователей кластера находятся в корне дискового пространства этого кластера. Таким образом, если на кластере есть три пользователя `usera`, `userb` и `userc`, в корневом каталоге будут находиться три папки `/usera`, `/userb` и `/userc` :
 
-![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-21?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMXx2eVd2c0FsSm1aMWsyU2VRZDZxaldxSndKbGVRelFNbk4w%0D%0AMURtTlh2dTMwDQo%0D%0A&updated=1625833857219)
+![](../../.gitbook/assets/image%20%28229%29.png)
 
 Если у пользователя `usera` есть некоторые папки и файлы, то общая структура будет выглядеть так:
 
-![](https://neuro-platform.myjetbrains.com/youtrack/api/files/8-22?sign=MTYyNjY1MjgwMDAwMHwxLTZ8OC0yMnxGeXRoaldfczVZcWg5WVA2SG9GMWR1TDFLSUx2bW1Db0Rz%0D%0ARGpocWNqZE40DQo%0D%0A&updated=1625833922333)
+![](../../.gitbook/assets/image%20%28228%29.png)
 
 Общий синтаксис доступа к файлам и папкам на дисковом пространстве через CLI таков:
 
