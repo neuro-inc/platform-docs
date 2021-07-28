@@ -46,7 +46,7 @@ Set the following environment variables to use MLflow2Seldon:
 * `M2S_MLFLOW_HOST` - MLFlow server host name \(example: [_https://mlflow--user.jobs.cluster.org.neu.ro_](https://mlflow--user.jobs.cluster.org.neu.ro)\).
 * `M2S_MLFLOW_STORAGE_ROOT` - artifact root path on the platform storage \(example: _storage:myproject/mlruns_\).
 * `M2S_SELDON_NEURO_DEF_IMAGE` - docker image stored on the platform registry  which will be used to deploy the model \(example: _image:myproject/seldon:v1_\). You can also configure the service to use another platform image for deployment by tagging the respective registered _model_ \(not a _model version_\) with the tag named after the value of the `M2S_MLFLOW_DEPLOY_IMG_TAG` chart parameter. For example, with a tag named "_deployment-image_" and the value "_image:myproject/seldon:v2"_.
-* `M2S_SRC_NEURO_CLUSTER` - Neu.ro cluster, where deployment image, MLflow artifacts and MLFlow itself are hosted \(_demo\_cluster_\).
+* `M2S_SRC_NEURO_CLUSTER` - Neu.ro cluster on which the deployment image, MLflow artifacts, and MLFlow itself are hosted \(_demo\_cluster_\).
 
 ### Via helm chart
 
