@@ -104,3 +104,17 @@ In some cases, Python caches the output of the scripts, so that you won’t get 
 "bash -c 'cd /project && python -u mnist/train.py'"
 ```
 
+## How to check storage usage 
+
+To check the usage of storage space, run the following command:
+
+```text
+$ neuro run -v storage://:/var/storage ubuntu du -h -d 1 /var/storage
+```
+
+If you want to check storage space in any specific folder, just provide the folder name to this command in the following way:
+
+```text
+$ neuro run -v storage:FOLDER_NAME:/var/storage ubuntu du -h -d 1 /var/storage
+```
+
