@@ -178,3 +178,17 @@ $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
     ....
 ```
 
+## Как проверить использование дискового пространства
+
+Для того, чтобы увидеть текущее использование дискового пространства, запустите такую команду:
+
+```text
+$ neuro run -v storage://:/var/storage ubuntu du -h -d 1 /var/storage
+```
+
+Если вы хотите проверить использование дискового пространства в конкретной папке, пропишите её название в этой команде следующим образом:
+
+```text
+$ neuro run -v storage:FOLDER_NAME:/var/storage ubuntu du -h -d 1 /var/storage
+```
+
