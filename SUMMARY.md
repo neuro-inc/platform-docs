@@ -64,6 +64,7 @@
   * [Testing Models with Locust](toolbox/working-with-the-sandbox/testing-models-with-locust.md)
   * [Running Elastic Horovod Training](toolbox/working-with-the-sandbox/running-elastic-horovod-training.md)
   * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
+  * [Model output explanation with SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
