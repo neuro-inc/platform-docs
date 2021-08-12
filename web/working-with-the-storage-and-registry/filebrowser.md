@@ -7,24 +7,36 @@ FileBrowser - это интуитивно понятный веб-интерфе
 * [Создавать файлы и папки](filebrowser.md#creating-files-and-folders)
 * [Загружать файлы и папки](filebrowser.md#downloading-files-and-folders)
 
+## Запуск Filebrowser
+
+{% tabs %}
+{% tab title="Веб-интерфейс" %}
+* Войдите в панель инструментов платформы.
+* Нажмите **ЗАПУСТИТЬ** в виджете **Браузер дискового пространства**.
+
+![](../../.gitbook/assets/image%20%28103%29.png)
+
+* Выберите настройку из выпадающего списка и нажмите **ЗАПУСТИТЬ**.
+
+![](../../.gitbook/assets/image%20%28102%29.png)
+{% endtab %}
+
+{% tab title="CLI" %}
+Запустите следующую команду:
+
+```text
+$ neuro run -v storage://:/var/storage --http 80 --no-http-auth --browse filebrowser/filebrowser --noauth --root /var/storage
+```
+
+Filebrowser будет открыт в новой вкладке вашего браузера.
+{% endtab %}
+{% endtabs %}
+
 ## Использование Filebrowser
 
 {% tabs %}
 {% tab title="Компьютеры" %}
-### Запуск и базовые сведения
-
-Чтобы запустить FileBrowser:
-
-* Войдите в панель инструментов платформы.
-* Нажмите **ЗАПУСТИТЬ** в виджете **Браузер дискового пространства**.
-
-![](../../.gitbook/assets/image%20%2851%29.png)
-
-* Выберите настройку из выпадающего списка и нажмите **ЗАПУСТИТЬ**.
-
-![](../../.gitbook/assets/image%20%2836%29.png)
-
-Экземпляры FileBrowser это задания, которые перечислены в окне «Jobs» `Neu.ro` с тегом `kind:web_widget target:filebrowser`. Файловая система платформы смонтирована в директории /var/storage, которая также является каталогом root, в котором сохраняются все файлы.
+Экземпляры FileBrowser - задания, которые перечислены в окне «Jobs» `Neu.ro` с тегом `kind:web_widget target:filebrowser`. Файловая система платформы смонтирована в директории /var/storage, которая также является каталогом root, в котором сохраняются все файлы.
 
 ![](../../.gitbook/assets/image%20%2831%29.png)
 
