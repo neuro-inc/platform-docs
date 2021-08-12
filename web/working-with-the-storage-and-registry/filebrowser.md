@@ -7,20 +7,34 @@ Filebrowser is an intuitive web interface used to manage files and folders. It's
 * [Create files and folders](filebrowser.md#creating-files-and-folders)
 * [Download files and folders](filebrowser.md#downloading-files-and-folders)
 
+## Starting Filebrowser
+
+{% tabs %}
+{% tab title="Web UI" %}
+Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
+
+![](../../.gitbook/assets/image%20%28215%29.png)
+
+Select a preset from the drop-down list and click **RUN**.
+
+![](../../.gitbook/assets/image%20%28210%29.png)
+{% endtab %}
+
+{% tab title="CLI" %}
+Run the following command:
+
+```text
+$ neuro run -v storage://:/var/storage --http 80 --no-http-auth --browse filebrowser/filebrowser --noauth --root /var/storage
+```
+
+Filebrowser will be opened in a new window in your browser.
+{% endtab %}
+{% endtabs %}
+
 ## Working with Filebrowser
 
 {% tabs %}
 {% tab title="Computers" %}
-To start Filebrowser: 
-
-* Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
-
-![](../../.gitbook/assets/image%20%28215%29.png)
-
-* Select a preset from the drop-down list and click **RUN**.
-
-![](../../.gitbook/assets/image%20%28210%29.png)
-
 FileBrowser instances are jobs that are listed in the Jobs tab with the tag `kind:web_widget target:filebrowser`. The platform storage is mounted at /var/storage which is also the root directory to let all files persist.
 
 ![FileBrowser instance](../../.gitbook/assets/stor_browser.jpg)
@@ -99,7 +113,7 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 ### **Downloading files to your mobile device:**
 
-* Log in to `neu.ro`, and start a FileBrowser.
+* Log in to `neu.ro`, and start FileBrowser.
 
 ![](../../.gitbook/assets/mobile-dashboard.png) ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29%20%281%29.jpg)
 
