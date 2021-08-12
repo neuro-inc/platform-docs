@@ -2,6 +2,7 @@
 
 В этой группе есть следующие темы:
 
-* [Инструкция по локальной установке](on-premise-installation-guide.md)
-* [Обзор архитектуры](architecture-overview.md)
+{% page-ref page="on-premise-installation-guide.md" %}
+
+{% page-ref page="architecture-overview.md" %}
 

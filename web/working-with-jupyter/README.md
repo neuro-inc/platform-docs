@@ -2,6 +2,7 @@
 
 В этой группе есть следующие темы:
 
-* [Jupyter Notebooks](jupyter-notebooks.md)
-* [JupyterLab](jupyterlab.md)
+{% page-ref page="jupyter-notebooks.md" %}
+
+{% page-ref page="jupyterlab.md" %}
 

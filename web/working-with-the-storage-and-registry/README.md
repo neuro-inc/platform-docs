@@ -2,6 +2,7 @@
 
 В этой группе есть следующие темы:
 
-* [Filebrowser](filebrowser.md)
-* [Реестр Docker](docker-registry.md)
+{% page-ref page="filebrowser.md" %}
+
+{% page-ref page="docker-registry.md" %}
 

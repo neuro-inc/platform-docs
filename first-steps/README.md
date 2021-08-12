@@ -2,8 +2,11 @@
 
 В этой группе есть следующие темы:
 
-* [Начало работы](getting-started.md)
-* [Обучение вашей первой модели](training-your-first-model.md)
-* [Запуск вашего кода](running-your-code.md)
-* [Совместная разработка](collaborative-development.md)
+{% page-ref page="getting-started.md" %}
+
+{% page-ref page="training-your-first-model.md" %}
+
+{% page-ref page="running-your-code.md" %}
+
+{% page-ref page="collaborative-development.md" %}
 
