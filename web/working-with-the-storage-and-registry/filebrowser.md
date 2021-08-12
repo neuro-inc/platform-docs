@@ -27,7 +27,7 @@ Run the following command:
 $ neuro run -v storage://:/var/storage --http 80 --no-http-auth --browse filebrowser/filebrowser --noauth --root /var/storage
 ```
 
-Filebrowser will be opened in a new window in your browser.
+Filebrowser will be opened in a new tab of your browser.
 {% endtab %}
 {% endtabs %}
 
