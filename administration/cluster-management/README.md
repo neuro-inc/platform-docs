@@ -2,10 +2,13 @@
 
 В этой группе есть следующие темы:
 
-* [Управление пользователями и квотами](managing-users-and-quotas.md)
-* [Создание пулов узлов](creating-node-pools.md)
-* [Управление пресетами](managing-presets.md)
-* [Отчёты](reports.md)
+{% page-ref page="managing-users-and-quotas.md" %}
+
+{% page-ref page="creating-node-pools.md" %}
+
+{% page-ref page="managing-presets.md" %}
+
+{% page-ref page="reports.md" %}
 
 
 

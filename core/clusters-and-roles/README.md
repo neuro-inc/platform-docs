@@ -2,6 +2,9 @@
 
 В этой группе есть следующие темы:
 
-* [Кластеры \(ресурсы\)](./)
-* [Роли](roles.md)
+{% page-ref page="clusters-resources.md" %}
+
+{% page-ref page="roles.md" %}
+
+
 

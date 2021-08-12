@@ -2,8 +2,13 @@
 
 В этой группе есть следующие темы:
 
-* [Проекты](projects.md)
-* [Рабочее окружение \(образы Docker\)](environments-docker-images.md)
-* [Задания](jobs.md)
-* [Секреты](secrets.md)
+{% page-ref page="projects.md" %}
+
+{% page-ref page="environments-docker-images.md" %}
+
+{% page-ref page="jobs.md" %}
+
+{% page-ref page="secrets.md" %}
+
+
 

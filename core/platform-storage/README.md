@@ -2,6 +2,9 @@
 
 В этой группе есть следующие темы:
 
-* [Дисковое пространство](storage.md)
-* [Диски](disks.md)
+{% page-ref page="storage.md" %}
+
+{% page-ref page="disks.md" %}
+
+
 
