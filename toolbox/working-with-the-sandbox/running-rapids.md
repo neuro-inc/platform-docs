@@ -1,6 +1,6 @@
 # Запуск RAPIDS
 
-[RAPIDS](https://rapids.ai/) - наюор инструментов от NVIDIA, позволяющий подготавливать и запускать end-to-end пайплайны по анализу данных на GPU. Он имплементирован в виде Python-библиотеки.
+[RAPIDS](https://rapids.ai/) - набор инструментов от NVIDIA, позволяющий подготавливать и запускать end-to-end пайплайны по анализу данных на GPU. Он имплементирован в виде Python-библиотеки.
 
 To use RAPIDS on Neu.ro, you can run it in conjunction with Jupyter.
 
