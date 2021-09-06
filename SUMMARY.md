@@ -66,6 +66,7 @@
   * [Выкладка моделей с помощью MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Объяснение вывода моделей с SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
   * [Запуск RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
+  * [Использование MLFlow](toolbox/working-with-the-sandbox/using-mlflow.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
