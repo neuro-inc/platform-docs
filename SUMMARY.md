@@ -66,6 +66,7 @@
   * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Running RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
   * [Model output explanation with SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
+  * [Using MLFlow](toolbox/working-with-the-sandbox/using-mlflow.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
