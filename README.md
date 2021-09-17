@@ -18,6 +18,6 @@
 Также ознакомьтесь с нашими [руководством по CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) и [руководством по Python API](https://neuro-sdk.readthedocs.io/en/latest/).
 
 {% hint style="info" %}
-Для помощи смотрите [FAQ](faq.md) или пишите нам [team@neu.ro](mailto:team@neu.ro).
+Для помощи смотрите [FAQ](faq.md) или пишите нам  [mlops-platform@mts.ru](mailto:mlops-platform@mts.ru).
 {% endhint %}
 

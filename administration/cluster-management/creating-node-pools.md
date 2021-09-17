@@ -41,7 +41,7 @@ company-cluster
  Storage     Premium tier Azure Files with LRS replication type and 3072 GiB file share size
 ```
 
-Если потребуются изменения в конфигурации пулов узлов вашего кластера, свяжитесь с нашей командой по адресу [team@neu.ro](mailto:team@neu.ro)
+Если потребуются изменения в конфигурации пулов узлов вашего кластера, свяжитесь с нашей командой по адресу  [mlops-platform@mts.ru](mailto:mlops-platform@mts.ru)
 
 ## Пулы узлов на пользовательской инфраструктуре
 
