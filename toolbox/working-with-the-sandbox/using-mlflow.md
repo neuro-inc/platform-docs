@@ -9,6 +9,8 @@ MLflow is an open-source platform for managing the machine learning lifecycle. I
 
 You can use MLFlow in conjunction with Neu.ro to prepare efficient ML pipelines.
 
+We have created a [repository with a project](https://github.com/neuro-inc/mlops-demo-oss-dogs) that can help you quickly check how this works. 
+
 ## Connecting MLFlow and Neu.ro
 
 First, you will need to create a folder in your project's `volumes` section that will serve as a store for artifacts and SQLite data. Here, we'll name it `mlruns`:
