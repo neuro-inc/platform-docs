@@ -53,6 +53,7 @@
 * [Отслеживание экспериментов](toolbox/experiment-tracking/README.md)
   * [Отслеживание экспериментов с TensorBoard](toolbox/experiment-tracking/experiment-tracking-with-tensorboard.md)
   * [Отслеживание экспериментов с Weights & Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
+  * [Использование MLFlow](toolbox/experiment-tracking/using-mlflow.md)
 * [Настройка гиперпараметров](toolbox/hyperparameter-tuning/README.md)
   * [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning/hyperparameter-tuning-with-weights-and-biases.md)
   * [Настройка гиперпараметров с NNI](toolbox/hyperparameter-tuning/using-nni-for-hyper-parameter-tuning.md)
@@ -66,7 +67,6 @@
   * [Выкладка моделей с помощью MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Объяснение вывода моделей с SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
   * [Запуск RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
-  * [Использование MLFlow](toolbox/working-with-the-sandbox/using-mlflow.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
