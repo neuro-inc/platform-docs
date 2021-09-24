@@ -53,6 +53,7 @@
 * [Experiment Tracking](toolbox/experiment-tracking/README.md)
   * [Experiment Tracking with TensorBoard](toolbox/experiment-tracking/experiment-tracking-with-tensorboard.md)
   * [Experiment Tracking with Weights & Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
+  * [Using MLFlow](toolbox/experiment-tracking/using-mlflow.md)
 * [Hyperparameter Tuning](toolbox/hyperparameter-tuning/README.md)
   * [Hyperparameter Tuning with NNI](toolbox/hyperparameter-tuning/using-nni-for-hyper-parameter-tuning.md)
   * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning/hyperparameter-tuning-with-weights-and-biases.md)
@@ -66,7 +67,6 @@
   * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Running RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
   * [Model output explanation with SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
-  * [Using MLFlow](toolbox/working-with-the-sandbox/using-mlflow.md)
 * [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
