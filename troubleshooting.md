@@ -2,14 +2,14 @@
 
 ## Lost/unknown job ID
 
-The first step in any investigation is knowing a job ID. If you started your job with `neuro run`, the job's ID was printed in the output. 
+The first step in any investigation is knowing a job ID. If you started your job with `neuro run`, the job's ID was printed in the output.&#x20;
 
 However, if you can't find the initial terminal output, you can use one of these commands to find a specific job:
 
 {% tabs %}
 {% tab title="neuro run jobs" %}
-`neuro ps` prints only running jobs.   
-`neuro ps -a` prints all jobs.  
+`neuro ps` prints only running jobs. \
+`neuro ps -a` prints all jobs.\
 `neuro ps -s failed` prints all jobs with the Failed status.
 {% endtab %}
 
@@ -22,23 +22,23 @@ Run `neuro-flow ps` to get the list of all jobs.
 
 When you run `neuro-flow build IMAGE_NAME`, neuro-flow uploads the build context to the platform and creates a platform job that uses [Kaniko](https://github.com/GoogleContainerTools/kaniko) to build a docker image and push it to the platform registry.
 
-If building fails, you can check the job's status and logs to get more information. 
+If building fails, you can check the job's status and logs to get more information.&#x20;
 
 #### Getting a job's status
 
-To check a job's status, run: 
+To check a job's status, run:&#x20;
 
-```text
+```
 $ neuro status <job-ID> 
 ```
 
-The **Status transitions** section in the output can help you learn at which step the job failed. 
+The **Status transitions** section in the output can help you learn at which step the job failed.&#x20;
 
 #### Getting builder logs
 
 To check builder logs, run:
 
-```text
+```
 $ neuro logs <job-ID> 
 ```
 
@@ -68,7 +68,7 @@ There are a few steps to troubleshooting such issues.
 
 #### Checking for an open HTTP port
 
-The first point of interest is whether you have an open HTTP port for your job. To check this, you can: 
+The first point of interest is whether you have an open HTTP port for your job. To check this, you can:&#x20;
 
 {% tabs %}
 {% tab title="neuro run jobs" %}
@@ -82,13 +82,13 @@ Use the `http_port:` option.
 
 #### Checking the listening IP
 
-Next step would be to make sure your web app listens on 0.0.0.0, not on 127.0.0.1 or `localhost` — otherwise it won't be able to accept incoming requests from the outside of the container.
+Next, make sure that your web app listens on 0.0.0.0, not on 127.0.0.1 or `localhost` — otherwise it won't be able to accept incoming requests from the outside of the container.
 
 #### Disabling HTTP authentication
 
-And finally, if you can access your job via browser, but `curl` and similar tools don’t work, most likely you didn’t disable HTTP authentication. The Neu.ro platform puts an HTTP authentication layer in front of your app by default for security reasons. 
+And finally, if you can access your job via browser, but `curl` and similar tools don’t work, most likely you didn’t disable HTTP authentication. The Neu.ro platform puts an HTTP authentication layer in front of your app by default for security reasons.&#x20;
 
-You can disable this behaviour manually when running jobs:
+You can disable this behavior manually when running jobs:
 
 {% tabs %}
 {% tab title="neuro run jobs" %}
@@ -104,9 +104,50 @@ Use the `http_auth: False` option.
 
 Just like with Docker, you can get a shell in a running job to check its state. To do this, run:
 
-```text
+```
 $ neuro exec JOB_ID /bin/sh
 ```
 
 Note: In Docker you would typically add the `-it` parameters to the command, but they’re not necessary for `neuro exec`.
+
+## Navigating job statuses
+
+A job might have one of the following statuses:
+
+| Status        | Description                                                                                                                                                     |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pending**   | The job is being created and scheduled. This includes finding (and possibly waiting for) sufficient amount of resources, pulling an image from a registry, etc. |
+| **suspended** | The job's execution was temporarily suspended                                                                                                                   |
+| **running**   | The job is running                                                                                                                                              |
+| **succeeded** | The job terminated with the exit code _0_                                                                                                                       |
+| **cancelled** | The running job was manually terminated/deleted                                                                                                                 |
+| **failed**    | The job terminated with a non-_0_ exit code.                                                                                                                    |
+
+Each of these statuses have additional sub-statuses that can help you monitor the job and trace errors on an more granular level:
+
+| Sub-status           | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| PodInitializing      | Initializing a pod for the job                                            |
+| ContainerCreating    | Creating a container for the job                                          |
+| ErrImagePull         | Failed to pull the specified image                                        |
+| ImagePullBackOff     | Stopping image pulling                                                    |
+| InvalidImageName     | Incorrect image name was specified                                        |
+| OOMKilled            | Job terminated due to an Out Of Memory error                              |
+| Completed            | Job is completed                                                          |
+| Error                | An error occured                                                          |
+| ContainerCannotRun   | Cannot run the container                                                  |
+| Creating             | Creating the job                                                          |
+| Collected            | Job collected                                                             |
+| Scheduling           | Scheduling the job execution                                              |
+| NotFound             | The job could not be scheduled or was preempted                           |
+| ClusterNotFound      | Specified cluster was not found                                           |
+| ClusterScalingUp     | Scaling up                                                                |
+| ClusterScaleUpFailed | Failed to scale up the cluster                                            |
+| Restarting           | Restarting the job                                                        |
+| DiskUnavailable      | Specified disk is currently unavailable                                   |
+| QuotaExhausted       | User quota was exhausted - you will need to renew it to perform more jobs |
+| LifeSpanEnded        | The job has reached the end of its lifespan                               |
+| UserRequested        | The job was terminated per user request                                   |
+
+##
 
