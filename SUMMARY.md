@@ -18,20 +18,20 @@
 
 * [Описание платформы](core/platform-overview.md)
 * [Кластеры и роли](core/clusters-and-roles/README.md)
-  * [Кластеры \(Ресурсы\)](core/clusters-and-roles/clusters-resources.md)
+  * [Кластеры (Ресурсы)](core/clusters-and-roles/clusters-resources.md)
   * [Роли](core/clusters-and-roles/roles.md)
 * [Хранение и использование данных](core/platform-storage/README.md)
   * [Дисковое пространство](core/platform-storage/storage.md)
   * [Диски](core/platform-storage/disks.md)
 * [Работа с платформой](core/working-with-the-platform/README.md)
   * [Проекты](core/working-with-the-platform/projects.md)
-  * [Рабочее окружение \(образы Docker\)](core/working-with-the-platform/environments-docker-images.md)
+  * [Рабочее окружение (образы Docker)](core/working-with-the-platform/environments-docker-images.md)
   * [Задания](core/working-with-the-platform/jobs.md)
   * [Секреты](core/working-with-the-platform/secrets.md)
 * [Конкретные задачи](core/specific-tasks/README.md)
   * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
-## Веб-интерфейс <a id="web"></a>
+## Веб-интерфейс <a href="web" id="web"></a>
 
 * [Терминал](web/terminal.md)
 * [Работа с Jupyter](web/working-with-jupyter/README.md)
@@ -52,6 +52,7 @@
 * [Отслеживание экспериментов](toolbox/experiment-tracking/README.md)
   * [Отслеживание экспериментов с TensorBoard](toolbox/experiment-tracking/experiment-tracking-with-tensorboard.md)
   * [Отслеживание экспериментов с Weights & Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
+  * [Использование MLFlow](toolbox/experiment-tracking/using-mlflow.md)
 * [Настройка гиперпараметров](toolbox/hyperparameter-tuning/README.md)
   * [Настройка гиперпараметров с Weights & Biases](toolbox/hyperparameter-tuning/hyperparameter-tuning-with-weights-and-biases.md)
   * [Настройка гиперпараметров с NNI](toolbox/hyperparameter-tuning/using-nni-for-hyper-parameter-tuning.md)
@@ -65,11 +66,10 @@
   * [Выкладка моделей с помощью MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Объяснение вывода моделей с SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
   * [Запуск RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
-  * [Использование MLFlow](toolbox/working-with-the-sandbox/using-mlflow.md)
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
-## Администрирование <a id="administration"></a>
+## Администрирование <a href="administration" id="administration"></a>
 
 * [Обзор и установка](administration/overview-and-installation/README.md)
   * [Инструкция по локальной установке](administration/overview-and-installation/on-premise-installation-guide.md)
@@ -80,4 +80,3 @@
   * [Управление пресетами](administration/cluster-management/managing-presets.md)
   * [Отчёты](administration/cluster-management/reports.md)
 * [Витрина](administration/marketplace.md)
-
