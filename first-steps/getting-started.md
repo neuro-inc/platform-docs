@@ -11,7 +11,7 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 ## Installing the CLI
 
-[Web Terminal](https://apps.neu.ro/shell?cluster_name=neuro-compute) doesn't require installation and can quickly get you familiar with Neu.ro, allowing you to work with the platform in a browser.
+[Web Terminal](https://apps.neu.ro/shell?cluster\_name=neuro-compute) doesn't require installation and can quickly get you familiar with Neu.ro, allowing you to work with the platform in a browser.
 
 However, installing Neu.ro CLI locally may prove more effective for long-term use.
 
@@ -19,16 +19,16 @@ However, installing Neu.ro CLI locally may prove more effective for long-term us
 
 {% tabs %}
 {% tab title="Linux and Mac OS" %}
-Neu.ro CLI requires Python 3 installed \(recommended: 3.8; required: 3.6.6 or newer, 3.7.9 or newer\). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
+Neu.ro CLI requires Python 3 installed (recommended: 3.8; required: 3.6.6 or newer, 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
 
-```text
+```
 $ pip install -U neuro-cli neuro-extras neuro-flow
 $ neuro login
 ```
 
 If your machine doesn't have GUI, use the following command instead of neuro login:
 
-```text
+```
 $ neuro config login-headless
 ```
 {% endtab %}
@@ -38,7 +38,7 @@ There are several ways to make Neu.ro CLI work on Windows, but we highly recomme
 
 When you have it up and running, run the following commands in Conda Prompt:
 
-```text
+```
 $ conda install -c conda-forge make
 $ conda install -c conda-forge git    
 $ pip install -U neuro-cli neuro-extras neuro-flow
@@ -52,7 +52,7 @@ To make sure that all commands you can find in our documentation work properly, 
 
 ## Understanding the core concepts
 
-On the **Neu.ro Core** level, you will work with jobs, environments, and storage. To be more specific, a job \(an execution unit\) runs in a given environment \(Docker container\) on a given preset \(a combination of CPU, GPU, and memory resources allocated for this job\) with several storage instances \(block or object storage\) attached.
+On the **Neu.ro Core** level, you will work with jobs, environments, and storage. To be more specific, a job (an execution unit) runs in a given environment (Docker container) on a given preset (a combination of CPU, GPU, and memory resources allocated for this job) with several storage instances (block or object storage) attached.
 
 Here are some examples.
 
@@ -60,13 +60,13 @@ Here are some examples.
 
 Run a job on CPU which prints “Hello, World!” and shuts down:
 
-```text
+```
 $ neuro run --preset cpu-small --name test ubuntu echo Hello, World!
 ```
 
 Executing this command will result in an output like this:
 
-```text
+```
 √ Job ID: job-7dd12c3c-ae8d-4492-bdb9-99509fda4f8c
 √ Name: test
 - Status: pending Creating
@@ -82,15 +82,15 @@ Hello, World!
 
 ### A simple GPU job
 
-Run a job on GPU in the default Neu.ro environment \(`neuromation/base`\) that checks if CUDA is available in this environment:
+Run a job on GPU in the default Neu.ro environment (`neuromation/base`) that checks if CUDA is available in this environment:
 
-```text
+```
 $ neuro run --preset gpu-k80-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
 ```
 
 We used the `gpu-k80-small` preset for this job. To see the full list of presets you can use, run the following command:
 
-```text
+```
 $ neuro config show
 ```
 
@@ -98,19 +98,19 @@ $ neuro config show
 
 Create a new `demo` directory in the root directory of your platform storage:
 
-```text
+```
 $ neuro mkdir -p storage:demo
 ```
 
 Run a job that mounts the `demo` directory from platform storage to the `/demo` directory in the job container and creates a file in it:
 
-```text
+```
 $ neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu bash -c "echo Hello >> /demo/hello.txt"
 ```
 
 Check that the file you have just created is actually on the storage:
 
-```text
+```
 $ neuro ls storage:demo
 ```
 
@@ -122,25 +122,25 @@ Development in Jupyter Notebooks is a good example of how the Neuro Platform can
 
 To initialize a new project from the template, run:
 
-```text
+```
 $ neuro project init
 ```
 
 This command will prompt you to enter some info about your project:
 
-```text
+```
 project_name [Name of the project]: Neuro Tutorial
 project_slug [neuro-tutorial]:
 code_directory [modules]:
 ```
 
 {% hint style="info" %}
-Default values are indicated by square brackets **\[ \].** You can use them by pressing **Enter**.
+Default values are indicated by square brackets **\[ ].** You can use them by pressing **Enter**.
 {% endhint %}
 
 To navigate to the project directory, run:
 
-```text
+```
 $ cd neuro-tutorial
 ```
 
@@ -148,7 +148,7 @@ $ cd neuro-tutorial
 
 The structure of the project's folder will look like this:
 
-```text
+```
 neuro-tutorial
 ├── .neuro/             <- neuro and neuro-flow CLI configuration files
 ├── config/             <- configuration files for various integrations
@@ -172,7 +172,7 @@ The template contains the `neuro/live.yaml` configuration file for `neuro-flow`.
 
 To set up the project environment, run:
 
-```text
+```
 $ neuro-flow build myimage
 $ neuro-flow mkvolumes
 ```
@@ -181,33 +181,59 @@ When these commands are executed, system packages from `apt.txt` and pip depende
 
 For Jupyter Notebooks to run properly, the `train.py` script should be available on the storage. Upload the `code` directory containing this file to the storage by using the following command:
 
-```text
+```
 $ neuro-flow upload code
+```
+
+Now you need to choose a preset on which you want to run your Jupyter jobs. To view the list of  presets available on the current cluster, run:&#x20;
+
+```
+$ neuro config show 
 ```
 
 To start a Jupyter Notebooks session on GPU, run:
 
-```text
-$ neuro-flow run jupyter
+```
+$ neuro-flow run jupyter --preset <preset-name>
 ```
 
-This command open Jupyter Notebooks interface in your default browser.
+This command will open Jupyter Notebooks interface in your default browser.
 
-Now, when you edit notebooks, they are updated on your platform storage. To download them locally \(for example, to connect them to a version control system\), run:
+{% hint style="info" %}
+Alternatively, you can adjust the _jupyter_ job's description by specifying the _**preset**_ argument to reflect your preferred preset:
 
-```text
+```
+jupyter:
+    action: gh:neuro-actions/jupyter@<version>
+    args:
+      ...
+      preset: <gpu-preset-name>
+      ...
+```
+
+After this, each time you run a Jupyter job, it will use the specified by default without the need for you to provide it in a CLI command: &#x20;
+
+```
+$ neuro-flow run jupyter 
+```
+
+[You can find more information about job description arguments here](https://github.com/neuro-actions/jupyter#arguments)
+{% endhint %}
+
+Now, when you edit notebooks, they are updated on your platform storage. To download them locally (for example, to connect them to a version control system), run:
+
+```
 $ neuro-flow download notebooks
 ```
 
-Don’t forget to terminate your job when you no longer need it \(the files won’t disappear after that\):
+Don’t forget to terminate your job when you no longer need it (the files won’t disappear after that):
 
-```text
+```
 $ neuro-flow kill jupyter
 ```
 
 To check how many credits you have left, run:
 
-```text
+```
 $ neuro config show-quota
 ```
-
