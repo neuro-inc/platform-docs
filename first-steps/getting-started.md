@@ -13,7 +13,10 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 [Web Terminal](https://apps.neu.ro/shell?cluster\_name=neuro-compute) doesn't require installation and can quickly get you familiar with Neu.ro, allowing you to work with the platform in a browser.
 
-However, installing Neu.ro CLI locally may prove more effective for long-term use.
+However, installing Neu.ro CLI locally may prove more effective for long-term use:
+
+* You won't need to pay for simply running the job like you do in Web UI.
+* Your source code and other local files will be saved directly on your machine.
 
 ### Installation instructions
 
