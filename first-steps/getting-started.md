@@ -22,6 +22,20 @@ However, installing Neu.ro CLI locally may prove more effective for long-term us
 
 {% tabs %}
 {% tab title="Linux and Mac OS" %}
+#### Installing via pipx
+
+Our _neuro-all_ package available in pipx will automatically install all required components:&#x20;
+
+```
+$ pip install pipx
+$ pipx install neuro-all
+$ pipx upgrade neuro-all
+```
+
+#### Installing via pip
+
+You can also install all of the components through pip.
+
 Neu.ro CLI requires Python 3 installed (recommended: 3.8; required: 3.6.6 or newer, 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
 
 ```
@@ -37,7 +51,21 @@ $ neuro config login-headless
 {% endtab %}
 
 {% tab title="Windows" %}
-There are several ways to make Neu.ro CLI work on Windows, but we highly recommend using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/) with default installation settings.
+#### Installing via pipx
+
+Our _neuro-all_ package available in pipx will automatically install all required components:&#x20;
+
+```
+$ pip install pipx
+$ pipx install neuro-all
+$ pipx upgrade neuro-all
+```
+
+#### Installing via pip
+
+You can also install all of the components through pip.
+
+We highly recommend using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/) with default installation settings.
 
 When you have it up and running, run the following commands in Conda Prompt:
 
