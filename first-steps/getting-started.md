@@ -22,7 +22,21 @@
 
 {% tabs %}
 {% tab title="Linux и Mac OS" %}
-CLI требует установленный Python 3 (рекомендуется: 3.8; требуется: 3.6.6 или более, 3.7.9 или более). Мы советуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/).
+#### Установка с помощью pipx
+
+Наш пакет _neuro-all_, доступный в pipx автоматически установит все необходимые компоненты:&#x20;
+
+```
+$ pip install pipx
+$ pipx install neuro-all
+$ pipx upgrade neuro-all
+```
+
+#### Установка с помощью pip
+
+Вы также можете установить все компоненты с помощью соответствующих пакетов pip.
+
+Neu.ro CLI требует установленный Python 3 (рекомендуется: 3.8; требуется: 3.6.6 или более, 3.7.9 или более). Мы советуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/).
 
 ```
 $ pip install -U neuro-cli neuro-extras neuro-flow
@@ -37,7 +51,21 @@ $ neuro config login-headless
 {% endtab %}
 
 {% tab title="Windows" %}
-Несмотря на то, что есть несколько вариантов запустить CLI в Windows, мы настоятельно рекомендуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/) с настройками по умолчанию.
+#### Установка с помощью pipx
+
+Наш пакет _neuro-all_, доступный в pipx автоматически установит все необходимые компоненты:&#x20;
+
+```
+$ pip install pipx
+$ pipx install neuro-all
+$ pipx upgrade neuro-all
+```
+
+#### Установка с помощью pip
+
+Вы также можете установить все компоненты с помощью соответствующих пакетов pip.
+
+Мы настоятельно рекомендуем использовать [дистрибутив Anaconda Python 3.8](https://www.anaconda.com/distribution/) с настройками по умолчанию.
 
 После установки Anaconda дистрибутива Python 3.7 выполните следующие команды в Conda Prompt:
 
