@@ -15,24 +15,25 @@
   * [Neu.ro Actions Reference](https://neu-ro.gitbook.io/neuro-actions-reference/)
   * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 
-## Neu.ro Core <a id="core"></a>
+## Neu.ro Core <a href="#core" id="core"></a>
 
 * [Platform Overview](core/platform-overview.md)
 * [Clusters and Roles](core/clusters-and-roles/README.md)
-  * [Clusters \(Resources\)](core/clusters-and-roles/clusters-resources.md)
+  * [Clusters (Resources)](core/clusters-and-roles/clusters-resources.md)
   * [Roles](core/clusters-and-roles/roles.md)
 * [Platform Storage](core/platform-storage/README.md)
   * [Storage](core/platform-storage/storage.md)
   * [Disks](core/platform-storage/disks.md)
+  * [Buckets](core/platform-storage/buckets.md)
 * [Working with the Platform](core/working-with-the-platform/README.md)
   * [Projects](core/working-with-the-platform/projects.md)
-  * [Environments \(Docker images\)](core/working-with-the-platform/environments-docker-images.md)
+  * [Environments (Docker images)](core/working-with-the-platform/environments-docker-images.md)
   * [Jobs](core/working-with-the-platform/jobs.md)
   * [Secrets](core/working-with-the-platform/secrets.md)
 * [Specific Tasks](core/specific-tasks/README.md)
   * [Accessing a job hidden behind the platform's Auth](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
-## Neu.ro Web UI <a id="web"></a>
+## Neu.ro Web UI <a href="#web" id="web"></a>
 
 * [Terminal](web/terminal.md)
 * [Working with Jupyter](web/working-with-jupyter/README.md)
@@ -42,7 +43,7 @@
   * [Filebrowser](web/working-with-the-storage-and-registry/filebrowser.md)
   * [Docker Registry](web/working-with-the-storage-and-registry/docker-registry.md)
 
-## Neu.ro Toolbox <a id="toolbox"></a>
+## Neu.ro Toolbox <a href="#toolbox" id="toolbox"></a>
 
 * [Accessing Remote Storage](toolbox/accessing-remote-storage/README.md)
   * [Accessing Object Storage in GCP](toolbox/accessing-remote-storage/accessing-object-storage-in-gcp.md)
@@ -82,4 +83,3 @@
   * [Managing Presets](administration/cluster-management/managing-presets.md)
   * [Reports](administration/cluster-management/reports.md)
 * [Marketplace](administration/marketplace.md)
-

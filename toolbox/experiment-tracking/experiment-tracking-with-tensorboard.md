@@ -2,12 +2,12 @@
 
 ### Introduction
 
-[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org/) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results.   
-TensorBoard, in turn, lets you measure, visualize, and share your experiment results. It also provides functionality for creating dataflow graphs that describe how data moves through a graph or series of nodes. All of this is provided through [python](https://www.python.org/), Java, Go, and JavaScript.
+[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results. \
+TensorBoard, in turn, lets you measure, visualize, and share your experiment results. It also provides functionality for creating dataflow graphs that describe how data moves through a graph or series of nodes. All of this is provided through [python](https://www.python.org), Java, Go, and JavaScript.
 
 Neu.ro includes TensorBoard that lets you train ML models. If you're a beginner, then you can also use TensorBoard via Jupyter Notebooks without installing any additional components. You can run TensorFlow training processes using either CLI or JupyterLab. This guide will take you through a sample ML training task using TensorFlow and viewing the experiment in TensorBoard.
 
-In this example, we will create a training model, deploy the model, and review the results. You must note that the logs of the project are saved on the platform storage. This lets you run or stop TensorBoard whenever required. Whenever you're done with the experiment, you should terminate the job to limit the amount of consumed GPU hours. Our example is based on the [Displaying image data in TensorBoard](https://www.tensorflow.org/tensorboard/image_summaries) guide.
+In this example, we will create a training model, deploy the model, and review the results. You must note that the logs of the project are saved on the platform storage. This lets you run or stop TensorBoard whenever required. Whenever you're done with the experiment, you should terminate the job to limit the amount of consumed GPU hours. Our example is based on the [Displaying image data in TensorBoard](https://www.tensorflow.org/tensorboard/image\_summaries) guide.
 
 ### Creating Training Using CLI
 
@@ -17,7 +17,7 @@ To create the training:
 
 * Create a new project using the following command:
 
-```text
+```
 (base) C:\Projects>neuro project init
 project_name [Neuro Project]: imagesummary
 project_slug [imagesummary]: image
@@ -26,9 +26,9 @@ code_directory [modules]:
 
 Once the project is initialized, we will build the code to run our model. The next steps will guide you through creating the `train.py` file that will include the code.
 
-* In the `<project directory>/modules` directory \(`image/modules` in our example\), add the following lines to the `train.py` file:
+* In the `<project directory>/modules` directory (`image/modules` in our example), add the following lines to the `train.py` file:
 
-```text
+```
 from datetime import datetime
 import io
 import itertools
@@ -44,7 +44,7 @@ import sklearn.metrics
 
 * Next, we will download and load our data from the [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/) dataset:
 
-```text
+```
 # Download the data. The data is already divided into train and test.
 # The labels are integers representing classes.
 fashion_mnist = keras.datasets.fashion_mnist
@@ -54,11 +54,11 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```
 
-After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org/). These have to be converted to tensors before you can start visualizing them. 
+After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org). These have to be converted to tensors before you can start visualizing them.&#x20;
 
-* To convert [matplotlib plots](https://matplotlib.org/) to images, add the following code:
+* To convert [matplotlib plots](https://matplotlib.org) to images, add the following code:
 
-```text
+```
 def plot_to_image(figure):
 """Converts the matplotlib plot specified by 'figure' to a PNG image and
 returns it. The supplied figure is closed and inaccessible after this call."""
@@ -79,7 +79,7 @@ Next, we will use the data that we have to build an example. We will create an i
 
 * To build the classifier, add the following code:
 
-```text
+```
 model = keras.models.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
     keras.layers.Dense(32, activation='relu'),
@@ -93,9 +93,9 @@ model.compile(
 )
 ```
 
-* We will have to track how the classifier is performing through a confusion matrix. To create a confusion matrix, we will use the [Scikit-learn](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html) function and then plot using the matplotlib:
+* We will have to track how the classifier is performing through a confusion matrix. To create a confusion matrix, we will use the [Scikit-learn](https://scikit-learn.org/stable/auto\_examples/model\_selection/plot\_confusion\_matrix.html) function and then plot using the matplotlib:
 
-```text
+```
 def plot_confusion_matrix(cm, class_names):
     """
     Returns a matplotlib figure containing the plotted confusion matrix.
@@ -129,7 +129,7 @@ def plot_confusion_matrix(cm, class_names):
 
 * Now that we have created the classifier and its confusion matrix, we need to log the basic metrics and the confusion matrix at the end of every cycle. Note that we have selected `results` as the log directory. You can select other directories too, if required.
 
-```text
+```
 logdir = "results/image/" + datetime.now().strftime("%Y%m%d-%H%M%S")
 # Define the basic TensorBoard callback.
 tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
@@ -153,7 +153,7 @@ tf.summary.image("Confusion Matrix", cm_image, step=epoch)
 
 * Finally, let's train the classifier:
 
-```text
+```
 # Define the per-epoch callback.
 cm_callback = keras.callbacks.LambdaCallback(on_epoch_end=log_confusion_matrix)
 
@@ -174,7 +174,7 @@ Now that you have created the training code, use the following commands to run t
 2. `make train`. You need to press CTRL+C to detach from the process. This starts the job required for training.
 3. `make tensorboard`. This starts a TensorBoard instance that visualizes the experiment.
 
-```text
+```
 (base) C:\Projects\image>make tensorboard
 neuro run  \
         --name tensorboard-image \
@@ -206,7 +206,7 @@ job with `--detach` option.
 TensorBoard 2.2.1 at http://0.0.0.0:6006/ (Press CTRL+C to quit)
 ```
 
-TensorBoard automatically updates every 30 seconds, or you can manually refresh the page to view the latest results. The `results` subfolder of a project is saved on the platform storage. This lets you run and stop TensonBoard as often as you want. 
+TensorBoard automatically updates every 30 seconds, or you can manually refresh the page to view the latest results. The `results` subfolder of a project is saved on the platform storage. This lets you run and stop TensonBoard as often as you want.&#x20;
 
 The TensorBoard interface includes the following tabs:
 
@@ -214,7 +214,7 @@ The TensorBoard interface includes the following tabs:
 * Images
 * Graphs
 
-#### Scalars 
+#### Scalars&#x20;
 
 The **Scalars** dashboard shows how the accuracy and loss change with each epoch. You can use it to track training speed, learning rate, and other metrics. You can move your mouse over the graph to view more details.
 
@@ -224,16 +224,15 @@ You can download the scalar information as a CSV or JSON file. To download, sele
 
 #### Images
 
-The **Images** tab displays the confusion matrix for the current training. For our current training \(in which we are classifying images into categories of clothing\), the **Images** tab shows the confusion matrix for various clothing types. 
+The **Images** tab displays the confusion matrix for the current training. For our current training (in which we are classifying images into categories of clothing), the **Images** tab shows the confusion matrix for various clothing types.&#x20;
 
-![](../../.gitbook/assets/images_tab.gif)
+![](../../.gitbook/assets/images\_tab.gif)
 
 #### Graphs
 
-The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues.   
+The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues. \
 
 
-![](../../.gitbook/assets/graph_tab%20%281%29%20%281%29.gif)
+![](<../../.gitbook/assets/graph\_tab (1) (1).gif>)
 
 You can double-click on a code unit to open its visualization.
-

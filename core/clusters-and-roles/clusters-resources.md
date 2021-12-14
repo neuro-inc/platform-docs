@@ -1,4 +1,4 @@
-# Clusters \(Resources\)
+# Clusters (Resources)
 
 Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster _**default**_. You can create new clusters, but this requires additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).
 
@@ -6,15 +6,15 @@ You can use one cluster at a time and switch between clusters. This tutorial wil
 
 ### **How can I view information about my current cluster?**
 
-Each cluster comes with its own storage, registry, and resource presets. 
+Each cluster comes with its own storage, registry, and resource presets.&#x20;
 
-You can view information about your current cluster both in the CLI and in the Web UI: 
+You can view information about your current cluster both in the CLI and in the Web UI:&#x20;
 
 {% tabs %}
 {% tab title="CLI" %}
 You can use the `neuro config show` command to view the current cluster's name, API URL, docker registry URL, and the list of presets available for this cluster.
 
-```text
+```
 $ neuro config show
 User Configuration:
  User Name            john-doe
@@ -37,7 +37,7 @@ Resource Presets:
 {% tab title="Web UI" %}
 You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
 
-![](../../.gitbook/assets/image%20%28144%29.png)
+![](<../../.gitbook/assets/image (144).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -47,9 +47,9 @@ You can view the list of available clusters and switch between them both in the 
 
 {% tabs %}
 {% tab title="CLI" %}
-You can use the ****`neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
+You can use the **** `neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
 
-```text
+```
 $ neuro config get-clusters
 Fetch the list of available clusters...
 Available clusters:
@@ -73,7 +73,7 @@ Available clusters:
 
 You can switch between clusters by using the `neuro config switch-cluster` command. When you run the command, you are prompted to enter the name of the cluster you want to switch to. The current cluster is switched after you provide the name.
 
-```text
+```
 $ neuro config switch-cluster
 Fetch the list of available clusters...
 Available clusters:
@@ -107,13 +107,13 @@ The current cluster is onprem-poc
 {% tab title="Web UI" %}
 Use the **Cluster** drop-down list to view available clusters and switch between them:
 
-![](../../.gitbook/assets/image%20%28147%29%20%281%29.png)
+![](<../../.gitbook/assets/image (147) (1).png>)
 {% endtab %}
 {% endtabs %}
 
 ### **How can I view my computation quota?**
 
-You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job. 
+You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job.&#x20;
 
 You can view the remaining computation quota on your Web UI dashboard.
 
@@ -125,7 +125,6 @@ You can top up your computation quota by clicking the **TOP UP NOW** button on t
 
 You can also write to [team@neu.ro](mailto:team@neu.ro) to learn about latest discounts and promotions, and then request the top up.
 
-### How can I create a new cluster? 
+### How can I create a new cluster?&#x20;
 
 Neu.ro lets you create new clusters for better management and orchestration of resources. However, you must remember that the new cluster would require more computation quota. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at  [team@neu.ro](mailto:team@neu.ro).
-

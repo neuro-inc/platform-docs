@@ -24,7 +24,7 @@ The learning process organization is as follows. One of the devices is assigned 
 
 ![Data Parallelism](../.gitbook/assets/dp.png)
 
-Data Parallelism is a universal method and is provided by most popular DL libraries for training \(DistributedDataParallel in PyTorch\), freeing users from the need to synchronize data between devices themselves.
+Data Parallelism is a universal method and is provided by most popular DL libraries for training (DistributedDataParallel in PyTorch), freeing users from the need to synchronize data between devices themselves.
 
 ### Try it for yourself
 
@@ -34,10 +34,12 @@ To download [Google’s Natural Questions](https://ai.google.com/research/Natura
 
 To run the recipe on the `DummyDataset`, follow these simple steps:
 
-1. [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
+1. [Sign up](https://neu.ro) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
 2. Clone the [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch)
-3. Run  `neuro-flow build myimage neuro-flow mkvolumes neuro-flow upload ALL`
+3. Run \
+   `neuro-flow build myimage`\
+   `neuro-flow mkvolumes`\
+   `neuro-flow upload ALL`
 4. Run `scripts/run_distributed_on_platform.sh`
 
 This approach is generic, so you can use our solution as a template for training your PyTorch models distributedly.
-

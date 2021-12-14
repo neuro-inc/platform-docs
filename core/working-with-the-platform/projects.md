@@ -2,7 +2,7 @@
 
 ## What are projects?
 
-Projects provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment. 
+Projects provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment.&#x20;
 
 So, once you start working with the Neu.ro platform, we highly recommend that you create a new project to ensure that the most important functionality will be accessible right away.
 
@@ -12,25 +12,25 @@ Every project is based on a template that contains the `.neuro/live.yaml` config
 
 You can create new projects via Neu.ro CLI by using the following command:
 
-```text
+```
 $ neuro project init
 ```
 
 This command will prompt you to enter some info about your project - specifically, it's name, slug, and the name of the folder that will contain your custom code:
 
-```text
+```
 project_name [Name of the project]: Neuro Tutorial
 project_slug [neuro-tutorial]:
 code_directory [modules]:
 ```
 
 {% hint style="info" %}
-Default values are indicated by square brackets **\[ \].** You can use them by pressing **Enter**.
+Default values are indicated by square brackets **\[ ].** You can use them by pressing **Enter**.
 {% endhint %}
 
 When you create a new project, its structure will be as follows:
 
-```text
+```
 neuro-tutorial
 ├── .neuro/             <- neuro and neuro-flow CLI configuration files
 ├── config/             <- configuration files for various integrations
@@ -52,11 +52,11 @@ The internal ID of a project used by Neu.ro Flow is generated automatically base
 
 ## Project modes
 
-Neu.ro Flow provides two modes of automating and simplifying your work process while working in a project - **live** mode and **batch** mode. 
+Neu.ro Flow provides two modes of automating and simplifying your work process while working in a project - **live** mode and **batch** mode.&#x20;
 
 ### Live mode
 
-Live mode allows to execute sets of job definitions that create independent jobs in the Neu.ro cloud. 
+Live mode allows to execute sets of job definitions that create independent jobs in the Neu.ro cloud.&#x20;
 
 A job or set of jobs executed in live mode is called a **live job**.
 
@@ -64,7 +64,7 @@ You can learn more about live jobs in the [Neu.ro Flow reference](https://neu-ro
 
 ### Batch mode
 
-Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied. 
+Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied.&#x20;
 
 A single execution of a set of jobs in batch mode is called a **bake**.
 
@@ -80,7 +80,7 @@ You can monitor your projects both via the CLI and in the Web UI.
 
 To see a list of live jobs on the current project, their IDs, statuses, and starting times, run the following command:
 
-```text
+```
 $ neuro-flow ps
 
   JOB          │ STATUS    │ RAW ID                                   │ WHEN
@@ -98,7 +98,7 @@ $ neuro-flow ps
 
 Use the following command to monitor your project's bakes:
 
-```text
+```
 $ neuro-flow bakes
 ```
 
@@ -106,25 +106,24 @@ This command will show the the ID, creation date, and the status of each bake on
 
 To see detailed info about a specific bake, use:
 
-```text
+```
 $ neuro-flow inspect <bake-id>
 ```
 
-This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format \(DOT or PDF\).  
-  
+This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format (DOT or PDF).\
+\
 You can learn more about bake inspection [here](https://neu-ro.gitbook.io/neuro-flow/reference/cli#neuro-flow-inspect).
 {% endtab %}
 
 {% tab title="Web UI" %}
 You can view the list of your projects in the **Projects** tab:
 
-![](../../.gitbook/assets/image%20%28142%29.png)
+![](<../../.gitbook/assets/image (142).png>)
 
 Click on a project's name to view the list of its live jobs and batch bakes:
 
-![](../../.gitbook/assets/image%20%28141%29.png)
+![](<../../.gitbook/assets/image (141).png>)
 
 You can view each job's and bake's details by clicking on their name.
 {% endtab %}
 {% endtabs %}
-
