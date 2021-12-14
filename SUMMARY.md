@@ -19,20 +19,21 @@
 
 * [Описание платформы](core/platform-overview.md)
 * [Кластеры и роли](core/clusters-and-roles/README.md)
-  * [Кластеры \(Ресурсы\)](core/clusters-and-roles/clusters-resources.md)
+  * [Кластеры (Ресурсы)](core/clusters-and-roles/clusters-resources.md)
   * [Роли](core/clusters-and-roles/roles.md)
 * [Хранение и использование данных](core/platform-storage/README.md)
   * [Дисковое пространство](core/platform-storage/storage.md)
   * [Диски](core/platform-storage/disks.md)
+  * [Бакеты](core/platform-storage/buckets.md)
 * [Работа с платформой](core/working-with-the-platform/README.md)
   * [Проекты](core/working-with-the-platform/projects.md)
-  * [Рабочее окружение \(образы Docker\)](core/working-with-the-platform/environments-docker-images.md)
+  * [Рабочее окружение (образы Docker)](core/working-with-the-platform/environments-docker-images.md)
   * [Задания](core/working-with-the-platform/jobs.md)
   * [Секреты](core/working-with-the-platform/secrets.md)
 * [Конкретные задачи](core/specific-tasks/README.md)
   * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
-## Веб-интерфейс <a id="web"></a>
+## Веб-интерфейс <a href="#web" id="web"></a>
 
 * [Терминал](web/terminal.md)
 * [Работа с Jupyter](web/working-with-jupyter/README.md)
@@ -70,7 +71,7 @@
 * [Распределенное обучение c PyTorch](toolbox/distributed-training-in-pytorch.md)
 * [CI с помощью GitHub Actions](toolbox/ci-with-github-actions.md)
 
-## Администрирование <a id="administration"></a>
+## Администрирование <a href="#administration" id="administration"></a>
 
 * [Обзор и установка](administration/overview-and-installation/README.md)
   * [Инструкция по локальной установке](administration/overview-and-installation/on-premise-installation-guide.md)
@@ -82,4 +83,3 @@
   * [Управление пресетами](administration/cluster-management/managing-presets.md)
   * [Отчёты](administration/cluster-management/reports.md)
 * [Витрина](administration/marketplace.md)
-

@@ -2,12 +2,12 @@
 
 ### Введение
 
-[TensorBoard](https://www.tensorflow.org/tensorboard) - инструмент, позволяющий измерять и визуализировать Ваш процесс машинного обучения. Он основан на open-source платформе для машинного обучения  [TensorFlow](https://www.tensorflow.org/). TensorFlow позволяет легко получать данные, обучать модели, давать прогнозы, и улучшать результаты экспериментов.   
-TensorBoard, в свою очередь, позволяет измерять и визуализировать ваши эксперименты и делиться их результатами. Он также обладает функциональностью для создания графиков, описывающих поток данных. Эти возможности предоставляются с помощью [Python](https://www.python.org/), Java, Go и JavaScript.
+[TensorBoard](https://www.tensorflow.org/tensorboard) - инструмент, позволяющий измерять и визуализировать Ваш процесс машинного обучения. Он основан на open-source платформе для машинного обучения  [TensorFlow](https://www.tensorflow.org). TensorFlow позволяет легко получать данные, обучать модели, давать прогнозы, и улучшать результаты экспериментов. \
+TensorBoard, в свою очередь, позволяет измерять и визуализировать ваши эксперименты и делиться их результатами. Он также обладает функциональностью для создания графиков, описывающих поток данных. Эти возможности предоставляются с помощью [Python](https://www.python.org), Java, Go и JavaScript.
 
 Платформа включает в себя TensorBoard, что позволяет Вам обучать ML-модели. Вы также можете использовать TensorBoard через Jupyter Notebooks без установки дополнительных компонентов. Процессы обучения TensorFlow можно запускать через CLI или JupyterLab. Далее мы разберём пример задачи по ML-обучению, использующей TensorFlow, и просмотр результатов эксперимента в TensorBoard.
 
-В этом примере мы созданим модель для обучения, развернём её и проверим результаты. Заметьте, что логи проекта сохраняются на хранилище платформы. Это позволяет Вам запускать и останавливать TensorBoard в любой удобный момент. Как только Вы закончите работать с экспериментом, желательно остановить соответствующее задание для уменьшения количества часов работы GPU. Наш пример основан на [Displaying image data in TensorBoard](https://www.tensorflow.org/tensorboard/image_summaries).
+В этом примере мы созданим модель для обучения, развернём её и проверим результаты. Заметьте, что логи проекта сохраняются на хранилище платформы. Это позволяет Вам запускать и останавливать TensorBoard в любой удобный момент. Как только Вы закончите работать с экспериментом, желательно остановить соответствующее задание для уменьшения количества часов работы GPU. Наш пример основан на [Displaying image data in TensorBoard](https://www.tensorflow.org/tensorboard/image\_summaries).
 
 ### Подготовка и запуск обучения в CLI
 
@@ -17,7 +17,7 @@ TensorBoard, в свою очередь, позволяет измерять и 
 
 * Создайте новый проект, используя следующую команду:
 
-```text
+```
 (base) C:\Projects>neuro project init
 project_name [Neuro Project]: imagesummary
 project_slug [imagesummary]: image
@@ -26,9 +26,9 @@ code_directory [modules]:
 
 Как только новый проект будет создан, можно начинать собирать код, который запустит нашу модель. Далее описаны шаги по созданию файла `train.py`, содержащего этот код.
 
-* Добавьте следующие строки в файл `train.py`, находящийся в папке `<project directory>/modules` \(в нашем случае это `image/modules`\):
+* Добавьте следующие строки в файл `train.py`, находящийся в папке `<project directory>/modules` (в нашем случае это `image/modules`):
 
-```text
+```
 from datetime import datetime
 import io
 import itertools
@@ -44,7 +44,7 @@ import sklearn.metrics
 
 * Далее, мы загрузим данные из набора данных [Fashion-MNIST](https://research.zalando.com/welcome/mission/research-projects/fashion-mnist/):
 
-```text
+```
 # Download the data. The data is already divided into train and test.
 # The labels are integers representing classes.
 fashion_mnist = keras.datasets.fashion_mnist
@@ -54,11 +54,11 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```
 
-Когда данные загрузятся, мы получим список [графиков matplotlib](https://matplotlib.org/). Перед визуализацией их требуется преобразовать в тензоры. 
+Когда данные загрузятся, мы получим список [графиков matplotlib](https://matplotlib.org). Перед визуализацией их требуется преобразовать в тензоры.&#x20;
 
-* Для преобразования [графиков matplotlib](https://matplotlib.org/) в изображения используем такой код:
+* Для преобразования [графиков matplotlib](https://matplotlib.org) в изображения используем такой код:
 
-```text
+```
 def plot_to_image(figure):
 """Converts the matplotlib plot specified by 'figure' to a PNG image and
 returns it. The supplied figure is closed and inaccessible after this call."""
@@ -79,7 +79,7 @@ return image
 
 * Чтобы создать классификатор, используйте следующий код:
 
-```text
+```
 model = keras.models.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
     keras.layers.Dense(32, activation='relu'),
@@ -93,9 +93,9 @@ model.compile(
 )
 ```
 
-* Следить за работой классификатора мы будем, используя матрицу неточностей. Для создания матрицы неточностей нам понадобится функция [Scikit-learn](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html), а для графика используем matplotlib:
+* Следить за работой классификатора мы будем, используя матрицу неточностей. Для создания матрицы неточностей нам понадобится функция [Scikit-learn](https://scikit-learn.org/stable/auto\_examples/model\_selection/plot\_confusion\_matrix.html), а для графика используем matplotlib:
 
-```text
+```
 def plot_confusion_matrix(cm, class_names):
     """
     Returns a matplotlib figure containing the plotted confusion matrix.
@@ -129,7 +129,7 @@ def plot_confusion_matrix(cm, class_names):
 
 * Классификатор и матрица неточностей созданы, и теперь нам нужно логировать базовые метрики и матрицу неточностей в конце каждого цикла. Заметьте, что мы выбрали папку `results` для логирования результатов. Вы можете выбрать другую папку для этих целей, если потребуется.
 
-```text
+```
 logdir = "results/image/" + datetime.now().strftime("%Y%m%d-%H%M%S")
 # Define the basic TensorBoard callback.
 tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
@@ -153,7 +153,7 @@ tf.summary.image("Confusion Matrix", cm_image, step=epoch)
 
 * Теперь можно написать код для обучения классификатора:
 
-```text
+```
 # Define the per-epoch callback.
 cm_callback = keras.callbacks.LambdaCallback(on_epoch_end=log_confusion_matrix)
 
@@ -174,7 +174,7 @@ validation_data=(test_images, test_labels),
 2. `make train`. Эта команда запустит задание, требуемое для обучения. Используйте CTRL+C, чтобы оставить задание выполняться в фоновом режиме.
 3. `make tensorboard`. Это запустит экземпляр TensorBoard, визуализирующий эксперимент.
 
-```text
+```
 (base) C:\Projects\image>make tensorboard
 neuro run  \
         --name tensorboard-image \
@@ -206,7 +206,7 @@ job with `--detach` option.
 TensorBoard 2.2.1 at http://0.0.0.0:6006/ (Press CTRL+C to quit)
 ```
 
-TensorBoard автоматически обновляется каждые 30 секунд. Вы также можете обновить страницу вручную для получения последних результатов. Подпапка `results` текущего проекта сохраняется на хранилище платформы, что позволяет Вам запускать и останавливать TensonBoard в любой момент. 
+TensorBoard автоматически обновляется каждые 30 секунд. Вы также можете обновить страницу вручную для получения последних результатов. Подпапка `results` текущего проекта сохраняется на хранилище платформы, что позволяет Вам запускать и останавливать TensonBoard в любой момент.&#x20;
 
 Интерфейс TensorBoard состоит из следующих вкладок:
 
@@ -214,26 +214,25 @@ TensorBoard автоматически обновляется каждые 30 с
 * Images
 * Graphs
 
-#### Scalars 
+#### Scalars&#x20;
 
 Вкладка **Scalars** показывает, как точность и потери изменяются с каждой эпохой. Здесь можно следить за скоростью обучения, темпом обучаемости и другими метриками. Вы можете увидеть больше информации, наводя курсор на график.
 
-![](../../.gitbook/assets/scalar%20%281%29.gif)
+![](<../../.gitbook/assets/scalar (1).gif>)
 
 Вы можете загрузить скалярную информацию как файл CSV или JSON. Для этого активируйте опцию **Show data download links** и выберите нужный формат.
 
 #### Images
 
-Вкладка **Images** показывает матрицу неточностей для текущего обучения. В нашем случае \(так как мы классифицируем изображения в разные категории одежды\), вкладка **Images** показывает матрицу неточностей для разных типов одежды. 
+Вкладка **Images** показывает матрицу неточностей для текущего обучения. В нашем случае (так как мы классифицируем изображения в разные категории одежды), вкладка **Images** показывает матрицу неточностей для разных типов одежды.&#x20;
 
-![](../../.gitbook/assets/images_tab%20%281%29.gif)
+![](<../../.gitbook/assets/images\_tab (1).gif>)
 
 #### Graphs
 
-Вкладка **Graphs** визуализирует вычисление Вашей модели - например, в режиме нейросети. Эта визуализация позволяет легко отслеживать, что происходит с вашей моделью и выявлять проблемы.   
+Вкладка **Graphs** визуализирует вычисление Вашей модели - например, в режиме нейросети. Эта визуализация позволяет легко отслеживать, что происходит с вашей моделью и выявлять проблемы. \
 
 
-![](../../.gitbook/assets/graph_tab%20%281%29.gif)
+![](<../../.gitbook/assets/graph\_tab (1).gif>)
 
 Двойной клик по элементу кода открывает его визуализацию.
-
