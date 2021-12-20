@@ -21,7 +21,9 @@ This command will then prompt you to enter some information about the project:
 ```
 project_name [Neuro Project]: Hyperparameter tuning test
 project_dir [hyperparameter-tuning-test]:
+project_id [hyperparameter-tuning-test]:
 code_directory [modules]:
+preserve Neuro Flow template hints [yes]:
 ```
 
 Press `Enter` if you don't want to change the suggested value.
@@ -29,7 +31,7 @@ Press `Enter` if you don't want to change the suggested value.
 Then, change the working directory:
 
 ```bash
-> cd hyperparameter-tuning-test
+$ cd hyperparameter-tuning-test
 ```
 
 ### Connecting Weights & Biases
@@ -41,7 +43,7 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com):
 * Add this API key as a secret to the platform:
 
 ```bash
-> neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
+$ neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 * Download `hypertrain.yml` from [here](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) to `.neuro/hypertrain.yml` in your project's directory.
@@ -118,7 +120,7 @@ To monitor the hyperparameter tuning process, follow the link provided by W\&B a
 If you want to stop the hyperparameter tuning, terminate all related jobs:
 
 ```
-> neuro-flow kill hypertrain
+$ neuro-flow kill hypertrain
 ```
 
 After that, verify that the jobs stopped by running `neuro-flow ps`.
