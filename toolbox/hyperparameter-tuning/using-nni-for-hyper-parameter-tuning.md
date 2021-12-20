@@ -2,22 +2,22 @@
 
 ### Introduction
 
-This tutorial demonstrates how to use [NNI](https://github.com/microsoft/nni) \(an open-source tool from Microsoft\) for Hyperparameter Tuning on Neu.ro. You will create a new Neu.ro project, integrate it with NNI and run multiple tuning workers to speed up the search process.
+This tutorial demonstrates how to use [NNI](https://github.com/microsoft/nni) (an open-source tool from Microsoft) for Hyperparameter Tuning on Neu.ro. You will create a new Neu.ro project, integrate it with NNI and run multiple tuning workers to speed up the search process.
 
-Before moving forward with the tutorial, make sure you have [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli) installed.
+Before moving forward with the tutorial, make sure you have [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed.
 
 ### Creating a Neu.ro project
 
 To create a new Neu.ro project, run:
 
 ```bash
-neuro project init
-cd <project-slug>
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+cd <project-id>
 ```
 
 ### Populating the Experiment Code and Integrating With Neu.ro
 
-We're going to use this [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) with a MNIST dataset. Put the [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) file to the `modules` folder and [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) to the `config` folder.
+We're going to use this [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) with a MNIST dataset. Put the [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) file to the `modules` folder and [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search\_space.json) to the `config` folder.
 
 Then, add the following lines to `requirements.txt`:
 
@@ -30,7 +30,7 @@ Jinja2>=2.11.2 # Required by Neu.ro NNI integration script
 We are now ready to build our image:
 
 ```bash
-neuro-flow build myimage
+$ neuro-flow build myimage
 ```
 
 While Docker builds our image, we can continue setting up the NNI integration.
@@ -97,6 +97,5 @@ You can track experiment progress and intermediate results from this web UI. Whe
 Once you're done, you can shut down the workers and the master node by running
 
 ```bash
-neuro-flow kill ALL
+$ neuro-flow kill ALL
 ```
-

@@ -1,27 +1,27 @@
 # Hyperparameter Tuning with Weights & Biases
 
-Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
+Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com). W\&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
 
-To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb) in which we apply hyperparemeter tuning with W&B to an image classification task.
+To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb) in which we apply hyperparemeter tuning with W\&B to an image classification task.
 
 ### Creating a Neu.ro Project
 
-The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps. 
+The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps.&#x20;
 
-First, [Sign up](https://neu.ro/) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
+First, [Sign up](https://neu.ro) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
 
-Then, create a project:
+Than, create a new project using the following command (make sure you have [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed before running it):&#x20;
 
-```bash
-> neuro project init
+```
+(base) C:\Projects>cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
-This command will then promt you to enter some information about the project:
+This command will then prompt you to enter some information about the project:
 
-```text
-project_name \[Neuro Project]: Hyperparameter tuning test
-project_slug \[hyperparameter-tuning-test]:
-code_directory \[modules]:
+```
+project_name [Neuro Project]: Hyperparameter tuning test
+project_dir [hyperparameter-tuning-test]:
+code_directory [modules]:
 ```
 
 Press `Enter` if you don't want to change the suggested value.
@@ -34,10 +34,10 @@ Then, change the working directory:
 
 ### Connecting Weights & Biases
 
-Now, connect your project with [Weights & Biases](https://www.wandb.com/):
+Now, connect your project with [Weights & Biases](https://www.wandb.com):
 
-* [Register your W&B account](https://app.wandb.ai/login?signup=true).
-* Find your API key \(also called a _token_\) on [W&B’s settings page](https://app.wandb.ai/settings) \(“API keys” section\). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b63d13`.
+* [Register your W\&B account](https://app.wandb.ai/login?signup=true).
+* Find your API key (also called a _token_) on [W\&B’s settings page](https://app.wandb.ai/settings) (“API keys” section). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b63d13`.
 * Add this API key as a secret to the platform:
 
 ```bash
@@ -46,24 +46,24 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 * Download `hypertrain.yml` from [here](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) to `.neuro/hypertrain.yml` in your project's directory.
 
-Feel free to refer to the [W&B documentation](https://docs.wandb.com/library/api/examples) and [W&B example projects](https://github.com/wandb/examples) for instructions on how to use Weights & Biases in your code.
+Feel free to refer to the [W\&B documentation](https://docs.wandb.com/library/api/examples) and [W\&B example projects](https://github.com/wandb/examples) for instructions on how to use Weights & Biases in your code.
 
 ### Using Weights & Biases for Hyperparameter Tuning
 
-If you have completed the previous steps, W&B is ready to use. To run hyperparameter tuning for the model, you need to:
+If you have completed the previous steps, W\&B is ready to use. To run hyperparameter tuning for the model, you need to:
 
-* Define the list of hyperparameters \(in a `config/wandb-sweep.yaml` file\);
-* Send the metrics to W&B after each run \(by using the `neuro-flow bake hypertrain` command\).
+* Define the list of hyperparameters (in a `config/wandb-sweep.yaml` file);
+* Send the metrics to W\&B after each run (by using the `neuro-flow bake hypertrain` command).
 
-`.neuro/hypertrain.yml` and `config/wandb-sweep.yaml` have links to `train.py` \(you can look at an example [here](https://github.com/neuromation/ml-recipe-hyperparam-wandb/blob/66545469755b5b2bf74f461f5f6d91ed4d133d26/src/train.py)\). If you want to run `hypertrain` for another script, you can change the `program` property in `config/wandb-sweep.yaml` \(see below\). The script must contain the description of the model and the training loop.
+`.neuro/hypertrain.yml` and `config/wandb-sweep.yaml` have links to `train.py` (you can look at an example [here](https://github.com/neuromation/ml-recipe-hyperparam-wandb/blob/66545469755b5b2bf74f461f5f6d91ed4d133d26/src/train.py)). If you want to run `hypertrain` for another script, you can change the `program` property in `config/wandb-sweep.yaml` (see below). The script must contain the description of the model and the training loop.
 
 The Python script must also receive parameters with the same names as specified in `config/wandb-sweep.yaml` as arguments of the command line and use them for model training/evaluation. For example, you can use command line parameters such as the [argparse](https://docs.python.org/3/library/argparse.html) Python module.
 
 Here are some additional details:
 
-`train.py` is a file that contains the model training code. It should log the metrics with W&B - here's an example for our case:
+`train.py` is a file that contains the model training code. It should log the metrics with W\&B - here's an example for our case:
 
-```text
+```
 wandb.log({'accuracy': 0.9})
 ```
 
@@ -85,21 +85,21 @@ parameters:
 ```
 
 * Line 1: `/../train.py` is a default path to a file with the model training code.
-* Line 2: a method that is used for hyperparameter tuning. For more information, refer to the W&B docs.
+* Line 2: a method that is used for hyperparameter tuning. For more information, refer to the W\&B docs.
 * Lines 4, 5: the name of the metric that is supposed to be optimized. The ML engineer can change this metric according to the task.
 * Lines 6 -12: hyperparameter settings. The ML engineer should use them in the `train.py` file. Names, values, and ranges are changeable as well.
 
-The name of the file `wandb-sweep.yaml` and the path to it can also be modified in `.neuro/hypertrain.yml` \(look for `WANDB_SWEEPS_FILE=...`within the `start_sweep` task definition\).
+The name of the file `wandb-sweep.yaml` and the path to it can also be modified in `.neuro/hypertrain.yml` (look for `WANDB_SWEEPS_FILE=...`within the `start_sweep` task definition).
 
 ### Hyperparameter Tuning
 
-Now that you have set up both Neu.ro and W&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
+Now that you have set up both Neu.ro and W\&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
 
-```text
+```
 > neuro-flow bake hypertrain --param token_secret_name wandb-token
 ```
 
-This starts jobs that run the `train.py` script \(or whatever name you have chosen for it\) on the platform with different sets of hyperparameters in parallel. By default, just 2 jobs run at the same time. You can change this number by modifying the `id` list within the `worker_...` task definition in `.neuro/hypertrain.yml`:
+This starts jobs that run the `train.py` script (or whatever name you have chosen for it) on the platform with different sets of hyperparameters in parallel. By default, just 2 jobs run at the same time. You can change this number by modifying the `id` list within the `worker_...` task definition in `.neuro/hypertrain.yml`:
 
 ```yaml
 tasks:
@@ -113,13 +113,12 @@ tasks:
         id: [1, 2] # <- e.g., replace with [1, 2, 3, 4, 5]
 ```
 
-To monitor the hyperparameter tuning process, follow the link provided by W&B at the beginning of the process.
+To monitor the hyperparameter tuning process, follow the link provided by W\&B at the beginning of the process.
 
 If you want to stop the hyperparameter tuning, terminate all related jobs:
 
-```text
+```
 > neuro-flow kill hypertrain
 ```
 
 After that, verify that the jobs stopped by running `neuro-flow ps`.
-

@@ -15,13 +15,15 @@ This training lets you log tensors and arbitrary images and view them in TensorB
 
 To create the training:
 
-* Create a new project using the following command:
+* Create a new project using the following command (make sure you have [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed before running it):&#x20;
 
 ```
-(base) C:\Projects>neuro project init
+(base) C:\Projects>cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 project_name [Neuro Project]: imagesummary
-project_slug [imagesummary]: image
+project_dir [imagesummary]:
+project_id [imagesummary]:
 code_directory [modules]:
+preserve Neuro Flow template hints [yes]:
 ```
 
 Once the project is initialized, we will build the code to run our model. The next steps will guide you through creating the `train.py` file that will include the code.

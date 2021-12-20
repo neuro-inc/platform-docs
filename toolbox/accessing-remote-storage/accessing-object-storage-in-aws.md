@@ -4,35 +4,35 @@
 
 This tutorial demonstrates how to access your AWS S3 from Neuro Platform. You will set up a new Neuro project, create an S3 bucket, and make it is accessible from Neuro Platform jobs.
 
-Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed.
 
 ### Creating Neuro Project
 
-To create a new Neuro project, run:
+To create a new Neuro project and build an image, run:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cd <project-slug>
+$ neuro-flow build myimage
 ```
 
 ### Creating an AWS IAM User
 
-Follow [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
+Follow [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_users\_create.html).
 
-In AWS Console, go to "Services" drop-down list, "IAM" \(Identity and Access Management\). On the left-hand panel, choose "Access management" -&gt; "Users", click the "Add user" button, go through the wizard, and as a result you'll have a new user added:
+In AWS Console, go to "Services" drop-down list, "IAM" (Identity and Access Management). On the left-hand panel, choose "Access management" -> "Users", click the "Add user" button, go through the wizard, and as a result you'll have a new user added:
 
-![](../../.gitbook/assets/1_add_user.png)
+![](../../.gitbook/assets/1\_add\_user.png)
 
 Ensure that this user has "AmazonS3FullAccess" in the list of permissions.
 
 Then, you'll need to create an access key for the newly created user. For that, go to the user description, then to the "Security credentials" tab, and press the "Create access key" button:
 
-![](../../.gitbook/assets/2_create_key.png)
+![](../../.gitbook/assets/2\_create\_key.png)
 
 Put these credentials to the local file in the home directory `~/aws-credentials.txt`. For example:
 
-```text
+```
 [default]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -47,7 +47,7 @@ chmod 600 ~/aws-credentials.txt
 Set up the Neuro Platform to use this file and check that your Neuro project detects it:
 
 ```bash
-neuro secret add aws-key @~/aws-credentials.txt
+$ neuro secret add aws-key @~/aws-credentials.txt
 ```
 
 Open `.neuro/live.yaml`, find `remote_debug` section within `jobs` in it and add the following lines at the end of `remote_debug`:
@@ -87,7 +87,7 @@ defaults:
 Run a development job and connect to the job's shell:
 
 ```bash
-neuro-flow run remote_debug
+$ neuro-flow run remote_debug
 ```
 
 In your job's shell, try to use `s3` to access your bucket:
@@ -101,6 +101,5 @@ To close the remote terminal session, press `^D` or type `exit`.
 Please don't forget to terminate the job when you've done working with it:
 
 ```bash
-neuro-flow kill remote-debug
+$ neuro-flow kill remote-debug
 ```
-

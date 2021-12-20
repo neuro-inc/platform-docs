@@ -6,32 +6,34 @@ In this tutorial, we will show how to set up remote debugging with VS Code on th
 
 ### Initializing a new project
 
-First, make sure that you have the `neuro` client installed and configured:
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed:
 
 ```bash
-pip install -U neuro-cli neuro-extras neuro-flow
-neuro login
+$ pip install pipx
+$ pipx install neuro-all
+$ pipx install cookiecutter
+$ neuro login
 ```
 
 Then, initialize an empty project:
 
 ```bash
-neuro project init
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
-
-Make sure to re-download the `\.cookiecutters\cookiecutter-neuro-project` project if prompted.
 
 The project initialization command asks several questions about your project:
 
-```text
+```
 project_name [Name of the project]: Neuro VSCode
-project_slug [neuro-vscode]: 
-code_directory [modules]:
+project_dir [neuro-vscode]:
+project_id [neuro-vscode]:
+code_directory [modules]: 
+preserve Neuro Flow template hints [yes]:
 ```
 
 ### Configuring the project
 
-Add `debugpy` to your project's `requirements.txt` file \(located in the project's root folder\): 
+Add `debugpy` to your project's `requirements.txt` file (located in the project's root folder):&#x20;
 
 ```bash
 neuro-flow
@@ -54,18 +56,18 @@ debugpy.wait_for_client()
 Next, configure the project's environment on the Neu.ro Platform:
 
 ```bash
-neuro-flow build myimage
+$ neuro-flow build myimage
 ```
 
 When the image is built, you can upload your code from a local file to the platform storage:
 
-```text
-neuro-flow upload code
+```
+$ neuro-flow upload code
 ```
 
 By default, this will upload everything from your project's `modules` folder to the `storage:<your_project_id>/modules` storage folder. To configure the source and the target for this command, go to your project's `.neuro/live.yml` file and find the `code` section under `volumes`:
 
-```text
+```
 volumes:
   data:
     remote: storage:$[[ flow.project_id ]]/data
@@ -88,33 +90,32 @@ Here, you can specify your local code folder and the storage folder you want to 
 
 In this example, we will be running a training job based on the code contained in the `train.py` file we just uploaded to the platform storage. To do this, run:
 
-```text
-neuro-flow run train
+```
+$ neuro-flow run train
 ```
 
 Once the job is running, detach from it by pressing **Ctrl+P, Ctrl+Q** and run the following command:
 
-```text
-neuro job port-forward <job-id> 5678:5678
+```
+$ neuro job port-forward <job-id> 5678:5678
 ```
 
 This will allow you to access the job by the `5678` port.
 
-### Debugging 
+### Debugging&#x20;
 
-Open your code file in VS Code and navigate to **Run &gt; Start Debugging** or press **F5**:
+Open your code file in VS Code and navigate to **Run > Start Debugging** or press **F5**:
 
-![](../../.gitbook/assets/image%20%2889%29%20%281%29.png)
+![](<../../.gitbook/assets/image (89) (1).png>)
 
 Select **Remote Attach**:
 
-![](../../.gitbook/assets/image%20%2888%29.png)
+![](<../../.gitbook/assets/image (88).png>)
 
-Enter **localhost** as the host name and the job's port number \(in this case, it's **5687**\):
+Enter **localhost** as the host name and the job's port number (in this case, it's **5687**):
 
-![](../../.gitbook/assets/image%20%2887%29%20%281%29.png)
+![](<../../.gitbook/assets/image (87) (1).png>)
 
-![](../../.gitbook/assets/image%20%2891%29.png)
+![](<../../.gitbook/assets/image (91).png>)
 
 When this is done, you can set the breakpoint and start debugging.
-

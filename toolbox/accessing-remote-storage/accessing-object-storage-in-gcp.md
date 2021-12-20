@@ -1,21 +1,21 @@
 # Accessing Object Storage in GCP
 
-### 
+###
 
 ### Introduction
 
 This tutorial demonstrates how to access your Google Cloud Storage from the Neuro platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket that's accessible from a job on the Neuro platform.
 
-Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) installed.
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed.
 
 ### Creating Neuro and GCP Projects
 
-To create a new Neuro project, run:
+To create a new Neuro project and build an image, run:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cd <project-id>
+$ neuro-flow build myimage
 ```
 
 It's a good practice to limit the scope of access to a specific GCP project. To create a new GCP Project, run:
@@ -53,7 +53,7 @@ Make sure that the newly created key is located at `~/`.
 Create a new secret for the file:
 
 ```bash
-neuro secret add gcp-key @~/$SA_NAME-key.json
+$ neuro secret add gcp-key @~/$SA_NAME-key.json
 ```
 
 Open `.neuro/live.yaml`, find the `remote_debug` section within `jobs`, and add the following lines at the end of `remote_debug`:
@@ -68,7 +68,7 @@ jobs:
 
 ### Creating a Bucket and Granting Access
 
-Now, create a new bucket. Remember: bucket names are globally unique \(see more information on [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
+Now, create a new bucket. Remember: bucket names are globally unique (see more information on [bucket naming conventions](https://cloud.google.com/storage/docs/naming)).
 
 ```bash
 BUCKET_NAME="my-neuro-bucket-42"
@@ -105,7 +105,7 @@ defaults:
 Run a development job and connect to the job's shell:
 
 ```bash
-neuro-flow run remote_debug
+$ neuro-flow run remote_debug
 ```
 
 In your job's shell, activate the service account for CLI:
@@ -124,7 +124,7 @@ Please note that in `remote_debug`, `train`, and `jupyter` jobs the environment 
 
 For instance, you can access your bucket via Python API provided by package `google-cloud-storage`:
 
-```text
+```
 >>> from google.cloud import storage
 >>> bucket = storage.Client().get_bucket("my-neuro-bucket-42")
 >>> text = bucket.get_blob("hello.txt").download_as_string()
@@ -137,6 +137,5 @@ To close remote terminal session, press `^D` or type `exit`.
 Please don't forget to terminate your job when you don't need it anymore:
 
 ```bash
-neuro-flow kill remote_debug
+$ neuro-flow kill remote_debug
 ```
-

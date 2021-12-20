@@ -1,14 +1,14 @@
-# Environments \(Docker images\)
+# Environments (Docker images)
 
 Neu.ro uses Docker containers to run jobs in isolated environments. To run a container, you need to use Docker images that are templates containing an application and all the dependencies to run that application. Thus, a Docker container is a running instance of a Docker image.
 
-Neu.ro lets you use Docker images either from the public Docker registry \(such as Docker Hub\) or from a platform's cluster registry \(also called a private repository\). Every cluster has one platform registry, so you cannot reuse images from one cluster in another cluster.
+Neu.ro lets you use Docker images either from the public Docker registry (such as Docker Hub) or from a platform's cluster registry (also called a private repository). Every cluster has one platform registry, so you cannot reuse images from one cluster in another cluster.
 
 There are several ways to add custom images to the platform registries. These images can be shared with your teammates.
 
 ![Managing environments](../../.gitbook/assets/environments-2.png)
 
-In these tutorials, we will use a sample project - Nero-Assistant - to understand the available options. Before you can work in an environment, make sure that you have initiated a new project \(see the [Getting Started](../../first-steps/getting-started.md) guide for details\).
+In these tutorials, we will use a sample project - Nero-Assistant - to understand the available options. Before you can work in an environment, make sure that you have initialzedi a new project (see the [Getting Started](../../first-steps/getting-started.md) guide for details).
 
 ### **How do I run a job in a container from a public registry image?**
 
@@ -18,14 +18,14 @@ You can run jobs from images both on the public Docker registry and on the platf
 
 **Parameters**
 
-| Name | Description |
-| :--- | :--- |
-| IMAGE | The full URI of the image on which you want to run the command. |
-| \[CMD\] | The commands that you want to pass to the container. |
+| Name   | Description                                                     |
+| ------ | --------------------------------------------------------------- |
+| IMAGE  | The full URI of the image on which you want to run the command. |
+| \[CMD] | The commands that you want to pass to the container.            |
 
 **Sample output**
 
-```text
+```
 > neuro run -n job369 -s cpu-small ubuntu
 √ Job ID: job-2610359c-58b1-4bfc-af69-52ee6e330b1f
 √ Name: job369
@@ -55,7 +55,7 @@ Neu.ro lets you create multiple images, and you can view information about the i
 
 **Sample Output**
 
-```text
+```
 > neuro image ls
 image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
@@ -67,7 +67,7 @@ You can view the tags for an image by running the command:
 
 **Sample output**
 
-```text
+```
 > neuro image tags image://default/clarytyllc/neuromation-nero-assistant
 image://default/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
@@ -86,14 +86,14 @@ To upload a custom image, run the following command:
 
 **Parameters**
 
-| Name | Description |
-| :--- | :--- |
-| LOCAL\_IMAGE | The local custom image that you want to upload. The image name should not contain “image://”. |
-| REMOTE\_IMAGE | The remote image to which you want to upload. |
+| Name          | Description                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| LOCAL\_IMAGE  | The local custom image that you want to upload. The image name should not contain “image://”. |
+| REMOTE\_IMAGE | The remote image to which you want to upload.                                                 |
 
 **Sample Output**
 
-```text
+```
 > neuro push neuromation-nero-assistant image:nero-assistant:v2
 Pushing image neuromation-nero-assistant => image://default/mrsmariyadavydova/nero-assistant:v2
 > b7f3b88ae387: Pushed
@@ -103,7 +103,7 @@ Pushing image neuromation-nero-assistant => image://default/mrsmariyadavydova/ne
 
 After pushing the image, run the `neuro image ls` command to check if the push has worked. If the push was successful, you should see the local image as well as the platform image.
 
-```text
+```
 > neuro images
 image:default/mrsmariyadavydova/nero-assistant:latest
 image:neuromation-neuro-tutorial
@@ -120,14 +120,14 @@ You can use the `neuro job save` command to save a job as a custom image:
 
 **Parameters**
 
-| Name | Description |
-| :--- | :--- |
-| JOB | The ID or name of the job that you want to save as a custom image. |
-| IMAGE | The commands that you want to pass to the container. |
+| Name  | Description                                                        |
+| ----- | ------------------------------------------------------------------ |
+| JOB   | The ID or name of the job that you want to save as a custom image. |
+| IMAGE | The commands that you want to pass to the container.               |
 
 **Sample output**
 
-```text
+```
 > neuro job save job363 image:ubuntu-custom
 Saving job-16339fe4-9559-4c4c-9437-e6e7d5d0721e -> image://default/clarytyllc/ubuntu-custom:latest
 Creating image image://default/clarytyllc/ubuntu-custom:latest image from the job container
@@ -144,7 +144,7 @@ We have saved the job **job363** as a custom image **ubuntu-custom**.
 
 ### **How can I use an image from a platform registry?**
 
-Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments \(or containers\) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and the amount of memory the job will use.
+Neu.ro lets you work with jobs, environments, and storage. Jobs are run on environments (or containers) that are isolated with their own storage, CPU, and memory. You can run jobs both on the public Docker registry or a platform registry. To better manage your resources, you can specify the CPU and the amount of memory the job will use.
 
 You can use the `neuro run` command to run a job:
 
@@ -152,14 +152,14 @@ You can use the `neuro run` command to run a job:
 
 **Parameters**
 
-| Name | Description |
-| :--- | :--- |
-| IMAGE | The full URI of the image on which you want to run the command. |
-| \[CMD\] | The commands that you want to pass to the container. |
+| Name   | Description                                                     |
+| ------ | --------------------------------------------------------------- |
+| IMAGE  | The full URI of the image on which you want to run the command. |
+| \[CMD] | The commands that you want to pass to the container.            |
 
 **Sample output**
 
-```text
+```
 > neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
 Job ID: job-21beb932-1cdb-4b55-b286-10a99752a9f1 Status: pending
 Name: job363
@@ -191,14 +191,14 @@ To pull an image from the platform, run this command:
 
 **Parameters**
 
-| Name | Description |
-| :--- | :--- |
-| REMOTE\_IMAGE | The remote image that you want to pull. |
-| \[LOCAL\_IMAGE\] | The local custom image that you want to pull to. The image name should not contain “image://”. |
+| Name            | Description                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| REMOTE\_IMAGE   | The remote image that you want to pull.                                                        |
+| \[LOCAL\_IMAGE] | The local custom image that you want to pull to. The image name should not contain “image://”. |
 
 **Sample Output**
 
-```text
+```
 > neuro pull image:ubuntu-patched:v1
 > Pulling image image://default/mrsmariyadavydova/ubuntu-patched:v1 => ubuntu-patched:v1
 > d51af753c3d3: Downloading [========>                   ]  4.972MB/28.56MB
@@ -224,17 +224,16 @@ The permissions you may give the user for the shared image:
 
 **Sample command**
 
-```text
+```
 $ neuro share image://default/clarytyllc/neuromation-nero-assistant mrsmariyadavydova manage
 ```
 
 ### Operations with images from other clusters
 
-All operations that were described earlier can be performed with images from other clusters. 
+All operations that were described earlier can be performed with images from other clusters.&#x20;
 
 For example, to push a local `neuromation-nero-assistant` image to the platform registry on the `<cluster-name>` cluster, run:
 
-```text
+```
 $ neuro push neuromation-nero-assistant image:/<cluster-name>/<user-name>/nero-assistant:v2
 ```
-
