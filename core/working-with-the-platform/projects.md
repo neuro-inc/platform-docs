@@ -26,7 +26,7 @@ This command will prompt you to enter some info about your new project:
 
 ```
 project_name [Neuro Project]: New Cookiecutter Project
-project_dir [new cookiecutter project]:
+project_dir [new-cookiecutter-project]:
 project_id [new_cookiecutter_project]:
 code_directory [modules]:
 preserve Neuro Flow template hints [yes]:

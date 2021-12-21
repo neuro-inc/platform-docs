@@ -9,7 +9,7 @@ In this tutorial, you can learn how to set up remote debugging with PyCharm Prof
 First, make sure that you have the Neu.ro CLI client and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed and configured:
 
 ```bash
-$ pip install -U neuro-cli neuro-flow
+$ pipx install neuro-all cookiecutter
 $ neuro login
 ```
 

@@ -10,8 +10,7 @@ Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
 
 ```bash
 $ pip install pipx
-$ pipx install neuro-all
-$ pipx install cookiecutter
+$ pipx install neuro-all cookiecutter
 $ neuro login
 ```
 

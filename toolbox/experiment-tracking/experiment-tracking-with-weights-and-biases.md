@@ -4,16 +4,13 @@
 
 In this tutorial, we show how to set up experiment tracking via Weights & Biases on Neuro Platform using Neuro Project Template.
 
-### Creating Neuro Project
-
-
+### Creating a Neuro Project
 
 First, make sure that you have the Neu.ro CLI client and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed and configured:
 
 ```bash
 $ pip install pipx
-$ pipx install neuro-all
-$ pipx install cookiecutter
+$ pipx install neuro-all cookiecutter
 $ neuro login
 ```
 

@@ -1,8 +1,6 @@
 # Accessing Object Storage in GCP
 
-###
-
-### Introduction
+## Introduction
 
 This tutorial demonstrates how to access your Google Cloud Storage from the Neuro platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket that's accessible from a job on the Neuro platform.
 
