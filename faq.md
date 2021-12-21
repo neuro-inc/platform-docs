@@ -6,14 +6,14 @@
 
 Перейдите в терминале в каталог, содержащий набор данных и выполните команду:
 
-```text
-neuro cp -r data/ storage:data/
+```
+$ neuro cp -r data/ storage:data/
 ```
 
 URI `storage:data/` указывает, что местом назначения является платформа. Таким же образом,
 
-```text
-neuro cp -r storage:data/ data/
+```
+$ neuro cp -r storage:data/ data/
 ```
 
 загружает данные в ваш локальный каталог.
@@ -24,8 +24,8 @@ neuro cp -r storage:data/ data/
 
 [Filebrowser](https://github.com/filebrowser/filebrowser) - это веб-интерфейс управления файлами. Вы можете использовать его для просмотра и управления вашим данными на платформе. Чтобы запустить задание и открыть инструмент в браузере, выполните следующую команду:
 
-```text
-neuro run \
+```
+$ neuro run \
     --name filebrowser \
     --preset cpu-small \
     --http 80 \
@@ -41,16 +41,16 @@ FileBrowser требует аутентификации; учетные данн
 
 Чтобы работать с вашим набором данных из контейнера, для устранения неполадок модели или для получения доступа shell к экземпляру GPU, Вы можете выполнить команду внутри запущенного задания в интерактивном режиме.
 
-Для этого необходимо узнать ID запущенного задания \(можно сделать `neuro ps`, чтобы увидеть список\) и выполнить команду:
+Для этого необходимо узнать ID запущенного задания (можно сделать `neuro ps`, чтобы увидеть список) и выполнить команду:
 
-```text
-neuro exec <job-id or job-name> bash
+```
+$ neuro exec <job-id or job-name> bash
 ```
 
 Например:
 
-```text
-neuro exec training bash
+```
+$ neuro exec training bash
 ```
 
 Эта команда запускает bash внутри запущенного задания и подключает к нему ваш терминал.
@@ -59,35 +59,35 @@ neuro exec training bash
 
 Предполагается, что на вашем локальном компьютере создан образ Docker с именем `helloworld`. Вы можете отправить его на платформу, выполнив:
 
-```text
-neuro push helloworld
+```
+$ neuro push helloworld
 ```
 
 После этого вы можете запустить задание:
 
-```text
-neuro run image:helloworld
+```
+$ neuro run image:helloworld
 ```
 
 ## Как завершить все работающие задания
 
 Чтобы завершить все задания, которые в данный момент выполняются от вашего имени, выполните следующую команду:
 
-```text
- neuro kill `neuro -q ps -o <user>`
+```
+ $ neuro kill `neuro -q ps -o <user>`
 ```
 
 Например:
 
-```text
- neuro kill `neuro -q ps -o mariyadavydova`
+```
+ $ neuro kill `neuro -q ps -o mariyadavydova`
 ```
 
 ## Как выполнить две или более команд в задании
 
 Иногда необходимо выполнить две или три команды в задании, не подключаясь к нему. Например, чтобы изменить рабочий каталог и запустить обучение. Чтобы это сделать, Вам нужно обернуть Ваши команды в вызов `”bash -c ‘<commands>’”`, например:
 
-```text
+```
 "bash -c 'cd /project && python mnist/train.py'"
 ```
 
@@ -100,7 +100,7 @@ neuro run image:helloworld
 
 В некоторых случаях Python кеширует выходные данные, так что Вы не получите вывода, пока работа не будет завершена. Чтобы преодолеть эту проблему, используйте опцию `-u` для `python`, например:
 
-```text
+```
 "bash -c 'cd /project && python -u mnist/train.py'"
 ```
 
@@ -112,7 +112,7 @@ neuro run image:helloworld
 
 #### Пример:
 
-```text
+```
     $ neuro service-account create --name test
      Id               service-account-b41aa732-4bb5-45e4-94c1-a078ca013255
      Name             test
@@ -130,7 +130,7 @@ neuro run image:helloworld
     Save it to some secure place, you will be unable to retrieve it later!
 ```
 
-В этом случае, `janedoe/service-accounts/test` - нужная роль, а  
+В этом случае, `janedoe/service-accounts/test` - нужная роль, а\
 `eyJhbGciOi<hidden>Np0` - нужный auth-токен.
 
 ### Запустите ваше задание
@@ -139,18 +139,18 @@ neuro run image:helloworld
 
 #### Пример:
 
-```text
+```
 $ neuro run --http 8080 --name mytestjob python python -m http.server --cgi 8080
 ```
 
 ### Дайте сервисному аккаунту доступ к заданию
 
-Дайте роли сервисного аккаунта из шага 1 доступ к заданию с помощью команды   
+Дайте роли сервисного аккаунта из шага 1 доступ к заданию с помощью команды \
 `neuro acl grant job:<id-или-имя-задания> <имя-роли> read`.
 
 #### Пример:
 
-```text
+```
 $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
 ```
 
@@ -160,7 +160,7 @@ $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
 
 #### Пример:
 
-```text
+```
     $ curl https://mytestjob--janedoe.jobs.default.org.neu.ro -H "cookie: sat=eyJhbGciOi<hidden>Np0"
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <html>
@@ -182,13 +182,12 @@ $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
 
 Для того, чтобы увидеть текущее использование дискового пространства, запустите такую команду:
 
-```text
+```
 $ neuro run -v storage://:/var/storage ubuntu du -h -d 1 /var/storage
 ```
 
 Если вы хотите проверить использование дискового пространства в конкретной папке, пропишите её название в этой команде следующим образом:
 
-```text
+```
 $ neuro run -v storage:FOLDER_NAME:/var/storage ubuntu du -h -d 1 /var/storage
 ```
-

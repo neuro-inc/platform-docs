@@ -10,7 +10,7 @@
 
 ## Создание нового проекта
 
-Чтобы упростить работу с платформой и помочь внедрить лучшие практики ML, мы предоставляем шаблон проекта. Этот шаблон состоит из рекомендуемых каталогов и файлов. Он предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
+Чтобы упростить работу с платформой и помочь внедрить в ваш рабочий процесс лучшие практики ML, мы предоставляем заранее подготовленный шаблон для создания проектов. Этот шаблон состоит из рекомендуемых каталогов и файлов и предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
 
 Установите пакет cookiecutter и создайте новый проект платформы на его основе:
 
@@ -20,7 +20,7 @@ $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
 {% hint style="info" %}
-Более подробно о создании новых проектов можно прочитать здесь.
+Более подробно о создании новых проектов на базе шаблона можно [прочитать здесь](getting-started.md#sozdanie-novogo-proekta-cookiecutter).
 {% endhint %}
 
 ## Структура проекта
@@ -29,15 +29,23 @@ $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 
 ```
 neuro-tutorial
-├── .neuro/             <- live.yaml file with commands for manipulating training environment
-├── data/               <- training and testing datasets (we do not keep it under source control)
+├── .github/            <- Github workflows и файл dependabot.yml
+├── .neuro/             <- конфигурационные файлы neuro и neuro-flow CLI
+├── config/             <- конфигурационные файлы различных интеграций
+├── data/               <- наборы данных для тестов и тренировки (они не привфязаны к системе контроля версий)
 ├── notebooks/          <- Jupyter notebooks
-├── rnn/                <- source code of models
-├── .gitignore          <- default .gitignore for a Python project
-├── README.md           <- auto-generated informational file
-├── apt.txt             <- list of system packages to be installed in the training environment 
-├── requirements.txt    <- list Python dependencies to be installed in the training environment     
-└── setup.cfg           <- linter settings (Python code quality checking)
+├── modules/            <- исходный код моделей
+├── results/            <- артефакты обучения
+├── .gitignore          <- .gitignore-файл для проекта Python ML
+├── .neuro.toml         <- автоматически сгенерированный конфигурационный файл
+├── .neuroignore        <- файл, указывающий платформе игнорировать папку /results
+├── HELP.md             <- автоматически сгенерированная справка шаблона
+├── README.md           <- автоматически сгенерированный информационный файл
+├── Dockerfile          <- описание базового образа вашего проекта
+├── apt.txt             <- список системных пакетов, устанавливающихся в тренировочной среде
+├── requirements.txt    <- список зависимостей Python, устанавливающихся в тренировочной среде
+├── setup.cfg           <- настройки linter'а (проверка качества Python-кода)
+└── update_actions.py   <- инструкции для процессов обновления
 ```
 
 Когда Вы запустите задание (например, при помощи команды `neuro-flow run jupyter`), каталоги примонтируются к заданию следующим образом:

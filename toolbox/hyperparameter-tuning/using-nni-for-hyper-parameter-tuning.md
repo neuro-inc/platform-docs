@@ -8,22 +8,22 @@ description: >-
 
 ### Введение
 
-В данном руководстве Вы узнаете, как использовать [NNI](https://github.com/microsoft/nni) \(open-source инструмент от Microsoft\) для настройки гиперпараметров на платформе. Вы создадите новый проект, интегрируете его с NNI и, чтобы ускорить поиск, запустите несколько процессов по настройке.
+В данном руководстве Вы узнаете, как использовать [NNI](https://github.com/microsoft/nni) (open-source инструмент от Microsoft) для настройки гиперпараметров на платформе. Вы создадите новый проект, интегрируете его с NNI и, чтобы ускорить поиск, запустите несколько процессов по настройке.
 
-Перед тем, как приступать к следующим шагам, убедитесь, что у Вас установлен [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli).
+Убедитесь, что у вас установлен CLI и [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter).
 
-### Создание проекта
+### Создание проектов на платформе и GCP
 
-Для создания проекта, выполните команду:
+Для создания проекта выполните следующие команды:
 
 ```bash
-neuro project init
-cd <project-slug>
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cd <project-id>
 ```
 
 ### Подготовка кода для эксперимента и интеграция с платформой
 
-Мы собираемся использовать пример кода [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) с набором данных MNIST. Поместите файл [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) в папку `modules`, а файл [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search_space.json) в папку `config`.
+Мы собираемся использовать пример кода [NNI example code](https://github.com/microsoft/nni/tree/master/examples/trials/mnist-tfv2) с набором данных MNIST. Поместите файл [mnist.py](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/mnist.py) в папку `modules`, а файл [search\_space.json](https://github.com/microsoft/nni/blob/master/examples/trials/mnist-tfv2/search\_space.json) в папку `config`.
 
 Затем добавьте следующие записи в файл `requirements.txt`:
 
@@ -36,7 +36,7 @@ Jinja2>=2.11.2 # Required by Neu.ro NNI integration script
 Теперь мы готовы собрать наш образ:
 
 ```bash
-neuro-flow build myimage
+$ neuro-flow build myimage
 ```
 
 Пока Docker создает наш образ, мы можем продолжить настройку интеграции NNI.
@@ -86,7 +86,7 @@ neuro-flow build myimage
 Осталось выполнить команду
 
 ```bash
-make hypertrain
+$ $make hypertrain
 ```
 
 Данная команда делает следующее:
@@ -103,6 +103,5 @@ make hypertrain
 Когда Вы закончите работу, Вы можете завершить оба процесса и мастер-узел с помощью команды:
 
 ```bash
-neuro-flow kill ALL
+$ neuro-flow kill ALL
 ```
-

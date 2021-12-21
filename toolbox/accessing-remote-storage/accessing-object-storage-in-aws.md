@@ -4,35 +4,35 @@
 
 В данном руководстве показано, как получить доступ к AWS S3 из платформы. Вы создадите новый проект, создадите S3 bucket и сделаете его доступным из заданий платформы.
 
-Убедитесь, что у вас установлен CLI.
+Убедитесь, что у вас установлен CLI и [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter).
 
-### Создание проекта
+### Создание проектов на платформе и GCP
 
-Для создания проекта выполните команду:
+Для создания проекта и сборки образа выполните следующие команды:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cd <project-id>
+$ neuro-flow build myimage
 ```
 
 ### Создание пользователя AWS IAM
 
-Следуйте инструкциям [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
+Следуйте инструкциям [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_users\_create.html).
 
-В Консоли AWS перейдите в раскрывающийся список "Services", "IAM" \(Identity and Access Management\). На левой панели выберите "Access management" -&gt; "Users", нажмите синюю кнопку "Add user" и пройдите мастер создания пользователя. В результате у Вас будет создан новый пользователь:
+В Консоли AWS перейдите в раскрывающийся список "Services", "IAM" (Identity and Access Management). На левой панели выберите "Access management" -> "Users", нажмите синюю кнопку "Add user" и пройдите мастер создания пользователя. В результате у Вас будет создан новый пользователь:
 
-![](../../.gitbook/assets/1_add_user.png)
+![](../../.gitbook/assets/1\_add\_user.png)
 
 Убедитесь, что данный пользователь имеется в списке разрешений "AmazonS3FullAccess".
 
 Затем, Вам нужно создать ключ доступа для созданного пользователя. Для этого перейдите в описание пользователя, вкладка "Security credentials", нажмите кнопку "Create access key":
 
-![](../../.gitbook/assets/2_create_key.png)
+![](../../.gitbook/assets/2\_create\_key.png)
 
 Поместите эти учетные данные в локальный файл в каталоге вашего проекта `~/aws-credentials.txt`. Например:
 
-```text
+```
 [default]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -103,4 +103,3 @@ aws s3 cp s3://my-neuro-bucket-42/hello.txt -
 ```bash
 make kill-develop
 ```
-

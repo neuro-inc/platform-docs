@@ -10,28 +10,36 @@
 
 ## Создание проектов
 
-Новые проекты можно создавать в Neu.ro CLI с помощью следующей команды:
+Для начала, вам потребуется установить [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter) через **pip** или **pipx**:
 
 ```
-$ neuro project init
+$ pipx install cookiecutter
 ```
 
-Эта команда запросит информацию о новом проекте - его название, slug (системное название) и имя папки, в которой будет находиться ваш код:
+После этого вы можете создать новый [проект платформы на основе cookiecutter](https://github.com/neuro-inc/cookiecutter-neuro-project/blob/master/cookiecutter.json):
 
 ```
-project_name [Name of the project]: Neuro Tutorial
-project_slug [neuro-tutorial]:
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+```
+
+Вам нужно будет ответить на несколько вопросов о новом проекте:
+
+```
+project_name [Neuro Project]: New Cookiecutter Project
+project_dir [new-cookiecutter-project]:
+project_id [new_cookiecutter_project]:
 code_directory [modules]:
+preserve Neuro Flow template hints [yes]:
 ```
 
 {% hint style="info" %}
-Значения по умолчанию указаны в квадратных скобках **\[ ].** Вы можете использовать их, нажимая **Enter**.
+Значения по умолчанию занесены в квадратные скобки **\[ ].** Вы можете использовать их, нажимая **Enter**.
 {% endhint %}
 
 Структура созданного проекта будет выглядеть следующим образом:
 
 ```
-neuro-tutorial
+new-cookiecutter-project
 ├── .neuro/             <- конфигурационные файлы neuro и neuro-flow CLI
 ├── config/             <- конфигурационные файлы различных интеграций
 ├── data/               <- наборы данных для тестов и тренировки (они не привфязаны к системе контроля версий)

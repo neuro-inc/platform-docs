@@ -4,16 +4,16 @@
 
 В данном руководстве показано, как получить доступ к облачному хранилищу Google Cloud Storage с платформы. Мы создадим новый проект на GCP, учетную запись и bucket, а затем сделаем этот bucket доступным для задания на платформе.
 
-Убедитесь, что у вас установлен CLI.
+Убедитесь, что у вас установлен CLI и [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter).
 
 ### Создание проектов на платформе и GCP
 
-Для создания проекта выполните команду:
+Для создания проекта и сборки образа выполните следующие команды:
 
 ```bash
-neuro project init
-cd <project-slug>
-neuro-flow build myimage
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cd <project-id>
+$ neuro-flow build myimage
 ```
 
 Хорошей практикой является ограничение доступа к конкретному проекту GCP. Чтобы создать новый проект GCP выполните команду:
@@ -66,7 +66,7 @@ jobs:
 
 ### Создание Bucket и предоставление доступа
 
-Теперь создайте новый bucket. Помните: имена bucket глобально уникальны \(см. дополнительную информацию [bucket naming conventions](https://cloud.google.com/storage/docs/naming)\).
+Теперь создайте новый bucket. Помните: имена bucket глобально уникальны (см. дополнительную информацию [bucket naming conventions](https://cloud.google.com/storage/docs/naming)).
 
 ```bash
 BUCKET_NAME="my-neuro-bucket-42"
@@ -122,7 +122,7 @@ gsutil cat gs://my-neuro-bucket-42/hello.txt
 
 Например, вы можете получить доступ к своему bucket через Python API, предоставляемый пакетом `google-cloud-storage`:
 
-```text
+```
 >>> from google.cloud import storage
 >>> bucket = storage.Client().get_bucket("my-neuro-bucket-42")
 >>> text = bucket.get_blob("hello.txt").download_as_string()
@@ -137,4 +137,3 @@ b'Hello World\n'
 ```bash
 neuro-flow kill remote_debug
 ```
-

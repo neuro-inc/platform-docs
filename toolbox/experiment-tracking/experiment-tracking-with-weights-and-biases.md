@@ -6,24 +6,29 @@
 
 ### Создание проекта
 
-Для создания нового проекта выполните команду:
+Во-первых, убедитесь, что у вас установлен и настроен клиент CLI и [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter):
 
 ```bash
-> neuro project init
-> cd <project-slug>
-> neuro-flow build myimage
+$ pipx install neuro-all cookiecutter
+$ neuro login
 ```
 
-### Аутентификация на W&B
+Затем создайте пустой проект:
 
-Теперь можно подключать [Weights & Biases](https://www.wandb.com/) к вашему проекту:
+```bash
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+```
 
-1. [Зарегистрируйтесь на W&B](https://app.wandb.ai/login?signup=true)
-2. Найдите ваш API-ключ \(также называемый _токен доступа_\) на[ странице настроек W&B](https://app.wandb.ai/settings) \(секция “API keys”\). Он дожен выглядеть подобным образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
+### Аутентификация на W\&B
+
+Теперь можно подключать [Weights & Biases](https://www.wandb.com) к вашему проекту:
+
+1. [Зарегистрируйтесь на W\&B](https://app.wandb.ai/login?signup=true)
+2. Найдите ваш API-ключ (также называемый _токен доступа_) на[ странице настроек W\&B](https://app.wandb.ai/settings) (секция “API keys”). Он дожен выглядеть подобным образом: `cf23df2207d99a74fbe169e3eba035e633b65d94`.
 3. Сохраните API-ключ как секрет на платформе:
 
-```text
-> neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
+```
+$ neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 Откройте `.neuro/live.yaml`, найдите в нём секцию `remote_debug` внутри `jobs` и добавьте следующие строки в её конце:
@@ -35,7 +40,7 @@ jobs:
      additional_env_vars: '{"WANDB_API_KEY": "secret:wandb-token"}'
 ```
 
-Теперь Вы можете использовать W&B API в Вашем коде.
+Теперь Вы можете использовать W\&B API в Вашем коде.
 
 ### Тестирование
 
@@ -49,13 +54,13 @@ defaults:
 Запустите задание и подключитесь к нему через оболочку shell:
 
 ```bash
-> neuro-flow run remote_debug
+$ neuro-flow run remote_debug
 ```
 
 Попробуйте использовать команду `wandb`:
 
 ```bash
-> wandb status
+$ wandb status
 ```
 
 Вы должны увидеть такой вывод:
@@ -75,13 +80,12 @@ Current Settings
 }
 ```
 
-Вы также можете найти другие примеры использования отслеживания экспериментов и других функций W&B [в официальном репозитории примеров W&B](https://github.com/wandb/examples).
+Вы также можете найти другие примеры использования отслеживания экспериментов и других функций W\&B [в официальном репозитории примеров W\&B](https://github.com/wandb/examples).
 
 Чтобы закрыть сеанс удаленного терминала, нажмите `^D` или введите`exit`.
 
 Пожалуйста, не забудьте прекратить работу задания, если оно Вам больше не нужно:
 
 ```bash
-> neuro-flow kill remote_debug
+$ neuro-flow kill remote_debug
 ```
-

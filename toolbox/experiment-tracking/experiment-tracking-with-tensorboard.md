@@ -15,13 +15,15 @@ TensorBoard, в свою очередь, позволяет измерять и 
 
 Чтобы создать обучение:
 
-* Создайте новый проект, используя следующую команду:
+* Создайте новый проект, используя следующую команду (убедитесь, что у вас установлен  [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter) перед её запуском):
 
 ```
-(base) C:\Projects>neuro project init
+(base) C:\Projects>cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 project_name [Neuro Project]: imagesummary
-project_slug [imagesummary]: image
+project_dir [imagesummary]:
+project_id [imagesummary]:
 code_directory [modules]:
+preserve Neuro Flow template hints [yes]:
 ```
 
 Как только новый проект будет создан, можно начинать собирать код, который запустит нашу модель. Далее описаны шаги по созданию файла `train.py`, содержащего этот код.

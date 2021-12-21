@@ -26,7 +26,7 @@
 **Образец вывода**
 
 ```
-> neuro run -n job369 -s cpu-small ubuntu
+$ neuro run -n job369 -s cpu-small ubuntu
 √ Job ID: job-2610359c-58b1-4bfc-af69-52ee6e330b1f
 √ Name: job369
 - Status: pending Creating
@@ -56,7 +56,7 @@
 **Образец вывода**
 
 ```
-> neuro image ls
+$ neuro image ls
 image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
 ```
@@ -68,7 +68,7 @@ image:neuromation-nero-assistant
 **Образец вывода**
 
 ```
-> neuro image tags image://default/clarytyllc/neuromation-nero-assistant
+$ neuro image tags image://default/clarytyllc/neuromation-nero-assistant
 image://default/clarytyllc/neuromation-nero-assistant:v1.5.1
 ```
 
@@ -94,7 +94,7 @@ image://default/clarytyllc/neuromation-nero-assistant:v1.5.1
 **Образец вывода**
 
 ```
-> neuro push neuromation-nero-assistant image:nero-assistant:v2
+$ neuro push neuromation-nero-assistant image:nero-assistant:v2
 Pushing image neuromation-nero-assistant => image://default/mrsmariyadavydova/nero-assistant:v2
 > b7f3b88ae387: Pushed
 > e6a8e7191cdf: Pushing [=> ]               2.736MB/93.82MB
@@ -104,7 +104,7 @@ Pushing image neuromation-nero-assistant => image://default/mrsmariyadavydova/ne
 После загрузки образа, чтобы проверить, сработала ли успешно передача, выполните команду `neuro image ls`. Если загрузка прошла успешно, то Вы увидите Ваш образ, а также образ платформы.
 
 ```
-> neuro images
+$ neuro images
 image:default/mrsmariyadavydova/nero-assistant:latest
 image:neuromation-neuro-tutorial
 image:neuromation-nero-assistant
@@ -128,7 +128,7 @@ image:neuromation-nero-assistant
 **Образец вывода**
 
 ```
-> neuro job save job363 image:ubuntu-custom
+$ neuro job save job363 image:ubuntu-custom
 Saving job-16339fe4-9559-4c4c-9437-e6e7d5d0721e -> image://default/clarytyllc/ubuntu-custom:latest
 Creating image image://default/clarytyllc/ubuntu-custom:latest image from the job container
 Image created
@@ -160,7 +160,7 @@ image://default/clarytyllc/ubuntu-custom:latest
 **Образец вывода**
 
 ```
-> neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
+$ neuro run -n job363 -s cpu-small image:ubuntu-patched:v2 echo Hello World
 Job ID: job-21beb932-1cdb-4b55-b286-10a99752a9f1 Status: pending
 Name: job363
 Http URL: https://job363--clarytyllc.jobs.default.org.neu.ro

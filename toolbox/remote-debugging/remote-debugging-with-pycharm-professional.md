@@ -6,25 +6,27 @@
 
 ## Создание нового проекта
 
-Во-первых, убедитесь, что у вас установлен и настроен клиент CLI:
+Во-первых, убедитесь, что у вас установлен и настроен клиент CLI и [пакет **cookiecutter**](https://github.com/cookiecutter/cookiecutter):
 
 ```bash
-> pip install -U neuro-cli neuro-flow
-> neuro login
+$ pipx install neuro-all cookiecutter
+$ neuro login
 ```
 
 Затем создайте пустой проект:
 
 ```bash
-> neuro project init
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
 Эта команда задаст несколько вопросов о вашем проекте:
 
-```text
+```
 project_name [Name of the project]: Neuro PyCharm
-project_slug [neuro-pycharm]: 
+project_dir [neuro-pycharm]:
+project_id [neuro_pycharm]:
 code_directory [modules]:
+preserve Neuro Flow template hints [yes]:
 ```
 
 Далее, перейдите в папку нового проекта и настройте на платформе рабочее окружение проекта:
@@ -36,9 +38,9 @@ code_directory [modules]:
 
 ## Настройка PyCharm
 
-Откройте только что созданный проект в PyCharm Professional и добавьте пример кода для отладки как новый файл `main.py` в папке `modules` \(в этом примере мы используем фрагмент кода из документации [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)\).
+Откройте только что созданный проект в PyCharm Professional и добавьте пример кода для отладки как новый файл `main.py` в папке `modules` (в этом примере мы используем фрагмент кода из документации [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)).
 
-Затем, исключите все каталоги, которые не содержат код Python \(в пустом проекте код будет только в папке `modules`\). PyCharm не синхронизирует исключенные каталоги. Выберите все каталоги, которые нужно исключить, щелкните правой кнопкой мыши и выберите **Mark Directory as** -&gt; **Excluded**. В результате вы увидите настроенный проект:
+Затем, исключите все каталоги, которые не содержат код Python (в пустом проекте код будет только в папке `modules`). PyCharm не синхронизирует исключенные каталоги. Выберите все каталоги, которые нужно исключить, щелкните правой кнопкой мыши и выберите **Mark Directory as** -> **Excluded**. В результате вы увидите настроенный проект:
 
 ![](../../.gitbook/assets/1.png)
 
@@ -57,9 +59,9 @@ code_directory [modules]:
 
 ![](../../.gitbook/assets/1.1.png)
 
-Данная команда запускает задание `remote_debug` на платформе. Это задание будет использовать пресет кластера по умолчанию и пробросит локальный порт 2211 к порту SSH задания. Все запущенные задания потребляют Вашу квоту, поэтому, пожалуйста, _не забудьте прекратить работу заданий,_ когда они больше не нужны. Для этого можно выполнить `neuro-flow kill remote_debug` \(это остановит задание, созданное на прошлом шагу\) или `neuro-flow kill ALL` \(это остановит все ваши задания\).
+Данная команда запускает задание `remote_debug` на платформе. Это задание будет использовать пресет кластера по умолчанию и пробросит локальный порт 2211 к порту SSH задания. Все запущенные задания потребляют Вашу квоту, поэтому, пожалуйста, _не забудьте прекратить работу заданий,_ когда они больше не нужны. Для этого можно выполнить `neuro-flow kill remote_debug` (это остановит задание, созданное на прошлом шагу) или `neuro-flow kill ALL` (это остановит все ваши задания).
 
-Теперь вернитесь в проект PyCharm и перейдите в **Preferences** -&gt; **Project** -&gt; **Project interpreter** \(также можно использовать поиск по слову "interpreter"\). Чтобы увидеть опции интерпретатора проекта, нажмите на **иконку шестеренки** и выберите **Add...** В новом окне выберите **SSH Interpreter** и установите такую конфигурацию:
+Теперь вернитесь в проект PyCharm и перейдите в **Preferences** -> **Project** -> **Project interpreter** (также можно использовать поиск по слову "interpreter"). Чтобы увидеть опции интерпретатора проекта, нажмите на **иконку шестеренки** и выберите **Add...** В новом окне выберите **SSH Interpreter** и установите такую конфигурацию:
 
 * Host: _localhost_
 * Port: _2211_
@@ -80,7 +82,7 @@ Sync folders: <Project root> -> /neuro-pycharm
 
 Нажмите **Finish** и настройка будет закончена:
 
-![](../../.gitbook/assets/2_mapping.png)
+![](../../.gitbook/assets/2\_mapping.png)
 
 Нажмите **OK**.
 
@@ -99,8 +101,7 @@ Sync folders: <Project root> -> /neuro-pycharm
 ![](../../.gitbook/assets/4.png)
 
 {% hint style="info" %}
-Примечание: если mapping проекта не был настроен, и удаленный интерпретатор пытается выполнить файл с локальным путем в удаленной среде, вам может потребоваться заново указать mapping.  Вы можете это сделать в **Run** -&gt; **Edit Configurations...** -&gt; **Path mappings**:
+Примечание: если mapping проекта не был настроен, и удаленный интерпретатор пытается выполнить файл с локальным путем в удаленной среде, вам может потребоваться заново указать mapping.  Вы можете это сделать в **Run** -> **Edit Configurations...** -> **Path mappings**:
 {% endhint %}
 
 ![](../../.gitbook/assets/5.png)
-
