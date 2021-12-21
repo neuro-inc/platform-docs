@@ -4,33 +4,30 @@
 
 В данном руководстве описывается рекомендуемый способ обучения простой модели машинного обучения на платформе. Так как наши инженеры предпочитают PyTorch другим инструментам ML, мы показываем обучение и оценку на примере PyTorch.
 
-Мы предполагаем, что вы уже зарегистрировались на платформе, установили Neuro CLI и залогинились \(смотри [Начало работы](getting-started.md)\).
+Мы предполагаем, что вы уже зарегистрировались на платформе, установили Neuro CLI и залогинились (смотри [Начало работы](getting-started.md)).
 
-Наш пример основывается на [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html).
+Наш пример основывается на [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char\_rnn\_classification\_tutorial.html).
 
 ## Создание нового проекта
 
 Чтобы упростить работу с платформой и помочь внедрить лучшие практики ML, мы предоставляем шаблон проекта. Этот шаблон состоит из рекомендуемых каталогов и файлов. Он предназначен для удобной работы с нашим [базовым рабочим окружением](https://hub.docker.com/r/neuromation/base).
 
-Создайте новый проект на основе шаблона:
+Установите пакет cookiecutter и создайте новый проект платформы на его основе:
 
-```text
-$ neuro project init
+```
+$ pipx install cookiecutter
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
-Данная команда запрашивает несколько вопросов относительно Вашего проекта:
-
-```text
-project_name [Name of the project]: Neuro Tutorial
-project_slug [neuro-tutorial]: 
-code_directory [modules]: rnn
-```
+{% hint style="info" %}
+Более подробно о создании новых проектов можно прочитать здесь.
+{% endhint %}
 
 ## Структура проекта
 
 После выполнения вышеприведенной команды Вы получите следующую структуру:
 
-```text
+```
 neuro-tutorial
 ├── .neuro/             <- live.yaml file with commands for manipulating training environment
 ├── data/               <- training and testing datasets (we do not keep it under source control)
@@ -43,14 +40,14 @@ neuro-tutorial
 └── setup.cfg           <- linter settings (Python code quality checking)
 ```
 
-Когда Вы запустите задание \(например, при помощи команды `neuro-flow run jupyter`\), каталоги примонтируются к заданию следующим образом:
+Когда Вы запустите задание (например, при помощи команды `neuro-flow run jupyter`), каталоги примонтируются к заданию следующим образом:
 
-| Точка монтирования | Описание | URI хранения данных |
-| :--- | :--- | :--- |
-| `/project/data/` | Данные обучения / тестирования | `storage:neuro-tutorial/data/` |
-| `/project/rnn/` | Пользовательский код Python | `storage:neuro-tutorial/rnn/` |
+| Точка монтирования    | Описание                          | URI хранения данных                 |
+| --------------------- | --------------------------------- | ----------------------------------- |
+| `/project/data/`      | Данные обучения / тестирования    | `storage:neuro-tutorial/data/`      |
+| `/project/rnn/`       | Пользовательский код Python       | `storage:neuro-tutorial/rnn/`       |
 | `/project/notebooks/` | Пользовательский Jupyter notebook | `storage:neuro-tutorial/notebooks/` |
-| `/project/results/` | Файлы логирования и результат | `storage:neuro-tutorial/results/` |
+| `/project/results/`   | Файлы логирования и результат     | `storage:neuro-tutorial/results/`   |
 
 Данное сопоставление определено в переменных в верхней части файла `Makefile` и при необходимости может быть изменено.
 
@@ -60,19 +57,19 @@ neuro-tutorial
 
 * Меняем рабочую директорию:
 
-```text
+```
 $ cd neuro-tutorial
 ```
 
-* Копируем [модель](https://github.com/pytorch/tutorials/blob/master/intermediate_source/char_rnn_classification_tutorial.py) в папку `rnn`:
+* Копируем [модель](https://github.com/pytorch/tutorials/blob/master/intermediate\_source/char\_rnn\_classification\_tutorial.py) в папку `rnn`:
 
-```text
+```
 $ curl https://raw.githubusercontent.com/pytorch/tutorials/master/intermediate_source/char_rnn_classification_tutorial.py -o rnn/char_rnn_classification_tutorial.py
 ```
 
 * Загрузим [отсюда](https://download.pytorch.org/tutorial/data.zip) данные, распакуем ZIP содержимое и поместим его в папку `data`:
 
-```text
+```
 $ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip data/data.zip && rm data/data.zip
 ```
 
@@ -82,15 +79,15 @@ $ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip 
 
 Чтобы настроить удаленное рабочее окружение, запустите команду
 
-```text
+```
 $ neuro-flow build myimage
 ```
 
-Данная команда запускает задание \(через команду `neuro run`\), загружает файлы зависимостей `apt.txt` и `requirements.txt` \(через команду `neuro cp`\), устанавливает зависимости \(используя `neuro exec`\), выполняет другие подготовительные действия, а затем создает базовый образ из данного задания и загружает его на платформу \(с помощью функции `neuro save`, которая работает аналогично `docker commit`\).
+Данная команда запускает задание (через команду `neuro run`), загружает файлы зависимостей `apt.txt` и `requirements.txt` (через команду `neuro cp`), устанавливает зависимости (используя `neuro exec`), выполняет другие подготовительные действия, а затем создает базовый образ из данного задания и загружает его на платформу (с помощью функции `neuro save`, которая работает аналогично `docker commit`).
 
 Чтобы загрузить данные и код на Ваш диск, запустите команду
 
-```text
+```
 $ neuro-flow upload ALL
 ```
 
@@ -99,15 +96,15 @@ $ neuro-flow upload ALL
 * откройте в редакторе файл `.neuro/live.yaml`,
 * найдите следующую запись в секции `train`:
 
-```text
+```
     bash: |
         cd $[[ volumes.project.mount ]]
         python -u $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]]
 ```
 
-* и замените ее на нижеприведенную запись: 
+* и замените ее на нижеприведенную запись:&#x20;
 
-```text
+```
     bash: |
         cd $[[ volumes.project.mount ]]
         python -u $[[ volumes.code.mount ]]/char_rnn_classification_tutorial.py
@@ -115,13 +112,13 @@ $ neuro-flow upload ALL
 
 Теперь можно запустить команду
 
-```text
+```
 $ neuro-flow run train
 ```
 
 и наблюдать за выводом. Вы увидите, как выполняются некоторые проверки в начале скрипта, а затем происходит обучение модели и оценка:
 
-```text
+```
 ['data/names/German.txt', 'data/names/Polish.txt', 'data/names/Irish.txt', 'data/names/Vietnamese.txt', 
 'data/names/French.txt', 'data/names/Japanese.txt', 'data/names/Spanish.txt', 'data/names/Chinese.txt', 
 'data/names/Korean.txt', 'data/names/Czech.txt', 'data/names/Arabic.txt', 'data/names/Portuguese.txt', 
@@ -184,4 +181,3 @@ category = Scottish / line = Mcintosh
 (-1.81) Arabic
 (-2.14) Japanese
 ```
-
