@@ -92,7 +92,7 @@ $ neuro login
 Запустим на CPU задание, которое выводит “Hello, World!” и останавливается:
 
 ```
-neuro run --preset cpu-small --name test ubuntu echo Hello, World!
+neuro run --preset cpu-small --name test ubuntu -- echo Hello, World!
 ```
 
 После запуска данной команды в терминале Вы увидите следующее:
@@ -116,10 +116,10 @@ Hello, World!
 Запустим задание на GPU в рабочем окружении по умолчанию (`neuromation/base`), которое показывает, доступно ли CUDA в данном рабочем окружении:
 
 ```
-neuro run --preset gpu-k80-small --name test neuromation/base python -c "import torch; print(torch.cuda.is_available());"
+neuro run --preset gpu-small --name test neuromation/base -- python -c "import torch; print(torch.cuda.is_available());"
 ```
 
-Здесь мы использовали пресет `gpu-k80-small` для запуска задания. Чтобы увидеть полный список доступных пресетов, запустите команду:
+Здесь мы использовали пресет `gpu-small` для запуска задания. Чтобы увидеть полный список доступных пресетов, запустите команду:
 
 ```
 $ neuro config show
@@ -136,7 +136,7 @@ $ neuro mkdir -p storage:demo
 Запустим команду, которая монтирует каталог `demo` на дисковом пространстве к папке `/demo` в контейнере задания и создает в нём файл:
 
 ```
-$ neuro run --preset cpu-small --name test --volume storage:demo:/demo:rw ubuntu bash -c "echo Hello >> /demo/hello.txt"
+$ neuro run --volume storage:demo:/demo:rw ubuntu -- bash -c "echo Hello >> /demo/hello.txt"
 ```
 
 Убедитесь, что файл, который вы только что создали, действительно находится на дисковом пространстве:
@@ -233,10 +233,10 @@ $ neuro-flow upload code
 $ neuro config show 
 ```
 
-Для запуска сессии Jupyter Notebooks на GPU, выполните:
+Для запуска сессии Jupyter Notebooks, выполните:
 
 ```
-$ neuro-flow run jupyter --preset <имя-пресета>
+$ neuro-flow run jupyter
 ```
 
 Эта команда откроет интерфейс Jupyter Notebooks в вашем браузере по умолчанию.
@@ -249,7 +249,7 @@ jupyter:
     action: gh:neuro-actions/jupyter@<version>
     args:
       ...
-      preset: <имя-пресета-gpu>
+      preset: <имя-пресета>
       ...
 ```
 
@@ -277,5 +277,5 @@ $ neuro-flow kill jupyter
 Чтобы проверить, сколько кредитов у вас осталось, запустите команду:
 
 ```
-$ neuro config show-quota
+$ neuro config show
 ```
