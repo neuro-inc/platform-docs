@@ -278,5 +278,5 @@ $ neuro-flow kill jupyter
 To check how many credits you have left, run:
 
 ```
-$ neuro config show-quota
+$ neuro config show
 ```
