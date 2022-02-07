@@ -36,7 +36,7 @@ $ pipx upgrade neuro-all
 
 You can also install all of the components through pip.
 
-Neu.ro CLI requires Python 3 installed (recommended: 3.8; required: 3.6.6 or newer, 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
+Neu.ro CLI requires Python 3 installed (recommended: 3.8; required: 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
 
 ```
 $ pip install -U neuro-cli neuro-extras neuro-flow
