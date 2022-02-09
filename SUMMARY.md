@@ -22,7 +22,7 @@
   * [Кластеры (Ресурсы)](core/clusters-and-roles/clusters-resources.md)
   * [Роли](core/clusters-and-roles/roles.md)
 * [Хранение и использование данных](core/platform-storage/README.md)
-  * [Дисковое пространство](core/platform-storage/storage.md)
+  * [Сетевое хранилище](core/platform-storage/storage.md)
   * [Диски](core/platform-storage/disks.md)
   * [Бакеты](core/platform-storage/buckets.md)
 * [Работа с платформой](core/working-with-the-platform/README.md)
