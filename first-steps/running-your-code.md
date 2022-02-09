@@ -13,22 +13,22 @@ $ pip install -U neuro-flow
 
 ## Настройка
 
-В качестве примера мы будем использовать [репозиторий](https://github.com/songyouwei/ABSA-PyTorch) GitHub, который содержит PyTorch-реализации для моделей аспектно-ориентированного анализа эмоциональной окраски \(подробнее см. [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted)\). 
+В качестве примера мы будем использовать [репозиторий](https://github.com/songyouwei/ABSA-PyTorch) GitHub, который содержит PyTorch-реализации для моделей аспектно-ориентированного анализа эмоциональной окраски (подробнее см. [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted)).&#x20;
 
-Сначала клонируем репозиторий и перейдем в созданную папку.:
+Сначала клонируем репозиторий и перейдем в созданную папку:
 
 ```bash
 $ git clone git@github.com:songyouwei/ABSA-PyTorch.git
 $ cd ABSA-PyTorch
 ```
 
-Теперь добавим несколько файлов:
+Нам также нужно создать два дополнительных файла в этой папке:
 
-* `Dockerfile` содержит очень простую конфигурацию образа Docker. Этот файл нужен нам для создания собственного образа Docker, основанного на общедоступных образах `pytorch/pytorch` и содержащего требования данного репозитория \(которые перечислены в файле `requirements.txt`\):
+* `Dockerfile` содержит очень простую конфигурацию образа Docker. Этот файл нужен нам для создания собственного образа Docker, основанного на общедоступных образах `pytorch/pytorch` и содержащего требования данного репозитория (которые перечислены в файле `requirements.txt`):
 
 {% code title="Dockerfile" %}
 ```bash
-FROM pytorch/pytorch
+FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime
 COPY . /cfg
 RUN pip install --progress-bar=off -U --no-cache-dir -r /cfg/requirements.txt
 ```
@@ -58,6 +58,7 @@ jobs:
   train:
     image: ${{ images.pytorch.ref }}
     preset: gpu-small
+    name: absa-pytorch-train
     volumes:
       - ${{ volumes.project.ref_rw }}
     bash: |
@@ -68,7 +69,7 @@ jobs:
 
 Эту конфигурационную информацию можно кратко разъяснить так:
 
-*  секция `volumes` содержит объявления связей между файловой системой вашего компьютера и хранилищем платформы; здесь мы заявляем, что хотим, чтобы вся папка проекта была загружена в папку `storage:absa` внутри хранилища и примонтирована внутри заданий `/project`;
+* &#x20;секция `volumes` содержит объявления связей между файловой системой вашего компьютера и хранилищем платформы; здесь мы заявляем, что хотим, чтобы вся папка проекта была загружена в папку `storage:absa` внутри хранилища и примонтирована внутри заданий `/project`;
 * секция `images` содержит объявления образов Docker, созданных внутри проекта; здесь мы объявляем наш образ, описанный в файле `Dockerfile`;
 * в секции `jobs` происходит большая часть работы; здесь мы объявляем задание `train`, запускающее наш скрипт по обучению с несколькими параметрами.
 
@@ -78,22 +79,21 @@ jobs:
 
 * Сначала создайте тома и загрузите проект на хранилище платформы:
 
-```text
+```
 $ neuro-flow mkvolumes
 $ neuro-flow upload ALL
 ```
 
 * Затем соберите образ:
 
-```text
+```
 $ neuro-flow build pytorch
 ```
 
 * Запустите обучение:
 
-```text
+```
 $ neuro-flow run train
 ```
 
-Вы можете запустить `neuro-flow --help`, чтобы получить сведения о доступных командах. 
-
+Вы можете запустить `neuro-flow --help`, чтобы получить сведения о доступных командах.&#x20;
