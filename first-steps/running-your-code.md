@@ -13,7 +13,7 @@ $ pip install -U neuro-flow
 
 ## Configuration
 
-As an example we'll use the GitHub [repo](https://github.com/songyouwei/ABSA-PyTorch) that contains PyTorch implementations for Aspect-Based Sentiment Analysis models \(see [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted) for more details\). 
+As an example we'll use the GitHub [repo](https://github.com/songyouwei/ABSA-PyTorch) that contains PyTorch implementations for Aspect-Based Sentiment Analysis models (see [Attentional Encoder Network for Targeted Sentiment Classification](https://paperswithcode.com/paper/attentional-encoder-network-for-targeted) for more details).&#x20;
 
 First, let's clone the repo and navigate to the created folder:
 
@@ -22,13 +22,13 @@ $ git clone git@github.com:songyouwei/ABSA-PyTorch.git
 $ cd ABSA-PyTorch
 ```
 
-Now, we need to add a couple of files:
+Now, we need to create two more files шт ершы ащдвук:
 
-* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements \(which are gracefully listed by the repo maintainer in `requirements.txt`\):
+* `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements (which are gracefully listed by the repo maintainer in `requirements.txt`):
 
 {% code title="Dockerfile" %}
 ```bash
-FROM pytorch/pytorch
+FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime
 COPY . /cfg
 RUN pip install --progress-bar=off -U --no-cache-dir -r /cfg/requirements.txt
 ```
@@ -58,6 +58,7 @@ jobs:
   train:
     image: ${{ images.pytorch.ref }}
     preset: gpu-small
+    name: absa-pytorch-train
     volumes:
       - ${{ volumes.project.ref_rw }}
     bash: |
@@ -78,22 +79,21 @@ Now it's time to run several commands that set up the project environment and ru
 
 * First, create volumes and upload project to platform storage:
 
-```text
+```
 $ neuro-flow mkvolumes
 $ neuro-flow upload ALL
 ```
 
 * Then, build an image:
 
-```text
+```
 $ neuro-flow build pytorch
 ```
 
 * Finally, run training:
 
-```text
+```
 $ neuro-flow run train
 ```
 
-Please run `neuro-flow --help` to get more information about available commands. 
-
+Please run `neuro-flow --help` to get more information about available commands.&#x20;
