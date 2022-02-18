@@ -215,7 +215,7 @@ neuro-tutorial
 Чтобы настроить рабочее окружение, выполните:
 
 ```
-$ neuro-flow build myimage
+$ neuro-flow build train
 $ neuro-flow mkvolumes
 ```
 
