@@ -8,7 +8,7 @@ Generate a service account via `neuro service-account create --name <sa-name>`. 
 
 #### Example:
 
-```text
+```
     $ neuro service-account create --name test
      Id               service-account-b41aa732-4bb5-45e4-94c1-a078ca013255
      Name             test
@@ -26,7 +26,7 @@ Generate a service account via `neuro service-account create --name <sa-name>`. 
     Save it to some secure place, you will be unable to retrieve it later!
 ```
 
-In this case, `janedoe/service-accounts/test` is the needed role and  
+In this case, `janedoe/service-accounts/test` is the needed role and\
 `eyJhbGciOi<hidden>Np0` is the needed authentication token.
 
 ### Starting the required job
@@ -35,28 +35,28 @@ Start the job you want to access later.
 
 #### Example:
 
-```text
+```
 $ neuro run --http 8080 --name mytestjob python python -m http.server --cgi 8080
 ```
 
 ### Share access to the job with the service account
 
-Share access to the job with the service account role from step 1 by using the   
+Share access to the job with the service account role from step 1 by using the \
 `neuro acl grant job:<job-id-or-name> <role-name> read` command.
 
 #### Example:
 
-```text
+```
 $ neuro acl grant job:mytestjob janedoe/service-accounts/test read
 ```
 
 ### Using the auth token
 
-Use the token from step 1 to authenticate the request with header via the `"cookie: sat=<token-here>;"` command.
+Use the token from step 1 to authenticate the request with header via the `"cookie: dat=<token-here>;"` command.
 
 #### Example:
 
-```text
+```
     $ curl https://mytestjob--janedoe.jobs.default.org.neu.ro -H "cookie: sat=eyJhbGciOi<hidden>Np0"
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <html>
@@ -73,4 +73,3 @@ Use the token from step 1 to authenticate the request with header via the `"cook
     <li><a href="boot/">boot/</a></li>
     ....
 ```
-

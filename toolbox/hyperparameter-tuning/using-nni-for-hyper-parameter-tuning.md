@@ -38,7 +38,7 @@ While Docker builds our image, we can continue setting up the NNI integration.
 Add the following lines _at the end_ of `.neuro/live.yml`:
 
 ```bash
-  worker:
+  nni_worker:
     image: $[[ images.myimage.ref ]]
     life_span: 1d
     multi: true
@@ -52,7 +52,7 @@ Add the following lines _at the end_ of `.neuro/live.yml`:
     bash: |
       sleep infinity
 
-  master:
+  nni_master:
     image: $[[ images.myimage.ref ]]
     life_span: 1d
     http_port: 8080

@@ -117,7 +117,7 @@ You are assigned a computation quota of 100 credits when you sign up to Neu.ro. 
 
 You can view the remaining computation quota on your Web UI dashboard.
 
-You can also use the `neuro config show-quota` command to view the amount of computation quota left.
+The `neuro config show` command also shows the amount of computation quota left as part of its output.
 
 ### How can I request for more computation quota?
 
