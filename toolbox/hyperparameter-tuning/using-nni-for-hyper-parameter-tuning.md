@@ -85,7 +85,7 @@ make hypertrain
 
 This command will:
 
-* Run 3 worker nodes with the `gpu-k80-small-p` preset. Both parameters can be configured via `N_JOBS` in Makefile and `preset` in `.config/live.yaml`parameters respectfully.
+* Run 3 worker nodes. They can be configured via `N_JOBS` in Makefile and `preset` in `.neuro/live.yaml`parameters respectfully.
 * Run the master node with the `cpu-small` preset.
 * Auto-generate a NNI configuration file for the master node pointing at the workers.
 * Run the training process and automatically open the NNI web interface in your browser.
