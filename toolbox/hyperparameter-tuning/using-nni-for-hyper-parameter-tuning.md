@@ -44,7 +44,7 @@ $ neuro-flow build myimage
 Добавьте следующие записи _в конец_ файла `.neuro/live.yml`:
 
 ```bash
-  worker:
+  nni_worker:
     image: $[[ images.myimage.ref ]]
     life_span: 1d
     multi: true
@@ -58,7 +58,7 @@ $ neuro-flow build myimage
     bash: |
       sleep infinity
 
-  master:
+  nni_master:
     image: $[[ images.myimage.ref ]]
     life_span: 1d
     http_port: 8080
