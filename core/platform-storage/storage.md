@@ -43,13 +43,13 @@ You can use the intuitive FileBrowser tool available in Neu.ro to manage files i
 To manage files:&#x20;
 
 * Log in to Neu.ro.&#x20;
-* Click **RUN A JOB** in the Storage widget.
+* Click **RUN A JOB** in the Storage widget:
 
-![The Storage widget](<../../.gitbook/assets/zobrazhennya (8) (2).png>)
+![](<../../.gitbook/assets/image (236).png>)
 
-* Select a preset from a drop-down list and click **RUN**.
+* Click **RUN** in the **Storage** dialog box:
 
-![Preset selecton window](<../../.gitbook/assets/zobrazhennya (6).png>)
+![](<../../.gitbook/assets/image (250).png>)
 
 This opens the file browser for the cluster. Here, you can host and manage files.
 

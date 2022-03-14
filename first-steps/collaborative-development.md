@@ -47,11 +47,12 @@ This will upload data from your local folder to the `cifar-10` folder on your pl
 {% tab title="Web UI" %}
 To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage browser** widget:
 
-![](<../.gitbook/assets/image (218).png>)
+![](<../.gitbook/assets/image (254).png>)
 
-After that, click **RUN** in the new window:
+After that, click **RUN** in the new window:\
 
-![](<../.gitbook/assets/image (98).png>)
+
+![](<../.gitbook/assets/image (245).png>)
 
 Once the Filebrowser is opened, navigate to the folder you want to upload your data to and click the **Upload** icon:
 

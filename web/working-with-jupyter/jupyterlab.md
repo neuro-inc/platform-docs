@@ -9,17 +9,17 @@ You can arrange multiple Notebooks, documents, and activities in a single interf
 * Log in to your Neu.ro dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
-![](../../.gitbook/assets/image%20%28206%29.png)
+![](<../../.gitbook/assets/image (244).png>)
 
 * Select Jupyterlab in the top drop-down menu, a preset in the bottom drop-down menu, and click **RUN**.
 
-![](../../.gitbook/assets/image%20%28217%29.png)
+![](<../../.gitbook/assets/image (240).png>)
 
-When you start JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later. 
+When you start JupyterLab, the platform storage is attached as /var/storage. All data created during a lab session in this folder persists and can be used later.&#x20;
 
-All JupyterLab instances are jobs that run on GPU-small preset. You must kill the JupyterLab session whenever you are done; else, it consumes GPU hours. 
+All JupyterLab instances are jobs that run on GPU-small preset. You must kill the JupyterLab session whenever you are done; else, it consumes GPU hours.&#x20;
 
-![JupyterLab instance](../../.gitbook/assets/JL_Overview.jpg)
+![JupyterLab instance](../../.gitbook/assets/JL\_Overview.jpg)
 
 The Jupyter UI has the following areas:
 
@@ -44,27 +44,26 @@ You can manage your JupyterLab instances from the Neu.ro dashboard. The JupyterL
 
 You can view the details of your JupyterLab instance by clicking on its job ID.
 
-![](../../.gitbook/assets/image%20%28201%29.png)
+![](<../../.gitbook/assets/image (201).png>)
 
 There are a few ways you can open an instance of JupyterLab:
 
 * Click **HTTP URL** in the **Running Jobs** section on your Dashboard.
 
-![](../../.gitbook/assets/image%20%28213%29.png)
+![](<../../.gitbook/assets/image (257).png>)
 
 * Clicking **OPEN RUNNING** in the **IDEs** widget on your Dashboard.
 
-![](../../.gitbook/assets/image%20%28198%29.png)
+![](<../../.gitbook/assets/image (233).png>)
 
 * Clicking **HTTP URL** in the drop-down menu for the corresponding job in the job list.
 
-![](../../.gitbook/assets/image%20%28196%29.png)
+![](<../../.gitbook/assets/image (196).png>)
 
 You can kill the JupyterLab instance using the same drop-down menu. Note that closing the tab does not kill the instance.
 
-Alternatively, you can kill the instance from the JupyterLab instance using the File &gt; Shut Down option.
+Alternatively, you can kill the instance from the JupyterLab instance using the File > Shut Down option.
 
-![Killing a JupyterLab instance](../../.gitbook/assets/JL_shutdown.gif)
+![Killing a JupyterLab instance](../../.gitbook/assets/JL\_shutdown.gif)
 
 An instance is automatically terminated 24 hours after initiation.
-
