@@ -14,17 +14,17 @@ FileBrowser - это интуитивно понятный веб-интерфе
 * Войдите в панель инструментов платформы.
 * Нажмите **ЗАПУСТИТЬ** в виджете **Браузер дискового пространства**.
 
-![](../../.gitbook/assets/image%20%28178%29.png)
+![](<../../.gitbook/assets/зображення (1).png>)
 
 * Выберите настройку из выпадающего списка и нажмите **ЗАПУСТИТЬ**.
 
-![](../../.gitbook/assets/image%20%2850%29.png)
+![](<../../.gitbook/assets/зображення (18).png>)
 {% endtab %}
 
 {% tab title="CLI" %}
 Запустите следующую команду:
 
-```text
+```
 $ neuro run -v storage://:/var/storage --http 80 --no-http-auth --browse filebrowser/filebrowser --noauth --root /var/storage
 ```
 
@@ -38,21 +38,21 @@ Filebrowser будет открыт в новой вкладке вашего б
 {% tab title="Компьютеры" %}
 Экземпляры FileBrowser - задания, которые перечислены в окне «Jobs» `Neu.ro` с тегом `kind:web_widget target:filebrowser`. Файловая система платформы смонтирована в директории /var/storage, которая также является каталогом root, в котором сохраняются все файлы.
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](<../../.gitbook/assets/image (31).png>)
 
 Пользовательский интерфейс FileBrowser имеет следующие области:
 
 * **Инструменты:** Отображает список действий, которые вы можете выполнить. Также имеет дополнительные опции при выборе файла или папки, такие как копирование, переименование, предоставление доступа, перемещение, удаление.
-* **Опции:** Отображает дополнительные опции, такие как My Files \(домашняя станица\), New Folder, New File и Settings.
+* **Опции:** Отображает дополнительные опции, такие как My Files (домашняя станица), New Folder, New File и Settings.
 * **Папки и файлы:** Отображает содержимое текущей папки.
 
-Нажав на кнопку переключения на командную оболочку ![](../../.gitbook/assets/FB_Toggle.jpg), Вы также можете использовать Shell из FileBrowser и запускать команды из командной строки.
+Нажав на кнопку переключения на командную оболочку ![](../../.gitbook/assets/FB\_Toggle.jpg), Вы также можете использовать Shell из FileBrowser и запускать команды из командной строки.
 
-![](../../.gitbook/assets/FB_Shell.jpg)
+![](../../.gitbook/assets/FB\_Shell.jpg)
 
 После того, как Вы закончите работу с FileBrowser, убедитесь, что Вы закрыли задания, связанные с ним.
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](<../../.gitbook/assets/image (21).png>)
 
 Все задания FileBrowser автоматически уничтожаются через 24 часа.
 
@@ -62,43 +62,43 @@ Filebrowser будет открыт в новой вкладке вашего б
 
 **Для создания папки:**
 
-* В области Option в FileBrowser нажмите на кнопку **New Folder**. 
+* В области Option в FileBrowser нажмите на кнопку **New Folder**.&#x20;
 
-![](../../.gitbook/assets/FB_NewFolder.jpg)
+![](../../.gitbook/assets/FB\_NewFolder.jpg)
 
 * Введите наименование новой папки.
 
- 
+&#x20;
 
-![](../../.gitbook/assets/FB_NewDirectory.jpg)
+![](../../.gitbook/assets/FB\_NewDirectory.jpg)
 
 **Для создания файла:**
 
-* В области Option в FileBrowser нажмите на кнопку **New File**. 
+* В области Option в FileBrowser нажмите на кнопку **New File**.&#x20;
 
-![](../../.gitbook/assets/FB_NewFile.jpg)
+![](../../.gitbook/assets/FB\_NewFile.jpg)
 
 * Введите наименование нового файла.
 
-  
+&#x20;&#x20;
 
-![](../../.gitbook/assets/FB_NewFileName.jpg)
+![](../../.gitbook/assets/FB\_NewFileName.jpg)
 
 * После ввода содержимого нажмите **Save**.
 
- 
+&#x20;
 
-![](../../.gitbook/assets/FB_NewFile_Save.JPG)
+![](../../.gitbook/assets/FB\_NewFile\_Save.JPG)
 
 **Для загрузки файла:**
 
-* На панели инструментов нажмите кнопку **Upload**. 
+* На панели инструментов нажмите кнопку **Upload**.&#x20;
 
-![](../../.gitbook/assets/FB_UploadButton.jpg)
+![](../../.gitbook/assets/FB\_UploadButton.jpg)
 
-* Выберите файл, который Вы хотите загрузить. Файл будет загружен. Можно отредактировать файл, нажав на кнопку **Edit**. 
+* Выберите файл, который Вы хотите загрузить. Файл будет загружен. Можно отредактировать файл, нажав на кнопку **Edit**.&#x20;
 
-![](../../.gitbook/assets/FB_UpFile.JPG)
+![](../../.gitbook/assets/FB\_UpFile.JPG)
 
 ### Загрузка файлов и папок
 
@@ -108,11 +108,11 @@ Filebrowser будет открыт в новой вкладке вашего б
 
 * Перейдите в папку или каталог с файлами и нажмите кнопку **Download**. Если не будет выбрано ни одного файла, то будет загружена вся текущая папка.
 
-![](../../.gitbook/assets/FB_Download.jpg) 
+![](../../.gitbook/assets/FB\_Download.jpg)&#x20;
 
-* Если Вы загружаете папку, то выберите формат, в котором она будет загружена. 
+* Если Вы загружаете папку, то выберите формат, в котором она будет загружена.&#x20;
 
-![](../../.gitbook/assets/FB_DownFormat.jpg)
+![](../../.gitbook/assets/FB\_DownFormat.jpg)
 {% endtab %}
 
 {% tab title="Мобильные устройства" %}
@@ -124,43 +124,41 @@ Neu.ro обеспечивает полную поддержку мобильны
 
 * Войдите в `neu.ro` и запустите FileBrowser.
 
-![](../../.gitbook/assets/image%20%28226%29.png)
+![](<../../.gitbook/assets/image (226).png>)
 
- ![](../../.gitbook/assets/FBM_FileBrowser%20%281%29%20%281%29.jpg)
+&#x20;![](<../../.gitbook/assets/FBM\_FileBrowser (1) (1).jpg>)
 
 * Перейдите в какую-либо папку и выберите файл или папку, которую Вы хотите загрузить.
 
-![](../../.gitbook/assets/FBM_Folder.jpg) ![](../../.gitbook/assets/FBM_Down_Select_1.jpg)
+![](../../.gitbook/assets/FBM\_Folder.jpg) ![](../../.gitbook/assets/FBM\_Down\_Select\_1.jpg)
 
 * Выберите **Download** из меню параметров.
 
-![](../../.gitbook/assets/FBM_Down_Select.jpg) ![](../../.gitbook/assets/FBM_DownloadDone%20%281%29%20%281%29.jpg)
+![](../../.gitbook/assets/FBM\_Down\_Select.jpg) ![](<../../.gitbook/assets/FBM\_DownloadDone (1) (1).jpg>)
 
 Файл будет загружен на Ваше мобильное устройство.
 
-![](../../.gitbook/assets/FBM_DownloadDone%20%281%29.jpg)
+![](<../../.gitbook/assets/FBM\_DownloadDone (1).jpg>)
 
 ### **Выгрузка файлов с мобильного устройства:**
 
 * Войдите в веб-интерфейс платформы и запустите FileBrowser.
 
-![](../../.gitbook/assets/image%20%28227%29.png)
+![](<../../.gitbook/assets/image (227).png>)
 
- ![](../../.gitbook/assets/FBM_FileBrowser.jpg)
+&#x20;![](../../.gitbook/assets/FBM\_FileBrowser.jpg)
 
 * Перейдите в папку, в которую Вы хотите загрузить файлы со своего мобильного устройства, и выберите **Upload** из меню Options.
 
-![](../../.gitbook/assets/FBM_Up_Folder.jpg) ![](../../.gitbook/assets/FBM_UploadButton.jpg)
+![](../../.gitbook/assets/FBM\_Up\_Folder.jpg) ![](../../.gitbook/assets/FBM\_UploadButton.jpg)
 
 * Перейдите в папку, откуда Вы хотите загрузить файл и выберите файл.
 
-![](../../.gitbook/assets/FBM_UploadFileFolder.jpg)
+![](../../.gitbook/assets/FBM\_UploadFileFolder.jpg)
 
 Файл будет загружен с Вашего мобильного устройства.
 
-![](../../.gitbook/assets/FBM_FileUploaded.jpg)
+![](../../.gitbook/assets/FBM\_FileUploaded.jpg)
 {% endtab %}
 {% endtabs %}
-
-
 

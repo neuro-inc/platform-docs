@@ -105,7 +105,7 @@ The current cluster is onprem-poc
 {% tab title="Веб-интерфейс" %}
 Используйте выпадающий список **Кластер** для просмотра доступных кластеров и переключения между ними:
 
-![](<../../.gitbook/assets/image (146) (1).png>)
+![](<../../.gitbook/assets/зображення (4).png>)
 {% endtab %}
 {% endtabs %}
 
