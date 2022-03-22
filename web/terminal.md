@@ -6,7 +6,7 @@ Terminals let you work with Neu.ro without setting up the local environment. Ter
 
 You can start a new terminal by clicking **RUN A JOB** in the **Terminal** widget:
 
-![](<../.gitbook/assets/image (251).png>)
+![](<../.gitbook/assets/image (251) (1).png>)
 
 You can use the terminal to manage jobs and your docker environments. You should kill the terminal session whenever you're done working with it. All terminal sessions are automatically killed after 24 hours.
 
