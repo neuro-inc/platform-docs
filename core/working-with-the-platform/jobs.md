@@ -190,6 +190,7 @@ Started                  2021-01-12T19:36:52.733308+00:00
 A job can have one of the following states:
 
 * Pending: When the job is created and the resources for the job are allocated.
+* Pulling: When resources for the job are being accessed.
 * Running: When a job is being executed.
 * Complete: When a job is complete.
 * Failed: When a job fails and exits with an error code.
