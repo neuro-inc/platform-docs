@@ -48,5 +48,5 @@ $ neuro disk create --name test-disk --timeout-unused 2d4h 40G
 Пример подключения диска в задание:
 
 ```bash
-$ neuro run --volume disk:test-disk:/mnt/test-disk ubunu -- echo "Привет!" > /mnb/test-disk/echo-output
+> C:\Users\Jane>neuro run --name job303 --volume disk:test-disk:/default/jane-doe/disk-eff8095a-7f26-404d-92de-5837cc8ed444 --preset cpu-small ubuntu cat code/train.py
 ```
