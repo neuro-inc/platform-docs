@@ -30,7 +30,7 @@
   * [Рабочее окружение (образы Docker)](core/working-with-the-platform/environments-docker-images.md)
   * [Задания](core/working-with-the-platform/jobs.md)
   * [Секреты](core/working-with-the-platform/secrets.md)
-* [Конкретные задачи](core/specific-tasks/README.md)
+* [Специфические задачи](core/specific-tasks/README.md)
   * [Как получить доступ к заданию за Auth платформы](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
 ## Веб-интерфейс <a href="#web" id="web"></a>
