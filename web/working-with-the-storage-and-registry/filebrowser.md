@@ -13,11 +13,11 @@ Filebrowser is an intuitive web interface used to manage files and folders. It's
 {% tab title="Web UI" %}
 Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
 
-![](<../../.gitbook/assets/image (246).png>)
+![](<../../.gitbook/assets/image (246) (1).png>)
 
 Click **RUN** in the **Storage browser** dialog box.&#x20;
 
-![](<../../.gitbook/assets/image (241).png>)
+![](<../../.gitbook/assets/image (241) (1).png>)
 {% endtab %}
 
 {% tab title="CLI" %}

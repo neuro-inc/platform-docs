@@ -107,7 +107,7 @@ The current cluster is onprem-poc
 {% tab title="Web UI" %}
 Use the **Cluster** drop-down list to view available clusters and switch between them:
 
-![](<../../.gitbook/assets/image (243).png>)
+![](<../../.gitbook/assets/image (243) (1).png>)
 {% endtab %}
 {% endtabs %}
 

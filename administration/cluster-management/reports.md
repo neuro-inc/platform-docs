@@ -40,7 +40,7 @@ This report provides a thorough look at the cluster's jobs and their activity, i
 
 You can access it by clicking **CLUSTER JOBS MONITOR** in the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (242).png>)
+![](<../../.gitbook/assets/image (242) (1).png>)
 
 The **Running Jobs** widget gives an overview of all currently running jobs, including the information about resource consumption:
 

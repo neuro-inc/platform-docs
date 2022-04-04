@@ -54,7 +54,7 @@ There are a few ways you can open an instance of JupyterLab:
 
 * Clicking **OPEN RUNNING** in the **IDEs** widget on your Dashboard.
 
-![](<../../.gitbook/assets/image (233).png>)
+![](<../../.gitbook/assets/image (233) (1).png>)
 
 * Clicking **HTTP URL** in the drop-down menu for the corresponding job in the job list.
 

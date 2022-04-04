@@ -27,7 +27,7 @@ To create a secret from the Neu.ro Web UI:
 * Log in to Neu.ro&#x20;
 * Go to the **Secrets** tab:
 
-![](<../../.gitbook/assets/image (234).png>)
+![](<../../.gitbook/assets/image (234) (1).png>)
 
 * Click **Add**:
 
@@ -72,7 +72,7 @@ To use a secret through the Web UI:
 
 * In the newly-opened window, click **ADD NEW SECRET**:
 
-![](<../../.gitbook/assets/image (235).png>)
+![](<../../.gitbook/assets/image (235) (1).png>)
 
 * Select the type of secret you want to use and the secret's key from the drop-down list. Then, depending on the type of secret you selected, enter the name of the environment variable or the path to the secret's file:
 
