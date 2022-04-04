@@ -57,7 +57,7 @@ Use the token from step 1 to authenticate the request with header via the `"cook
 #### Example:
 
 ```
-    $ curl https://mytestjob--janedoe.jobs.default.org.neu.ro -H "cookie: sat=eyJhbGciOi<hidden>Np0"
+    $ curl https://mytestjob--janedoe.jobs.default.org.neu.ro -H "cookie: dat=eyJhbGciOi<hidden>Np0"
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <html>
     <head>
