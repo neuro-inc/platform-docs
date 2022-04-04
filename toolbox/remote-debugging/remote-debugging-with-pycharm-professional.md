@@ -42,7 +42,7 @@ preserve Neuro Flow template hints [yes]:
 
 Затем, исключите все каталоги, которые не содержат код Python (в пустом проекте код будет только в папке `modules`). PyCharm не синхронизирует исключенные каталоги. Выберите все каталоги, которые нужно исключить, щелкните правой кнопкой мыши и выберите **Mark Directory as** -> **Excluded**. В результате вы увидите настроенный проект:
 
-![](../../.gitbook/assets/1.png)
+![](<../../.gitbook/assets/image (237).png>)
 
 Выполните следующие команды, чтобы загрузить ваш код на дисковое пространство платформы:
 
@@ -57,7 +57,7 @@ preserve Neuro Flow template hints [yes]:
 > neuro-flow run remote_debug
 ```
 
-![](../../.gitbook/assets/1.1.png)
+![](<../../.gitbook/assets/image (234).png>)
 
 Данная команда запускает задание `remote_debug` на платформе. Это задание будет использовать пресет кластера по умолчанию и пробросит локальный порт 2211 к порту SSH задания. Все запущенные задания потребляют Вашу квоту, поэтому, пожалуйста, _не забудьте прекратить работу заданий,_ когда они больше не нужны. Для этого можно выполнить `neuro-flow kill remote_debug` (это остановит задание, созданное на прошлом шагу) или `neuro-flow kill ALL` (это остановит все ваши задания).
 
@@ -67,7 +67,7 @@ preserve Neuro Flow template hints [yes]:
 * Port: _2211_
 * Username: _root_
 
-![](../../.gitbook/assets/2.png)
+![](<../../.gitbook/assets/image (239).png>)
 
 Далее нажмите **Next**.
 
@@ -82,7 +82,7 @@ Sync folders: <Project root> -> /neuro-pycharm
 
 Нажмите **Finish** и настройка будет закончена:
 
-![](../../.gitbook/assets/2\_mapping.png)
+![](<../../.gitbook/assets/image (233).png>)
 
 Нажмите **OK**.
 
@@ -94,14 +94,14 @@ Sync folders: <Project root> -> /neuro-pycharm
 
 В данном примере мы работаем с файлом `main.py`. Чтобы войти в режим отладки, щелкните правой кнопкой мыши на файле и нажмите **Debug 'main'**:
 
-![](../../.gitbook/assets/3.2.png)
+![](<../../.gitbook/assets/image (235).png>)
 
 Теперь вы можете взаимодействовать с файлом в режиме отладки:
 
-![](../../.gitbook/assets/4.png)
+![](<../../.gitbook/assets/image (238).png>)
 
 {% hint style="info" %}
 Примечание: если mapping проекта не был настроен, и удаленный интерпретатор пытается выполнить файл с локальным путем в удаленной среде, вам может потребоваться заново указать mapping.  Вы можете это сделать в **Run** -> **Edit Configurations...** -> **Path mappings**:
 {% endhint %}
 
-![](../../.gitbook/assets/5.png)
+![](<../../.gitbook/assets/image (236).png>)
