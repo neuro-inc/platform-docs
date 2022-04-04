@@ -216,7 +216,7 @@ The template contains the `neuro/live.yaml` configuration file for `neuro-flow`.
 To set up the project environment, run:
 
 ```
-$ neuro-flow build myimage
+$ neuro-flow build train
 $ neuro-flow mkvolumes
 ```
 
