@@ -79,6 +79,7 @@
 * [Cluster Management](administration/cluster-management/README.md)
   * [Creating a Cluster](administration/cluster-management/creating-a-cluster.md)
   * [Managing Users and Quotas](administration/cluster-management/managing-users-and-quotas.md)
+  * [Managing organizations](administration/cluster-management/managing-organizations.md)
   * [Creating Node Pools](administration/cluster-management/creating-node-pools.md)
   * [Managing Presets](administration/cluster-management/managing-presets.md)
   * [Reports](administration/cluster-management/reports.md)
