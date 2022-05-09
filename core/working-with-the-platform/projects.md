@@ -138,3 +138,33 @@ Click on a project's name to view the list of its live jobs and batch bakes:
 You can view each job's and bake's details by clicking on their name.
 {% endtab %}
 {% endtabs %}
+
+## Sharing projects
+
+You can share a project (i.e., access to resources created under a project) by creating a custom role for this project in it's `project.yml` file.
+
+This can be done in two ways:
+
+* Specifying an `<owner>` value. \
+  In this case, the project's role will be of the following form: \
+  `role://<owner>/projects/<projectname>`
+* Specifying a `<role>` value.\
+  In this case, the project's role will be of the following form:\
+  `role://<role>`
+
+After this role is created, you can share it with other users iva the following command:
+
+```
+$ neuro share project-role another-user read (share ~ acl grant)
+```
+
+The access level you decide to choose here only affects the ability of the target user to share this role further. With `read` or `write`, the user will not be able to share the role, while `manage` will provide them the ability to do so.
+
+{% hint style="info" %}
+You can find more information about the owner and role values in the [corresponding section of our Neu.ro Flow reference](https://neu-ro.gitbook.io/neuro-flow/reference/project-configuration-syntax#owner).
+{% endhint %}
+
+After this, the target user will receive all access rights of this project role, and, accordingly, access to all the resources in the project. \
+Moreover, when this user runs new jobs and creates new objects, the rights to these jobs and objects will also be added to the project role, and everyone with this role will gain access to them from this point on.
+
+The only objects that will not be automatically shared via this process are secrets, buckets, and disks. For objects like these, access rights should be shared manually through corresponding commands.
