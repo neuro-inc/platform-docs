@@ -62,7 +62,7 @@ List buckets or bucket contents.
 | `--help` | Show this message and exit. |  |  |
 | `-h`, `--human-readable` | with -l print human readable sizes \(e.g., 2K, 540M\). |  |  |
 | `-r`, `--recursive` | List all keys under the URL path provided, not just 1 level depths. |  |  |
-| \`--sort \[name | size | time\]\` | sort by given field, default is name. |
+| \`--sort \[name &#124; size &#124; time\]\` | sort by given field, default is `name`. |
 
 ### glob
 
