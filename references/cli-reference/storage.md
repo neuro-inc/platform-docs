@@ -102,7 +102,7 @@ By default `PATH` is equal user's home dir \(storage:\)
 | `--help` | Show this message and exit. |  |  |
 | `-h`, `--human-readable` | with -l print human readable sizes \(e.g., 2K, 540M\). |  |  |
 | `-a`, `--all` | do not ignore entries starting with . |  |  |
-| \`--sort \[name | size | time\]\` | sort by given field, default is name. |
+| \`--sort \[name &#124; size &#124; time\]\` | sort by given field, default is name. |
 
 ### glob
 
@@ -239,5 +239,5 @@ By default `PATH` is equal user's home dir \(storage:\)
 | `-h`, `--human-readable` | Print the size in a more human readable way. |  |  |
 | `-a`, `--all` | do not ignore entries starting with . |  |  |
 | `-s`, `--size` | Print the size in bytes of each file. |  |  |
-| \`--sort \[name | size | time\]\` | sort by given field, default is name |
+| \`--sort \[name &#124; size &#124; time\]\` | sort by given field, default is name |
 

@@ -75,7 +75,7 @@ $ neuro run -s cpu-small image:my-ubuntu:latest --entrypoint=/script.sh arg1 arg
 | `--port-forward LOCAL_PORT:REMOTE_RORT` | Forward port\(s\) of a running job to local port\(s\) \(use multiple times for forwarding several ports\) |  |  |
 | `-s`, `--preset PRESET` | Predefined resource configuration \(to see available values, run `neuro config show`\) |  |  |
 | `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |  |  |
-| \`--restart \[never | on-failure | always\]\` | Restart policy to apply when a job exits  _\[default: never\]_ |
+| \`--restart \[never &#124; on-failure &#124; always\]\` | Restart policy to apply when a job exits  _\[default: never\]_ |
 | `--tag TAG` | Optional job tag, multiple values allowed |  |  |
 | `-t`, `--tty` / `-T`, `--no-tty` | Allocate a TTY, can be useful for interactive jobs. By default is on if the command is executed from a terminal, non-tty mode is used if executed from a script. |  |  |
 | `-v`, `--volume MOUNT` | Mounts directory from vault into container. Use multiple options to mount more than one volume. --volume=HOME is an alias for storage::/var/storage/home:rw and storage://neuromation/public:/var/storage/neuromation:ro |  |  |
@@ -117,7 +117,7 @@ $ neuro ps -t tag1 -t tag2
 | `-o`, `--owner TEXT` | Filter out jobs by owner \(multiple option\). |  |  |  |  |
 | `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |  |  |  |  |
 | `--since DATE` | Show jobs created after a specific date \(including\). |  |  |  |  |
-| `-s`, \`--status \[pending | running | succeeded | failed | all\]\` | Filter out jobs by status \(multiple option\). Note: option `all` is deprecated, use `neuro ps -a` instead. |
+| `-s`, \`--status \[pending &#124; running &#124; succeeded &#124; failed &#124; all\]\` | Filter out jobs by status \(multiple option\). Note: option `all` is deprecated, use `neuro ps -a` instead. |
 | `-t`, `--tag TAG` | Filter out jobs by tag \(multiple option\) |  |  |  |  |
 | `--until DATE` | Show jobs created before a specific date \(including\). |  |  |  |  |
 | `-w`, `--wide` | Do not cut long lines for terminal width. |  |  |  |  |

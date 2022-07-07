@@ -56,7 +56,7 @@ Create a cluster configuration file.
 | Name | Description |  |  |
 | :--- | :--- | :--- | :--- |
 | `--help` | Show this message and exit. |  |  |
-| \`--type \[aws | gcp | azure\]\` |  |
+| \`--type \[aws &#124; gcp &#124; azure\]\` |  |
 
 ### add-cluster
 

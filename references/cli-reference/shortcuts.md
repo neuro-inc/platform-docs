@@ -116,7 +116,7 @@ $ neuro ps -t tag1 -t tag2
 | `-o`, `--owner TEXT` | Filter out jobs by owner \(multiple option\). |  |  |  |  |
 | `-q`, `--quiet` | Run command in quiet mode \(DEPRECATED\) |  |  |  |  |
 | `--since DATE` | Show jobs created after a specific date \(including\). |  |  |  |  |
-| `-s`, \`--status \[pending | running | succeeded | failed | all\]\` | Filter out jobs by status \(multiple option\). Note: option `all` is deprecated, use `neuro ps -a` instead. |
+| `-s`, \`--status \[pending &#124; running &#124; succeeded &#124; failed &#124; all\]\` | Filter out jobs by status \(multiple option\). Note: option `all` is deprecated, use `neuro ps -a` instead. |
 | `-t`, `--tag TAG` | Filter out jobs by tag \(multiple option\) |  |  |  |  |
 | `--until DATE` | Show jobs created before a specific date \(including\). |  |  |  |  |
 | `-w`, `--wide` | Do not cut long lines for terminal width. |  |  |  |  |
@@ -424,7 +424,7 @@ By default `PATH` is equal user's home dir \(storage:\)
 | `--help` | Show this message and exit. |  |  |
 | `-h`, `--human-readable` | with -l print human readable sizes \(e.g., 2K, 540M\). |  |  |
 | `-a`, `--all` | do not ignore entries starting with . |  |  |
-| \`--sort \[name | size | time\]\` | sort by given field, default is name. |
+| \`--sort \[name &#124; size &#124; time\]\` | sort by given field, default is name. |
 
 ### rm
 
