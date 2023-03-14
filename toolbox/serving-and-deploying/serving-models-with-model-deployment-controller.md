@@ -1,8 +1,5 @@
 ---
-description: >-
-  With our custom-built model deployment app, you are able to deploy your MLFlow
-  Models to Neu.ro platform using a no-code approach - connect to your MLFlow
-  instance, select the model you wish to deploy
+description: Custom-built app for no-code model inference server deployment on the platform
 ---
 
 # Serving Models With Model Deployment Controller
@@ -33,7 +30,7 @@ On the Dashboard page, select **Model Deployment Controller** and click on **RUN
 
 > Notice that we automatically mount the folder from your storage, which will be used as model repository in case you want to deploy to Triton Inference Server.
 
-<figure><img src="../../.gitbook/assets/image (253).png" alt="Model Deployment Controller Dialog"><figcaption><p>Model Deployment Controller pop-up dialogue</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35) (1).png" alt="Model Deployment Controller Dialog"><figcaption><p>Model Deployment Controller pop-up dialogue</p></figcaption></figure>
 
 After pressing **RUN** you will be redirected to the newly started Model Deployment Controller.
 
@@ -55,21 +52,21 @@ neuro run --preset cpu-small \
 
 ### Model Deployment
 
-<figure><img src="../../.gitbook/assets/image (276).png" alt=""><figcaption><p>Deployment Controller UI</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption><p>Deployment Controller UI</p></figcaption></figure>
 
 Use the web app to select the registered model from the MLFlow instance (it must be in Staging or Production), select server type (MLFlow or Triton), resource preset, image name, and tag (we provide recommended defaults, but you can also choose any of your images) and whether to require platform auth for server access.
 
-<figure><img src="../../.gitbook/assets/image (267).png" alt=""><figcaption><p>UI for deploying to MLFlow Server</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption><p>UI for deploying to MLFlow Server</p></figcaption></figure>
 
 If you oped for Triton server deployment, you will also be able to select an already running Triton instance (if it was previously used to deploy models) or create a new one otherwise.
 
-<figure><img src="../../.gitbook/assets/image (271).png" alt=""><figcaption><p>UI for deploying to Triton Inference Server</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption><p>UI for deploying to Triton Inference Server</p></figcaption></figure>
 
 Clicking on Deploy will start the deployment process and you'll be able to see your model in Deployed models tab.
 
-<figure><img src="../../.gitbook/assets/image (265).png" alt=""><figcaption><p>List of inference servers</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>List of inference servers</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (277).png" alt=""><figcaption><p>List of deployed models</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>List of deployed models</p></figcaption></figure>
 
 ### Examples
 

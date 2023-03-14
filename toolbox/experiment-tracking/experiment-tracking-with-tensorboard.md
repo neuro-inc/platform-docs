@@ -220,7 +220,7 @@ The TensorBoard interface includes the following tabs:
 
 The **Scalars** dashboard shows how the accuracy and loss change with each epoch. You can use it to track training speed, learning rate, and other metrics. You can move your mouse over the graph to view more details.
 
-![](../../.gitbook/assets/Scalar.gif)
+![](../../.gitbook/assets/scalar.gif)
 
 You can download the scalar information as a CSV or JSON file. To download, select **Show data download links** and then select the required file format.
 
@@ -228,13 +228,13 @@ You can download the scalar information as a CSV or JSON file. To download, sele
 
 The **Images** tab displays the confusion matrix for the current training. For our current training (in which we are classifying images into categories of clothing), the **Images** tab shows the confusion matrix for various clothing types.&#x20;
 
-![](../../.gitbook/assets/Images\_tab.gif)
+![](../../.gitbook/assets/images\_tab.gif)
 
 #### Graphs
 
 The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues. \
 
 
-![](../../.gitbook/assets/Graph\_Tab.gif)
+![](<../../.gitbook/assets/graph\_tab (1) (1).gif>)
 
 You can double-click on a code unit to open its visualization.

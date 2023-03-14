@@ -13,14 +13,14 @@ Filebrowser is an intuitive web interface used to manage files and folders. It's
 {% tab title="Web UI" %}
 Click **RUN A JOB** in the **Storage browser** widget on your `Neu.ro` dashboard.
 
-![](<../../.gitbook/assets/image (195).png>)
+![](<../../.gitbook/assets/image (246) (1).png>)
 
 Next, you have two options:
 
 * If you want to access your own storage with Filebrowser, just click **RUN** in the **Storage browser** dialog box:
 
 ![
-](<../../.gitbook/assets/image (52).png>)
+](<../../.gitbook/assets/image (241) (1).png>)
 
 * If you want to access a storage volume that was shared with you, first click **ADD NEW VOLUME**. Then, fill in the **Volume Path** field and specify which access rights you have for this volume: Read Only (**RO**) or Read/Write (**RW**). Once this is done, click **RUN**:
 
@@ -44,7 +44,7 @@ Filebrowser will be opened in a new tab of your browser.
 {% tab title="Computers" %}
 FileBrowser instances are jobs that are listed in the Jobs tab with the tag `kind:web_widget target:filebrowser`. The platform storage is mounted at /var/storage which is also the root directory to let all files persist.
 
-![FileBrowser instance](../../.gitbook/assets/Stor\_Browser.jpg)
+![FileBrowser instance](../../.gitbook/assets/stor\_browser.jpg)
 
 The FileBrowser UI has the following areas:
 
@@ -58,7 +58,7 @@ You can also use Shell from within FileBrowser by clicking the **Toggle shell** 
 
 After you are done working with FileBrowser, ensure that you kill the job associated with it.
 
-![](<../../.gitbook/assets/image (101).png>)
+![](<../../.gitbook/assets/image (37).png>)
 
 All FileBrowser jobs are automatically killed after 24 hours.
 
@@ -84,7 +84,7 @@ You can create files and folders from the FileBrowser. While creating files, Fil
 
 * Enter a name for the file and click **CREATE**.
 
-![](<../../.gitbook/assets/image (117).png>)
+![](<../../.gitbook/assets/image (9).png>)
 
 * Click **Save** after entering the content of the files.&#x20;
 
@@ -122,7 +122,7 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Log in to `neu.ro`, and start FileBrowser.
 
-![](../../.gitbook/assets/Mobile-dashboard.png) ![](../../.gitbook/assets/FBM\_FileBrowser.jpg)
+![](../../.gitbook/assets/mobile-dashboard.png) ![](<../../.gitbook/assets/FBM\_FileBrowser (1) (1).jpg>)
 
 * Navigate to the folder to download files from, and select the file or folder that you want to download.
 
@@ -130,7 +130,7 @@ Neu.ro provides seamless support to mobile devices. You can access neu.ro and th
 
 * Select **Download** from the options menu.
 
-![](../../.gitbook/assets/FBM\_Down\_Select.jpg) ![](<../../.gitbook/assets/FBM\_DownloadDone (2).jpg>)
+![](../../.gitbook/assets/FBM\_Down\_Select.jpg) ![](<../../.gitbook/assets/FBM\_DownloadDone (1) (1).jpg>)
 
 The file is downloaded to your mobile device.
 
@@ -140,7 +140,7 @@ The file is downloaded to your mobile device.
 
 * Log in to neu.ro, and start a FileBrowser.
 
-![](../../.gitbook/assets/Mobile-dashboard.png) ![](<../../.gitbook/assets/FBM\_FileBrowser (2).jpg>)
+![](../../.gitbook/assets/mobile-dashboard.png) ![](../../.gitbook/assets/FBM\_FileBrowser.jpg)
 
 * Navigate to the folder you want to upload files to from your mobile, and select **Upload** from the Options menu.
 

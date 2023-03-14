@@ -92,7 +92,7 @@ This command will:
 
 You can track experiment progress and intermediate results from this web UI. When the workers are done, you can get the final hyperparameter values and download the logs if needed.
 
-![NNI Hyperparameter Tuning GUI](<../../.gitbook/assets/Screen Shot 2020-05-12 at 12.43.02 PM.png>)
+![NNI Hyperparameter Tuning GUI](../../.gitbook/assets/screen-shot-2020-05-12-at-12.43.02-pm.png)
 
 Once you're done, you can shut down the workers and the master node by running
 

@@ -64,7 +64,7 @@ An API for sending email/Slack notifications for events such as job status trans
 An API for running a curated set of applications from within the Web UI.\
 
 
-![](<../../.gitbook/assets/Neu.ro Architecture Overview.png>)
+![](<../../.gitbook/assets/neu.ro-architecture-overview (1) (1).png>)
 
 **Web UI**
 

@@ -121,27 +121,27 @@ To run a job in Web UI, you'll need to use the **Custom Job** widget on your das
 
 First, click **RUN JOB**:&#x20;
 
-![](<../../.gitbook/assets/image (258).png>)
+![](<../../.gitbook/assets/image (23) (1).png>)
 
 Next, you will need to choose the preset to run the job on. For example, **cpu-small**:
 
-![](<../../.gitbook/assets/image (262).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 Then, specify the image that will be used in the job:
 
-![](<../../.gitbook/assets/image (274).png>)
+![](<../../.gitbook/assets/image (17) (1).png>)
 
 You can now enter the command you want to run in the corresponding field:
 
-![](<../../.gitbook/assets/image (266).png>)
+![](<../../.gitbook/assets/image (31) (1).png>)
 
 You can optionally enter a name for this job and a HTTP port that will be associated with this job. The default port value is 80.
 
-![](<../../.gitbook/assets/image (268).png>)
+![](<../../.gitbook/assets/image (7) (1).png>)
 
 And now, you can just click **RUN** to run the job:
 
-![](<../../.gitbook/assets/image (278).png>)
+![](<../../.gitbook/assets/image (29) (6).png>)
 
 You will learn more about various job parameters such as images, HTTP ports, and others, in this and following topics.
 {% endtab %}
@@ -344,27 +344,27 @@ The log is also displayed if you don't pass the `--detach` option when the job i
 
 Neuro provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Neu.ro web interface lists all the jobs.
 
-![](<../../.gitbook/assets/image (174).png>)
+![](<../../.gitbook/assets/image (209).png>)
 
 You can view the web interface of the job by clicking the 'three dots' icon near the job and then clicking **HTTP URL**.
 
-![](<../../.gitbook/assets/image (198).png>)
+![](<../../.gitbook/assets/image (202).png>)
 
 To view the log and and other details about a job, click on the job ID.
 
-![Job Details section](<../../.gitbook/assets/image (255).png>)
+![Job Details section](<../../.gitbook/assets/image (96) (1).png>)
 
 By default, the **Jobs** page displays all currently running jobs. You can filter jobs by status using the corresponding drop-down list:
 
-![](<../../.gitbook/assets/image (143).png>)
+![](<../../.gitbook/assets/image (214).png>)
 
 You can search for specific jobs using the **Search** field. The search functionality works with job names, IDs, and tags.
 
-![](<../../.gitbook/assets/image (181).png>)
+![](<../../.gitbook/assets/image (194).png>)
 
 The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in the drop-down menu accessible through the 'three dots' icon near the job.
 
-![KILL and RERUN options](<../../.gitbook/assets/image (157).png>)
+![KILL and RERUN options](<../../.gitbook/assets/image (101).png>)
 
 ### Monitoring jobs
 

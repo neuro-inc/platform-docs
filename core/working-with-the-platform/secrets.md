@@ -27,19 +27,19 @@ To create a secret from the Neu.ro Web UI:
 * Log in to Neu.ro&#x20;
 * Go to the **Secrets** tab:
 
-![](<../../.gitbook/assets/image (215).png>)
+![](<../../.gitbook/assets/image (234) (1).png>)
 
 * Click **Add**:
 
-![](<../../.gitbook/assets/image (224).png>)
+![](<../../.gitbook/assets/image (74).png>)
 
 * Enter the secret's name, value, and click **Save**:
 
-![](<../../.gitbook/assets/image (71).png>)
+![](<../../.gitbook/assets/image (63).png>)
 
 The new secret will be added to the list of your secrets:
 
-![](<../../.gitbook/assets/image (112).png>)
+![](<../../.gitbook/assets/image (75).png>)
 
 ### Using secrets
 
@@ -68,15 +68,15 @@ To use a secret through the Web UI:
 * Log in to Neu.ro&#x20;
 * On your dashboard, click **RUN A JOB** on a widget you want to work with. We'll use **Terminal** in this example:
 
-![](<../../.gitbook/assets/image (214).png>)
+![](<../../.gitbook/assets/image (256).png>)
 
 * In the newly-opened window, click **ADD NEW SECRET**:
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (235) (1).png>)
 
 * Select the type of secret you want to use and the secret's key from the drop-down list. Then, depending on the type of secret you selected, enter the name of the environment variable or the path to the secret's file:
 
-![](<../../.gitbook/assets/image (178).png>)
+![](<../../.gitbook/assets/image (232).png>)
 
 * When ready, click **RUN.** You will be able to use the secret within a job run in this way.
 
@@ -129,8 +129,8 @@ To check that the secret was removed, run the `neuro secret ls` command to list 
 * Go to the **Secrets** tab.
 * Click the **trash bin** icon to the right of the secret you want to delete:
 
-![](<../../.gitbook/assets/image (114).png>)
+![](<../../.gitbook/assets/image (66).png>)
 
 * Click the **check mark** icon to confirm the changes:
 
-![](<../../.gitbook/assets/image (116).png>)
+![](<../../.gitbook/assets/image (72).png>)

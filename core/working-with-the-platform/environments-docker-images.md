@@ -6,7 +6,7 @@ Neu.ro lets you use Docker images either from the public Docker registry (such a
 
 There are several ways to add custom images to the platform registries. These images can be shared with your teammates.
 
-![Managing environments](../../.gitbook/assets/Environments-2.png)
+![Managing environments](../../.gitbook/assets/environments-2.png)
 
 In these tutorials, we will use a sample project - Nero-Assistant - to understand the available options. Before you can work in an environment, make sure that you have initialzedi a new project (see the [Getting Started](../../first-steps/getting-started.md) guide for details).
 

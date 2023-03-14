@@ -48,37 +48,37 @@ You can delete resource presets by using the `neuro admin remove-resource-preset
 
 You can view your current cluster's resource presets in the **Information** and **Cluster management** tabs:
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (116).png>)
 
 ### Adding presets
 
 To add a new preset, click the **Add** icon in the Cluster management tab:
 
-![](<../../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (121).png>)
 
 After that, enter the desired preset parameters and click the **Save** icon:
 
-![](<../../.gitbook/assets/image (28).png>)
+![](<../../.gitbook/assets/image (122).png>)
 
 ### Modifying presets
 
 To modify an existing preset, click the **Edit** icon next to it:
 
-![](<../../.gitbook/assets/image (163).png>)
+![](<../../.gitbook/assets/image (118).png>)
 
 After that, enter the new parameters and click the **Save** icon:
 
-![](<../../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (117).png>)
 
 ### Deleting presets
 
 To delete a preset, click the **Delete** icon next to it:
 
-![](<../../.gitbook/assets/image (126).png>)
+![](<../../.gitbook/assets/image (119).png>)
 
 After that, click the **Save** icon to confirm your action:
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (120).png>)
 {% endtab %}
 {% endtabs %}
 

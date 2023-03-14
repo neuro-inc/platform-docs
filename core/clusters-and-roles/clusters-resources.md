@@ -47,7 +47,7 @@ Resource Presets:
 {% tab title="Web UI" %}
 You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (144).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -117,7 +117,7 @@ The current cluster is onprem-poc
 {% tab title="Web UI" %}
 Use the **Cluster** drop-down list to view available clusters and switch between them:
 
-![](<../../.gitbook/assets/image (210).png>)
+![](<../../.gitbook/assets/image (243) (1).png>)
 {% endtab %}
 {% endtabs %}
 

@@ -20,19 +20,19 @@ This report provides in-depth information about the activity of the cluster's no
 
 You can access it by clicking **CLUSTER NODES MONITOR** on the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (168).png>)
+![](<../../.gitbook/assets/image (237).png>)
 
 The **Nodes** section provides a quick overview of the cluster's nodes:&#x20;
 
-![](<../../.gitbook/assets/image (242).png>)
+![](<../../.gitbook/assets/image (160).png>)
 
 Clicking a node's name in the **Nodes** section will make it active, allowing you to see detailed information about it in the sections below:
 
-![](<../../.gitbook/assets/image (140).png>)
+![](<../../.gitbook/assets/image (163).png>)
 
 You can expand any specific section by clicking it's name:
 
-![](<../../.gitbook/assets/image (133).png>)
+![](<../../.gitbook/assets/image (170).png>)
 
 ### Cluster jobs monitor
 
@@ -40,23 +40,23 @@ This report provides a thorough look at the cluster's jobs and their activity, i
 
 You can access it by clicking **CLUSTER JOBS MONITOR** in the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (139).png>)
+![](<../../.gitbook/assets/image (242) (1).png>)
 
 The **Running Jobs** widget gives an overview of all currently running jobs, including the information about resource consumption:
 
-![](<../../.gitbook/assets/image (185).png>)
+![](<../../.gitbook/assets/image (164).png>)
 
 You can view the amount of jobs per user in the **Number of Jobs** and **Total Number of Jobs** widgets:
 
-![](<../../.gitbook/assets/image (130).png>)
+![](<../../.gitbook/assets/image (155).png>)
 
 Additional sections with information can be expanded by clicking their names:
 
-![](<../../.gitbook/assets/image (231).png>)
+![](<../../.gitbook/assets/image (145).png>)
 
 Clicking a job's name will bring you to a page with detailed information about this specific job:
 
-![](<../../.gitbook/assets/image (252).png>)
+![](<../../.gitbook/assets/image (146).png>)
 
 ### Cluster prices monitor
 
@@ -64,22 +64,22 @@ This report provides information related to cluster pricing, such as node costs,
 
 You can access this report by clicking **CLUSTER PRICES MONITOR** in the **Cluster management** tab:
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (251).png>)
 
 The uppermost section displays total job credits used in the selected time range, job duration, total cost of available nodes, and the uptime of these nodes. The **Jobs** widget shows a rundown of the jobs - their IDs, owners, presets, start times, and credit costs:
 
-![](<../../.gitbook/assets/image (240).png>)
+![](<../../.gitbook/assets/image (151).png>)
 
 The lowermost widgets show more information about users and nodes:
 
-![](<../../.gitbook/assets/image (151).png>)
+![](<../../.gitbook/assets/image (161).png>)
 
 ## Report time ranges and refresh time
 
 Each report has a default time range for which it's generated, based on the report's type. You can specify any other range in the **Time range** drop-down tab:
 
-![](<../../.gitbook/assets/image (246).png>)
+![](<../../.gitbook/assets/image (153).png>)
 
 You can also choose how often the report refreshes in the **Refresh rate** drop-down list:
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (156).png>)
