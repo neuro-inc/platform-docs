@@ -1,6 +1,6 @@
 # Hyperparameter Tuning with Weights & Biases
 
-Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com). W\&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
+Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W\&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
 
 To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb) in which we apply hyperparemeter tuning with W\&B to an image classification task.
 
@@ -8,7 +8,7 @@ To see this guide in action, check out our [recipe](https://github.com/neuromati
 
 The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps.&#x20;
 
-First, [Sign up](https://neu.ro) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
+First, [Sign up](https://neu.ro/) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
 
 Than, create a new project using the following command (make sure you have [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed before running it):&#x20;
 
@@ -36,7 +36,7 @@ $ cd hyperparameter-tuning-test
 
 ### Connecting Weights & Biases
 
-Now, connect your project with [Weights & Biases](https://www.wandb.com):
+Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 * [Register your W\&B account](https://app.wandb.ai/login?signup=true).
 * Find your API key (also called a _token_) on [W\&B’s settings page](https://app.wandb.ai/settings) (“API keys” section). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b63d13`.

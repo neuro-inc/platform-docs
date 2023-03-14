@@ -59,6 +59,7 @@
   * [Hyperparameter Tuning with NNI](toolbox/hyperparameter-tuning/using-nni-for-hyper-parameter-tuning.md)
   * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning/hyperparameter-tuning-with-weights-and-biases.md)
 * [Serving and Deploying](toolbox/serving-and-deploying/README.md)
+  * [Serving Models With Model Deployment Controller](toolbox/serving-and-deploying/serving-models-with-model-deployment-controller.md)
   * [Deploying with Seldon](toolbox/serving-and-deploying/deploying-with-seldon.md)
   * [Serving Models with TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
 * [Working With the Sandbox](toolbox/working-with-the-sandbox/README.md)

@@ -22,7 +22,7 @@ $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 
 ### Connecting Weights & Biases
 
-Now, connect your project with [Weights & Biases](https://www.wandb.com):
+Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 
 1. [Register your W\&B account](https://app.wandb.ai/login?signup=true)
 2. Find your API key (it is also called a token) on [W\&B’s settings page](https://app.wandb.ai/settings)(section “API keys”). It should be a sequence like `cf23df2207d99a74fbe169e3eba035e633b65d94`.

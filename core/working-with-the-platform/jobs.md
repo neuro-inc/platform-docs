@@ -37,35 +37,47 @@ Hello, World!
 Neu.ro comes with a set of presets that are suitable for running different kinds of workloads. Some of the jobs may also require GPU resources. You can view the list of available presets using the `neuro config show` command.
 
 ```
-(base) C:\Projects>neuro config show
-User Configuration:
- User Name            jane-doe
- Current Cluster      default
- API URL              https://staging.neu.ro/api/v1
- Docker Registry URL  https://registry.default.org.neu.ro
-Resource Presets:
- Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
-────────────────────────────────────────────────────────────────────────────────────────────────────────
- cpu-small             1     4.0G        ×               ×                                           65
- cpu-medium            3    11.0G        ×               ×                                           18
- cpu-large             7    26.0G        ×               ×                                            8
- gpu-k80-small         5    48.0G        ×               ×           1 x nvidia-tesla-k80            25
- gpu-k80-small-p     5.0    48.0G        √               √           1 x nvidia-tesla-k80            10
- gpu-v100-small        5    95.0G        ×               ×           1 x nvidia-tesla-v100           10
- gpu-v100-small-p    5.0    95.0G        √               √           1 x nvidia-tesla-v100           10
+$ neuro config show
+User Configuration:                                       
+ User Name            jane-doe                      
+ Current Cluster      default                             
+ Current Org          <no-org>                            
+ Credits Quota        unlimited                           
+ Jobs Quota           unlimited                           
+ API URL              https://staging.neu.ro/api/v1       
+ Docker Registry URL  https://registry.default.org.neu.ro 
+Resource Presets:                                                                                                          
+ Name               #CPU   Memory   Round Robin   Preemptible Node   GPU                     Jobs Avail   Credits per hour 
+
+ cpu-small             1     4.0G                                                                  55   1                
+ cpu-medium            3    11.0G                                                                  15   2                
+ cpu-large             7    28.0G                                                                   7   4                
+ gpu-k80-small         3    57.0G                                  1 x nvidia-tesla-k80            30   10               
+ gpu-k80-small-p       3    57.0G                                  1 x nvidia-tesla-k80            10   1                
+ gpu-v100-small        7    57.0G                                  1 x nvidia-tesla-v100           10   32               
+ gpu-v100-small-p      7    57.0G                                  1 x nvidia-tesla-v100           10   4                
+ gpu-small             3    57.0G                                  1 x nvidia-tesla-k80            30   10               
+ gpu-small-p           3    57.0G                                  1 x nvidia-tesla-k80            10   1                
+ gpu-v100-large       63   480.0G                                  8 x nvidia-tesla-v100            4   256              
+ gpu-v100-large-p     63   480.0G                                  8 x nvidia-tesla-v100            4   32               
+ gpu-v100-2           15   115.0M                                  2 x nvidia-tesla-v100           16   64               
+ gpu-v100-4           31   235.0M                                  4 x nvidia-tesla-v100            8   128              
+ gpu-v100-8           63   480.0M                                  8 x nvidia-tesla-v100            4   256
 ```
 
 The command lists the available presets and their configurations. For example, the **cpu-small** preset includes 1 CPU, 4GB of memory, and no GPU. Whereas, the **gpu-k80-small** includes 5 CPU, 48GB memory, and an nvidia-tesla-k80 GPU.
 
 ### How do I run a job?
 
-To run a job in CLI, you can use the `neuro run` command. This command accepts a lot of different arguments, most of which are explained in this and the following sections.
-
 Each job has a unique ID. For your convenience, you can give a job a name. There can only be a single PENDING or RUNNING job with a given name.
 
 Each job has access to its ephemeral storage (which is essentially a part of SSD on the physical machine this job runs on). This type of storage is fast but not persistent: as soon as you kill the job, the data is lost.
 
-To make the data persistent, you can mount volumes of platform storage to the job. This type of storage is slightly slower and has some limitations. For example, running model training on data from the mounted folder is generally 10-20% slower. Also, random write operations (e.g. unzipping an archive) are very slow and highly unrecommended.
+To make the data persistent, you can mount volumes of platform storage to the job. This type of storage is slightly slower and has some limitations. For example, running model training on data from the mounted folder is generally 10-20% slower. Also, random write operations (e.g. unzipping an archive) are very slow and are highly discouraged.
+
+{% tabs %}
+{% tab title="CLI" %}
+To run a job in CLI, you can use the `neuro run` command. This command accepts a lot of different arguments, most of which are explained in this and the following sections.
 
 **Sample commands:**
 
@@ -102,6 +114,40 @@ Hello, World!
 √ (Use Ctrl-P Ctrl-Q key sequence to detach from the job)
 Your training script here. Data directory: /data
 ```
+{% endtab %}
+
+{% tab title="Web UI" %}
+To run a job in Web UI, you'll need to use the **Custom Job** widget on your dashboard.&#x20;
+
+First, click **RUN JOB**:&#x20;
+
+![](<../../.gitbook/assets/image (258).png>)
+
+Next, you will need to choose the preset to run the job on. For example, **cpu-small**:
+
+![](<../../.gitbook/assets/image (262).png>)
+
+Then, specify the image that will be used in the job:
+
+![](<../../.gitbook/assets/image (274).png>)
+
+You can now enter the command you want to run in the corresponding field:
+
+![](<../../.gitbook/assets/image (266).png>)
+
+You can optionally enter a name for this job and a HTTP port that will be associated with this job. The default port value is 80.
+
+![](<../../.gitbook/assets/image (268).png>)
+
+And now, you can just click **RUN** to run the job:
+
+![](<../../.gitbook/assets/image (278).png>)
+
+You will learn more about various job parameters such as images, HTTP ports, and others, in this and following topics.
+{% endtab %}
+{% endtabs %}
+
+
 
 ### How can I see the list of currently running jobs?
 
@@ -298,24 +344,33 @@ The log is also displayed if you don't pass the `--detach` option when the job i
 
 Neuro provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Neu.ro web interface lists all the jobs.
 
-![](<../../.gitbook/assets/image (209).png>)
+![](<../../.gitbook/assets/image (174).png>)
 
 You can view the web interface of the job by clicking the 'three dots' icon near the job and then clicking **HTTP URL**.
 
-![](<../../.gitbook/assets/image (202).png>)
+![](<../../.gitbook/assets/image (198).png>)
 
 To view the log and and other details about a job, click on the job ID.
 
-![Job Details section](<../../.gitbook/assets/image (96) (1).png>)
+![Job Details section](<../../.gitbook/assets/image (255).png>)
 
 By default, the **Jobs** page displays all currently running jobs. You can filter jobs by status using the corresponding drop-down list:
 
-![](<../../.gitbook/assets/image (214).png>)
+![](<../../.gitbook/assets/image (143).png>)
 
 You can search for specific jobs using the **Search** field. The search functionality works with job names, IDs, and tags.
 
-![](<../../.gitbook/assets/image (194).png>)
+![](<../../.gitbook/assets/image (181).png>)
 
 The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in the drop-down menu accessible through the 'three dots' icon near the job.
 
-![KILL and RERUN options](<../../.gitbook/assets/image (101).png>)
+![KILL and RERUN options](<../../.gitbook/assets/image (157).png>)
+
+### Monitoring jobs
+
+You can monitor various parameters of your currently running jobs such as CPU and GPU usage, network traffic, prices, etc., in the Web UI.
+
+All of this information is accessible in the [Grafana](https://grafana.com/)-based **User Jobs Monitor** feature. To access this feature, go to the **Information** tab and click **USER JOBS MONITOR**:\
+&#x20;&#x20;
+
+![](broken-reference)

@@ -129,11 +129,11 @@ You can learn more about bake inspection [here](https://neu-ro.gitbook.io/neuro-
 {% tab title="Web UI" %}
 You can view the list of your projects in the **Projects** tab:
 
-![](<../../.gitbook/assets/image (142).png>)
+![](<../../.gitbook/assets/image (186).png>)
 
 Click on a project's name to view the list of its live jobs and batch bakes:
 
-![](<../../.gitbook/assets/image (141).png>)
+![](<../../.gitbook/assets/image (162).png>)
 
 You can view each job's and bake's details by clicking on their name.
 {% endtab %}

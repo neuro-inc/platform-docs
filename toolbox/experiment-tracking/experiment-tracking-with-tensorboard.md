@@ -2,8 +2,8 @@
 
 ### Introduction
 
-[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results. \
-TensorBoard, in turn, lets you measure, visualize, and share your experiment results. It also provides functionality for creating dataflow graphs that describe how data moves through a graph or series of nodes. All of this is provided through [python](https://www.python.org), Java, Go, and JavaScript.
+[TensorBoard](https://www.tensorflow.org/tensorboard) is a tool that allows you to measure and visualize your machine learning workflow. It's based on the [TensorFlow](https://www.tensorflow.org/) open-source platform for machine learning. TensorFlow lets you easily acquire data, train models, serve predictions, and refine experiment results. \
+TensorBoard, in turn, lets you measure, visualize, and share your experiment results. It also provides functionality for creating dataflow graphs that describe how data moves through a graph or series of nodes. All of this is provided through [python](https://www.python.org/), Java, Go, and JavaScript.
 
 Neu.ro includes TensorBoard that lets you train ML models. If you're a beginner, then you can also use TensorBoard via Jupyter Notebooks without installing any additional components. You can run TensorFlow training processes using either CLI or JupyterLab. This guide will take you through a sample ML training task using TensorFlow and viewing the experiment in TensorBoard.
 
@@ -56,9 +56,9 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 ```
 
-After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org). These have to be converted to tensors before you can start visualizing them.&#x20;
+After the dataset is loaded, we will have a list of [matplotlib plots](https://matplotlib.org/). These have to be converted to tensors before you can start visualizing them.&#x20;
 
-* To convert [matplotlib plots](https://matplotlib.org) to images, add the following code:
+* To convert [matplotlib plots](https://matplotlib.org/) to images, add the following code:
 
 ```
 def plot_to_image(figure):
@@ -220,7 +220,7 @@ The TensorBoard interface includes the following tabs:
 
 The **Scalars** dashboard shows how the accuracy and loss change with each epoch. You can use it to track training speed, learning rate, and other metrics. You can move your mouse over the graph to view more details.
 
-![](../../.gitbook/assets/scalar.gif)
+![](../../.gitbook/assets/Scalar.gif)
 
 You can download the scalar information as a CSV or JSON file. To download, select **Show data download links** and then select the required file format.
 
@@ -228,13 +228,13 @@ You can download the scalar information as a CSV or JSON file. To download, sele
 
 The **Images** tab displays the confusion matrix for the current training. For our current training (in which we are classifying images into categories of clothing), the **Images** tab shows the confusion matrix for various clothing types.&#x20;
 
-![](../../.gitbook/assets/images\_tab.gif)
+![](../../.gitbook/assets/Images\_tab.gif)
 
 #### Graphs
 
 The **Graphs** tab visualizes the computation of your model, such as a neural network mode. The Graph visualization lets you easily see what's happening in your model and detect any issues. \
 
 
-![](<../../.gitbook/assets/graph\_tab (1) (1).gif>)
+![](../../.gitbook/assets/Graph\_Tab.gif)
 
 You can double-click on a code unit to open its visualization.

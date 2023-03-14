@@ -8,13 +8,13 @@
 
 Before testing the model with Locust, you will need to make a test deployment via MLflow. To do this, you will need to run the following command:
 
-```text
+```
 $ neuro-flow run deploy_inference_platform --param run_id <run-id>
 ```
 
 You can check the required run ID in MLflow:
 
-![](../../.gitbook/assets/image%20%28221%29.png)
+![](<../../.gitbook/assets/image (270).png>)
 
 By running the `deploy_inference_platform` job, you gain access to the target model's binary and deploy it to the Neu.ro cluster.
 
@@ -26,7 +26,7 @@ You can specify how the Neu.ro platform will use Locust via the `.neuro/live.yml
 
 In the `jobs` section of the `live.yml` file, you will find a default `locust` job description that looks like this:
 
-```text
+```
 locust:
     image: locustio/locust:1.4.1
     name: $[[ flow.title ]]-locust
@@ -58,19 +58,18 @@ You can always fine-tune the job depending on your needs by changing the values 
 
 To run a `locust` job, execute the following:
 
-```text
+```
 $ neuro-flow run locust
 ```
 
 This job will use a `locust.py` file specified in the `cmd` section of the job definition. This file will tell Locust what specific tests to run and how to run them. You can [learn more about writing Locust files here](https://docs.locust.io/en/stable/writing-a-locustfile.html).
 
-Once the Locust job is up and running, you will need to open Locust in your browser by using the predictable URI generated in the previous steps. 
+Once the Locust job is up and running, you will need to open Locust in your browser by using the predictable URI generated in the previous steps.&#x20;
 
 Next, enter the locust URL of the job on the platform in the **Host** field and click **Start swarming**:
 
-![](../../.gitbook/assets/image%20%28220%29.png)
+![](<../../.gitbook/assets/image (261).png>)
 
 When this is done, you can modify the amount of simulated users and the spawn rate and monitor the testing process through various charts:
 
-![](../../.gitbook/assets/image%20%28222%29.png)
-
+![](<../../.gitbook/assets/image (279).png>)

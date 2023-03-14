@@ -34,7 +34,7 @@ To download [Google’s Natural Questions](https://ai.google.com/research/Natura
 
 To run the recipe on the `DummyDataset`, follow these simple steps:
 
-1. [Sign up](https://neu.ro) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
+1. [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
 2. Clone the [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch)
 3. Run \
    `neuro-flow build myimage`\

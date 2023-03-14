@@ -8,22 +8,23 @@ Once your cluster's node pools are set up, you can configure resource presets th
 
 You can view your current cluster's resource presets by running `neuro config show` and referring to the **Resource Presets** section in its output:
 
-```text
-Resource Presets:
- Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
-────────────────────────────────────────────────────────────────────────────────────────────────────────
- cpu-small             1     4.0G        ×               ×                                           63
- cpu-medium            3    11.0G        ×               ×                                           18
- cpu-large             7    26.0G        ×               ×                                            7
- gpu-k80-small         5    48.0G        ×               ×           1 x nvidia-tesla-k80            28
- gpu-k80-small-p     5.0    48.0G        √               √           1 x nvidia-tesla-k80            10
- gpu-v100-small        5    95.0G        ×               ×           1 x nvidia-tesla-v100           10
- gpu-v100-small-p    5.0    95.0G        √               √           1 x nvidia-tesla-v100           10
+```
+Name               #CPU   Memory   Round Robin   Preemptible Node   GPU                             Jobs Avail   Credits per hour 
+
+ cpu-small             1     4.0G                                                                          20   10               
+ cpu-large             4    10.0G                                                                           8   10               
+ gpu-small            23    60.0G                                  1 x nvidia-geforce-rtx-2080ti            1   10               
+ gpu-large            47   120.0G                                  2 x nvidia-geforce-rtx-2080ti            0   10               
+ gpu-1x3090           23    60.0G                                  1 x nvidia-geforce-rtx-3090              0   10               
+ gpu-2x3090           47   120.0G                                  2 x nvidia-geforce-rtx-3090              0   10               
+ cpu-medium            2     6.0G                                                                          13   10               
+ cpu-micro           0.1     1.0G                                                                          83   5                
+ cpu-test-storage    7.0    30.0G                                                                           2   75
 ```
 
 ### Modifying and adding presets
 
-You can easily modify or add resource presets by using the `neuro admin update-resource-preset` command. 
+You can easily modify or add resource presets by using the `neuro admin update-resource-preset` command.&#x20;
 
 For example, to change the amount of memory accessible through the existing **cpu-large** preset to 32GB, run:
 
@@ -47,39 +48,38 @@ You can delete resource presets by using the `neuro admin remove-resource-preset
 
 You can view your current cluster's resource presets in the **Information** and **Cluster management** tabs:
 
-![](../../.gitbook/assets/image%20%28116%29.png)
+![](<../../.gitbook/assets/image (3).png>)
 
 ### Adding presets
 
 To add a new preset, click the **Add** icon in the Cluster management tab:
 
-![](../../.gitbook/assets/image%20%28121%29.png)
+![](<../../.gitbook/assets/image (20).png>)
 
 After that, enter the desired preset parameters and click the **Save** icon:
 
-![](../../.gitbook/assets/image%20%28122%29.png)
+![](<../../.gitbook/assets/image (28).png>)
 
 ### Modifying presets
 
 To modify an existing preset, click the **Edit** icon next to it:
 
-![](../../.gitbook/assets/image%20%28118%29.png)
+![](<../../.gitbook/assets/image (163).png>)
 
 After that, enter the new parameters and click the **Save** icon:
 
-![](../../.gitbook/assets/image%20%28117%29.png)
+![](<../../.gitbook/assets/image (12).png>)
 
 ### Deleting presets
 
 To delete a preset, click the **Delete** icon next to it:
 
-![](../../.gitbook/assets/image%20%28119%29.png)
+![](<../../.gitbook/assets/image (126).png>)
 
 After that, click the **Save** icon to confirm your action:
 
-![](../../.gitbook/assets/image%20%28120%29.png)
+![](<../../.gitbook/assets/image (1).png>)
 {% endtab %}
 {% endtabs %}
 
-### 
-
+###

@@ -2,9 +2,15 @@
 
 This group contains the following topics:
 
-{% page-ref page="deploying-with-seldon.md" %}
+{% content-ref url="serving-models-with-model-deployment-controller.md" %}
+[serving-models-with-model-deployment-controller.md](serving-models-with-model-deployment-controller.md)
+{% endcontent-ref %}
 
-{% page-ref page="serving-models-with-torch-serve.md" %}
+{% content-ref url="deploying-with-seldon.md" %}
+[deploying-with-seldon.md](deploying-with-seldon.md)
+{% endcontent-ref %}
 
-
+{% content-ref url="serving-models-with-torch-serve.md" %}
+[serving-models-with-torch-serve.md](serving-models-with-torch-serve.md)
+{% endcontent-ref %}
 

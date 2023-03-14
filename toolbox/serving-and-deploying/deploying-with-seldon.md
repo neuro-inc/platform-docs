@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Neu.ro and [Seldon](https://www.seldon.io) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist).&#x20;
+This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Neu.ro and [Seldon](https://www.seldon.io/) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist).&#x20;
 
 Here are the steps we'll perform:
 

@@ -9,7 +9,7 @@
 
 If you're new to Neu.ro, here are two simple steps to get started:
 
-* [Sign up](https://app.neu.ro) and contact [support@neu.ro](https://milto:support@neu.ro) speciying your username to get 100 free credits.&#x20;
+* [Sign up](https://app.neu.ro/) and contact [support@neu.ro](https://milto:support@neu.ro) speciying your username to get 100 free credits.&#x20;
 * Follow our [Getting Started](first-steps/getting-started.md) guide.
 
 ## Digging deeper

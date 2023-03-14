@@ -16,28 +16,38 @@ You can use the `neuro config show` command to view the current cluster's name, 
 
 ```
 $ neuro config show
-User Configuration:
- User Name            john-doe
- Current Cluster      default
- API URL              https://staging.neu.ro/api/v1
- Docker Registry URL  https://registry.default.org.neu.ro
-Resource Presets:
- Name               #CPU   Memory   Preemptible   Preemptible Node   GPU                     Jobs Avail
-────────────────────────────────────────────────────────────────────────────────────────────────────────
- cpu-small             1     4.0G        ×               ×                                           49
- cpu-medium            3    11.0G        ×               ×                                           14
- cpu-large             7    26.0G        ×               ×                                            6
- gpu-k80-small         5    48.0G        ×               ×           1 x nvidia-tesla-k80            26
- gpu-k80-small-p     5.0    48.0G        √               √           1 x nvidia-tesla-k80            30
- gpu-v100-small        5    95.0G        ×               ×           1 x nvidia-tesla-v100           10
- gpu-v100-small-p    5.0    95.0G        √               √           1 x nvidia-tesla-v100           10
+User Configuration:                                       
+ User Name            john-doe                      
+ Current Cluster      default                             
+ Current Org          <no-org>                            
+ Credits Quota        unlimited                           
+ Jobs Quota           unlimited                           
+ API URL              https://staging.neu.ro/api/v1       
+ Docker Registry URL  https://registry.default.org.neu.ro 
+Resource Presets:                                                                                                          
+ Name               #CPU   Memory   Round Robin   Preemptible Node   GPU                     Jobs Avail   Credits per hour 
+
+ cpu-small             1     4.0G                                                                  55   1                
+ cpu-medium            3    11.0G                                                                  15   2                
+ cpu-large             7    28.0G                                                                   7   4                
+ gpu-k80-small         3    57.0G                                  1 x nvidia-tesla-k80            30   10               
+ gpu-k80-small-p       3    57.0G                                  1 x nvidia-tesla-k80            10   1                
+ gpu-v100-small        7    57.0G                                  1 x nvidia-tesla-v100           10   32               
+ gpu-v100-small-p      7    57.0G                                  1 x nvidia-tesla-v100           10   4                
+ gpu-small             3    57.0G                                  1 x nvidia-tesla-k80            30   10               
+ gpu-small-p           3    57.0G                                  1 x nvidia-tesla-k80            10   1                
+ gpu-v100-large       63   480.0G                                  8 x nvidia-tesla-v100            4   256              
+ gpu-v100-large-p     63   480.0G                                  8 x nvidia-tesla-v100            4   32               
+ gpu-v100-2           15   115.0M                                  2 x nvidia-tesla-v100           16   64               
+ gpu-v100-4           31   235.0M                                  4 x nvidia-tesla-v100            8   128              
+ gpu-v100-8           63   480.0M                                  8 x nvidia-tesla-v100            4   256
 ```
 {% endtab %}
 
 {% tab title="Web UI" %}
 You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
 
-![](<../../.gitbook/assets/image (144).png>)
+![](<../../.gitbook/assets/image (5).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -107,7 +117,7 @@ The current cluster is onprem-poc
 {% tab title="Web UI" %}
 Use the **Cluster** drop-down list to view available clusters and switch between them:
 
-![](<../../.gitbook/assets/image (243) (1).png>)
+![](<../../.gitbook/assets/image (210).png>)
 {% endtab %}
 {% endtabs %}
 

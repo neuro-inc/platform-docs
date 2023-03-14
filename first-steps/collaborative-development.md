@@ -47,20 +47,20 @@ This will upload data from your local folder to the `cifar-10` folder on your pl
 {% tab title="Web UI" %}
 To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage browser** widget:
 
-![](<../.gitbook/assets/image (254).png>)
+![](<../.gitbook/assets/image (248).png>)
 
 After that, click **RUN** in the new window:\
 
 
-![](<../.gitbook/assets/image (245).png>)
+![](<../.gitbook/assets/image (167).png>)
 
 Once the Filebrowser is opened, navigate to the folder you want to upload your data to and click the **Upload** icon:
 
-![](<../.gitbook/assets/zobrazhennya (29).png>)
+![](<../.gitbook/assets/зображення (27).png>)
 
 Then, select the files or folder you want to upload:
 
-![](<../.gitbook/assets/zobrazhennya (34).png>)
+![](<../.gitbook/assets/зображення (22).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -93,15 +93,15 @@ Sharing folders and files through the Filebrowser gives temporary access to them
 
 Select the files and/or folders you want to share in the Filebrowser and click the **Share** icon:
 
-![](<../.gitbook/assets/image (99).png>)
+![](<../.gitbook/assets/image (256).png>)
 
 You can then create permanent and temporary access links for the selected items. To create a permanent link, click **Get Permanent Link**:
 
-![](<../.gitbook/assets/image (97).png>)
+![](<../.gitbook/assets/image (280).png>)
 
 To create a temporary link, specify the required time period and click the **Create** icon:
 
-![](<../.gitbook/assets/image (100).png>)
+![](<../.gitbook/assets/image (281).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -154,7 +154,7 @@ You can view the IDs and names of all currently running jobs in the left part of
 
 Clicking the job ID will open the **Job Details** window.
 
-![](<../.gitbook/assets/image (216).png>)
+![](<../.gitbook/assets/image (16).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -180,11 +180,11 @@ However, keep in mind that different runs of the same job can have the same name
 {% tab title="Web UI" %}
 To share a job, click **Share** in the drop-down list to its right:
 
-![](<../.gitbook/assets/image (212).png>)
+![](<../.gitbook/assets/image (203).png>)
 
 Next, enter the name of the user you want to share the job with and the access level. When this is done, click **SHARE**:
 
-![](<../.gitbook/assets/zobrazhennya (30).png>)
+![](<../.gitbook/assets/зображення (19).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -204,7 +204,7 @@ neuro browse job://default/bob/jupyter-awesome-project
 neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 ```
 
-Also, Alice gets access to this job in her [Web UI](https://app.neu.ro) and can monitor the job's logs or work with it there.
+Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can monitor the job's logs or work with it there.
 
 Please note that, if someone gets `write`-level access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the Git repository, you have to download them, commit, and push.
 

@@ -38,11 +38,11 @@ You can find more info about bucket management commands in the [CLI reference](h
 {% tab title="Web UI" %}
 You can view available buckets in the **Buckets** tab of your dashboard:
 
-![](<../../.gitbook/assets/зображення (4).png>)
+![](<../../.gitbook/assets/зображення (3).png>)
 
 Click on your bucket to open its detailed view. From here, you can crete folders and upload files to the bucket:
 
-![](<../../.gitbook/assets/зображення (3).png>)
+![](<../../.gitbook/assets/зображення (4).png>)
 {% endtab %}
 {% endtabs %}
 

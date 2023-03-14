@@ -8,84 +8,34 @@ To set up a Neu.ro cluster, you have to do the following:
 
 1. Set up a cloud environment:
    * GCP: [Create a project](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project) and a [service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating).
-   * AWS: [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html#getting-started-create-vpc) and a [service account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html).
+   * AWS: [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html#getting-started-create-vpc) and a [service account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_users\_create.html).
    * Azure: [Create a resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups) and a [service account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
 2. Prepare a cluster configuration YAML file.
-3. Share the configuration YAML file with us. Once we receive the YAML file, we will set up and run the cluster \(usually completed within one business day\). You can start [adding your users to the cluster](managing-users-and-quotas.md) while it is being set up.
+3. Share the configuration YAML file with us. Once we receive the YAML file, we will set up and run the cluster (usually completed within one business day). You can start [adding your users to the cluster](managing-users-and-quotas.md) while it is being set up.
 
 Apart from the process mentioned above, there are other methods of setup:
 
-* Set up Neu.ro on an existing cluster provided by AWS, GCP, or Azure. This requires the configuration of the node pool. 
+* Set up Neu.ro on an existing cluster provided by AWS, GCP, or Azure. This requires the configuration of the node pool.&#x20;
 * Set up Neu.ro on an existing cluster provided by other cloud service providers.
-* Set up Neu.ro on-premise \(or “bare metal”\).
+* Set up Neu.ro on-premise (or “bare metal”).
 
 For any of these other methods of setup, please [contact our team](mailto:team@neu.ro).
 
-### Cluster configuration YAML 
+### Cluster configuration YAML&#x20;
 
 You must create a project/VPC/resource group and a service account with all required permissions before you can start preparing a cluster configuration YAML file. The YAML file is used by the Neu.ro team to set up and run the cluster. You should use the `neuro admin generate-cluster-config` command to generate the YAML file. It is an interactive tool that generates a valid configuration file with the default node configuration based on your responses.
 
 The command prompts for the following information in order to generate the configuration file:
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>Prompt</b>
-      </th>
-      <th style="text-align:left"><b>Description</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Cluster Type</td>
-      <td style="text-align:left">Enter cloud service provider - AWS, GCP, Azure</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GCP Project Name or AWS VPC ID or Azure subscription ID</td>
-      <td style="text-align:left">
-        <ul>
-          <li>For GCP, enter the name of the project.</li>
-          <li>For AWS, enter the VPC ID you created in the previous step.</li>
-          <li>For Azure, enter the Azure subscription ID you created in the previous
-            step.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>Service Account Key File (.json)</p>
-        <p>Or</p>
-        <p>AWS Profile Name</p>
-        <p>Or Azure information</p>
-      </td>
-      <td style="text-align:left">
-        <ul>
-          <li>For GCP, enter the path to the service account key file. For information
-            on service accounts, see <a href="https://cloud.google.com/iam/docs/understanding-service-accounts">Understanding service accounts</a>.</li>
-          <li>For AWS, enter the profile name in AWS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing Access Keys</a>.</li>
-          <li>For Azure, enter the following access information:
-            <ul>
-              <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure client ID</a>
-              </li>
-              <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure tenant ID</a>
-              </li>
-              <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure client secret</a>
-              </li>
-              <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application">Azure resource group</a>
-              </li>
-              <li>Azure Files storage size (GB)</li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| **Prompt**                                                                                         | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cluster Type                                                                                       | Enter cloud service provider - AWS, GCP, Azure                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| GCP Project Name or AWS VPC ID or Azure subscription ID                                            | <ul><li>For GCP, enter the name of the project.</li><li>For AWS, enter the VPC ID you created in the previous step.</li><li>For Azure, enter the Azure subscription ID you created in the previous step.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| <p>Service Account Key File (.json)</p><p>Or</p><p>AWS Profile Name</p><p>Or Azure information</p> | <ul><li>For GCP, enter the path to the service account key file. For information on service accounts, see <a href="https://cloud.google.com/iam/docs/understanding-service-accounts">Understanding service accounts</a>.</li><li>For AWS, enter the profile name in AWS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing Access Keys</a>.</li><li><p>For Azure, enter the following access information:</p><ul><li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure client ID</a></li><li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure tenant ID</a></li><li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret">Azure client secret</a></li><li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application">Azure resource group</a></li><li>Azure Files storage size (GB)</li></ul></li></ul> |
 
 Below is a sample command for GCP:
 
-```text
+```
 > neuro admin generate-cluster-config
 Select cluster type (aws, gcp, azure): gcp
 GCP project name: My Project
@@ -95,7 +45,7 @@ Cluster config cluster.yml is generated.
 
 The command creates the `cluster.yml` file that includes the information required by the Neu.ro team to set up your cluster. Here is a sample `cluster.yml` generated for a new GCP cluster:
 
-```text
+```
 type: gcp
 location_type: multi_zonal
 region: us-central1
@@ -140,8 +90,8 @@ The file will create a cluster with the following presets:
 
 * cpu-small,
 * cpu-large,
-* gpu-small \(a node with K80\), and
-* gpu-large \(a node with V100\).
+* gpu-small (a node with K80), and
+* gpu-large (a node with V100).
 
 To get information about available options for each of the cloud providers, run:
 
@@ -151,5 +101,4 @@ You can further update the `cluster.yml` file as per your requirements before yo
 
 `neuro admin add-cluster <path/to/config>`
 
-Once we receive the YAML file, we will set up and run the cluster \(usually completed within one business day\). After the command is run, you become the admin of the cluster. You can start adding users to the cluster as soon as you run the command above.
-
+Once we receive the YAML file, we will set up and run the cluster (usually completed within one business day). After the command is run, you become the admin of the cluster. You can start adding users to the cluster as soon as you run the command above.

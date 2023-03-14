@@ -4,7 +4,7 @@ Neu.ro provides storage to host files that are required to run your jobs. All us
 
 The following image shows an overview of data flows between your local machine, the storage, and the job file system:&#x20;
 
-![](../../.gitbook/assets/storage-2.png)
+![](../../.gitbook/assets/Storage-2.png)
 
 ## The structure of platform storage
 
@@ -12,11 +12,11 @@ Platform storage is a tree-like filesystem, and each cluster has its own storage
 
 Home folders of all users from a cluster are located in the root of this cluster's storage space. So if a cluster has three users `usera`, `userb`, and `userc`, the storage root will contain three folders `/usera`, `/userb`, and `/userc` :
 
-![](<../../.gitbook/assets/image (231).png>)
+![](<../../.gitbook/assets/image (283).png>)
 
 If `usera` has some files and folders in their storage, it will look like this:
 
-![](<../../.gitbook/assets/image (230).png>)
+![](<../../.gitbook/assets/image (282).png>)
 
 Here's the general syntax for addressing files and folders on the storage through commands in CLI:
 
@@ -45,15 +45,15 @@ To manage files:&#x20;
 * Log in to Neu.ro.&#x20;
 * Click **RUN A JOB** in the Storage widget:
 
-![](<../../.gitbook/assets/image (236).png>)
+![](<../../.gitbook/assets/image (187).png>)
 
 * Click **RUN** in the **Storage** dialog box:
 
-![](<../../.gitbook/assets/image (250).png>)
+![](<../../.gitbook/assets/image (176).png>)
 
 This opens the file browser for the cluster. Here, you can host and manage files.
 
-![FileBrowser interface](<../../.gitbook/assets/image (24).png>)
+![FileBrowser interface](<../../.gitbook/assets/image (78).png>)
 
 The file browser has the following areas:&#x20;
 
@@ -186,7 +186,7 @@ Examples:&#x20;
 * To move a file from a storage folder to another storage folder and rename the file, use the following command: `neuro mv storage:nero-assistant\code.txt storage:neuro-tutorial\samplecode.txt`\
   This command moves the file `code.txt` from the `nero-assistant` storage folder to the `neuro-tutorial` storage folder and renames this file to `samplecode.txt`.
 * To move a storage folder and its contents to a new location, use the command: `neuro mv -T storage:nero-assistant/ModelCode storage:neuro-tutorial/SampleCode`\
-  This command copies the folder `ModelCode` and all its contents from the `nero-assistant` storage folder to the `neuro-tutorial` storage folder and renames it to `SampleCode`.
+  This command moves the folder `ModelCode` and all its contents from the `nero-assistant` storage folder to the `neuro-tutorial` storage folder and renames it to `SampleCode`.
 
 ## How do I use storage folders in jobs?&#x20;
 

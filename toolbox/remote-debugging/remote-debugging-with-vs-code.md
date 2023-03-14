@@ -109,12 +109,12 @@ Open your code file in VS Code and navigate to **Run > Start Debugging** or pres
 
 Select **Remote Attach**:
 
-![](<../../.gitbook/assets/image (88).png>)
+![](<../../.gitbook/assets/image (87).png>)
 
 Enter **localhost** as the host name and the job's port number (in this case, it's **5687**):
 
-![](<../../.gitbook/assets/image (87) (1).png>)
+![](<../../.gitbook/assets/image (264).png>)
 
-![](<../../.gitbook/assets/image (91).png>)
+![](<../../.gitbook/assets/image (91) (1).png>)
 
 When this is done, you can set the breakpoint and start debugging.
