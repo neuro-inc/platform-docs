@@ -20,7 +20,11 @@ This report provides in-depth information about the activity of the cluster's no
 
 You can access it by clicking **CLUSTER NODES MONITOR** on the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (237).png>)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (237).png" alt="">
+
+</div>
 
 The **Nodes** section provides a quick overview of the cluster's nodes:&#x20;
 
@@ -40,7 +44,11 @@ This report provides a thorough look at the cluster's jobs and their activity, i
 
 You can access it by clicking **CLUSTER JOBS MONITOR** in the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (242) (1).png>)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (242) (1).png" alt="">
+
+</div>
 
 The **Running Jobs** widget gives an overview of all currently running jobs, including the information about resource consumption:
 
@@ -64,7 +72,11 @@ This report provides information related to cluster pricing, such as node costs,
 
 You can access this report by clicking **CLUSTER PRICES MONITOR** in the **Cluster management** tab:
 
-![](<../../.gitbook/assets/image (251).png>)
+<div align="left">
+
+<img src="../../.gitbook/assets/image (251).png" alt="">
+
+</div>
 
 The uppermost section displays total job credits used in the selected time range, job duration, total cost of available nodes, and the uptime of these nodes. The **Jobs** widget shows a rundown of the jobs - their IDs, owners, presets, start times, and credit costs:
 

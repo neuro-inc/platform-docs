@@ -12,7 +12,7 @@ We base our example on the [Classifying Names with a Character-Level RNN](https:
 
 To simplify working with Neuro Platform and to help establish the best practices in the ML environment, we provide a [project template](https://github.com/neuro-inc/cookiecutter-neuro-project). This template consists of the recommended directories and files. It's designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
 
-To use it, install the **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
+To use it, install the [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
 
 ```
 $ pipx install cookiecutter

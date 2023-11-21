@@ -12,7 +12,7 @@ We recommend keeping the project code in a Git repository. In this case, each te
 
 First, you will need to create a new project from the Neuro project template.&#x20;
 
-To do this, install the **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
+To do this, install the [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
 
 ```
 $ pipx install cookiecutter

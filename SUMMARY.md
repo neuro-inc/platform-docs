@@ -69,7 +69,9 @@
   * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
   * [Running RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
   * [Model output explanation with SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
-* [Distributed Training in PyTorch](toolbox/distributed-training-in-pytorch.md)
+* [Distributed workloads](toolbox/distributed-workloads/README.md)
+  * [Distributed Training in PyTorch](toolbox/distributed-workloads/distributed-training-in-pytorch.md)
+  * [Running Apache Spark workloads](toolbox/distributed-workloads/running-apache-spark-workloads.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
 
 ## ADMINISTRATION

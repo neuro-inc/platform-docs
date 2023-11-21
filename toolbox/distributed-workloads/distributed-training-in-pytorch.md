@@ -14,7 +14,7 @@ With this approach, it's difficult to get any significant boost in training time
 
 It makes sense to use Model Parallelism in the case of training huge models that don't fit on one device even with a small batch size.
 
-![Model Parallelism](../.gitbook/assets/mp.png)
+![Model Parallelism](../../.gitbook/assets/mp.png)
 
 #### Data Parallelism
 
@@ -22,7 +22,7 @@ Unlike Model Parallelism, in this approach, small pieces of data are distributed
 
 The learning process organization is as follows. One of the devices is assigned to serve as a master device, the main task of which is to collect gradients for gradient descent from other devices and update the weights across all the copies of the model.
 
-![Data Parallelism](../.gitbook/assets/dp.png)
+![Data Parallelism](../../.gitbook/assets/dp.png)
 
 Data Parallelism is a universal method and is provided by most popular DL libraries for training (DistributedDataParallel in PyTorch), freeing users from the need to synchronize data between devices themselves.
 

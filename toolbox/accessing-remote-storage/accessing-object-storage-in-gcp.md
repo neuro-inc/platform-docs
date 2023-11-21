@@ -4,7 +4,7 @@
 
 This tutorial demonstrates how to access your Google Cloud Storage from the Neuro platform. You will create a new Neuro project, a new project in GCP, a service account, and a bucket that's accessible from a job on the Neuro platform.
 
-Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed.
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed.
 
 ### Creating Neuro and GCP Projects
 

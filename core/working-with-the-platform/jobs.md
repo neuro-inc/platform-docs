@@ -15,7 +15,7 @@ Neu.ro lets you run a job in an environment on a given preset with several parts
 
 You must decide and set the amount of CPU, GPU, or memory resources you want to use for a job. By default, the **cpu-small** preset is used. These limits ensure that you can get better resource utilization within a compute cluster.
 
-For example, we are using the **cpu-small** preset **** in the following command as the job doesn't need a lot of processing capacity.
+For example, we are using the **cpu-small** preset in the following command as the job doesn't need a lot of processing capacity.
 
 **Sample command:**
 
@@ -125,7 +125,7 @@ First, click **RUN JOB**:&#x20;
 
 Next, you will need to choose the preset to run the job on. For example, **cpu-small**:
 
-![](<../../.gitbook/assets/image (3) (1).png>)
+![](<../../.gitbook/assets/image (3) (1) (1).png>)
 
 Then, specify the image that will be used in the job:
 

@@ -6,7 +6,7 @@ In this tutorial, we will show how to set up remote debugging with VS Code on th
 
 ### Initializing a new project
 
-Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and **** [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed:
+Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed:
 
 ```bash
 $ pip install pipx

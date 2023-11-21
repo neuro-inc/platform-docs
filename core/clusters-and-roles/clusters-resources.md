@@ -57,7 +57,7 @@ You can view the list of available clusters and switch between them both in the 
 
 {% tabs %}
 {% tab title="CLI" %}
-You can use the **** `neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
+You can use the `neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
 
 ```
 $ neuro config get-clusters
