@@ -22,7 +22,7 @@ $ git clone git@github.com:songyouwei/ABSA-PyTorch.git
 $ cd ABSA-PyTorch
 ```
 
-Now, we need to create two more files шт ершы ащдвук:
+Now, we need to create two more files in this folder:
 
 * `Dockerfile` contains a very basic Docker image configuration. We need this file to build a custom Docker image which is based on `pytorch/pytorch` public images and contains this repo requirements (which are gracefully listed by the repo maintainer in `requirements.txt`):
 
