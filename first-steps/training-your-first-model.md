@@ -8,9 +8,9 @@ We assume that you have already signed up to the platform, installed the Neuro C
 
 We base our example on the [Classifying Names with a Character-Level RNN](https://pytorch.org/tutorials/intermediate/char\_rnn\_classification\_tutorial.html) tutorial.
 
-## Initializing a new project
+## Initializing a new flow
 
-To simplify working with Neuro Platform and to help establish the best practices in the ML environment, we provide a [project template](https://github.com/neuro-inc/cookiecutter-neuro-project). This template consists of the recommended directories and files. It's designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
+To simplify working with Neuro Platform and to help establish the best practices in the ML environment, we provide a [flow template](https://github.com/neuro-inc/cookiecutter-neuro-project). This template consists of the recommended directories and files. It's designed to operate smoothly with our [base environment](https://hub.docker.com/r/neuromation/base).
 
 To use it, install the [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
 
@@ -29,7 +29,7 @@ code_directory [modules]: rnn
 preserve Neuro Flow template hints [yes]:
 ```
 
-## Project structure
+## Flow configuration structure
 
 After you execute the command mentioned above, you get the following structure:
 
@@ -65,9 +65,9 @@ When you run a job (for example, via `neuro-flow run jupyter`), the directories 
 
 This mapping is defined as variables in the top section of `Makefile` and can be adjusted if needed.
 
-## Filling the project
+## Filling the flow
 
-Now we need to fill newly created project with the content:
+Now we need to fill newly created flow with the content:
 
 * Change working directory:
 
@@ -89,7 +89,7 @@ $ curl https://download.pytorch.org/tutorial/data.zip -o data/data.zip && unzip 
 
 ## Training and evaluating the model
 
-When you start working with a project on the Neuro platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
+When you start working with a flow on the Neuro platform, the basic flow looks as follows: you set up the remote environment, upload data and code to your storage, run training, and evaluate the results.
 
 To set up the remote environment, run
 
