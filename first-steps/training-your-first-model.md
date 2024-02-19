@@ -94,7 +94,7 @@ When you start working with a project on the Neuro platform, the basic flow look
 To set up the remote environment, run
 
 ```
-$ neuro-flow build myimage
+$ neuro-flow build train
 ```
 
 This command will run a lightweight job (via `neuro run`), upload the files containing your dependencies `apt.txt` and `requirements.txt` (via `neuro cp`), install the dependencies (using `neuro exec`), do other preparatory steps, and then create the base image from this job and push it to the platform (via `neuro save`, which works similarly to `docker commit`).
@@ -105,7 +105,7 @@ To upload data and code to your storage, run
 $ neuro-flow upload ALL
 ```
 
-To run training, you need to specify the training command in `.neuro/live.yaml`, and then run `neuro-flow run train`:
+To run training job, you need to specify the training script in `.neuro/live.yaml`, and then run `neuro-flow run train`:
 
 * open `.neuro/live.yaml` in an editor,
 * find the following lines (make sure you're looking at the `train` job, not `multitrain` which has a very similar section):

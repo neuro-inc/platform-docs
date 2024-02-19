@@ -6,11 +6,11 @@ As you already [know](getting-started.md#understanding-core-concepts), the core 
 
 You can share a job, a path on the storage, or an image on the platform registry with your teammates, granting them permission to read, update, or even remove this entity.
 
-We recommend keeping the project code in a Git repository. In this case, each teammate will have a local copy of the repository and may run jobs independently. To set up your project, please follow these steps.
+We recommend keeping the neuro-flow's flow code in a Git repository. In this case, each teammate will have a local copy of the repository and may run jobs independently. To set up your flow, please follow these steps.
 
-## Initiating a new Neu.ro project
+## Initiating a new flow
 
-First, you will need to create a new project from the Neuro project template.&#x20;
+First, you will need to create a new flow from the template.&#x20;
 
 To do this, install the [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
 
@@ -19,15 +19,15 @@ $ pipx install cookiecutter
 $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
-The latter command will prompt you to enter some information about the project and then create it based on your responses.
+The latter command will prompt you to enter some information about the flow and then create it based on your responses.
 
-## Pushing the project to a Git repository
+## Pushing the flow to a Git repository
 
-Then, you need to put this new project into a Git repository. Just follow the instructions for the Git hosting of your choice (for example, here are the [instructions for GitHub](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)).
+Then, you need to put this new flow into a Git repository. Just follow the instructions for the Git hosting of your choice (for example, here are the [instructions for GitHub](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)).
 
 ## Organizing your data
 
-You have a few options for storing your project data in a shared space.
+You have a few options for storing your flow data in a shared space.
 
 ### Platform storage
 
@@ -76,7 +76,7 @@ $ neuro share storage:cifar-10 alice manage
 
 This will share the `cifar-10` storage folder with Alice and give her `manage`-level access to it (this means she will be able to read, change, and delete files in this folder).
 
-After that, you need to update the `data/remote:` value in the project's `.neuro/live.yaml` file to keep the full URI of your data. This allows your teammates to use this data folder in their copies of the project (here, `default` is the name of our default cluster, and `bob` is your username on the platform):
+After that, you need to update the `data/remote:` value in the flow's `.neuro/live.yaml` file to keep the full URI of your data. This allows your teammates to use this data folder in their copies of the project (here, `default` is the name of our default cluster, and `bob` is your username on the platform):
 
 ```
   data:
@@ -107,18 +107,18 @@ To create a temporary link, specify the required time period and click the **Cre
 
 ### Buckets
 
-You can use AWS or GCP buckets to store the data outside the Neu.ro platform. In this case, you need to add your access tokens to the project's `config` folder according to [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) and [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp) guides. Note that Git doesn't track these tokens, so your teammates also have to put their tokens in their local copies of the project .
+You can use AWS or GCP buckets to store the data outside the Neu.ro platform. In this case, you need to add your access tokens to the flow's `config` folder according to [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) and [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp) guides. Note that Git doesn't track these tokens, so your teammates also have to put their tokens in their local copies of the flow.
 
 ### Public resources
 
 Your data may also be available at some public resource that doesn’t require any authentication. In this case, you may either put a copy of this data to the platform storage (see above) or download the data to the job container’s local file system on every run (if the data size is relatively small).
 
-## Setting up the project and running jobs
+## Setting up the flow and running jobs
 
-Now all your teammates can clone the project and start working on it in their local copies. Here are some steps every teammate should follow independently.
+Now all your teammates can clone the flow configuration and start working on it in their local copies. Here are some steps every teammate should follow independently.
 
-* To set up the working environment, run `neuro-flow build myimage` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).&#x20;
-* To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<project>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `neuro-flow download notebooks`.
+* To set up the working environment, run `neuro-flow build train` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).&#x20;
+* To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<flow>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `neuro-flow download notebooks`.
 * To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train`. For example:
 
 ```
@@ -129,7 +129,7 @@ jobs:
         python $[[ volumes.code.mount ]]/train.py
 ```
 
-You can get more information about the Neu.ro project's functionality in the `HELP.md` file in your project folder.
+You can get more information about the Neu.ro flow's functionality in the `HELP.md` file in your flow folder.
 
 ## Sharing running jobs&#x20;
 
@@ -218,13 +218,13 @@ $ neuro share job: alice read
 
 ## Sharing Docker images&#x20;
 
-Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries (including Tensorflow 2.0 and PyTorch 1.4). When you run `neuro-flow build myimage`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved on the platform's Docker registry. In this case, there is no need to share the images with teammates, as they build similar images from the same code base.
+Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries (including Tensorflow 2.0 and PyTorch 1.4). When you run `neuro-flow build train`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved on the platform's Docker registry. In this case, there is no need to share the images with teammates, as they build similar images from the same code base.
 
-In rare cases, though, you may want to use a different image as a base. If that image is public, all you need to do is to update the `images/myimage/ref` variable in the project's`.neuro/live.yaml`file:
+In rare cases, though, you may want to use a different image as a base. If that image is public, all you need to do is to update the `images/train/ref` variable in the project's`.neuro/live.yaml`file:
 
 ```
 images:
-  myimage:
+  train:
     ref: ufoym/deepo
 ```
 
