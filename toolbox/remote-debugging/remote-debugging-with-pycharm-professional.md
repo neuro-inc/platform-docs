@@ -4,6 +4,10 @@
 
 In this tutorial, you can learn how to set up remote debugging with PyCharm Professional on the Neuro Platform using the Neu.ro project template.
 
+{% hint style="warning" %}
+Remote debugging relies on a running SSH server in a job's 22 port. We ensure it for you if you use our base image (`ghcr.io/neuro-inc/base`).
+{% endhint %}
+
 ## Initializing a new project
 
 First, make sure that you have the Neu.ro CLI client and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed and configured:

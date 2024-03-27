@@ -4,6 +4,10 @@
 
 In this tutorial, we will show how to set up remote debugging with VS Code on the Neuro Platform using the Neu.ro project template.
 
+{% hint style="warning" %}
+Remote debugging relies on a running SSH server in a job's 22 port. We ensure it for you if you use our base image (`ghcr.io/neuro-inc/base`).
+{% endhint %}
+
 ### Initializing a new project
 
 Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed:
