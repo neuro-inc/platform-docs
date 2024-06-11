@@ -9,10 +9,10 @@
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
-  * [Neu.ro CLI Reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/)
-  * [Neu.ro Flow Reference](https://neu-ro.gitbook.io/neuro-flow/)
-  * [Neu.ro Extras Reference](https://neu-ro.gitbook.io/neuro-extras-reference/)
-  * [Neu.ro Actions Reference](https://neu-ro.gitbook.io/neuro-actions-reference/)
+  * [Neu.ro CLI Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MOkWy7dB5MDbkSII8iF/)
+  * [Neu.ro Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/)
+  * [Neu.ro Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
+  * [Neu.ro Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
   * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
 
 ## Neu.ro Core <a href="#core" id="core"></a>
