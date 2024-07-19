@@ -13,7 +13,7 @@
   * [Neu.ro Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/)
   * [Neu.ro Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
   * [Neu.ro Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
-  * [Python API Reference](https://neuro-sdk.readthedocs.io/en/latest/)
+  * [Python SDK Reference](https://apolo-cli.readthedocs.io/en/latest/)
 
 ## Neu.ro Core <a href="#core" id="core"></a>
 
