@@ -2,14 +2,14 @@
 
 ## The basics
 
-[Neu.ro](https://neu.ro) is a flexible and robust machine learning platform. It consists of two parts:
+[Apolo](https://apolo.us) is a flexible and robust machine learning platform. It consists of two parts:
 
-* **Neu.ro Core** is a resource orchestrator. It can be installed in a cloud or on-premise and combines computation capabilities, storage, and environments (Docker images) in one system with single sign-on authentication (SSO) and advanced permission management system. This frees teams working with Neu.ro from DevOps.
-* **Neu.ro Toolbox** is a toolset integrator. It contains integrations with various open-source and commercial tools required for modern ML/AI development. This addresses the majority of MLOps issues a team may have.
+* **Apolo Core** is a resource orchestrator. It can be installed in a cloud or on-premise and combines computation capabilities, storage, and environments (Docker images) in one system with single sign-on authentication (SSO) and advanced permission management system. This frees teams working with Apolo from DevOps boilerplate tasks.
+* **Apolo Toolbox** is a toolset integrator. It contains integrations with various open-source and commercial tools required for modern ML/AI development. This addresses the majority of MLOps issues a team may have.
 
-If you're new to Neu.ro, here are two simple steps to get started:
+If you're new to Apolo, here are two simple steps to get started:
 
-* [Sign up](https://app.neu.ro/) and contact [support@neu.ro](https://milto:support@neu.ro) speciying your username to get 100 free credits.&#x20;
+* [Sign up](https://console.apolo.us) and contact [start@apolo.us](mailto:start@apolo.us) for potential collaboration or free trial.&#x20;
 * Follow our [Getting Started](first-steps/getting-started.md) guide.
 
 ## Digging deeper
@@ -22,5 +22,5 @@ For detailed information on specific use cases, feel free to refer to our ML dev
 Also, take a look at our [CLI reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [Python API reference](https://neuro-sdk.readthedocs.io/en/latest/).
 
 {% hint style="info" %}
-To get more help, refer to the [FAQ](faq.md) or contact us at [team@neu.ro](mailto:team@neu.ro).
+To get more help, refer to the [FAQ](faq.md) or contact us at [support@apolo.us](mailto:support@apolo.us)
 {% endhint %}

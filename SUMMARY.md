@@ -9,45 +9,41 @@
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
-  * [Neu.ro CLI Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MOkWy7dB5MDbkSII8iF/)
-  * [Neu.ro Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/)
-  * [Neu.ro Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
-  * [Neu.ro Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
-  * [Python SDK Reference](https://apolo-cli.readthedocs.io/en/latest/)
+  * [Apolo CLI Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MOkWy7dB5MDbkSII8iF/)
+  * [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/)
+  * [Apolo Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
+  * [Apolo Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
+  * [Python SDK Reference](https://apolo-sdk.readthedocs.io)
 
-## Neu.ro Core <a href="#core" id="core"></a>
+## Apolo Core <a href="#core" id="core"></a>
 
 * [Platform Overview](core/platform-overview.md)
-* [Clusters and Roles](core/clusters-and-roles/README.md)
-  * [Clusters (Resources)](core/clusters-and-roles/clusters-resources.md)
+* [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)
+  * [Clusters](core/clusters-and-roles/clusters-resources.md)
+  * [Organizations](core/clusters-and-roles/organizations.md)
+  * [Projects](core/clusters-and-roles/projects.md)
   * [Roles](core/clusters-and-roles/roles.md)
 * [Platform Storage](core/platform-storage/README.md)
   * [Storage](core/platform-storage/storage.md)
   * [Disks](core/platform-storage/disks.md)
   * [Buckets](core/platform-storage/buckets.md)
 * [Working with the Platform](core/working-with-the-platform/README.md)
-  * [Projects](core/working-with-the-platform/projects.md)
+  * [Flows](core/working-with-the-platform/projects.md)
   * [Environments (Docker images)](core/working-with-the-platform/environments-docker-images.md)
   * [Jobs](core/working-with-the-platform/jobs.md)
   * [Secrets](core/working-with-the-platform/secrets.md)
 * [Specific Tasks](core/specific-tasks/README.md)
-  * [Accessing a job hidden behind the platform's Auth](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
+  * [Accessing a job protected by platform SSO](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
-## Neu.ro Web UI <a href="#web" id="web"></a>
+## Apolo Web UI <a href="#web" id="web"></a>
 
 * [Terminal](web/terminal.md)
 * [Working with Jupyter](web/working-with-jupyter/README.md)
   * [Jupyter Notebooks](web/working-with-jupyter/jupyter-notebooks.md)
-  * [JupyterLab](web/working-with-jupyter/jupyterlab.md)
-* [Working With the Storage and Registry](web/working-with-the-storage-and-registry/README.md)
-  * [Filebrowser](web/working-with-the-storage-and-registry/filebrowser.md)
-  * [Docker Registry](web/working-with-the-storage-and-registry/docker-registry.md)
+  * [Jupyter Lab](web/working-with-jupyter/jupyterlab.md)
 
-## Neu.ro Toolbox <a href="#toolbox" id="toolbox"></a>
+## Apolo Toolbox <a href="#toolbox" id="toolbox"></a>
 
-* [Accessing Remote Storage](toolbox/accessing-remote-storage/README.md)
-  * [Accessing Object Storage in GCP](toolbox/accessing-remote-storage/accessing-object-storage-in-gcp.md)
-  * [Accessing Object Storage in AWS](toolbox/accessing-remote-storage/accessing-object-storage-in-aws.md)
 * [Remote Debugging](toolbox/remote-debugging/README.md)
   * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging/remote-debugging-with-pycharm-professional.md)
   * [Remote Debugging with VS Code](toolbox/remote-debugging/remote-debugging-with-vs-code.md)
@@ -86,4 +82,3 @@
   * [Creating Node Pools](administration/cluster-management/creating-node-pools.md)
   * [Managing Presets](administration/cluster-management/managing-presets.md)
   * [Reports](administration/cluster-management/reports.md)
-* [Marketplace](administration/marketplace.md)

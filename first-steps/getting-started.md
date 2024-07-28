@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There are two things you will need to do before you start working with Neu.ro:
+There are two things you will need to do before you start working with Apolo:
 
 1. [Install the CLI client](getting-started.md#installing-the-cli).
 2. [Understand the platform's core concepts](getting-started.md#understanding-the-core-concepts).
@@ -11,9 +11,9 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 ## Installing the CLI
 
-[Web Terminal](https://apps.neu.ro/shell?cluster\_name=neuro-compute) doesn't require installation and can quickly get you familiar with Neu.ro, allowing you to work with the platform in a browser.
+[Web Terminal](https://console.apolo.us/apps/shell/install) application doesn't require installation and can quickly get you familiar with Apolo, allowing you to work with the platform in a browser.
 
-However, installing Neu.ro CLI locally may prove more effective for long-term use:
+However, installing Apolo CLI locally may prove more effective for long-term use:
 
 * You won't need to pay for simply running the job like you do in Web UI.
 * Your source code and other local files will be saved directly on your machine.
@@ -24,41 +24,41 @@ However, installing Neu.ro CLI locally may prove more effective for long-term us
 {% tab title="Linux and Mac OS" %}
 #### Installing via pipx
 
-Our _neuro-all_ package available in pipx will automatically install all required components:&#x20;
+Our _apolo-all_ package available in pipx will automatically install all required components:&#x20;
 
 ```
 $ pip install pipx
-$ pipx install neuro-all
-$ pipx upgrade neuro-all
+$ pipx install apolo-all
+$ pipx upgrade apolo-all
 ```
 
 #### Installing via pip
 
 You can also install all of the components through pip.
 
-Neu.ro CLI requires Python 3 installed (recommended: 3.8; required: 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
+Apolo CLI requires Python 3 installed (recommended: 3.8; required: 3.7.9 or newer). We suggest using the [Anaconda Python 3.8 Distribution](https://www.anaconda.com/distribution/).
 
 ```
-$ pip install -U neuro-cli neuro-extras neuro-flow
-$ neuro login
+$ pip install -U apolo-cli apolo-extras apolo-flow
+$ apolo login
 ```
 
-If your machine doesn't have GUI, use the following command instead of neuro login:
+If your machine doesn't have GUI, use the following command instead of apolo login:
 
 ```
-$ neuro config login-headless
+$ apolo config login-headless
 ```
 {% endtab %}
 
 {% tab title="Windows" %}
 #### Installing via pipx
 
-Our _neuro-all_ package available in pipx will automatically install all required components:&#x20;
+Our _apolo-all_ package available in pipx will automatically install all required components:&#x20;
 
 ```
 $ pip install pipx
-$ pipx install neuro-all
-$ pipx upgrade neuro-all
+$ pipx install apolo-all
+$ pipx upgrade apolo-all
 ```
 
 #### Installing via pip
@@ -72,9 +72,9 @@ When you have it up and running, run the following commands in Conda Prompt:
 ```
 $ conda install -c conda-forge make
 $ conda install -c conda-forge git    
-$ pip install -U neuro-cli neuro-extras neuro-flow
+$ pip install -U apolo-cli apolo-extras apolo-flow
 $ pip install -U certifi
-$ neuro login
+$ apolo login
 ```
 
 To make sure that all commands you can find in our documentation work properly, don't forget to run `bash` every time you open Conda Prompt.
@@ -83,7 +83,7 @@ To make sure that all commands you can find in our documentation work properly, 
 
 ## Understanding the core concepts
 
-On the **Neu.ro Core** level, you will work with jobs, environments, and storage. To be more specific, a job (an execution unit) runs in a given environment (Docker container) on a given preset (a combination of CPU, GPU, and memory resources allocated for this job) with several storage instances (block or object storage) attached.
+On the **Apolo Core** level, you will work with jobs, environments, and storage. To be more specific, a job (an execution unit) runs in a given environment (Docker container) on a given preset (a combination of CPU, GPU, and memory resources allocated for this job) with several storage instances (block or object storage) attached.
 
 Here are some examples.
 
@@ -92,7 +92,7 @@ Here are some examples.
 Run a job on CPU which prints “Hello, World!” and shuts down:
 
 ```
-$ neuro run --preset cpu-small --name test ubuntu -- echo Hello, World!
+$ apolo run --preset cpu-small --name test ubuntu -- echo Hello, World!
 ```
 
 Executing this command will result in an output like this:
@@ -114,16 +114,16 @@ Hello, World!
 
 ### A simple GPU job
 
-Run a job on GPU in the default Neu.ro environment (`neuromation/base`) that checks if CUDA is available in this environment:
+Run a job on GPU in the default Apolo environment (`ghcr.io/neuro-inc/base`) that checks if CUDA is available in this environment:
 
 ```
-$ neuro run --preset gpu-small --name test neuromation/base -- python -c "import torch; print(torch.cuda.is_available());"
+$ apolo run --preset gpu-small --name test  ghcr.io/neuro-inc/base -- python -c "import torch; print(torch.cuda.is_available());"
 ```
 
 We used the `gpu-small` preset for this job. To see the full list of presets you can use, run the following command:
 
 ```
-$ neuro config show
+$ apolo config show
 ```
 
 ### Working with platform storage
@@ -131,26 +131,26 @@ $ neuro config show
 Create a new `demo` directory in the root directory of your platform storage:
 
 ```
-$ neuro mkdir -p storage:demo
+$ apolo mkdir -p storage:demo
 ```
 
 Run a job that mounts the `demo` directory from platform storage to the `/demo` directory in the job container and creates a file in it:
 
 ```
-$ neuro run --volume storage:demo:/demo:rw ubuntu -- bash -c "echo Hello >> /demo/hello.txt"
+$ apolo run --volume storage:demo:/demo:rw ubuntu -- bash -c "echo Hello >> /demo/hello.txt"
 ```
 
 Check that the file you have just created is actually on the storage:
 
 ```
-$ neuro ls storage:demo
+$ apolo ls storage:demo
 ```
 
 ## Developing on GPU with Jupyter Notebooks
 
-Development in Jupyter Notebooks is a good example of how the Neuro Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the web UI, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter) and is a part of the Neu.ro Toolbox. This template provides the basic necessary folder structure and integrations with several recommended tools.
+Development in Jupyter Notebooks is a good example of how the Apolo Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the web UI, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter) and is a part of the Apolo Toolbox. This template provides the basic necessary folder structure and integrations with several recommended tools.
 
-### Initializing a Neuro cookiecutter project
+### Initializing a Apolo cookiecutter flow
 
 First, you will need to install the **cookiecutter** package via **pip** or **pipx**:
 
@@ -158,13 +158,13 @@ First, you will need to install the **cookiecutter** package via **pip** or **pi
 $ pipx install cookiecutter
 ```
 
-Now, to initialize a new [Neuro cookiecutter project](https://github.com/neuro-inc/cookiecutter-neuro-project/blob/master/cookiecutter.json), run:
+Now, to initialize a new Apolo flow using [cookiecutter](https://github.com/neuro-inc/cookiecutter-neuro-project/blob/master/cookiecutter.json) template, run:
 
 ```
 $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
-This command will prompt you to enter some info about your new project:
+This command will prompt you to enter some info about your new flow:
 
 ```
 project_name [Neuro Project]: New Cookiecutter Project
@@ -178,46 +178,46 @@ preserve Neuro Flow template hints [yes]:
 Default values are indicated by square brackets **\[ ].** You can use them by pressing **Enter**.
 {% endhint %}
 
-To navigate to the project directory, run:
+To navigate to the flow directory, run:
 
 ```
 $ cd new-cookiecutter-project
 ```
 
-### Project structure
+### Flow structure
 
 The structure of the project's folder will look like this:
 
 ```
 new-cookiecutter-project
 ├── .github/            <- Github workflows and a dependabot.yml file
-├── .neuro/             <- neuro and neuro-flow CLI configuration files
+├── .neuro/             <- apolo and apolo-flow CLI configuration files
 ├── config/             <- configuration files for various integrations
 ├── data/               <- training and testing datasets (we don't keep it under source control)
 ├── notebooks/          <- Jupyter notebooks
 ├── modules/            <- models' source code
 ├── results/            <- training artifacts
 ├── .gitignore          <- default .gitignore file for a Python ML project
-├── .neuro.toml         <- autogenerated config file for Neuro CLI
-├── .neuroignore        <- a file telling Neuro CLI which files to ignore while uploading to the platform storage
+├── .neuro.toml         <- autogenerated config file for Apolo CLI
+├── .neuroignore        <- a file telling Apolo CLI which files to ignore while uploading to the platform storage
 ├── HELP.md             <- autogenerated template reference
 ├── README.md           <- autogenerated informational file
-├── Dockerfile          <- description of the docker image used for training in your project
+├── Dockerfile          <- description of the docker image used for training in your flow
 ├── apt.txt             <- list of system packages to be installed in the training environment
 ├── requirements.txt    <- list of Python dependencies to be installed in the training environment
 ├── setup.cfg           <- linter settings (Python code quality checking)
-└── update_actions.py   <- script used to update neuro-flow actions in one of the GitHub workflows
+└── update_actions.py   <- script used to update apolo-flow actions in one of the GitHub workflows
 ```
 
-The template contains the `neuro/live.yaml` configuration file for `neuro-flow`. This file guarantees a proper connection between the project structure, the base environment that we provide, and actions with storage and jobs. For example, the `upload` command synchronizes sub-folders on your local machine with sub-folders on the persistent platform storage, and those sub-folders are synchronized with the corresponding sub-folders in job containers.
+The template contains the `.neuro/live.yaml` configuration file for `apolo-flow`. This file guarantees a proper connection between the flow structure, the base environment that we provide, and actions with storage and jobs. For example, the `upload` command synchronizes sub-folders on your local machine with sub-folders on the persistent platform storage, and those sub-folders are synchronized with the corresponding sub-folders in job containers.
 
 ### Setting up the environment and running Jupyter
 
 To set up the project environment, run:
 
 ```
-$ neuro-flow build train
-$ neuro-flow mkvolumes
+$ apolo-flow build train
+$ apolo-flow mkvolumes
 ```
 
 When these commands are executed, system packages from `apt.txt` and pip dependencies from `requirements.txt` are installed to the base environment. It supports CUDA by default and contains the most popular ML/AI frameworks such as Tensorflow and Pytorch.
@@ -225,19 +225,19 @@ When these commands are executed, system packages from `apt.txt` and pip depende
 For Jupyter Notebooks to run properly, the `train.py` script and the notebook itself should be available on the storage. Upload the `code` directory containing this file to the storage by using the following command:
 
 ```
-$ neuro-flow upload ALL
+$ apolo-flow upload ALL
 ```
 
 Now you need to choose a preset on which you want to run your Jupyter jobs. To view the list of  presets available on the current cluster, run:&#x20;
 
 ```
-$ neuro config show 
+$ apolo config show 
 ```
 
 To start a Jupyter Notebooks session run:
 
 ```
-$ neuro-flow run jupyter
+$ apolo-flow run jupyter
 ```
 
 This command will open Jupyter Notebooks interface in your default browser.
@@ -257,7 +257,7 @@ jupyter:
 After this, each time you run a Jupyter job, it will use the specified by default without the need for you to provide it in a CLI command: &#x20;
 
 ```
-$ neuro-flow run jupyter 
+$ apolo-flow run jupyter 
 ```
 
 [You can find more information about job description arguments here](https://github.com/neuro-actions/jupyter#arguments)
@@ -266,17 +266,17 @@ $ neuro-flow run jupyter
 Now, when you edit notebooks, they are updated on your platform storage. To download them locally (for example, to save them under a version control system), run:
 
 ```
-$ neuro-flow download notebooks
+$ apolo-flow download notebooks
 ```
 
 Don’t forget to terminate your job when you no longer need it (the files won’t disappear after that):
 
 ```
-$ neuro-flow kill jupyter
+$ apolo-flow kill jupyter
 ```
 
 To check how many credits you have left, run:
 
 ```
-$ neuro config show
+$ apolo config show
 ```

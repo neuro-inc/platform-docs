@@ -6,10 +6,10 @@ For example, if there's a large dataset that you need to process, it's better to
 
 ### Creating disks
 
-The `neuro disk create` command is used to create disks. When creating a disk, you need to specify its storage capacity by providing a corresponding value as a parameter. You can also specify the disk's name, which provides a more convenient way of accessing it in commands later. For example:
+The `apolo disk create` command is used to create disks. When creating a disk, you need to specify its storage capacity by providing a corresponding value as a parameter. You can also specify the disk's name, which provides a more convenient way of accessing it in commands later. For example:
 
 ```
-> neuro disk create --name test-disk 40G
+> apolo disk create --name test-disk 40G
 ```
 
 This will create with a storage capacity of `40 * 2^30` bytes and a name of `test-disk`. Note that some servers can have a predefined granularity (for example, 1GB), so the values you provide will be rounded up in such cases.
@@ -19,7 +19,7 @@ This will create with a storage capacity of `40 * 2^30` bytes and a name of `tes
 Disks have a limited lifetime. This lifespan is calculated from the point in time the disk was last used. The default lifespan of a disk is 1 day. You can also specify a custom lifespan by providing the corresponding value in a `--timeout-unused` parameter when creating a disk:&#x20;
 
 ```
-> neuro disk create --name test-disk --timeout-unused 2d4h 40G
+> apolo disk create --name test-disk --timeout-unused 2d4h 40G
   Id              disk-6d1c44dc-d759-4bc8-8eb2-feafea463898
   Storage         2.0G
   Used
@@ -33,7 +33,7 @@ Disks have a limited lifetime. This lifespan is calculated from the point in tim
 
 This will set the disk's lifespan to 2 days and 4 hours after last usage.
 
-You can find more information about using the `neuro disk create` command [here](https://neu-ro.gitbook.io/neu-ro-cli-reference/commands/disk).
+You can find more information about using the `apolo disk create` command, see [create](https://app.gitbook.com/s/-MOkWy7dB5MDbkSII8iF/commands/disk#create "mention").
 
 ### Mounting disks
 
@@ -48,5 +48,5 @@ You cannot mount a subpath from the disk into the job (as opposed to the`storage
 Here's an example:
 
 ```bash
-neuro run --volume disk:test-disk:/mnt/test-disk ubuntu -- echo "Hi" > /mnt/test-disk/echo-file
+apolo run --volume disk:test-disk:/mnt/test-disk ubuntu -- echo "Hi" > /mnt/test-disk/echo-file
 ```

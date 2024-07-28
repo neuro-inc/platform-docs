@@ -1,10 +1,10 @@
 # Architecture Overview
 
-Neu.ro is an MLOps PaaS that facilitates and supports the full cycle of ML operations such as data processing, model development, training, and deployment.
+Apolo is an MLOps PaaS that facilitates and supports the full cycle of ML operations such as data processing, model development, training, and deployment.
 
 ### High-level Architecture
 
-Neu.ro consists of multiple logical parts:
+Apolo consists of multiple logical parts:
 
 * The **Control Plane**, dedicated to managing all aspects of the platform;
   * **The CLI**;
@@ -70,17 +70,17 @@ An API for running a curated set of applications from within the Web UI.\
 
 A Web UI for managing compute workloads, running applications, managing secrets, checking user quotas, etc.
 
-**Neuro CLI**
+**Apolo CLI**
 
 The main tool for interacting with both the control plane and compute clusters. Enables users to manage clusters and switch between them, manage compute workloads, manage storage and container images, etc
 
-**Neuro-Flow CLI**
+**Apolo-Flow CLI**
 
-An engine for running computational workflows based on Neuro CLI.
+An engine for running computational workflows based on Apolo CLI and SDK .
 
-**Neuro-Extras CLI**
+**Apolo-Extras CLI**
 
-A collection of useful tools based on Neuro CLI, e.g., transfer of storage and container images between clusters.\
+A collection of useful tools based on Apolo CLI and SDK, e.g., transfer of storage and container images between clusters.\
 
 
 **Web Documentation**

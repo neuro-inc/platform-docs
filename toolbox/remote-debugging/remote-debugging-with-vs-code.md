@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In this tutorial, we will show how to set up remote debugging with VS Code on the Neuro Platform using the Neu.ro project template.
+In this tutorial, we will show how to set up remote debugging with VS Code on the platform using the flow template.
 
 {% hint style="warning" %}
 Remote debugging relies on a running SSH server in a job's 22 port. We ensure it for you if you use our base image (`ghcr.io/neuro-inc/base`).
@@ -10,15 +10,9 @@ Remote debugging relies on a running SSH server in a job's 22 port. We ensure it
 
 ### Initializing a new project
 
-Make sure you have [Neu.ro CLI](https://neu-ro.gitbook.io/neu-ro-cli-reference/) and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed:
+Make sure you have CLI and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed, refer to [getting-started.md](../../first-steps/getting-started.md "mention") for instructions.
 
-```bash
-$ pip install pipx
-$ pipx install neuro-all cookiecutter
-$ neuro login
-```
-
-Then, initialize an empty project:
+Then, initialize an empty flow:
 
 ```bash
 $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
@@ -27,9 +21,9 @@ $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 The project initialization command asks several questions about your project:
 
 ```
-project_name [Name of the project]: Neuro VSCode
-project_dir [neuro-vscode]:
-project_id [neuro-vscode]:
+project_name [Name of the project]: Apolo VSCode
+project_dir [apolo-vscode]:
+project_id [apolo-vscode]:
 code_directory [modules]: 
 preserve Neuro Flow template hints [yes]:
 ```
@@ -39,7 +33,7 @@ preserve Neuro Flow template hints [yes]:
 Add `debugpy` to your project's `requirements.txt` file (located in the project's root folder):&#x20;
 
 ```bash
-neuro-flow
+apolo-flow
 
 flake8
 mypy
@@ -56,16 +50,16 @@ debugpy.listen(("0.0.0.0", 5678))
 debugpy.wait_for_client()
 ```
 
-Next, configure the project's environment on the Neu.ro Platform:
+Next, configure the project's environment on the  platform:
 
 ```bash
-$ neuro-flow build myimage
+$ apolo-flow build myimage
 ```
 
 When the image is built, you can upload your code from a local file to the platform storage:
 
 ```
-$ neuro-flow upload code
+$ apolo-flow upload code
 ```
 
 By default, this will upload everything from your project's `modules` folder to the `storage:<your_project_id>/modules` storage folder. To configure the source and the target for this command, go to your project's `.neuro/live.yml` file and find the `code` section under `volumes`:
@@ -94,13 +88,13 @@ Here, you can specify your local code folder and the storage folder you want to 
 In this example, we will be running a training job based on the code contained in the `train.py` file we just uploaded to the platform storage. To do this, run:
 
 ```
-$ neuro-flow run train
+$ apolo-flow run train
 ```
 
 Once the job is running, detach from it by pressing **Ctrl+P, Ctrl+Q** and run the following command:
 
 ```
-$ neuro job port-forward <job-id> 5678:5678
+$ apolo job port-forward <job-id> 5678:5678
 ```
 
 This will allow you to access the job by the `5678` port.

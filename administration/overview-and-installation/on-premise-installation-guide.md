@@ -6,7 +6,7 @@
   * It must be able to use **OpenEBS Cstor**. Disks have to be attached to Kubernetes nodes and must not be mounted or formatted.
   * If there is no internet access, each node should have a **busybox:latest** image preloaded.
 * A linux VM:
-  * Must be accessible by the Kubernetes cluster \(this VM will host the docker registry along with the **chartmuseum** and **devpi** services, which are needed to run the Neu.ro platform\).
+  * Must be accessible by the Kubernetes cluster (this VM will host the docker registry along with the **chartmuseum** and **devpi** services, which are needed to run the platform).
   * Must have access to the Kubernetes cluster.
   * The following utilities have to be installed: **docker, kubectl, jq.**
 
@@ -22,7 +22,7 @@
 
 **/devpi**
 
-* A directory with the **neuro-cli** python package and all its dependencies. It will be mounted as a volume to the **devpi** container.
+* A directory with the **apolo-cli** python package and all its dependencies. It will be mounted as a volume to the **devpi** container.
 
 **registry.tar**
 
@@ -56,21 +56,21 @@
 
 Connect to the Linux VM and ensure that **kubectl** can connect to the Kubernetes cluster:
 
-```text
+```
 kubectl get nodes
 ```
 
-Mount the USB \(or external storage\) device and extract the **neuro.tar** archive:
+Mount the USB (or external storage) device and extract the **apolo.tar** archive:
 
-```text
-mkdir –p $HOME/neuro
-tar -xvf neuro.tar -C $HOME/neuro
+```
+mkdir –p $HOME/apolo
+tar -xvf apolo.tar -C $HOME/apolo
 ```
 
-Prepare the config file \(see [example below](on-premise-installation-guide.md#config-file-example)\), run the installation script, and wait until all pods are in the Running state:
+Prepare the config file (see [example below](on-premise-installation-guide.md#config-file-example)), run the installation script, and wait until all pods are in the Running state:
 
-```text
-$HOME/neuro/install.sh $CONFIG_FILE_PATH
+```
+$HOME/apolo/install.sh $CONFIG_FILE_PATH
 ```
 
 By default, if there is no Ingress certificate specified in the config file, the installation script will generate a self-signed certificate. This self-signed certificate has to be added to the certificate trust store in the platform user's development environment.
@@ -81,7 +81,7 @@ Set up A records to the platform domains **\*.neu.ro**, **default.org.neu.ro**, 
 
 ### Config File Example
 
-```text
+```
  server:
   ip: "10.240.0.8"
 ui:
@@ -127,21 +127,20 @@ node_pools:
 
 ### Development Environment Setup
 
-#### Add the certificate to the trust store \(in case a self-signed certificate was generated during setup\)
+#### Add the certificate to the trust store (in case a self-signed certificate was generated during setup)
 
 * Download the Ingress certificate:
 
-```text
+```
 openssl s_client -connect app.neu.ro:443 -showcerts </dev/null > ingress.crt
 ```
 
 * Add it to your machine's trust store.
 
-#### Install Neuro CLI
+#### Install **Apolo** CLI
 
-Run the following command to install Neuro CLI:
+Run the following command to install Apolo CLI:
 
-```text
-pip install -i http://$SERVER_IP/root/pypi neuro-cli
 ```
-
+pip install -i http://$SERVER_IP/root/pypi apolo-cli
+```

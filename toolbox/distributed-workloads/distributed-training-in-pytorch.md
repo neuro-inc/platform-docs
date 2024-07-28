@@ -1,6 +1,6 @@
 # Distributed Training in PyTorch
 
-In this guide, we show how to run distributed training process in PyTorch on Neu.ro. You can find the details about the described [recipe](https://github.com/neuromation/ml-recipe-distributed-pytorch) in our blog post: [Distributed training in PyTorch - using an example from the TensorFlow 2.0 Question Answering Competition](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
+In this guide, we show how to run distributed training process in PyTorch on platform. You can find the details about the described [recipe](https://github.com/neuromation/ml-recipe-distributed-pytorch) in our blog post: [Distributed training in PyTorch - using an example from the TensorFlow 2.0 Question Answering Competition](https://blog.neu.ro/blog/distributed-training-in-pytorch-using-an-example-from-the-tensorflow-2-0-question-answering-competition/).
 
 ### Types of parallelism
 
@@ -30,16 +30,16 @@ Data Parallelism is a universal method and is provided by most popular DL librar
 
 In our [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch), we used the Data Parallelism approach. This repository contains a solution for the [TensorFlow 2.0 Question Answering competition](https://www.kaggle.com/c/tensorflow2-question-answering) held on Kaggle.
 
-To download [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) dataset and run our competition solution, you must accept the user agreement on Kaggle. In case you want to reuse our recipe as a template for doing distributed training on Neu.ro, we are also providing the `DummyDataset`, which does not require downloading any data.
+To download [Google’s Natural Questions](https://ai.google.com/research/NaturalQuestions/dataset) dataset and run our competition solution, you must accept the user agreement on Kaggle. In case you want to reuse our recipe as a template for doing distributed training on platform, we are also providing the `DummyDataset`, which does not require downloading any data.
 
 To run the recipe on the `DummyDataset`, follow these simple steps:
 
 1. [Sign up](https://neu.ro/) and [install CLI client](https://docs.neu.ro/getting-started#installing-cli)
 2. Clone the [repository](https://github.com/neuromation/ml-recipe-distributed-pytorch)
 3. Run \
-   `neuro-flow build myimage`\
-   `neuro-flow mkvolumes`\
-   `neuro-flow upload ALL`
+   `apolo-flow build myimage`\
+   `apolo-flow mkvolumes`\
+   `apolo-flow upload ALL`
 4. Run `scripts/run_distributed_on_platform.sh`
 
 This approach is generic, so you can use our solution as a template for training your PyTorch models distributedly.

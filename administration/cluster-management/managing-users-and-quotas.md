@@ -1,9 +1,9 @@
 # Managing Users and Quotas
 
-Neu.ro creates a cluster based on the cluster configuration file you send to our team. The user who creates the cluster is designated the admin of the cluster. You must add users and, optionally, quotas before you can start using the nodes in the cluster. You can know the list of clusters that you can manage by running the `neuro admin get-clusters` command.
+Apolo creates a cluster based on the cluster configuration file you send to our team. The user who creates the cluster is designated the admin of the cluster. You must add users and, optionally, quotas before you can start using the nodes in the cluster. You can know the list of clusters that you can manage by running the `apolo admin get-clusters` command.
 
 ```
-> neuro admin get-clusters
+> apolo admin get-clusters
 company-cluster                                                                                      
  Status      Deployed                                                                              
  Cloud       azure                                                                                 
@@ -22,13 +22,13 @@ company-cluster
 
 ```
 
-You can know the list of clusters that you can access by running the `neuro config get-clusters` command.
+You can know the list of clusters that you can access by running the `apolo config get-clusters` command.
 
 You can manage users and user quotas from the CLI. The next sections discuss how you can manage users and user quotas.
 
 ### What are the different roles available?
 
-Neu.ro provides three predefined roles that you can assign to a user - `user`, `manager`, `admin`. The default role is User. The following table describes what each of the roles can do. Please note that any registered platform user may create new clusters; upon creation, a user automatically gets an Admin role in it.
+Apolo provides three predefined roles that you can assign to a user - `user`, `manager`, `admin`. The default role is User. The following table describes what each of the roles can do. Please note that any registered platform user may create new clusters; upon creation, a user automatically gets an Admin role in it.
 
 | **Role** | **Description**                                                                                                                      | **Privileges**                                                                                                                                              |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,19 +40,19 @@ Neu.ro provides three predefined roles that you can assign to a user - `user`, `
 
 You can add any number of users to a cluster. However, before adding a user you must decide on the role and the quota that you want to set for the user.
 
-The role determines the access rights a user will have on the Neu.ro platform. The quota determines the number of GPU or CPU hours a user can use.
+The role determines the access rights a user will have on the platform. The quota determines the number of GPU or CPU hours a user can use.
 
 ```
-> neuro admin add-cluster-user neuro-public john user
+> apolo admin add-cluster-user neuro-public john user
 Added john to cluster default as user
 ```
 
 ### How to remove a user from the cluster?
 
-You can remove a user from the cluster if you are an Admin or Manager. You must use the `neuro admin remove-cluster-user` command to remove the user. By doing this, you revoke the user’s access to the cluster. All the entities belonging to the user are left (storage, jobs, images, etc), and you can add this user back later.
+You can remove a user from the cluster if you are an Admin or Manager. You must use the `apolo admin remove-cluster-user` command to remove the user. By doing this, you revoke the user’s access to the cluster. All the entities belonging to the user are left (storage, jobs, images, etc), and you can add this user back later.
 
 ```
-> neuro admin remove-cluster-user default john
+> apolo admin remove-cluster-user default john
 Removed john from cluster default
 ```
 
@@ -66,32 +66,32 @@ The quota determines the amount of GPU or CPU computation accessible to a user. 
 
 You can set a user’s quota by using one of these commands:
 
-* `neuro admin set-user-quota -c` : Use this to set the quota to a certain number of credits.
+* `apolo admin set-user-quota -c` : Use this to set the quota to a certain number of credits.
 
 ```
-> neuro admin set-user-quota -c 200 default john
+> apolo admin set-user-quota -c 200 default john
 ```
 
-* `neuro admin add-user-quota`: Use this to add a certain number of credits to the existing user quota.
+* `apolo admin add-user-quota`: Use this to add a certain number of credits to the existing user quota.
 
 ```
-> neuro admin add-user-quota -c 50 default john
+> apolo admin add-user-quota -c 50 default john
 ```
 
 You can also set an unlimited quota for a user:
 
 ```
-> neuro admin set-user-quota default john
+> apolo admin set-user-quota default john
 ```
 
 You can check the quota of any user of a cluster if you are a manager or an admin of the cluster.
 
 ```
-> neuro config show-quota john
+> apolo config show-quota john
 ```
 
 To view your own quota, run:
 
 ```
-> neuro config show-quota
+> apolo config show-quota
 ```

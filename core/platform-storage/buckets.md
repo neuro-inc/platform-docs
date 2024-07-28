@@ -1,38 +1,38 @@
 # Buckets
 
-In addition to other types of platform storage, Neu.ro provides bucket management functionality.&#x20;
+In addition to other types of platform storage, Apolo provides bucket management functionality.&#x20;
 
 ## Managing buckets
 
 {% tabs %}
 {% tab title="CLI" %}
-In the CLI, bucket management can be performed via the `neuro blob` command.
+In the CLI, bucket management can be performed via the `apolo blob` command.
 
 #### Listing available buckets
 
 ```
-$ neuro blob lsbucket
+$ apolo blob lsbucket
 ```
 
 #### Getting info about a bucket
 
 ```
-$ neuro blob statbucket <bucket-name>
+$ apolo blob statbucket <bucket-name>
 ```
 
 #### Creating a bucket
 
 ```
-$ neuro blob mkbucket --name <bucket-name>
+$ apolo blob mkbucket --name <bucket-name>
 ```
 
 #### Removing a bucket
 
 ```
-$ neuro blob rmbucket <bucket-name>
+$ apolo blob rmbucket <bucket-name>
 ```
 
-You can find more info about bucket management commands in the [CLI reference](https://neu-ro.gitbook.io/neu-ro-cli-reference/commands/blob).
+You can find more info about bucket management commands in the [blob](https://app.gitbook.com/s/-MOkWy7dB5MDbkSII8iF/commands/blob "mention") .
 {% endtab %}
 
 {% tab title="Web UI" %}

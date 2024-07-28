@@ -1,19 +1,15 @@
 # Hyperparameter Tuning with Weights & Biases
 
-Neu.ro allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W\&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Neu.ro is in charge of the rest.
+Apolo allows you to run model training in parallel with different hyperparameter combinations via integration with [Weights & Biases](https://www.wandb.com/). W\&B is an experiment tracking tool for deep learning. The ML engineer only needs to initiate the process: prepare the code for training the model, set up the hyperparameter space, and start the search with just one command. Apolo is in charge of the rest.
 
 To see this guide in action, check out our [recipe](https://github.com/neuromation/ml-recipe-hyperparam-wandb) in which we apply hyperparemeter tuning with W\&B to an image classification task.
 
-### Creating a Neu.ro Project
+### Creating a flow
 
-The Neu.ro project template contains an integration with Weights and Biases. To create a new project from a template, you need to follow a couple of steps.&#x20;
-
-First, [Sign up](https://neu.ro/) and [install the CLI client](https://docs.neu.ro/getting-started#installing-cli).
-
-Than, create a new project using the following command (make sure you have [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed before running it):&#x20;
+The Apolo flow template contains an integration with Weights and Biases. To create a new flow from a template, perform:&#x20;
 
 ```
-(base) C:\Projects>cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
+$ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
 This command will then prompt you to enter some information about the project:
@@ -43,7 +39,7 @@ Now, connect your project with [Weights & Biases](https://www.wandb.com/):
 * Add this API key as a secret to the platform:
 
 ```bash
-$ neuro secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
+$ apolo secret add wandb-token cf23df2207d99a74fbe169e3eba035e633b63d13
 ```
 
 * Download `hypertrain.yml` from [here](https://github.com/neuro-inc/ml-recipe-hyperparam-wandb/blob/master/.neuro/hypertrain.yml) to `.neuro/hypertrain.yml` in your project's directory.
@@ -55,7 +51,7 @@ Feel free to refer to the [W\&B documentation](https://docs.wandb.com/library/ap
 If you have completed the previous steps, W\&B is ready to use. To run hyperparameter tuning for the model, you need to:
 
 * Define the list of hyperparameters (in a `config/wandb-sweep.yaml` file);
-* Send the metrics to W\&B after each run (by using the `neuro-flow bake hypertrain` command).
+* Send the metrics to W\&B after each run (by using the `apolo-flow bake hypertrain` command).
 
 `.neuro/hypertrain.yml` and `config/wandb-sweep.yaml` have links to `train.py` (you can look at an example [here](https://github.com/neuromation/ml-recipe-hyperparam-wandb/blob/66545469755b5b2bf74f461f5f6d91ed4d133d26/src/train.py)). If you want to run `hypertrain` for another script, you can change the `program` property in `config/wandb-sweep.yaml` (see below). The script must contain the description of the model and the training loop.
 
@@ -98,7 +94,7 @@ The name of the file `wandb-sweep.yaml` and the path to it can also be modified 
 Now that you have set up both Neu.ro and W\&B and prepared your training script, it’s time to try hyperparameter tuning. To do this, run the following command:
 
 ```
-> neuro-flow bake hypertrain --param token_secret_name wandb-token
+> apolo-flow bake hypertrain --param token_secret_name wandb-token
 ```
 
 This starts jobs that run the `train.py` script (or whatever name you have chosen for it) on the platform with different sets of hyperparameters in parallel. By default, just 2 jobs run at the same time. You can change this number by modifying the `id` list within the `worker_...` task definition in `.neuro/hypertrain.yml`:
@@ -120,7 +116,7 @@ To monitor the hyperparameter tuning process, follow the link provided by W\&B a
 If you want to stop the hyperparameter tuning, terminate all related jobs:
 
 ```
-$ neuro-flow kill hypertrain
+$ apolo-flow kill hypertrain
 ```
 
-After that, verify that the jobs stopped by running `neuro-flow ps`.
+After that, verify that the jobs stopped by running `apolo-flow ps`.

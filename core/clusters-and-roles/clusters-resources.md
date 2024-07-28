@@ -1,25 +1,30 @@
-# Clusters (Resources)
+# Clusters
 
-Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Neu.ro, it provides you access to our public cluster _**default**_. You can create new clusters, but this requires additional access. For more information, contact [team@neu.ro](mailto:team@neu.ro).
+Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Apolo, you could ask someone that have respective access level to add you to their organization. This provides access to clusters the organization has access to.&#x20;
+
+Under the hood, cluster is a [Kubernetes](https://kubernetes.io/) cluster being managed by Apolo services.
+
+You can also create new clusters, but this requires additional access. For more information, contact [support@apolo.us](mailto:support@apolo.us).
 
 You can use one cluster at a time and switch between clusters. This tutorial will helps you understand how you can manage resources.
 
 ### **How can I view information about my current cluster?**
 
-Each cluster comes with its own storage, registry, and resource presets.&#x20;
+Each cluster comes with its own storage, registry, resource presets and other services.&#x20;
 
 You can view information about your current cluster both in the CLI and in the Web UI:&#x20;
 
 {% tabs %}
 {% tab title="CLI" %}
-You can use the `neuro config show` command to view the current cluster's name, API URL, docker registry URL, and the list of presets available for this cluster.
+You can use the `apolo config show` command to view the current cluster's name, API URL, docker registry URL, and the list of presets available for this cluster.
 
 ```
-$ neuro config show
+$ apolo config show
 User Configuration:                                       
  User Name            john-doe                      
  Current Cluster      default                             
  Current Org          <no-org>                            
+ Current Project      myproject 
  Credits Quota        unlimited                           
  Jobs Quota           unlimited                           
  API URL              https://staging.neu.ro/api/v1       
@@ -57,10 +62,10 @@ You can view the list of available clusters and switch between them both in the 
 
 {% tabs %}
 {% tab title="CLI" %}
-You can use the `neuro config get-clusters` command to view the list of clusters that you have access to and information about them.
+You can use the `apolo config get-clusters` command to view the list of clusters that you have access to and information about them.
 
 ```
-$ neuro config get-clusters
+$ apolo config get-clusters
 Fetch the list of available clusters...
 Available clusters:
 * Name: neuro-public
@@ -81,10 +86,10 @@ Available clusters:
     gpu-large    46  120.0G       No      2 x nvidia-geforce-rtx-2080ti
 ```
 
-You can switch between clusters by using the `neuro config switch-cluster` command. When you run the command, you are prompted to enter the name of the cluster you want to switch to. The current cluster is switched after you provide the name.
+You can switch between clusters by using the `apolo config switch-cluster` command. When you run the command, you are prompted to enter the name of the cluster you want to switch to. The current cluster is switched after you provide the name.
 
 ```
-$ neuro config switch-cluster
+$ apolo config switch-cluster
 Fetch the list of available clusters...
 Available clusters:
 * Name: default
@@ -121,20 +126,18 @@ Use the **Cluster** drop-down list to view available clusters and switch between
 {% endtab %}
 {% endtabs %}
 
-### **How can I view my computation quota?**
+### **How can I view my credits?**
 
-You are assigned a computation quota of 100 credits when you sign up to Neu.ro. This quota is used whenever you run a job.&#x20;
+Usually, you are assigned a computation quota in term of credits. Those credits are consumed whenever you run a job. Credits are cluster-bound which means, you have different balances in different clusters.
 
-You can view the remaining computation quota on your Web UI dashboard.
+You can view the remaining credits on your Web UI dashboard. The `apolo config show` command also shows the amount of credits left as part of its output too.
 
-The `neuro config show` command also shows the amount of computation quota left as part of its output.
+### How can I request for more credits?
 
-### How can I request for more computation quota?
+You can top up your credits by clicking the **Credits** button on the Web UI dashboard.
 
-You can top up your computation quota by clicking the **TOP UP NOW** button on the Web UI dashboard.
-
-You can also write to [team@neu.ro](mailto:team@neu.ro) to learn about latest discounts and promotions, and then request the top up.
+You can also contact [support@apolo.us](mailto:support@apolo.us) or corresponding cluster provider to learn about latest discounts and promotions, and then request the top up.
 
 ### How can I create a new cluster?&#x20;
 
-Neu.ro lets you create new clusters for better management and orchestration of resources. However, you must remember that the new cluster would require more computation quota. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at  [team@neu.ro](mailto:team@neu.ro).
+Apolo lets you create new clusters for better management and orchestration of resources. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at  [support@apolo.us](mailto:support@apolo.us).

@@ -12,7 +12,7 @@ Our Model Deployment Controller is a web application, that connects to your MLFl
 
 #### MLFlow
 
-You need to have a running MLFlow instance with `--serve-artifacts` flag enabled. If this instance was launched via the Dashboard, you will be able to automatically connect to this instance by injecting the `MLFLOW_TRACKING_URI` into the model deployment job. Otherwise, you would need to pass it manually (e.g. by mounting a secret into env variable from Dashboard or passing the appropriate value if running the deployment app job via Neuro CLI).
+You need to have a running MLFlow instance with `--serve-artifacts` flag enabled. If this instance was launched via the Dashboard, you will be able to automatically connect to this instance by injecting the `MLFLOW_TRACKING_URI` into the model deployment job. Otherwise, you would need to pass it manually (e.g. by mounting a secret into env variable from Dashboard or passing the appropriate value if running the deployment app job via Apolo CLI).
 
 Additionally, in case your MLFlow instance is protected by auth, you would need to pass `MLFLOW_TRACKING_TOKEN` to the deployment app as well.
 
@@ -36,10 +36,10 @@ After pressing **RUN** you will be redirected to the newly started Model Deploym
 
 #### Via CLI
 
-In case you need more flexibility, you can resort to running the Deployment Controller via `neuro-cli`. Below is an example of a command, that will launch the equivalent of the job, started via Dashboard:
+In case you need more flexibility, you can resort to running the Deployment Controller via `apolo-cli`. Below is an example of a command, that will launch the equivalent of the job, started via Dashboard:
 
 ```
-neuro run --preset cpu-small \
+apolo run --preset cpu-small \
   --http-port 8501 \
   --volume storage:global/triton_model_repo:/tmp/triton_model_repo:rw \
   --env TRITON_MODEL_REPO=/tmp/triton_model_repo \

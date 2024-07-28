@@ -2,9 +2,9 @@
 
 ### Introduction
 
-This tutorial demonstrates how to use [TorchServe](https://pytorch.org/serve/) (a flexible tool for serving PyTorch models) for serving models on Neu.ro.&#x20;
+This tutorial demonstrates how to use [TorchServe](https://pytorch.org/serve/) (a flexible tool for serving PyTorch models) for serving models on Apolo.&#x20;
 
-Before moving forward with the tutorial, make sure you have [Neu.ro CLI](../../first-steps/getting-started.md#installing-cli) installed.
+Before moving forward with the tutorial, make sure you have platform CLI installed.
 
 ### Preparing Local Files
 
@@ -29,7 +29,7 @@ $ curl -o serve/examples/image_classifier/densenet161-8d451a50.pth https://downl
 You can now copy the files from your local repository to the platform storage:
 
 ```
-$ neuro cp -r serve storage:
+$ apolo cp -r serve storage:
 ```
 
 ### Serving the Model
@@ -37,13 +37,13 @@ $ neuro cp -r serve storage:
 As you have all necessary files on the platform storage, you can mount them as a volume to your jobs. Run the following command:
 
 ```
-$ neuro run --name serve --volume storage:serve:/home/serve:rw --preset gpu-small --http 8080 --no-http-auth --detach pytorch/torchserve:0.1.1-cuda10.1-cudnn7-runtime
+$ apolo run --name serve --volume storage:serve:/home/serve:rw --preset gpu-small --http 8080 --no-http-auth --detach pytorch/torchserve:0.1.1-cuda10.1-cudnn7-runtime
 ```
 
 Now, run a bash terminal from within this job:
 
 ```
-$ neuro exec serve bash
+$ apolo exec serve bash
 ```
 
 Create the `model-store` folder:
@@ -77,7 +77,7 @@ $ torchserve --start --ncs --model-store /home/serve/model-store --models densen
 To access the serving job's management API, you would first need to port-forward the serving job:
 
 ```
-$ neuro port-forward serve 8081:8081
+$ apolo port-forward serve 8081:8081
 ```
 
 After that, you can copy the `densenet161` folder to your local machine:

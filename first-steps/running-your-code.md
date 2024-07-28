@@ -1,14 +1,14 @@
 # Running Your Code
 
-Oftentimes you don't start a project from scratch. Instead of that you use someone's or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into a Neu.ro project, and start developing on the platform.
+Oftentimes you don't start a project from scratch. Instead of that you use someone's or your own old code as a baseline and develop your solution on top of it. This guide demonstrates how to take an existing code base, convert it into a Apolo flow, and start developing on the platform.
 
 ## Prerequisites
 
-1. Make sure that you have the Neuro CLI [installed](getting-started.md#installing-cli) and logged in.
-2. Install the `neuro-flow` package:
+1. Make sure that you have the Apolo CLI [installed](getting-started.md#installing-cli) and logged in.
+2. Install the `apolo-flow` package:
 
 ```bash
-$ pip install -U neuro-flow
+$ pip install -U apolo-flow
 ```
 
 ## Configuration
@@ -80,20 +80,20 @@ Now it's time to run several commands that set up the project environment and ru
 * First, create volumes and upload project to platform storage:
 
 ```
-$ neuro-flow mkvolumes
-$ neuro-flow upload ALL
+$ apolo-flow mkvolumes
+$ apolo-flow upload ALL
 ```
 
 * Then, build an image:
 
 ```
-$ neuro-flow build pytorch
+$ apolo-flow build pytorch
 ```
 
 * Finally, run training:
 
 ```
-$ neuro-flow run train
+$ apolo-flow run train
 ```
 
-Please run `neuro-flow --help` to get more information about available commands.&#x20;
+Please run `apolo-flow --help` to get more information about available commands.&#x20;

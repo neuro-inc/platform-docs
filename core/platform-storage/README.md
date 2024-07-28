@@ -2,9 +2,14 @@
 
 This group contains the following topics:
 
-{% page-ref page="storage.md" %}
+{% content-ref url="storage.md" %}
+[storage.md](storage.md)
+{% endcontent-ref %}
 
-{% page-ref page="disks.md" %}
+{% content-ref url="disks.md" %}
+[disks.md](disks.md)
+{% endcontent-ref %}
 
-
-
+{% content-ref url="buckets.md" %}
+[buckets.md](buckets.md)
+{% endcontent-ref %}

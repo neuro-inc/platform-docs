@@ -10,7 +10,7 @@ More information could be found at [https://spark.apache.org/](https://spark.apa
 
 We allow our customers to run Spark workloads in various approaches:&#x20;
 
-* as a collection of platform Jobs using neuro-flow (see dedicated repository [example](https://github.com/neuro-inc/mlops-spark))
+* as a collection of platform Jobs using apolo-flow (see dedicated repository [example](https://github.com/neuro-inc/mlops-spark))
 * as a PySpark application with Driver within the Jupyter server (see[#jupyter-pyspark-k8s](running-apache-spark-workloads.md#jupyter-pyspark-k8s "mention"))
 * as a PySpark application managed by [spark-on-k8s-operator](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator)  (example yet to be added)
 

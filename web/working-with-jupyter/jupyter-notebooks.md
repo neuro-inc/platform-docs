@@ -1,18 +1,18 @@
 # Jupyter Notebooks
 
-Jupyter Notebooks is a powerful computational notebook tool that lets you create and share your code. Neu.ro lets you manage all aspects of your Jupyter Notebooks from an intuitive web-based dashboard.
+Jupyter Notebooks is a powerful computational notebook tool that lets you create and share your code. Apolo lets you manage all aspects of your Jupyter Notebooks from an intuitive web-based dashboard.
 
 ## Introduction
 
-This tutorial demonstrates how to run a Jupyter Notebook instance in the Neu.ro Web UI. You will start a new instance of Jupyter Notebook and create a Python 3 notebook. You will also know how to view or kill currently running instances.
+This tutorial demonstrates how to run a Jupyter Notebook instance in the Web UI. You will start a new instance of Jupyter Notebook and create a Python 3 notebook. You will also know how to view or kill currently running instances.
 
 ## Create a new Jupyter Notebook instance
 
-Neu.ro lets you create multiple instances of Jupyter Notebooks.
+Platform lets you create multiple instances of Jupyter Notebooks.
 
 **To create a new Jupyter Notebook instance:**
 
-* Log in to your Neu.ro dashboard.
+* Log in to your web dashboard.
 * Click **RUN A JOB** in the IDEs widget.
 
 ![](<../../.gitbook/assets/image (247).png>)
@@ -33,7 +33,7 @@ To view the current notebook's Dashboard, click **Open...** in the **File** drop
 
 The notebook has three tabs:
 
-* **Files:** Lets you manage the files in the Jupyter instance. The entire Neu.ro platform storage is available for you to host and manage files on the notebook.
+* **Files:** Lets you manage the files in the Jupyter instance. The entire project storage is available for you to host and manage files on the notebook.
 
 ![Files tab](<../../.gitbook/assets/image (34).png>)
 
@@ -49,7 +49,7 @@ You can perform context-based actions on selected files, such as Shutdown or Dup
 
 ## Managing your Jupyter Notebook Instances
 
-You can manage your Jupyter Notebook instances from the Neu.ro dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their names start with _**jupyter-**_.&#x20;
+You can manage your Jupyter Notebook instances from the web dashboard. The Jupyter Notebook instances are listed in the Running Jobs section, and their names start with _**jupyter-**_.&#x20;
 
 You can view the details of your Jupyter Notebook instances by clicking the corresponding job ID.
 

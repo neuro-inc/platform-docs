@@ -2,9 +2,9 @@
 
 ### Introduction
 
-Neu.ro lets you create a cluster in any of the three major cloud providers - [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/), and [Azure](https://azure.microsoft.com/en-in/). After you sign up with a cloud provider, you have to share your service account information and the configuration you need with our team. We will then set up a cluster on your behalf, and install Neu.ro on your cloud for you.
+Apolo lets you create a cluster in any of the three major cloud providers - [Amazon Web Services](https://aws.amazon.com/), [Google Cloud Platform](https://cloud.google.com/), and [Azure](https://azure.microsoft.com/en-in/). After you sign up with a cloud provider, you have to share your service account information and the configuration you need with our team. We will then set up a cluster on your behalf, and install Apolo on your cloud for you.
 
-To set up a Neu.ro cluster, you have to do the following:
+To set up a Apolo cluster, you have to do the following:
 
 1. Set up a cloud environment:
    * GCP: [Create a project](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project) and a [service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating).
@@ -15,15 +15,15 @@ To set up a Neu.ro cluster, you have to do the following:
 
 Apart from the process mentioned above, there are other methods of setup:
 
-* Set up Neu.ro on an existing cluster provided by AWS, GCP, or Azure. This requires the configuration of the node pool.&#x20;
-* Set up Neu.ro on an existing cluster provided by other cloud service providers.
-* Set up Neu.ro on-premise (or “bare metal”).
+* Set up Apolo on an existing cluster provided by AWS, GCP, or Azure. This requires the configuration of the node pool.&#x20;
+* Set up Apolo on an existing cluster provided by other cloud service providers.
+* Set up Apolo on-premise (or “bare metal”).
 
 For any of these other methods of setup, please [contact our team](mailto:team@neu.ro).
 
 ### Cluster configuration YAML&#x20;
 
-You must create a project/VPC/resource group and a service account with all required permissions before you can start preparing a cluster configuration YAML file. The YAML file is used by the Neu.ro team to set up and run the cluster. You should use the `neuro admin generate-cluster-config` command to generate the YAML file. It is an interactive tool that generates a valid configuration file with the default node configuration based on your responses.
+You must create a project/VPC/resource group and a service account with all required permissions before you can start preparing a cluster configuration YAML file. The YAML file is used by the Apolo team to set up and run the cluster. You should use the `apolo admin generate-cluster-config` command to generate the YAML file. It is an interactive tool that generates a valid configuration file with the default node configuration based on your responses.
 
 The command prompts for the following information in order to generate the configuration file:
 
@@ -36,14 +36,14 @@ The command prompts for the following information in order to generate the confi
 Below is a sample command for GCP:
 
 ```
-> neuro admin generate-cluster-config
+> apolo admin generate-cluster-config
 Select cluster type (aws, gcp, azure): gcp
 GCP project name: My Project
 Service Account Key File (.json): GCP_User.json
 Cluster config cluster.yml is generated.
 ```
 
-The command creates the `cluster.yml` file that includes the information required by the Neu.ro team to set up your cluster. Here is a sample `cluster.yml` generated for a new GCP cluster:
+The command creates the `cluster.yml` file that includes the information required by the Apolo team to set up your cluster. Here is a sample `cluster.yml` generated for a new GCP cluster:
 
 ```
 type: gcp
@@ -95,10 +95,10 @@ The file will create a cluster with the following presets:
 
 To get information about available options for each of the cloud providers, run:
 
-`neuro admin show-cluster-options` .
+`apolo admin show-cluster-options` .
 
-You can further update the `cluster.yml` file as per your requirements before you send it to us. If you have any issues updating the file, then [contact us](mailto:team@neu.ro). Once you are done updating the configuration file, you should send the cluster.yml file to the Neu.ro team for the cluster setup using the command:
+You can further update the `cluster.yml` file as per your requirements before you send it to us. If you have any issues updating the file, then [contact us](mailto:team@neu.ro). Once you are done updating the configuration file, you should send the cluster.yml file to the Apolo team for the cluster setup using the command:
 
-`neuro admin add-cluster <path/to/config>`
+`apolo admin add-cluster <path/to/config>`
 
 Once we receive the YAML file, we will set up and run the cluster (usually completed within one business day). After the command is run, you become the admin of the cluster. You can start adding users to the cluster as soon as you run the command above.

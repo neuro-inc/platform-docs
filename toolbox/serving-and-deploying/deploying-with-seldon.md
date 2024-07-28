@@ -2,24 +2,18 @@
 
 ## Introduction
 
-This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Neu.ro and [Seldon](https://www.seldon.io/) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist).&#x20;
+This tutorial demonstrates how to train and deploy a [MNIST](http://yann.lecun.com/exdb/mnist/) model using Apolo and [Seldon](https://www.seldon.io/) and is based on a [basic PyTorch example](https://github.com/pytorch/examples/tree/master/mnist).&#x20;
 
 Here are the steps we'll perform:
 
-1. [Prepare and train a basic model on Neu.ro](deploying-with-seldon.md#training);
-2. [Wrap the model into an inference HTTP server](deploying-with-seldon.md#building-the-server);
-3. [Test inference on Neu.ro](deploying-with-seldon.md#running-the-server-on-neu-ro);
-4. [Launch production inference on existing Seldon Core](deploying-with-seldon.md#running-the-server-on-seldon-core).
+1. [Prepare and train a basic model](deploying-with-seldon.md#training)
+2. [Wrap the model into an inference HTTP server](deploying-with-seldon.md#building-the-server)
+3. [Test inference](deploying-with-seldon.md#running-the-server-on-neu-ro)
+4. [Launch production inference on existing Seldon Core](deploying-with-seldon.md#running-the-server-on-seldon-core)
 
 ## Prerequisites
 
-First, make sure that you have the Neu.ro CLI client installed and configured:
-
-```bash
-$ pip install pipx
-$ pipx install neuro-all
-$ neuro login
-```
+First, make sure that you have platform CLI installed and configured (see [#installing-the-cli](../../first-steps/getting-started.md#installing-the-cli "mention")).
 
 You will also need to have [Seldon Core](https://www.seldon.io/tech/products/core/) up and running. It's assumed that you have `kubectl` configured locally to be able to create all necessary K8S resources.
 
@@ -34,7 +28,7 @@ $ curl -O "https://raw.githubusercontent.com/pytorch/examples/master/mnist/requi
 
 If you check the contents of `main.py`, the path to the resulting serialized model is baked right into the code:
 
-```
+```python
     if args.save_model:
         torch.save(model.state_dict(), "mnist_cnn.pt")
 ```
@@ -43,7 +37,7 @@ This doesn't look flexible enough for our purposes, so we would probably need to
 
 The serialized model should be copied to a mounted storage volume under a chosen path. To accomplish that, we need to write a Dockerfile for the training job and save it as `train.Dockerfile` for further use. The image will be based on a pre-built PyTorch image. The complete list of such images can be found on [PyTorch DockerHub](https://hub.docker.com/r/pytorch/pytorch/tags).
 
-```
+```docker
 FROM pytorch/pytorch:1.5-cuda10.1-cudnn7-runtime
 
 ENV MODEL_PATH=/var/storage/model.pkl
@@ -58,36 +52,36 @@ As you can see, the CMD is meant to perform two operations:&#x20;
 1. Train a model and save it in the default location
 2. Copy the saved model into the location in which we mounted our storage volume
 
-Now, let's build the image. The following command doesn't require a running Docker Engine locally. The building process will be performed on Neu.ro.
+Now, let's build the image. The following command doesn't require a running Docker Engine locally. The building process will be performed on Apolo.
 
-```
-$ neuro-extras image build -f train.Dockerfile . image:examples/mnist:train
+```bash
+$ apolo-extras image build -f train.Dockerfile . image:examples/mnist:train
 ...
 INFO: Successfully built image:examples/mnist:train
 ```
 
-The command above instructs Neu.ro to copy the build context (the current working directory `.` in this case), use the build steps from `train.Dockerfile`, and save the resulting image under `image:examples/mnist:train` in the Neu.ro registry. We can check the registry contents by using the following command:
+The command above instructs platform to copy the build context (the current working directory `.` in this case), use the build steps from `train.Dockerfile`, and save the resulting image under `image:examples/mnist:train` in the platform registry. We can check the registry contents by using the following command:
 
 ```
-$ neuro image tags image:examples/mnist 
+$ apolo image tags image:examples/mnist 
 image:examples/mnist:train
 ```
 
-Now that we have the image available within Neu.ro, we can actually run a training job.
+Now that we have the image available within platform, we can actually run a training job.
 
 ```
-$ neuro run -s gpu-small -v storage:examples/mnist:/var/storage \
+$ apolo run -s gpu-small -v storage:examples/mnist:/var/storage \
     -e MODEL_PATH=/var/storage/model.pkl image:examples/mnist:train
 ...
 Test set: Average loss: 0.0265, Accuracy: 9910/10000 (99%)
 ```
 
-Note that we explicitly specify the MODEL\_PATH environment variable which leads to the mounted storage volume. This job takes up to 4 minutes using the gpu-k80-small preset.
+Note that we explicitly specify the MODEL\_PATH environment variable which leads to the mounted storage volume. This job takes up to 4 minutes using the Nvidia Tesla K80 GPU.
 
 We can then check if there actually is a serialized model on the storage:
 
 ```
-$ neuro ls -l storage:examples/mnist
+$ apolo ls -l storage:examples/mnist
 -m 4800957 2020-05-04 15:21:18 model.pkl
 ```
 
@@ -97,10 +91,10 @@ Now that we have successfully trained our model, we can start actually using it.
 
 ### Building the server
 
-`neuro-extras` provides a scaffolding for wrapping the model's code into a functional inference HTTP server that you can run in Neu.ro or any other container runtime.
+`apolo-extras` provides a scaffolding for wrapping the model's code into a functional inference HTTP server that you can run on platform or any other container runtime.
 
 ```
-$ neuro-extras seldon init-package .
+$ apolo-extras seldon init-package .
 
 ls -l
 -rw-r--r--  1 user  group  2375 May  4 15:33 README.md
@@ -152,23 +146,23 @@ Similarly, we need to redefine the `predict` method. As we are dealing with imag
 We are ready to build the inference image in the same way we built the training one:
 
 ```
-$ neuro-extras image build -f seldon.Dockerfile . image:examples/mnist:seldon
+$ apolo-extras image build -f seldon.Dockerfile . image:examples/mnist:seldon
 ```
 
 ```
-$ neuro image tags image:examples/mnist 
+$ apolo image tags image:examples/mnist 
 image:examples/mnist:train
 image:examples/mnist:seldon
 ```
 
 We see that our registry now has one more image.
 
-### Running the server on Neu.ro
+### Running the server on platform
 
-Before pushing the newly trained and built model to production, let's take a glimpse at how it works within Neu.ro. We need to submit a job that exposes the port `5000` (the default port for the Seldon Core HTTP server) and mounts a storage volume with the serialized model to the path mentioned above.
+Before pushing the newly trained and built model to production, let's take a glimpse at how it works within platform. We need to submit a job that exposes the port `5000` (the default port for the Seldon Core HTTP server) and mounts a storage volume with the serialized model to the path mentioned above.
 
 ```
-$ neuro run -n example-mnist --http 5000 --no-http-auth --detach -v storage:examples/mnist:/storage:ro image:examples/mnist:seldon
+$ apolo run -n example-mnist --http 5000 --no-http-auth --detach -v storage:examples/mnist:/storage:ro image:examples/mnist:seldon
 ```
 
 Note the output of the command above. We should copy the value of the HTTP URL field to form a `curl` command later.
@@ -187,27 +181,27 @@ The array element with the index `2` has the highest score, as expected.
 If the testing job is no longer needed, we can simply kill it to release the resources:
 
 ```
-$ neuro kill example-mnist
+$ apolo kill example-mnist
 ```
 
 ### Running the server on Seldon Core
 
 After a successful test of our inference server, we need to push the result to production.
 
-Since your Seldon Core deployment typically resides outside Neu.ro (for example, in your on-premise K8S cluster), we need to instruct K8S and Seldon to pull our newly-built model image, as well as the corresponding serialized model into the cluster. `neuro-extras` allows creating the required resources easily:
+Since your Seldon Core deployment typically resides outside platform (for example, in your on-premise K8S cluster), we need to instruct K8S and Seldon to pull our newly-built model image, as well as the corresponding serialized model into the cluster. `apolo-extras` allows creating the required resources easily:
 
 ```
 # Creating a dedicated namespace to keep all the related resources together
 $ kubectl create namespace seldon
 
-# Creating a registry secret for acccessing Neu.ro registry from within K8S
-$ neuro-extras k8s generate-registry-secret | kubectl -n seldon apply -f -
+# Creating a registry secret for acccessing Apolo registry from within K8S
+$ apolo-extras k8s generate-registry-secret | kubectl -n seldon apply -f -
 
-# Creating a secret for accessing Neu.ro (Storage etc) from within K8S
-$ neuro-extras k8s generate-secret | kubectl -n seldon apply -f -
+# Creating a secret for accessing Apolo (Storage etc) from within K8S
+$ apolo-extras k8s generate-secret | kubectl -n seldon apply -f -
 
 # Creating a Seldon deployment using the URIs we prepared beforehand
-$ neuro-extras seldon generate-deployment image:examples/mnist:seldon \
+$ apolo-extras seldon generate-deployment image:examples/mnist:seldon \
     storage:examples/mnist/model.pkl | kubectl -n seldon apply -f -
 ```
 

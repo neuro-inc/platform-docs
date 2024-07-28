@@ -1,15 +1,15 @@
-# Accessing a job hidden behind the platform's Auth
+# Accessing a job protected by platform SSO
 
 Here are the general steps for launching a job and accessing it through the platform's Auth.
 
 ### Generating a service account
 
-Generate a service account via `neuro service-account create --name <sa-name>`. Make sure to store the **Role** and the **Auth token** - you will use them to authenticate your requests.
+Generate a service account via `apolo service-account create --name <sa-name>`. Make sure to store the **Role** and the **Auth token** - you will use them to authenticate your requests.
 
 #### Example:
 
 ```
-    $ neuro service-account create --name test
+    $ apolo service-account create --name test
      Id               service-account-b41aa732-4bb5-45e4-94c1-a078ca013255
      Name             test
      Role             janedoe/service-accounts/test
@@ -20,7 +20,7 @@ Generate a service account via `neuro service-account create --name <sa-name>`. 
     Full token with cluster and API url embedded (this value can be used as NEURO_PASSED_CONFIG environment variable):
     eyJ0b2tlbi<hidden>SJ9
     
-    Just auth token (this value can be passed to neuro config login-with-token):
+    Just auth token (this value can be passed to apolo config login-with-token):
     eyJhbGciOi<hidden>Np0
     
     Save it to some secure place, you will be unable to retrieve it later!
@@ -36,18 +36,18 @@ Start the job you want to access later.
 #### Example:
 
 ```
-$ neuro run --http 8080 --name mytestjob python python -m http.server --cgi 8080
+$ apolo run --http 8080 --name mytestjob python -- python -m http.server 8080
 ```
 
 ### Share access to the job with the service account
 
 Share access to the job with the service account role from step 1 by using the \
-`neuro acl grant job:<job-id-or-name> <role-name> read` command.
+`apolo acl grant job:<job-id-or-name> <role-name> read` command.
 
 #### Example:
 
 ```
-$ neuro acl grant job:mytestjob janedoe/service-accounts/test read
+$ apolo acl grant job:mytestjob janedoe/service-accounts/test read
 ```
 
 ### Using the auth token

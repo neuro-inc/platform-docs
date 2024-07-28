@@ -10,31 +10,30 @@ In GitHub, this is done via [GitHub Actions](https://github.com/features/actions
 
 ## Why is CI/CD difficult for ML projects
 
-Machine learning projects can suffer when it comes to the CI/CD area. 
+Machine learning projects can suffer when it comes to the CI/CD area.&#x20;
 
-Even though GitHub Actions allow you to execute data workflows on various git events such as push or issue creation, the internal machines that GitHub provides for running these workflows have too little storage capacity for a standard ML project and the objects it operates. 
+Even though GitHub Actions allow you to execute data workflows on various git events such as push or issue creation, the internal machines that GitHub provides for running these workflows have too little storage capacity for a standard ML project and the objects it operates.&#x20;
 
 So it can be difficult and time-consuming to run CI tests and deploy ML projects using pure GitHub actions.
 
-## How Neu.ro helps with CI/CD for ML
+## How platform helps with CI/CD for ML
 
-This can be fixed with Neu.ro Flow. 
+This can be fixed with apolo-flow.&#x20;
 
-You can write GitHub Actions scripts that will install Neu.ro on the GitHub's internal machines and run all the necessary tests and deployment processes on the remote Neu.ro machines using Neu.ro Flow.
+You can write GitHub Actions scripts that will install apolo on the GitHub's internal machines and run all the necessary tests and deployment processes on the remote platform machines using apolo-flow.
 
 These scripts should be saved at the `.github/workflows` folder in your repository.
 
 The script for running CI tests will look like this:
 
-```text
+```
 name: init
 run: |
-    pip install -U neuro-cli neuro-extras neuro-flow
-    neuro config login-with-token ${{ secrets.NEURO-TOKEN}}
-    neuro config switch-cluster default
+    pip install -U apolo-all
+    apolo config login-with-token ${{ secrets.APOLO-TOKEN}}
+    apolo config switch-cluster default
     
 name: test
 run: |
-    neuro-flow run test
+    apolo-flow run test
 ```
-

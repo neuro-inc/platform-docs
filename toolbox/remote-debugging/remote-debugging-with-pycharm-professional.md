@@ -2,68 +2,62 @@
 
 ## Introduction
 
-In this tutorial, you can learn how to set up remote debugging with PyCharm Professional on the Neuro Platform using the Neu.ro project template.
+In this tutorial, you can learn how to set up remote debugging with PyCharm Professional on the platform using the flow template.
 
 {% hint style="warning" %}
 Remote debugging relies on a running SSH server in a job's 22 port. We ensure it for you if you use our base image (`ghcr.io/neuro-inc/base`).
 {% endhint %}
 
-## Initializing a new project
+## Initializing a new flow
 
-First, make sure that you have the Neu.ro CLI client and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed and configured:
+First, make sure that you have the Apolo CLI client and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed and configured, refer to [#installing-the-cli](../../first-steps/getting-started.md#installing-the-cli "mention")
 
-```bash
-$ pipx install neuro-all cookiecutter
-$ neuro login
-```
-
-Then, initialize an empty project:
+Then, initialize a new flow:
 
 ```bash
 $ cookiecutter gh:neuro-inc/cookiecutter-neuro-project --checkout release
 ```
 
-This command will prompt you to enter some info about your project:
+This command will prompt you to enter some info about your flow:
 
 ```
-project_name [Name of the project]: Neuro PyCharm
-project_dir [neuro pycharm]:
-project_id [neuro_pycharm]:
+project_name [Name of the project]: Apolo PyCharm
+project_dir [apolo pycharm]:
+project_id [apolo_pycharm]:
 code_directory [modules]:
 preserve Neuro Flow template hints [yes]:
 ```
 
-Next, switch to the new project's folder and configure the project's environment on the Neuro Platform:
+Next, switch to the new project's folder and configure the project's environment on the Platform:
 
 ```bash
-$ cd neuro pycharm 
-$ neuro-flow build train
+$ cd apolo_pycharm 
+$ apolo-flow build train
 ```
 
 ## Setting up PyCharm
 
 Open the project you have just created in PyCharm Professional and add the code you want to debug as a new `main.py` file (in this example, we use a code snippet from the [JetBrains documentation](https://www.jetbrains.com/help/pycharm/remote-debugging-with-product.html)).
 
-Then, you will need to exclude all directories that don't contain Python code (in an empty Neu.ro project, only the `modules` folder will contain code). PyCharm doesn't synchronize excluded directories. Select all directories to exclude, right-click, and select **Mark Directory as** -> **Excluded**. As a result, you will see a configured project:
+Then, you will need to exclude all directories that don't contain Python code (in an empty Apolo project, only the `modules` folder will contain code). PyCharm doesn't synchronize excluded directories. Select all directories to exclude, right-click, and select **Mark Directory as** -> **Excluded**. As a result, you will see a configured project:
 
 ![](<../../.gitbook/assets/image (243).png>)
 
-Run these commands to upload your code to the Neuro Platform storage:
+Run these commands to upload your code to the platform storage:
 
 ```bash
-> neuro-flow mkvolumes
-> neuro-flow upload ALL
+> apolo-flow mkvolumes
+> apolo-flow upload ALL
 ```
 
-Now, we are ready to start a GPU-powered development job on the Neuro Platform. Run the following command:
+Now, we are ready to start a GPU-powered development job on the platform. Run the following command:
 
-```bash
-> neuro-flow run remote_debug
-```
+<pre class="language-bash"><code class="lang-bash"><strong>> apolo-flow run remote_debug
+</strong></code></pre>
 
 ![](<../../.gitbook/assets/image (249).png>)
 
-This command starts a `remote_debug` job on the Neuro Platform. This job uses the cluster's default preset and forwards the local port 2211 to the job's SSH port. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed. You can use `neuro-flow kill remote_debug` to kill the job you created in the previous step or `neuro-flow kill ALL` to kill all your running jobs.
+This command starts a `remote_debug` job on the platform. This job uses the user's default preset and forwards the local port 2211 to the job's SSH port. All running jobs consume your quota, so please _don't forget to terminate your jobs_ when they are no longer needed. You can use `apolo-flow kill remote_debug` to kill the job you created in the previous step or `apolo-flow kill ALL` to kill all your running jobs.
 
 Then go back to the PyCharm project and navigate to **Preferences** -> **Project** -> **Project interpreter** (you can also search for "interpreter"). Click the **gear icon** to view the project interpreter options and select **Add...** In the new window, select **SSH Interpreter** and set up the following configuration:
 
@@ -79,7 +73,7 @@ In the new window, specify the paths for the interpreter and synced folders:
 
 ```bash
 Interpreter: /usr/bin/python
-Sync folders: <Project root> -> /neuro pycharm
+Sync folders: <Project root> -> /apolo_pycharm
 ```
 
 Note that, within the job, your project's root folder is available at the root of the filesystem: `/{project_name}` .&#x20;
@@ -92,7 +86,7 @@ Click **OK**.
 
 Once you apply the remote interpreter configuration, PyCharm will start file synchronization.
 
-Your PyCharm project is now configured to work with a remote Python interpreter running in a Neu.ro job.&#x20;
+Your PyCharm project is now configured to work with a remote Python interpreter running in a job.&#x20;
 
 ## Debugging
 

@@ -1,6 +1,6 @@
 # Testing Models with Locust
 
-[Locust](https://locust.io/) is an open-source load testing tool. You can use it in conjunction with Neu.ro to test your models and make sure they work as expected before deploying them to production.
+[Locust](https://locust.io/) is an open-source load testing tool. You can use it in conjunction with platform to test your models and make sure they work as expected before deploying them to production.
 
 ## Using Locust with the platform
 
@@ -9,24 +9,24 @@
 Before testing the model with Locust, you will need to make a test deployment via MLflow. To do this, you will need to run the following command:
 
 ```
-$ neuro-flow run deploy_inference_platform --param run_id <run-id>
+$ apolo-flow run deploy_inference_platform --param run_id <run-id>
 ```
 
 You can check the required run ID in MLflow:
 
 ![](<../../.gitbook/assets/image (221).png>)
 
-By running the `deploy_inference_platform` job, you gain access to the target model's binary and deploy it to the Neu.ro cluster.
+By running the `deploy_inference_platform` job, you gain access to the target model's binary and deploy it to the platform cluster.
 
 Once the job is running, it will also generate a predictable URI which you can later use to access the model in Locust.
 
 ### Running Locust
 
-You can specify how the Neu.ro platform will use Locust via the `.neuro/live.yml` file in the project's root folder.
+You can specify how the platform will use Locust via the `.neuro/live.yml` file in the project's root folder.
 
 In the `jobs` section of the `live.yml` file, you will find a default `locust` job description that looks like this:
 
-```
+```yaml
 locust:
     image: locustio/locust:1.4.1
     name: $[[ flow.title ]]-locust
@@ -59,7 +59,7 @@ You can always fine-tune the job depending on your needs by changing the values 
 To run a `locust` job, execute the following:
 
 ```
-$ neuro-flow run locust
+$ apolo-flow run locust
 ```
 
 This job will use a `locust.py` file specified in the `cmd` section of the job definition. This file will tell Locust what specific tests to run and how to run them. You can [learn more about writing Locust files here](https://docs.locust.io/en/stable/writing-a-locustfile.html).

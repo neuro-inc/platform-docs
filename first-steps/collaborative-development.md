@@ -2,11 +2,11 @@
 
 ## Introduction
 
-As you already [know](getting-started.md#understanding-core-concepts), the core concepts in Neu.ro are _jobs_, _storage_, and _environments_.
+As you already [know](getting-started.md#understanding-core-concepts), the core concepts in Apolo are _jobs_, _storage_, and _environments_.
 
 You can share a job, a path on the storage, or an image on the platform registry with your teammates, granting them permission to read, update, or even remove this entity.
 
-We recommend keeping the neuro-flow's flow code in a Git repository. In this case, each teammate will have a local copy of the repository and may run jobs independently. To set up your flow, please follow these steps.
+We recommend keeping the apolo-flow's flow code in a Git repository. In this case, each teammate will have a local copy of the repository and may run jobs independently. To set up your flow, please follow these steps.
 
 ## Initiating a new flow
 
@@ -35,32 +35,17 @@ You can upload data to your platform storage both through the CLI and through th
 
 {% tabs %}
 {% tab title="CLI" %}
-To upload data through the CLI, use the `neuro cp` command. For example:
+To upload data through the CLI, use the `apolo cp` command. For example:
 
 ```
-$ neuro cp -r <local-folder-with-data> storage:cifar-10
+$ apolo cp -r <local-folder-with-data> storage:cifar-10
 ```
 
-This will upload data from your local folder to the `cifar-10` folder on your platform storage.
+This will upload data from your local folder to the `cifar-10` folder on platform storage.
 {% endtab %}
 
-{% tab title="Web UI" %}
-To upload data through the Web UI, you will first need to open the Filebrowser. To do this, click **RUN A JOB** in the **Storage browser** widget:
-
-![](<../.gitbook/assets/image (254).png>)
-
-After that, click **RUN** in the new window:\
-
-
-![](<../.gitbook/assets/image (245).png>)
-
-Once the Filebrowser is opened, navigate to the folder you want to upload your data to and click the **Upload** icon:
-
-![](<../.gitbook/assets/zobrazhennya (29).png>)
-
-Then, select the files or folder you want to upload:
-
-![](<../.gitbook/assets/zobrazhennya (34).png>)
+{% tab title="Web APP" %}
+To upload your data via web application, open "files" application and drag & drop your data into the needed folder, or click "upload" button.
 {% endtab %}
 {% endtabs %}
 
@@ -68,10 +53,10 @@ After you have your files uploaded to the platform storage, you can share them w
 
 {% tabs %}
 {% tab title="CLI" %}
-You can give permanent access to folders and files through the CLI with the help of the `neuro share` command.&#x20;
+You can give permanent access to folders and files through the CLI with the help of the `apolo share` command.&#x20;
 
 ```
-$ neuro share storage:cifar-10 alice manage
+$ apolo share storage:cifar-10 alice manage
 ```
 
 This will share the `cifar-10` storage folder with Alice and give her `manage`-level access to it (this means she will be able to read, change, and delete files in this folder).
@@ -107,7 +92,7 @@ To create a temporary link, specify the required time period and click the **Cre
 
 ### Buckets
 
-You can use AWS or GCP buckets to store the data outside the Neu.ro platform. In this case, you need to add your access tokens to the flow's `config` folder according to [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) and [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp) guides. Note that Git doesn't track these tokens, so your teammates also have to put their tokens in their local copies of the flow.
+You can use AWS or GCP buckets to store the data outside the Apolo platform. In this case, you need to add your access tokens to the flow's `config` folder according to [AWS](https://docs.neu.ro/toolbox/accessing-object-storage-in-aws) and [GCP](https://docs.neu.ro/toolbox/accessing-object-storage-in-gcp) guides. Note that Git doesn't track these tokens, so your teammates also have to put their tokens in their local copies of the flow.
 
 ### Public resources
 
@@ -117,9 +102,9 @@ Your data may also be available at some public resource that doesn’t require a
 
 Now all your teammates can clone the flow configuration and start working on it in their local copies. Here are some steps every teammate should follow independently.
 
-* To set up the working environment, run `neuro-flow build train` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).&#x20;
-* To run a Jupyter Notebooks session, run `neuro-flow run jupyter`. Notebooks are saved in the `<flow>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `neuro-flow download notebooks`.
-* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `neuro-flow run train`. For example:
+* To set up the working environment, run `apolo-flow build train` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).&#x20;
+* To run a Jupyter Notebooks session, run `apolo-flow run jupyter`. Notebooks are saved in the `<flow>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `apolo-flow download notebooks`.
+* To run training from source code, update `.neuro/live.yaml` for your `train` job and run `apolo-flow run train`. For example:
 
 ```
 jobs:
@@ -129,7 +114,7 @@ jobs:
         python $[[ volumes.code.mount ]]/train.py
 ```
 
-You can get more information about the Neu.ro flow's functionality in the `HELP.md` file in your flow folder.
+You can get more information about the apolo-flow's functionality in the `HELP.md` file in your flow folder.
 
 ## Sharing running jobs&#x20;
 
@@ -144,9 +129,9 @@ You can view the IDs and names of currently running jobs available to you both i
 
 {% tabs %}
 {% tab title="CLI" %}
-To view the list of currently running jobs, run `neuro ps`.&#x20;
+To view the list of currently running jobs, run `apolo ps`.&#x20;
 
-You can also check a particular job's status `neuro status <my-cool-job>`.
+You can also check a particular job's status `apolo status <my-cool-job>`.
 {% endtab %}
 
 {% tab title="Web UI" %}
@@ -165,13 +150,13 @@ Clicking the job ID will open the **Job Details** window.
 To share the `jupyter-awesome-project` job with an ID of `job-fb835ab1-5285-4360-8ee1-880a8ebf824c` with Alice (where `awesome-project` is your project's slug), run:
 
 ```
-$ neuro share job:job-fb835ab1-5285-4360-8ee1-880a8ebf824c alice read
+$ apolo share job:job-fb835ab1-5285-4360-8ee1-880a8ebf824c alice read
 ```
 
 You can also share jobs using their names:
 
 ```
-$ neuro share job:jupyter-awesome-project alice read
+$ apolo share job:jupyter-awesome-project alice read
 ```
 
 However, keep in mind that different runs of the same job can have the same name.
@@ -192,16 +177,16 @@ This allows Alice to access this job either via its ID or its full URI. The URI 
 
 ```
 # read the logs
-neuro logs job://default/bob/jupyter-awesome-project
-neuro logs job-fb835ab1-5285-4360-8ee1-880a8ebf824c   
+apolo logs job://default/bob/jupyter-awesome-project
+apolo logs job-fb835ab1-5285-4360-8ee1-880a8ebf824c   
 
 # run the interactive bash session:
-neuro exec job://default/bob/jupyter-awesome-project bash  
-neuro exec job-fb835ab1-5285-4360-8ee1-880a8ebf824c bash   
+apolo exec job://default/bob/jupyter-awesome-project bash  
+apolo exec job-fb835ab1-5285-4360-8ee1-880a8ebf824c bash   
     
 # open web interface in the default web browser:
-neuro browse job://default/bob/jupyter-awesome-project 
-neuro browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
+apolo browse job://default/bob/jupyter-awesome-project 
+apolo browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 ```
 
 Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can monitor the job's logs or work with it there.
@@ -213,7 +198,7 @@ You can instantly share a new job by adding `--share <username>` when running it
 There is also a shortcut for sharing all your jobs (past, current, and future ones alike) with your teammates in the CLI:
 
 ```
-$ neuro share job: alice read
+$ apolo share job: alice read
 ```
 
 ## Sharing Docker images&#x20;
@@ -232,10 +217,10 @@ If the image is not public, you need to make it available to your teammates:
 
 ```
 # upload to your registry:
-$ neuro image push project-specific-docker-image
+$ apolo image push project-specific-docker-image
 
 # share with your teammates:
-$ neuro share image:project-specific-docker-image alice read
+$ apolo share image:project-specific-docker-image alice read
 
 # update the .neuro/live.yaml file with the full URI of your image:
 images:

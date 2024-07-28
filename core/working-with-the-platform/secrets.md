@@ -1,15 +1,15 @@
 # Secrets
 
-Secrets provide a way to store confidential data on Neu.ro, be it passwords, access keys, tokens, etc. You can use secrets in jobs to securely access some external services. Neu.ro secrets are based [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/). You can manage secrets both through Neu.ro CLI and the Web UI.
+Secrets provide a way to store confidential data on Apolo, be it passwords, access keys, tokens, etc. You can use secrets in jobs to securely access some external services. Apolo secrets are based [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/). You can manage secrets both through Apolo CLI and the Web UI.
 
 ### Creating secrets
 
 #### Creating secrets through the CLI
 
-To create a secret from the Neu.ro CLI, use the `neuro secret add` command:
+To create a secret from the Apolo CLI, use the `apolo secret add` command:
 
 ```
-> neuro secret add secret-password p@$$w0rd123
+> apolo secret add secret-password p@$$w0rd123
 ```
 
 This will create a secret with a key _secret-password_ and a value of _p@\$$w0rd123_.
@@ -17,14 +17,14 @@ This will create a secret with a key _secret-password_ and a value of _p@\$$w0rd
 You can also point to an existing file with the required value when creating a secret by using the `@` notation:
 
 ```
-> neuro secret add secret-password @path/to/secret/file.txt
+> apolo secret add secret-password @path/to/secret/file.txt
 ```
 
 #### Creating secrets through the Web UI
 
-To create a secret from the Neu.ro Web UI:
+To create a secret from the Apolo Web UI:
 
-* Log in to Neu.ro&#x20;
+* Log in to Apolo console&#x20;
 * Go to the **Secrets** tab:
 
 ![](<../../.gitbook/assets/image (234) (1).png>)
@@ -65,7 +65,7 @@ Now, depending on which method you chose, you can access the secret from within 
 
 To use a secret through the Web UI:
 
-* Log in to Neu.ro&#x20;
+* Log in to platform console&#x20;
 * On your dashboard, click **RUN A JOB** on a widget you want to work with. We'll use **Terminal** in this example:
 
 ![](<../../.gitbook/assets/image (256).png>)
@@ -82,21 +82,21 @@ To use a secret through the Web UI:
 
 ### Sharing secrets
 
-You can share secrets through the CLI by using the `neuro acl grant` command. The syntax is `neuro acl grant secret:<key> <username> <access-level>`. For example:
+You can share secrets through the CLI by using the `apolo acl grant` command. The syntax is `apolo acl grant secret:<key> <username> <access-level>`. For example:
 
 ```
-> neuro acl grant secret:secret-password bob read
+> apolo acl grant secret:secret-password bob read
 ```
 
 This will give Bob the access to use the `secret-password` secret in their jobs.
 
-You can also use the `neuro share` command as an alias for `neuro acl grant`:
+You can also use the `apolo share` command as an alias for `apolo acl grant`:
 
 ```
-> neuro share secret:secret-password bob
+> apolo share secret:secret-password bob
 ```
 
-Keep in mind that, at this point in time, secret sharing is implemented in such a way that Bob won't be able to see this secret in their list of secrets when running `neuro secret ls`. To check if they have access rights to use this secret, Bob will need to run `neuro acl list` and search the output for the corresponding secret's URI. For example, if the secret was created by Alice, the URI will look like this:
+Keep in mind that, at this point in time, secret sharing is implemented in such a way that Bob won't be able to see this secret in their list of secrets when running `apolo secret ls`. To check if they have access rights to use this secret, Bob will need to run `apolo acl list` and search the output for the corresponding secret's URI. For example, if the secret was created by Alice, the URI will look like this:
 
 ```
 secret://default/alice/secret-password
@@ -106,16 +106,16 @@ secret://default/alice/secret-password
 
 #### Deleting secrets through the CLI
 
-To delete a secret, run the `neuro secret rm` command:
+To delete a secret, run the `apolo secret rm` command:
 
 ```
-> neuro secret rm secret-password
+> apolo secret rm secret-password
 ```
 
-To check that the secret was removed, run the `neuro secret ls` command to list all your current secrets:
+To check that the secret was removed, run the `apolo secret ls` command to list all your current secrets:
 
 ```
-> neuro secret ls
+> apolo secret ls
 
   KEY
 ╶─────────────╴
