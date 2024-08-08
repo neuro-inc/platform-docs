@@ -11,11 +11,11 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 ## Installing the CLI
 
-[Web Terminal](https://console.apolo.us/apps/shell/install) application doesn't require installation and can quickly get you familiar with Apolo, allowing you to work with the platform in a browser.
+[Apolo Console](https://console.apolo.us/apps/shell/install) application doesn't require installation and can quickly get you familiar with Apolo, allowing you to work with the platform in a browser.
 
 However, installing Apolo CLI locally may prove more effective for long-term use:
 
-* You won't need to pay for simply running the job like you do in Web UI.
+* You won't need to pay for simply running the job like you do in Console.
 * Your source code and other local files will be saved directly on your machine.
 
 ### Installation instructions
@@ -81,9 +81,9 @@ To make sure that all commands you can find in our documentation work properly, 
 {% endtab %}
 {% endtabs %}
 
-## Understanding the core concepts
+## Understanding the main concepts
 
-On the **Apolo Core** level, you will work with jobs, environments, and storage. To be more specific, a job (an execution unit) runs in a given environment (Docker container) on a given preset (a combination of CPU, GPU, and memory resources allocated for this job) with several storage instances (block or object storage) attached.
+On the **Apolo** level, you will work with jobs, environments, and storage. To be more specific, a job (an execution unit) runs in a given environment (Docker container) on a given preset (a combination of CPU, GPU, and memory resources allocated for this job) with several storage instances (block or object storage) attached.
 
 Here are some examples.
 
@@ -148,7 +148,7 @@ $ apolo ls storage:demo
 
 ## Developing on GPU with Jupyter Notebooks
 
-Development in Jupyter Notebooks is a good example of how the Apolo Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the web UI, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter) and is a part of the Apolo Toolbox. This template provides the basic necessary folder structure and integrations with several recommended tools.
+Development in Jupyter Notebooks is a good example of how the Apolo Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the Console, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter) and is a part of the Apolo Toolbox. This template provides the basic necessary folder structure and integrations with several recommended tools.
 
 ### Initializing a Apolo cookiecutter flow
 

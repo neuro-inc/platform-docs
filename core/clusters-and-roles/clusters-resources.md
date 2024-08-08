@@ -12,7 +12,7 @@ You can use one cluster at a time and switch between clusters. This tutorial wil
 
 Each cluster comes with its own storage, registry, resource presets and other services.&#x20;
 
-You can view information about your current cluster both in the CLI and in the Web UI:&#x20;
+You can view information about your current cluster both in the CLI and in the Apolo Console:&#x20;
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -49,7 +49,7 @@ Resource Presets:
 ```
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
 
 ![](<../../.gitbook/assets/image (144).png>)
@@ -58,7 +58,7 @@ You can view the current cluster's name, the list of available presets, as well 
 
 ### **How can I view all my clusters and switch my current cluster?**
 
-You can view the list of available clusters and switch between them both in the CLI and in the Web UI:
+You can view the list of available clusters and switch between them both in the CLI and in the Apolo Console:
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -119,7 +119,7 @@ The current cluster is onprem-poc
 ```
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 Use the **Cluster** drop-down list to view available clusters and switch between them:
 
 ![](<../../.gitbook/assets/image (243) (1).png>)
@@ -130,11 +130,11 @@ Use the **Cluster** drop-down list to view available clusters and switch between
 
 Usually, you are assigned a computation quota in term of credits. Those credits are consumed whenever you run a job. Credits are cluster-bound which means, you have different balances in different clusters.
 
-You can view the remaining credits on your Web UI dashboard. The `apolo config show` command also shows the amount of credits left as part of its output too.
+You can view the remaining credits on your Apolo Console dashboard. The `apolo config show` command also shows the amount of credits left as part of its output too.
 
 ### How can I request for more credits?
 
-You can top up your credits by clicking the **Credits** button on the Web UI dashboard.
+You can top up your credits by clicking the **Credits** button on the Apolo Console dashboard.
 
 You can also contact [support@apolo.us](mailto:support@apolo.us) or corresponding cluster provider to learn about latest discounts and promotions, and then request the top up.
 

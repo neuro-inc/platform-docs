@@ -31,7 +31,7 @@ You have a few options for storing your flow data in a shared space.
 
 ### Platform storage
 
-You can upload data to your platform storage both through the CLI and through the Web UI.&#x20;
+You can upload data to your platform storage both through the CLI and through the Apolo Console.&#x20;
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -44,12 +44,12 @@ $ apolo cp -r <local-folder-with-data> storage:cifar-10
 This will upload data from your local folder to the `cifar-10` folder on platform storage.
 {% endtab %}
 
-{% tab title="Web APP" %}
+{% tab title="Console" %}
 To upload your data via web application, open "files" application and drag & drop your data into the needed folder, or click "upload" button.
 {% endtab %}
 {% endtabs %}
 
-After you have your files uploaded to the platform storage, you can share them with your teammates. Sharing is implemented differently in the CLI and the Web UI.
+After you have your files uploaded to the platform storage, you can share them with your teammates. Sharing is implemented differently in the CLI and the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -73,8 +73,8 @@ After that, you need to update the `data/remote:` value in the flow's `.neuro/li
 After that, your data becomes available in the `/data` folder in the local file system of the jobs you and your teammates work with.
 {% endtab %}
 
-{% tab title="Web UI" %}
-Sharing folders and files through the Filebrowser gives temporary access to them through the Web UI to any user with a link to them.
+{% tab title="Console" %}
+Sharing folders and files through the Filebrowser gives temporary access to them through the Console to any user with a link to them.
 
 Select the files and/or folders you want to share in the Filebrowser and click the **Share** icon:
 
@@ -125,7 +125,7 @@ The ID is a job's unique identifier, while the name may repeat for different job
 
 ### Viewing job IDs and names
 
-You can view the IDs and names of currently running jobs available to you both in the CLI and the Web UI.
+You can view the IDs and names of currently running jobs available to you both in the CLI and the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -134,7 +134,7 @@ To view the list of currently running jobs, run `apolo ps`.&#x20;
 You can also check a particular job's status `apolo status <my-cool-job>`.
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 You can view the IDs and names of all currently running jobs in the left part of the **Jobs** section. Make sure the job filter is set to **Running**.
 
 Clicking the job ID will open the **Job Details** window.
@@ -162,7 +162,7 @@ $ apolo share job:jupyter-awesome-project alice read
 However, keep in mind that different runs of the same job can have the same name.
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 To share a job, click **Share** in the drop-down list to its right:
 
 ![](<../.gitbook/assets/image (212).png>)
@@ -189,7 +189,7 @@ apolo browse job://default/bob/jupyter-awesome-project
 apolo browse job-fb835ab1-5285-4360-8ee1-880a8ebf824c
 ```
 
-Also, Alice gets access to this job in her [Web UI](https://app.neu.ro/) and can monitor the job's logs or work with it there.
+Also, Alice gets access to this job in her [Apolo Console](https://app.neu.ro/) and can monitor the job's logs or work with it there.
 
 Please note that, if someone gets `write`-level access to your Jupyter Notebooks job, they can modify the notebooks on your platform storage. Therefore, to update those notebooks in the Git repository, you have to download them, commit, and push.
 

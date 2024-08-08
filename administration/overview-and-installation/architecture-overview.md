@@ -61,14 +61,14 @@ An API for sending email/Slack notifications for events such as job status trans
 
 **Apps API**
 
-An API for running a curated set of applications from within the Web UI.\
+An API for running a curated set of applications from within the Apolo Console.\
 
 
 ![](<../../.gitbook/assets/neu.ro-architecture-overview (1) (1).png>)
 
-**Web UI**
+**Apolo Console**
 
-A Web UI for managing compute workloads, running applications, managing secrets, checking user quotas, etc.
+A Apolo Console for managing compute workloads, running applications, managing secrets, checking user quotas, etc.
 
 **Apolo CLI**
 
@@ -85,7 +85,7 @@ A collection of useful tools based on Apolo CLI and SDK, e.g., transfer of stora
 
 **Web Documentation**
 
-An up-to-date user documentation for the Web UI and CLIs with usage examples and other useful information.\
+An up-to-date user documentation for the Apolo Console and CLIs with usage examples and other useful information.\
 
 
 ![](<../../.gitbook/assets/neu.ro-architecture-overview-2 (1).png>)

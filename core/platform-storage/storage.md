@@ -1,6 +1,6 @@
 # Storage
 
-Apolo provides storage to host files that are required to run your jobs. All users on the platform can access the platform storage to manage data, code, and artifacts within their projects. Each storage is specific to its cluster, and you cannot reuse files between clusters. You can manage your storage either from the Web UI or the CLI.&#x20;
+Apolo provides storage to host files that are required to run your jobs. All users on the platform can access the platform storage to manage data, code, and artifacts within their projects. Each storage is specific to its cluster, and you cannot reuse files between clusters. You can manage your storage either from the Apolo Console or the CLI.&#x20;
 
 ## The structure of platform storage
 
@@ -26,13 +26,13 @@ Used:  2.0T
 Free:  975.2G
 ```
 
-## How do I manage files in the web UI?&#x20;
+## How do I manage files in the Apolo Console?&#x20;
 
 You can use built-in Files app available in Apolo to manage files in storage. Intuitive drag\&drop, navigation and media files preview is available there.&#x20;
 
 ## How do I manage files in the CLI?&#x20;
 
-You can manage your files and folders using the `apolo storage` command. The Apolo CLI lets you perform all operations with your files and folders that are available from the web UI.
+You can manage your files and folders using the `apolo storage` command. The Apolo CLI lets you perform all operations with your files and folders that are available from the Apolo Console.
 
 ### Viewing folders and files&#x20;
 
@@ -77,7 +77,7 @@ You can create folders in the storage from the CLI by using the command:&#x20;
 
 `apolo storage mkdir [OPTIONS] PATHS`
 
-This works the same way as in the web UI, but you can also create folders in any path without having to navigate to that path.
+This works the same way as in the Apolo Console, but you can also create folders in any path without having to navigate to that path.
 
 **Sample command:**
 
@@ -85,7 +85,7 @@ This works the same way as in the web UI, but you can also create folders in any
 $ apolo storage mkdir -p storage:nero-assistant/ModelCode/VoiceExperiment
 ```
 
-The folder is created and you can verify this by running the `apolo storage ls` command or in the Web UI.
+The folder is created and you can verify this by running the `apolo storage ls` command or in the Apolo Console.
 
 ### Moving files between the storage and my local file system&#x20;
 

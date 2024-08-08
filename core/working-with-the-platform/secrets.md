@@ -1,6 +1,6 @@
 # Secrets
 
-Secrets provide a way to store confidential data on Apolo, be it passwords, access keys, tokens, etc. You can use secrets in jobs to securely access some external services. Apolo secrets are based [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/). You can manage secrets both through Apolo CLI and the Web UI.
+Secrets provide a way to store confidential data on Apolo, be it passwords, access keys, tokens, etc. You can use secrets in jobs to securely access some external services. Apolo secrets are based [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/). You can manage secrets both through Apolo CLI and the Apolo Console.
 
 ### Creating secrets
 
@@ -20,9 +20,9 @@ You can also point to an existing file with the required value when creating a s
 > apolo secret add secret-password @path/to/secret/file.txt
 ```
 
-#### Creating secrets through the Web UI
+#### Creating secrets through the Apolo Console
 
-To create a secret from the Apolo Web UI:
+To create a secret from the Apolo Apolo Console:
 
 * Log in to Apolo console&#x20;
 * Go to the **Secrets** tab:
@@ -43,7 +43,7 @@ The new secret will be added to the list of your secrets:
 
 ### Using secrets
 
-There are two ways to use secrets in jobs - as a file and as an environment variable. Let's look how to do this in the CLI and in the Web UI.
+There are two ways to use secrets in jobs - as a file and as an environment variable. Let's look how to do this in the CLI and in the Apolo Console.
 
 #### Using secrets through the CLI
 
@@ -61,9 +61,9 @@ To use a secret as an environment variable, declare it through the `--env` param
 
 Now, depending on which method you chose, you can access the secret from within your job by either referring to its location `/var/secrets/secret-password.txt` or reading the value of the `mypass` environment variable.
 
-#### Using secrets through the Web UI
+#### Using secrets through the Apolo Console
 
-To use a secret through the Web UI:
+To use a secret through the Apolo Console:
 
 * Log in to platform console&#x20;
 * On your dashboard, click **RUN A JOB** on a widget you want to work with. We'll use **Terminal** in this example:
@@ -124,7 +124,7 @@ To check that the secret was removed, run the `apolo secret ls` command to list 
   wandb-token
 ```
 
-#### Deleting secrets through the Web UI
+#### Deleting secrets through the Apolo Console
 
 * Go to the **Secrets** tab.
 * Click the **trash bin** icon to the right of the secret you want to delete:

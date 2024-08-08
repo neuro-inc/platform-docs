@@ -4,7 +4,7 @@ Jupyter Notebooks is a powerful computational notebook tool that lets you create
 
 ## Introduction
 
-This tutorial demonstrates how to run a Jupyter Notebook instance in the Web UI. You will start a new instance of Jupyter Notebook and create a Python 3 notebook. You will also know how to view or kill currently running instances.
+This tutorial demonstrates how to run a Jupyter Notebook instance in the Apolo Console. You will start a new instance of Jupyter Notebook and create a Python 3 notebook. You will also know how to view or kill currently running instances.
 
 ## Create a new Jupyter Notebook instance
 

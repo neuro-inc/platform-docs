@@ -117,8 +117,8 @@ Your training script here. Data directory: /data
 ```
 {% endtab %}
 
-{% tab title="Web UI" %}
-To run a job in Web UI, you'll need to use the **Custom Job** widget on your dashboard.&#x20;
+{% tab title="Apolo Console" %}
+To run a job in Apolo Console, you'll need to use the **Custom Job** widget on your dashboard.&#x20;
 
 First, click **RUN JOB**:&#x20;
 
@@ -324,7 +324,7 @@ $ apolo job logs filebrowser-49249
 2021/01/12 21:11:23 accept tcp [::]:80: use of closed network connection
 ```
 
-### Can I manage jobs from the web UI?
+### Can I manage jobs from the Apolo Console?
 
 Apolo provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Apolo web interface lists all the jobs.
 
@@ -352,7 +352,7 @@ The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in th
 
 ### Monitoring jobs
 
-You can monitor various parameters of your currently running jobs such as CPU and GPU usage, network traffic, prices, etc., in the Web UI.
+You can monitor various parameters of your currently running jobs such as CPU and GPU usage, network traffic, prices, etc., in the Apolo Console.
 
 All of this information is accessible in the [Grafana](https://grafana.com/)-based **User Jobs Monitor** feature. To access this feature, go to the **Information** tab and click **USER JOBS MONITOR**:\
 &#x20;&#x20;
