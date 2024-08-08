@@ -1,6 +1,6 @@
 # Managing Presets
 
-Once your cluster's node pools are set up, you can configure resource presets that will be available for you and your team during the work process. This can be done both through the CLI and in the Web UI.
+Once your cluster's node pools are set up, you can configure resource presets that will be available for you and your team during the work process. This can be done both through the CLI and in the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -43,7 +43,7 @@ You can delete resource presets by using the `apolo admin remove-resource-preset
 ```
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 ### Checking your cluster's presets
 
 You can view your current cluster's resource presets in the **Information** and **Cluster management** tabs:

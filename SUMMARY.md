@@ -15,7 +15,7 @@
   * [Apolo Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
   * [Python SDK Reference](https://apolo-sdk.readthedocs.io)
 
-## Apolo Core <a href="#core" id="core"></a>
+## Apolo Console <a href="#core" id="core"></a>
 
 * [Platform Overview](core/platform-overview.md)
 * [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)
@@ -35,13 +35,16 @@
 * [Specific Tasks](core/specific-tasks/README.md)
   * [Accessing a job protected by platform SSO](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
 
-## Apolo Web UI <a href="#web" id="web"></a>
+<!--
+## Apolo Apolo Console <a href="#web" id="web"></a>
 
 * [Terminal](web/terminal.md)
 * [Working with Jupyter](web/working-with-jupyter/README.md)
   * [Jupyter Notebooks](web/working-with-jupyter/jupyter-notebooks.md)
   * [Jupyter Lab](web/working-with-jupyter/jupyterlab.md)
+-->
 
+<!--
 ## Apolo Toolbox <a href="#toolbox" id="toolbox"></a>
 
 * [Remote Debugging](toolbox/remote-debugging/README.md)
@@ -69,6 +72,7 @@
   * [Distributed Training in PyTorch](toolbox/distributed-workloads/distributed-training-in-pytorch.md)
   * [Running Apache Spark workloads](toolbox/distributed-workloads/running-apache-spark-workloads.md)
 * [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
+-->
 
 ## ADMINISTRATION
 

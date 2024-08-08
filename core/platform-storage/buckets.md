@@ -35,7 +35,7 @@ $ apolo blob rmbucket <bucket-name>
 You can find more info about bucket management commands in the [blob](https://app.gitbook.com/s/-MOkWy7dB5MDbkSII8iF/commands/blob "mention") .
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 You can view available buckets in the **Buckets** tab of your dashboard:
 
 ![](<../../.gitbook/assets/зображення (4).png>)

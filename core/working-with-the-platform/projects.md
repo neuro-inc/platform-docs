@@ -83,7 +83,7 @@ You can learn more about the batch mode in the [Batch workflows](https://app.git
 
 ## Monitoring flows
 
-You can monitor your flows both via the CLI and in the Web UI.
+You can monitor your flows both via the CLI and in the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -126,7 +126,7 @@ This will show which tasks were executed in this bake, their statuses, IDs, star
 You can learn more about bake inspection [neuro-flow inspect](https://app.gitbook.com/s/-MMLOF\_FqiWBMcOdY8cj/cli#neuro-flow-inspect "mention").
 {% endtab %}
 
-{% tab title="Web UI" %}
+{% tab title="Apolo Console" %}
 You can view the list of your projects in the **Flows** tab:
 
 ![](<../../.gitbook/assets/image (142).png>)

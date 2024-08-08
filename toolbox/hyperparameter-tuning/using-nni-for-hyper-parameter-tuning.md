@@ -90,7 +90,7 @@ This command will:
 * Auto-generate a NNI configuration file for the master node pointing at the workers.
 * Run the training process and automatically open the NNI web interface in your browser.
 
-You can track experiment progress and intermediate results from this web UI. When the workers are done, you can get the final hyperparameter values and download the logs if needed.
+You can track experiment progress and intermediate results from this Apolo Console. When the workers are done, you can get the final hyperparameter values and download the logs if needed.
 
 ![NNI Hyperparameter Tuning GUI](../../.gitbook/assets/screen-shot-2020-05-12-at-12.43.02-pm.png)
 
