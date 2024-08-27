@@ -5,7 +5,7 @@
 There are two things you will need to do before you start working with Apolo:
 
 1. [Install the CLI client](getting-started.md#installing-the-cli).
-2. [Understand the platform's core concepts](getting-started.md#understanding-the-core-concepts).
+2. [Understand the platform's main concepts](getting-started.md#understanding-the-main-concepts).
 
 After this, you're free to explore the platform and it's functionality. As a good starting point, we've included a section about [development on GPU with Jupyter Notebooks](getting-started.md#developing-on-gpu-with-jupyter-notebooks).
 
@@ -13,10 +13,7 @@ After this, you're free to explore the platform and it's functionality. As a goo
 
 [Apolo Console](https://console.apolo.us/apps/shell/install) application doesn't require installation and can quickly get you familiar with Apolo, allowing you to work with the platform in a browser.
 
-However, installing Apolo CLI locally may prove more effective for long-term use:
-
-* You won't need to pay for simply running the job like you do in Console.
-* Your source code and other local files will be saved directly on your machine.
+Installing Apolo CLI locally can be more efficient for long-term use, as your source code and other local files will be stored directly on your machine. Additionally, using Apolo CLI provides you with more flexible and extensive functionality, allowing for greater control and customization of your development environment.
 
 ### Installation instructions
 
