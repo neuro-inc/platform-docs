@@ -8,7 +8,7 @@ You can also create new clusters, but this requires additional access. For more 
 
 You can use one cluster at a time and switch between clusters. This tutorial will helps you understand how you can manage resources.
 
-### **How can I view information about my current cluster?**
+### **How can I manage my clusters?**
 
 Each cluster comes with its own storage, registry, resource presets and other services.&#x20;
 
@@ -50,7 +50,7 @@ Resource Presets:
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-You can view the current cluster's name, the list of available presets, as well as your role on this cluster on the **Information** tab:
+You can view the current cluster's name on the top panel:
 
 ![](<../../.gitbook/assets/image (144).png>)
 {% endtab %}

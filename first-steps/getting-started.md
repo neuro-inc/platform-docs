@@ -148,7 +148,7 @@ $ apolo ls storage:demo
 
 ## Developing on GPU with Jupyter Notebooks
 
-Development in Jupyter Notebooks is a good example of how the Apolo Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the Console, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter) and is a part of the Apolo Toolbox. This template provides the basic necessary folder structure and integrations with several recommended tools.
+Development in Jupyter Notebooks is a good example of how the Apolo Platform can be used. While you can run a Jupyter Notebooks session in one command through CLI or in one click in the Console, we recommend project-based development. To simplify the process, we provide a project template which is based on the [**cookiecutter** package](https://github.com/cookiecutter/cookiecutter). This template provides the basic necessary folder structure and integrations with several recommended tools.
 
 ### Initializing a Apolo cookiecutter flow
 
