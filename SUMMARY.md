@@ -17,6 +17,29 @@
 
 ## Apolo Console <a href="#core" id="core"></a>
 
+* [Sign up, Login] (apolo-console/sign-up-login/README.md)
+  * [Organizations] apolo-console/sign-up-login/organizations.md
+  * [Projects] apolo-console/sign-up-login/projects.md
+* [Apps] (apolo-console/apps/README.md)
+  * [Terminal] (apolo-console/apps/terminal.md)
+  * [LLM Inference] (apolo-console/apps/llm-inference.md)
+  * [PostgreSQL] (apolo-console/apps/postgre-sql.md)
+  * [Text Embeddings Inference] (apolo-console/apps/text-embeddings-inference.md)
+  * [Jupyter Notebook] (apolo-console/apps/jupyter-notebook.md)
+  * [Jupyter Lab] (apolo-console/apps/jupyter-lab.md)
+  * [VS Code] (apolo-console/apps/vs-code.md)
+  * [PyCharm Community Edition] (apolo-console/apps/py-charm.md)
+  * [ML Flow] (apolo-console/apps/ml-flow.md)
+  * [Apolo Deploy] (apolo-console/apps/apolo-deploy.md)
+* [Files] (apolo-console/files.md)
+* [Buckets] (apolo-console/buckets.md)
+* [Disks] (apolo-console/disks.md)
+* [Images] (apolo-console/images.md)
+* [Secrets] (apolo-console/secrets.md)
+* [Jobs] (apolo-console/jobs.md)
+* [Flows] (apolo-console/flows.md)
+* 
+<!--
 * [Platform Overview](core/platform-overview.md)
 * [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)
   * [Clusters](core/clusters-and-roles/clusters-resources.md)
@@ -34,6 +57,7 @@
   * [Secrets](core/working-with-the-platform/secrets.md)
 * [Specific Tasks](core/specific-tasks/README.md)
   * [Accessing a job protected by platform SSO](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
+-->
 
 <!--
 ## Apolo Apolo Console <a href="#web" id="web"></a>
