@@ -50,9 +50,11 @@ Resource Presets:
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-You can view the current cluster's name on the top panel:
 
-![](<../../.gitbook/assets/image (144).png>)
+To view information about your current cluster in the Apolo Console, look at the top right corner of the screen. You will see a section labeled "Cluster" with the name of your current cluster (e.g., "default"). Clicking on the dropdown arrow next to the cluster name will provide more details about the current cluster.
+
+
+![](<../../.gitbook/assets/console_screenshots/cluster_inform.png>)
 {% endtab %}
 {% endtabs %}
 
@@ -120,9 +122,9 @@ The current cluster is onprem-poc
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-Use the **Cluster** drop-down list to view available clusters and switch between them:
+To view all your clusters and switch the current one, click on the dropdown arrow next to the cluster name in the top right corner. A menu will appear with all available clusters. Select the desired one to switch.
 
-![](<../../.gitbook/assets/image (243) (1).png>)
+![](<../../.gitbook/assets/console_screenshots/several_clusters.png>)
 {% endtab %}
 {% endtabs %}
 
