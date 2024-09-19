@@ -3,6 +3,7 @@ First of all you should create an account in [Apolo Console](https://console.apo
 1. Go to [Apolo Console](https://console.apolo.us); 
 
 ![](<../../.gitbook/assets/console_screenshots/sign-up.png>)
+
 2. Click "Sign-up" button;
 3. Enter your e-mail and create a password;
 4. Click "Continue" button;
@@ -25,6 +26,7 @@ In case of forgetting your password, follow this instruction:
 1. Click "Forgot password" button;
 
 ![](<../../.gitbook/assets/console_screenshots/forgot-pass.png>)
+
 2. Enter your email; 
 3. Follow the instructions which was sent to your e-mail.
 
