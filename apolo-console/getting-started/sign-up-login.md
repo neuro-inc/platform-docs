@@ -2,7 +2,7 @@
 First of all you should create an account in [Apolo Console](https://console.apolo.us):
 1. Go to [Apolo Console](https://console.apolo.us); 
 
-![](<../../.gitbook/assets/console_screenshots/sign-up.png>)
+![](<../../.gitbook/assets/console_screenshots/Sign-up.png>)
 
 2. Click "Sign-up" button;
 3. Enter your e-mail and create a password;
