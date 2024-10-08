@@ -26,84 +26,26 @@
   * [Pre-installed apps](apolo-console/apps/pre-installed/README.md)
     * [Files](apolo-console/apps/pre-installed/files.md)
     * [Buckets](apolo-console/apps/pre-installed/buckets.md)
-    * [Disks](apolo-console/apps/pre-installed/disks.md)
-    * [Images](apolo-console/apps/pre-installed/images.md)
-    * [Secrets](apolo-console/apps/pre-installed/secrets.md)
-    * [Jobs](apolo-console/apps/pre-installed/jobs.md)
-    * [Flows](apolo-console/apps/pre-installed/flows.md)
+    * [Disks](core/apps/pre-installed/disks.md)
+    * [Images](core/apps/pre-installed/images.md)
+    * [Secrets](core/apps/pre-installed/secrets.md)
+    * [Jobs](core/apps/pre-installed/jobs.md)
+    * [Flows](core/apps/pre-installed/flows.md)
   * [Available apps](apolo-console/apps/available-apps/README.md)
-    * [Terminal](apolo-console/apps/available-apps/terminal.md)
-    * [LLM Inference](apolo-console/apps/available-apps/llm-inference.md)
-    * [PostgreSQL](apolo-console/apps/available-apps/postgre-sql.md)
-    * [Text Embeddings Inference](apolo-console/apps/available-apps/text-embeddings-inference.md)
-    * [Jupyter Notebook](apolo-console/apps/available-apps/jupyter-notebook.md)
-    * [Jupyter Lab](apolo-console/apps/available-apps/jupyter-lab.md)
-    * [VS Code](apolo-console/apps/available-apps/vs-code.md)
-    * [PyCharm Community Edition](apolo-console/apps/available-apps/py-charm.md)
-    * [ML Flow](apolo-console/apps/available-apps/ml-flow.md)
-    * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
-  
+    * [Terminal](core/apps/available-apps/terminal.md)
+    * [LLM Inference](core/apps/available-apps/llm-inference.md)
+    * [PostgreSQL](core/apps/available-apps/postgresql.md)
+    * [Text Embeddings Inference](core/apps/available-apps/text-embeddings-inference.md)
+    * [Jupyter Notebook](core/apps/available-apps/jupyter-notebook.md)
+    * [Jupyter Lab](core/apps/available-apps/jupyter-lab.md)
+    * [VS Code](core/apps/available-apps/vs-code.md)
+    * [PyCharm Community Edition](core/apps/available-apps/pycharm-community-edition.md)
+    * [ML Flow](core/apps/available-apps/ml-flow.md)
+    * [Apolo Deploy](core/apps/available-apps/apolo-deploy.md)
+
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
 * [Installing CLI](apolo-cli/installing.md)
-<!--
-* [Platform Overview](core/platform-overview.md)
-* [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)
-  * [Clusters](core/clusters-and-roles/clusters-resources.md)
-  * [Organizations](core/clusters-and-roles/organizations.md)
-  * [Projects](core/clusters-and-roles/projects.md)
-  * [Roles](core/clusters-and-roles/roles.md)
-* [Platform Storage](core/platform-storage/README.md)
-  * [Storage](core/platform-storage/storage.md)
-  * [Disks](core/platform-storage/disks.md)
-  * [Buckets](core/platform-storage/buckets.md)
-* [Working with the Platform](core/working-with-the-platform/README.md)
-  * [Flows](core/working-with-the-platform/projects.md)
-  * [Environments (Docker images)](core/working-with-the-platform/environments-docker-images.md)
-  * [Jobs](core/working-with-the-platform/jobs.md)
-  * [Secrets](core/working-with-the-platform/secrets.md)
-* [Specific Tasks](core/specific-tasks/README.md)
-  * [Accessing a job protected by platform SSO](core/specific-tasks/accessing-a-job-hidden-behind-the-platforms-auth.md)
--->
-
-<!--
-## Apolo Apolo Console <a href="#web" id="web"></a>
-
-* [Terminal](web/terminal.md)
-* [Working with Jupyter](web/working-with-jupyter/README.md)
-  * [Jupyter Notebooks](web/working-with-jupyter/jupyter-notebooks.md)
-  * [Jupyter Lab](web/working-with-jupyter/jupyterlab.md)
--->
-
-<!--
-## Apolo Toolbox <a href="#toolbox" id="toolbox"></a>
-
-* [Remote Debugging](toolbox/remote-debugging/README.md)
-  * [Remote Debugging with PyCharm Professional](toolbox/remote-debugging/remote-debugging-with-pycharm-professional.md)
-  * [Remote Debugging with VS Code](toolbox/remote-debugging/remote-debugging-with-vs-code.md)
-* [Experiment Tracking](toolbox/experiment-tracking/README.md)
-  * [Experiment Tracking with TensorBoard](toolbox/experiment-tracking/experiment-tracking-with-tensorboard.md)
-  * [Experiment Tracking with Weights & Biases](toolbox/experiment-tracking/experiment-tracking-with-weights-and-biases.md)
-  * [Using MLFlow](toolbox/experiment-tracking/using-mlflow.md)
-* [Hyperparameter Tuning](toolbox/hyperparameter-tuning/README.md)
-  * [Hyperparameter Tuning with NNI](toolbox/hyperparameter-tuning/using-nni-for-hyper-parameter-tuning.md)
-  * [Hyperparameter Tuning with Weights & Biases](toolbox/hyperparameter-tuning/hyperparameter-tuning-with-weights-and-biases.md)
-* [Serving and Deploying](toolbox/serving-and-deploying/README.md)
-  * [Serving Models With Model Deployment Controller](toolbox/serving-and-deploying/serving-models-with-model-deployment-controller.md)
-  * [Deploying with Seldon](toolbox/serving-and-deploying/deploying-with-seldon.md)
-  * [Serving Models with TorchServe](toolbox/serving-and-deploying/serving-models-with-torch-serve.md)
-* [Working With the Sandbox](toolbox/working-with-the-sandbox/README.md)
-  * [Training Pipeline with Label Studio and Pachyderm](toolbox/working-with-the-sandbox/training-pipeline-with-label-studio-and-pachyderm.md)
-  * [Testing Models with Locust](toolbox/working-with-the-sandbox/testing-models-with-locust.md)
-  * [Running Elastic Horovod Training](toolbox/working-with-the-sandbox/running-elastic-horovod-training.md)
-  * [Deploying models with MLflow2Seldon](toolbox/working-with-the-sandbox/deploying-models-with-mlflow2seldon.md)
-  * [Running RAPIDS](toolbox/working-with-the-sandbox/running-rapids.md)
-  * [Model output explanation with SHAP](toolbox/working-with-the-sandbox/model-output-explanation-with-shap.md)
-* [Distributed workloads](toolbox/distributed-workloads/README.md)
-  * [Distributed Training in PyTorch](toolbox/distributed-workloads/distributed-training-in-pytorch.md)
-  * [Running Apache Spark workloads](toolbox/distributed-workloads/running-apache-spark-workloads.md)
-* [CI with GitHub Actions](toolbox/ci-with-github-actions.md)
--->
 
 ## ADMINISTRATION
 
