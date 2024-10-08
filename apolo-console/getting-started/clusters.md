@@ -136,7 +136,7 @@ You can view the remaining credits on your Apolo Console dashboard. The `apolo c
 
 ### How can I request for more credits?
 
-You can top up your credits by clicking the **Credits** button on the Apolo Console dashboard.
+You can top up your credits by clicking the **Credits** menu on the Apolo Console dashboard.
 
 You can also contact [support@apolo.us](mailto:support@apolo.us) or corresponding cluster provider to learn about latest discounts and promotions, and then request the top up.
 
