@@ -45,7 +45,7 @@
   
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
-* [Installing CLI](apolo-cli/installing)
+* [Installing CLI](apolo-cli/installing.md)
 <!--
 * [Platform Overview](core/platform-overview.md)
 * [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)
