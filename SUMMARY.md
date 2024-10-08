@@ -43,7 +43,9 @@
     * [ML Flow](apolo-console/apps/available-apps/ml-flow.md)
     * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
   
-  
+## Apolo CLI <a href="#cli" id="cli"></a>
+
+* [Installing CLI](apolo-cli/installing)
 <!--
 * [Platform Overview](core/platform-overview.md)
 * [Clusters, Organizations, Projects and Roles](core/clusters-and-roles/README.md)

@@ -1,4 +1,4 @@
-The Apolo console offers two categories of applications: [Pre-installed apps](pre-installed/README.md) and [Available Apps](available-apps/README.md).
+The Apolo console offers two categories of applications: [Pre-installed Apps](pre-installed/README.md) and [Available Apps](available-apps/README.md).
 
 ### Pre-installed Apps
 Pre-installed apps are essential tools that come standard with the Apolo console, giving ML engineers instant access to key functionalities and facilitating efficient processes without requiring any additional setup.
