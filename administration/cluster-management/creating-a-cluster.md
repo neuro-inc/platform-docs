@@ -19,7 +19,7 @@ Apart from the process mentioned above, there are other methods of setup:
 * Set up Apolo on an existing cluster provided by other cloud service providers.
 * Set up Apolo on-premise (or “bare metal”).
 
-For any of these other methods of setup, please [contact our team](mailto:team@neu.ro).
+For any of these other methods of setup, please [contact our team](mailto:support@apolo.us).
 
 ### Cluster configuration YAML&#x20;
 
@@ -97,7 +97,7 @@ To get information about available options for each of the cloud providers, run:
 
 `apolo admin show-cluster-options` .
 
-You can further update the `cluster.yml` file as per your requirements before you send it to us. If you have any issues updating the file, then [contact us](mailto:team@neu.ro). Once you are done updating the configuration file, you should send the cluster.yml file to the Apolo team for the cluster setup using the command:
+You can further update the `cluster.yml` file as per your requirements before you send it to us. If you have any issues updating the file, then [contact us](mailto:support@apolo.us). Once you are done updating the configuration file, you should send the cluster.yml file to the Apolo team for the cluster setup using the command:
 
 `apolo admin add-cluster <path/to/config>`
 
