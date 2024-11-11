@@ -42,6 +42,7 @@
     * [PyCharm Community Edition](core/apps/available-apps/pycharm-community-edition.md)
     * [ML Flow](core/apps/available-apps/ml-flow.md)
     * [Apolo Deploy](core/apps/available-apps/apolo-deploy.md)
+    * [Dify](core/apps/available-apps/dify.md)
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
