@@ -25,7 +25,7 @@
 * [Apps](apolo-console/apps/README.md)
   * [Pre-installed apps](apolo-console/apps/pre-installed/README.md)
     * [Files](apolo-console/apps/pre-installed/files.md)
-   <!-- * [Buckets](apolo-console/apps/pre-installed/buckets.md)
+    * [Buckets](apolo-console/apps/pre-installed/buckets.md)
     * [Disks](apolo-console/apps/pre-installed/disks.md)
     * [Images](apolo-console/apps/pre-installed/images.md)
     * [Secrets](apolo-console/apps/pre-installed/secrets.md)
@@ -42,7 +42,6 @@
     * [PyCharm Community Edition](apolo-console/apps/available-apps/py-charm.md)
     * [ML Flow](apolo-console/apps/available-apps/ml-flow.md)
     * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
-    * -->
   
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
