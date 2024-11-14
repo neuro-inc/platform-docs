@@ -1,7 +1,3 @@
----
-description: Open-source LLM app development platform
----
-
 # Dify
 
 Dify is an open-source development platform designed for building, managing, and deploying applications powered by large language models (LLMs). Dify provides an intuitive interface that combines essential features such as AI workflow, Retrieval-Augmented Generation (RAG) pipelines, agent-based capabilities, model management, and observability tools, all of which help users transition quickly from prototype to production.

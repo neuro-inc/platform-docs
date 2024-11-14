@@ -12,4 +12,4 @@
 | [PyCharm Community Edition](py-charm.md)                  | A Python IDE for data science and web development.                                                                                                                                                                  |
 | [ML Flow](ml-flow.md)                                     | A tool that streamlines the full lifecycle of machine learning projects, enhancing manageability, traceability, and reproducibility.                                                                                |
 | [Apolo Deploy](apolo-deploy.md)                           | A simple model deployment service leveraging Triton and MLflow as its core inference servers.                                                                                                                       |
-|[Dify](dify.md)                                            |  | 
+|[Dify](dify.md)                                            | Open-source LLM app development platform  | 
