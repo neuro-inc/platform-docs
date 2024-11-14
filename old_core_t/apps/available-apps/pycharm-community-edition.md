@@ -1,2 +1,0 @@
-# PyCharm Community Edition
-
