@@ -4,7 +4,7 @@ Files application is a file manager that allows you to manage your network stora
 
 Each organization is assigned a dedicated folder within the cluster, which serves as its primary storage location. Within this folder, individual subfolders are created for each project associated with the organization, ensuring organized access to project-specific files.
 
-![](<../../../.gitbook/assets/console_screenshots/FilesAppStructure.png>)
+![](<../../.gitbook/assets/console_screenshots/FilesAppStructure.png>)
 
 Files app give you the primary opportunities such as:
 - Add  new folder
