@@ -43,7 +43,8 @@
     * [ML Flow](apolo-console/apps/available-apps/ml-flow.md)
     * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
     * [Dify](apolo-console/apps/available-apps/dify.md)
-  
+    * [Weaviate](core/apps/available-apps/weaviate.md)
+
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
 * [Installing CLI](apolo-cli/installing.md)
