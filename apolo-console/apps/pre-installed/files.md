@@ -1,4 +1,4 @@
-## Files
+# Files
 
 Files application is a file manager that allows you to manage your network storage within the cluster.
 
