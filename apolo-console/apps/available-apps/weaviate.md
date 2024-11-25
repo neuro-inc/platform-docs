@@ -1,4 +1,4 @@
-# Weaviate
+#  Weaviate
 
 **Weaviate** is a robust, open-source vector database that allows you to store and query data based on its meaning. It supports various modules for text, image, and multimodal vectorization, enabling semantic search, advanced filtering, and question-answering. Weaviate offers flexible deployment options and integrates seamlessly with popular machine learning models and frameworks, providing **GraphQL**, **REST**, and **gRPC APIs** for easy integration with your applications.
 
