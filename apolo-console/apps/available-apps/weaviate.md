@@ -2,8 +2,6 @@
 
 **Weaviate** is a robust, open-source vector database that allows you to store and query data based on its meaning. It supports various modules for text, image, and multimodal vectorization, enabling semantic search, advanced filtering, and question-answering. Weaviate offers flexible deployment options and integrates seamlessly with popular machine learning models and frameworks, providing **GraphQL**, **REST**, and **gRPC APIs** for easy integration with your applications.
 
-***
-
 #### **Key Features**
 
 * **Semantic Search**: Store and query data based on semantic meaning, going beyond keyword matching.
@@ -12,7 +10,7 @@
 * **Multiple APIs**: **GraphQL**, **REST**, and **gRPC APIs** provide flexible integration options for your applications.
 * **Horizontal Scalability**: Easily scale Weaviate to handle growing data and query loads.
 
-***
+
 
 #### **Installation and Deployment on Apolo**
 
@@ -26,7 +24,7 @@ The Apolo installation process automates:
 4. **Cluster API Authentication**: Set up authentication for Weaviate's cluster API.
 5. **Backups**: Configure backups to an Apolo bucket.
 
-***
+
 
 #### **Parameter Descriptions**
 
@@ -36,7 +34,6 @@ The following parameters can be set when deploying Weaviate using the Apolo CLI:
 
 Embedding modules are not available out of the box; for now, embeddings must be generated externally with an embedding model of your choice and can be saved in Weaviate.
 
-***
 
 #### **Example Apolo CLI Command**
 
@@ -55,7 +52,7 @@ apolo run --pass-config ghcr.io/neuro-inc/app-deployment \
   --set backups.enabled=true
 ```
 
-***
+
 
 #### **Example Python Scripts**
 
