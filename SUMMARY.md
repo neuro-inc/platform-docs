@@ -10,9 +10,9 @@
 * [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
   * [Apolo CLI Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MOkWy7dB5MDbkSII8iF/)
-  * [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/)
+  * [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/)
   * [Apolo Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
-  * [Apolo Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb\_NcLuFCRM9bTy2KI0/)
+  * [Apolo Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb_NcLuFCRM9bTy2KI0/)
   * [Python SDK Reference](https://apolo-sdk.readthedocs.io)
 
 ## Apolo Console <a href="#core" id="core"></a>
@@ -44,6 +44,7 @@
     * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
     * [Dify](apolo-console/apps/available-apps/dify.md)
     * [Weaviate](apolo-console/apps/available-apps/weaviate.md)
+    * [Fooocus](core/apps/available-apps/fooocus.md)
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
