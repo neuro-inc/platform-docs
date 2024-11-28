@@ -45,6 +45,7 @@
     * [Dify](apolo-console/apps/available-apps/dify.md)
     * [Weaviate](apolo-console/apps/available-apps/weaviate.md)
     * [Fooocus](core/apps/available-apps/fooocus.md)
+    * [Stable Diffusion](core/apps/available-apps/stable-diffusion.md)
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 

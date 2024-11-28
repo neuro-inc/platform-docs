@@ -4,7 +4,7 @@ Once your cluster's node pools are set up, you can configure resource presets th
 
 {% tabs %}
 {% tab title="CLI" %}
-### Checking your cluster's presets
+#### Checking your cluster's presets
 
 You can view your current cluster's resource presets by running `apolo config show` and referring to the **Resource Presets** section in its output:
 
@@ -22,9 +22,9 @@ Name               #CPU   Memory   Round Robin   Preemptible Node   GPU         
  cpu-test-storage    7.0    30.0G                                                                           2   75
 ```
 
-### Modifying and adding presets
+#### Modifying and adding presets
 
-You can easily modify or add resource presets by using the `apolo admin update-resource-preset` command.&#x20;
+You can easily modify or add resource presets by using the `apolo admin update-resource-preset` command.
 
 For example, to change the amount of memory accessible through the existing **cpu-large** preset to 32GB, run:
 
@@ -34,7 +34,7 @@ For example, to change the amount of memory accessible through the existing **cp
 
 To add a new preset, just provide its name and parameters in the `apolo admin update-resource-preset` command. You can learn more about using this command [here](https://neu-ro.gitbook.io/neu-ro-cli-reference/commands/admin).
 
-### Deleting presets
+#### Deleting presets
 
 You can delete resource presets by using the `apolo admin remove-resource-preset` command. For example:
 
@@ -44,13 +44,13 @@ You can delete resource presets by using the `apolo admin remove-resource-preset
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-### Checking your cluster's presets
+#### Checking your cluster's presets
 
 You can view your current cluster's resource presets in the **Information** and **Cluster management** tabs:
 
 ![](<../../.gitbook/assets/image (116).png>)
 
-### Adding presets
+#### Adding presets
 
 To add a new preset, click the **Add** icon in the Cluster management tab:
 
@@ -60,7 +60,7 @@ After that, enter the desired preset parameters and click the **Save** icon:
 
 ![](<../../.gitbook/assets/image (122).png>)
 
-### Modifying presets
+#### Modifying presets
 
 To modify an existing preset, click the **Edit** icon next to it:
 
@@ -70,7 +70,7 @@ After that, enter the new parameters and click the **Save** icon:
 
 ![](<../../.gitbook/assets/image (117).png>)
 
-### Deleting presets
+#### Deleting presets
 
 To delete a preset, click the **Delete** icon next to it:
 
