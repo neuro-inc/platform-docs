@@ -30,6 +30,8 @@
     * [Images](apolo-console/apps/pre-installed/images.md)
     * [Secrets](apolo-console/apps/pre-installed/secrets.md)
     * [Jobs](apolo-console/apps/pre-installed/jobs.md)
+      * [Remote Debugging with PyCharm Professional](apolo-console/apps/pre-installed/remote-debugging-with-pycharm-professional.md)
+      * [Remote Debugging with VS Code](apolo-console/apps/pre-installed/remote-debugging-with-vs-code.md)
     * [Flows](apolo-console/apps/pre-installed/flows.md)
   * [Available apps](apolo-console/apps/available-apps/README.md)
     * [Terminal](apolo-console/apps/available-apps/terminal.md)
@@ -44,8 +46,8 @@
     * [Apolo Deploy](apolo-console/apps/available-apps/apolo-deploy.md)
     * [Dify](apolo-console/apps/available-apps/dify.md)
     * [Weaviate](apolo-console/apps/available-apps/weaviate.md)
-    * [Fooocus](core/apps/available-apps/fooocus.md)
-    * [Stable Diffusion](core/apps/available-apps/stable-diffusion.md)
+    * [Fooocus](apolo-console/apps/available-apps/fooocus.md)
+    * [Stable Diffusion](apolo-console/apps/available-apps/stable-diffusion.md)
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 

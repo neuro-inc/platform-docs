@@ -94,7 +94,7 @@ In this example, we're working with the `main.py` file. To enter debug mode, rig
 
 ![](<../../.gitbook/assets/image (233).png>)
 
-Now, you can interact with the file in debug mode:
+Now, you can interact with the file in debug mode: 
 
 ![](<../../.gitbook/assets/image (246).png>)
 
