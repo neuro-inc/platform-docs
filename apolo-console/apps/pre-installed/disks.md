@@ -13,20 +13,20 @@ The Disks section is accessible via the left-hand navigation menu in the Apolo C
 ## Creating a New Disk
 1. Click "Create New Disk" button.
 2. Fill out disk details:
-    - *Storage*: Specify the storage size in GB. This determines the disk's capacity.
-    - *Name*: Provide a unique name to identify the disk within the cluster.
-    - *Lifespan*: Define the disk’s lifespan using a duration format (e.g., 1d for one day, 2h for two hours, etc.). Lifespan determines how long the disk is allowed to exist before it is automatically removed.
+    - *Storage:* Specify the storage size in GB. This determines the disk's capacity.
+    - *Name:* Provide a unique name to identify the disk within the cluster.
+    - *Lifespan:* Define the disk’s lifespan using a duration format (e.g., 1d for one day, 2h for two hours, etc.). Lifespan determines how long the disk is allowed to exist before it is automatically removed.
 3. Click "Create" button.
 
 ## Viewing Disk Details
 
 1. Select a disk from the grid to display its details in the right-hand panel.
 2. Review the following information:
-    - *ID*: The unique identifier for the disk.
-    - *Status*: Indicates whether the disk is ready for use or still being processed.
-    - *Owner*: Displays the author of the disk.
-    - *Storage*: Total storage capacity of the disk.
-    - *Lifespan*: Defined time before the disk expires.
-    - *Created*: The date the disk was created.
+    - *ID:* The unique identifier for the disk.
+    - *Status:* Indicates whether the disk is ready for use or still being processed.
+    - *Owner:* Displays the author of the disk.
+    - *Storage:* Total storage capacity of the disk.
+    - *Lifespan:* Defined time before the disk expires.
+    - *Created:* The date the disk was created.
 
 Additionally, the properties pop-up includes two buttons: one for sharing access to the selected disk and another for removing the disk.
