@@ -48,6 +48,7 @@
     * [Weaviate](apolo-console/apps/available-apps/weaviate.md)
     * [Fooocus](apolo-console/apps/available-apps/fooocus.md)
     * [Stable Diffusion](apolo-console/apps/available-apps/stable-diffusion.md)
+* [Apolo Base Docker image](core/apolo-base-docker-image.md)
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
