@@ -1,7 +1,3 @@
----
-icon: docker
----
-
 # Apolo Base Docker image
 
 Our company provides a public Docker image with pre-configured **Conda environments** and pre-installed **Python dependencies**, designed to simplify development and deployment. This image ensures compatibility, consistency, and efficiency across diverse workflows, making it an ideal solution for streamlined integration into your projects.
