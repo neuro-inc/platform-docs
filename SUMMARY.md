@@ -6,14 +6,10 @@
   * [Training Your First Model](first-steps/training-your-first-model.md)
   * [Running Your Code](first-steps/running-your-code.md)
   * [Collaborative Development](first-steps/collaborative-development.md)
+* [Apolo Base Docker image](core/apolo-base-docker-image.md)
 * [FAQ](faq.md)
 * [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
-  * [Apolo CLI Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MOkWy7dB5MDbkSII8iF/)
-  * [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/)
-  * [Apolo Extras Reference](https://docs.apolo.us/neu-ro-extras-reference)
-  * [Apolo Actions Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-Mb_NcLuFCRM9bTy2KI0/)
-  * [Python SDK Reference](https://apolo-sdk.readthedocs.io)
 
 ## Apolo Console <a href="#core" id="core"></a>
 
@@ -48,7 +44,7 @@
     * [Weaviate](apolo-console/apps/available-apps/weaviate.md)
     * [Fooocus](apolo-console/apps/available-apps/fooocus.md)
     * [Stable Diffusion](apolo-console/apps/available-apps/stable-diffusion.md)
-* [Apolo Base Docker image](core/apolo-base-docker-image.md)
+
 
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
