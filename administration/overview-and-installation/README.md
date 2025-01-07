@@ -1,10 +1,16 @@
+---
+hidden: true
+---
+
 # Overview and Installation
 
 This group contains the following topics:
 
-{% page-ref page="architecture-overview.md" %}
+{% content-ref url="architecture-overview.md" %}
+[architecture-overview.md](architecture-overview.md)
+{% endcontent-ref %}
 
-{% page-ref page="on-premise-installation-guide.md" %}
-
-
+{% content-ref url="on-premise-installation-guide.md" %}
+[on-premise-installation-guide.md](on-premise-installation-guide.md)
+{% endcontent-ref %}
 
