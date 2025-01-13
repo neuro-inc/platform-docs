@@ -7,7 +7,7 @@
   * [Running Your Code](first-steps/running-your-code.md)
   * [Collaborative Development](first-steps/collaborative-development.md)
 * [Apolo Base Docker image](core/apolo-base-docker-image.md)
-* [FAQ](faq.md)
+* [FAQ](core/faq.md)
 * [Troubleshooting](troubleshooting.md)
 * [References](references/README.md)
 
