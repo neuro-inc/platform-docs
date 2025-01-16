@@ -45,10 +45,11 @@
     * [Fooocus](apolo-console/apps/available-apps/fooocus.md)
     * [Stable Diffusion](apolo-console/apps/available-apps/stable-diffusion.md)
 
-
 ## Apolo CLI <a href="#cli" id="cli"></a>
 
 * [Installing CLI](apolo-cli/installing.md)
+* [Apps](cli/apps/README.md)
+  * [Jobs](cli/apps/jobs.md)
 
 ## ADMINISTRATION
 
