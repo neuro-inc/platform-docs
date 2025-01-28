@@ -49,6 +49,7 @@
 
 * [Installing CLI](apolo-cli/installing.md)
 * [Apps](cli/apps/README.md)
+  * [Files](cli/apps/files.md)
   * [Jobs](cli/apps/jobs.md)
   * [Images](cli/apps/images.md)
 
