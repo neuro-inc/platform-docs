@@ -68,8 +68,6 @@ apolo run --pass-config ghcr.io/neuro-inc/app-deployment -- install https://gith
 
 
 
-### Integration with StableStudio
-
 
 
 ### API usage&#x20;
@@ -93,6 +91,25 @@ curl -X 'POST' \
   "prompt": "Some prompt"
 }'
 ```
+
+### Integration with StableStudio
+
+When your stable diffusion application is exposed, and if you deployed with StableStudio \
+You can utilize StableStudio WebUI
+
+Click settings on the right corner of your StableStudio WebUI
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-04 at 15.45.24.png" alt=""><figcaption></figcaption></figure>
+
+Paste external url for your stable diffusion webui HOST Url\
+The status should be "Ready without history plugin"
+
+Note: Url is persisted only on localStorage, so if you share StableStudio, it needs to be configured again\
+
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-04 at 15.53.53.png" alt=""><figcaption></figcaption></figure>
+
+Now click Generate and enjoy StableStudio UI
 
 ### References
 
