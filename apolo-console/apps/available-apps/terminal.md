@@ -52,7 +52,7 @@ You can look its details by clicking on the button **Details** for each instance
 
 ## Using the Terminal App  
 
-1. Launch the Terminal. 
+1. Launch the Terminal.
    Click **Open** button on an instance of the **Terminal** app from the **Installed Apps** list. This will open a web-based shell environment.  
 
 2. Run Commands.  
