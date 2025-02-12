@@ -63,4 +63,5 @@ You can look its details by clicking on the button **Details** for each instance
    apolo run alpine:latest echo 'Hello, World!'
    ```  
 
-   ![Terminal interface](<../../../.gitbook/assets/console_screenshots/terminal_app.png>)  
+   ![](<../../../.gitbook/assets/console_screenshots/terminal_app.png>) 
+   ![Terminal interface](<../../../.gitbook/assets/console_screenshots/terminal_app2.png>) 
