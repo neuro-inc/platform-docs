@@ -13,9 +13,11 @@ Locate the **Terminal** app. If it is not yet installed, proceed to the installa
 ## Installing the Terminal App 
 
 1. Select the **Terminal** app. 
+
    Click on the button **Install** located on the **Terminal** app card.  
    
 2. Configure *resources*. 
+   
    After selecting the Terminal app, you will be redirected to the installation page. Under the **Resources** tab, choose a preset configuration based on your computational needs (e.g., `cpu-small`, `cpu-medium`).  
 
 3. Add *metadata*.  
@@ -53,6 +55,7 @@ You can look its details by clicking on the button **Details** for each instance
 ## Using the Terminal App  
 
 1. Launch the **Terminal**.
+   
    Click **Open** button on an instance of the **Terminal** app from the **Installed Apps** list. This will open a web-based shell environment.  
 
 2. Run Commands.  
