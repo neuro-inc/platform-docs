@@ -1,6 +1,6 @@
 # Clusters
 
-Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Apolo, you could ask someone that have respective access level to add you to their organization. This provides access to clusters the organization has access to.&#x20;
+Clusters are collections of resources - compute, storage, and the registry. When you sign-up on Apolo, you could ask someone that have respective access level to add you to their organization. This provides access to clusters the organization has access to.
 
 Under the hood, cluster is a [Kubernetes](https://kubernetes.io/) cluster being managed by Apolo services.
 
@@ -10,9 +10,9 @@ You can use one cluster at a time and switch between clusters. This tutorial wil
 
 ### **How can I manage my clusters?**
 
-Each cluster comes with its own storage, registry, resource presets and other services.&#x20;
+Each cluster comes with its own storage, registry, resource presets and other services.
 
-You can view information about your current cluster both in the CLI and in the Apolo Console:&#x20;
+You can view information about your current cluster both in the CLI and in the Apolo Console:
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -50,11 +50,9 @@ Resource Presets:
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-
 To view information about your current cluster in the Apolo Console, look at the top right corner of the screen. You will see a section labeled "Cluster" with the name of your current cluster (e.g., "default"). Clicking on the dropdown arrow next to the cluster name will provide more details about the current cluster.
 
-
-![](<../../.gitbook/assets/console_screenshots/cluster_inform.png>)
+![](../../.gitbook/assets/cluster_inform.png)
 {% endtab %}
 {% endtabs %}
 
@@ -124,7 +122,7 @@ The current cluster is onprem-poc
 {% tab title="Apolo Console" %}
 To view all your clusters and switch the current one, click on the dropdown arrow next to the cluster name in the top right corner. A menu will appear with all available clusters. Select the desired one to switch.
 
-![](<../../.gitbook/assets/console_screenshots/several_clusters.png>)
+![](../../.gitbook/assets/several_clusters.png)
 {% endtab %}
 {% endtabs %}
 
@@ -140,6 +138,6 @@ You can top up your credits by clicking the **Credits** menu on the Apolo Consol
 
 You can also contact [support@apolo.us](mailto:support@apolo.us) or corresponding cluster provider to learn about latest discounts and promotions, and then request the top up.
 
-### How can I create a new cluster?&#x20;
+### How can I create a new cluster?
 
-Apolo lets you create new clusters for better management and orchestration of resources. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at  [support@apolo.us](mailto:support@apolo.us).
+Apolo lets you create new clusters for better management and orchestration of resources. Before you create a cluster, you must decide on the presets, storage, and registry that you want to assign for this cluster. You can create a cluster by writing to us at [support@apolo.us](mailto:support@apolo.us).

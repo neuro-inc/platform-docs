@@ -48,37 +48,37 @@ You can delete resource presets by using the `apolo admin remove-resource-preset
 
 You can view your current cluster's resource presets in the **Information** and **Cluster management** tabs:
 
-![](<../../.gitbook/assets/image (116).png>)
+![](<../../.gitbook/assets/image (26).png>)
 
 #### Adding presets
 
 To add a new preset, click the **Add** icon in the Cluster management tab:
 
-![](<../../.gitbook/assets/image (121).png>)
+![](<../../.gitbook/assets/image (38).png>)
 
 After that, enter the desired preset parameters and click the **Save** icon:
 
-![](<../../.gitbook/assets/image (122).png>)
+![](<../../.gitbook/assets/image (36).png>)
 
 #### Modifying presets
 
 To modify an existing preset, click the **Edit** icon next to it:
 
-![](<../../.gitbook/assets/image (118).png>)
+![](<../../.gitbook/assets/image (227).png>)
 
 After that, enter the new parameters and click the **Save** icon:
 
-![](<../../.gitbook/assets/image (117).png>)
+![](<../../.gitbook/assets/image (19).png>)
 
 #### Deleting presets
 
 To delete a preset, click the **Delete** icon next to it:
 
-![](<../../.gitbook/assets/image (119).png>)
+![](<../../.gitbook/assets/image (210).png>)
 
 After that, click the **Save** icon to confirm your action:
 
-![](<../../.gitbook/assets/image (120).png>)
+![](<../../.gitbook/assets/image (23).png>)
 {% endtab %}
 {% endtabs %}
 

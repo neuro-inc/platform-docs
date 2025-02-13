@@ -10,7 +10,7 @@ Remote debugging relies on a running SSH server in a job's 22 port. We ensure it
 
 ### Initializing a new project
 
-Make sure you have CLI and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed, refer to [getting-started.md](../../first-steps/getting-started.md "mention") for instructions.
+Make sure you have CLI and [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) installed, refer to [getting-started.md](../../../../../apolo-console/first-steps/getting-started.md "mention") for instructions.
 
 Then, initialize an empty flow:
 
@@ -30,7 +30,7 @@ preserve Neuro Flow template hints [yes]:
 
 ### Configuring the project
 
-Add `debugpy` to your project's `requirements.txt` file (located in the project's root folder):&#x20;
+Add `debugpy` to your project's `requirements.txt` file (located in the project's root folder):
 
 ```bash
 apolo-flow
@@ -50,7 +50,7 @@ debugpy.listen(("0.0.0.0", 5678))
 debugpy.wait_for_client()
 ```
 
-Next, configure the project's environment on the  platform:
+Next, configure the project's environment on the platform:
 
 ```bash
 $ apolo-flow build myimage
@@ -99,7 +99,7 @@ $ apolo job port-forward <job-id> 5678:5678
 
 This will allow you to access the job by the `5678` port.
 
-### Debugging&#x20;
+### Debugging
 
 Open your code file in VS Code and navigate to **Run > Start Debugging** or press **F5**:
 
@@ -107,12 +107,12 @@ Open your code file in VS Code and navigate to **Run > Start Debugging** or pres
 
 Select **Remote Attach**:
 
-![](<../../../.gitbook/assets/image (88).png>)
+![](<../../../.gitbook/assets/image (98).png>)
 
 Enter **localhost** as the host name and the job's port number (in this case, it's **5687**):
 
-![](<../../../.gitbook/assets/image (87) (1).png>)
+![](<../../../.gitbook/assets/image (277).png>)
 
-![](<../../../.gitbook/assets/image (91).png>)
+![](<../../../.gitbook/assets/image (91) (1).png>)
 
 When this is done, you can set the breakpoint and start debugging.

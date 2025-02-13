@@ -118,31 +118,31 @@ Your training script here. Data directory: /data
 {% endtab %}
 
 {% tab title="Apolo Console" %}
-To run a job in Apolo Console, you'll need to use the **Custom Job** widget on your dashboard.&#x20;
+To run a job in Apolo Console, you'll need to use the **Custom Job** widget on your dashboard.
 
-First, click **RUN JOB**:&#x20;
+First, click **RUN JOB**:
 
-![](<../../.gitbook/assets/image (23) (1).png>)
+![](../../.gitbook/assets/image%20\(23\)%20\(1\).png)
 
 Next, you will need to choose the preset to run the job on. For example, **cpu-small**:
 
-![](<../../.gitbook/assets/image (3) (1) (1).png>)
+![](../../.gitbook/assets/image%20\(3\)%20\(1\)%20\(1\).png)
 
 Then, specify the image that will be used in the job:
 
-![](<../../.gitbook/assets/image (17) (1).png>)
+![](../../.gitbook/assets/image%20\(17\)%20\(1\).png)
 
 You can now enter the command you want to run in the corresponding field:
 
-![](<../../.gitbook/assets/image (31) (1).png>)
+![](../../.gitbook/assets/image%20\(31\)%20\(1\).png)
 
 You can optionally enter a name for this job and a HTTP port that will be associated with this job. The default port value is 80.
 
-![](<../../.gitbook/assets/image (7) (1).png>)
+![](../../.gitbook/assets/image%20\(7\)%20\(1\).png)
 
 And now, you can just click **RUN** to run the job:
 
-![](<../../.gitbook/assets/image (29) (6).png>)
+![](../../.gitbook/assets/image%20\(29\)%20\(6\).png)
 
 You will learn more about various job parameters such as images, HTTP ports, and others, in this and following topics.
 {% endtab %}
@@ -276,7 +276,7 @@ The parameter limits the default job run time, and is in string format. For exam
 life-span = "2d3h20min"
 ```
 
-You can also set this parameter for specific jobs by using the corresponding option:&#x20;
+You can also set this parameter for specific jobs by using the corresponding option:
 
 ```
 $ apolo run --life-span 2h <image>
@@ -328,31 +328,30 @@ $ apolo job logs filebrowser-49249
 
 Apolo provides an intuitive interface that lets you manage jobs. The **Jobs** page of the Apolo web interface lists all the jobs.
 
-![](<../../.gitbook/assets/image (209).png>)
+![](../../.gitbook/assets/image%20\(209\).png)
 
 You can view the web interface of the job by clicking the 'three dots' icon near the job and then clicking **HTTP URL**.
 
-![](<../../.gitbook/assets/image (202).png>)
+![](../../.gitbook/assets/image%20\(202\).png)
 
 To view the log and and other details about a job, click on the job ID.
 
-![Job Details section](<../../.gitbook/assets/image (96) (1).png>)
+![Job Details section](../../.gitbook/assets/image%20\(96\)%20\(1\).png)
 
 By default, the **Jobs** page displays all currently running jobs. You can filter jobs by status using the corresponding drop-down list:
 
-![](<../../.gitbook/assets/image (214).png>)
+![](../../.gitbook/assets/image%20\(214\).png)
 
 You can search for specific jobs using the **Search** field. The search functionality works with job names, IDs, and tags.
 
-![](<../../.gitbook/assets/image (194).png>)
+![](../../.gitbook/assets/image%20\(194\).png)
 
 The UI also lets you kill or rerun a job by clicking **KILL** or **RERUN** in the drop-down menu accessible through the 'three dots' icon near the job.
 
-![KILL and RERUN options](<../../.gitbook/assets/image (101).png>)
+![KILL and RERUN options](../../.gitbook/assets/image%20\(101\).png)
 
 ### Monitoring jobs
 
 You can monitor various parameters of your currently running jobs such as CPU and GPU usage, network traffic, prices, etc., in the Apolo Console.
 
 All of this information is accessible in the [Grafana](https://grafana.com/)-based **User Jobs Monitor** feature. To access this feature, go to the **Information** tab and click **USER JOBS MONITOR**:\
-&#x20;&#x20;

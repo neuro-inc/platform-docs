@@ -1,8 +1,12 @@
-## Sign-up
-First of all you should create an account in [Apolo Console](https://console.apolo.us):
-1. Go to [Apolo Console](https://console.apolo.us); 
+# Sign Up, Login
 
-![](<../../.gitbook/assets/console_screenshots/Sign-up.png>)
+### Sign-up
+
+First of all you should create an account in [Apolo Console](https://console.apolo.us):
+
+1. Go to [Apolo Console](https://console.apolo.us);
+
+![](../../.gitbook/assets/Sign-up.png)
 
 2. Click "Sign-up" button;
 3. Enter your e-mail and create a password;
@@ -12,23 +16,23 @@ First of all you should create an account in [Apolo Console](https://console.apo
 7. Read and accept terms of use agreement;
 8. Start your onboarding from [connecting or creating organization](organizations.md).
 
-Also, you can create your account using Google or GitHub accounts. 
+Also, you can create your account using Google or GitHub accounts.
 
+### Login
 
-## Login
-On the login page you can execute login using your credentials.
-On this page you have availability to reset your password in case you forgot it.
+On the login page you can execute login using your credentials. On this page you have availability to reset your password in case you forgot it.
 
-![](<../../.gitbook/assets/console_screenshots/login.png>)
+![](../../.gitbook/assets/login.png)
 
-## Forgot password
+### Forgot password
+
 In case of forgetting your password, follow this instruction:
+
 1. Click "Forgot password" button;
 
-![](<../../.gitbook/assets/console_screenshots/forgot-pass.png>)
+![](../../.gitbook/assets/forgot-pass.png)
 
-2. Enter your email; 
+2. Enter your email;
 3. Follow the instructions which was sent to your e-mail.
 
-
-![](<../../.gitbook/assets/console_screenshots/forgot-pass_1.png>)
+![](../../.gitbook/assets/forgot-pass_1.png)

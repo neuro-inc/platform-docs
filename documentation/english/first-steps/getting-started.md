@@ -4,7 +4,7 @@
 
 There are two things you will need to do before you start working with Apolo:
 
-1. [Install the CLI client](/apolo-cli/installing.md).
+1. [Install the CLI client](../apolo-cli/installing.md).
 2. [Understand the platform's main concepts](getting-started.md#understanding-the-main-concepts).
 
 After this, you're free to explore the platform and it's functionality. As a good starting point, we've included a section about [development on GPU with Jupyter Notebooks](getting-started.md#developing-on-gpu-with-jupyter-notebooks).
@@ -156,7 +156,7 @@ For Jupyter Notebooks to run properly, the `train.py` script and the notebook it
 $ apolo-flow upload ALL
 ```
 
-Now you need to choose a preset on which you want to run your Jupyter jobs. To view the list of  presets available on the current cluster, run:&#x20;
+Now you need to choose a preset on which you want to run your Jupyter jobs. To view the list of presets available on the current cluster, run:
 
 ```
 $ apolo config show 
@@ -182,7 +182,7 @@ jupyter:
       ...
 ```
 
-After this, each time you run a Jupyter job, it will use the specified by default without the need for you to provide it in a CLI command: &#x20;
+After this, each time you run a Jupyter job, it will use the specified by default without the need for you to provide it in a CLI command:
 
 ```
 $ apolo-flow run jupyter 

@@ -2,11 +2,11 @@
 
 ## What are flows?
 
-Flows provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment.&#x20;
+Flows provide a way to quickly create the basic necessary folder structure and set up integrations with several recommended tools for your model development environment.
 
 So, once you start working with the Apolo platform, we highly recommend that you create a new flow to ensure that the most important functionality will be accessible right away.
 
-Every flow is based on a template that contains the `.neuro/live.yaml` configuration file for [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/ "mention") - a tool that simplifies your work process with Apolo. This file guarantees a proper connection between the project structure, the base environment that we provide, and actions with storage and jobs.
+Every flow is based on a template that contains the `.neuro/live.yaml` configuration file for [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/ "mention") - a tool that simplifies your work process with Apolo. This file guarantees a proper connection between the project structure, the base environment that we provide, and actions with storage and jobs.
 
 ## Creating flows
 
@@ -59,27 +59,27 @@ new-cookiecutter-project
 └── update_actions.py   <- instructions on update actions
 ```
 
-The internal ID of a flow used by Apolo Flow is generated automatically based on the name of the root folder containing the `.neuro` folder. This can be changed by placing a `project.yml` file with the desired flow ID attribute into the `.neuro` folder. Feel free to refer to the [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF\_FqiWBMcOdY8cj/ "mention") for more information.
+The internal ID of a flow used by Apolo Flow is generated automatically based on the name of the root folder containing the `.neuro` folder. This can be changed by placing a `project.yml` file with the desired flow ID attribute into the `.neuro` folder. Feel free to refer to the [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/ "mention") for more information.
 
 ## Flow modes
 
-Apolo Flow provides two modes of automating and simplifying your work process while working in a flow - **live** mode and **batch** mode.&#x20;
+Apolo Flow provides two modes of automating and simplifying your work process while working in a flow - **live** mode and **batch** mode.
 
 ### Live mode
 
-Live mode allows to execute sets of job definitions that create independent jobs in the Apolo cloud.&#x20;
+Live mode allows to execute sets of job definitions that create independent jobs in the Apolo cloud.
 
 A job or set of jobs executed in live mode is called a **live job**.
 
-You can learn more about live jobs in the [Live workflows](https://app.gitbook.com/s/-MMLOF\_FqiWBMcOdY8cj/#live-workflows "mention").
+You can learn more about live jobs in the [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/ "mention").
 
 ### Batch mode
 
-Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied.&#x20;
+Batch mode serves to orchestrate sets of remote tasks that depend on each other. This is achieved by having a main job that manages the overall workflow by spawning all required sub-jobs, waiting for their results, and starting dependent tasks when all of their requirements are satisfied.
 
 A single execution of a set of jobs in batch mode is called a **bake**.
 
-You can learn more about the batch mode in the [Batch workflows](https://app.gitbook.com/s/-MMLOF\_FqiWBMcOdY8cj/#batch-workflows "mention").
+You can learn more about the batch mode in the [Apolo Flow Reference](https://app.gitbook.com/o/-MMLX64i1AQdS3ehf2Kg/s/-MMLOF_FqiWBMcOdY8cj/ "mention").
 
 ## Monitoring flows
 
@@ -87,7 +87,7 @@ You can monitor your flows both via the CLI and in the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
-### Monitoring live jobs
+#### Monitoring live jobs
 
 To see a list of live jobs on the current flow, their IDs, statuses, and starting times, run the following command:
 
@@ -105,7 +105,7 @@ $ apolo-flow ps
                ╵           ╵                                       
 ```
 
-### Monitoring bakes
+#### Monitoring bakes
 
 Use the following command to monitor your project's bakes:
 
@@ -123,17 +123,17 @@ $ apolo-flow inspect <bake-id>
 
 This will show which tasks were executed in this bake, their statuses, IDs, starting and completion time. You can also export a bake's graph by adding the `--output-graph` option and choosing the desired graph format (DOT or PDF).\
 \
-You can learn more about bake inspection [neuro-flow inspect](https://app.gitbook.com/s/-MMLOF\_FqiWBMcOdY8cj/cli#neuro-flow-inspect "mention").
+You can learn more about bake inspection [neuro-flow-inspect](https://app.gitbook.com/s/-MMLOF_FqiWBMcOdY8cj/cli#neuro-flow-inspect "mention").
 {% endtab %}
 
 {% tab title="Apolo Console" %}
 You can view the list of your projects in the **Flows** tab:
 
-![](<../../.gitbook/assets/image (142).png>)
+![](../../.gitbook/assets/image%20\(142\).png)
 
 Click on a flow's name to view the list of its live jobs and batch bakes:
 
-![](<../../.gitbook/assets/image (141).png>)
+![](../../.gitbook/assets/image%20\(141\).png)
 
 You can view each job's and bake's details by clicking on their name.
 {% endtab %}

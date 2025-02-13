@@ -10,7 +10,7 @@ We recommend keeping the apolo-flow's flow code in a Git repository. In this cas
 
 ## Initiating a new flow
 
-First, you will need to create a new flow from the template.&#x20;
+First, you will need to create a new flow from the template.
 
 To do this, install the [**cookiecutter**](https://github.com/cookiecutter/cookiecutter) package and initialize **cookiecutter-neuro-project**:
 
@@ -31,7 +31,7 @@ You have a few options for storing your flow data in a shared space.
 
 ### Platform storage
 
-You can upload data to your platform storage both through the CLI and through the Apolo Console.&#x20;
+You can upload data to your platform storage both through the CLI and through the Apolo Console.
 
 {% tabs %}
 {% tab title="CLI" %}
@@ -53,7 +53,7 @@ After you have your files uploaded to the platform storage, you can share them w
 
 {% tabs %}
 {% tab title="CLI" %}
-You can give permanent access to folders and files through the CLI with the help of the `apolo share` command.&#x20;
+You can give permanent access to folders and files through the CLI with the help of the `apolo share` command.
 
 ```
 $ apolo share storage:cifar-10 alice manage
@@ -78,15 +78,15 @@ Sharing folders and files through the Filebrowser gives temporary access to them
 
 Select the files and/or folders you want to share in the Filebrowser and click the **Share** icon:
 
-![](<../.gitbook/assets/image (99).png>)
+![](<../.gitbook/assets/image (280).png>)
 
 You can then create permanent and temporary access links for the selected items. To create a permanent link, click **Get Permanent Link**:
 
-![](<../.gitbook/assets/image (97).png>)
+![](<../.gitbook/assets/image (276).png>)
 
 To create a temporary link, specify the required time period and click the **Create** icon:
 
-![](<../.gitbook/assets/image (100).png>)
+![](<../.gitbook/assets/image (261).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -102,7 +102,7 @@ Your data may also be available at some public resource that doesn’t require a
 
 Now all your teammates can clone the flow configuration and start working on it in their local copies. Here are some steps every teammate should follow independently.
 
-* To set up the working environment, run `apolo-flow build train` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).&#x20;
+* To set up the working environment, run `apolo-flow build train` (this is a necessary step to perform every time you update pip dependencies in `requirements.txt` or system requirements in `apt.txt`).
 * To run a Jupyter Notebooks session, run `apolo-flow run jupyter`. Notebooks are saved in the `<flow>/notebooks` folder on your platform storage. To download them to the local copy of the project, run `apolo-flow download notebooks`.
 * To run training from source code, update `.neuro/live.yaml` for your `train` job and run `apolo-flow run train`. For example:
 
@@ -116,11 +116,11 @@ jobs:
 
 You can get more information about the apolo-flow's functionality in the `HELP.md` file in your flow folder.
 
-## Sharing running jobs&#x20;
+## Sharing running jobs
 
-You can share any job you run on the platform with your teammates.&#x20;
+You can share any job you run on the platform with your teammates.
 
-To do that, you will need to know the ID or the name of the job you want to share. \
+To do that, you will need to know the ID or the name of the job you want to share.\
 The ID is a job's unique identifier, while the name may repeat for different job runs.
 
 ### Viewing job IDs and names
@@ -129,7 +129,7 @@ You can view the IDs and names of currently running jobs available to you both i
 
 {% tabs %}
 {% tab title="CLI" %}
-To view the list of currently running jobs, run `apolo ps`.&#x20;
+To view the list of currently running jobs, run `apolo ps`.
 
 You can also check a particular job's status `apolo status <my-cool-job>`.
 {% endtab %}
@@ -139,7 +139,7 @@ You can view the IDs and names of all currently running jobs in the left part of
 
 Clicking the job ID will open the **Job Details** window.
 
-![](<../.gitbook/assets/image (216).png>)
+![](<../.gitbook/assets/image (14).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -165,11 +165,11 @@ However, keep in mind that different runs of the same job can have the same name
 {% tab title="Apolo Console" %}
 To share a job, click **Share** in the drop-down list to its right:
 
-![](<../.gitbook/assets/image (212).png>)
+![](<../.gitbook/assets/image (190).png>)
 
 Next, enter the name of the user you want to share the job with and the access level. When this is done, click **SHARE**:
 
-![](<../.gitbook/assets/zobrazhennya (30).png>)
+![](<../.gitbook/assets/зображення (20).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -201,7 +201,7 @@ There is also a shortcut for sharing all your jobs (past, current, and future on
 $ apolo share job: alice read
 ```
 
-## Sharing Docker images&#x20;
+## Sharing Docker images
 
 Our project contains a [base environment](https://hub.docker.com/r/neuromation/base) we recommend using for most projects. This environment is based on [deepo](https://github.com/ufoym/deepo). It contains recent versions of the most popular ML/DL libraries (including Tensorflow 2.0 and PyTorch 1.4). When you run `neuro-flow build train`, additional dependencies you state in `requirements.txt` and `apt.txt` are installed in that environment, which is then saved on the platform's Docker registry. In this case, there is no need to share the images with teammates, as they build similar images from the same code base.
 
@@ -228,4 +228,4 @@ images:
     ref: image://default/bob/project-specific-docker-image
 ```
 
-Please note that some functionality may be missing in custom Docker images. In particular, you may need to log into AWS and GCP manually from within your jobs.&#x20;
+Please note that some functionality may be missing in custom Docker images. In particular, you may need to log into AWS and GCP manually from within your jobs.

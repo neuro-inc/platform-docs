@@ -33,7 +33,7 @@ You can deploy Stable Diffusion WebUI in 2 ways:
 
 **Apolo Console (recommended way)**
 
-<figure><img src="../../../.gitbook/assets/image (258).png" alt=""><figcaption><p>Apolo console with SD</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (291).png" alt=""><figcaption><p>Apolo console with SD</p></figcaption></figure>
 
 **Apolo Cli**
 

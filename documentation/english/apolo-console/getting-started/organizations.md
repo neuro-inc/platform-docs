@@ -5,20 +5,21 @@
 Organizations are formed as a collections of users that have common access to some subset of clusters and could share credits.
 
 After account creating you have two options:
-- create your own organization;
-- send your user name for adding to the existed organization.
 
-![](<../../.gitbook/assets/console_screenshots/choose_org.png>)
+* create your own organization;
+* send your user name for adding to the existed organization.
 
-By inviting other users into organizations, those users automatically obtain access to all clusters organization was added to. 
+![](../../.gitbook/assets/choose_org.png)
 
-When users run their apps within organization, they consume this organization credits which enables teams to have shared balance. 
+By inviting other users into organizations, those users automatically obtain access to all clusters organization was added to.
+
+When users run their apps within organization, they consume this organization credits which enables teams to have shared balance.
 
 Team members could also top-up organization balance in Apolo web app by clicking on the Credits menu.
 
-![](<../../.gitbook/assets/console_screenshots/organizations_balance.png>)
+![](../../.gitbook/assets/organizations_balance.png)
 
-Refer to `apolo admin` for organizations administration and to `apolo config switch-org` to switch between organizations within your CLI config.&#x20;
+Refer to `apolo admin` for organizations administration and to `apolo config switch-org` to switch between organizations within your CLI config.
 
 Most of Apolo CLI accept `--org` flag to perform various commands in corresponding organizations.
 
@@ -26,24 +27,25 @@ Most of Apolo CLI accept `--org` flag to perform various commands in correspondi
 
 As administrator you can set up your current organization or create one more lately.
 
-![](<../../.gitbook/assets/console_screenshots/organizations_1.png>)
+![](../../.gitbook/assets/organizations_1.png)
 
 You can manage a user list and look through reports in organization settings.
 
-![](<../../.gitbook/assets/console_screenshots/org_settings.png>)
+![](../../.gitbook/assets/org_settings.png)
 
 Users tab contains the next functionality:
-- inviting users to the organization;
 
-![](<../../.gitbook/assets/console_screenshots/org_set_invite_user.png>)
+* inviting users to the organization;
 
-- setting up user role;
+![](../../.gitbook/assets/org_set_invite_user.png)
 
-![](<../../.gitbook/assets/console_screenshots/org_set_edit_user.png>)
+* setting up user role;
 
-- deleting user from organization.
+![](../../.gitbook/assets/org_set_edit_user.png)
 
-![](<../../.gitbook/assets/console_screenshots/org_set_remove_user.png>)
+* deleting user from organization.
+
+![](../../.gitbook/assets/org_set_remove_user.png)
 
 Reports tab contains grafana dashboards.
 

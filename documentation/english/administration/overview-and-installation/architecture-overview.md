@@ -41,7 +41,7 @@ A typical extensible API for managing and enforcing hierarchical access control 
 
 **Admin API**
 
-A high-level semantic API on top of the Auth API for managing users, clusters they have access to, roles they take in these clusters, their quotas within the clusters, etc.&#x20;
+A high-level semantic API on top of the Auth API for managing users, clusters they have access to, roles they take in these clusters, their quotas within the clusters, etc.
 
 **Config API**
 
@@ -61,10 +61,9 @@ An API for sending email/Slack notifications for events such as job status trans
 
 **Apps API**
 
-An API for running a curated set of applications from within the Apolo Console.\
+An API for running a curated set of applications from within the Apolo Console.\\
 
-
-![](<../../.gitbook/assets/neu.ro-architecture-overview (1) (1).png>)
+![](<../../.gitbook/assets/Neu.ro Architecture Overview.png>)
 
 **Apolo Console**
 
@@ -80,13 +79,11 @@ An engine for running computational workflows based on Apolo CLI and SDK .
 
 **Apolo-Extras CLI**
 
-A collection of useful tools based on Apolo CLI and SDK, e.g., transfer of storage and container images between clusters.\
-
+A collection of useful tools based on Apolo CLI and SDK, e.g., transfer of storage and container images between clusters.\\
 
 **Web Documentation**
 
-An up-to-date user documentation for the Apolo Console and CLIs with usage examples and other useful information.\
-
+An up-to-date user documentation for the Apolo Console and CLIs with usage examples and other useful information.\\
 
 ![](<../../.gitbook/assets/neu.ro-architecture-overview-2 (1).png>)
 
@@ -128,7 +125,6 @@ An API for managing persistent block storage.
 
 **Reports**
 
-A service for retrieving historical telemetry of compute workloads with respect to user permissions.\
-
+A service for retrieving historical telemetry of compute workloads with respect to user permissions.\\
 
 ![](<../../.gitbook/assets/neu.ro-architecture-overview-3 (1).png>)
